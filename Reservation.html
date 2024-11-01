@@ -352,7 +352,7 @@ body {
             // Show loading spinner
             document.getElementById('loading-spinner').style.display = 'block';
 
-            fetch('https://suhaila-locals.onrender.com', {
+            fetch('https://suhaila-locals.onrender.com/send-email', {
                 method: 'POST',
                 body: new FormData(this)
             })
