@@ -322,6 +322,33 @@ section {
         #about, #product {
             padding-top: 60px; /* Space for sticky navbar */
         }
+
+        /* Media Query for Mobile */
+@media (max-width: 600px) {
+    .navbar a {
+        display: none; /* Initially hide the links */
+    }
+    .hamburger {
+        display: block; /* Show hamburger icon */
+    }
+}
+        /* Media Query for Desktop */
+@media (min-width: 601px) {
+    .navbar a {
+        display: inline-block; /* Show links on desktop */
+    }
+
+    .hamburger {
+        display: none; /* Hide hamburger on larger screens */
+    }
+}
+
+/* Navigation Menu Visibility */
+.navbar.active a {
+    display: block; /* Show links when navbar is active */
+    width: 100%; /* Full width for links */
+    text-align: center; /* Center the links */
+}
         /* Media Queries for Mobile Responsiveness */
         @media (max-width: 600px) {
             .navbar {
@@ -523,6 +550,11 @@ section {
     document.getElementById('reservation-form').style.display = 'block'; // Show the form
     document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to form
 }
+    document.getElementById('hamburger').addEventListener('click', function() {
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.toggle('active'); // Toggle the 'active' class
+});
+
 
     // Function to check if an element is in the viewport
     function isInViewport(element) {
