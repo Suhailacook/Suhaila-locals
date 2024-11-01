@@ -318,7 +318,7 @@ section {
             padding-top: 60px; /* Space for sticky navbar */
         }
         /* Media Queries for Mobile Responsiveness */
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             .navbar {
                 flex-direction: column; /* Stack navbar items vertically */
             }
@@ -346,10 +346,14 @@ section {
             }
         }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.5em; /* Smaller heading on extra small screens */
-            }
+       @media (max-width: 600px) {
+    h1 {
+        font-size: 28px; /* Adjusted for smaller screens */
+    }
+           @media (max-width: 480px) {
+    h1 {
+        font-size: 24px; /* Further adjusted */
+    }
 
             .review-section {
                 padding: 20px; /* Less padding on small screens */
