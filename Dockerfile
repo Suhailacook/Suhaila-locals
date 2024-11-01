@@ -8,11 +8,11 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
-# Copy the rest of your application files
+# Copy all files to the working directory
 COPY . .
 
-# Expose the port your server is listening on
+# Expose the port the app will run on
 EXPOSE 3000
 
-# Run your server file
+# Start the server
 CMD ["node", "server.js"]
