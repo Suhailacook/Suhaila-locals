@@ -3,44 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suhaila's Blog</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <title>Blog - Suhaila Local's Experience</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        /* Gallery Blog Section */
+        .gallery-blog {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5em;
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 1em;
+        }
+
+        /* Blog Card Styling */
+        .blog-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 1em;
+            text-align: center;
+        }
+
+        .blog-content h2 {
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+        }
+
+        .blog-content p {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 1em;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 0.5em 1em;
+            font-size: 0.9em;
+            color: #fff;
+            background-color: #0073e6;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .read-more:hover {
+            background-color: #005bb5;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Suhaila's Culinary Blog</h1>
-        <nav class="navbar">
-            <a href="home.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="Reservation.html">Reservations</a>
-            <a href="Product.html">Product</a>
-            <a href="contact.html">Contact</a>
-            <a href="blog.html" class="active">Blog</a>
-        </nav>
+        <h1>Suhaila Local's Experience Blog</h1>
     </header>
-
     <main>
-        <h2>Latest Posts</h2>
-        <div class="blog-posts">
-            <!-- Example of a blog post -->
-            <article class="post">
-                <h3><a href="post1.html">Cooking with Love: A Journey Through Traditional Dishes</a></h3>
-                <p>Discover the flavors of our traditional dishes and the love that goes into every meal...</p>
-                <a href="post1.html">Read More</a>
+        <section class="gallery-blog">
+            <!-- Blog Post 1: Food Culture -->
+            <article class="blog-card">
+                <img src="path/to/image1.jpg" alt="Jordanian Food">
+                <div class="blog-content">
+                    <h2>Discovering the Food Culture of Aqaba</h2>
+                    <p>Aqaba's culinary scene is a rich tapestry of flavors, showcasing the best of Jordanian cuisine with fresh seafood, local spices, and traditional dishes.</p>
+                    <a href="food-culture.html" class="read-more">Read More</a>
+                </div>
             </article>
 
-            <article class="post">
-                <h3><a href="post2.html">5 Essential Cooking Tips for Beginners</a></h3>
-                <p>Learn the basics of cooking and how to make delicious meals at home...</p>
-                <a href="post2.html">Read More</a>
+            <!-- Blog Post 2: History of Aqaba -->
+            <article class="blog-card">
+                <img src="path/to/image2.jpg" alt="Historical Sites in Aqaba">
+                <div class="blog-content">
+                    <h2>The Rich History of Aqaba</h2>
+                    <p>Aqaba boasts a fascinating history that dates back to ancient times, serving as a vital port and trading hub in the region. Discover its historical landmarks and stories.</p>
+                    <a href="history-aqaba.html" class="read-more">Read More</a>
+                </div>
             </article>
 
-            <!-- More blog posts can be added here -->
-        </div>
+            <!-- Blog Post 3: Local Experiences -->
+            <article class="blog-card">
+                <img src="path/to/image3.jpg" alt="Local Experiences in Aqaba">
+                <div class="blog-content">
+                    <h2>Experiencing Local Life in Aqaba</h2>
+                    <p>Engage with the locals and immerse yourself in daily life in Aqaba. From markets to cooking classes, discover what makes this city unique.</p>
+                    <a href="local-experiences.html" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <!-- Blog Post 4: Marine Life -->
+            <article class="blog-card">
+                <img src="path/to/image4.jpg" alt="Marine Life in Aqaba">
+                <div class="blog-content">
+                    <h2>The Underwater Wonders of Aqaba</h2>
+                    <p>Aqaba is not just about its beautiful beaches; it's also home to stunning coral reefs and vibrant marine life. Dive in to explore!</p>
+                    <a href="marine-life.html" class="read-more">Read More</a>
+                </div>
+            </article>
+        </section>
     </main>
-
     <footer>
-        <p>&copy; 2024 Suhaila. All rights reserved.</p>
+        <p>&copy; 2024 Suhaila Local's Experience</p>
     </footer>
 </body>
 </html>
