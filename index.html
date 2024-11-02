@@ -7,6 +7,27 @@
     <meta name="description" content="Join Suhaila for authentic cooking classes and experience the flavors of traditional dishes. Book your culinary adventure today!">
 
     <style>
+        .navbar.active {
+    flex-direction: column;
+    background-color: #5a67f9;
+    width: 100%;
+}
+
+.navbar.active a {
+    display: block; /* Stacks links vertically */
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Optional styling */
+}
+@media (max-width: 600px) {
+    .gallery {
+        width: 100%; /* Full width for mobile */
+        height: auto; /* Adjust height to maintain aspect ratio */
+    }
+}
+.button {
+    max-width: 100%; /* Full width on mobile for better usability */
+}
+
 .logo-fade-in {
     opacity: 0; /* Start transparent */
     animation: fadeInLogo 5s ease forwards; /* Fade in effect */
@@ -579,6 +600,15 @@ section {
 
     // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', function () {
+    const scrollToTopButton = document.getElementById('scrollToTop');
+    if (window.pageYOffset > 200) {
+        scrollToTopButton.style.display = 'block';
+    } else {
+        scrollToTopButton.style.display = 'none';
+    }
+});
+
 </script>
 
     <script>
