@@ -589,6 +589,10 @@ section {
             rect.right <= (window.innerWidth || document.documentElement.clientWidth)
         );
     }
+    document.getElementById('scrollToTop').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 
     // Function to handle scroll event
     function handleScroll() {
