@@ -234,5 +234,20 @@
         navbar.classList.toggle('active'); // Toggle the 'active' class
     });
 </script>
+    <script>
+    // Get the current URL path
+    const currentPath = window.location.pathname.split("/").pop();
+
+    // Select all navigation links
+    const navLinks = document.querySelectorAll('.navbar a');
+
+    // Loop through links and set the active class based on the current path
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active');
+        }
+    });
+</script>
+
 
 </html>
