@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware for CORS
 app.use(cors({
-    origin: ['http://127.0.0.1:5501', 'http://localhost:5501', 'https://suhaila-locals.space/'], // Update with your Render URL
+    origin: ['http://127.0.0.1:5501', 'http://localhost:5501', 'https://suhaila-locals.space'], // Update with your Render URL
     credentials: true
 }));
 
