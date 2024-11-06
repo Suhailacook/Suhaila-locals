@@ -5,77 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Suhaila Local's Experience</title>
     <style>
-        /* Navbar Styles */
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    background-color: #5a67f9;
-    padding: 5px 0;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    transition: top 0.3s ease;  /* Smooth hide/show effect */
-}
-
-.navbar a {
-    color: rgb(218, 232, 20);
-    text-decoration: none;
-    padding: 14px 20px;
-    margin: 0 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.navbar a:hover {
-    background-color: #f5f9f6;
-}
-
-.navbar a.active {
-    background-color: #dbdcd9; /* Active background color */
-    color: #333; /* Text color for active link */
-    font-weight: bold; /* Optional: make it bold */
-    border-bottom: 2px solid #fff; /* Optional: underline effect */
-}
-
-/* Show the hamburger icon */
-.hamburger {
-    cursor: pointer;
-    font-size: 24px;
-    display: none; /* Initially hidden for larger screens */
-}
-
-/* Media Query for Mobile */
-@media (max-width: 600px) {
-    .navbar a {
-        display: none; /* Initially hide the links */
-    }
-
-    .hamburger {
-        display: block; /* Show hamburger icon */
-    }
-
-    .navbar.active a {
-        display: block; /* Show links when navbar is active */
-        width: 100%; /* Full width for links */
-        text-align: center; /* Center the links */
-    }
-}
-
-/* Media Query for Desktop */
-@media (min-width: 601px) {
-    .navbar a {
-        display: inline-block; /* Show links on desktop */
-    }
-
-    .hamburger {
-        display: none; /* Hide hamburger on larger screens */
-    }
-}
-
         /* Reset some default styling */
         * {
             margin: 0;
@@ -83,38 +12,107 @@
             box-sizing: border-box;
         }
 
+        /* Body styling */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
+            background-color: #f7f7f9;
+            color: #444;
+            overflow-x: hidden;
         }
 
-        /* Container styling */
+        /* Navbar Styles */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            background-color: #4a63e4;
+            padding: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 18px;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover, .navbar a.active {
+            background-color: #da4c1f;
+            color: #ffffff;
+        }
+
+        /* Media Query for Mobile */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Main container styling */
         .container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 30px auto;
             padding: 20px;
             text-align: center;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        /* Section styling */
+        .section-container {
+            background-color: #ffffff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1.2s ease-out;
         }
 
         /* Page title */
         h1 {
             font-size: 2.5em;
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
-        /* Highlight section */
+        /* Highlight text */
         .highlight {
             color: #da4c1f;
             font-weight: bold;
         }
 
-        /* Introductory text */
+        /* Section titles */
+        .section-title {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            width: 80%;
+            height: 3px;
+            background-color: #da4c1f;
+            bottom: 0;
+            left: 10%;
+        }
+
+        /* Paragraph styling */
         p {
             font-size: 1.1em;
             line-height: 1.6;
-            margin: 20px 0;
+            margin: 15px 0;
+            text-align: justify;
         }
 
         /* Image styling */
@@ -123,22 +121,17 @@
             height: auto;
             border-radius: 8px;
             margin: 20px 0;
+            transition: transform 0.3s ease;
         }
 
-        /* Mission and team sections */
-        .section-title {
-            font-size: 1.8em;
-            margin-top: 40px;
-            color: #333;
-            border-bottom: 2px solid #da4c1f;
-            display: inline-block;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
+        .about-image:hover {
+            transform: scale(1.03);
         }
 
         /* List styling */
         ul {
             list-style-type: none;
+            padding: 0;
             margin: 20px 0;
         }
 
@@ -147,60 +140,63 @@
             line-height: 1.5;
             margin: 10px 0;
         }
+
+        /* Animation effects */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation Menu -->
-<div class="navbar" role="navigation" aria-label="Main Navigation">
-    <div class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</div>
-    <a href="index.html">Home</a>
-    <a href="About us.html" class="active" aria-current="page">about us</a>
-    <a href="Reservation.html">Reservations</a>
-    <a href="Product.html">Product</a>
-    <a href="contact Us.html">Contact</a>
-    <a href="Blog.html">Blog</a>
-</div>
+    <div class="navbar" role="navigation" aria-label="Main Navigation">
+        <a href="index.html">Home</a>
+        <a href="About us.html" class="active" aria-current="page">About Us</a>
+        <a href="Reservation.html">Reservations</a>
+        <a href="Product.html">Product</a>
+        <a href="contact Us.html">Contact</a>
+        <a href="Blog.html">Blog</a>
+    </div>
 
+    <!-- Main content container -->
+    <div class="container">
+        <h1>About <span class="highlight">Suhaila Local's Experience</span></h1>
 
-<div class="container">
-    <h1>About <span class="highlight">Suhaila Local's Experience</span></h1>
-    <p>Welcome to Aqaba, where history, culture, and natural beauty blend seamlessly! At Suhaila Local's Experience, we’re dedicated to offering unforgettable experiences for travelers looking to connect deeply with this stunning coastal city.</p>
+        <div class="section-container">
+            <p>Welcome to Aqaba, where history, culture, and natural beauty blend seamlessly! At Suhaila Local's Experience, we’re dedicated to offering unforgettable experiences for travelers looking to connect deeply with this stunning coastal city.</p>
+            <img src="https://example.com/aqaba.jpg" alt="A scenic view of Aqaba" class="about-image">
+        </div>
 
-    <img src="https://example.com/aqaba.jpg" alt="A scenic view of Aqaba" class="about-image">
+        <div class="section-container">
+            <h2 class="section-title">Our Mission</h2>
+            <p>Our mission is simple: to bridge the gap between visitors and Aqaba’s rich heritage by offering authentic, locally-inspired experiences. We believe in sustainable tourism that respects the environment and celebrates local traditions.</p>
+        </div>
 
-    <h2 class="section-title">Our Mission</h2>
-    <p>Our mission is simple: to bridge the gap between visitors and Aqaba’s rich heritage by offering authentic, locally-inspired experiences. We believe in sustainable tourism that respects the environment and celebrates local traditions.</p>
+        <div class="section-container">
+            <h2 class="section-title">What We Offer</h2>
+            <ul>
+                <li><strong>Cultural Tours:</strong> Explore the ancient history of Aqaba and immerse yourself in stories that have shaped the city.</li>
+                <li><strong>Cooking Experiences:</strong> Join us for a hands-on cooking class where you’ll learn traditional Jordanian recipes and enjoy a delicious meal.</li>
+                <li><strong>Marine Life Excursions:</strong> Discover Aqaba’s stunning marine biodiversity with our snorkeling and diving tours.</li>
+                <li><strong>Sunset Story Boat Tours:</strong> Sail the Red Sea at sunset, accompanied by local stories and a calming soundtrack.</li>
+            </ul>
+        </div>
 
-    <h2 class="section-title">What We Offer</h2>
-    <ul>
-        <li><strong>Cultural Tours:</strong> Explore the ancient history of Aqaba and immerse yourself in stories that have shaped the city.</li>
-        <li><strong>Cooking Experiences:</strong> Join us for a hands-on cooking class where you’ll learn traditional Jordanian recipes and enjoy a delicious meal.</li>
-        <li><strong>Marine Life Excursions:</strong> Discover Aqaba’s stunning marine biodiversity with our snorkeling and diving tours.</li>
-        <li><strong>Sunset Story Boat Tours:</strong> Sail the Red Sea at sunset, accompanied by local stories and a calming soundtrack.</li>
-    </ul>
+        <div class="section-container">
+            <h2 class="section-title">Meet Suhaila</h2>
+            <p>Suhaila, a local guide and culinary enthusiast, founded Suhaila Local's Experience to share her love for Aqaba and Jordanian culture. With years of experience in guiding tourists and a deep connection to her city, Suhaila crafts each experience to offer a unique, personal glimpse into Aqaba’s soul.</p>
+        </div>
 
-    <h2 class="section-title">Meet Suhaila</h2>
-    <p>Suhaila, a local guide and culinary enthusiast, founded Suhaila Local's Experience to share her love for Aqaba and Jordanian culture. With years of experience in guiding tourists and a deep connection to her city, Suhaila crafts each experience to offer a unique, personal glimpse into Aqaba’s soul.</p>
-
-    <h2 class="section-title">Join Us!</h2>
-    <p>Whether you're here for the food, the history, or the sea, we’re excited to welcome you. Join us in discovering Aqaba through the eyes of those who call it home!</p>
-</div>
-
+        <div class="section-container">
+            <h2 class="section-title">Join Us!</h2>
+            <p>Whether you're here for the food, the history, or the sea, we’re excited to welcome you. Join us in discovering Aqaba through the eyes of those who call it home!</p>
+        </div>
+    </div>
 </body>
-    <script>
-    // Get the current URL path
-    const currentPath = window.location.pathname.split("/").pop();
-
-    // Select all navigation links
-    const navLinks = document.querySelectorAll('.navbar a');
-
-    // Loop through links and set the active class based on the current path
-    navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
-            link.classList.add('active');
-        }
-    });
-</script>
-
 </html>
-
