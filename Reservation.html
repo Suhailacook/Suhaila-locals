@@ -3,51 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserve Your Local Experience in Aqaba | Cooking Class & walking Tours in aqaba city</title>
+    <title>Reserve Your Local Experience in Aqaba | Cooking Class & Walking Tours in Aqaba City</title>
     <link rel="stylesheet" href="reservation-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
+        /* General Styles */
         body, .navbar a, h2, p {
-    font-family: 'Roboto', sans-serif;
-}
-body {
-    margin: 0;
-    padding: 0;
-}
-
-
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
         html {
             scroll-behavior: smooth;
         }
 
-       
-
         /* Navbar Styles */
         .navbar {
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 1000;
+            width: 100%;
             display: flex;
             justify-content: center;
             background-color: #5a67f9;
             padding: 5px 0;
+            border-radius: 5px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            transition: top 0.3s; /* Smooth transition for hiding/showing */
-            opacity: 100%;
-            
+            z-index: 1000;
+            transition: top 0.3s ease;
         }
-        .navbar a.active {
-    background-color: #dbdcd9; /* Active background color */
-    color: #333; /* Text color for active link */
-    font-weight: bold; /* Optional: make it bold */
-    border-bottom: 2px solid #fff; /* Optional: underline effect */
-}
-
 
         .navbar a {
-            color: gold;
+            color: rgb(218, 232, 20);
             text-decoration: none;
             padding: 14px 20px;
             margin: 0 10px;
@@ -56,14 +45,58 @@ body {
         }
 
         .navbar a:hover {
-            background-color: #ebecec;
+            background-color: #f5f9f6;
         }
 
+        .navbar a.active {
+            background-color: #dbdcd9;
+            color: #333;
+            font-weight: bold;
+            border-bottom: 2px solid #fff;
+        }
+
+        /* Hamburger and Mobile Menu */
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #fff;
+            padding: 10px;
+            margin-right: 15px;
+        }
+
+        .navbar.active a {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .navbar a {
+                display: none;
+                text-align: center;
+                width: 100%;
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .navbar.active a {
+                display: block;
+            }
+        }
+
+        /* Page Styles */
         h2 {
             text-align: center;
-            margin-top: 0px;       
             color: #984;
-            padding: 0 10px; /* Add padding for centered spacing */
+            margin-top: 0px;
+            padding: 0 10px;
         }
 
         .reservation-container {
@@ -73,15 +106,15 @@ body {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            gap: 10px; /* Space between items */
+            gap: 10px;
         }
 
         .reservation-item {
-            flex: 1 1 calc(33% - 40px); /* Updated to fit items better in container */
+            flex: 1 1 calc(33% - 40px);
             border: 1px solid #ddd;
             border-radius: 5px;
             background-color: #fff;
-            padding: 15px; /* Increased padding */
+            padding: 15px;
             margin-bottom: 20px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
@@ -107,26 +140,6 @@ body {
             color: #5a67f9;
         }
 
-        .reservation-item p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        .reservation-item .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .reservation-item .button:hover {
-            background-color: #0056b3;
-        }
-
         footer {
             background: #cbe2fb;
             color: #728605;
@@ -143,76 +156,22 @@ body {
         footer a:hover {
             text-decoration: underline;
         }
-
-        form {
-            max-width: 800px;
-            margin: 40px auto; /* Center form with margin */
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            display: none;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        /* Loading Spinner Styles */
-        #loading-spinner {
-            display: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .reservation-item {
-                flex: 1 1 100%;
-                margin-bottom: 20px;
-            }
-
-            h2 {
-                font-size: 1.8em;
-                padding: 0 15px; /* Add padding for mobile */
-            }
-
-            form {
-                padding: 20px;
-            }
-        }
     </style>
 </head>
 
 <body>
 
 <!-- Navigation Menu -->
-<div class="navbar">
+<div class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</div>
     <a href="index.html">Home</a>
     <a href="about us.html">About Us</a>
-    <a href="Reservation.html" class="active">Reservations</a>
+    <a href="Reservation.html" class="active" aria-current="page">Reservations</a>
     <a href="Product.html">Product</a>
-    <a href="contact us.html">Contact</a>
-    <a href="Blog.html">BLog</a>
-   
+    <a href="contact Us.html">Contact</a>
+    <a href="Blog.html">Blog</a>
 </div>
+
 <br>
 
     <h2>Choose Your Cooking Experience</h2>
