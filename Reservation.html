@@ -23,7 +23,7 @@ body {
 
        
 
-       /* Navbar Styles */
+    /* Navbar Styles */
 .navbar {
     position: fixed;
     top: 0;
@@ -37,7 +37,7 @@ body {
     z-index: 1000;
     transition: top 0.3s ease;
 }
-      .navbar a.active {
+     .navbar a.active {
     background-color: #dbdcd9;
     color: #333;
     font-weight: bold;
@@ -45,7 +45,7 @@ body {
 }
 
 
-        .navbar a {
+       .navbar a {
     color: rgb(218, 232, 20);
     text-decoration: none;
     padding: 14px 20px;
@@ -54,9 +54,10 @@ body {
     transition: background-color 0.3s;
 }
 
-       .navbar a:hover {
+  .navbar a:hover {
     background-color: #f5f9f6;
 }
+
 
         h2 {
             text-align: center;
@@ -181,12 +182,36 @@ body {
             z-index: 1000;
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .reservation-item {
-                flex: 1 1 100%;
-                margin-bottom: 20px;
-            }
+        /* Mobile Responsive Menu */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .navbar a {
+        display: none;
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    .hamburger {
+        display: block;
+    }
+    .navbar.active a {
+        display: block;
+    }
+}
+
+/* Desktop Menu */
+@media (min-width: 601px) {
+    .navbar a {
+        display: inline-block;
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
 
             h2 {
                 font-size: 1.8em;
@@ -303,6 +328,10 @@ body {
     
 
     <script>
+        document.getElementById('hamburger').onclick = function() {
+    document.querySelector('.navbar').classList.toggle('active');
+};
+
         
         // Function to get query parameters from URL
     function getQueryParams() {
