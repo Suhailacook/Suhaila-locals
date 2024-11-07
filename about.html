@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +31,8 @@
             padding: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             width: 100%;
+            border-radius: 5px;
+            transition: top 0.3s ease;
         }
 
         .navbar a {
@@ -51,7 +52,24 @@
         /* Media Query for Mobile */
         @media (max-width: 600px) {
             .navbar {
-                flex-wrap: wrap;
+                flex-direction: column;
+            }
+            .navbar a {
+                display: none;
+                text-align: center;
+                width: 100%;
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+            .navbar.active a {
+                display: block;
+            }
+        }
+
+        /* Desktop Menu */
+        @media (min-width: 601px) {
+            .navbar a {
+                display: inline-block;
             }
         }
 
