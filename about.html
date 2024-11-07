@@ -3,200 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Suhaila Local's Experience</title>
+    <title>Suhaila Local's Experience </title>
     <style>
-        /* Reset some default styling */
+        /* Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        /* Body styling */
+        
         body {
             font-family: Arial, sans-serif;
-            background-color: #f7f7f9;
-            color: #444;
-            overflow-x: hidden;
-        }
-
-        /* Navbar Styles */
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
             display: flex;
             justify-content: center;
-            background-color: #4a63e4;
-            padding: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            width: 100%;
-        }
-
-        .navbar a {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 12px 18px;
-            margin: 0 10px;
-            transition: background-color 0.3s;
-            border-radius: 5px;
-        }
-
-        .navbar a:hover, .navbar a.active {
-            flex-direction: column;
-    background-color: #5a67f9;
-    width: 100%;
-        }
-
-        /* Media Query for Mobile */
-        @media (max-width: 600px) {
-            .navbar {
-                flex-wrap: wrap;
-            }
-        }
-
-        /* Main container styling */
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
             padding: 20px;
-            text-align: center;
-            animation: fadeIn 1.5s ease-out;
+            background-color: #f3f4f6;
         }
-
-        /* Section styling */
-        .section-container {
-            background-color: #ffffff;
-            margin-bottom: 20px;
-            padding: 20px;
+        
+        .flyer {
+            width: 800px;
+            background-color: white;
             border-radius: 8px;
+            overflow: hidden;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            animation: slideIn 1.2s ease-out;
         }
 
-        /* Page title */
-        h1 {
+        /* Header Section */
+        .header {
+            position: relative;
+            color: white;
+            text-align: left;
+            padding: 40px;
+            background-image: url('https://via.placeholder.com/800x400');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .header h1 {
             font-size: 2.5em;
-            color: #333;
+            line-height: 1.2;
+        }
+
+        /* Blue Section */
+        .join-section {
+            background-color: #297fb8;
+            color: white;
+            text-align: left;
+            padding: 20px 40px;
+        }
+
+        .join-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .join-section p {
+            font-size: 1em;
+        }
+
+        /* Main Content Section */
+        .content {
+            display: flex;
+            padding: 40px;
+            gap: 20px;
+            background-color: #f1f8fd;
+        }
+
+        .content-left, .content-right {
+            flex: 1;
+        }
+
+        .content-left h3, .content-right h3 {
+            font-size: 1.4em;
+            color: #297fb8;
             margin-bottom: 20px;
         }
 
-        /* Highlight text */
-        .highlight {
-            color: #da4c1f;
-            font-weight: bold;
-        }
-
-        /* Section titles */
-        .section-title {
-            font-size: 1.8em;
+        .content-left p, .content-right p {
             color: #333;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-            text-align: center;
-        }
-
-        .section-title::after {
-            content: "";
-            position: absolute;
-            width: 80%;
-            height: 3px;
-            background-color: #da4c1f;
-            bottom: 0;
-            left: 10%;
-        }
-
-        /* Paragraph styling */
-        p {
-            font-size: 1.1em;
+            margin-bottom: 20px;
             line-height: 1.6;
-            margin: 15px 0;
-            text-align: justify;
         }
 
-        /* Image styling */
-        .about-image {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin: 20px 0;
-            transition: transform 0.3s ease;
+        .service-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 20px;
         }
 
-        .about-image:hover {
-            transform: scale(1.03);
+        .service-item img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
         }
 
-        /* List styling */
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 20px 0;
+        /* Footer Section */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #e6eef5;
+            color: #297fb8;
         }
 
-        ul li {
-            font-size: 1em;
-            line-height: 1.5;
-            margin: 10px 0;
+        .footer-contact {
+            font-size: 0.9em;
         }
 
-        /* Animation effects */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        .footer-contact span {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Menu -->
-    <div class="navbar" role="navigation" aria-label="Main Navigation">
-        <a href="index.html">Home</a>
-        <a href="About us.html" class="active" aria-current="page">About Us</a>
-        <a href="Reservation.html">Reservations</a>
-        <a href="Product.html">Product</a>
-        <a href="contact Us.html">Contact</a>
-        <a href="Blog.html">Blog</a>
-    </div>
-
-    <!-- Main content container -->
-    <div class="container">
-        <h1>About <span class="highlight">Suhaila Local's Experience</span></h1>
-
-        <div class="section-container">
-            <p>Welcome to Aqaba, where history, culture, and natural beauty blend seamlessly! At Suhaila Local's Experience, we’re dedicated to offering unforgettable experiences for travelers looking to connect deeply with this stunning coastal city.</p>
-            <img src="https://example.com/aqaba.jpg" alt="A scenic view of Aqaba" class="about-image">
+    <div class="flyer">
+        <!-- Header Section with Image Background -->
+        <div class="header">
+            <h1>Experience Aqaba Like Never Before with Suhaila</h1>
         </div>
 
-        <div class="section-container">
-            <h2 class="section-title">Our Mission</h2>
-            <p>Our mission is simple: to bridge the gap between visitors and Aqaba’s rich heritage by offering authentic, locally-inspired experiences. We believe in sustainable tourism that respects the environment and celebrates local traditions.</p>
+        <!-- Join Section -->
+        <div class="join-section">
+            <h2>Come and join us.</h2>
+            <p>Join us in Aqaba for an immersive journey into Jordanian culture, food, and traditions.</p>
         </div>
 
-        <div class="section-container">
-            <h2 class="section-title">What We Offer</h2>
-            <ul>
-                <li><strong>Cultural Tours:</strong> Explore the ancient history of Aqaba and immerse yourself in stories that have shaped the city.</li>
-                <li><strong>Cooking Experiences:</strong> Join us for a hands-on cooking class where you’ll learn traditional Jordanian recipes and enjoy a delicious meal.</li>
-                <li><strong>Marine Life Excursions:</strong> Discover Aqaba’s stunning marine biodiversity with our snorkeling and diving tours.</li>
-                <li><strong>Sunset Story Boat Tours:</strong> Sail the Red Sea at sunset, accompanied by local stories and a calming soundtrack.</li>
-            </ul>
+        <!-- Main Content Section -->
+        <div class="content">
+            <!-- Left Column (Mission, Vision, Company) -->
+            <div class="content-left">
+                <h3>OUR MISSION</h3>
+                <p>Our mission is to bridge the gap between visitors and Aqaba’s rich heritage by offering authentic, locally-inspired experiences.</p>
+                <h3>OUR VISION</h3>
+                <p>We believe in sustainable tourism that respects the environment and celebrates local traditions.</p>
+                <h3>OUR COMPANY</h3>
+                <p>Founded by Suhaila, a passionate local guide, we aim to create experiences that connect travelers with the heart and soul of Aqaba.</p>
+            </div>
+
+            <!-- Right Column (Services) -->
+            <div class="content-right">
+                <h3>OUR SERVICE</h3>
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/24" alt="Icon">
+                    <div>
+                        <h4>Cultural Tours</h4>
+                        <p>Explore the ancient history of Aqaba with expert guides.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/24" alt="Icon">
+                    <div>
+                        <h4>Cooking Experiences</h4>
+                        <p>Learn traditional Jordanian recipes in a hands-on class.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/24" alt="Icon">
+                    <div>
+                        <h4>Sunset Boat Tours</h4>
+                        <p>Relax on a scenic boat tour at sunset with local stories.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/24" alt="Icon">
+                    <div>
+                        <h4>Snorkeling & Marine Tours</h4>
+                        <p>Discover Aqaba’s vibrant marine life.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="section-container">
-            <h2 class="section-title">Meet Suhaila</h2>
-            <p>Suhaila, a local guide and culinary enthusiast, founded Suhaila Local's Experience to share her love for Aqaba and Jordanian culture. With years of experience in guiding tourists and a deep connection to her city, Suhaila crafts each experience to offer a unique, personal glimpse into Aqaba’s soul.</p>
-        </div>
-
-        <div class="section-container">
-            <h2 class="section-title">Join Us!</h2>
-            <p>Whether you're here for the food, the history, or the sea, we’re excited to welcome you. Join us in discovering Aqaba through the eyes of those who call it home!</p>
+        <!-- Footer Section -->
+        <div class="footer">
+            <div class="footer-contact">
+                <p>Our Contact:</p>
+                <span>E: contact@suhailalocalexperience.com</span>
+                <span>W: www.suhailalocalexperience.com</span>
+            </div>
+            <div>&copy; Suhaila Local's Experience</div>
         </div>
     </div>
 </body>
