@@ -12,19 +12,13 @@
             box-sizing: border-box;
         }
 
-        /* General styling */
         body {
             font-family: Arial, sans-serif;
             background-color: #f8f8f8;
             color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
         }
 
-        /* Navbar styling */
+        /* Navbar Styles */
         .navbar {
             position: sticky;
             top: 0;
@@ -32,11 +26,10 @@
             display: flex;
             justify-content: center;
             background-color: #5a67f9;
-            padding: 5px 0;
-            border-radius: 5px;
+            padding: 10px 0;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             width: 100%;
-            transition: top 0.3s ease;
+            border-radius: 5px;
         }
 
         .navbar a {
@@ -53,39 +46,14 @@
         }
 
         .navbar a.active {
-            background-color: #dbdcd9;
-            color: #333;
+            color: #e5f87c;
             font-weight: bold;
-            border-bottom: 2px solid #fff;
-        }
+	        }
 
-        .hamburger {
-            cursor: pointer;
-            font-size: 24px;
-            display: none;
-        }
-
-        /* Responsive navbar for mobile */
-        @media (max-width: 600px) {
-            .navbar a {
-                display: none;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
-            .navbar.active a {
-                display: block;
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        /* Contact container styling */
+        /* Form Container styling */
         .contact-container {
             max-width: 600px;
-            width: 100%;
+            margin: 50px auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
@@ -93,7 +61,6 @@
             text-align: center;
         }
 
-        /* Page title styling */
         h1 {
             font-size: 2em;
             color: #333;
@@ -105,7 +72,6 @@
             font-weight: bold;
         }
 
-        /* Form styling */
         form {
             margin-top: 20px;
         }
@@ -131,7 +97,6 @@
             height: 100px;
         }
 
-        /* Button styling */
         button {
             margin-top: 15px;
             padding: 12px;
@@ -148,22 +113,43 @@
         button:hover {
             background-color: #bf3d1a;
         }
+
+        /* WhatsApp Button styling */
+        .whatsapp-container {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            background-color: #25d366;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1ebe57;
+        }
     </style>
 </head>
 <body>
-
     <!-- Navigation Menu -->
     <div class="navbar" role="navigation" aria-label="Main Navigation">
-        <div class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</div>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="Reservation.html">Reservations</a>
         <a href="Product.html">Product</a>
-        <a href="contact.html" class="active" aria-current="page">Contact</a>
+        <a href="contact Us.html" class="active" aria-current="page">Contact</a>
         <a href="Blog.html">Blog</a>
     </div>
 
-    <!-- Contact Form Section -->
+    <!-- Contact Form Container -->
     <div class="contact-container">
         <h1>Contact <span class="highlight">Us</span></h1>
         <p>We're here to help! Reach out with any questions or inquiries about our experiences in Aqaba.</p>
@@ -185,20 +171,20 @@
         </form>
     </div>
 
-    <script>
-        // Toggle mobile navbar
-        document.getElementById('hamburger').addEventListener('click', function() {
-            document.querySelector('.navbar').classList.toggle('active');
-        });
-
-        // Highlight the active page link
-        const currentPath = window.location.pathname.split("/").pop();
-        document.querySelectorAll('.navbar a').forEach(link => {
-            if (link.getAttribute('href') === currentPath) {
-                link.classList.add('active');
-            }
-        });
-    </script>
-
+    <!-- WhatsApp Button Container -->
+    <div class="whatsapp-container">
+        <p>or</p>
+        <a href="https://wa.me/?text=Check+our+location:+https://goo.gl/maps/YourLocationLink" class="whatsapp-button" target="_blank">Contact Us via WhatsApp</a>
+    </div>
 </body>
+<script>
+    // Script to toggle the active state on the navbar based on current page
+    const currentPath = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll('.navbar a');
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active');
+        }
+    });
+</script>
 </html>
