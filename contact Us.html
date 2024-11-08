@@ -5,77 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Suhaila Local's Experience</title>
     <style>
-        /* Navbar Styles */
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    background-color: #5a67f9;
-    padding: 5px 0;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    transition: top 0.3s ease;  /* Smooth hide/show effect */
-}
-
-.navbar a {
-    color: rgb(218, 232, 20);
-    text-decoration: none;
-    padding: 14px 20px;
-    margin: 0 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.navbar a:hover {
-    background-color: #f5f9f6;
-}
-
-.navbar a.active {
-    background-color: #dbdcd9; /* Active background color */
-    color: #333; /* Text color for active link */
-    font-weight: bold; /* Optional: make it bold */
-    border-bottom: 2px solid #fff; /* Optional: underline effect */
-}
-
-/* Show the hamburger icon */
-.hamburger {
-    cursor: pointer;
-    font-size: 24px;
-    display: none; /* Initially hidden for larger screens */
-}
-
-/* Media Query for Mobile */
-@media (max-width: 600px) {
-    .navbar a {
-        display: none; /* Initially hide the links */
-    }
-
-    .hamburger {
-        display: block; /* Show hamburger icon */
-    }
-
-    .navbar.active a {
-        display: block; /* Show links when navbar is active */
-        width: 100%; /* Full width for links */
-        text-align: center; /* Center the links */
-    }
-}
-
-/* Media Query for Desktop */
-@media (min-width: 601px) {
-    .navbar a {
-        display: inline-block; /* Show links on desktop */
-    }
-
-    .hamburger {
-        display: none; /* Hide hamburger on larger screens */
-    }
-}
-
         /* Reset styling */
         * {
             margin: 0;
@@ -83,6 +12,7 @@
             box-sizing: border-box;
         }
 
+        /* General styling */
         body {
             font-family: Arial, sans-serif;
             background-color: #f8f8f8;
@@ -90,10 +20,69 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            margin: 0;
         }
 
-        /* Container styling */
+        /* Navbar styling */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            background-color: #5a67f9;
+            padding: 5px 0;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            transition: top 0.3s ease;
+        }
+
+        .navbar a {
+            color: rgb(218, 232, 20);
+            text-decoration: none;
+            padding: 14px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #f5f9f6;
+        }
+
+        .navbar a.active {
+            background-color: #dbdcd9;
+            color: #333;
+            font-weight: bold;
+            border-bottom: 2px solid #fff;
+        }
+
+        .hamburger {
+            cursor: pointer;
+            font-size: 24px;
+            display: none;
+        }
+
+        /* Responsive navbar for mobile */
+        @media (max-width: 600px) {
+            .navbar a {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .navbar.active a {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Contact container styling */
         .contact-container {
             max-width: 600px;
             width: 100%;
@@ -104,7 +93,7 @@
             text-align: center;
         }
 
-        /* Page title */
+        /* Page title styling */
         h1 {
             font-size: 2em;
             color: #333;
@@ -162,53 +151,54 @@
     </style>
 </head>
 <body>
+
     <!-- Navigation Menu -->
-<div class="navbar" role="navigation" aria-label="Main Navigation">
-    <div class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</div>
-    <a href="index.html" class="active" aria-current="page">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="Reservation.html">Reservations</a>
-    <a href="Product.html">Product</a>
-    <a href="contact Us.html">Contact</a>
-    <a href="Blog.html">Blog</a>
-</div>
+    <div class="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="Reservation.html">Reservations</a>
+        <a href="Product.html">Product</a>
+        <a href="contact.html" class="active" aria-current="page">Contact</a>
+        <a href="Blog.html">Blog</a>
+    </div>
 
+    <!-- Contact Form Section -->
+    <div class="contact-container">
+        <h1>Contact <span class="highlight">Us</span></h1>
+        <p>We're here to help! Reach out with any questions or inquiries about our experiences in Aqaba.</p>
+        
+        <form action="submit_contact_form" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-<div class="contact-container">
-    <h1>Contact <span class="highlight">Us</span></h1>
-    <p>We're here to help! Reach out with any questions or inquiries about our experiences in Aqaba.</p>
-    
-    <form action="submit_contact_form" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
 
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
 
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
 
-        <button type="submit">Send Message</button>
-    </form>
-</div>
+    <script>
+        // Toggle mobile navbar
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.querySelector('.navbar').classList.toggle('active');
+        });
+
+        // Highlight the active page link
+        const currentPath = window.location.pathname.split("/").pop();
+        document.querySelectorAll('.navbar a').forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+            }
+        });
+    </script>
 
 </body>
-    <script>
-    // Get the current URL path
-    const currentPath = window.location.pathname.split("/").pop();
-
-    // Select all navigation links
-    const navLinks = document.querySelectorAll('.navbar a');
-
-    // Loop through links and set the active class based on the current path
-    navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
-            link.classList.add('active');
-        }
-    });
-</script>
-
 </html>
