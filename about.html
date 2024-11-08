@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Suhaila Local's Experience</title>
+    <title>About Us - Suhaila Local's Experience</title>
     <style>
-        /* Reset styling */
+        /* Reset some default styling */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Body styling */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
+            background-color: #f7f7f9;
+            color: #444;
+            overflow-x: hidden;
         }
 
         /* Navbar Styles */
@@ -25,116 +27,147 @@
             z-index: 1000;
             display: flex;
             justify-content: center;
-            background-color: #5a67f9;
-            padding: 10px 0;
+            background-color: #4a63e4;
+            padding: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             width: 100%;
             border-radius: 5px;
+            transition: top 0.3s ease;
         }
 
         .navbar a {
-            color: rgb(218, 232, 20);
+            color: #ffffff;
             text-decoration: none;
-            padding: 14px 20px;
+            padding: 12px 18px;
             margin: 0 10px;
+            transition: background-color 0.3s;
             border-radius: 5px;
-            transition: background-color 0.3s;
         }
 
-        .navbar a:hover {
-            background-color: #f5f9f6;
-        }
-
-        .navbar a.active {
+        .navbar a:hover, .navbar a.active {
             color: #e5f87c;
-            font-weight: bold;
-	        }
+        }
 
-        /* Form Container styling */
-        .contact-container {
-            max-width: 600px;
-            margin: 50px auto;
+        /* Media Query for Mobile */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .navbar a {
+                display: none;
+                text-align: center;
+                width: 100%;
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+            .navbar.active a {
+                display: block;
+            }
+        }
+
+        /* Desktop Menu */
+        @media (min-width: 601px) {
+            .navbar a {
+                display: inline-block;
+            }
+        }
+
+        /* Main container styling */
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
+            animation: fadeIn 1.5s ease-out;
         }
 
+        /* Section styling */
+        .section-container {
+            background-color: #ffffff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1.2s ease-out;
+        }
+
+        /* Page title */
         h1 {
-            font-size: 2em;
+            font-size: 2.5em;
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
+        /* Highlight text */
         .highlight {
-            color: #da4c1f;
+            color: #0c0c0c;
             font-weight: bold;
         }
 
-        form {
-            margin-top: 20px;
-        }
-
-        label {
-            display: block;
-            font-size: 1em;
-            margin-top: 10px;
-            color: #555;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1em;
-        }
-
-        textarea {
-            resize: vertical;
-            height: 100px;
-        }
-
-        button {
-            margin-top: 15px;
-            padding: 12px;
-            width: 100%;
-            border: none;
-            border-radius: 4px;
-            background-color: #da4c1f;
-            color: #fff;
-            font-size: 1.1em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #bf3d1a;
-        }
-
-        /* WhatsApp Button styling */
-        .whatsapp-container {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 1em;
+        /* Section titles */
+        .section-title {
+            font-size: 1.8em;
             color: #333;
-        }
-
-        .whatsapp-button {
+            margin-bottom: 15px;
+            position: relative;
             display: inline-block;
-            background-color: #25d366;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 1em;
-            transition: background-color 0.3s;
+            padding-bottom: 10px;
+            text-align: center;
         }
 
-        .whatsapp-button:hover {
-            background-color: #1ebe57;
+        .section-title::after {
+            content: "";
+            position: absolute;
+            width: 80%;
+            height: 3px;
+            background-color: #121111;
+            bottom: 0;
+            left: 10%;
+        }
+
+        /* Paragraph styling */
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 15px 0;
+            text-align: justify;
+        }
+
+        /* Image styling */
+        .about-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .about-image:hover {
+            transform: scale(1.03);
+        }
+
+        /* List styling */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        ul li {
+            font-size: 1em;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+
+        /* Animation effects */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
     </style>
 </head>
@@ -142,49 +175,45 @@
     <!-- Navigation Menu -->
     <div class="navbar" role="navigation" aria-label="Main Navigation">
         <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
+        <a href="About us.html" class="active" aria-current="page">About Us</a>
         <a href="Reservation.html">Reservations</a>
         <a href="Product.html">Product</a>
-        <a href="contact Us.html" class="active" aria-current="page">Contact</a>
+        <a href="contact Us.html">Contact</a>
         <a href="Blog.html">Blog</a>
     </div>
 
-    <!-- Contact Form Container -->
-    <div class="contact-container">
-        <h1>Contact <span class="highlight">Us</span></h1>
-        <p>We're here to help! Reach out with any questions or inquiries about our experiences in Aqaba.</p>
-        
-        <form action="submit_contact_form" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+    <!-- Main content container -->
+    <div class="container">
+        <h1>About <span class="highlight">Suhaila Local's Experience</span></h1>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        <div class="section-container">
+            <p>Welcome to Aqaba, where history, culture, and natural beauty blend seamlessly! At Suhaila Local's Experience, we’re dedicated to offering unforgettable experiences for travelers looking to connect deeply with this stunning coastal city.</p>
+            <img src="Aqaba view.jpg" alt="A scenic view of Aqaba" class="about-image">
+        </div>
 
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
+        <div class="section-container">
+            <h2 class="section-title">Our Mission</h2>
+            <p>Our mission is simple: to bridge the gap between visitors and Aqaba’s rich heritage by offering authentic, locally-inspired experiences. We believe in sustainable tourism that respects the environment and celebrates local traditions.</p>
+        </div>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
+        <div class="section-container">
+            <h2 class="section-title">What We Offer</h2>
+            <ul>
+                <li><strong>Cultural Tours:</strong> Explore the ancient history of Aqaba and immerse yourself in stories that have shaped the city.</li>
+                <li><strong>Cooking Experiences:</strong> Join us for a hands-on cooking class where you’ll learn traditional Jordanian recipes and enjoy a delicious meal.</li>
+                <li><strong>Sunset Story Boat Tours:</strong> Sail the Red Sea at sunset, accompanied by local stories and a calming soundtrack.</li>
+            </ul>
+        </div>
 
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
+        <div class="section-container">
+            <h2 class="section-title">Meet Suhaila</h2>
+            <p>Suhaila, a local guide and culinary enthusiast, founded Suhaila Local's Experience to share her love for Aqaba and Jordanian culture. With years of experience in guiding tourists and a deep connection to her city, Suhaila crafts each experience to offer a unique, personal glimpse into Aqaba’s soul.</p>
+        </div>
 
-    <!-- WhatsApp Button Container -->
-    <div class="whatsapp-container">
-        <p>or</p>
-        <a href="https://wa.me/?text=Check+our+location:+https://goo.gl/maps/YourLocationLink" class="whatsapp-button" target="_blank">Contact Us via WhatsApp</a>
+        <div class="section-container">
+            <h2 class="section-title">Join Us!</h2>
+            <p>Whether you're here for the food, the history, or the sea, we’re excited to welcome you. Join us in discovering Aqaba through the eyes of those who call it home!</p>
+        </div>
     </div>
 </body>
-<script>
-    // Script to toggle the active state on the navbar based on current page
-    const currentPath = window.location.pathname.split("/").pop();
-    const navLinks = document.querySelectorAll('.navbar a');
-    navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
-            link.classList.add('active');
-        }
-    });
-</script>
 </html>
