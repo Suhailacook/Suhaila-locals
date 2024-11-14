@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://suhaila-locals.space/sitemap.xml
