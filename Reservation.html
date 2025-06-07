@@ -3,244 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reserve Your Spot | Aqaba Cooking Class & Walking Tour</title>
+    <title>Reserve Your Spot | Aqaba Cooking Class & Walking Tour</title>
     <meta name="description" content="Reserve your spot for Suhaila’s popular Aqaba walking tour and cooking class. Secure your booking today for a hands-on Jordanian experience.">
-    <link rel="stylesheet" href="reservation-styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body, .navbar a, h2, p {
-    font-family: 'Roboto', sans-serif;
-}
-body {
-    margin: 0;
-    padding: 0;
-}
-
-
-        html {
-            scroll-behavior: smooth;
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+            color: #22223b;
+            margin: 0;
+            padding: 0;
         }
-
-       
-
-    /* Navbar Styles */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: #5a67f9;
-    padding: 5px 0;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: top 0.3s ease;
-}
-     .navbar a.active {
-    color: #e5f87c;;
-    font-weight: bold;
-}
-
-
-       .navbar a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    padding: 14px 20px;
-    margin: 0 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-  .navbar a:hover {
-    background-color: #f5f9f6;
-}
-
-
+        h1, h2, h3 {
+            font-family: 'Inter', Arial, sans-serif;
+            font-weight: 700;
+            color: #22223b;
+            letter-spacing: 0.01em;
+        }
         h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5em;
             text-align: center;
-            margin-top: 0px;       
-            color: #984;
-            padding: 0 10px; /* Add padding for centered spacing */
         }
-
-        .reservation-container {
+        /* Modern Navbar */
+        .navbar {
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            gap: 10px; /* Space between items */
-        }
-
-        .reservation-item {
-            flex: 1 1 calc(33% - 40px); /* Updated to fit items better in container */
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #fff;
-            padding: 15px; /* Increased padding */
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .reservation-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .reservation-item img {
+            align-items: center;
+            justify-content: flex-end;
+            background: linear-gradient(90deg, #3a86ff 0%, #4361ee 100%);
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 15px;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(58,134,255,0.08);
         }
-
-        .reservation-item h3 {
-            font-size: 1.6em;
-            margin-bottom: 15px;
-            color: #5a67f9;
+        .navbar .hamburger {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: #fff;
+            margin-left: 16px;
+            cursor: pointer;
         }
-
-        .reservation-item p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-            color: #555;
+        .navbar-links {
+            display: flex;
+            gap: 10px;
+            margin-right: 20px;
         }
-
-        .reservation-item .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007BFF;
+        .navbar a {
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: background 0.2s, color 0.2s;
         }
-
-        .reservation-item .button:hover {
-            background-color: #0056b3;
+        .navbar a.active,
+        .navbar a:focus {
+            background: #ffd60a;
+            color: #22223b;
         }
-
-        footer {
-            background: #cbe2fb;
-            color: #728605;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
+        .navbar a:hover {
+            background: #bde0fe;
+            color: #3a86ff;
         }
-
-        footer a {
-            color: #007BFF;
-            text-decoration: none;
+        /* Mobile Navbar */
+        @media (max-width: 800px) {
+            .navbar {
+                justify-content: space-between;
+                padding: 10px 16px;
+            }
+            .navbar .hamburger {
+                display: block;
+            }
+            .navbar-links {
+                position: fixed;
+                top: 0;
+                right: -100vw;
+                height: 100vh;
+                width: 70vw;
+                max-width: 320px;
+                background: linear-gradient(180deg, #3a86ff 0%, #4361ee 100%);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 70px 24px 24px 24px;
+                gap: 16px;
+                transition: right 0.3s cubic-bezier(.4,0,.2,1);
+                box-shadow: -2px 0 16px rgba(58,134,255,0.12);
+                z-index: 2000;
+            }
+            .navbar-links.open {
+                right: 0;
+            }
+            .navbar a {
+                width: 100%;
+                font-size: 1.1rem;
+                padding: 16px 0;
+                border-radius: 0;
+                text-align: left;
+            }
         }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        form {
-            max-width: 800px;
-            margin: 40px auto; /* Center form with margin */
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        .menu-overlay {
             display: none;
         }
-
+        .menu-overlay.active {
+            display: block;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(34,34,59,0.18);
+            z-index: 1500;
+        }
+        /* Reservation Cards */
+        .reservation-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 110px auto 0 auto;
+            padding: 20px;
+            gap: 20px;
+        }
+        .reservation-item {
+            flex: 1 1 260px;
+            max-width: 320px;
+            border-radius: 14px;
+            background: #fff;
+            padding: 18px 14px 12px 14px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 12px rgba(67,97,238,0.07);
+            text-align: center;
+            transition: transform 0.18s, box-shadow 0.18s;
+        }
+        .reservation-item:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 24px rgba(67,97,238,0.13);
+        }
+        .reservation-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px #bde0fe;
+        }
+        .reservation-item h3 {
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            color: #3a86ff;
+        }
+        .reservation-item p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        .reservation-item .button {
+            display: inline-block;
+            padding: 10px 22px;
+            background-color: #3a86ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            box-shadow: 0 2px 8px #3a86ff22;
+            border: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .reservation-item .button:hover {
+            background-color: #ffd60a;
+            color: #22223b;
+        }
+        /* Booking Form */
+        #booking-form {
+            margin-top: 50px;
+            text-align: center;
+            color: #3a86ff;
+            font-size: 1.3em;
+        }
+        form {
+            max-width: 600px;
+            margin: 30px auto 40px auto;
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 14px;
+            box-shadow: 0 2px 10px rgba(67,97,238,0.10);
+            display: none;
+        }
         .form-group {
             margin-bottom: 20px;
+            text-align: left;
         }
-
         .form-group label {
             display: block;
             margin-bottom: 5px;
-            font-weight: bold;
+            font-weight: 600;
+            color: #3a86ff;
         }
-
         .form-group input,
-        .form-group select {
+        .form-group select,
+        .form-group textarea {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            border: 1px solid #bde0fe;
+            border-radius: 6px;
+            font-size: 1em;
+            font-family: 'Inter', Arial, sans-serif;
+            background: #f8fafc;
         }
-
+        .form-group textarea {
+            min-height: 60px;
+        }
+        button[type="submit"] {
+            background-color: #3a86ff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 28px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            box-shadow: 0 2px 8px #3a86ff22;
+        }
+        button[type="submit"]:hover {
+            background-color: #ffd60a;
+            color: #22223b;
+        }
         /* Loading Spinner Styles */
         #loading-spinner {
             display: none;
-            position: absolute;
+            position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 1000;
+            z-index: 2000;
         }
-
-        /* Mobile Responsive Menu */
-@media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-    }
-    .navbar a {
-        display: none;
-        text-align: center;
-        width: 100%;
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-    }
-    .hamburger {
-        display: block;
-    }
-    .navbar.active a {
-        display: block;
-    }
-}
-
-/* Desktop Menu */
-@media (min-width: 601px) {
-    .navbar a {
-        display: inline-block;
-    }
-
-    .hamburger {
-        display: none;
-    }
-}
-
-            h2 {
-                font-size: 1.8em;
-                padding: 0 15px; /* Add padding for mobile */
+        /* Footer */
+        footer {
+            background: linear-gradient(90deg, #bde0fe 0%, #a2d2ff 100%);
+            color: #22223b;
+            text-align: center;
+            padding: 20px 0 10px 0;
+            margin-top: 50px;
+            font-size: 1rem;
+        }
+        footer a {
+            color: #3a86ff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        /* Responsive */
+        @media (max-width: 700px) {
+            .reservation-container {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 90px;
+                padding: 10px;
             }
-
+            .reservation-item {
+                max-width: 98vw;
+            }
             form {
-                padding: 20px;
+                padding: 16px 4px;
             }
         }
     </style>
 </head>
-
 <body>
+    <!-- Mobile menu overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <!-- Navigation Menu -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+        <div class="navbar-links" id="navbarLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="Reservation.html" class="active" aria-current="page">Reservations</a>
+            <a href="Product.html">Product</a>
+            <a href="contact-Us.html">Contact</a>
+            <a href="Blog.html">Blog</a>
+        </div>
+    </nav>
 
-<!-- Navigation Menu -->
-<div class="navbar" role="navigation" aria-label="Main Navigation">
-    <div class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="Reservation.html" class="active" aria-current="page">Reservations</a>
-    <a href="Product.html">Product</a>
-    <a href="contact Us.html">Contact</a>
-    <a href="Blog.html">Blog</a>
-</div>
-
-<br>
-
-    <h2>Choose Your Cooking Experience</h2>
+    <h2 style="margin-top:100px;">Choose Your Cooking Experience</h2>
 
     <!-- Reservation Section -->
     <div class="reservation-container">
@@ -249,25 +305,23 @@ body {
             <img src="Experience1.jpg" alt="Authentic Cooking Class">
             <h3>Authentic Cooking Class</h3>
             <p>Join our family in the kitchen and learn to prepare traditional dishes with recipes passed down for generations.</p>
-            <P>45$</P>
+            <p><strong>45$</strong></p>
             <a href="javascript:void(0);" class="button" onclick="openForm('Authentic Cooking Class')">Book Now</a>
         </div>
-
         <!-- Experience 2 -->
         <div class="reservation-item">
             <img src="Experience2.jpg" alt="Food Taste Tour">
             <h3>Food Taste Tour</h3>
             <p>Explore the rich flavors of our region in a guided food tour, discovering local cuisine and culture.</p>
-            <P>20$</P>
+            <p><strong>20$</strong></p>
             <a href="javascript:void(0);" class="button" onclick="openForm('Food Taste Tour')">Book Now</a>
         </div>
-
         <!-- Experience 3 -->
         <div class="reservation-item">
             <img src="Experience3.jpg" alt="Dining Experience">
             <h3>Dining Experience</h3>
             <p>Enjoy a meal with our family, sharing stories, recipes, and delicious food in a warm, inviting atmosphere.</p>
-            <P>15$</P>
+            <p><strong>15$</strong></p>
             <a href="javascript:void(0);" class="button" onclick="openForm('Dining Experience')">Book Now</a>
         </div>
     </div>
@@ -278,8 +332,8 @@ body {
     </div>
 
     <!-- Booking Form Section -->
-    <h2 id="booking-form" style="margin-top: 50px;">select one of the experience to start the booking form</h2>
-    <form id="reservation-form" action="http://localhost:3000/send-email" method="POST">
+    <div id="booking-form">Select one of the experiences to start the booking form</div>
+    <form id="reservation-form" action="https://suhaila-locals.onrender.com/send-email" method="POST">
         <div class="form-group">
             <label for="experience">Experience:</label>
             <input type="text" id="experience" name="experience" required readonly>
@@ -325,15 +379,22 @@ body {
     <footer>
         <p>&copy; 2024 Suhaila Cooking Experience. All rights reserved.</p>
     </footer>
-    
 
     <script>
-        document.getElementById('hamburger').onclick = function() {
-    document.querySelector('.navbar').classList.toggle('active');
-};
+    // Mobile menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const navbarLinks = document.getElementById('navbarLinks');
+    const menuOverlay = document.getElementById('menuOverlay');
+    hamburger.addEventListener('click', function() {
+        navbarLinks.classList.toggle('open');
+        menuOverlay.classList.toggle('active');
+    });
+    menuOverlay.addEventListener('click', function() {
+        navbarLinks.classList.remove('open');
+        menuOverlay.classList.remove('active');
+    });
 
-        
-        // Function to get query parameters from URL
+    // Function to get query parameters from URL
     function getQueryParams() {
         const params = new URLSearchParams(window.location.search);
         return {
@@ -352,79 +413,61 @@ body {
         if (params.experience) {
             experienceInput.value = params.experience;
         }
-
         if (params.date) {
             dateInput.value = params.date;
         }
-        
         if (params.experience || params.date) {
-            reservationForm.style.display = 'block'; // Show form only if experience or date is present
-            reservationForm.scrollIntoView({ behavior: 'smooth' }); // Scroll to the form
-
+            reservationForm.style.display = 'block';
+            reservationForm.scrollIntoView({ behavior: 'smooth' });
         }
     }
 
     // Open the booking form and set the experience value
     function openForm(experience) {
-        document.getElementById('experience').value = experience; // Set experience input value
-        document.getElementById('reservation-form').style.display = 'block'; // Show the form
-        document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth' }); // Scroll to form
+        document.getElementById('experience').value = experience;
+        document.getElementById('reservation-form').style.display = 'block';
+        document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth' });
     }
 
     // Initialize form population
     populateForm();
-        
 
-        document.getElementById('reservation-form').onsubmit = function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            // Show loading spinner
-            document.getElementById('loading-spinner').style.display = 'block';
-
-            fetch('https://suhaila-locals.onrender.com/send-email', {
-                method: 'POST',
-                body: new FormData(this)
-            })
-            .then(response => {
-                // Hide the loading spinner after submission
-                document.getElementById('loading-spinner').style.display = 'none';
-
-                if (response.ok) {
-                    alert('Thank you for your reservation! We will contact you soon.');
-                    this.reset(); // Clear the form
-                    document.getElementById('reservation-form').style.display = 'none'; // Hide form after submission
-                } else {
-                    alert('There was a problem with your reservation. Please try again.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                document.getElementById('loading-spinner').style.display = 'none'; // Hide spinner if error occurs
+    document.getElementById('reservation-form').onsubmit = function(event) {
+        event.preventDefault();
+        document.getElementById('loading-spinner').style.display = 'block';
+        fetch('https://suhaila-locals.onrender.com/send-email', {
+            method: 'POST',
+            body: new FormData(this)
+        })
+        .then(response => {
+            document.getElementById('loading-spinner').style.display = 'none';
+            if (response.ok) {
+                alert('Thank you for your reservation! We will contact you soon.');
+                this.reset();
+                document.getElementById('reservation-form').style.display = 'none';
+            } else {
                 alert('There was a problem with your reservation. Please try again.');
-            });
-        };
-        
-        
-       // Variables for scroll behavior
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('loading-spinner').style.display = 'none';
+            alert('There was a problem with your reservation. Please try again.');
+        });
+    };
+
+    // Navbar hide on scroll down, show on scroll up
     let lastScrollTop = 0;
     const navbar = document.querySelector('.navbar');
-
     window.addEventListener('scroll', function() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
         if (scrollTop > lastScrollTop) {
-            // Scrolling down
-            navbar.style.top = '-60px'; // Adjust based on navbar height
+            navbar.style.top = '-60px';
         } else {
-            // Scrolling up
             navbar.style.top = '0';
         }
         lastScrollTop = scrollTop;
     });
-    
-    
-    
     </script>
 </body>
-
 </html>
