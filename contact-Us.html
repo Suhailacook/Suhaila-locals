@@ -5,187 +5,269 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Suhaila Local's Experience</title>
     <meta name="description" content="Contact Suhaila Local's Experience to learn more about Aqaba’s unique local experiences, including tours and cooking classes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset styling */
-        * {
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+            color: #22223b;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
+        h1, h2, h3 {
+            font-family: 'Inter', Arial, sans-serif;
+            font-weight: 700;
+            color: #22223b;
+            letter-spacing: 0.01em;
         }
-
-        /* Navbar Styles */
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5em;
+            text-align: center;
+            color: #3a86ff;
+        }
+        /* Modern Navbar */
         .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
             display: flex;
-            justify-content: center;
-            background-color: #5a67f9;
+            align-items: center;
+            justify-content: flex-end;
+            background: linear-gradient(90deg, #3a86ff 0%, #4361ee 100%);
             padding: 10px 0;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            border-radius: 5px;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(58,134,255,0.08);
         }
-
+        .navbar .hamburger {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: #fff;
+            margin-left: 16px;
+            cursor: pointer;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 10px;
+            margin-right: 20px;
+        }
         .navbar a {
-            color: rgb(255, 255, 255);
+            color: #fff;
             text-decoration: none;
-            padding: 14px 20px;
-            margin: 0 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.2s;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: background 0.2s, color 0.2s;
         }
-
-        .navbar a:hover,
+        .navbar a.active,
         .navbar a:focus {
-            background-color: #f5f9f6;
-            transform: scale(1.05);
+            background: #ffd60a;
+            color: #22223b;
         }
-
-        .navbar a.active {
-            color: #e5f87c;
-            font-weight: bold;
+        .navbar a:hover {
+            background: #bde0fe;
+            color: #3a86ff;
         }
-
-        /* Form Container styling */
+        /* Mobile Navbar */
+        @media (max-width: 800px) {
+            .navbar {
+                justify-content: space-between;
+                padding: 10px 16px;
+            }
+            .navbar .hamburger {
+                display: block;
+            }
+            .navbar-links {
+                position: fixed;
+                top: 0;
+                right: -100vw;
+                height: 100vh;
+                width: 70vw;
+                max-width: 320px;
+                background: linear-gradient(180deg, #3a86ff 0%, #4361ee 100%);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 70px 24px 24px 24px;
+                gap: 16px;
+                transition: right 0.3s cubic-bezier(.4,0,.2,1);
+                box-shadow: -2px 0 16px rgba(58,134,255,0.12);
+                z-index: 2000;
+            }
+            .navbar-links.open {
+                right: 0;
+            }
+            .navbar a {
+                width: 100%;
+                font-size: 1.1rem;
+                padding: 16px 0;
+                border-radius: 0;
+                text-align: left;
+            }
+        }
+        .menu-overlay {
+            display: none;
+        }
+        .menu-overlay.active {
+            display: block;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(34,34,59,0.18);
+            z-index: 1500;
+        }
+        /* Contact Form Container */
         .contact-container {
             max-width: 600px;
-            margin: 50px auto;
-            padding: 30px;
+            margin: 110px auto 40px auto;
+            padding: 30px 18px;
             background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(67,97,238,0.07);
             text-align: center;
         }
-
-        h2 {
-            font-size: 2em;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
         .highlight {
-            color: #da4c1f;
+            color: #3a86ff;
             font-weight: bold;
         }
-
         form {
             margin-top: 20px;
         }
-
         label {
             display: block;
             font-size: 1em;
             margin-top: 10px;
-            color: #555;
+            color: #3a86ff;
+            text-align: left;
         }
-
         input, textarea {
             width: 100%;
             padding: 12px;
             margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            border: 1px solid #bde0fe;
+            border-radius: 6px;
             font-size: 1em;
+            font-family: 'Inter', Arial, sans-serif;
+            background: #f8fafc;
         }
-
         input:focus, textarea:focus {
-            border-color: #5a67f9;
+            border-color: #3a86ff;
             outline: none;
-            box-shadow: 0 0 4px rgba(90, 103, 249, 0.2);
+            box-shadow: 0 0 4px #3a86ff33;
         }
-
         textarea {
             resize: vertical;
-            height: 100px;
+            min-height: 80px;
         }
-
-        button {
-            margin-top: 15px;
+        .form-success {
+            color: #2d9c4b;
+            font-weight: 600;
+            margin-top: 16px;
+        }
+        .form-error {
+            color: #d90429;
+            font-weight: 600;
+            margin-top: 16px;
+        }
+        button[type="submit"] {
+            margin-top: 18px;
             padding: 12px;
             width: 100%;
             border: none;
-            border-radius: 4px;
-            background-color: #da4c1f;
+            border-radius: 6px;
+            background-color: #3a86ff;
             color: #fff;
             font-size: 1.1em;
+            font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
+            transition: background 0.3s, color 0.2s;
+            box-shadow: 0 2px 8px #3a86ff22;
         }
-
-        button:hover {
-            background-color: #bf3d1a;
-            transform: scale(1.05);
+        button[type="submit"]:hover {
+            background-color: #ffd60a;
+            color: #22223b;
         }
-
         /* Footer Styling */
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: #5a67f9;
-            color: #fff;
+            padding: 20px 0 10px 0;
+            background: linear-gradient(90deg, #bde0fe 0%, #a2d2ff 100%);
+            color: #22223b;
             margin-top: 50px;
+            font-size: 1rem;
         }
-
-        footer p {
-            margin: 8px 0;
-        }
-
         .social-icon {
             width: 20px;
             vertical-align: middle;
             margin-right: 5px;
         }
-
         iframe {
             margin-top: 15px;
             border: none;
+            width: 100%;
+            max-width: 400px;
+            height: 220px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #bde0fe;
         }
-
         /* Scroll to Top Button */
         .scrollToTop {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #da4c1f;
+            background-color: #3a86ff;
             color: #fff;
             padding: 10px 15px;
             border: none;
-            border-radius: 5px;
+            border-radius: 50%;
             cursor: pointer;
             font-size: 1.2em;
             display: none;
             transition: background-color 0.3s;
+            box-shadow: 0 2px 8px #3a86ff44;
         }
-
         .scrollToTop:hover {
-            background-color: #bf3d1a;
+            background-color: #ffd60a;
+            color: #22223b;
+        }
+        @media (max-width: 700px) {
+            .contact-container {
+                margin: 90px 4px 30px 4px;
+                padding: 14px 4px;
+            }
+            iframe {
+                max-width: 98vw;
+                height: 160px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Mobile menu overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
     <!-- Navigation Menu -->
-    <div class="navbar" role="navigation" aria-label="Main Navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="Reservation.html">Reservations</a>
-        <a href="Product.html">Product</a>
-        <a href="contact Us.html" class="active" aria-current="page">Contact</a>
-        <a href="Blog.html">Blog</a>
-    </div>
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+        <div class="navbar-links" id="navbarLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="Reservation.html">Reservations</a>
+            <a href="Product.html">Product</a>
+            <a href="contact-Us.html" class="active" aria-current="page">Contact</a>
+            <a href="Blog.html">Blog</a>
+        </div>
+    </nav>
 
     <!-- Contact Form Container -->
     <div class="contact-container">
         <h2>Contact <span class="highlight">Us</span></h2>
         <p>We're here to help! Reach out with any questions or inquiries about our experiences in Aqaba.</p>
-        
-        <form action="submit_contact_form" method="POST">
+        <form action="https://formspree.io/f/mnnvjklj" method="POST" id="contactForm">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
@@ -193,23 +275,20 @@
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
             <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="e.g., 1234567890" required>
+            <input type="tel" id="phone" name="phone" placeholder="e.g., +962798460448" required>
 
             <label for="message">Message:</label>
             <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
 
             <button type="submit">Send Message</button>
+            <div id="formStatus"></div>
         </form>
     </div>
-
-   
 
     <!-- Footer Section -->
     <footer>
         <p>Contact us: <a href="mailto:suhaila.cook@gmail.com">suhaila.cook@gmail.com</a></p>
         <p>Mobile: +962798460448</p>
-        
-        <!-- Social Media Links -->
         <p>Connect with us on:
             <a href="https://www.instagram.com/suhaila.cook" target="_blank">
                 <img src="instagram-icon.png" alt="Instagram" class="social-icon"> Instagram
@@ -218,13 +297,9 @@
                 <img src="facebook-icon.png" alt="Facebook" class="social-icon"> Facebook
             </a>
         </p>
-        
-        <!-- Google Maps Embed -->
         <h3>Find Us Here:</h3>
         <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d515.9586386475576!2d34.99579176906436!3d29.54717876188753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x150071000d983327%3A0xc66defbe37987710!2sSuhaila!5e0!3m2!1sen!2sjo!4v1730633996092!5m2!1sen!2sjo" 
-            width="400" 
-            height="300" 
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">
@@ -233,17 +308,53 @@
     </footer>
 
     <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="scrollToTop">↑ Top</button>
+    <button id="scrollToTop" class="scrollToTop" aria-label="Scroll to Top">↑</button>
 
     <script>
-        // Script to toggle the active state on the navbar based on the current page
-        const currentPath = window.location.pathname.split("/").pop();
-        const navLinks = document.querySelectorAll('.navbar a');
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPath) {
-                link.classList.add('active');
-            }
+        // Mobile menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navbarLinks = document.getElementById('navbarLinks');
+        const menuOverlay = document.getElementById('menuOverlay');
+        hamburger.addEventListener('click', function() {
+            navbarLinks.classList.toggle('open');
+            menuOverlay.classList.toggle('active');
+        });
+        menuOverlay.addEventListener('click', function() {
+            navbarLinks.classList.remove('open');
+            menuOverlay.classList.remove('active');
         });
 
-        // Script to dynamically update WhatsApp link with user's name
-        const nameInput = document.getElementBy
+        // Scroll to top button
+        const scrollToTopButton = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 100) {
+                scrollToTopButton.style.display = 'block';
+            } else {
+                scrollToTopButton.style.display = 'none';
+            }
+        });
+        scrollToTopButton.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Navbar hide on scroll down, show on scroll up
+        const navbar = document.querySelector('.navbar');
+        let lastScrollPosition = 0;
+        window.addEventListener('scroll', () => {
+            let currentScrollPosition = window.scrollY;
+            if (currentScrollPosition > lastScrollPosition) {
+                navbar.style.top = '-60px';
+            } else {
+                navbar.style.top = '0';
+            }
+            lastScrollPosition = currentScrollPosition;
+        });
+
+        // Optional: Show a success message after form submit (for AJAX, but Formspree also redirects by default)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Optional: Show a quick message before redirect
+            document.getElementById('formStatus').innerHTML = "Sending...";
+        });
+    </script>
+</body>
+</html>

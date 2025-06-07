@@ -3,221 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your main stylesheet if needed -->
+    <title>Our Products | Suhaila Local's Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+            color: #22223b;
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
         }
-
-        header {
-            color: #fff;
-            padding: 10px 0;
+        h1, h2, h3 {
+            font-family: 'Inter', Arial, sans-serif;
+            font-weight: 700;
+            color: #22223b;
+            letter-spacing: 0.01em;
         }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        
-
-        /* Navbar Styles */
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            background-color: #5a67f9;
-            padding: 5px 0;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            transition: top 0.3s ease;
-        }
-
-        .navbar a {
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-            padding: 14px 20px;
-            margin: 0 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .navbar a:hover {
-            background-color: #f5f9f6;
-        }
-
-        .navbar a.active {
-            color: #e5f87c; /* Text color for active link */
-            font-weight: bold;
-        }
-
-        .hamburger {
-            cursor: pointer;
-            font-size: 24px;
-            display: none; /* Initially hidden for larger screens */
-        }
-
-        /* Media Query for Mobile */
-        @media (max-width: 600px) {
-            .navbar a {
-                display: none; /* Initially hide the links */
-            }
-
-            .hamburger {
-                display: block; /* Show hamburger icon */
-            }
-
-            .navbar.active a {
-                display: block; /* Show links when navbar is active */
-                width: 100%; /* Full width for links */
-                text-align: center; /* Center the links */
-            }
-        }
-
-        /* Media Query for Desktop */
-        @media (min-width: 601px) {
-            .navbar a {
-                display: inline-block; /* Show links on desktop */
-            }
-
-            .hamburger {
-                display: none; /* Hide hamburger on larger screens */
-            }
-        }
-
         h2 {
+            font-size: 2rem;
+            margin: 40px 0 0.5em 0;
             text-align: center;
-            padding: 40px;
-            color: #007BFF;
+            color: #3a86ff;
         }
-
+        /* Modern Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            background: linear-gradient(90deg, #3a86ff 0%, #4361ee 100%);
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(58,134,255,0.08);
+        }
+        .navbar .hamburger {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: #fff;
+            margin-left: 16px;
+            cursor: pointer;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 10px;
+            margin-right: 20px;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: background 0.2s, color 0.2s;
+        }
+        .navbar a.active,
+        .navbar a:focus {
+            background: #ffd60a;
+            color: #22223b;
+        }
+        .navbar a:hover {
+            background: #bde0fe;
+            color: #3a86ff;
+        }
+        /* Mobile Navbar */
+        @media (max-width: 800px) {
+            .navbar {
+                justify-content: space-between;
+                padding: 10px 16px;
+            }
+            .navbar .hamburger {
+                display: block;
+            }
+            .navbar-links {
+                position: fixed;
+                top: 0;
+                right: -100vw;
+                height: 100vh;
+                width: 70vw;
+                max-width: 320px;
+                background: linear-gradient(180deg, #3a86ff 0%, #4361ee 100%);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 70px 24px 24px 24px;
+                gap: 16px;
+                transition: right 0.3s cubic-bezier(.4,0,.2,1);
+                box-shadow: -2px 0 16px rgba(58,134,255,0.12);
+                z-index: 2000;
+            }
+            .navbar-links.open {
+                right: 0;
+            }
+            .navbar a {
+                width: 100%;
+                font-size: 1.1rem;
+                padding: 16px 0;
+                border-radius: 0;
+                text-align: left;
+            }
+        }
+        .menu-overlay {
+            display: none;
+        }
+        .menu-overlay.active {
+            display: block;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(34,34,59,0.18);
+            z-index: 1500;
+        }
+        /* Product Section */
+        .products-section {
+            max-width: 1200px;
+            margin: 110px auto 0 auto;
+            padding: 20px;
+        }
         .new-products {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 0;
+            gap: 24px;
         }
-
         .product-item {
             background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin: 15px;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(67,97,238,0.07);
+            margin: 15px 0;
             text-align: center;
             overflow: hidden;
-            transition: transform 0.3s;
+            transition: transform 0.18s, box-shadow 0.18s;
             width: 300px;
+            border: none;
         }
-
         .product-item:hover {
-            transform: scale(1.05);
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 24px rgba(67,97,238,0.13);
         }
-
         .product-image {
             width: 100%;
-            height: auto;
-            border-bottom: 1px solid #ddd;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid #bde0fe;
         }
-
         .product-info {
-            padding: 15px;
+            padding: 18px 14px 12px 14px;
         }
-
+        .product-info h3 {
+            color: #3a86ff;
+            margin-bottom: 0.4em;
+        }
+        .product-info p {
+            color: #22223b;
+            font-size: 1.05em;
+        }
         .button {
-            background: #007BFF;
+            background: #3a86ff;
             color: #fff;
-            padding: 10px 20px;
+            padding: 10px 22px;
             text-decoration: none;
-            border-radius: 4px;
-            transition: background 0.3s;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            box-shadow: 0 2px 8px #3a86ff22;
+            border: none;
+            transition: background 0.2s, color 0.2s;
+            display: inline-block;
+            margin-top: 10px;
         }
-
         .button:hover {
-            background: #0056b3;
+            background: #ffd60a;
+            color: #22223b;
         }
-
+        /* Footer */
         footer {
-            background: #007BFF;
-            color: #fff;
+            background: linear-gradient(90deg, #bde0fe 0%, #a2d2ff 100%);
+            color: #22223b;
             text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            padding: 20px 0 10px 0;
+            margin-top: 50px;
+            font-size: 1rem;
+        }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .new-products {
+                flex-direction: column;
+                align-items: center;
+            }
+            .products-section {
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Mobile menu overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
     <!-- Navigation -->
-    <header>
-        <div class="header-content">
-           
-            <!-- Navigation Menu -->
-            <div class="navbar" role="navigation" aria-label="Main Navigation">
-                <div class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</div>
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="Reservation.html">Reservations</a>
-                <a href="product.html" class="active" aria-current="page">Products</a>
-                <a href="contact Us.html">Contact</a>
-                <a href="Blog.html">Blog</a>
-            </div>
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+        <div class="navbar-links" id="navbarLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="Reservation.html">Reservations</a>
+            <a href="Product.html" class="active" aria-current="page">Products</a>
+            <a href="contact-Us.html">Contact</a>
+            <a href="Blog.html">Blog</a>
         </div>
-    </header>
+    </nav>
 
-    <!-- New Products Section -->
-    <h2>Our New Products</h2>
-    <div class="new-products">
-        <div class="product-item">
-            <img src="spices.jpg" alt="Spices" class="product-image">
-            <div class="product-info">
-                <h3>Spices</h3>
-                <p>Bring the flavors of our kitchen to yours with our authentic spice blends.</p>
-                <a href="#shop" class="button">Shop Now</a>
+    <div class="products-section">
+        <h2>Our New Products</h2>
+        <div class="new-products">
+            <div class="product-item">
+                <img src="spices.jpg" alt="Spices" class="product-image">
+                <div class="product-info">
+                    <h3>Spices</h3>
+                    <p>Bring the flavors of our kitchen to yours with our authentic spice blends.</p>
+                    <a href="#shop" class="button">Shop Now</a>
+                </div>
             </div>
-        </div>
-        <div class="product-item">
-            <img src="apron.jpg" alt="Apron" class="product-image">
-            <div class="product-info">
-                <h3>Apron</h3>
-                <p>Cook in style with our custom Suhaila aprons, perfect for the kitchen.</p>
-                <a href="#shop" class="button">Shop Now</a>
+            <div class="product-item">
+                <img src="apron.jpg" alt="Apron" class="product-image">
+                <div class="product-info">
+                    <h3>Apron</h3>
+                    <p>Cook in style with our custom Suhaila aprons, perfect for the kitchen.</p>
+                    <a href="#shop" class="button">Shop Now</a>
+                </div>
             </div>
-        </div>
-        <div class="product-item">
-            <img src="cookpad.jpg" alt="Cookpad" class="product-image">
-            <div class="product-info">
-                <h3>Cookpad</h3>
-                <p>Our unique cookpad helps you stay organized while preparing meals.</p>
-                <a href="#shop" class="button">Shop Now</a>
+            <div class="product-item">
+                <img src="cookpad.jpg" alt="Cookpad" class="product-image">
+                <div class="product-info">
+                    <h3>Cookpad</h3>
+                    <p>Our unique cookpad helps you stay organized while preparing meals.</p>
+                    <a href="#shop" class="button">Shop Now</a>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>&copy; 2024 Suhaila Cooking Experience. All rights reserved.</p>
     </footer>
 
     <script>
-        document.getElementById('hamburger').addEventListener('click', function() {
-            const navbar = document.querySelector('.navbar');
-            navbar.classList.toggle('active'); // Toggle the 'active' class
+        // Mobile menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navbarLinks = document.getElementById('navbarLinks');
+        const menuOverlay = document.getElementById('menuOverlay');
+        hamburger.addEventListener('click', function() {
+            navbarLinks.classList.toggle('open');
+            menuOverlay.classList.toggle('active');
+        });
+        menuOverlay.addEventListener('click', function() {
+            navbarLinks.classList.remove('open');
+            menuOverlay.classList.remove('active');
         });
     </script>
 </body>
