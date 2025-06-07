@@ -259,17 +259,31 @@
         </div>
     </div>
     <script>
-    // Mobile menu functionality
-    const hamburger = document.getElementById('hamburger');
-    const navbarLinks = document.getElementById('navbarLinks');
-    const menuOverlay = document.getElementById('menuOverlay');
-    hamburger.addEventListener('click', function() {
-        navbarLinks.classList.toggle('open');
-        menuOverlay.classList.toggle('active');
-    });
-    menuOverlay.addEventListener('click', function() {
-        navbarLinks.classList.remove('open');
-        menuOverlay.classList.remove('active');
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.getElementById('hamburger');
+        const navbarLinks = document.getElementById('navbarLinks');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const navLinks = document.querySelectorAll('.navbar-links a');
+
+        // Hamburger toggles menu and overlay
+        hamburger.addEventListener('click', function() {
+            navbarLinks.classList.toggle('open');
+            menuOverlay.classList.toggle('active');
+        });
+
+        // Overlay click closes menu and overlay
+        menuOverlay.addEventListener('click', function() {
+            navbarLinks.classList.remove('open');
+            menuOverlay.classList.remove('active');
+        });
+
+        // Any nav link click closes menu and overlay (for mobile)
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navbarLinks.classList.remove('open');
+                menuOverlay.classList.remove('active');
+            });
+        });
     });
     </script>
 </body>
