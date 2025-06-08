@@ -15,6 +15,12 @@
             margin: 0;
             padding: 0;
         }
+        .navbar-links.open {
+            z-index: 2001;
+        }
+        .menu-overlay.active {
+            z-index: 1500;
+        }
         h1, h2, h3 {
             font-family: 'Inter', Arial, sans-serif;
             font-weight: 700;
@@ -260,6 +266,9 @@
     </div>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Debug: confirm script is running
+        console.log('Script loaded!');
+
         const hamburger = document.getElementById('hamburger');
         const navbarLinks = document.getElementById('navbarLinks');
         const menuOverlay = document.getElementById('menuOverlay');
@@ -277,11 +286,14 @@
             menuOverlay.classList.remove('active');
         });
 
-        // Any nav link click closes menu and overlay (for mobile)
+        // Any nav link click closes menu and overlay (for mobile) + debugging
         navLinks.forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent navigation for debugging
+                console.log('Nav link clicked:', link.href);
                 navbarLinks.classList.remove('open');
                 menuOverlay.classList.remove('active');
+                // window.location.href = link.href; // Uncomment to enable navigation after debugging
             });
         });
     });
