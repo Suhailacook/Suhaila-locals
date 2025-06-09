@@ -17,55 +17,32 @@
             margin: 0;
             padding: 0;
         }
-        h1, h2, h3 {
-            font-family: 'Inter', Arial, sans-serif;
-            font-weight: 700;
-            color: #22223b;
-            letter-spacing: 0.01em;
-            text-align: center;
-        }
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 0.5em;
-            text-align: center;
-        }
-        /* Modern Navbar */
+        /* --- MODERN NAVBAR --- */
         .navbar {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
+            justify-content: center;
             background: linear-gradient(90deg, #3a86ff 0%, #4361ee 100%);
-            padding: 10px 0;
-            position: fixed;
+            padding: 14px 0;
+            position: sticky;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
             box-shadow: 0 2px 12px rgba(58,134,255,0.08);
-        }
-        .navbar .hamburger {
-            display: none;
-            font-size: 2rem;
-            background: none;
-            border: none;
-            color: #fff;
-            margin-left: 16px;
-            cursor: pointer;
-        }
-        .navbar-links {
-            display: flex;
             gap: 10px;
-            margin-right: 20px;
         }
         .navbar a {
             color: #fff;
             text-decoration: none;
-            padding: 10px 16px;
-            border-radius: 6px;
-            font-size: 1rem;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 1.08rem;
             font-weight: 600;
             letter-spacing: 0.02em;
+            margin: 0 4px;
             transition: background 0.2s, color 0.2s;
+            display: inline-block;
         }
         .navbar a.active,
         .navbar a:focus {
@@ -76,40 +53,50 @@
             background: #bde0fe;
             color: #3a86ff;
         }
-        /* Mobile Navbar */
-        @media (max-width: 800px) {
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #fff;
+            margin-right: 16px;
+            cursor: pointer;
+        }
+        @media (max-width: 900px) {
             .navbar {
-                justify-content: space-between;
-                padding: 10px 16px;
-            }
-            .navbar .hamburger {
-                display: block;
-            }
-            .navbar-links {
-                position: fixed;
-                top: 0;
-                right: -100vw;
-                height: 100vh;
-                width: 70vw;
-                max-width: 320px;
-                background: linear-gradient(180deg, #3a86ff 0%, #4361ee 100%);
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 70px 24px 24px 24px;
-                gap: 16px;
-                transition: right 0.3s cubic-bezier(.4,0,.2,1);
-                box-shadow: -2px 0 16px rgba(58,134,255,0.12);
-                z-index: 2000;
-            }
-            .navbar-links.open {
-                right: 0;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                padding: 10px 8px;
             }
             .navbar a {
+                padding: 10px 10px;
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 0;
+                gap: 0;
+            }
+            .navbar a {
+                display: none;
                 width: 100%;
-                font-size: 1.1rem;
-                padding: 16px 0;
+                margin: 0;
                 border-radius: 0;
-                text-align: left;
+                border-bottom: 1px solid #bde0fe;
+                background: none;
+            }
+            .navbar.active a {
+                display: block;
+                background: #3a86ff;
+                color: #fff;
+            }
+            .hamburger {
+                display: block;
+                margin-left: 12px;
+                margin-bottom: 8px;
             }
         }
         .menu-overlay {
@@ -122,30 +109,67 @@
             background: rgba(34,34,59,0.18);
             z-index: 1500;
         }
-        /* Reservation Cards */
+        /* --- RESERVATION HERO (HEADER) --- */
+        .reservation-hero {
+            background: linear-gradient(120deg, #3a86ff 0%, #a2d2ff 100%);
+            color: #fff;
+            padding: 70px 20px 50px 20px;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 8px 32px #3a86ff22;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .reservation-hero h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 12px;
+            letter-spacing: 0.02em;
+            text-shadow: 0 2px 8px #3a86ff44;
+        }
+        .reservation-hero p {
+            font-size: 1.3rem;
+            color: #f1f3f8;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+        @media (max-width: 900px) {
+            .reservation-hero h1 { font-size: 2rem; }
+        }
+        @media (max-width: 600px) {
+            .reservation-hero h1 { font-size: 1.4rem; }
+        }
+        @media (max-width: 480px) {
+            .reservation-hero h1 { font-size: 1.1rem; }
+        }
+        /* --- ENHANCED RESERVATION CARDS --- */
         .reservation-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             max-width: 1200px;
-            margin: 110px auto 0 auto;
+            margin: 0 auto 40px auto;
             padding: 20px;
-            gap: 20px;
+            gap: 28px;
         }
         .reservation-item {
             flex: 1 1 260px;
-            max-width: 320px;
-            border-radius: 14px;
+            max-width: 340px;
             background: #fff;
-            padding: 18px 14px 12px 14px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 12px rgba(67,97,238,0.07);
+            border-radius: 18px;
+            box-shadow: 0 2px 16px #3a86ff11;
+            overflow: hidden;
+            margin: 0 4px;
+            transition: box-shadow 0.2s, transform 0.2s;
             text-align: center;
-            transition: transform 0.18s, box-shadow 0.18s;
+            border: 2px solid #bde0fe;
+            padding: 18px 14px 12px 14px;
         }
         .reservation-item:hover {
-            transform: translateY(-6px) scale(1.03);
-            box-shadow: 0 8px 24px rgba(67,97,238,0.13);
+            transform: translateY(-8px) scale(1.04);
+            box-shadow: 0 12px 36px #3a86ff22;
+            border-color: #ffd60a;
         }
         .reservation-item img {
             width: 100%;
@@ -183,7 +207,7 @@
             background-color: #ffd60a;
             color: #22223b;
         }
-        /* Booking Form */
+        /* --- BOOKING FORM --- */
         #booking-form {
             margin-top: 50px;
             text-align: center;
@@ -223,6 +247,14 @@
         .form-group textarea {
             min-height: 60px;
         }
+        .form-actions {
+            text-align: center;
+            margin-top: 18px;
+        }
+        .form-actions button[type="submit"] {
+            margin: 0 auto;
+            display: inline-block;
+        }
         button[type="submit"] {
             background-color: #3a86ff;
             color: #fff;
@@ -239,7 +271,31 @@
             background-color: #ffd60a;
             color: #22223b;
         }
-        /* Loading Spinner Styles */
+        /* --- FORM MESSAGE CONTAINER (for notifications) --- */
+        #form-message-container .success-message,
+        #form-message-container .error-message {
+            text-align: center;
+            margin: 24px auto 0 auto;
+            font-weight: 600;
+            font-size: 1.15em;
+            border-radius: 10px;
+            padding: 16px 10px;
+            max-width: 430px;
+            box-shadow: 0 2px 8px #3a86ff22;
+            border: 2px solid transparent;
+            transition: background 0.2s, border 0.2s;
+        }
+        #form-message-container .success-message {
+            color: #155724;
+            background: #d4edda;
+            border-color: #c3e6cb;
+        }
+        #form-message-container .error-message {
+            color: #721c24;
+            background: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        /* --- LOADING SPINNER --- */
         #loading-spinner {
             display: none;
             position: fixed;
@@ -248,36 +304,75 @@
             transform: translate(-50%, -50%);
             z-index: 2000;
         }
-        /* Footer */
+        /* --- FOOTER --- */
         footer {
+            margin-top: 40px;
+            padding: 28px 0 18px 0;
             background: linear-gradient(90deg, #bde0fe 0%, #a2d2ff 100%);
-            color: #22223b;
             text-align: center;
-            padding: 20px 0 10px 0;
-            margin-top: 50px;
-            font-size: 1rem;
+            color: #22223b;
+            font-size: 1.08rem;
+            border-radius: 22px 22px 0 0;
+            box-shadow: 0 -2px 12px #3a86ff11;
         }
-        footer a {
-            color: #3a86ff;
-            text-decoration: none;
+        /* --- ERROR POPUP STYLES --- */
+        #error-popup {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            left: 0; top: 0; width: 100vw; height: 100vh;
+            background: rgba(34,34,59,0.35);
+            align-items: center;
+            justify-content: center;
         }
-        footer a:hover {
-            text-decoration: underline;
+        #error-popup .popup-content {
+            background: #fff;
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+            border-radius: 14px;
+            box-shadow: 0 8px 32px #3a86ff33;
+            padding: 32px 24px 18px 24px;
+            max-width: 350px;
+            margin: 120px auto 0 auto;
+            text-align: center;
+            position: relative;
+            font-size: 1.1em;
+            animation: fadeIn 0.3s;
         }
-        /* Responsive */
+        #error-popup .close-btn {
+            position: absolute;
+            top: 8px;
+            right: 16px;
+            font-size: 1.6em;
+            color: #721c24;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
         @media (max-width: 700px) {
             .reservation-container {
                 flex-direction: column;
                 align-items: center;
-                margin-top: 90px;
-                padding: 10px;
+                gap: 18px;
             }
             .reservation-item {
-                max-width: 98vw;
+                max-width: 97vw;
             }
             form {
                 padding: 16px 4px;
             }
+        }
+        @media (max-width: 600px) {
+            .reservation-hero h1 { font-size: 1.4rem; }
+            form { padding: 12px 2vw; }
+        }
+        @media (max-width: 480px) {
+            .reservation-hero h1 { font-size: 1.1rem; }
+            .reservation-item h3 { font-size: 1.1em; }
+            .reservation-item p { font-size: 0.9em; }
         }
     </style>
 </head>
@@ -290,20 +385,23 @@
         <div class="navbar-links" id="navbarLinks">
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
-            <a href="Reservation.html" class="active" aria-current="page">Reservations</a>
-            <a href="Product.html">Product</a>
+            <a href="Reservation.html">Reservations</a>
             <a href="contact-Us.html">Contact</a>
-            <a href="Blog.html">Blog</a>
+            <a href="Blog.html" class="active" aria-current="page">Blog</a>
         </div>
     </nav>
 
-    <h1 style="margin-top:100px;">Choose your local experience in Aqaba</h1>
+    <!-- Reservation Hero Section -->
+    <div class="reservation-hero">
+        <h1>Choose your local experience in Aqaba</h1>
+        <p>Book a unique activity with Suhaila's family and enjoy authentic Jordanian hospitality.</p>
+    </div>
 
     <!-- Reservation Section -->
     <div class="reservation-container">
         <!-- Experience 1 -->
         <div class="reservation-item">
-            <img src="Experience1.jpg" alt=" Cooking Class in Aqaba">
+            <img src="Experience1.jpg" alt="Cooking Class in Aqaba">
             <h3>Authentic Cooking Class</h3>
             <p>Join our family in the kitchen and learn to prepare traditional dishes with recipes passed down for generations.</p>
             <p><strong>45$</strong></p>
@@ -311,7 +409,7 @@
         </div>
         <!-- Experience 2 -->
         <div class="reservation-item">
-            <img src="Experience2.jpg" alt="walking tour In Aqaba">
+            <img src="Experience2.jpg" alt="Walking Tour In Aqaba">
             <h3>Food Taste Tour</h3>
             <p>Explore the rich flavors of our region in a guided food tour, discovering local cuisine and culture.</p>
             <p><strong>20$</strong></p>
@@ -319,7 +417,7 @@
         </div>
         <!-- Experience 3 -->
         <div class="reservation-item">
-            <img src="Experience3.jpg" alt="dining local experience">
+            <img src="Experience3.jpg" alt="Dining Local Experience">
             <h3>Dining Experience</h3>
             <p>Enjoy a meal with our family, sharing stories, recipes, and delicious food in a warm, inviting atmosphere.</p>
             <p><strong>15$</strong></p>
@@ -330,6 +428,16 @@
     <!-- Loading Spinner -->
     <div id="loading-spinner">
         <img src="loading-spinner.gif" alt="Loading...">
+    </div>
+
+    <!-- Error/Success Message Container -->
+    <div id="form-message-container"></div>
+    <!-- Popup Modal for Error -->
+    <div id="error-popup" style="display:none;">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closeErrorPopup()">&times;</span>
+            <div id="popup-message"></div>
+        </div>
     </div>
 
     <!-- Booking Form Section -->
@@ -374,7 +482,9 @@
             <label for="comments">Comments:</label>
             <textarea id="comments" name="comments"></textarea>
         </div>
-        <button type="submit">Book Now</button>
+        <div class="form-actions">
+            <button type="submit">Book Now</button>
+        </div>
     </form>
 
     <footer>
@@ -433,27 +543,47 @@
     // Initialize form population
     populateForm();
 
+    function showErrorPopup(message) {
+        document.getElementById('popup-message').innerText = message;
+        document.getElementById('error-popup').style.display = 'flex';
+    }
+    function closeErrorPopup() {
+        document.getElementById('error-popup').style.display = 'none';
+    }
+
     document.getElementById('reservation-form').onsubmit = function(event) {
         event.preventDefault();
         document.getElementById('loading-spinner').style.display = 'block';
+
+        // Remove old messages
+        let msgContainer = document.getElementById('form-message-container');
+        msgContainer.innerHTML = '';
+
         fetch('https://suhaila-locals.onrender.com/send-email', {
             method: 'POST',
             body: new FormData(this)
         })
-        .then(response => {
+        .then(async response => {
             document.getElementById('loading-spinner').style.display = 'none';
+            let msg = document.createElement('div');
             if (response.ok) {
-                alert('Thank you for your reservation! We will contact you soon.');
+                msg.className = 'success-message';
+                msg.innerText = 'Thank you for your reservation! We will contact you soon.';
+                msgContainer.appendChild(msg);
                 this.reset();
-                document.getElementById('reservation-form').style.display = 'none';
             } else {
-                alert('There was a problem with your reservation. Please try again.');
+                let errorText = 'There was a problem with your reservation. Please try again.';
+                try {
+                    const data = await response.json();
+                    if (data && data.error) errorText = data.error;
+                } catch (e) {}
+                showErrorPopup(errorText);
             }
+            msg.scrollIntoView({behavior: "smooth"});
         })
         .catch(error => {
-            console.error('Error:', error);
             document.getElementById('loading-spinner').style.display = 'none';
-            alert('There was a problem with your reservation. Please try again.');
+            showErrorPopup('There was a problem with your reservation. Please try again.');
         });
     };
 

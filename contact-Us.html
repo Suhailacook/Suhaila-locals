@@ -32,39 +32,28 @@
         .navbar {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
+            justify-content: center;
             background: linear-gradient(90deg, #3a86ff 0%, #4361ee 100%);
-            padding: 10px 0;
-            position: fixed;
+            padding: 14px 0;
+            position: sticky;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
             box-shadow: 0 2px 12px rgba(58,134,255,0.08);
-        }
-        .navbar .hamburger {
-            display: none;
-            font-size: 2rem;
-            background: none;
-            border: none;
-            color: #fff;
-            margin-left: 16px;
-            cursor: pointer;
-        }
-        .navbar-links {
-            display: flex;
             gap: 10px;
-            margin-right: 20px;
         }
         .navbar a {
             color: #fff;
             text-decoration: none;
-            padding: 10px 16px;
-            border-radius: 6px;
-            font-size: 1rem;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 1.08rem;
             font-weight: 600;
             letter-spacing: 0.02em;
+            margin: 0 4px;
             transition: background 0.2s, color 0.2s;
+            display: inline-block;
         }
         .navbar a.active,
         .navbar a:focus {
@@ -75,40 +64,50 @@
             background: #bde0fe;
             color: #3a86ff;
         }
-        /* Mobile Navbar */
-        @media (max-width: 800px) {
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #fff;
+            margin-right: 16px;
+            cursor: pointer;
+        }
+        @media (max-width: 900px) {
             .navbar {
-                justify-content: space-between;
-                padding: 10px 16px;
-            }
-            .navbar .hamburger {
-                display: block;
-            }
-            .navbar-links {
-                position: fixed;
-                top: 0;
-                right: -100vw;
-                height: 100vh;
-                width: 70vw;
-                max-width: 320px;
-                background: linear-gradient(180deg, #3a86ff 0%, #4361ee 100%);
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 70px 24px 24px 24px;
-                gap: 16px;
-                transition: right 0.3s cubic-bezier(.4,0,.2,1);
-                box-shadow: -2px 0 16px rgba(58,134,255,0.12);
-                z-index: 2000;
-            }
-            .navbar-links.open {
-                right: 0;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                padding: 10px 8px;
             }
             .navbar a {
+                padding: 10px 10px;
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 0;
+                gap: 0;
+            }
+            .navbar a {
+                display: none;
                 width: 100%;
-                font-size: 1.1rem;
-                padding: 16px 0;
+                margin: 0;
                 border-radius: 0;
-                text-align: left;
+                border-bottom: 1px solid #bde0fe;
+                background: none;
+            }
+            .navbar.open a {
+                display: block;
+                background: #3a86ff;
+                color: #fff;
+            }
+            .hamburger {
+                display: block;
+                margin-left: 12px;
+                margin-bottom: 8px;
             }
         }
         .menu-overlay {
@@ -121,10 +120,35 @@
             background: rgba(34,34,59,0.18);
             z-index: 1500;
         }
+        /* Hero Section */
+        .contact-hero {
+            background: linear-gradient(120deg, #3a86ff 0%, #a2d2ff 100%);
+            color: #fff;
+            padding: 70px 20px 50px 20px;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 8px 32px #3a86ff22;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-hero h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 12px;
+            letter-spacing: 0.02em;
+            text-shadow: 0 2px 8px #3a86ff44;
+        }
+        .contact-hero p {
+            font-size: 1.3rem;
+            color: #f1f3f8;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
         /* Contact Form Container */
         .contact-container {
             max-width: 600px;
-            margin: 110px auto 40px auto;
+            margin: 0 auto 40px auto;
             padding: 30px 18px;
             background-color: #fff;
             border-radius: 14px;
@@ -176,8 +200,7 @@
         }
         button[type="submit"] {
             margin-top: 18px;
-            padding: 12px;
-            width: 100%;
+            padding: 12px 28px;
             border: none;
             border-radius: 6px;
             background-color: #3a86ff;
@@ -187,6 +210,9 @@
             cursor: pointer;
             transition: background 0.3s, color 0.2s;
             box-shadow: 0 2px 8px #3a86ff22;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
         button[type="submit"]:hover {
             background-color: #ffd60a;
@@ -237,13 +263,17 @@
         }
         @media (max-width: 700px) {
             .contact-container {
-                margin: 90px 4px 30px 4px;
+                margin: 0 4px 30px 4px;
                 padding: 14px 4px;
             }
             iframe {
                 max-width: 98vw;
                 height: 160px;
             }
+            .contact-hero h1 { font-size: 1.4rem; }
+        }
+        @media (max-width: 480px) {
+            .contact-hero h1 { font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -257,16 +287,20 @@
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="Reservation.html">Reservations</a>
-            <a href="Product.html">Product</a>
-            <a href="contact-Us.html" class="active" aria-current="page">Contact</a>
-            <a href="Blog.html">Blog</a>
+            <a href="contact-Us.html">Contact</a>
+            <a href="Blog.html" class="active" aria-current="page">Blog</a>
         </div>
     </nav>
+
+    <!-- Hero Section -->
+    <div class="contact-hero">
+        <h1>Contact Us</h1>
+        <p>We're here to help! Reach out with any questions or inquiries about our experiences in Aqaba.</p>
+    </div>
 
     <!-- Contact Form Container -->
     <div class="contact-container">
         <h2>Contact <span class="highlight">Us</span></h2>
-        <p>We're here to help! Reach out with any questions or inquiries about our experiences in Aqaba.</p>
         <form action="https://formspree.io/f/mnnvjklj" method="POST" id="contactForm">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -352,7 +386,6 @@
 
         // Optional: Show a success message after form submit (for AJAX, but Formspree also redirects by default)
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            // Optional: Show a quick message before redirect
             document.getElementById('formStatus').innerHTML = "Sending...";
         });
     </script>

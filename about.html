@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Suhaila Local's Experience</title>
+    <meta name="description" content="Learn about Suhaila Local's Experience, our story, and our passion for sharing Aqaba’s authentic food and culture.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -15,76 +16,44 @@
             margin: 0;
             padding: 0;
         }
-        .navbar-links.open {
-            z-index: 2001;
-        }
-        .menu-overlay.active {
-            z-index: 1500;
-        }
         h1, h2, h3 {
             font-family: 'Inter', Arial, sans-serif;
             font-weight: 700;
             color: #22223b;
             letter-spacing: 0.01em;
         }
-        h1 {
-            font-size: 2.2em;
+        h2 {
+            font-size: 2rem;
             margin-bottom: 0.5em;
-        }
-        h2.section-title {
-            font-size: 1.5em;
-            margin-bottom: 0.5em;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 8px;
-        }
-        h2.section-title::after {
-            content: "";
-            position: absolute;
-            width: 60%;
-            height: 3px;
-            background-color: #3a86ff;
-            bottom: 0;
-            left: 20%;
-            border-radius: 2px;
+            text-align: center;
+            color: #3a86ff;
         }
         /* Modern Navbar */
         .navbar {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
+            justify-content: center;
             background: linear-gradient(90deg, #3a86ff 0%, #4361ee 100%);
-            padding: 10px 0;
-            position: fixed;
+            padding: 14px 0;
+            position: sticky;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
             box-shadow: 0 2px 12px rgba(58,134,255,0.08);
-        }
-        .navbar .hamburger {
-            display: none;
-            font-size: 2rem;
-            background: none;
-            border: none;
-            color: #fff;
-            margin-left: 16px;
-            cursor: pointer;
-        }
-        .navbar-links {
-            display: flex;
             gap: 10px;
-            margin-right: 20px;
         }
         .navbar a {
             color: #fff;
             text-decoration: none;
-            padding: 10px 16px;
-            border-radius: 6px;
-            font-size: 1rem;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 1.08rem;
             font-weight: 600;
             letter-spacing: 0.02em;
+            margin: 0 4px;
             transition: background 0.2s, color 0.2s;
+            display: inline-block;
         }
         .navbar a.active,
         .navbar a:focus {
@@ -95,40 +64,50 @@
             background: #bde0fe;
             color: #3a86ff;
         }
-        /* Mobile Navbar */
-        @media (max-width: 800px) {
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #fff;
+            margin-right: 16px;
+            cursor: pointer;
+        }
+        @media (max-width: 900px) {
             .navbar {
-                justify-content: space-between;
-                padding: 10px 16px;
-            }
-            .navbar .hamburger {
-                display: block;
-            }
-            .navbar-links {
-                position: fixed;
-                top: 0;
-                right: -100vw;
-                height: 100vh;
-                width: 70vw;
-                max-width: 320px;
-                background: linear-gradient(180deg, #3a86ff 0%, #4361ee 100%);
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 70px 24px 24px 24px;
-                gap: 16px;
-                transition: right 0.3s cubic-bezier(.4,0,.2,1);
-                box-shadow: -2px 0 16px rgba(58,134,255,0.12);
-                z-index: 2000;
-            }
-            .navbar-links.open {
-                right: 0;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                padding: 10px 8px;
             }
             .navbar a {
+                padding: 10px 10px;
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 0;
+                gap: 0;
+            }
+            .navbar a {
+                display: none;
                 width: 100%;
-                font-size: 1.1rem;
-                padding: 16px 0;
+                margin: 0;
                 border-radius: 0;
-                text-align: left;
+                border-bottom: 1px solid #bde0fe;
+                background: none;
+            }
+            .navbar.open a {
+                display: block;
+                background: #3a86ff;
+                color: #fff;
+            }
+            .hamburger {
+                display: block;
+                margin-left: 12px;
+                margin-bottom: 8px;
             }
         }
         .menu-overlay {
@@ -141,77 +120,131 @@
             background: rgba(34,34,59,0.18);
             z-index: 1500;
         }
-        /* Main container styling */
-        .container {
-            max-width: 800px;
-            margin: 100px auto 30px auto;
-            padding: 20px;
+        /* Hero Section */
+        .about-hero {
+            background: linear-gradient(120deg, #3a86ff 0%, #a2d2ff 100%);
+            color: #fff;
+            padding: 70px 20px 50px 20px;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 8px 32px #3a86ff22;
             text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
         }
-        /* Section styling */
-        .section-container {
-            background-color: #fff;
-            margin-bottom: 24px;
-            padding: 24px 18px;
-            border-radius: 14px;
-            box-shadow: 0 4px 12px rgba(67,97,238,0.07);
-            animation: slideIn 1.2s ease-out;
+        .about-hero h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 12px;
+            letter-spacing: 0.02em;
+            text-shadow: 0 2px 8px #3a86ff44;
         }
-        /* Highlight text */
-        .highlight {
+        .about-hero p {
+            font-size: 1.3rem;
+            color: #f1f3f8;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+        /* About Section */
+        .about-section {
+            background: linear-gradient(90deg, #f8fafc 60%, #bde0fe 100%);
+            border-radius: 22px;
+            box-shadow: 0 4px 24px #3a86ff11;
+            margin: 60px auto;
+            max-width: 1100px;
+            padding: 36px 0;
+        }
+        .about-section h2 {
             color: #3a86ff;
-            font-weight: bold;
+            font-size: 2.1em;
+            margin-bottom: 18px;
+            font-weight: 800;
         }
-        /* Paragraph styling */
-        p {
-            font-size: 1.1em;
-            line-height: 1.7;
-            margin: 15px 0;
-            text-align: justify;
+        .about-section .highlight {
+            color: #ffd60a;
         }
-        /* Image styling */
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: center;
+            background: none;
+            box-shadow: none;
+        }
         .about-image {
+            flex: 1 1 260px;
+            max-width: 320px;
             width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 10px;
-            margin: 20px auto;
-            transition: transform 0.3s ease;
-            box-shadow: 0 2px 12px #bde0fe;
-            display: block;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: 0 2px 16px #bde0fe;
+            border: 3px solid #fff;
         }
-        .about-image:hover {
-            transform: scale(1.03);
-        }
-        /* List styling */
-        ul {
-            list-style-type: disc;
-            padding-left: 24px;
-            margin: 20px 0;
+        .about-text {
+            flex: 2 1 340px;
+            padding: 18px 24px;
             text-align: left;
+            color: #22223b;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 2px 12px #3a86ff11;
         }
-        ul li {
-            font-size: 1em;
-            line-height: 1.5;
-            margin: 10px 0;
+        .about-text h3 {
+            color: #3a86ff;
+            font-size: 1.3em;
+            margin-bottom: 10px;
         }
-        /* Animation effects */
-        @keyframes slideIn {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        .about-text p {
+            color: #555;
+            font-size: 1.08em;
         }
-        /* Responsive */
-        @media (max-width: 700px) {
-            .container {
-                margin-top: 80px;
-                padding: 10px;
-            }
-            .section-container {
-                padding: 16px 6px;
+        .highlight {
+            color: #ffd60a;
+        }
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px 0 10px 0;
+            background: linear-gradient(90deg, #bde0fe 0%, #a2d2ff 100%);
+            color: #22223b;
+            margin-top: 50px;
+            font-size: 1rem;
+        }
+        .social-icon {
+            width: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        @media (max-width: 900px) {
+            .about-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 18px;
             }
             .about-image {
+                border-radius: 18px 18px 0 0;
                 max-width: 98vw;
             }
+            .about-text {
+                padding: 18px 10px;
+                border-radius: 0 0 18px 18px;
+            }
+        }
+        @media (max-width: 700px) {
+            .about-section {
+                margin: 30px 4px 30px 4px;
+                padding: 14px 4px;
+            }
+        }
+        @media (max-width: 600px) {
+            .about-hero h1 { font-size: 1.4rem; }
+        }
+        @media (max-width: 480px) {
+            .about-hero h1 { font-size: 1.1rem; }
+            .about-text h3 { font-size: 1.1em; }
+            .about-text p { font-size: 0.9em; }
         }
     </style>
 </head>
@@ -223,80 +256,81 @@
         <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
         <div class="navbar-links" id="navbarLinks">
             <a href="index.html">Home</a>
-            <a href="about.html" class="active" aria-current="page">About Us</a>
+            <a href="about.html">About Us</a>
             <a href="Reservation.html">Reservations</a>
-            <a href="Product.html">Product</a>
             <a href="contact-Us.html">Contact</a>
-            <a href="Blog.html">Blog</a>
+            <a href="Blog.html" class="active" aria-current="page">Blog</a>
         </div>
     </nav>
 
-    <!-- Main content container -->
-    <div class="container">
-        <h1>About <span class="highlight">Suhaila Local's Experience</span></h1>
-
-        <div class="section-container">
-            <p>Welcome to Aqaba, where history, culture, and natural beauty blend seamlessly! At Suhaila Local's Experience, we’re dedicated to offering unforgettable experiences for travelers looking to connect deeply with this stunning coastal city.</p>
-            <img src="Aqaba view.jpg" alt="A scenic view of Aqaba" class="about-image">
-        </div>
-
-        <div class="section-container">
-            <h2 class="section-title">Our Mission</h2>
-            <p>Our mission is simple: to bridge the gap between visitors and Aqaba’s rich heritage by offering authentic, locally-inspired experiences. We believe in sustainable tourism that respects the environment and celebrates local traditions.</p>
-        </div>
-
-        <div class="section-container">
-            <h2 class="section-title">What We Offer</h2>
-            <ul>
-                <li><strong>Cultural Tours:</strong> Explore the ancient history of Aqaba and immerse yourself in stories that have shaped the city.</li>
-                <li><strong>Cooking Experiences:</strong> Join us for a hands-on cooking class where you’ll learn traditional Jordanian recipes and enjoy a delicious meal.</li>
-                <li><strong>Sunset Story Boat Tours:</strong> Sail the Red Sea at sunset, accompanied by local stories and a calming soundtrack.</li>
-            </ul>
-        </div>
-
-        <div class="section-container">
-            <h2 class="section-title">Meet Suhaila</h2>
-            <p>Suhaila, a local guide and culinary enthusiast, founded Suhaila Local's Experience to share her love for Aqaba and Jordanian culture. With years of experience in guiding tourists and a deep connection to her city, Suhaila crafts each experience to offer a unique, personal glimpse into Aqaba’s soul.</p>
-        </div>
-
-        <div class="section-container">
-            <h2 class="section-title">Join Us!</h2>
-            <p>Whether you're here for the food, the history, or the sea, we’re excited to welcome you. Join us in discovering Aqaba through the eyes of those who call it home!</p>
-        </div>
+    <!-- Hero Section -->
+    <div class="about-hero">
+        <h1>About Suhaila Local's Experience</h1>
+        <p>Discover our story, our passion, and the people behind Aqaba’s most authentic local experiences.</p>
     </div>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Debug: confirm script is running
-        console.log('Script loaded!');
 
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <img src="about-photo.jpg" alt="Suhaila and Family" class="about-image">
+            <div class="about-text">
+                <h3>Our Story</h3>
+                <p>
+                    Welcome to <span class="highlight">Suhaila Local's Experience</span>! We are a family-run initiative in the heart of Aqaba, dedicated to sharing the warmth, flavors, and traditions of Jordanian hospitality. Our journey began with a simple idea: to open our home and hearts to travelers seeking genuine connections and unforgettable memories.
+                </p>
+                <h3>What We Offer</h3>
+                <p>
+                    From hands-on <span class="highlight">cooking classes</span> to immersive <span class="highlight">walking tours</span> and cozy <span class="highlight">dining experiences</span>, every activity is designed to bring you closer to our culture and community. We believe food is the gateway to understanding a place, and every meal is a story waiting to be shared.
+                </p>
+                <h3>Meet Suhaila</h3>
+                <p>
+                    Suhaila, our founder, is passionate about preserving local recipes and traditions. With her family, she welcomes guests as friends, ensuring every visit is filled with laughter, learning, and delicious food.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Contact us: <a href="mailto:suhaila.cook@gmail.com">suhaila.cook@gmail.com</a></p>
+        <p>Mobile: +962798460448</p>
+        <p>Connect with us on:
+            <a href="https://www.instagram.com/suhaila.cook" target="_blank">
+                <img src="instagram-icon.png" alt="Instagram" class="social-icon"> Instagram
+            </a> |
+            <a href="https://web.facebook.com/suhailacook" target="_blank">
+                <img src="facebook-icon.png" alt="Facebook" class="social-icon"> Facebook
+            </a>
+        </p>
+        <p>&copy; 2024 Suhaila Cooking Experience. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
         const hamburger = document.getElementById('hamburger');
         const navbarLinks = document.getElementById('navbarLinks');
         const menuOverlay = document.getElementById('menuOverlay');
-        const navLinks = document.querySelectorAll('.navbar-links a');
-
-        // Hamburger toggles menu and overlay
         hamburger.addEventListener('click', function() {
             navbarLinks.classList.toggle('open');
             menuOverlay.classList.toggle('active');
         });
-
-        // Overlay click closes menu and overlay
         menuOverlay.addEventListener('click', function() {
             navbarLinks.classList.remove('open');
             menuOverlay.classList.remove('active');
         });
 
-        // Any nav link click closes menu and overlay (for mobile) + debugging
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault(); // Prevent navigation for debugging
-                console.log('Nav link clicked:', link.href);
-                navbarLinks.classList.remove('open');
-                menuOverlay.classList.remove('active');
-                // window.location.href = link.href; // Uncomment to enable navigation after debugging
-            });
+        // Navbar hide on scroll down, show on scroll up
+        const navbar = document.querySelector('.navbar');
+        let lastScrollPosition = 0;
+        window.addEventListener('scroll', () => {
+            let currentScrollPosition = window.scrollY;
+            if (currentScrollPosition > lastScrollPosition) {
+                navbar.style.top = '-60px';
+            } else {
+                navbar.style.top = '0';
+            }
+            lastScrollPosition = currentScrollPosition;
         });
-    });
     </script>
 </body>
 </html>

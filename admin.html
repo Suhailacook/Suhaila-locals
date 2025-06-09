@@ -4,10 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard | Suhaila Local's Experience</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ...existing styles... */
-        /* (Keep your previous CSS here) */
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+            color: #22223b;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            background: linear-gradient(90deg, #3a86ff 0%, #4361ee 100%);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(58,134,255,0.08);
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            margin: 0 8px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .navbar a.active,
+        .navbar a:focus {
+            background: #ffd60a;
+            color: #22223b;
+        }
+        .navbar a:hover {
+            background: #bde0fe;
+            color: #3a86ff;
+        }
+        .admin-container {
+            max-width: 1100px;
+            margin: 40px auto 30px auto;
+            padding: 32px 18px;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(67,97,238,0.09);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 0.5em;
+            color: #3a86ff;
+        }
+        .admin-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .admin-tab {
+            background: #e0e7ef;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 8px 8px 0 0;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #3a86ff;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        .admin-tab.active, .admin-tab:hover {
+            background: #3a86ff;
+            color: #fff;
+        }
+        .admin-section {
+            display: none;
+            animation: fadeIn 0.7s;
+        }
+        .admin-section.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+            background: #f8fafc;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px #bde0fe33;
+        }
+        .admin-table th, .admin-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #e0e7ef;
+            text-align: left;
+        }
+        .admin-table th {
+            background: #3a86ff;
+            color: #fff;
+            font-weight: 700;
+        }
+        .admin-table tr:last-child td {
+            border-bottom: none;
+        }
+        .admin-table button {
+            background: #d90429;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 6px 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .admin-table button:hover {
+            background: #b3001b;
+        }
+        .admin-form {
+            background: #f8fafc;
+            padding: 20px 18px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #bde0fe33;
+            margin-bottom: 24px;
+        }
+        .admin-form h3 {
+            margin-top: 0;
+            color: #3a86ff;
+        }
+        .admin-form label {
+            display: block;
+            margin: 12px 0 4px 0;
+            font-weight: 600;
+        }
+        .admin-form input, .admin-form textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #bde0fe;
+            margin-bottom: 10px;
+            font-size: 1em;
+            font-family: inherit;
+        }
+        .admin-form button {
+            background: #3a86ff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .admin-form button:hover {
+            background: #4361ee;
+        }
+        .admin-actions {
+            text-align: right;
+            margin-top: 24px;
+        }
+        .admin-actions button {
+            background: #ffd60a;
+            color: #22223b;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 24px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .admin-actions button:hover {
+            background: #ffe066;
+        }
+        /* Login Modal */
+        #loginModal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(248,250,252,0.98);
+            z-index: 9999;
+        }
+        #loginModal > div {
+            background: #fff;
+            padding: 32px 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px #3a86ff22;
+            text-align: center;
+            min-width: 320px;
+        }
+        #loginModal h2 {
+            color: #3a86ff;
+        }
+        #loginModal input[type="password"] {
+            padding: 10px;
+            width: 220px;
+            border-radius: 6px;
+            border: 1px solid #bde0fe;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+        #loginModal button {
+            margin-top: 18px;
+            padding: 10px 24px;
+            border-radius: 6px;
+            background: #3a86ff;
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        #loginModal button:hover {
+            background: #4361ee;
+        }
+        #loginError {
+            color: #d90429;
+            margin-top: 10px;
+        }
+        @media (max-width: 700px) {
+            .admin-container {
+                padding: 8px 2vw;
+            }
+            #loginModal > div {
+                min-width: 90vw;
+            }
+        }
     </style>
 </head>
 <body>
@@ -77,18 +309,18 @@
         </div>
     </div>
     <!-- Simple login modal -->
-    <div id="loginModal" style="display:flex;flex-direction:column;align-items:center;justify-content:center;position:fixed;top:0;left:0;width:100vw;height:100vh;background:#f8fafc;z-index:9999;">
-        <div style="background:#fff;padding:32px 24px;border-radius:12px;box-shadow:0 2px 12px #3a86ff22;text-align:center;">
+    <div id="loginModal">
+        <div>
             <h2>Admin Login</h2>
-            <input type="password" id="adminPassword" placeholder="Enter admin password" style="padding:10px;width:220px;border-radius:6px;border:1px solid #bde0fe;">
+            <input type="password" id="adminPassword" placeholder="Enter admin password">
             <br>
-            <button onclick="login()" style="margin-top:18px;padding:10px 24px;border-radius:6px;background:#3a86ff;color:#fff;font-weight:600;border:none;">Login</button>
-            <div id="loginError" style="color:#d90429;margin-top:10px;"></div>
+            <button onclick="login()">Login</button>
+            <div id="loginError"></div>
         </div>
     </div>
     <script>
         // --- Simple client-side authentication ---
-        const ADMIN_PASSWORD ="ACTact123"
+        const ADMIN_PASSWORD = "ACTact123";
         function login() {
             const input = document.getElementById('adminPassword').value;
             if (input === ADMIN_PASSWORD) {

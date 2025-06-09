@@ -4,181 +4,257 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suhaila’s Blog | Travel Tips & Things to Do in Aqaba, Jordan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Navbar Styles */
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            background-color: #5a67f9;
-            padding: 5px 0;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            transition: top 0.3s ease;  /* Smooth hide/show effect */
-        }
-
-        .navbar a {
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-            padding: 14px 20px;
-            margin: 0 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .navbar a:hover {
-            background-color: #f5f9f6;
-        }
-
-        .navbar a.active {
-            color: #e5f87c; /* Text color for active link */
-            font-weight: bold; /* Optional: make it bold */
-        }
-
-        /* Show the hamburger icon */
-        .hamburger {
-            cursor: pointer;
-            font-size: 24px;
-            display: none; /* Initially hidden for larger screens */
-        }
-
-        /* Media Query for Mobile */
-        @media (max-width: 600px) {
-            .navbar a {
-                display: none; /* Initially hide the links */
-            }
-
-            .hamburger {
-                display: block; /* Show hamburger icon */
-            }
-
-            .navbar.active a {
-                display: block; /* Show links when navbar is active */
-                width: 100%; /* Full width for links */
-                text-align: center; /* Center the links */
-            }
-        }
-
-        /* Media Query for Desktop */
-        @media (min-width: 601px) {
-            .navbar a {
-                display: inline-block; /* Show links on desktop */
-            }
-
-            .hamburger {
-                display: none; /* Hide hamburger on larger screens */
-            }
-        }
-
-        /* General Reset */
-        * {
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+            color: #22223b;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
+        h1, h2, h3 {
+            font-family: 'Inter', Arial, sans-serif;
+            font-weight: 700;
+            color: #22223b;
+            letter-spacing: 0.01em;
         }
-
-        /* Header */
-        header {
-            background-color: #333;
+        /* Modern Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(90deg, #3a86ff 0%, #4361ee 100%);
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(58,134,255,0.08);
+            gap: 10px;
+            transition: top 0.3s;
+        }
+        .navbar a {
             color: #fff;
-            padding: 1em;
-            text-align: center;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 1.08rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            margin: 0 4px;
+            transition: background 0.2s, color 0.2s;
+            display: inline-block;
         }
-
+        .navbar a.active,
+        .navbar a:focus {
+            background: #ffd60a;
+            color: #22223b;
+        }
+        .navbar a:hover {
+            background: #bde0fe;
+            color: #3a86ff;
+        }
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #fff;
+            margin-right: 16px;
+            cursor: pointer;
+        }
+        @media (max-width: 900px) {
+            .navbar {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                padding: 10px 8px;
+            }
+            .navbar a {
+                padding: 10px 10px;
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 0;
+                gap: 0;
+            }
+            .navbar a {
+                display: none;
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+                border-bottom: 1px solid #bde0fe;
+                background: none;
+            }
+            .navbar.open a {
+                display: block;
+                background: #3a86ff;
+                color: #fff;
+            }
+            .hamburger {
+                display: block;
+                margin-left: 12px;
+                margin-bottom: 8px;
+            }
+        }
+        .menu-overlay {
+            display: none;
+        }
+        .menu-overlay.active {
+            display: block;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(34,34,59,0.18);
+            z-index: 1500;
+        }
+        /* Blog Hero Section */
+        .blog-hero {
+            background: linear-gradient(120deg, #3a86ff 0%, #a2d2ff 100%);
+            color: #fff;
+            padding: 70px 20px 50px 20px;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 8px 32px #3a86ff22;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .blog-hero h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 12px;
+            letter-spacing: 0.02em;
+            text-shadow: 0 2px 8px #3a86ff44;
+        }
+        .blog-hero p {
+            font-size: 1.3rem;
+            color: #f1f3f8;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
         /* Gallery Blog Section */
         .gallery-blog {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 1.5em;
             max-width: 1200px;
             margin: 2em auto;
             padding: 1em;
         }
-
         /* Blog Card Styling */
         .blog-card {
             background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 18px;
+            box-shadow: 0 4px 12px #3a86ff11;
             overflow: hidden;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
         }
-
         .blog-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 12px 36px #3a86ff22;
+            border-color: #ffd60a;
         }
-
         .blog-card img {
             width: 100%;
             height: 180px;
             object-fit: cover;
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 2px 8px #bde0fe;
         }
-
         .blog-content {
             padding: 1em;
             text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-
         .blog-content h2 {
             font-size: 1.2em;
             margin-bottom: 0.5em;
+            color: #3a86ff;
         }
-
         .blog-content p {
-            font-size: 0.95em;
-            color: #666;
+            font-size: 0.98em;
+            color: #555;
             margin-bottom: 1em;
         }
-
         .read-more {
             display: inline-block;
-            padding: 0.5em 1em;
-            font-size: 0.9em;
+            padding: 0.5em 1.2em;
+            font-size: 1em;
             color: #fff;
-            background-color: #0073e6;
-            border-radius: 5px;
+            background-color: #3a86ff;
+            border-radius: 6px;
             text-decoration: none;
-            transition: background-color 0.3s;
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s;
+            box-shadow: 0 2px 8px #3a86ff22;
+            border: none;
         }
-
         .read-more:hover {
-            background-color: #005bb5;
+            background-color: #ffd60a;
+            color: #22223b;
         }
-
         /* Footer */
         footer {
             text-align: center;
-            padding: 1em;
-            background-color: #333;
-            color: #fff;
+            padding: 20px 0 10px 0;
+            background: linear-gradient(90deg, #bde0fe 0%, #a2d2ff 100%);
+            color: #22223b;
+            margin-top: 50px;
+            font-size: 1rem;
+        }
+        @media (max-width: 900px) {
+            .gallery-blog {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .blog-card {
+                max-width: 97vw;
+            }
+        }
+        @media (max-width: 600px) {
+            .blog-hero h1 { font-size: 1.4rem; }
+            .gallery-blog { padding: 0.5em; }
+        }
+        @media (max-width: 480px) {
+            .blog-hero h1 { font-size: 1.1rem; }
+            .blog-content h2 { font-size: 1.1em; }
+            .blog-content p { font-size: 0.9em; }
         }
     </style>
 </head>
 <body>
+    <!-- Mobile menu overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
     <!-- Navigation Menu -->
-    <div class="navbar" role="navigation" aria-label="Main Navigation">
-        <div class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</div>
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="Reservation.html">Reservations</a>
-        <a href="Product.html">Product</a>
-        <a href="contact Us.html">Contact</a>
-        <a href="Blog.html">Blog</a>
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+        <div class="navbar-links" id="navbarLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="Reservation.html">Reservations</a>
+            <a href="contact-Us.html">Contact</a>
+            <a href="Blog.html" class="active" aria-current="page">Blog</a>
+        </div>
+    </nav>
+
+    <!-- Blog Hero Section -->
+    <div class="blog-hero">
+        <h1>Suhaila Local's Experience Blog</h1>
+        <p>Stories, tips, and inspiration from Aqaba and beyond.</p>
     </div>
 
-    <header>
-        <h1>Suhaila Local's Experience Blog</h1>
-    </header>
     <main>
         <section class="gallery-blog">
             <!-- Blog Post 1: Food Culture -->
@@ -223,22 +299,38 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Suhaila Local's Experience</p>
+        <p>&copy; 2024 Suhaila Local's Experience. All rights reserved.</p>
     </footer>
-
     <script>
-        document.getElementById('hamburger').addEventListener('click', function() {
-            const navbar = document.querySelector('.navbar');
-            navbar.classList.toggle('active'); // Toggle the 'active' class
+        // Mobile menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navbarLinks = document.getElementById('navbarLinks');
+        const menuOverlay = document.getElementById('menuOverlay');
+        hamburger.addEventListener('click', function() {
+            navbarLinks.classList.toggle('open');
+            menuOverlay.classList.toggle('active');
+        });
+        menuOverlay.addEventListener('click', function() {
+            navbarLinks.classList.remove('open');
+            menuOverlay.classList.remove('active');
         });
 
-        // Get the current URL path
+        // Navbar hide on scroll down, show on scroll up
+        const navbar = document.querySelector('.navbar');
+        let lastScrollPosition = 0;
+        window.addEventListener('scroll', () => {
+            let currentScrollPosition = window.scrollY;
+            if (currentScrollPosition > lastScrollPosition) {
+                navbar.style.top = '-60px';
+            } else {
+                navbar.style.top = '0';
+            }
+            lastScrollPosition = currentScrollPosition;
+        });
+
+        // Highlight active nav link
         const currentPath = window.location.pathname.split("/").pop();
-
-        // Select all navigation links
         const navLinks = document.querySelectorAll('.navbar a');
-
-        // Loop through links and set the active class based on the current path
         navLinks.forEach(link => {
             if (link.getAttribute('href') === currentPath) {
                 link.classList.add('active');
