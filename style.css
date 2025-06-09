@@ -1,4 +1,4 @@
-/* --- MODERN NAVBAR --- */
+/* --- STANDARD NAVBAR FOR ALL PAGES --- */
 .navbar {
     display: flex;
     align-items: center;
@@ -26,13 +26,22 @@
     display: inline-block;
 }
 .navbar a.active,
-.navbar a:focus {
+.navbar a[aria-current="page"] {
+    background: #3a86ff;
+    color: #fff;
+}
+/* Special style for Home tab when it's the current page */
+.navbar a[aria-current="page"][href="index.html"] {
     background: #ffd60a;
     color: #22223b;
 }
 .navbar a:hover {
     background: #bde0fe;
     color: #3a86ff;
+}
+.navbar a:focus:not(.active):not([aria-current="page"]) {
+    background: #ffd60a;
+    color: #22223b;
 }
 .hamburger {
     display: none;
@@ -69,7 +78,7 @@
         border-bottom: 1px solid #bde0fe;
         background: none;
     }
-    .navbar.active a {
+    .navbar.open a {
         display: block;
         background: #3a86ff;
         color: #fff;
@@ -79,6 +88,16 @@
         margin-left: 12px;
         margin-bottom: 8px;
     }
+}
+.menu-overlay {
+    display: none;
+}
+.menu-overlay.active {
+    display: block;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(34,34,59,0.18);
+    z-index: 1500;
 }
 
 /* --- HERO SECTION --- */
@@ -91,7 +110,7 @@
     text-align: center;
     margin-bottom: 40px;
     position: relative;
-    overflow: hidden;
+   
 }
 .hero-section img.logo-fade-in {
     margin-bottom: 18px;

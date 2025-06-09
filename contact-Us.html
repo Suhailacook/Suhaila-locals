@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Inter', Arial, sans-serif;
@@ -27,98 +28,6 @@
             margin-bottom: 0.5em;
             text-align: center;
             color: #3a86ff;
-        }
-        /* Modern Navbar */
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(90deg, #3a86ff 0%, #4361ee 100%);
-            padding: 14px 0;
-            position: sticky;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 12px rgba(58,134,255,0.08);
-            gap: 10px;
-        }
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 22px;
-            border-radius: 8px;
-            font-size: 1.08rem;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-            margin: 0 4px;
-            transition: background 0.2s, color 0.2s;
-            display: inline-block;
-        }
-        .navbar a.active,
-        .navbar a:focus {
-            background: #ffd60a;
-            color: #22223b;
-        }
-        .navbar a:hover {
-            background: #bde0fe;
-            color: #3a86ff;
-        }
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 2rem;
-            color: #fff;
-            margin-right: 16px;
-            cursor: pointer;
-        }
-        @media (max-width: 900px) {
-            .navbar {
-                flex-wrap: wrap;
-                justify-content: flex-start;
-                padding: 10px 8px;
-            }
-            .navbar a {
-                padding: 10px 10px;
-                font-size: 1rem;
-            }
-        }
-        @media (max-width: 700px) {
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 10px 0;
-                gap: 0;
-            }
-            .navbar a {
-                display: none;
-                width: 100%;
-                margin: 0;
-                border-radius: 0;
-                border-bottom: 1px solid #bde0fe;
-                background: none;
-            }
-            .navbar.open a {
-                display: block;
-                background: #3a86ff;
-                color: #fff;
-            }
-            .hamburger {
-                display: block;
-                margin-left: 12px;
-                margin-bottom: 8px;
-            }
-        }
-        .menu-overlay {
-            display: none;
-        }
-        .menu-overlay.active {
-            display: block;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(34,34,59,0.18);
-            z-index: 1500;
         }
         /* Hero Section */
         .contact-hero {
@@ -288,7 +197,7 @@
             <a href="about.html">About Us</a>
             <a href="Reservation.html">Reservations</a>
             <a href="contact-Us.html">Contact</a>
-            <a href="Blog.html" class="active" aria-current="page">Blog</a>
+            <a href="Blog.html">Blog</a>
         </div>
     </nav>
 

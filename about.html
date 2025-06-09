@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Suhaila Local's Experience</title>
     <meta name="description" content="Learn about Suhaila Local's Experience, our story, and our passion for sharing Aqaba’s authentic food and culture.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Inter', Arial, sans-serif;
@@ -15,110 +14,6 @@
             color: #22223b;
             margin: 0;
             padding: 0;
-        }
-        h1, h2, h3 {
-            font-family: 'Inter', Arial, sans-serif;
-            font-weight: 700;
-            color: #22223b;
-            letter-spacing: 0.01em;
-        }
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 0.5em;
-            text-align: center;
-            color: #3a86ff;
-        }
-        /* Modern Navbar */
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(90deg, #3a86ff 0%, #4361ee 100%);
-            padding: 14px 0;
-            position: sticky;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 12px rgba(58,134,255,0.08);
-            gap: 10px;
-        }
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 22px;
-            border-radius: 8px;
-            font-size: 1.08rem;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-            margin: 0 4px;
-            transition: background 0.2s, color 0.2s;
-            display: inline-block;
-        }
-        .navbar a.active,
-        .navbar a:focus {
-            background: #ffd60a;
-            color: #22223b;
-        }
-        .navbar a:hover {
-            background: #bde0fe;
-            color: #3a86ff;
-        }
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 2rem;
-            color: #fff;
-            margin-right: 16px;
-            cursor: pointer;
-        }
-        @media (max-width: 900px) {
-            .navbar {
-                flex-wrap: wrap;
-                justify-content: flex-start;
-                padding: 10px 8px;
-            }
-            .navbar a {
-                padding: 10px 10px;
-                font-size: 1rem;
-            }
-        }
-        @media (max-width: 700px) {
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 10px 0;
-                gap: 0;
-            }
-            .navbar a {
-                display: none;
-                width: 100%;
-                margin: 0;
-                border-radius: 0;
-                border-bottom: 1px solid #bde0fe;
-                background: none;
-            }
-            .navbar.open a {
-                display: block;
-                background: #3a86ff;
-                color: #fff;
-            }
-            .hamburger {
-                display: block;
-                margin-left: 12px;
-                margin-bottom: 8px;
-            }
-        }
-        .menu-overlay {
-            display: none;
-        }
-        .menu-overlay.active {
-            display: block;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(34,34,59,0.18);
-            z-index: 1500;
         }
         /* Hero Section */
         .about-hero {
@@ -170,13 +65,12 @@
             max-width: 1000px;
             margin: 0 auto;
             align-items: center;
-            background: none;
-            box-shadow: none;
         }
         .about-image {
             flex: 1 1 260px;
-            max-width: 320px;
+            max-width: 220px;
             width: 100%;
+            height: auto;
             object-fit: cover;
             border-radius: 18px;
             box-shadow: 0 2px 16px #bde0fe;
@@ -225,7 +119,7 @@
             }
             .about-image {
                 border-radius: 18px 18px 0 0;
-                max-width: 98vw;
+                max-width: 140px;
             }
             .about-text {
                 padding: 18px 10px;
@@ -249,9 +143,7 @@
     </style>
 </head>
 <body>
-    <!-- Mobile menu overlay -->
     <div class="menu-overlay" id="menuOverlay"></div>
-    <!-- Navigation Menu -->
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
         <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
         <div class="navbar-links" id="navbarLinks">
@@ -259,17 +151,15 @@
             <a href="about.html">About Us</a>
             <a href="Reservation.html">Reservations</a>
             <a href="contact-Us.html">Contact</a>
-            <a href="Blog.html" class="active" aria-current="page">Blog</a>
+            <a href="Blog.html">Blog</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <div class="about-hero">
         <h1>About Suhaila Local's Experience</h1>
         <p>Discover our story, our passion, and the people behind Aqaba’s most authentic local experiences.</p>
     </div>
 
-    <!-- About Section -->
     <section class="about-section">
         <div class="about-container">
             <img src="about-photo.jpg" alt="Suhaila and Family" class="about-image">
@@ -290,7 +180,6 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
     <footer>
         <p>Contact us: <a href="mailto:suhaila.cook@gmail.com">suhaila.cook@gmail.com</a></p>
         <p>Mobile: +962798460448</p>
@@ -330,6 +219,18 @@
                 navbar.style.top = '0';
             }
             lastScrollPosition = currentScrollPosition;
+        });
+
+        // Set active class on navigation links based on current page
+        const currentPath = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll('.navbar a');
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            link.removeAttribute('aria-current');
+            if (link.getAttribute('href') === currentPath || (currentPath === "" && link.getAttribute('href') === "index.html")) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
+            }
         });
     </script>
 </body>
