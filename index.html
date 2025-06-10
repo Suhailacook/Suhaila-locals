@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,25 +22,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Suhaila Local's Experience",
-      "image": "https://suhaila-locals.space/logo.png",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Aqaba",
-        "addressCountry": "JO"
-      },
-      "url": "https://suhaila-locals.space/",
-      "telephone": "+962798460448"
-    }
-    </script>
 </head>
 <body>
-    <!-- Navigation Menu -->
+    <div class="menu-overlay" id="menuOverlay"></div>
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
         <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
         <div class="navbar-links" id="navbarLinks">
@@ -48,18 +32,24 @@
             <a href="about.html">About Us</a>
             <a href="Reservation.html">Reservations</a>
             <a href="contact-Us.html">Contact</a>
-            <a href="Blog.html" class="active" aria-current="page">Blog</a>
+            <a href="Blog.html">Blog</a>
         </div>
     </nav>
 
-    <header>
-        <div class="hero-section">
-            <img src="logo.png" alt="Suhaila's Local Experiences Logo" class="logo-fade-in" style="width: 180px;" loading="lazy">
-            <h1 class="fade-in-heading">Aqaba Walking Tour & Authentic Cooking Experience</h1>
-            <p class="hero-subtitle">Discover Jordan’s culture, cook authentic dishes, and make memories with Suhaila’s family in Aqaba.</p>
-            <a href="Reservation.html" class="button hero-cta">Reserve Your Spot</a>
+    <!-- Logo and Hero Section -->
+    <section class="hero-section">
+        <img src="logo.png" alt="Suhaila's Locals Logo" class="logo-fade-in" width="120" height="120" />
+        <h1>Welcome to Suhaila's Local Experiences</h1>
+        <p class="hero-subtitle">Cooking Classes & Walking Tours in Aqaba</p>
+        <a href="Reservation.html" class="hero-cta">Book Your Experience</a>
+        <div class="hero-contact">
+            <p>
+                <strong>Contact us:</strong>
+                <a href="mailto:suhaila.cook@gmail.com">suhaila.cook@gmail.com</a> |
+                <a href="tel:+962798460448">+962798460448</a>
+            </p>
         </div>
-    </header>
+    </section>
 
     <main>
         <!-- Modern Image Gallery -->
@@ -69,8 +59,6 @@
                 <img src="image1.jpg" alt="Cooking class in Aqaba" class="gallery-img" onclick="openLightbox(this)">
                 <img src="image2.jpg" alt="Aqaba walking tour" class="gallery-img" onclick="openLightbox(this)">
                 <img src="image3.jpg" alt="Dining experience" class="gallery-img" onclick="openLightbox(this)">
-                <img src="image4.jpg" alt="Family cooking" class="gallery-img" onclick="openLightbox(this)">
-                <img src="image5.jpg" alt="Market tour" class="gallery-img" onclick="openLightbox(this)">
             </div>
             <!-- Lightbox Modal -->
             <div id="lightbox" class="lightbox" onclick="closeLightbox()">
@@ -79,19 +67,18 @@
                 <button id="lightbox-next" class="lightbox-arrow" aria-label="Next image" onclick="event.stopPropagation(); nextLightboxImage();">&gt;</button>
             </div>
         </section>
-
-        <!-- About Suhaila Section -->
-        <section class="about-section" id="about">
-            <h2 class="fade-in-heading">Meet the <span class="highlight">Suhaila Family</span></h2>
-            <div class="about-container">
-                <img src="Family.jpg" alt="Suhaila Family" class="about-image" loading="lazy">
-                <div class="about-text">
-                    <h3>Welcome to Our Culinary Family!</h3>
-                    <p>At Suhaila Family, cooking is a celebration of life and togetherness. Our kitchen is where generations share cherished recipes and create delicious memories.</p>
-                    <p>Join us for authentic cooking classes, experience our warm family atmosphere, and let us cater your special events. Come be part of our culinary tradition!</p>
-                </div>
-            </div>
-        </section>
+<!-- About Suhaila Section -->
+<section class="about-section" id="about">
+    <h2 class="fade-in-heading">Meet the <span class="highlight">Suhaila Family</span></h2>
+    <div class="about-container">
+        <img src="Family.jpg" alt="Suhaila Family" class="about-image" loading="lazy">
+        <div class="about-text visible">
+            <h3>Welcome to Our Culinary Family!</h3>
+            <p>At Suhaila Family, cooking is a celebration of life and togetherness. Our kitchen is where generations share cherished recipes and create delicious memories.</p>
+            <p>Join us for authentic cooking classes, experience our warm family atmosphere, and let us cater your special events. Come be part of our culinary tradition!</p>
+        </div>
+    </div>
+</section>
 
         <!-- Blog Section -->
         <section id="blog-section">
@@ -190,168 +177,104 @@
         <p>Contact us: <a href="mailto:suhaila.cook@gmail.com">suhaila.cook@gmail.com</a></p>
         <p>Mobile: +962798460448</p>
         <p>Connect with us on:
-            <a href="https://www.instagram.com/suhaila.cook" target="_blank" rel="noopener">
+            <a href="https://www.instagram.com/suhaila.cook" target="_blank">
                 <img src="instagram-icon.png" alt="Instagram" class="social-icon"> Instagram
             </a> |
-            <a href="https://web.facebook.com/suhailacook" target="_blank" rel="noopener">
+            <a href="https://web.facebook.com/suhailacook" target="_blank">
                 <img src="facebook-icon.png" alt="Facebook" class="social-icon"> Facebook
             </a>
         </p>
-        <h3>Find Us Here:</h3>
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d515.9586386475576!2d34.99579176906436!3d29.54717876188753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x150071000d983327%3A0xc66defbe37987710!2sSuhaila!5e0!3m2!1sen!2sjo!4v1730633996092!5m2!1sen!2sjo" 
-            width="400" 
-            height="300" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
         <p>&copy; 2024 Suhaila Cooking Experience. All rights reserved.</p>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="scrollToTop" aria-label="Scroll to Top">↑ Top</button>
-
-    <!-- Scripts -->
     <script>
-    // Hamburger menu toggle
-    document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById('hamburger').addEventListener('click', function() {
-            document.querySelector('.navbar').classList.toggle('active');
+        // Mobile menu functionality (same as about.html)
+        const hamburger = document.getElementById('hamburger');
+        const navbarLinks = document.getElementById('navbarLinks');
+        const menuOverlay = document.getElementById('menuOverlay');
+        hamburger.addEventListener('click', function() {
+            navbarLinks.classList.toggle('open');
+            menuOverlay.classList.toggle('active');
+        });
+        menuOverlay.addEventListener('click', function() {
+            navbarLinks.classList.remove('open');
+            menuOverlay.classList.remove('active');
         });
 
-        // About text fade-in on scroll
-        function isInViewport(element) {
-            const rect = element.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
-        function handleScroll() {
-            const aboutText = document.querySelector('.about-text');
-            if (aboutText && isInViewport(aboutText)) {
-                aboutText.classList.add('visible');
-            }
-        }
-        window.addEventListener('scroll', handleScroll);
-
-        // Fade-in headings animation
-        const headings = document.querySelectorAll('.fade-in-heading');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.2 });
-        headings.forEach((heading) => {
-            heading.style.animationPlayState = 'paused';
-            observer.observe(heading);
-        });
-
-        // Mobile menu: close menu on link click (no preventDefault, allow navigation)
-        const navbarLinks = document.querySelectorAll('.navbar a');
-        navbarLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                document.querySelector('.navbar').classList.remove('active');
-            });
-        });
-
-        // Scroll to top button
-        const scrollToTopButton = document.getElementById('scrollToTop');
-        window.addEventListener('scroll', function () {
-            if (window.pageYOffset > 100) {
-                scrollToTopButton.style.display = 'block';
+        // Navbar hide on scroll down, show on scroll up
+        const navbar = document.querySelector('.navbar');
+        let lastScrollPosition = 0;
+        window.addEventListener('scroll', () => {
+            let currentScrollPosition = window.scrollY;
+            if (currentScrollPosition > lastScrollPosition) {
+                navbar.style.top = '-60px';
             } else {
-                scrollToTopButton.style.display = 'none';
+                navbar.style.top = '0';
+            }
+            lastScrollPosition = currentScrollPosition;
+        });
+
+        // Set active class on navigation links based on current page
+        const currentPath = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll('.navbar a');
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            link.removeAttribute('aria-current');
+            if (link.getAttribute('href') === currentPath || (currentPath === "" && link.getAttribute('href') === "index.html")) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
             }
         });
-        scrollToTopButton.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    });
 
-    // Lightbox for gallery with navigation
-    const galleryImages = Array.from(document.querySelectorAll('.gallery-img'));
-    let currentLightboxIndex = 0;
+        // Lightbox gallery functions
+        const galleryImages = Array.from(document.querySelectorAll('.gallery-img'));
+        let currentLightboxIndex = 0;
 
-    function openLightbox(img) {
-        currentLightboxIndex = galleryImages.indexOf(img);
-        showLightboxImage();
-        document.getElementById('lightbox').classList.add('active');
-    }
-    function closeLightbox() {
-        document.getElementById('lightbox').classList.remove('active');
-    }
-    function showLightboxImage() {
-        const img = galleryImages[currentLightboxIndex];
-        document.getElementById('lightbox-img').src = img.src;
-        document.getElementById('lightbox-img').alt = img.alt;
-    }
-    function prevLightboxImage() {
-        currentLightboxIndex = (currentLightboxIndex - 1 + galleryImages.length) % galleryImages.length;
-        showLightboxImage();
-    }
-    function nextLightboxImage() {
-        currentLightboxIndex = (currentLightboxIndex + 1) % galleryImages.length;
-        showLightboxImage();
-    }
-
-    // Optional: Keyboard navigation for accessibility
-    document.addEventListener('keydown', function(e) {
-        const lightbox = document.getElementById('lightbox');
-        if (!lightbox.classList.contains('active')) return;
-        if (e.key === 'ArrowLeft') {
-            prevLightboxImage();
-        } else if (e.key === 'ArrowRight') {
-            nextLightboxImage();
-        } else if (e.key === 'Escape') {
-            closeLightbox();
+        function showLightboxImage() {
+            const img = galleryImages[currentLightboxIndex];
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox-img').alt = img.alt;
         }
-    });
 
-    // Review carousel
-    let currentReview = 0;
-    const reviewCards = document.querySelectorAll('.review-card');
-    function showReviewCard(idx) {
-        reviewCards.forEach((card, i) => card.classList.toggle('active', i === idx));
-    }
-    function prevReview() {
-        currentReview = (currentReview - 1 + reviewCards.length) % reviewCards.length;
-        showReviewCard(currentReview);
-    }
-    function nextReview() {
-        currentReview = (currentReview + 1) % reviewCards.length;
-        showReviewCard(currentReview);
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-        showReviewCard(currentReview);
-    });
-
-    // Redirect to reservation with experience name
-    function redirectToReservation(experienceName) {
-        window.location.href = `Reservation.html?experience=${encodeURIComponent(experienceName)}`;
-    }
-
-    // Set active class on navigation links based on current page
-    const currentPath = window.location.pathname.split("/").pop();
-    const navLinks = document.querySelectorAll('.navbar a');
-    navLinks.forEach(link => {
-        // Remove any existing active class
-        link.classList.remove('active');
-        // Add active if href matches current page
-        if (link.getAttribute('href') === currentPath) {
-            link.classList.add('active');
-            link.setAttribute('aria-current', 'page');
-        } else {
-            link.removeAttribute('aria-current');
+        window.openLightbox = function(img) {
+            currentLightboxIndex = galleryImages.indexOf(img);
+            showLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
         }
-    });
+        window.closeLightbox = function() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+        window.prevLightboxImage = function() {
+            currentLightboxIndex = (currentLightboxIndex - 1 + galleryImages.length) % galleryImages.length;
+            showLightboxImage();
+        }
+        window.nextLightboxImage = function() {
+            currentLightboxIndex = (currentLightboxIndex + 1) % galleryImages.length;
+            showLightboxImage();
+        }
+
+        // Review carousel
+        let currentReview = 0;
+        const reviewCards = document.querySelectorAll('.review-card');
+        function showReviewCard(idx) {
+            reviewCards.forEach((card, i) => card.classList.toggle('active', i === idx));
+        }
+        function prevReview() {
+            currentReview = (currentReview - 1 + reviewCards.length) % reviewCards.length;
+            showReviewCard(currentReview);
+        }
+        function nextReview() {
+            currentReview = (currentReview + 1) % reviewCards.length;
+            showReviewCard(currentReview);
+        }
+        window.prevReview = prevReview;
+        window.nextReview = nextReview;
+        showReviewCard(currentReview);
+
+        // Book Now button functionality
+        window.redirectToReservation = function(experienceName) {
+            window.location.href = "Reservation.html?experience=" + encodeURIComponent(experienceName);
+        }
     </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZYH4T50VY"></script>
