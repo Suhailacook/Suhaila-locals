@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Post | Suhaila Local's Experience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+      color: #22223b;
+      margin: 0;
+      padding: 0;
+    }
+    .blog-hero {
+      background: linear-gradient(120deg, #3a86ff 0%, #a2d2ff 100%);
+      color: #fff;
+      padding: 70px 20px 50px 20px;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 8px 32px #3a86ff22;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .blog-hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 8px #3a86ff44;
+    }
+    .blog-hero p {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    .post-container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 2em;
+      border-radius: 18px;
+      box-shadow: 0 4px 16px #3a86ff11;
+      text-align: center;
+    }
+    .post-container h1 {
+      color: #3a86ff;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .post-container .date {
+      color: #777;
+      font-style: italic;
+      margin-bottom: 1.5em;
+      font-size: 0.95em;
+    }
+    .post-container .content {
+      line-height: 1.7;
+      font-size: 1.05em;
+      color: #333;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #3a86ff;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 2px solid #3a86ff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .back-link:hover {
+      background-color: #3a86ff;
+      color: white;
+    }
+    footer {
+      text-align: center;
+      padding: 20px 0 10px 0;
+      background: linear-gradient(90deg, #bde0fe 0%, #a2d2ff 100%);
+      color: #22223b;
+      margin-top: 50px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="blog-hero">
+    <h1>Reading Blog Post</h1>
+    <p>Discover stories and tips from Aqaba</p>
+  </div>
+
+  <div class="post-container" id="post">
+    <h1>Loading...</h1>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Suhaila Local's Experience. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    async function loadPost() {
+      const postId = getQueryParam('id');
+      const postContainer = document.getElementById('post');
+
+      if (!postId) {
+        postContainer.innerHTML = "<h1>Error: No post ID specified.</h1>";
+        return;
+      }
+
+      try {
+        const response = await fetch(`/api/blog/${postId}`);
+        if (!response.ok) {
+          throw new Error(response.status === 404 ? 'Post not found' : 'Failed to load post');
+        }
+
+        const post = await response.json();
+        postContainer.innerHTML = `
+          <h1>${post.title}</h1>
+          <p class="date">${new Date(post.date).toLocaleDateString()}</p>
+          <div class="content">${post.content}</div>
+          <a href="Blog.html" class="back-link">← Back to All Blog Posts</a>
+        `;
+      } catch (error) {
+        postContainer.innerHTML = `<h1>Error: ${error.message}</h1>`;
+      }
+    }
+
+    window.onload = loadPost;
+  </script>
+</body>
+</html>

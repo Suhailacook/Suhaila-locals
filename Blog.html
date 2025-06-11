@@ -1,252 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suhaila’s Blog | Travel Tips & Things to Do in Aqaba, Jordan</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            font-family: 'Inter', Arial, sans-serif;
-            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
-            color: #22223b;
-            margin: 0;
-            padding: 0;
-        }
-        h1, h2, h3 {
-            font-family: 'Inter', Arial, sans-serif;
-            font-weight: 700;
-            color: #22223b;
-            letter-spacing: 0.01em;
-        }
-        /* Blog Hero Section */
-        .blog-hero {
-            background: linear-gradient(120deg, #3a86ff 0%, #a2d2ff 100%);
-            color: #fff;
-            padding: 70px 20px 50px 20px;
-            border-radius: 0 0 40px 40px;
-            box-shadow: 0 8px 32px #3a86ff22;
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-        .blog-hero h1 {
-            font-size: 2.5rem;
-            color: #fff;
-            margin-bottom: 12px;
-            letter-spacing: 0.02em;
-            text-shadow: 0 2px 8px #3a86ff44;
-        }
-        .blog-hero p {
-            font-size: 1.3rem;
-            color: #f1f3f8;
-            font-weight: 500;
-            margin-bottom: 0;
-        }
-        /* Gallery Blog Section */
-        .gallery-blog {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.5em;
-            max-width: 1200px;
-            margin: 2em auto;
-            padding: 1em;
-        }
-        /* Blog Card Styling */
-        .blog-card {
-            background-color: #fff;
-            border-radius: 18px;
-            box-shadow: 0 4px 12px #3a86ff11;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-        .blog-card:hover {
-            transform: translateY(-8px) scale(1.03);
-            box-shadow: 0 12px 36px #3a86ff22;
-            border-color: #ffd60a;
-        }
-        .blog-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px 10px 0 0;
-            box-shadow: 0 2px 8px #bde0fe;
-        }
-        .blog-content {
-            padding: 1em;
-            text-align: center;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .blog-content h2 {
-            font-size: 1.2em;
-            margin-bottom: 0.5em;
-            color: #3a86ff;
-        }
-        .blog-content p {
-            font-size: 0.98em;
-            color: #555;
-            margin-bottom: 1em;
-        }
-        .read-more {
-            display: inline-block;
-            padding: 0.5em 1.2em;
-            font-size: 1em;
-            color: #fff;
-            background-color: #3a86ff;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.2s, color 0.2s;
-            box-shadow: 0 2px 8px #3a86ff22;
-            border: none;
-        }
-        .read-more:hover {
-            background-color: #ffd60a;
-            color: #22223b;
-        }
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px 0 10px 0;
-            background: linear-gradient(90deg, #bde0fe 0%, #a2d2ff 100%);
-            color: #22223b;
-            margin-top: 50px;
-            font-size: 1rem;
-        }
-        @media (max-width: 900px) {
-            .gallery-blog {
-                grid-template-columns: 1fr;
-                gap: 18px;
-            }
-            .blog-card {
-                max-width: 97vw;
-            }
-        }
-        @media (max-width: 600px) {
-            .blog-hero h1 { font-size: 1.4rem; }
-            .gallery-blog { padding: 0.5em; }
-        }
-        @media (max-width: 480px) {
-            .blog-hero h1 { font-size: 1.1rem; }
-            .blog-content h2 { font-size: 1.1em; }
-            .blog-content p { font-size: 0.9em; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suhaila’s Blog | Travel Tips & Things to Do in Aqaba, Jordan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+      color: #22223b;
+      margin: 0;
+      padding: 0;
+    }
+    h1, h2, h3 {
+      font-family: 'Inter', Arial, sans-serif;
+      font-weight: 700;
+      color: #22223b;
+      letter-spacing: 0.01em;
+    }
+    .blog-hero {
+      background: linear-gradient(120deg, #3a86ff 0%, #a2d2ff 100%);
+      color: #fff;
+      padding: 70px 20px 50px 20px;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 8px 32px #3a86ff22;
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 8px #3a86ff44;
+    }
+    .blog-hero p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+    .gallery-blog {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5em;
+      max-width: 1200px;
+      margin: 2em auto;
+      padding: 1em;
+    }
+    .blog-card {
+      background-color: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 12px #3a86ff11;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 12px 36px #3a86ff22;
+    }
+    .blog-content {
+      padding: 1em;
+      text-align: center;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .blog-content h2 {
+      font-size: 1.2em;
+      margin-bottom: 0.5em;
+      color: #3a86ff;
+    }
+    .blog-content p {
+      font-size: 0.98em;
+      color: #555;
+      margin-bottom: 1em;
+    }
+    .blog-content em {
+      color: #888;
+      font-size: 0.95em;
+    }
+    .blog-content a {
+      color: #3a86ff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 20px 0 10px 0;
+      background: linear-gradient(90deg, #bde0fe 0%, #a2d2ff 100%);
+      color: #22223b;
+      margin-top: 50px;
+      font-size: 1rem;
+    }
+    @media (max-width: 900px) {
+      .gallery-blog {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .blog-card {
+        max-width: 97vw;
+      }
+    }
+    @media (max-width: 600px) {
+      .blog-hero h1 { font-size: 1.4rem; }
+      .gallery-blog { padding: 0.5em; }
+    }
+    @media (max-width: 480px) {
+      .blog-hero h1 { font-size: 1.1rem; }
+      .blog-content h2 { font-size: 1.1em; }
+      .blog-content p { font-size: 0.9em; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Mobile menu overlay -->
-    <div class="menu-overlay" id="menuOverlay"></div>
-    <!-- Navigation Menu -->
-    <nav class="navbar" role="navigation" aria-label="Main Navigation">
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
-        <div class="navbar-links" id="navbarLinks">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="Reservation.html">Reservations</a>
-            <a href="contact-Us.html">Contact</a>
-            <a href="Blog.html" class="active" aria-current="page">Blog</a>
-        </div>
-    </nav>
-
-    <!-- Blog Hero Section -->
-    <div class="blog-hero">
-        <h1>Suhaila Local's Experience Blog</h1>
-        <p>Stories, tips, and inspiration from Aqaba and beyond.</p>
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+    <div class="navbar-links" id="navbarLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="Reservation.html">Reservations</a>
+      <a href="contact-Us.html">Contact</a>
+      <a href="Blog.html" class="active" aria-current="page">Blog</a>
     </div>
+  </nav>
 
-    <main>
-        <section class="gallery-blog">
-            <!-- Blog Post 1: Food Culture -->
-            <article class="blog-card">
-                <img src="path/to/image1.jpg" alt="Jordanian Food">
-                <div class="blog-content">
-                    <h2>Discovering the Food Culture of Aqaba</h2>
-                    <p>Aqaba's culinary scene is a rich tapestry of flavors, showcasing the best of Jordanian cuisine with fresh seafood, local spices, and traditional dishes.</p>
-                    <a href="food-culture.html" class="read-more">Read More</a>
-                </div>
-            </article>
+  <div class="blog-hero">
+    <h1>Suhaila Local's Experience Blog</h1>
+    <p>Stories, tips, and inspiration from Aqaba and beyond.</p>
+  </div>
 
-            <!-- Blog Post 2: History of Aqaba -->
-            <article class="blog-card">
-                <img src="path/to/image2.jpg" alt="Historical Sites in Aqaba">
-                <div class="blog-content">
-                    <h2>The Rich History of Aqaba</h2>
-                    <p>Aqaba boasts a fascinating history that dates back to ancient times, serving as a vital port and trading hub in the region. Discover its historical landmarks and stories.</p>
-                    <a href="history-aqaba.html" class="read-more">Read More</a>
-                </div>
-            </article>
+  <main>
+    <section class="gallery-blog" id="blogPosts">
+      <!-- Blog posts will load here -->
+    </section>
+  </main>
 
-            <!-- Blog Post 3: Local Experiences -->
-            <article class="blog-card">
-                <img src="path/to/image3.jpg" alt="Local Experiences in Aqaba">
-                <div class="blog-content">
-                    <h2>Experiencing Local Life in Aqaba</h2>
-                    <p>Engage with the locals and immerse yourself in daily life in Aqaba. From markets to cooking classes, discover what makes this city unique.</p>
-                    <a href="local-experiences.html" class="read-more">Read More</a>
-                </div>
-            </article>
+  <footer>
+    <p>&copy; 2024 Suhaila Local's Experience. All rights reserved.</p>
+  </footer>
 
-            <!-- Blog Post 4: Marine Life -->
-            <article class="blog-card">
-                <img src="path/to/image4.jpg" alt="Marine Life in Aqaba">
-                <div class="blog-content">
-                    <h2>The Underwater Wonders of Aqaba</h2>
-                    <p>Aqaba is not just about its beautiful beaches; it's also home to stunning coral reefs and vibrant marine life. Dive in to explore!</p>
-                    <a href="marine-life.html" class="read-more">Read More</a>
-                </div>
-            </article>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Suhaila Local's Experience. All rights reserved.</p>
-    </footer>
-    <script>
-        // Mobile menu functionality
-        const hamburger = document.getElementById('hamburger');
-        const navbarLinks = document.getElementById('navbarLinks');
-        const menuOverlay = document.getElementById('menuOverlay');
-        hamburger.addEventListener('click', function() {
-            navbarLinks.classList.toggle('open');
-            menuOverlay.classList.toggle('active');
-        });
-        menuOverlay.addEventListener('click', function() {
-            navbarLinks.classList.remove('open');
-            menuOverlay.classList.remove('active');
-        });
+  <script>
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navbarLinks = document.getElementById('navbarLinks');
+    const menuOverlay = document.getElementById('menuOverlay');
+    hamburger.addEventListener('click', () => {
+      navbarLinks.classList.toggle('open');
+      menuOverlay.classList.toggle('active');
+    });
+    menuOverlay.addEventListener('click', () => {
+      navbarLinks.classList.remove('open');
+      menuOverlay.classList.remove('active');
+    });
 
-        // Navbar hide on scroll down, show on scroll up
-        const navbar = document.querySelector('.navbar');
-        let lastScrollPosition = 0;
-        window.addEventListener('scroll', () => {
-            let currentScrollPosition = window.scrollY;
-            if (currentScrollPosition > lastScrollPosition) {
-                navbar.style.top = '-60px';
-            } else {
-                navbar.style.top = '0';
-            }
-            lastScrollPosition = currentScrollPosition;
-        });
+    // Scroll behavior for navbar
+    const navbar = document.querySelector('.navbar');
+    let lastScrollPosition = 0;
+    window.addEventListener('scroll', () => {
+      const currentScrollPosition = window.scrollY;
+      navbar.style.top = currentScrollPosition > lastScrollPosition ? '-60px' : '0';
+      lastScrollPosition = currentScrollPosition;
+    });
 
-        // Highlight active nav link
-        const currentPath = window.location.pathname.split("/").pop();
-        const navLinks = document.querySelectorAll('.navbar a');
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            link.removeAttribute('aria-current');
-            if (link.getAttribute('href') === currentPath) {
-                link.classList.add('active');
-                link.setAttribute('aria-current', 'page');
-            }
-        });
-    </script>
+    // Highlight active nav link
+    const currentPath = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll('.navbar a');
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      link.removeAttribute('aria-current');
+      if (link.getAttribute('href') === currentPath) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      }
+    });
+
+    // Fetch blog posts
+    fetch('/api/blog')
+      .then(res => res.json())
+      .then(posts => {
+        const container = document.getElementById('blogPosts');
+        if (!posts.length) {
+          container.innerHTML = "<p>No blog posts yet.</p>";
+          return;
+        }
+        container.innerHTML = posts.map(post => `
+          <article class="blog-card">
+            <div class="blog-content">
+              <h2>${post.title}</h2>
+              <p><em>${new Date(post.date).toLocaleDateString()}</em></p>
+              <p>${post.content.substring(0, 150)}...</p>
+           <a href="blog-post.html?id=${post.id}">Read More</a>
+
+            </div>
+          </article>
+        `).join('');
+      })
+      .catch(() => {
+        document.getElementById('blogPosts').innerHTML = "<p>Could not load blog posts.</p>";
+      });
+  </script>
 </body>
 </html>

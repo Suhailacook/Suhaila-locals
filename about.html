@@ -10,94 +10,79 @@
     <style>
         body {
             font-family: 'Inter', Arial, sans-serif;
-            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+            background: #f8fafc;
             color: #22223b;
             margin: 0;
             padding: 0;
         }
-        /* Hero Section */
         .about-hero {
-            background: linear-gradient(120deg, #3a86ff 0%, #a2d2ff 100%);
+            background: #3a86ff;
             color: #fff;
-            padding: 70px 20px 50px 20px;
-            border-radius: 0 0 40px 40px;
-            box-shadow: 0 8px 32px #3a86ff22;
+            padding: 48px 16px 32px 16px;
             text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-            overflow: hidden;
         }
         .about-hero h1 {
-            font-size: 2.5rem;
-            color: #fff;
-            margin-bottom: 12px;
-            letter-spacing: 0.02em;
-            text-shadow: 0 2px 8px #3a86ff44;
-        }
-        .about-hero p {
-            font-size: 1.3rem;
-            color: #f1f3f8;
-            font-weight: 500;
-            margin-bottom: 0;
-        }
-        /* About Section */
-        .about-section {
-            background: linear-gradient(90deg, #f8fafc 60%, #bde0fe 100%);
-            border-radius: 22px;
-            box-shadow: 0 4px 24px #3a86ff11;
-            margin: 60px auto;
-            max-width: 1100px;
-            padding: 36px 0;
-        }
-        .about-section h2 {
-            color: #3a86ff;
-            font-size: 2.1em;
-            margin-bottom: 18px;
-            font-weight: 800;
-        }
-        .about-section .highlight {
-            color: #ffd60a;
-        }
-        .about-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 32px;
-            max-width: 1000px;
-            margin: 0 auto;
-            align-items: center;
-        }
-        .about-image {
-            flex: 1 1 260px;
-            max-width: 220px;
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 18px;
-            box-shadow: 0 2px 16px #bde0fe;
-            border: 3px solid #fff;
-        }
-        .about-text {
-            flex: 2 1 340px;
-            padding: 18px 24px;
-            text-align: left;
-            color: #22223b;
-            background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 2px 12px #3a86ff11;
-        }
-        .about-text h3 {
-            color: #3a86ff;
-            font-size: 1.3em;
+            font-size: 2.2rem;
             margin-bottom: 10px;
         }
-        .about-text p {
+        .about-hero p {
+            font-size: 1.15rem;
+            margin: 0 auto;
+            max-width: 500px;
+        }
+        .about-main {
+            max-width: 600px;
+            margin: 40px auto 0 auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px #3a86ff11;
+            padding: 32px 20px 24px 20px;
+            text-align: center; /* Add this line */
+        }
+        .about-img {
+            display: block;
+            margin: 0 auto 24px auto;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 2px 16px #bde0fe;
+            border: 3px solid #fff;
+            background: #eee;
+        }
+        .about-main h2 {
+            color: #3a86ff;
+            text-align: center;
+            margin-bottom: 18px;
+            font-size: 1.5em;
+        }
+        .about-main h3 {
+            color: #4361ee;
+            margin-top: 32px;
+            margin-bottom: 10px;
+            font-size: 1.18em;
+            text-align: center;
+            letter-spacing: 0.01em;
+        }
+        .about-main p {
             color: #22223b;
-            font-size: 1.08em;
+            font-size: 1.12em;
+            margin-top: 0;
+            margin-bottom: 22px;
+            text-align: center;
+            line-height: 1.7;
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 16px 14px;
+            box-shadow: 0 2px 8px #3a86ff0a;
+            border-left: 4px solid #ffd60a;
+            display: inline-block;
+            max-width: 95%;
         }
         .highlight {
             color: #ffd60a;
+            font-weight: bold;
         }
-        /* Footer Styling */
         footer {
             text-align: center;
             padding: 20px 0 10px 0;
@@ -111,34 +96,12 @@
             vertical-align: middle;
             margin-right: 5px;
         }
-        @media (max-width: 900px) {
-            .about-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 18px;
-            }
-            .about-image {
-                border-radius: 18px 18px 0 0;
-                max-width: 140px;
-            }
-            .about-text {
-                padding: 18px 10px;
-                border-radius: 0 0 18px 18px;
-            }
-        }
         @media (max-width: 700px) {
-            .about-section {
-                margin: 30px 4px 30px 4px;
-                padding: 14px 4px;
+            .about-main {
+                margin: 24px 4px 0 4px;
+                padding: 18px 6px 14px 6px;
             }
-        }
-        @media (max-width: 600px) {
-            .about-hero h1 { font-size: 1.4rem; }
-        }
-        @media (max-width: 480px) {
-            .about-hero h1 { font-size: 1.1rem; }
-            .about-text h3 { font-size: 1.1em; }
-            .about-text p { font-size: 0.9em; }
+            .about-hero h1 { font-size: 1.3rem; }
         }
     </style>
 </head>
@@ -148,90 +111,49 @@
         <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
         <div class="navbar-links" id="navbarLinks">
             <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
+            <a href="about.html" aria-current="page" class="active">About Us</a>
             <a href="Reservation.html">Reservations</a>
             <a href="contact-Us.html">Contact</a>
             <a href="Blog.html">Blog</a>
         </div>
     </nav>
 
-    <div class="about-hero">
+    <header class="about-hero">
         <h1>About Suhaila Local's Experience</h1>
         <p>Discover our story, our passion, and the people behind Aqaba’s most authentic local experiences.</p>
-    </div>
+    </header>
 
-    <section class="about-section">
-        <div class="about-container">
-            <img src="about-photo.jpg" alt="Suhaila and Family" class="about-image">
-            <div class="about-text">
-                <h3>Our Story</h3>
-                <p>
-                    Welcome to <span class="highlight">Suhaila Local's Experience</span>! We are a family-run initiative in the heart of Aqaba, dedicated to sharing the warmth, flavors, and traditions of Jordanian hospitality. Our journey began with a simple idea: to open our home and hearts to travelers seeking genuine connections and unforgettable memories.
-                </p>
-                <h3>What We Offer</h3>
-                <p>
-                    From hands-on <span class="highlight">cooking classes</span> to immersive <span class="highlight">walking tours</span> and cozy <span class="highlight">dining experiences</span>, every activity is designed to bring you closer to our culture and community. We believe food is the gateway to understanding a place, and every meal is a story waiting to be shared.
-                </p>
-                <h3>Meet Suhaila</h3>
-                <p>
-                    Suhaila, our founder, is passionate about preserving local recipes and traditions. With her family, she welcomes guests as friends, ensuring every visit is filled with laughter, learning, and delicious food.
-                </p>
-            </div>
-        </div>
-    </section>
+    <main>
+        <section class="about-main">
+            <img src="about-photo.jpg" alt="Suhaila and Family smiling in their kitchen" class="about-img" onerror="this.src='https://via.placeholder.com/180?text=No+Image';">
+            <h2>Who We Are</h2>
+            <h3>Our Story</h3>
+            <p>
+                Welcome to <span class="highlight">Suhaila Local's Experience</span>! We are a family-run initiative in the heart of Aqaba, dedicated to sharing the warmth, flavors, and traditions of Jordanian hospitality. Our journey began with a simple idea: to open our home and hearts to travelers seeking genuine connections and unforgettable memories.
+            </p>
+            <h3>What We Offer</h3>
+            <p>
+                From hands-on <span class="highlight">cooking classes</span> to immersive <span class="highlight">walking tours</span> and cozy <span class="highlight">dining experiences</span>, every activity is designed to bring you closer to our culture and community. We believe food is the gateway to understanding a place, and every meal is a story waiting to be shared.
+            </p>
+            <h3>Meet Suhaila</h3>
+            <p>
+                Suhaila, our founder, is passionate about preserving local recipes and traditions. With her family, she welcomes guests as friends, ensuring every visit is filled with laughter, learning, and delicious food.
+            </p>
+        </section>
+    </main>
 
     <footer>
         <p>Contact us: <a href="mailto:suhaila.cook@gmail.com">suhaila.cook@gmail.com</a></p>
-        <p>Mobile: +962798460448</p>
+        <p>Mobile: <a href="tel:+962798460448">+962798460448</a></p>
         <p>Connect with us on:
-            <a href="https://www.instagram.com/suhaila.cook" target="_blank">
+            <a href="https://www.instagram.com/suhaila.cook" target="_blank" rel="noopener">
                 <img src="instagram-icon.png" alt="Instagram" class="social-icon"> Instagram
             </a> |
-            <a href="https://web.facebook.com/suhailacook" target="_blank">
+            <a href="https://web.facebook.com/suhailacook" target="_blank" rel="noopener">
                 <img src="facebook-icon.png" alt="Facebook" class="social-icon"> Facebook
             </a>
         </p>
         <p>&copy; 2024 Suhaila Cooking Experience. All rights reserved.</p>
     </footer>
-
-    <script>
-        // Mobile menu functionality
-        const hamburger = document.getElementById('hamburger');
-        const navbarLinks = document.getElementById('navbarLinks');
-        const menuOverlay = document.getElementById('menuOverlay');
-        hamburger.addEventListener('click', function() {
-            navbarLinks.classList.toggle('open');
-            menuOverlay.classList.toggle('active');
-        });
-        menuOverlay.addEventListener('click', function() {
-            navbarLinks.classList.remove('open');
-            menuOverlay.classList.remove('active');
-        });
-
-        // Navbar hide on scroll down, show on scroll up
-        const navbar = document.querySelector('.navbar');
-        let lastScrollPosition = 0;
-        window.addEventListener('scroll', () => {
-            let currentScrollPosition = window.scrollY;
-            if (currentScrollPosition > lastScrollPosition) {
-                navbar.style.top = '-60px';
-            } else {
-                navbar.style.top = '0';
-            }
-            lastScrollPosition = currentScrollPosition;
-        });
-
-        // Set active class on navigation links based on current page
-        const currentPath = window.location.pathname.split("/").pop();
-        const navLinks = document.querySelectorAll('.navbar a');
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            link.removeAttribute('aria-current');
-            if (link.getAttribute('href') === currentPath || (currentPath === "" && link.getAttribute('href') === "index.html")) {
-                link.classList.add('active');
-                link.setAttribute('aria-current', 'page');
-            }
-        });
-    </script>
 </body>
 </html>
