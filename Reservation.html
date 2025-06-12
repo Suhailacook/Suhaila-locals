@@ -452,9 +452,11 @@
     populateForm();
 
     function showErrorPopup(message) {
-        document.getElementById('popup-message').innerText = message;
+        const errorMsg = typeof message === 'string' ? message : JSON.stringify(message);
+        document.getElementById('popup-message').innerText = errorMsg;
         document.getElementById('error-popup').style.display = 'flex';
     }
+
     function closeErrorPopup() {
         document.getElementById('error-popup').style.display = 'none';
     }
@@ -463,31 +465,39 @@
         event.preventDefault();
         document.getElementById('loading-spinner').style.display = 'block';
 
-        // Remove old messages
-        let msgContainer = document.getElementById('form-message-container');
+        const msgContainer = document.getElementById('form-message-container');
         msgContainer.innerHTML = '';
 
-        fetch('https://suhaila-locals.onrender.com/send-email', {
-            method: 'POST',
-            body: new FormData(this)
+        const BASE_URL = window.location.hostname.includes("localhost")
+            ? "http://localhost:3000"
+            : "https://suhaila-locals.onrender.com";
+
+        fetch(`${BASE_URL}/api/reserve`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(Object.fromEntries(new FormData(this).entries()))
         })
         .then(async response => {
             document.getElementById('loading-spinner').style.display = 'none';
             let msg = document.createElement('div');
+
             if (response.ok) {
                 msg.className = 'success-message';
                 msg.innerText = 'Thank you for your reservation! We will contact you soon.';
                 msgContainer.appendChild(msg);
                 this.reset();
+                document.getElementById('reservation-form').style.display = 'none';
             } else {
                 let errorText = 'There was a problem with your reservation. Please try again.';
                 try {
                     const data = await response.json();
-                    if (data && data.error) errorText = data.error;
+                    if (data && data.error)
+                        errorText = typeof data.error === 'string' ? data.error : JSON.stringify(data.error);
                 } catch (e) {}
                 showErrorPopup(errorText);
             }
-            msg.scrollIntoView({behavior: "smooth"});
+
+            msg.scrollIntoView({ behavior: "smooth" });
         })
         .catch(error => {
             document.getElementById('loading-spinner').style.display = 'none';
@@ -500,13 +510,9 @@
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', function() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop) {
-            navbar.style.top = '-60px';
-        } else {
-            navbar.style.top = '0';
-        }
+        navbar.style.top = scrollTop > lastScrollTop ? '-60px' : '0';
         lastScrollTop = scrollTop;
     });
-    </script>
+</script>
 </body>
 </html>
