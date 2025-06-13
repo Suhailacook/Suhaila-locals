@@ -115,7 +115,8 @@ app.post('/api/reserve', async (req, res) => {
       subject: 'Reservation Confirmation',
       html: `
         <h2>Hello ${name},</h2>
-        <p>Your reservation is confirmed!</p>
+<h2 style="color:#3a86ff;">Your Booking Is Confirmed! 🎉</h2>
+<p>Thank you for reserving with us! Below are your details:</p>
         <ul>
           <li><strong>ID:</strong> ${confirmationId}</li>
           <li><strong>Experience:</strong> ${experience}</li>
