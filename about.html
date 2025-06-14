@@ -155,5 +155,40 @@
         </p>
         <p>&copy; 2024 Suhaila Cooking Experience. All rights reserved.</p>
     </footer>
+    <script>
+   // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navbarLinks = document.getElementById('navbarLinks');
+    const menuOverlay = document.getElementById('menuOverlay');
+    hamburger.addEventListener('click', () => {
+      navbarLinks.classList.toggle('open');
+      menuOverlay.classList.toggle('active');
+    });
+    menuOverlay.addEventListener('click', () => {
+      navbarLinks.classList.remove('open');
+      menuOverlay.classList.remove('active');
+    });
+
+    // Scroll behavior for navbar
+    const navbar = document.querySelector('.navbar');
+    let lastScrollPosition = 0;
+    window.addEventListener('scroll', () => {
+      const currentScrollPosition = window.scrollY;
+      navbar.style.top = currentScrollPosition > lastScrollPosition ? '-60px' : '0';
+      lastScrollPosition = currentScrollPosition;
+    });
+
+    // Highlight active nav link
+    const currentPath = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll('.navbar a');
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      link.removeAttribute('aria-current');
+      if (link.getAttribute('href') === currentPath) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      }
+    });
+</script>
 </body>
 </html>
