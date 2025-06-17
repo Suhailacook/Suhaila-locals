@@ -1,4 +1,15 @@
 /* --- MODERN NAVBAR FOR ALL PAGES --- */
+body {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+html, body {
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #3a86ff;
+}
 .navbar {
     display: flex;
     align-items: center;
