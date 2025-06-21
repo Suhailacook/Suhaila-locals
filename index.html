@@ -24,6 +24,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div id="scroll-progress"></div>
     <div class="menu-overlay" id="menuOverlay"></div>
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
         <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
@@ -45,6 +46,7 @@
         <div class="hero-contact">
            
         </div>
+        <svg class="hero-wave" viewBox="0 0 1440 320"><path fill="#bde0fe" fill-opacity="1" d="M0,224L1440,96L1440,320L0,320Z"></path></svg>
     </section>
 
     <main>
@@ -52,29 +54,64 @@
         <section class="gallery-section">
             <h2 class="gallery-title">Our Experiences Gallery</h2>
             <div class="gallery-grid">
-                <img src="image1.jpg" alt="Cooking class in Aqaba" class="gallery-img" onclick="openLightbox(this)">
-                <img src="image2.jpg" alt="Aqaba walking tour" class="gallery-img" onclick="openLightbox(this)">
-                <img src="image3.jpg" alt="Dining experience" class="gallery-img" onclick="openLightbox(this)">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <img src="image1.jpg" alt="Cooking class in Aqaba" class="gallery-img" loading="lazy">
+                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling)">
+                        <span class="overlay-text">View Class</span>
+                    </div>
+                    <p class="gallery-caption">Authentic Cooking Class</p>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <img src="image2.jpg" alt="Aqaba walking tour" class="gallery-img" loading="lazy">
+                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling)">
+                        <span class="overlay-text">Explore Tour</span>
+                    </div>
+                    <p class="gallery-caption">Aqaba Walking Tour</p>
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <img src="image3.jpg" alt="Dining experience" class="gallery-img" loading="lazy">
+                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling)">
+                        <span class="overlay-text">Dining Experience</span>
+                    </div>
+                    <p class="gallery-caption">Traditional Dining</p>
+                </div>
+                <!-- Add more gallery items following this structure -->
             </div>
-            <!-- Lightbox Modal -->
+            <!-- Lightbox Modal (keep as is) -->
             <div id="lightbox" class="lightbox" onclick="closeLightbox()">
                 <button id="lightbox-prev" class="lightbox-arrow" aria-label="Previous image" onclick="event.stopPropagation(); prevLightboxImage();">&lt;</button>
                 <img id="lightbox-img" src="" alt="Gallery large view">
                 <button id="lightbox-next" class="lightbox-arrow" aria-label="Next image" onclick="event.stopPropagation(); nextLightboxImage();">&gt;</button>
             </div>
         </section>
-<!-- About Suhaila Section -->
-<section class="about-section" id="about">
-    <h2 class="fade-in-heading">Meet the <span class="highlight">Suhaila Family</span></h2>
-    <div class="about-container">
-        <img src="Family.jpg" alt="Suhaila Family" class="about-image" loading="lazy">
-        <div class="about-text visible">
+
+        <!-- About Suhaila Section -->
+        <section class="meet-family-section" id="about">
+          <img src="Family.jpg" alt="Suhaila Family" class="meet-family-img" loading="lazy">
+          <div class="meet-family-content">
+            <h2>Meet the <span class="highlight">Suhaila Family</span></h2>
             <h3>Welcome to Our Culinary Family!</h3>
-            <p>At Suhaila Family, cooking is a celebration of life and togetherness. Our kitchen is where generations share cherished recipes and create delicious memories.</p>
-            <p>Join us for authentic cooking classes, experience our warm family atmosphere, and let us cater your special events. Come be part of our culinary tradition!</p>
-        </div>
-    </div>
-</section>
+            <p>
+              At Suhaila Family, cooking is a celebration of life and togetherness. Our kitchen is where generations share cherished recipes and create delicious memories.
+            </p>
+            <p>
+              Join us for authentic cooking classes, experience our warm family atmosphere, and let us cater your special events. Come be part of our culinary tradition!
+            </p>
+          </div>
+        </section>
+
+        <!-- NEW: Featured Story with Text Overlap -->
+        <section class="featured-story-section">
+            <img src="https://via.placeholder.com/1920x1080/E76F51/FFFFFF?text=Aqaba+Market" alt="Aqaba Market Scene" class="featured-story-image" loading="lazy">
+            <div class="featured-story-content">
+                <h2>Experience the Heart of Aqaba</h2>
+                <p>Dive deep into the local culture with our immersive market tours. Discover hidden gems, vibrant spices, and the true essence of Jordanian life.</p>
+                <a href="Reservation.html" class="button">Plan Your Visit</a>
+            </div>
+        </section>
 
         <!-- Blog Section -->
         <section id="blog-section">
@@ -104,14 +141,14 @@
 
         <!-- Product Gallery Section -->
         <section>
-            <h2 class="fade-in-heading">Our Cooking Experiences</h2>
+            <h2>Our Cooking Experiences</h2> <!-- 'fade-in-heading' class removed, now controlled by JS -->
             <div class="product-gallery">
                 <div class="product-item">
                     <img src="Experience1.jpg" alt="Cooking Class" class="product-image" loading="lazy">
                     <div class="product-info">
                         <h3>Authentic Cooking Class</h3>
                         <p>Learn to cook traditional dishes with our family recipes.</p>
-                        <a href="#" class="button" onclick="redirectToReservation('Authentic Cooking Class')">Book Now</a>
+                        <a href="#" class="button" onclick="redirectToReservation('Authentic Cooking Class' )">Book Now</a>
                         <p>30JD</p>
                     </div>
                 </div>
@@ -184,8 +221,8 @@
     </footer>
 
     <script>
-        // Mobile menu functionality (same as about.html)
-        const hamburger = document.getElementById('hamburger');
+        // Mobile menu functionality
+        const hamburger = document.getElementById('hamburger' );
         const navbarLinks = document.getElementById('navbarLinks');
         const menuOverlay = document.getElementById('menuOverlay');
         hamburger.addEventListener('click', function() {
@@ -197,17 +234,18 @@
             menuOverlay.classList.remove('active');
         });
 
-        // Navbar hide on scroll down, show on scroll up
-        const navbar = document.querySelector('.navbar');
-        let lastScrollPosition = 0;
-        window.addEventListener('scroll', () => {
-            let currentScrollPosition = window.scrollY;
-            if (currentScrollPosition > lastScrollPosition) {
-                navbar.style.top = '-60px';
+        // Navbar hide/show on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+          let lastScrollY = window.scrollY;
+          const navbar = document.querySelector('.navbar');
+          window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY && window.scrollY > 60) {
+              navbar.style.top = '-80px';
             } else {
-                navbar.style.top = '0';
+              navbar.style.top = '0';
             }
-            lastScrollPosition = currentScrollPosition;
+            lastScrollY = window.scrollY;
+          });
         });
 
         // Set active class on navigation links based on current page
@@ -232,8 +270,8 @@
             document.getElementById('lightbox-img').alt = img.alt;
         }
 
-        window.openLightbox = function(img) {
-            currentLightboxIndex = galleryImages.indexOf(img);
+        window.openLightbox = function(imgElement) { // Changed parameter name for clarity
+            currentLightboxIndex = galleryImages.indexOf(imgElement); // Now directly receives the img
             showLightboxImage();
             document.getElementById('lightbox').classList.add('active');
         }
@@ -271,14 +309,75 @@
         window.redirectToReservation = function(experienceName) {
             window.location.href = "Reservation.html?experience=" + encodeURIComponent(experienceName);
         }
+
+        // NEW: Intersection Observer for scroll-triggered animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateOnScrollElements = document.querySelectorAll(
+                '.gallery-title, .about-section h2, .about-text, #blog-section h2, .review-section-advanced h2, .featured-story-content'
+            );
+
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            }, observerOptions);
+
+            animateOnScrollElements.forEach(el => {
+                // Ensure elements start hidden for the animation (CSS will define initial opacity:0)
+                observer.observe(el);
+            });
+
+            // Special handling for staggered animations (e.g., recent-posts article, product-item)
+            const staggeredObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Get the direct children of the observed parent (recent-posts or product-gallery)
+                        const childrenToAnimate = Array.from(entry.target.children);
+                        childrenToAnimate.forEach((child, index) => {
+                            setTimeout(() => {
+                                child.classList.add('visible'); // Add a 'visible' class to trigger animation
+                            }, index * 150); // Stagger by 150ms
+                        });
+                        observer.unobserve(entry.target); // Stop observing the parent once its children are animated
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Observe the parent containers for staggered items
+            const recentPostsContainer = document.querySelector('.recent-posts');
+            if (recentPostsContainer) {
+                staggeredObserver.observe(recentPostsContainer);
+            }
+            const productGalleryContainer = document.querySelector('.product-gallery');
+            if (productGalleryContainer) {
+                staggeredObserver.observe(productGalleryContainer);
+            }
+        });
     </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZYH4T50VY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag( ){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-JZYH4T50VY');
     </script>
 </body>
 </html>
+
+<style>
+.hero-wave {
+  position: absolute;
+  bottom: 0; left: 0; width: 100%; height: 80px;
+  z-index: 0;
+}
+</style>

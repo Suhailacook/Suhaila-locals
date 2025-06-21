@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard | Suhaila Local's Experience</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Inter', Arial, sans-serif;
@@ -14,6 +17,40 @@
             padding: 0;
             min-height: 100vh;
             max-width: 100%;
+        }
+        .admin-hero {
+            background: linear-gradient(rgba(44,62,80,0.65), rgba(44,62,80,0.65)),
+                        url('admin-hero.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 6rem 1rem 4rem 1rem;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 8px 32px #3a86ff22;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .admin-hero h1 {
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+            text-shadow: 0 2px 16px #23294688;
+            font-family: 'Playfair Display', serif;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: slideInUp 1.1s 0.2s cubic-bezier(.6,.2,.2,1) forwards;
+        }
+        .admin-hero p {
+            font-size: 1.3rem;
+            color: #f1f3f8;
+            font-weight: 500;
+            margin-bottom: 0;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1.1s 0.5s cubic-bezier(.6,.2,.2,1) forwards;
         }
         .navbar {
             display: flex;
@@ -89,6 +126,10 @@
         }
         .admin-section.active {
             display: block;
+        }
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(40px);}
+            to { opacity: 1; transform: translateY(0);}
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px);}
@@ -244,12 +285,15 @@
     </style>
 </head>
 <body>
+    <header class="admin-hero">
+        <h1>Admin Dashboard</h1>
+        <p>Manage messages, blog posts, and products for Suhaila Local's Experience.</p>
+    </header>
     <nav class="navbar">
         <a href="index.html">Home</a>
         <a href="admin.html" class="active" aria-current="page">Admin</a>
     </nav>
     <div class="admin-container" id="adminContainer" style="display:none;">
-        <h1>Admin Dashboard</h1>
         <div class="admin-tabs">
             <button class="admin-tab active" onclick="showTab('messages')">Messages</button>
             <button class="admin-tab" onclick="showTab('blog')">Blog Posts</button>
@@ -476,4 +520,4 @@
         });
     </script>
 </body>
-</html
+</html>
