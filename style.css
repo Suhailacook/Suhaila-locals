@@ -890,35 +890,46 @@ section {
 @media (max-width: 900px) {
     .meet-family-section {
         flex-direction: column;
-        min-height: 380px;
+        align-items: stretch;
+        min-height: unset;
+        padding: 2rem 0 1rem 0;
     }
     .meet-family-img {
-        max-width: 95vw;
-        height: 220px;
+        max-width: 100vw;
+        width: 100%;
+        height: auto;
+        min-height: 220px; /* Make image taller on mobile */
         border-radius: 24px;
+        margin-bottom: 1.2rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        object-fit: cover;
     }
     .meet-family-content {
         position: static;
         transform: none;
-        margin-top: -50px;
-        margin-left: 1.5rem;
-        margin-right: 1.5rem;
-        max-width: 95vw;
+        margin: 0 0.5rem;
+        max-width: 100vw;
         border-radius: 24px;
-        padding: 2rem 1.2rem 1.5rem 1.2rem;
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
         box-shadow: 0 4px 24px rgba(44,62,80,0.18);
+        text-align: center;
+        background: rgba(44,62,80,0.85); /* More transparent on mobile */
     }
 }
 
 @media (max-width: 600px) {
     .meet-family-img {
-        height: 140px;
+        max-height: 240px; /* Increase from 160px */
+        min-height: 160px;
     }
     .meet-family-content h2 {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
     .meet-family-content {
-        padding: 1.2rem 0.7rem 1rem 0.7rem;
+        padding: 1rem 0.3rem 0.7rem 0.3rem;
+        background: rgba(44,62,80,0.75); /* Even more transparent */
     }
 }
 
@@ -958,6 +969,24 @@ section {
         opacity: 1;
         transform: translateY(-50%);
     }
+}
+
+@keyframes jumpInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.05);
+  }
+  80% {
+    transform: translateY(5px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* Rules for scroll-triggered animations (controlled by JavaScript) */
@@ -1142,4 +1171,22 @@ footer a {
 
 footer a:hover {
     color: var(--secondary-color);
+}
+
+@media (max-width: 900px) {
+  h1.visible,
+  h2.visible,
+  h3.visible,
+  p.visible,
+  .gallery-title.visible,
+  .about-section h2.visible,
+  .about-text.visible,
+  #blog-section h2.visible,
+  .recent-posts article.visible,
+  .product-item.visible,
+  .review-section-advanced h2.visible,
+  .featured-story-content.visible,
+  .meet-family-content.visible {
+    animation: jumpInUp 0.9s cubic-bezier(.6,-0.28,.74,.05) both !important;
+  }
 }

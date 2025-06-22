@@ -1,4 +1,4 @@
-// blog.js
+// post.js
 fetch('/api/blog')
   .then(res => res.json())
   .then(posts => {
@@ -7,10 +7,12 @@ fetch('/api/blog')
       container.innerHTML = "<p>No blog posts yet.</p>";
       return;
     }
+
     container.innerHTML = posts.map(post => `
       <article class="blog-post">
-<h2><a href="blog-post.html?id=${post.id}">${post.title}</a></h2>
+        <h2><a href="blog-post.html?id=${post.id}">${post.title}</a></h2>
         <p><em>${new Date(post.date).toLocaleDateString()}</em></p>
+        ${post.image ? `<img src="/uploads/${post.image}" alt="${post.title}" class="blog-image">` : ""}
         <div>${post.content.substring(0, 200)}${post.content.length > 200 ? "..." : ""}</div>
       </article>
     `).join('');

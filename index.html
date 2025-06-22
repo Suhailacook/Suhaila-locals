@@ -105,7 +105,6 @@
 
         <!-- NEW: Featured Story with Text Overlap -->
         <section class="featured-story-section">
-            <img src="https://via.placeholder.com/1920x1080/E76F51/FFFFFF?text=Aqaba+Market" alt="Aqaba Market Scene" class="featured-story-image" loading="lazy">
             <div class="featured-story-content">
                 <h2>Experience the Heart of Aqaba</h2>
                 <p>Dive deep into the local culture with our immersive market tours. Discover hidden gems, vibrant spices, and the true essence of Jordanian life.</p>
@@ -139,40 +138,40 @@
             <img src="whatsapp.png" alt="Contact Us on WhatsApp" width="100" height="100" loading="lazy">
         </a>
 
-        <!-- Product Gallery Section -->
-        <section>
-            <h2>Our Cooking Experiences</h2> <!-- 'fade-in-heading' class removed, now controlled by JS -->
-            <div class="product-gallery">
-                <div class="product-item">
-                    <img src="Experience1.jpg" alt="Cooking Class" class="product-image" loading="lazy">
-                    <div class="product-info">
-                        <h3>Authentic Cooking Class</h3>
-                        <p>Learn to cook traditional dishes with our family recipes.</p>
-                        <a href="#" class="button" onclick="redirectToReservation('Authentic Cooking Class' )">Book Now</a>
-                        <p>30JD</p>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="Experience2.jpg" alt="Walking and food taste tour" class="product-image" loading="lazy">
-                    <div class="product-info">
-                        <h3>Walking and Food Taste Tour</h3>
-                        <p>Discover Aqaba city with local guide and enjoy the city taste.</p>
-                        <a href="#" class="button" onclick="redirectToReservation('Food Taste Tour')">Book Now</a>
-                        <p>20JD</p>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="Experience3.jpg" alt="Dining Experience in Aqaba" class="product-image" loading="lazy">
-                    <div class="product-info">
-                        <h3>Dining Experience</h3>
-                        <p>Sharing meals, stories, and culture with our family.</p>
-                        <a href="#" class="button" onclick="redirectToReservation('Dining Experience')">Book Now</a>
-                        <p>15JD</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <section class="experiences">
+  <h2>Our Cooking Experiences</h2>
+  <div class="product-gallery">
+    <article class="product-item">
+      <img src="Experience1.jpg" alt="Traditional Jordanian Cooking Class" class="product-image" loading="lazy">
+      <div class="product-info">
+        <h3>Authentic Cooking Class</h3>
+        <p>Learn to cook traditional dishes with our family recipes.</p>
+        <p><a href="cookingclass.html">Read more</a> | <a href="#" onclick="redirectToReservation('Authentic Cooking Class')">Book Now</a></p>
+        <p class="price">30JD</p>
+      </div>
+    </article>
 
+    <article class="product-item">
+      <img src="Experience2.jpg" alt="Walking and food taste tour in Aqaba" class="product-image" loading="lazy">
+      <div class="product-info">
+        <h3>Walking and Food Taste Tour</h3>
+        <p>Discover Aqaba city with a local guide and enjoy the city’s flavors.</p>
+        <p><a href="walking tour.html">Read more</a> | <a href="#" onclick="redirectToReservation('Food Taste Tour')">Book Now</a></p>
+        <p class="price">20JD</p>
+      </div>
+    </article>
+
+    <article class="product-item">
+      <img src="Experience3.jpg" alt="Dining Experience in a local Aqaba home" class="product-image" loading="lazy">
+      <div class="product-info">
+        <h3>Dining Experience</h3>
+        <p>Sharing meals, stories, and culture with our family.</p>
+        <p><a href="dinningexperience.html">Read more</a> | <a href="#" onclick="redirectToReservation('Dining Experience')">Book Now</a></p>
+        <p class="price">15JD</p>
+      </div>
+    </article>
+  </div>
+</section>
         <!-- Advanced Review Section -->
         <section class="review-section-advanced">
             <h2>What Our Guests Say</h2>

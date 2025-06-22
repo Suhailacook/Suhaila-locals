@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* --- BLOG PAGE UNIQUE STYLES --- */
     body {
       font-family: 'Inter', Arial, sans-serif;
       background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
@@ -32,30 +31,23 @@
       box-shadow: 0 8px 32px #3a86ff22;
       text-align: center;
       margin-bottom: 40px;
-      position: relative;
-      overflow: hidden;
       background-attachment: fixed;
-      background-size: cover;
     }
     .blog-hero h1 {
       font-size: 3.2rem;
-      color: #fff;
-      margin-bottom: 1.2rem;
-      letter-spacing: 0.02em;
-      text-shadow: 0 2px 16px #23294688;
       font-family: 'Playfair Display', serif;
+      text-shadow: 0 2px 16px #23294688;
       opacity: 0;
       transform: translateY(40px);
-      animation: slideInUp 1.1s 0.2s cubic-bezier(.6,.2,.2,1) forwards;
+      animation: slideInUp 1.1s 0.2s ease-out forwards;
     }
     .blog-hero p {
       font-size: 1.5rem;
       color: #f1f3f8;
       font-weight: 500;
-      margin-bottom: 0;
       opacity: 0;
       transform: translateY(40px);
-      animation: fadeInUp 1.1s 0.5s cubic-bezier(.6,.2,.2,1) forwards;
+      animation: fadeInUp 1.1s 0.5s ease-out forwards;
     }
     .gallery-blog {
       display: grid;
@@ -75,11 +67,17 @@
       flex-direction: column;
       opacity: 0;
       transform: translateY(40px);
-      animation: fadeInUp 1.2s 0.7s cubic-bezier(.6,.2,.2,1) forwards;
+      animation: fadeInUp 1.2s 0.7s ease-out forwards;
     }
     .blog-card:hover {
       transform: translateY(-8px) scale(1.03);
       box-shadow: 0 12px 36px #3a86ff22;
+    }
+    .blog-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      max-height: 220px;
     }
     .blog-content {
       padding: 1em;
@@ -187,7 +185,6 @@
   </footer>
 
   <script>
-    // Hamburger menu toggle
     const hamburger = document.getElementById('hamburger');
     const navbarLinks = document.getElementById('navbarLinks');
     const menuOverlay = document.getElementById('menuOverlay');
@@ -200,7 +197,6 @@
       menuOverlay.classList.remove('active');
     });
 
-    // Scroll behavior for navbar
     const navbar = document.querySelector('.navbar');
     let lastScrollPosition = 0;
     window.addEventListener('scroll', () => {
@@ -209,7 +205,6 @@
       lastScrollPosition = currentScrollPosition;
     });
 
-    // Highlight active nav link
     const currentPath = window.location.pathname.split("/").pop();
     const navLinks = document.querySelectorAll('.navbar a');
     navLinks.forEach(link => {
@@ -221,7 +216,6 @@
       }
     });
 
-    // Fetch blog posts
     fetch('/api/blog')
       .then(res => res.json())
       .then(posts => {
@@ -230,14 +224,15 @@
           container.innerHTML = "<p>No blog posts yet.</p>";
           return;
         }
+
         container.innerHTML = posts.map(post => `
           <article class="blog-card">
-            <div class="blog-content">
+            ${post.image ? `<img src="/uploads/${post.image}" alt="${post.title}" class="blog-image">` : ""}
+      <div class="blog-content">
               <h2>${post.title}</h2>
               <p><em>${new Date(post.date).toLocaleDateString()}</em></p>
               <p>${post.content.substring(0, 150)}...</p>
-           <a href="blog-post.html?id=${post.id}">Read More</a>
-
+              <a href="blog-post.html?id=${post.id}">Read More</a>
             </div>
           </article>
         `).join('');

@@ -285,239 +285,289 @@
     </style>
 </head>
 <body>
-    <header class="admin-hero">
-        <h1>Admin Dashboard</h1>
-        <p>Manage messages, blog posts, and products for Suhaila Local's Experience.</p>
-    </header>
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="admin.html" class="active" aria-current="page">Admin</a>
-    </nav>
-    <div class="admin-container" id="adminContainer" style="display:none;">
-        <div class="admin-tabs">
-            <button class="admin-tab active" onclick="showTab('messages')">Messages</button>
-            <button class="admin-tab" onclick="showTab('blog')">Blog Posts</button>
-            <button class="admin-tab" onclick="showTab('products')">Products</button>
-        </div>
-        <!-- Messages Section -->
-        <div class="admin-section active" id="messages">
-            <h2>Contact Messages</h2>
-            <table class="admin-table" id="messagesTable">
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Message</th>
-                    <th>Delete</th>
-                </tr>
-            </table>
-        </div>
-        <!-- Blog Posts Section -->
-        <div class="admin-section" id="blog">
-            <h2>Manage Blog Posts</h2>
-            <table class="admin-table" id="blogTable">
-                <tr>
-                    <th>Title</th>
-                    <th>Date</th>
-                    <th>Delete</th>
-                </tr>
-            </table>
-            <form class="admin-form" id="blogForm">
-                <h3>Add New Blog Post</h3>
-                <label for="blog-title">Title</label>
-                <input type="text" id="blog-title" name="blog-title" required>
-                <label for="blog-content">Content</label>
-                <textarea id="blog-content" name="blog-content" rows="4" required></textarea>
-                <button type="submit">Add Post</button>
-                <div id="blogFormMsg" style="margin-top:10px;"></div>
-            </form>
-        </div>
-        <!-- Products Section -->
-        <div class="admin-section" id="products">
-            <h2>Edit Products</h2>
-            <table class="admin-table" id="productsTable">
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Delete</th>
-                </tr>
-            </table>
-            <form class="admin-form" id="productForm">
-                <h3>Add New Product</h3>
-                <label for="product-name">Product Name</label>
-                <input type="text" id="product-name" name="product-name" required>
-                <label for="product-price">Price</label>
-                <input type="text" id="product-price" name="product-price" required>
-                <button type="submit">Add Product</button>
-            </form>
-        </div>
-        <div class="admin-actions">
-            <button onclick="logout()">Logout</button>
-        </div>
+  <header class="admin-hero">
+    <h1>Admin Dashboard</h1>
+    <p>Manage messages, blog posts, and products for Suhaila Local's Experience.</p>
+  </header>
+
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="admin.html" class="active" aria-current="page">Admin</a>
+  </nav>
+
+  <div class="admin-container" id="adminContainer" style="display:none;">
+    <div class="admin-tabs">
+      <button class="admin-tab active" onclick="showTab('messages')">Messages</button>
+      <button class="admin-tab" onclick="showTab('blog')">Blog Posts</button>
+      <button class="admin-tab" onclick="showTab('products')">Products</button>
     </div>
-    <!-- Simple login modal -->
-    <div id="loginModal">
-        <div>
-            <h2>Admin Login</h2>
-            <input type="password" id="adminPassword" placeholder="Enter admin password">
-            <br>
-            <button onclick="login()">Login</button>
-            <div id="loginError"></div>
-        </div>
+
+    <!-- Messages Section -->
+    <div class="admin-section active" id="messages">
+      <h2>Contact Messages</h2>
+      <table class="admin-table" id="messagesTable">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Message</th>
+          <th>Delete</th>
+        </tr>
+      </table>
     </div>
-    <script>
-        // --- Simple client-side authentication ---
-        const ADMIN_PASSWORD = "ACTact123";
-        function login() {
-            const input = document.getElementById('adminPassword').value;
-            if (input === ADMIN_PASSWORD) {
-                document.getElementById('loginModal').style.display = 'none';
-                document.getElementById('adminContainer').style.display = '';
-                loadAllData();
-            } else {
-                document.getElementById('loginError').textContent = "Incorrect password.";
-            }
-        }
-        function logout() {
-            document.getElementById('adminContainer').style.display = 'none';
-            document.getElementById('loginModal').style.display = 'flex';
-            document.getElementById('adminPassword').value = '';
-        }
 
-        // --- Tab switching ---
-        function showTab(tab) {
-            document.querySelectorAll('.admin-tab').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.admin-section').forEach(sec => sec.classList.remove('active'));
-            document.querySelector('.admin-tab[onclick*="' + tab + '"]').classList.add('active');
-            document.getElementById(tab).classList.add('active');
-        }
+    <!-- Blog Posts Section -->
+    <div class="admin-section" id="blog">
+      <h2>Manage Blog Posts</h2>
+      <table class="admin-table" id="blogTable">
+        <tr>
+          <th>Title</th>
+          <th>Date</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </table>
 
-        // --- Fetch and render data ---
-        async function loadAllData() {
-            await Promise.all([loadMessages(), loadBlog(), loadProducts()]);
-        }
+      <form class="admin-form" id="blogForm" enctype="multipart/form-data">
+        <h3>Add New Blog Post</h3>
+        <label for="blog-title">Title</label>
+        <input type="text" id="blog-title" name="blog-title" required>
+        <label for="blog-content">Content</label>
+        <textarea id="blog-content" name="blog-content" rows="4" required></textarea>
+        <label for="blog-image">Image</label>
+        <input type="file" id="blog-image" name="blog-image" accept="image/*" required>
+        <button type="submit">Add Post</button>
+        <div id="blogFormMsg" style="margin-top:10px;"></div>
+      </form>
 
-        async function loadMessages() {
-            const res = await fetch('/api/messages');
-            const data = await res.json();
-            const table = document.getElementById('messagesTable');
-            table.innerHTML = `<tr>
-                <th>Name</th><th>Email</th><th>Message</th><th>Delete</th>
-            </tr>`;
-            data.forEach(msg => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${msg.name}</td>
-                    <td>${msg.email}</td>
-                    <td>${msg.message}</td>
-                    <td><button onclick="deleteMessage('${msg.
-                        id || msg.id}')">Delete</button></td>
-                `;
-                table.appendChild(row);
-            });
-        }
-        async function deleteMessage(id) {
-            await fetch('/api/messages/' + id, { method: 'DELETE' });
-            loadMessages();
-        }
+      <!-- Edit Blog Post Form -->
+      <form class="admin-form" id="editBlogForm" style="display:none;" onsubmit="submitEdit(event)">
+        <h3>Edit Blog Post</h3>
+        <input type="hidden" id="edit-id">
+        <label for="edit-title">Title</label>
+        <input type="text" id="edit-title" required>
+        <label for="edit-content">Content</label>
+        <textarea id="edit-content" rows="4" required></textarea>
+        <button type="submit">Update Post</button>
+      </form>
+    </div>
 
-        async function loadBlog() {
-            const res = await fetch('/api/blog');
-            const data = await res.json();
-            const table = document.getElementById('blogTable');
-            table.innerHTML = `<tr>
-                <th>Title</th><th>Date</th><th>Delete</th>
-            </tr>`;
-            data.forEach(post => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${post.title}</td>
-                    <td>${new Date(post.date).toLocaleDateString()}</td>
-                    <td><button onclick="deleteBlog('${post.id}')">Delete</button></td>
-                `;
-                table.appendChild(row);
-            });
-        }
-        async function deleteBlog(id) {
-            await fetch('/api/blog/' + id, { method: 'DELETE' });
-            loadBlog();
-        }
+    <!-- Products Section -->
+    <div class="admin-section" id="products">
+      <h2>Edit Products</h2>
+      <table class="admin-table" id="productsTable">
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Delete</th>
+        </tr>
+      </table>
+      <form class="admin-form" id="productForm">
+        <h3>Add New Product</h3>
+        <label for="product-name">Product Name</label>
+        <input type="text" id="product-name" name="product-name" required>
+        <label for="product-price">Price</label>
+        <input type="text" id="product-price" name="product-price" required>
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
 
-        async function loadProducts() {
-            const res = await fetch('/api/products');
-            const data = await res.json();
-            const table = document.getElementById('productsTable');
-            table.innerHTML = `<tr>
-                <th>Product</th><th>Price</th><th>Delete</th>
-            </tr>`;
-            data.forEach(prod => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${prod.name}</td>
-                    <td>${prod.price}</td>
-                    <td><button onclick="deleteProduct('${prod._id || prod.id}')">Delete</button></td>
-                `;
-                table.appendChild(row);
-            });
-        }
-        async function deleteProduct(id) {
-            await fetch('/api/products/' + id, { method: 'DELETE' });
-            loadProducts();
-        }
+    <div class="admin-actions">
+      <button onclick="logout()">Logout</button>
+    </div>
+  </div>
 
-        // --- Add new blog post ---
-        document.getElementById('blogForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const title = document.getElementById('blog-title').value.trim();
-            const content = document.getElementById('blog-content').value.trim();
-            const msgDiv = document.getElementById('blogFormMsg');
-            msgDiv.textContent = '';
-            if (!title || !content) {
-                msgDiv.textContent = 'Please fill in both fields.';
-                msgDiv.style.color = 'red';
-                return;
-            }
-            try {
-                const res = await fetch('/api/blog', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ title, content })
-                });
-                if (res.ok) {
-                    msgDiv.textContent = 'Blog post added!';
-                    msgDiv.style.color = 'green';
-                    this.reset();
-                    loadBlog();
-                } else {
-                    msgDiv.textContent = 'Failed to add post.';
-                    msgDiv.style.color = 'red';
-                }
-            } catch (err) {
-                msgDiv.textContent = 'Error connecting to server.';
-                msgDiv.style.color = 'red';
-            }
-        });
+  <!-- Simple login modal -->
+  <div id="loginModal">
+    <div>
+      <h2>Admin Login</h2>
+      <input type="password" id="adminPassword" placeholder="Enter admin password">
+      <br>
+      <button onclick="login()">Login</button>
+      <div id="loginError"></div>
+    </div>
+  </div>
+</body>
+   <script>
+  const ADMIN_PASSWORD = "ACTact123";
 
-        // --- Add new product ---
-        document.getElementById('productForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const name = document.getElementById('product-name').value;
-            const price = document.getElementById('product-price').value;
-            await fetch('/api/products', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, price })
-            });
-            this.reset();
-            loadProducts();
-        });
+  function login() {
+    const input = document.getElementById('adminPassword').value;
+    if (input === ADMIN_PASSWORD) {
+      document.getElementById('loginModal').style.display = 'none';
+      document.getElementById('adminContainer').style.display = '';
+      loadAllData();
+    } else {
+      document.getElementById('loginError').textContent = "Incorrect password.";
+    }
+  }
 
-        // Prevent FOUC: Hide admin until login
-        document.getElementById('adminContainer').style.display = 'none';
+  function logout() {
+    document.getElementById('adminContainer').style.display = 'none';
+    document.getElementById('loginModal').style.display = 'flex';
+    document.getElementById('adminPassword').value = '';
+  }
 
-        // Optional: Enter key submits login
-        document.getElementById('adminPassword').addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') login();
-        });
-    </script>
+  function showTab(tab) {
+    document.querySelectorAll('.admin-tab').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.admin-section').forEach(sec => sec.classList.remove('active'));
+    document.querySelector(`.admin-tab[onclick*="${tab}"]`).classList.add('active');
+    document.getElementById(tab).classList.add('active');
+  }
+
+  async function loadAllData() {
+    await Promise.all([loadMessages(), loadBlog(), loadProducts()]);
+  }
+
+  async function loadMessages() {
+    const res = await fetch('/api/messages');
+    const data = await res.json();
+    const table = document.getElementById('messagesTable');
+    table.innerHTML = `<tr><th>Name</th><th>Email</th><th>Message</th><th>Delete</th></tr>`;
+    data.forEach(msg => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${msg.name}</td>
+        <td>${msg.email}</td>
+        <td>${msg.message}</td>
+        <td><button onclick="deleteMessage('${msg.id || msg._id}')">Delete</button></td>
+      `;
+      table.appendChild(row);
+    });
+  }
+
+  async function deleteMessage(id) {
+    await fetch('/api/messages/' + id, { method: 'DELETE' });
+    loadMessages();
+  }
+
+  async function loadBlog() {
+    const res = await fetch('/api/blog');
+    const data = await res.json();
+    const table = document.getElementById('blogTable');
+    table.innerHTML = `<tr><th>Title</th><th>Date</th><th>Edit</th><th>Delete</th></tr>`;
+    data.forEach(post => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${post.title}</td>
+        <td>${new Date(post.date).toLocaleDateString()}</td>
+        <td><button onclick="editPost('${post.id}', \`${post.title.replace(/`/g, '\\`')}\`, \`${post.content.replace(/`/g, '\\`')}\`)">Edit</button></td>
+        <td><button onclick="deleteBlog('${post.id}')">Delete</button></td>
+      `;
+      table.appendChild(row);
+    });
+  }
+
+  async function deleteBlog(id) {
+    await fetch('/api/blog/' + id, { method: 'DELETE' });
+    loadBlog();
+  }
+
+  async function loadProducts() {
+    const res = await fetch('/api/products');
+    const data = await res.json();
+    const table = document.getElementById('productsTable');
+    table.innerHTML = `<tr><th>Product</th><th>Price</th><th>Delete</th></tr>`;
+    data.forEach(prod => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${prod.name}</td>
+        <td>${prod.price}</td>
+        <td><button onclick="deleteProduct('${prod._id || prod.id}')">Delete</button></td>
+      `;
+      table.appendChild(row);
+    });
+  }
+
+  async function deleteProduct(id) {
+    await fetch('/api/products/' + id, { method: 'DELETE' });
+    loadProducts();
+  }
+
+  document.getElementById('blogForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const title = document.getElementById('blog-title').value.trim();
+    const content = document.getElementById('blog-content').value.trim();
+    const imageInput = document.getElementById('blog-image');
+    const msgDiv = document.getElementById('blogFormMsg');
+    msgDiv.textContent = '';
+
+    if (!title || !content || !imageInput.files[0]) {
+      msgDiv.textContent = 'Please fill in all fields and select an image.';
+      msgDiv.style.color = 'red';
+      return;
+    }
+
+    try {
+      const formData = new FormData();
+      formData.append('title', title);
+      formData.append('content', content);
+      formData.append('image', imageInput.files[0]);
+
+      const res = await fetch('/api/blog', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (res.ok) {
+        msgDiv.textContent = 'Blog post added!';
+        msgDiv.style.color = 'green';
+        this.reset();
+        loadBlog();
+      } else {
+        msgDiv.textContent = 'Failed to add post.';
+        msgDiv.style.color = 'red';
+      }
+    } catch (err) {
+      msgDiv.textContent = 'Error connecting to server.';
+      msgDiv.style.color = 'red';
+    }
+  });
+
+  document.getElementById('productForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const name = document.getElementById('product-name').value;
+    const price = document.getElementById('product-price').value;
+    await fetch('/api/products', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, price })
+    });
+    this.reset();
+    loadProducts();
+  });
+
+  function editPost(id, title, content) {
+    document.getElementById('edit-id').value = id;
+    document.getElementById('edit-title').value = title;
+    document.getElementById('edit-content').value = content;
+    document.getElementById('editBlogForm').style.display = 'block';
+    window.scrollTo({ top: document.getElementById('editBlogForm').offsetTop - 100, behavior: 'smooth' });
+  }
+
+  function submitEdit(event) {
+    event.preventDefault();
+    const id = document.getElementById('edit-id').value;
+    const title = document.getElementById('edit-title').value;
+    const content = document.getElementById('edit-content').value;
+
+    fetch(`/api/blog/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title, content })
+    })
+    .then(res => res.json())
+    .then(() => {
+      alert('Post updated!');
+      document.getElementById('editBlogForm').style.display = 'none';
+      loadBlog();
+    })
+    .catch(() => alert('Failed to update post.'));
+  }
+
+  document.getElementById('adminContainer').style.display = 'none';
+  document.getElementById('adminPassword').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') login();
+  });
+</script>
 </body>
 </html>

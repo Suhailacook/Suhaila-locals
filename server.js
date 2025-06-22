@@ -2,14 +2,27 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const bodyParser = require('body-parser');
+const multer = require('multer');
 const nodemailer = require('nodemailer');
 const path = require('path');
 
 const app = express();
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.static(path.join(__dirname)));
+
+// Multer setup for image uploads
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, 'uploads/'),
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    const ext = path.extname(file.originalname);
+    cb(null, file.fieldname + '-' + uniqueSuffix + ext);
+  }
+});
+const upload = multer({ storage });
 
 // Connect to MongoDB Atlas
 const mongoUri = process.env.MONGO_URI;
@@ -23,6 +36,7 @@ mongoose.connect(mongoUri, {
 const blogSchema = new mongoose.Schema({
   title: String,
   content: String,
+  image: String,
   date: { type: Date, default: Date.now }
 });
 const Blog = mongoose.model('Blog', blogSchema);
@@ -35,7 +49,8 @@ app.get('/api/blog', async (req, res) => {
       id: post._id,
       title: post.title,
       content: post.content,
-      date: post.date
+      date: post.date,
+      image: post.image
     })));
   } catch {
     res.status(500).json({ message: 'Error fetching posts' });
@@ -51,19 +66,25 @@ app.get('/api/blog/:id', async (req, res) => {
       id: post._id,
       title: post.title,
       content: post.content,
-      date: post.date
+      date: post.date,
+      image: post.image
     });
   } catch {
     res.status(400).json({ message: 'Invalid post ID' });
   }
 });
 
-// Add blog post
-app.post('/api/blog', async (req, res) => {
+// Add blog post with image
+app.post('/api/blog', upload.single('image'), async (req, res) => {
   const { title, content } = req.body;
-  if (!title || !content) return res.status(400).json({ message: 'Missing title or content.' });
+  const image = req.file?.filename;
+
+  if (!title || !content) {
+    return res.status(400).json({ message: 'Missing title or content.' });
+  }
+
   try {
-    const post = new Blog({ title, content });
+    const post = new Blog({ title, content, image });
     await post.save();
     res.json(post);
   } catch {
@@ -79,6 +100,20 @@ app.delete('/api/blog/:id', async (req, res) => {
     res.json({ message: 'Post deleted successfully' });
   } catch {
     res.status(400).json({ message: 'Invalid post ID' });
+  }
+});
+app.put('/api/blog/:id', async (req, res) => {
+  const { title, content } = req.body;
+  try {
+    const updated = await Blog.findByIdAndUpdate(
+      req.params.id,
+      { title, content },
+      { new: true }
+    );
+    if (!updated) return res.status(404).json({ message: 'Post not found' });
+    res.json(updated);
+  } catch {
+    res.status(400).json({ message: 'Error updating post' });
   }
 });
 
@@ -115,8 +150,8 @@ app.post('/api/reserve', async (req, res) => {
       subject: 'Reservation Confirmation',
       html: `
         <h2>Hello ${name},</h2>
-<h2 style="color:#3a86ff;">Your Booking Is Confirmed! 🎉</h2>
-<p>Thank you for reserving with us! Below are your details:</p>
+        <h2 style="color:#3a86ff;">Your Booking Is Confirmed! 🎉</h2>
+        <p>Thank you for reserving with us! Below are your details:</p>
         <ul>
           <li><strong>ID:</strong> ${confirmationId}</li>
           <li><strong>Experience:</strong> ${experience}</li>
