@@ -13,21 +13,34 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://suhaila-locals.space/blog.html</loc>
-        <lastmod>2024-11-03</lastmod>
+        <loc>https://suhaila-locals.space/Blog.html</loc>
+    <lastmod>2025-07-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-    <loc>https://suhaila-locals.space/contact-us.html</loc>
-    <lastmod>2024-11-03</lastmod>
+    <loc>https://suhaila-locals.space/contact-Us.html</loc>
+    <lastmod>2025-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
 </url>
-    <url>
-        <loc>https://suhaila-locals.space/product.html</loc>
-        <lastmod>2024-11-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
+<url>
+    <loc>https://suhaila-locals.space/cookingclass.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+</url>
+<url>
+    <loc>https://suhaila-locals.space/dinningexperience.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+</url>
+<url>
+    <loc>https://suhaila-locals.space/walkingtour.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+</url>
+    
 </urlset>
