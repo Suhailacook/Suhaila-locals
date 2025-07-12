@@ -10,9 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-        <style>
-/* Use general site style for consistency with index page */
-
+    <style>
 /* HERO SECTION */
 .reservation-hero {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
@@ -275,7 +273,7 @@ form#reservation-form {
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
 }
-</style>
+    </style>
 </head>
 <body>
     <!-- Mobile menu overlay -->
@@ -289,14 +287,15 @@ form#reservation-form {
             <a href="Reservation.html">Reservations</a>
             <a href="contact-Us.html">Contact</a>
             <a href="Blog.html">Blog</a>
+            <span id="navLoginStatus" style="align-self:right;text-align: right;  color:#155724; font-weight:600;"></span>
         </div>
     </nav>
 
     <!-- Reservation Hero Section -->
     <div class="reservation-hero">
-    <h1>Book Your Aqaba Cooking Class or Walking Tour</h1>
-    <p>Experience authentic Jordanian hospitality with Suhaila's family—choose a hands-on cooking class or a guided walking food tour in Aqaba.</p>
-</div>
+        <h1>Book Your Aqaba Cooking Class or Walking Tour</h1>
+        <p>Experience authentic Jordanian hospitality with Suhaila's family—choose a hands-on cooking class or a guided walking food tour in Aqaba.</p>
+    </div>
     <!-- Reservation Section -->
     <div class="reservation-container">
         <!-- Experience 1 -->
@@ -338,6 +337,22 @@ form#reservation-form {
             <span class="close-btn" onclick="closeErrorPopup()">&times;</span>
             <div id="popup-message"></div>
         </div>
+    </div>
+
+    <!-- LOGIN PROMPT (only one!) -->
+    <div id="loginPrompt" style="display:none; text-align:center; margin:30px 0;">
+        <p style="color:#d90429; font-weight:600;">Please log in to book an experience.</p>
+        <button id="googleLogin" class="login-btn">
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="" style="height:1em;vertical-align:middle;margin-right:6px;">
+            Login with Google
+        </button>
+        <form id="emailLoginForm" style="margin-top:16px;">
+            <input type="email" id="emailInput" placeholder="Email" required style="padding:4px 8px; border-radius:4px; border:1px solid #ccc;">
+            <input type="password" id="passwordInput" placeholder="Password" required style="padding:4px 8px; border-radius:4px; border:1px solid #ccc;">
+            <button type="submit" class="login-btn" style="background:#22223b;">Login</button>
+        </form>
+        <button id="registerBtn" class="login-btn" style="background:#ffd60a; color:#22223b; margin-left:5px;">Register</button>
+        <div id="loginError" style="color:#d90429; margin-top:8px;"></div>
     </div>
 
     <!-- Booking Form Section -->
@@ -391,6 +406,23 @@ form#reservation-form {
         <p>&copy; 2024 Suhaila Cooking Experience. All rights reserved.</p>
     </footer>
 
+    <!-- Firebase SDKs (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBfdHxXz97_NiIGRj8fjSAm-pSDDZQg_Yw",
+        authDomain: "suhaila-df96d.firebaseapp.com",
+        projectId: "suhaila-df96d",
+        storageBucket: "suhaila-df96d.appspot.com",
+        messagingSenderId: "589787271710",
+        appId: "1:589787271710:web:eb08f6605930b04561540f",
+        measurementId: "G-V24DXFL647"
+      };
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+    </script>
+
     <script>
     // Mobile menu functionality
     const hamburger = document.getElementById('hamburger');
@@ -405,32 +437,44 @@ form#reservation-form {
         menuOverlay.classList.remove('active');
     });
 
-   // Function to get just the experience parameter
-function getQueryParams() {
-  const params = new URLSearchParams(window.location.search);
-  return {
-    experience: params.get('experience')
-  };
-}
+    // Function to get just the experience parameter
+    function getQueryParams() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        experience: params.get('experience')
+      };
+    }
 
-// Populate form with experience name
-function populateForm() {
-  const { experience } = getQueryParams();
-  const experienceInput = document.getElementById('experience');
-  const reservationForm = document.getElementById('reservation-form');
+    // Populate form with experience name
+    function populateForm() {
+      const { experience } = getQueryParams();
+      const experienceInput = document.getElementById('experience');
+      const reservationForm = document.getElementById('reservation-form');
 
-  if (experience) {
-    experienceInput.value = experience;
-    reservationForm.style.display = 'block';
-    reservationForm.scrollIntoView({ behavior: 'smooth' });
-  }
-}
+      if (experience) {
+        experienceInput.value = experience;
+        reservationForm.style.display = 'block';
+        reservationForm.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
 
     // Open the booking form and set the experience value
     function openForm(experience) {
-        document.getElementById('experience').value = experience;
-        document.getElementById('reservation-form').style.display = 'block';
-        document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth' });
+      if (!auth.currentUser) {
+        document.getElementById('loginPrompt').scrollIntoView({behavior: 'smooth'});
+        return;
+      }
+      document.getElementById('experience').value = experience;
+      document.getElementById('reservation-form').style.display = 'block';
+      document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth' });
+
+      // Autofill email if logged in
+      const user = auth.currentUser;
+      const emailField = document.getElementById('email');
+      if (user && emailField) {
+        emailField.value = user.email;
+        emailField.readOnly = true;
+      }
     }
 
     // Initialize form population
@@ -490,9 +534,9 @@ function populateForm() {
         });
     };
     document.querySelectorAll("input, textarea").forEach((el) => {
-    el.value = localStorage.getItem(el.name) || "";
-    el.addEventListener("input", () => localStorage.setItem(el.name, el.value));
-});
+        el.value = localStorage.getItem(el.name) || "";
+        el.addEventListener("input", () => localStorage.setItem(el.name, el.value));
+    });
 
     // Navbar hide on scroll down, show on scroll up
     let lastScrollTop = 0;
@@ -503,6 +547,98 @@ function populateForm() {
         lastScrollTop = scrollTop;
     });
     window.addEventListener('DOMContentLoaded', populateForm);
-</script>
+
+    // Google login logic
+    const provider = new firebase.auth.GoogleAuthProvider();
+    document.getElementById('googleLogin').onclick = function() {
+        auth.signInWithPopup(provider)
+            .catch(error => alert("Login failed: " + error.message));
+    };
+
+    // Email/Password Login
+    document.getElementById('emailLoginForm').onsubmit = function(e) {
+        e.preventDefault();
+        const email = document.getElementById('emailInput').value;
+        const password = document.getElementById('passwordInput').value;
+        auth.signInWithEmailAndPassword(email, password)
+            .catch(error => {
+                document.getElementById('loginError').textContent = "Login failed: " + error.message;
+            });
+    };
+
+    // Register new user
+    document.getElementById('registerBtn').onclick = function() {
+        const email = document.getElementById('emailInput').value;
+        const password = document.getElementById('passwordInput').value;
+        if (!email || !password) {
+            document.getElementById('loginError').textContent = "Enter email and password to register.";
+            return;
+        }
+        auth.createUserWithEmailAndPassword(email, password)
+            .catch(error => {
+                document.getElementById('loginError').textContent = "Registration failed: " + error.message;
+            });
+    };
+
+    // Restrict booking until logged in
+    const navLoginStatus = document.getElementById('navLoginStatus');
+
+    auth.onAuthStateChanged(user => {
+        const loginPrompt = document.getElementById('loginPrompt');
+        const bookingForm = document.getElementById('reservation-form');
+        const bookNowButtons = document.querySelectorAll('.button');
+        const emailField = document.getElementById('email');
+        const loginStatus = document.getElementById('loginStatus'); // <-- Add this line
+
+        if (user) {
+            loginPrompt.style.display = 'none';
+            // Enable all Book Now buttons
+            bookNowButtons.forEach(btn => btn.disabled = false);
+
+            // Autofill email in the form and make it readonly
+            if (emailField) {
+                emailField.value = user.email;
+                emailField.readOnly = true;
+            }
+            // Show login status
+            if (loginStatus) {
+                loginStatus.textContent = `Logged in as: ${user.email}`;
+            }
+            // Show email in the navbar
+            if (navLoginStatus) {
+                navLoginStatus.textContent = `Logged in as: ${user.email}`;
+            }
+        } else {
+            loginPrompt.style.display = '';
+            bookingForm.style.display = 'none';
+            // Disable all Book Now buttons
+            bookNowButtons.forEach(btn => btn.disabled = true);
+
+            // Clear email field and make it editable
+            if (emailField) {
+                emailField.value = '';
+                emailField.readOnly = false;
+            }
+            // Hide login status
+            if (loginStatus) {
+                loginStatus.textContent = '';
+            }
+            // Clear email in the navbar
+            if (navLoginStatus) {
+                navLoginStatus.textContent = '';
+            }
+        }
+    });
+
+    // Intercept Book Now clicks if not logged in
+    document.querySelectorAll('.button').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            if (!auth.currentUser) {
+                e.preventDefault();
+                document.getElementById('loginPrompt').scrollIntoView({behavior: 'smooth'});
+            }
+        });
+    });
+    </script>
 </body>
 </html>

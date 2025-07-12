@@ -172,6 +172,26 @@ app.post('/api/reserve', async (req, res) => {
   }
 });
 
+/* ───── ADMIN LOGIN LOGGING ───── */
+const loginEventSchema = new mongoose.Schema({
+  timestamp: { type: Date, default: Date.now },
+  username: String, // or just "admin" if password-only
+  ip: String
+});
+const LoginEvent = mongoose.model('LoginEvent', loginEventSchema);
+
+app.post('/api/admin-logins', async (req, res) => {
+  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  await LoginEvent.create({ username: "admin", ip });
+  res.sendStatus(201);
+});
+
+app.get('/api/admin-logins', async (req, res) => {
+  const events = await LoginEvent.find().sort({ timestamp: -1 });
+  res.json(events);
+});
+
 /* ───── START SERVER ───── */
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+

@@ -105,46 +105,44 @@ section {
 
 /* Navbar */
 .navbar {
-    background-color: var(--background-dark);
-    padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #3a86ff 0%, #4361ee 100%);
+    padding: 0 24px;
+    min-height: 60px;
     position: sticky;
     top: 0;
-    width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 10px var(--shadow-color);
-    transition: top 0.6s ease-in-out; /* For hide/show on scroll */
+    box-shadow: 0 2px 12px rgba(58,134,255,0.08);
 }
 
 .navbar-links {
     display: flex;
-    gap: 2rem;
+    align-items: center;
+    gap: 18px;
 }
 
 .navbar-links a {
-    color: var(--text-light);
-    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 6px;
     font-size: 1.1rem;
-    position: relative;
-    padding: 0.5rem 0;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, color 0.2s;
 }
 
-.navbar-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--primary-color);
-    transition: width var(--transition-speed);
+.navbar-links a.active,
+.navbar-links a:focus {
+    background: #ffd60a;
+    color: #22223b;
 }
 
-.navbar-links a:hover::after,
-.navbar-links a.active::after {
-    width: 100%;
+.navbar-links a:hover {
+    background: #bde0fe;
+    color: #3a86ff;
 }
 
 .hamburger {
@@ -886,134 +884,94 @@ section {
     animation: fadeInUp 1.2s 0.6s both;
 }
 
-/* Responsive for smaller screens */
+/* Login Area Styles */
+.login-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 32px;
+    padding-left: 18px;
+    border-left: 2px solid #bde0fe;
+    background: rgba(255,255,255,0.07);
+    border-radius: 0 12px 12px 0;
+    min-height: 48px;
+    box-shadow: 0 2px 8px #3a86ff0a;
+}
+
+.login-btn, .logout-btn {
+    background: #4285f4;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 10px;      /* Smaller padding */
+    font-size: 0.95em;      /* Slightly smaller text */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    min-width: 0;
+    height: 32px;           /* Smaller height */
+    line-height: 1.2;
+}
+
+.login-btn img {
+    height: 1em;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+#registerBtn {
+    background: #ffd60a;
+    color: #22223b;
+}
+
+#registerBtn:hover {
+    background: #ffe066;
+}
+
+#logoutBtn {
+    background: #d90429;
+}
+
+#logoutBtn:hover {
+    background: #b3001b;
+}
+
+#userInfo {
+    color: #22223b;
+    font-weight: 600;
+    font-size: 1em;
+    background: #fff;
+    border-radius: 6px;
+    padding: 6px 12px;
+    margin: 0 6px;
+}
+
+#emailLoginForm input[type="email"],
+#emailLoginForm input[type="password"] {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #bde0fe;
+    margin-right: 4px;
+    font-size: 1em;
+}
+
 @media (max-width: 900px) {
-    .meet-family-section {
+    .navbar {
         flex-direction: column;
-        align-items: stretch;
-        min-height: unset;
-        padding: 2rem 0 1rem 0;
+        align-items: flex-start;
     }
-    .meet-family-img {
-        max-width: 100vw;
+    .login-area {
+        margin-left: 0;
+        margin-top: 10px;
+        border-left: none;
+        border-top: 2px solid #bde0fe;
+        border-radius: 0 0 12px 12px;
         width: 100%;
-        height: auto;
-        min-height: 220px; /* Make image taller on mobile */
-        border-radius: 24px;
-        margin-bottom: 1.2rem;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        object-fit: cover;
-    }
-    .meet-family-content {
-        position: static;
-        transform: none;
-        margin: 0 0.5rem;
-        max-width: 100vw;
-        border-radius: 24px;
-        padding: 1.2rem 0.7rem 1rem 0.7rem;
-        box-shadow: 0 4px 24px rgba(44,62,80,0.18);
-        text-align: center;
-        background: rgba(44,62,80,0.85); /* More transparent on mobile */
+        padding: 10px 0 0 0;
+        background: rgba(255,255,255,0.12);
+        justify-content: flex-start;
     }
 }
-
-@media (max-width: 600px) {
-    .meet-family-img {
-        max-height: 240px; /* Increase from 160px */
-        min-height: 160px;
-    }
-    .meet-family-content h2 {
-        font-size: 1.1rem;
-    }
-    .meet-family-content {
-        padding: 1rem 0.3rem 0.7rem 0.3rem;
-        background: rgba(44,62,80,0.75); /* Even more transparent */
-    }
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-@keyframes slideInUp {
-    from { opacity: 0; transform: translateY(50px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInScale {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes zoomIn {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes slideFadeInRight {
-    from {
-        opacity: 0;
-        transform: translate(60px, -50%);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(-50%);
-    }
-}
-
-@keyframes jumpInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(60px) scale(0.95);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-10px) scale(1.05);
-  }
-  80% {
-    transform: translateY(5px) scale(0.98);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Rules for scroll-triggered animations (controlled by JavaScript) */
-.visible {
-    opacity: 1 !important; /* Override existing opacity:0 */
-    transform: translateY(0) !important; /* Reset transform for slide-in effects */
-    animation-play-state: running !important; /* Ensure animation plays */
-}
-
-/* Apply animations to elements when 'visible' class is added */
-.gallery-title.visible,
-.about-section h2.visible,
-#blog-section h2.visible,
-.review-section-advanced h2.visible,
-.featured-story-content.visible {
-    animation: fadeInScale 1s ease-out forwards;
-}
-
-.about-text.visible {
-    animation: slideInUp 0.8s ease-out forwards;
-}
-
-.recent-posts article.visible,
-.product-item.visible {
-    animation: slideInUp 0.8s ease-out forwards; /* Or fadeInScale, depending on desired effect */
-}
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -1189,4 +1147,90 @@ footer a:hover {
   .meet-family-content.visible {
     animation: jumpInUp 0.9s cubic-bezier(.6,-0.28,.74,.05) both !important;
   }
+  .hero-wave {
+  position: absolute;
+  bottom: 0; left: 0; width: 100%; height: 80px;
+  z-index: 0;
+}
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideFadeInRight {
+    from {
+        opacity: 0;
+        transform: translate(60px, -50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes jumpInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.05);
+  }
+  80% {
+    transform: translateY(5px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Rules for scroll-triggered animations (controlled by JavaScript) */
+.visible {
+    opacity: 1 !important; /* Override existing opacity:0 */
+    transform: translateY(0) !important; /* Reset transform for slide-in effects */
+    animation-play-state: running !important; /* Ensure animation plays */
+}
+
+/* Apply animations to elements when 'visible' class is added */
+.gallery-title.visible,
+.about-section h2.visible,
+#blog-section h2.visible,
+.review-section-advanced h2.visible,
+.featured-story-content.visible {
+    animation: fadeInScale 1s ease-out forwards;
+}
+
+.about-text.visible {
+    animation: slideInUp 0.8s ease-out forwards;
+}
+
+.recent-posts article.visible,
+.product-item.visible {
+    animation: slideInUp 0.8s ease-out forwards; /* Or fadeInScale, depending on desired effect */
 }

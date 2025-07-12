@@ -11,7 +11,7 @@
     <style>
         body {
             font-family: 'Inter', Arial, sans-serif;
-            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100% );
             color: #22223b;
             margin: 0;
             padding: 0;
@@ -227,10 +227,9 @@
         }
         /* Login Modal */
         #loginModal {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            display: flex; /* Use flexbox for centering */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
             position: fixed;
             top: 0; left: 0;
             width: 100vw; height: 100vh;
@@ -244,42 +243,61 @@
             box-shadow: 0 2px 12px #3a86ff22;
             text-align: center;
             min-width: 320px;
+            display: flex; /* Use flexbox for internal arrangement */
+            flex-direction: column; /* Stack elements vertically */
+            gap: 15px; /* Space between elements */
         }
         #loginModal h2 {
             color: #3a86ff;
+            margin-bottom: 5px; /* Adjust margin for better spacing with gap */
         }
         #loginModal input[type="password"] {
-            padding: 10px;
-            width: 220px;
-            border-radius: 6px;
+            padding: 12px 15px; /* Increased padding */
+            width: 250px; /* Slightly wider input */
+            border-radius: 8px; /* Softer corners */
             border: 1px solid #bde0fe;
-            margin-top: 10px;
-            font-size: 1em;
+            font-size: 1.1em; /* Larger font size */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Subtle shadow */
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        #loginModal input[type="password"]:focus {
+            outline: none;
+            border-color: #3a86ff;
+            box-shadow: 0 0 0 3px rgba(58,134,255,0.2); /* Blue glow on focus */
         }
         #loginModal button {
-            margin-top: 18px;
-            padding: 10px 24px;
-            border-radius: 6px;
+            padding: 12px 28px; /* Increased padding */
+            border-radius: 8px; /* Softer corners */
             background: #3a86ff;
             color: #fff;
-            font-weight: 600;
+            font-weight: 700; /* Bolder text */
             border: none;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: background 0.2s ease-in-out, transform 0.1s ease-in-out; /* Smooth transition */
         }
         #loginModal button:hover {
             background: #4361ee;
+            transform: translateY(-1px); /* Slight lift effect */
+        }
+        #loginModal button:active {
+            transform: translateY(0); /* Press effect */
         }
         #loginError {
             color: #d90429;
-            margin-top: 10px;
+            font-size: 0.95em; /* Slightly larger error text */
+            font-weight: 600; /* Bolder error text */
+            margin-top: 5px; /* Adjust margin for better spacing with gap */
         }
         @media (max-width: 700px) {
             .admin-container {
                 padding: 8px 2vw;
             }
             #loginModal > div {
-                min-width: 90vw;
+                min-width: 85vw; /* Adjusted for better mobile fit */
+                padding: 25px 18px; /* Slightly less padding on small screens */
+            }
+            #loginModal input[type="password"] {
+                width: 90%; /* Make input take more width on small screens */
             }
         }
     </style>
@@ -296,10 +314,12 @@
   </nav>
 
   <div class="admin-container" id="adminContainer" style="display:none;">
+    <div id="adminStatus" style="text-align:right; color:#3a86ff; font-weight:600; margin-bottom:10px;"></div>
     <div class="admin-tabs">
       <button class="admin-tab active" onclick="showTab('messages')">Messages</button>
       <button class="admin-tab" onclick="showTab('blog')">Blog Posts</button>
       <button class="admin-tab" onclick="showTab('products')">Products</button>
+      <button class="admin-tab" onclick="showTab('logins')">Admin Logins</button>
     </div>
 
     <!-- Messages Section -->
@@ -371,6 +391,18 @@
       </form>
     </div>
 
+    <!-- Admin Logins Section -->
+    <div class="admin-section" id="logins" style="display:none;">
+      <h2>Admin Login Events</h2>
+      <table class="admin-table" id="loginsTable">
+        <tr>
+          <th>Date</th>
+          <th>Username</th>
+          <th>IP Address</th>
+        </tr>
+      </table>
+    </div>
+
     <div class="admin-actions">
       <button onclick="logout()">Logout</button>
     </div>
@@ -381,13 +413,12 @@
     <div>
       <h2>Admin Login</h2>
       <input type="password" id="adminPassword" placeholder="Enter admin password">
-      <br>
       <button onclick="login()">Login</button>
       <div id="loginError"></div>
     </div>
   </div>
 </body>
-   <script>
+<script>
   const ADMIN_PASSWORD = "ACTact123";
 
   function login() {
@@ -395,7 +426,11 @@
     if (input === ADMIN_PASSWORD) {
       document.getElementById('loginModal').style.display = 'none';
       document.getElementById('adminContainer').style.display = '';
+      document.getElementById('adminStatus').textContent = "Admin logged in";
       loadAllData();
+
+      // After successful login:
+      fetch('/api/admin-logins', { method: 'POST' });
     } else {
       document.getElementById('loginError').textContent = "Incorrect password.";
     }
@@ -405,17 +440,17 @@
     document.getElementById('adminContainer').style.display = 'none';
     document.getElementById('loginModal').style.display = 'flex';
     document.getElementById('adminPassword').value = '';
+    document.getElementById('adminStatus').textContent = "";
   }
 
   function showTab(tab) {
-    document.querySelectorAll('.admin-tab').forEach(btn => btn.classList.remove('active'));
-    document.querySelectorAll('.admin-section').forEach(sec => sec.classList.remove('active'));
-    document.querySelector(`.admin-tab[onclick*="${tab}"]`).classList.add('active');
-    document.getElementById(tab).classList.add('active');
+    document.querySelectorAll('.admin-section').forEach(sec => sec.style.display = 'none');
+    document.getElementById(tab).style.display = '';
+    if (tab === 'logins') loadLogins();
   }
 
   async function loadAllData() {
-    await Promise.all([loadMessages(), loadBlog(), loadProducts()]);
+    await Promise.all([loadMessages(), loadBlog(), loadProducts(), loadLogins()]);
   }
 
   async function loadMessages() {
@@ -481,6 +516,22 @@
   async function deleteProduct(id) {
     await fetch('/api/products/' + id, { method: 'DELETE' });
     loadProducts();
+  }
+
+  async function loadLogins() {
+    const res = await fetch('/api/admin-logins');
+    const data = await res.json();
+    const table = document.getElementById('loginsTable');
+    table.innerHTML = `<tr><th>Date</th><th>Username</th><th>IP Address</th></tr>`;
+    data.forEach(event => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${new Date(event.timestamp).toLocaleString()}</td>
+        <td>${event.username || 'admin'}</td>
+        <td>${event.ip || ''}</td>
+      `;
+      table.appendChild(row);
+    });
   }
 
   document.getElementById('blogForm').addEventListener('submit', async function(e) {
@@ -569,5 +620,4 @@
     if (e.key === 'Enter') login();
   });
 </script>
-</body>
 </html>

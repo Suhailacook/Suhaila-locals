@@ -1,0 +1,21 @@
+[debug] [2025-07-01T22:13:50.030Z] ----------------------------------------------------------------------
+[debug] [2025-07-01T22:13:50.039Z] Command:       C:\nvm4w\nodejs\node.exe C:\Users\user\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-07-01T22:13:50.041Z] CLI Version:   14.9.0
+[debug] [2025-07-01T22:13:50.041Z] Platform:      win32
+[debug] [2025-07-01T22:13:50.041Z] Node Version:  v22.16.0
+[debug] [2025-07-01T22:13:50.042Z] Time:          Wed Jul 02 2025 01:13:50 GMT+0300 (GMT+03:00)
+[debug] [2025-07-01T22:13:50.043Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-01T22:13:50.060Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-01T22:13:50.062Z] > authorizing via signed-in user (mohammed.dalaeen@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\user\OneDrive\Documents\GitHub\Suhaila-locals
+
