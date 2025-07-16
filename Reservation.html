@@ -13,8 +13,8 @@
     <style>
 /* HERO SECTION */
 .reservation-hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('https://via.placeholder.com/1920x1080/D4AF37/FFFFFF?text=Aqaba+Cooking+Tour') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.5 ), rgba(0,0,0,0.5)), 
+                url('https://via.placeholder.com/1920x1080/D4AF37/FFFFFF?text=Aqaba+Cooking+Tour' ) no-repeat center center/cover;
     color: #fff;
     padding: 6rem 1rem 4rem 1rem;
     border-radius: 0 0 40px 40px;
@@ -128,7 +128,7 @@
 }
 
 /* BOOKING FORM */
-#booking-form {
+#booking-form-container {
     margin-top: 50px;
     text-align: center;
     color: #3a86ff;
@@ -142,7 +142,7 @@ form#reservation-form {
     padding: 2rem 1.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 24px rgba(44,62,80,0.10);
-    display: none;
+    display: none; /* Initially hidden */
 }
 .form-group {
     margin-bottom: 20px;
@@ -287,7 +287,6 @@ form#reservation-form {
             <a href="Reservation.html">Reservations</a>
             <a href="contact-Us.html">Contact</a>
             <a href="Blog.html">Blog</a>
-            <span id="navLoginStatus" style="align-self:right;text-align: right;  color:#155724; font-weight:600;"></span>
         </div>
     </nav>
 
@@ -339,24 +338,10 @@ form#reservation-form {
         </div>
     </div>
 
-    <!-- LOGIN PROMPT (only one!) -->
-    <div id="loginPrompt" style="display:none; text-align:center; margin:30px 0;">
-        <p style="color:#d90429; font-weight:600;">Please log in to book an experience.</p>
-        <button id="googleLogin" class="login-btn">
-            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="" style="height:1em;vertical-align:middle;margin-right:6px;">
-            Login with Google
-        </button>
-        <form id="emailLoginForm" style="margin-top:16px;">
-            <input type="email" id="emailInput" placeholder="Email" required style="padding:4px 8px; border-radius:4px; border:1px solid #ccc;">
-            <input type="password" id="passwordInput" placeholder="Password" required style="padding:4px 8px; border-radius:4px; border:1px solid #ccc;">
-            <button type="submit" class="login-btn" style="background:#22223b;">Login</button>
-        </form>
-        <button id="registerBtn" class="login-btn" style="background:#ffd60a; color:#22223b; margin-left:5px;">Register</button>
-        <div id="loginError" style="color:#d90429; margin-top:8px;"></div>
-    </div>
-
     <!-- Booking Form Section -->
-    <div id="booking-form">Select one of the experiences to start the booking form</div>
+    <div id="booking-form-container">
+        <p>Select one of the experiences above to start the booking form.</p>
+    </div>
     <form id="reservation-form" action="https://suhaila-locals.onrender.com/send-email" method="POST">
         <div class="form-group">
             <label for="experience">Experience:</label>
@@ -406,26 +391,9 @@ form#reservation-form {
         <p>&copy; 2024 Suhaila Cooking Experience. All rights reserved.</p>
     </footer>
 
-    <!-- Firebase SDKs (compat) -->
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-    <script>
-      const firebaseConfig = {
-        apiKey: "AIzaSyBfdHxXz97_NiIGRj8fjSAm-pSDDZQg_Yw",
-        authDomain: "suhaila-df96d.firebaseapp.com",
-        projectId: "suhaila-df96d",
-        storageBucket: "suhaila-df96d.appspot.com",
-        messagingSenderId: "589787271710",
-        appId: "1:589787271710:web:eb08f6605930b04561540f",
-        measurementId: "G-V24DXFL647"
-      };
-      firebase.initializeApp(firebaseConfig);
-      const auth = firebase.auth();
-    </script>
-
     <script>
     // Mobile menu functionality
-    const hamburger = document.getElementById('hamburger');
+    const hamburger = document.getElementById('hamburger' );
     const navbarLinks = document.getElementById('navbarLinks');
     const menuOverlay = document.getElementById('menuOverlay');
     hamburger.addEventListener('click', function() {
@@ -437,7 +405,7 @@ form#reservation-form {
         menuOverlay.classList.remove('active');
     });
 
-    // Function to get just the experience parameter
+    // Function to get experience from URL parameter
     function getQueryParams() {
       const params = new URLSearchParams(window.location.search);
       return {
@@ -445,40 +413,24 @@ form#reservation-form {
       };
     }
 
-    // Populate form with experience name
-    function populateForm() {
-      const { experience } = getQueryParams();
-      const experienceInput = document.getElementById('experience');
-      const reservationForm = document.getElementById('reservation-form');
-
-      if (experience) {
-        experienceInput.value = experience;
-        reservationForm.style.display = 'block';
-        reservationForm.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
     // Open the booking form and set the experience value
     function openForm(experience) {
-      if (!auth.currentUser) {
-        document.getElementById('loginPrompt').scrollIntoView({behavior: 'smooth'});
-        return;
-      }
       document.getElementById('experience').value = experience;
-      document.getElementById('reservation-form').style.display = 'block';
-      document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth' });
+      const form = document.getElementById('reservation-form');
+      form.style.display = 'block';
+      form.scrollIntoView({ behavior: 'smooth' });
+    }
 
-      // Autofill email if logged in
-      const user = auth.currentUser;
-      const emailField = document.getElementById('email');
-      if (user && emailField) {
-        emailField.value = user.email;
-        emailField.readOnly = true;
+    // Populate form if experience is in URL
+    function populateFormFromUrl() {
+      const { experience } = getQueryParams();
+      if (experience) {
+        openForm(experience);
       }
     }
 
-    // Initialize form population
-    populateForm();
+    // Initialize form population on page load
+    window.addEventListener('DOMContentLoaded', populateFormFromUrl);
 
     function showErrorPopup(message) {
         const errorMsg = typeof message === 'string' ? message : JSON.stringify(message);
@@ -504,7 +456,7 @@ form#reservation-form {
         fetch(`${BASE_URL}/api/reserve`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(Object.fromEntries(new FormData(this).entries()))
+            body: JSON.stringify(Object.fromEntries(new FormData(this ).entries()))
         })
         .then(async response => {
             document.getElementById('loading-spinner').style.display = 'none';
@@ -533,9 +485,20 @@ form#reservation-form {
             showErrorPopup('There was a problem with your reservation. Please try again.');
         });
     };
-    document.querySelectorAll("input, textarea").forEach((el) => {
-        el.value = localStorage.getItem(el.name) || "";
-        el.addEventListener("input", () => localStorage.setItem(el.name, el.value));
+    
+    // Save form data to localStorage
+    document.querySelectorAll("input, textarea, select").forEach((el) => {
+        // Load saved value
+        const savedValue = localStorage.getItem(el.name);
+        if (savedValue) {
+            el.value = savedValue;
+        }
+        // Save value on input
+        el.addEventListener("input", () => {
+            if (el.type !== 'password') { // Don't save passwords
+                localStorage.setItem(el.name, el.value);
+            }
+        });
     });
 
     // Navbar hide on scroll down, show on scroll up
@@ -545,99 +508,6 @@ form#reservation-form {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         navbar.style.top = scrollTop > lastScrollTop ? '-60px' : '0';
         lastScrollTop = scrollTop;
-    });
-    window.addEventListener('DOMContentLoaded', populateForm);
-
-    // Google login logic
-    const provider = new firebase.auth.GoogleAuthProvider();
-    document.getElementById('googleLogin').onclick = function() {
-        auth.signInWithPopup(provider)
-            .catch(error => alert("Login failed: " + error.message));
-    };
-
-    // Email/Password Login
-    document.getElementById('emailLoginForm').onsubmit = function(e) {
-        e.preventDefault();
-        const email = document.getElementById('emailInput').value;
-        const password = document.getElementById('passwordInput').value;
-        auth.signInWithEmailAndPassword(email, password)
-            .catch(error => {
-                document.getElementById('loginError').textContent = "Login failed: " + error.message;
-            });
-    };
-
-    // Register new user
-    document.getElementById('registerBtn').onclick = function() {
-        const email = document.getElementById('emailInput').value;
-        const password = document.getElementById('passwordInput').value;
-        if (!email || !password) {
-            document.getElementById('loginError').textContent = "Enter email and password to register.";
-            return;
-        }
-        auth.createUserWithEmailAndPassword(email, password)
-            .catch(error => {
-                document.getElementById('loginError').textContent = "Registration failed: " + error.message;
-            });
-    };
-
-    // Restrict booking until logged in
-    const navLoginStatus = document.getElementById('navLoginStatus');
-
-    auth.onAuthStateChanged(user => {
-        const loginPrompt = document.getElementById('loginPrompt');
-        const bookingForm = document.getElementById('reservation-form');
-        const bookNowButtons = document.querySelectorAll('.button');
-        const emailField = document.getElementById('email');
-        const loginStatus = document.getElementById('loginStatus'); // <-- Add this line
-
-        if (user) {
-            loginPrompt.style.display = 'none';
-            // Enable all Book Now buttons
-            bookNowButtons.forEach(btn => btn.disabled = false);
-
-            // Autofill email in the form and make it readonly
-            if (emailField) {
-                emailField.value = user.email;
-                emailField.readOnly = true;
-            }
-            // Show login status
-            if (loginStatus) {
-                loginStatus.textContent = `Logged in as: ${user.email}`;
-            }
-            // Show email in the navbar
-            if (navLoginStatus) {
-                navLoginStatus.textContent = `Logged in as: ${user.email}`;
-            }
-        } else {
-            loginPrompt.style.display = '';
-            bookingForm.style.display = 'none';
-            // Disable all Book Now buttons
-            bookNowButtons.forEach(btn => btn.disabled = true);
-
-            // Clear email field and make it editable
-            if (emailField) {
-                emailField.value = '';
-                emailField.readOnly = false;
-            }
-            // Hide login status
-            if (loginStatus) {
-                loginStatus.textContent = '';
-            }
-            // Clear email in the navbar
-            if (navLoginStatus) {
-                navLoginStatus.textContent = '';
-            }
-        }
-    });
-
-    // Intercept Book Now clicks if not logged in
-    document.querySelectorAll('.button').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            if (!auth.currentUser) {
-                e.preventDefault();
-                document.getElementById('loginPrompt').scrollIntoView({behavior: 'smooth'});
-            }
-        });
     });
     </script>
 </body>

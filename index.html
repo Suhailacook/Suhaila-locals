@@ -35,20 +35,6 @@
         <a href="contact-Us.html">Contact</a>
         <a href="Blog.html">Blog</a>
     </div>
-    <div class="login-area" id="loginArea">
-        <button id="googleLogin" class="login-btn">
-  <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="" style="height:1em;vertical-align:middle;margin-right:6px;">
-  Login with Google
-</button>
-        <span id="userInfo"></span>
-        <button id="logoutBtn" class="logout-btn" style="display:none;">Logout</button>
-        <form id="emailLoginForm" style="display:inline-block; margin-left:10px;">
-          <input type="email" id="emailInput" placeholder="Email" required>
-          <input type="password" id="passwordInput" placeholder="Password" required>
-          <button type="submit" class="login-btn" style="background:#22223b;">Login</button>
-        </form>
-        <button id="registerBtn" class="login-btn" style="background:#ffd60a; color:#22223b; margin-left:5px;">Register</button>
-    </div>
 </nav>
 
     <!-- Logo and Hero Section -->
@@ -71,7 +57,7 @@
                 <!-- Gallery Item 1 -->
                 <div class="gallery-item">
                     <img src="image1.jpg" alt="Cooking class in Aqaba" class="gallery-img" loading="lazy">
-                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling)">
+                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling )">
                         <span class="overlay-text">View Class</span>
                     </div>
                     <p class="gallery-caption">Authentic Cooking Class</p>
@@ -160,7 +146,7 @@
       <div class="product-info">
         <h3>Authentic Cooking Class</h3>
         <p>Learn to cook traditional dishes with our family recipes.</p>
-        <p><a href="cookingclass.html">Read more</a> | <a href="#" onclick="redirectToReservation('Authentic Cooking Class')">Book Now</a></p>
+        <p><a href="cookingclass.html">Read more</a> | <a href="#" onclick="redirectToReservation('Authentic Cooking Class' )">Book Now</a></p>
         <p class="price">30JD</p>
       </div>
     </article>
@@ -233,16 +219,9 @@
         <p>&copy; 2024 Suhaila Cooking Experience. All rights reserved.</p>
     </footer>
 
-    <!-- Firebase SDKs (compat) -->
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-
-
-<script >
- 
-
+<script>
   // Mobile menu functionality
-  const hamburger = document.getElementById('hamburger');
+  const hamburger = document.getElementById('hamburger' );
   const navbarLinks = document.getElementById('navbarLinks');
   const menuOverlay = document.getElementById('menuOverlay');
   hamburger?.addEventListener('click', function () {
@@ -372,95 +351,10 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZYH4T50VY"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
+  function gtag( ) { dataLayer.push(arguments); }
   gtag('js', new Date());
   gtag('config', 'G-JZYH4T50VY');
 </script>
-<script>
-  // Initialize Firebase
-  const firebaseConfig = {
-    apiKey: "AIzaSyBfdHxXz97_NiIGRj8fjSAm-pSDDZQg_Yw",
-    authDomain: "suhaila-df96d.firebaseapp.com",
-    projectId: "suhaila-df96d",
-    storageBucket: "suhaila-df96d.appspot.com",
-    messagingSenderId: "589787271710",
-    appId: "1:589787271710:web:eb08f6605930b04561540f",
-    measurementId: "G-V24DXFL647"
-  };
-  firebase.initializeApp(firebaseConfig);
 
-  const auth = firebase.auth();
-  const provider = new firebase.auth.GoogleAuthProvider();
-
-  // Login with Google
-  document.getElementById('googleLogin').onclick = function() {
-    auth.signInWithPopup(provider)
-      .then(result => {
-        alert("Welcome, " + result.user.displayName + "!");
-      })
-      .catch(error => {
-        console.error("Login error:", error);
-        alert("Login failed: " + error.message);
-      });
-  };
-
-  // Logout
-  document.getElementById('logoutBtn').onclick = function() {
-    auth.signOut()
-      .then(() => alert("You have been logged out."))
-      .catch(error => alert("Logout error: " + error.message));
-  };
-
-  // Email/Password Login
-document.getElementById('emailLoginForm').onsubmit = function(e) {
-  e.preventDefault();
-  const email = document.getElementById('emailInput').value;
-  const password = document.getElementById('passwordInput').value;
-  auth.signInWithEmailAndPassword(email, password)
-    .then(userCredential => {
-      alert("Welcome, " + userCredential.user.email + "!");
-      document.getElementById('emailLoginForm').reset();
-    })
-    .catch(error => {
-      alert("Login failed: " + error.message);
-    });
-};
-
-// Register new user
-document.getElementById('registerBtn').onclick = function() {
-  const email = document.getElementById('emailInput').value;
-  const password = document.getElementById('passwordInput').value;
-  if (!email || !password) {
-    alert("Enter email and password to register.");
-    return;
-  }
-  auth.createUserWithEmailAndPassword(email, password)
-    .then(userCredential => {
-      alert("Registered and logged in as: " + userCredential.user.email);
-      document.getElementById('emailLoginForm').reset();
-    })
-    .catch(error => {
-      alert("Registration failed: " + error.message);
-    });
-};
-
-  // Track auth state
-  auth.onAuthStateChanged(user => {
-    const userInfo = document.getElementById('userInfo');
-    if (user) {
-      document.getElementById('googleLogin').style.display = 'none';
-      document.getElementById('logoutBtn').style.display = '';
-      document.getElementById('emailLoginForm').style.display = 'none';
-      document.getElementById('registerBtn').style.display = 'none';
-      userInfo.textContent = "Logged in as: " + (user.displayName || user.email);
-    } else {
-      document.getElementById('googleLogin').style.display = '';
-      document.getElementById('logoutBtn').style.display = 'none';
-      document.getElementById('emailLoginForm').style.display = '';
-      document.getElementById('registerBtn').style.display = '';
-      userInfo.textContent = "";
-    }
-  });
-</script>
 </body>
 </html>
