@@ -1,46 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://suhaila-locals.space/</loc>
+        <loc>https://suhailacook.github.io/</loc>
         <lastmod>2024-11-03</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://suhaila-locals.space/Reservation.html</loc>
-    <lastmod>2025-07-01</lastmod>
+        <loc>https://suhailacook.github.io/Reservation.html</loc>
+        <lastmod>2025-07-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://suhaila-locals.space/Blog.html</loc>
-    <lastmod>2025-07-01</lastmod>
+        <loc>https://suhailacook.github.io/Blog.html</loc>
+        <lastmod>2025-07-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-    <loc>https://suhaila-locals.space/contact-Us.html</loc>
-    <lastmod>2025-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-</url>
-<url>
-    <loc>https://suhaila-locals.space/cookingclass.html</loc>
-    <lastmod>2025-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-</url>
-<url>
-    <loc>https://suhaila-locals.space/dinningexperience.html</loc>
-    <lastmod>2025-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-</url>
-<url>
-    <loc>https://suhaila-locals.space/walkingtour.html</loc>
-    <lastmod>2025-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-</url>
-    
+        <loc>https://suhailacook.github.io/contact-Us.html</loc>
+        <lastmod>2025-07-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://suhailacook.github.io/cookingclass.html</loc>
+        <lastmod>2025-07-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://suhailacook.github.io/dinningexperience.html</loc>
+        <lastmod>2025-07-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://suhailacook.github.io/walkingtour.html</loc>
+        <lastmod>2025-07-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>
