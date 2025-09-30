@@ -359,7 +359,8 @@ form#reservation-form {
     <div id="booking-form-container">
         <p>Select one of the experiences above to start the booking form.</p>
     </div>
-    <form id="reservation-form" action="https://suhaila-locals.onrender.com/send-email" method="POST">
+    <form id="reservation-form" action="https://formspree.io/f/movkdnjg" method="POST">
+        <input type="hidden" name="_redirect" value="https://yourdomain.com/thank-you.html">
         <div class="form-group">
             <label for="experience">Experience:</label>
             <input type="text" id="experience" name="experience" required readonly>
