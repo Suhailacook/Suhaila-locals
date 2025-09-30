@@ -1173,3 +1173,53 @@ footer a:hover {
 .product-item.visible {
     animation: slideInUp 0.8s ease-out forwards; /* Or fadeInScale, depending on desired effect */
 }
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropbtn {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 18px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0 8px 24px rgba(44,62,80,0.10);
+  z-index: 1;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  top: 100%;
+  left: 0;
+}
+.dropdown-content a {
+  color: #2C3E50;
+  padding: 12px 18px;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.dropdown-content a:hover {
+  background-color: #f3f3f3;
+  color: var(--primary-color, #E67E22);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn {
+  background: #bde0fe;
+  color: var(--primary-color, #E67E22);
+}

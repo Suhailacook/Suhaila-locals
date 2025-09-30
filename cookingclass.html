@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Authentic Jordanian Cooking Class in Aqaba | Traditional Food Experience</title>
-  <meta name="description" content="Join our hands-on Jordanian cooking class in Aqaba. Learn to make authentic Mansaf, Maqluba, and more with local chefs in a traditional home kitchen. Book your immersive culinary adventure today!" />
+<title>Jordanian Cooking Class in Aqaba | Authentic Local Food Experience</title>  <meta name="description" content="Join our hands-on Jordanian cooking class in Aqaba. Learn to make authentic Mansaf, Maqluba, and more with local chefs in a traditional home kitchen. Book your immersive culinary adventure today!" />
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -48,8 +47,8 @@
       "@type": "Place",
       "name": "Suhaila’s Kitchen",
       "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Specific Street Address (if applicable )",
+        "@type": "77110",
+        "streetAddress": "Deir Yaseen street",
         "addressLocality": "Aqaba",
         "addressRegion": "Aqaba Governorate",
         "postalCode": "77110",
@@ -57,9 +56,7 @@
       }
     },
     "image": [
-      "https://yourdomain.com/images/cooking1.jpg",
-      "https://yourdomain.com/images/cooking2.jpg",
-      "https://yourdomain.com/images/cooking3.jpg"
+      "https://suhaila-locals.space/cooking-class-aqaba.jpg"
     ],
     "offers": {
       "@type": "Offer",
@@ -77,10 +74,12 @@
     "organizer": {
       "@type": "Organization",
       "name": "Suhaila’s Experiences",
-      "url": "https://yourdomain.com"
+      "url": "https://suhaila-locals.space"
     }
   }
   </script>
+
+  <link rel="stylesheet" href="style.css">
 
   <style>
     /* CSS Variables for consistent styling */
@@ -163,6 +162,72 @@
       animation: fadeInUp 1s forwards;
       animation-delay: 0.4s;
       opacity: 0; /* Start hidden for animation */
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: var(--secondary-color);
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-links {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: background-color var(--transition-speed), color var(--transition-speed);
+      font-weight: 500;
+    }
+
+    .navbar a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--primary-color);
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: var(--secondary-color);
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: #fff;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background-color var(--transition-speed);
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
 
     /* Main Content Section */
@@ -422,6 +487,22 @@
 </head>
 
 <body>
+  <nav class="navbar">
+    <div class="navbar-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Experiences</a>
+        <div class="dropdown-content">
+          <a href="cookingclass.html">Cooking Class</a>
+          <a href="walkingtour.html">Walking Tour</a>
+        </div>
+      </div>
+      <a href="Reservation.html">Reservations</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact-Us.html">Contact</a>
+    </div>
+  </nav>
   <header>
     <h1>Authentic Jordanian Cooking Class</h1>
     <p>Uncover the rich flavors of Jordan with a hands-on culinary journey in a warm, local setting.</p>
@@ -430,14 +511,14 @@
   <main class="experience-details">
     <section class="intro fade-in-section">
       <p>
-        Step into our family kitchen in the heart of Aqaba, where generations of traditional recipes come to life. This immersive experience is led by Aunt Amal—our culinary matriarch—who’s been preparing Jordanian feasts since she was twelve. With laughter, stories, and the irresistible aroma of spices filling the air, you’ll feel like part of the family from the moment you arrive. Discover the secrets behind Jordan's national dishes and create unforgettable memories.
+        Step into our family kitchen in the heart of Aqaba, where generations of traditional recipes come to life. This immersive experience is led by <b>Agareed</b>—our culinary matriarch—who’s been preparing Jordanian feasts since she was twelve. With laughter, stories, and the irresistible aroma of spices filling the air, you’ll feel like part of the family from the moment you arrive. Discover the secrets behind Jordan's national dishes and create unforgettable memories.
       </p>
     </section>
 
     <section class="gallery fade-in-section">
-      <img src="images/cooking1.jpg" alt="Guests preparing Mansaf, Jordan's national dish, during a traditional Jordanian cooking class in Aqaba." loading="lazy">
-      <img src="images/cooking2.jpg" alt="A family-style meal, including Maqluba and fresh salads, shared after the cooking class in Aqaba." loading="lazy">
-      <img src="images/cooking3.jpg" alt="An instructor demonstrating how to make Maqluba, an upside-down rice dish, in an Aqaba cooking class." loading="lazy">
+      <img src="cookingclass1.jpeg" alt="Guests preparing Mansaf, Jordan's national dish, during a traditional Jordanian cooking class in Aqaba." loading="lazy">
+      <img src="cookingclass2.jpg" alt="A family-style meal, including Maqluba and fresh salads, shared after the cooking class in Aqaba." loading="lazy">
+      <img src="cookingclass3.jpg" alt="An instructor demonstrating how to make Maqluba, an upside-down rice dish, in an Aqaba cooking class." loading="lazy">
     </section>
 
     <section class="experience-description fade-in-section">

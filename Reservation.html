@@ -284,7 +284,16 @@ form#reservation-form {
         <div class="navbar-links" id="navbarLinks">
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
-            <a href="Reservation.html">Reservations</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Experiences</a>
+                <div class="dropdown-content">
+                    <a href="cookingclass.html">Cooking Class</a>
+                    <a href="walkingtour.html">Walking Tour</a>
+                    <a href="glassboat.html">Aqaba Glass Boat</a>
+                    <a href="dinningexperience.html">Dining Experience</a>
+                </div>
+            </div>
+            <a href="Reservation.html" class="active">Reservations</a>
             <a href="contact-Us.html">Contact</a>
             <a href="Blog.html">Blog</a>
         </div>
@@ -320,6 +329,14 @@ form#reservation-form {
             <p>Enjoy a meal with our family, sharing stories, recipes, and delicious food in a warm, inviting atmosphere.</p>
             <p><strong>15$</strong></p>
             <a href="javascript:void(0);" class="button" onclick="openForm('Dining Experience')">Book Now</a>
+        </div>
+        <!-- Experience 4: Aqaba Glass Boat -->
+        <div class="reservation-item">
+            <img src="glass-boat.jpg" loading="lazy" alt="Aqaba Glass Boat Tour">
+            <h3>Aqaba Glass Boat</h3>
+            <p>See Aqaba’s vibrant coral reefs and marine life through a glass-bottom boat—perfect for families and all ages.</p>
+            <p><strong>25$</strong></p>
+            <a href="javascript:void(0);" class="button" onclick="openForm('Aqaba Glass Boat')">Book Now</a>
         </div>
     </div>
 
