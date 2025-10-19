@@ -9,15 +9,15 @@
     <meta name="author" content="Suhaila Local's Experience">
     <meta property="og:title" content="Cooking Class & Walking Tour in Aqaba | Suhaila's Local Experiences">
     <meta property="og:description" content="Join Suhaila's walking tour and cooking class in Aqaba. Explore Jordan's culture, visit local markets, and cook authentic dishes with a local expert.">
-    <meta property="og:image" content="https://suhaila-locals.space/logo.png">
-    <meta property="og:url" content="https://suhaila-locals.space/">
+    <meta property="og:image" content="https://suhailacook.github.io/Suhaila-locals/logo.png">
+    <meta property="og:url" content="https://suhailacook.github.io/Suhaila-locals/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Cooking Class & Walking Tour in Aqaba | Suhaila's Local Experiences">
     <meta name="twitter:description" content="Join Suhaila's walking tour and cooking class in Aqaba. Explore Jordan's culture, visit local markets, and cook authentic dishes with a local expert.">
-    <meta name="twitter:image" content="https://suhaila-locals.space/logo.png">
+    <meta name="twitter:image" content="https://suhailacook.github.io/Suhaila-locals/logo.png">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/Suhaila-locals/sitemap.xml">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,11 +89,13 @@
                 </div>
                 <!-- Gallery Item 4: Aqaba Glass Boat -->
                 <div class="gallery-item">
-                    <img src="glass-boat.jpg" alt="Aqaba Glass Boat Tour" class="gallery-img" loading="lazy">
-                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling)">
+                    <figure>
+                        <img src="glass-boat.jpg" alt="Aqaba Glass Boat Tour" class="gallery-img" loading="lazy">
+                        <figcaption class="gallery-caption">Aqaba Glass Boat</figcaption>
+                    </figure>
+                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling.querySelector('img'))" role="button" tabindex="0">
                         <span class="overlay-text">Glass Boat Tour</span>
                     </div>
-                    <p class="gallery-caption">Aqaba Glass Boat</p>
                 </div>
             </div>
             <!-- Lightbox Modal (keep as is) -->
@@ -288,31 +290,83 @@
     }
   });
 
-  // Lightbox functionality
-  const galleryImages = Array.from(document.querySelectorAll('.gallery-img'));
-  let currentLightboxIndex = 0;
-  function showLightboxImage() {
-    const img = galleryImages[currentLightboxIndex];
-    document.getElementById('lightbox-img').src = img.src;
-    document.getElementById('lightbox-img').alt = img.alt;
+  // --- Replace existing lightbox code with this robust version ---
+  (function(){
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+
+  function getGalleryImages(){
+    return Array.from(document.querySelectorAll('.gallery-item img.gallery-img'));
   }
-  window.openLightbox = function (imgElement) {
-    currentLightboxIndex = galleryImages.indexOf(imgElement);
-    showLightboxImage();
-    document.getElementById('lightbox').classList.add('active');
-  };
-  window.closeLightbox = function () {
-    document.getElementById('lightbox').classList.remove('active');
-  };
-  window.prevLightboxImage = function () {
-    currentLightboxIndex = (currentLightboxIndex - 1 + galleryImages.length) % galleryImages.length;
-    showLightboxImage();
-  };
-  window.nextLightboxImage = function () {
-    currentLightboxIndex = (currentLightboxIndex + 1) % galleryImages.length;
-    showLightboxImage();
+
+  let currentIndex = 0;
+
+  function showImageByIndex(idx){
+    const imgs = getGalleryImages();
+    if (!imgs.length || !lbImg) return;
+    // wrap index
+    currentIndex = ((idx % imgs.length) + imgs.length) % imgs.length;
+    const img = imgs[currentIndex];
+    const src = img.dataset.largeSrc || img.src;
+    lbImg.src = src;
+    lbImg.alt = img.alt || '';
+    lbImg.dataset.currentSrc = src;
+  }
+
+  window.openLightbox = function(el){
+    if (!el) return;
+    // normalize element to <img>
+    let imgEl = el.tagName === 'IMG' ? el : (el.querySelector && el.querySelector('img') ) || el.querySelector('.gallery-img');
+    const imgs = getGalleryImages();
+    let idx = imgs.findIndex(g => g === imgEl);
+    if (idx === -1 && imgEl) {
+      const target = imgEl.dataset.largeSrc || imgEl.src;
+      idx = imgs.findIndex(g => (g.dataset.largeSrc || g.src) === target);
+    }
+    if (idx === -1) idx = 0;
+    showImageByIndex(idx);
+    lightbox?.classList.add('active');
+    document.body.style.overflow = 'hidden';
   };
 
+  window.closeLightbox = function(){
+    lightbox?.classList.remove('active');
+    document.body.style.overflow = '';
+    // release image src after animation
+    setTimeout(() => { if(lbImg) lbImg.src = ''; delete lbImg.dataset.currentSrc; }, 300);
+  };
+
+  function prevImage(){ showImageByIndex(currentIndex - 1); }
+  function nextImage(){ showImageByIndex(currentIndex + 1); }
+
+  prevBtn?.addEventListener('click', ev => { ev.stopPropagation(); prevImage(); });
+  nextBtn?.addEventListener('click', ev => { ev.stopPropagation(); nextImage(); });
+
+  // close when clicking backdrop only (not image or controls)
+  lightbox?.addEventListener('click', (ev) => {
+    if (ev.target === lightbox) closeLightbox();
+  });
+
+  // keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox || !lightbox.classList.contains('active')) return;
+    if (e.key === 'ArrowLeft') prevImage();
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  // delegate overlay clicks (works regardless of markup variations)
+  document.addEventListener('click', (e) => {
+    const overlay = e.target.closest('.gallery-overlay');
+    if (!overlay) return;
+    const parent = overlay.closest('.gallery-item');
+    if (!parent) return;
+    const img = parent.querySelector('img.gallery-img');
+    if (img) openLightbox(img);
+  });
+})();
   // Review carousel
   let currentReview = 0;
   const reviewCards = document.querySelectorAll('.review-card');
@@ -339,9 +393,9 @@
   // Scroll-triggered animations
   document.addEventListener('DOMContentLoaded', () => {
     const animateOnScrollElements = document.querySelectorAll(
-      '.gallery-title, .about-section h2, .about-text, #blog-section h2, .review-section-advanced h2, .featured-story-content'
+      '.gallery-title, .meet-family-section, .meet-family-section h2, .about-section h2, .about-text, #blog-section h2, .review-section-advanced h2, .featured-story-content'
     );
-    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.12 };
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -364,13 +418,17 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.12 });
 
+    // Observe containers that should animate children in sequence
     const recentPostsContainer = document.querySelector('.recent-posts');
     if (recentPostsContainer) staggeredObserver.observe(recentPostsContainer);
 
     const productGalleryContainer = document.querySelector('.product-gallery');
     if (productGalleryContainer) staggeredObserver.observe(productGalleryContainer);
+
+    const meetFamilyContainer = document.querySelector('.meet-family-section');
+    if (meetFamilyContainer) staggeredObserver.observe(meetFamilyContainer);
 
     document.querySelectorAll('.product-item').forEach(el => el.classList.add('visible'));
   });
@@ -383,6 +441,35 @@
   function gtag( ) { dataLayer.push(arguments); }
   gtag('js', new Date());
   gtag('config', 'G-JZYH4T50VY');
+</script>
+
+<script>
+  // toggle dropdown on small screens
+  document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      if (window.innerWidth <= 800) {
+        e.preventDefault();
+        const dd = this.closest('.dropdown');
+        // close other open dropdowns first
+        document.querySelectorAll('.navbar .dropdown.open').forEach(o => { if (o !== dd) o.classList.remove('open'); });
+        dd.classList.toggle('open');
+      }
+    });
+  });
+
+  // click outside to close mobile dropdown
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 800) {
+      if (!e.target.closest('.navbar')) {
+        document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
+      }
+    }
+  });
+
+  // optional: close on resize from mobile -> desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 800) document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
+  });
 </script>
 
 </body>

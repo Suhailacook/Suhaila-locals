@@ -280,139 +280,139 @@ section {
     border-radius: 2px;
 }
 
+/* Enhanced gallery layout & UI */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    padding: 0 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    align-items: start;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 18px;
 }
 
 .gallery-item {
-    position: relative; /* For overlay positioning */
-    border-radius: var(--border-radius);
-    overflow: hidden; /* Ensures image and overlay respect border-radius */
-    box-shadow: 0 5px 15px var(--shadow-color);
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-    display: flex;
-    flex-direction: column; /* Stack image and caption */
-    cursor: pointer; /* Indicate clickable area */
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 22px rgba(20,30,50,0.06);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* Aspect Ratio for the image container */
-.gallery-item::before {
-    content: '';
-    display: block;
-    padding-top: 75%; /* 4:3 Aspect Ratio (height / width) */
-    /* For modern browsers, you could use: aspect-ratio: 4/3; */
-}
-
-.gallery-img {
-    position: absolute; /* Position within gallery-item::before space */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--transition-speed), filter var(--transition-speed);
-    filter: grayscale(0%);
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px); /* Lift effect for the whole item */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.gallery-item:hover .gallery-img {
-    transform: scale(1.05); /* Zoom in slightly on hover */
-    filter: grayscale(70%);
-}
-
-.gallery-overlay {
+/* overlay sits above image and caption, clickable, fades in on hover */
+.gallery-item .gallery-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
+    z-index: 30;                /* ensure overlay is on top */
+    display:flex; align-items:flex-end; justify-content:center;
+    padding:14px;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(2,6,23,0.45) 100%);
+    opacity:0; transition:opacity .22s; cursor:pointer; pointer-events:auto;
+}
+
+.gallery-item:hover .gallery-overlay,
+.gallery-item .gallery-overlay:focus {
+    opacity: 1;
+}
+
+/* caption stays below overlay */
+.gallery-caption,
+.gallery-item figcaption {
+    position: relative;
+    z-index: 10;
+    margin: 0;
+    padding: 10px 12px 14px;
+    background: transparent;
+}
+
+/* image behavior */
+.gallery-img {
+    display: block;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity var(--transition-speed);
-    z-index: 1; /* Above image, below caption if caption is outside this */
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    will-change: transform;
 }
-
-.gallery-item:hover .gallery-overlay {
-    opacity: 1;
-}
-
+.gallery-item:hover .gallery-img { transform: scale(1.08); }
 .overlay-text {
-    color: var(--text-light);
-    font-size: 1.2rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transform: translateY(10px); /* Initial slight offset */
-    opacity: 0;
-    transition: transform var(--transition-speed), opacity var(--transition-speed);
+    background: rgba(255,214,10,0.95);
+    color: #22223b;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 
-.gallery-item:hover .overlay-text {
-    transform: translateY(0); /* Slide up */
-    opacity: 1;
+/* ensure lightbox image fits nicely */
+.lightbox img#lightbox-img {
+    max-width: 92vw;
+    max-height: 80vh;
+    object-fit: contain;
 }
 
-.gallery-caption {
-    background-color: var(--text-light); /* White background for caption */
-    color: var(--text-dark);
-    padding: 1rem;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 500;
-    border-top: 1px solid #eee;
-    flex-shrink: 0; /* Prevent caption from shrinking */
-}
-
-/* Lightbox - Ensure it looks good on mobile */
+/* Lightbox overlay + arrows */
 .lightbox {
-    display: none; /* Hide by default */
     position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(35, 41, 70, 0.92);
-    justify-content: center;
+    inset: 0;
+    display: flex;
     align-items: center;
-    z-index: 2000;
-    transition: opacity 0.3s;
+    justify-content: center;
+    background: rgba(0,0,0,0.85);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease;
 }
 .lightbox.active {
-    display: flex; /* Show as flex when active */
+    opacity: 1;
+    pointer-events: auto;
 }
-.lightbox img {
-    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-    border-radius: 16px;
-    background: #fff;
-    max-width: 90vw;   /* Limit width to 90% of viewport */
-    max-height: 80vh;  /* Limit height to 80% of viewport */
-    width: auto;
-    height: auto;
-    display: block;
+.lightbox img#lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.6);
 }
+
+/* arrow buttons */
 .lightbox-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: #fff;
-    color: #232946;
+    background: rgba(0,0,0,0.45);
+    color: #fff;
     border: none;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    opacity: 0.85;
-    z-index: 2001;
+    z-index: 10001;
+    transition: background 150ms;
 }
-#lightbox-prev { left: 32px; }
-#lightbox-next { right: 32px; }
+.lightbox-arrow:hover { background: rgba(0,0,0,0.65); }
+#lightbox-prev { left: 18px; }
+#lightbox-next { right: 18px; }
+
+/* ensure overlay click area doesn't cover buttons */
+.lightbox > * { pointer-events: auto; }
+
+/* small close hint (optional) */
+.lightbox .close-hint {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+    z-index: 10002;
+}
 
 /* About Section */
 .about-section {
@@ -818,98 +818,40 @@ section {
     color: var(--text-light);
 }
 
-/* Meet the Suhaila Family Section - Overlap & Motion */
+/* Meet-family section entrance animation */
 .meet-family-section {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 520px;
-    background: linear-gradient(120deg, #eebd35 0%, #a8dadc 100%);
-    overflow: hidden;
-    padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: center;
+  padding: 40px 18px;
 }
-
 .meet-family-img {
-    width: 100%;
-    max-width: 700px;
-    height: 440px;
-    object-fit: cover;
-    border-radius: 36px;
-    box-shadow: 0 16px 48px rgba(44,62,80,0.18);
-    filter: brightness(0.8);
-    z-index: 1;
-    transition: filter 0.5s;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(10,20,40,0.08);
+  transform: translateY(24px) scale(0.98);
+  opacity: 0;
+  transition: transform 600ms cubic-bezier(.2,.9,.3,1), opacity 550ms ease;
 }
-
-.meet-family-img:hover {
-    filter: brightness(1);
-}
-
 .meet-family-content {
-    position: absolute;
-    right: 8%;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(44,62,80,0.90);
-    color: #fff;
-    padding: 2.8rem 2.5rem 2.2rem 3.5rem;
-    border-radius: 36px 0 36px 36px;
-    box-shadow: 0 12px 40px rgba(44,62,80,0.22);
-    max-width: 480px;
-    z-index: 2;
-    animation: slideFadeInRight 1.2s cubic-bezier(.6,.2,.2,1) both;
+  transform: translateY(24px);
+  opacity: 0;
+  transition: transform 600ms cubic-bezier(.2,.9,.3,1), opacity 550ms ease;
 }
 
-.meet-family-content h2 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1.1rem;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.18);
-    animation: fadeInUp 1.2s 0.2s both;
+/* When observer sets .visible — animate into place */
+.meet-family-section.visible .meet-family-img,
+.meet-family-section.visible .meet-family-content {
+  transform: translateY(0) scale(1);
+  opacity: 1;
 }
 
-.meet-family-content h3 {
-    font-size: 1.4rem;
-    color: var(--accent-light);
-    margin-bottom: 0.7rem;
-    animation: fadeInUp 1.2s 0.4s both;
-}
-
-.meet-family-content p {
-    font-size: 1.13rem;
-    line-height: 1.8;
-    color: #fff;
-    margin-bottom: 0;
-    animation: fadeInUp 1.2s 0.6s both;
-}
-
-
-#emailLoginForm input[type="email"],
-#emailLoginForm input[type="password"] {
-    padding: 6px 10px;
-    border-radius: 6px;
-    border: 1px solid #bde0fe;
-    margin-right: 4px;
-    font-size: 1em;
-}
-
-@media (max-width: 900px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .login-area {
-        margin-left: 0;
-        margin-top: 10px;
-        border-left: none;
-        border-top: 2px solid #bde0fe;
-        border-radius: 0 0 12px 12px;
-        width: 100%;
-        padding: 10px 0 0 0;
-        background: rgba(255,255,255,0.12);
-        justify-content: flex-start;
-    }
+/* Responsive */
+@media (max-width: 880px) {
+  .meet-family-section { grid-template-columns: 1fr; text-align: center; }
+  .meet-family-content { order: 2; }
+  .meet-family-img { order: 1; }
 }
 
 /* Responsive Design */
@@ -1151,9 +1093,8 @@ footer a:hover {
 
 /* Rules for scroll-triggered animations (controlled by JavaScript) */
 .visible {
-    opacity: 1 !important; /* Override existing opacity:0 */
-    transform: translateY(0) !important; /* Reset transform for slide-in effects */
-    animation-play-state: running !important; /* Ensure animation plays */
+    /* Only start animations — don't hard-override opacity/transform here */
+    animation-play-state: running !important;
 }
 
 /* Apply animations to elements when 'visible' class is added */
@@ -1222,4 +1163,98 @@ footer a:hover {
 .dropdown:hover .dropbtn {
   background: #bde0fe;
   color: var(--primary-color, #E67E22);
+}
+
+/* ===== Consolidated mobile navbar & dropdown rules (replace duplicate blocks) ===== */
+@media (max-width: 800px) {
+  .hamburger { display: block; }
+
+  /* Off-canvas nav that slides in from right */
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;               /* height of navbar */
+    right: 0;
+    width: 300px;
+    max-width: 85%;
+    height: calc(100% - 60px);
+    background-color: var(--background-dark);
+    padding: 1rem 0.75rem;
+    gap: 0.25rem;
+    transform: translateX(100%);
+    transition: transform 0.28s ease;
+    z-index: 999;
+    overflow-y: auto;
+    align-items: stretch;    /* left-align children */
+  }
+
+  /* When hamburger toggles, add .open to reveal */
+  .navbar-links.open {
+    transform: translateX(0);
+  }
+
+  /* Make links full-width and left-aligned */
+  .navbar-links > a,
+  .navbar .dropbtn {
+    width: 100%;
+    text-align: left;
+    padding: 12px 18px;
+    box-sizing: border-box;
+    color: #fff;
+    display: block;
+    border-radius: 0;
+  }
+
+  /* Dropdown container full-width */
+  .navbar .dropdown {
+    width: 100%;
+  }
+
+  /* Mobile dropdown content: hidden by default, becomes part of flow when .open */
+  .navbar .dropdown .dropdown-content {
+    position: static;
+    display: none;
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
+    padding-left: 18px;
+    margin: 0;
+  }
+
+  /* Dropdown links style in mobile menu */
+  .navbar .dropdown .dropdown-content a {
+    display: block;
+    padding: 10px 0;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /* Show submenu only when dropdown has .open (toggle via JS) */
+  .navbar .dropdown.open .dropdown-content {
+    display: block !important;
+    position: static;
+    background: #ffffff;                /* light card background */
+    color: #22223b;                     /* readable text color */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 8px 0 12px;
+  }
+
+  .navbar .dropdown.open .dropdown-content a {
+    color: #22223b;
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    border-radius: 6px;
+  }
+
+  .navbar .dropdown.open .dropdown-content a:hover,
+  .navbar .dropdown.open .dropdown-content a:focus {
+    background: rgba(0,0,0,0.04);
+  }
+
+  /* Ensure hover rules don't interfere on touch devices */
+  .dropdown:hover .dropdown-content { display: none; }
 }
