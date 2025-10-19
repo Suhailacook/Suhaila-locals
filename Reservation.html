@@ -23,7 +23,7 @@
     margin-bottom: 40px;
     position: relative;
     overflow: hidden;
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-size: cover;
 }
 .reservation-hero h1 {
@@ -359,50 +359,62 @@ form#reservation-form {
     <div id="booking-form-container">
         <p>Select one of the experiences above to start the booking form.</p>
     </div>
-    <form id="reservation-form" action="https://formspree.io/f/movkdnjg" method="POST">
-        <input type="hidden" name="_redirect" value="https://yourdomain.com/thank-you.html">
-        <div class="form-group">
-            <label for="experience">Experience:</label>
-            <input type="text" id="experience" name="experience" required readonly>
-        </div>
-        <div class="form-group">
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
-        </div>
-        <div class="form-group">
-            <label for="attendees">Number of Attendees:</label>
-            <select id="attendees" name="attendees" required>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" required>
-        </div>
-        <div class="form-group">
-            <label for="comments">Comments:</label>
-            <textarea id="comments" name="comments"></textarea>
-        </div>
-        <div class="form-actions">
-            <button type="submit">Book Now</button>
-        </div>
+    <form id="reservation-form" action="https://formspree.io/f/movkdnjg" method="POST" novalidate>
+      <!-- keep honeypot -->
+      <input type="text" name="_gotcha" style="display:none" aria-hidden="true">
+
+      <div class="form-group">
+        <label for="experience">Experience:</label>
+        <input type="text" id="experience" name="experience" required readonly aria-required="true">
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required aria-required="true">
+      </div>
+
+      <div class="form-group">
+        <label for="attendees">Number of Attendees:</label>
+        <select id="attendees" name="attendees" required aria-required="true">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required aria-required="true">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required aria-required="true">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required aria-required="true" pattern="^\+?[0-9\s\-()]{6,}$" title="Enter a valid phone number">
+      </div>
+
+      <div class="form-group">
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" rows="4"></textarea>
+      </div>
+
+      <!-- aria-live region for messages -->
+      <div id="form-message" role="status" aria-live="polite" class="sr-only"></div>
+
+      <div class="form-actions">
+        <button id="reservation-submit" type="submit" class="button">Book Now</button>
+      </div>
     </form>
 
     <footer>
