@@ -36,45 +36,36 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "Aqaba  Walking Tour: Hidden Gems & Local Culture",
-    "description": "Explore the historic streets, local markets, and hidden gems of Aqaba on a guided walking tour.",
-    "url": "https://suhaila-locals.space/walking%20tour.html",
-    "startDate": "2025-07-01T09:00",
-    "endDate": "2025-07-01T11:30",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "location": {
-      "@type": "Place",
-      "name": "Aqaba City Center (Meeting Point )",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Specific Starting Point Address (if applicable)",
-        "addressLocality": "Aqaba",
-        "addressRegion": "Aqaba Governorate",
-        "postalCode": "77110",
-        "addressCountry": "JO"
-      }
-    },
-    "image": [
-      "https://yourdomain.com/images/walking-tour.jpg"
-    ],
+    "@type": "TouristTrip",
+    "name": "Aqaba Walking Food Tour",
+    "description": "Guided walking food & culture tour in Aqaba — sample local dishes, visit markets and historic sites.",
+    "image": "https://suhailacook.github.io/Suhaila-locals/walkingtour-cover.jpg",
+    "url": "https://suhailacook.github.io/Suhaila-locals/walkingtour.html",
     "offers": {
       "@type": "Offer",
-      "url": "https://yourdomain.com/Reservation.html?experience=Walking%20Tour",
       "price": "20",
-      "priceCurrency": "JOD",
-      "availability": "https://schema.org/InStock",
-      "validFrom": "2025-06-01T00:00",
-      "validThrough": "2026-12-31T23:59"
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
     },
-    "organizer": {
-      "@type": "Organization",
-      "name": "Suhaila’s Experiences",
-      "url": "https://yourdomain.com"
+    "provider": {
+      "@type":"LocalBusiness",
+      "name":"Suhaila's Local Experiences",
+      "telephone":"+962798460448",
+      "address":{"@type":"PostalAddress","addressLocality":"Aqaba","addressCountry":"JO"}
     }
   }
   </script>
+  <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What does the walking tour include?","acceptedAnswer":{"@type":"Answer","text":"Visits to local food stalls, markets, historical stops and a tasting of traditional dishes."}},
+    {"@type":"Question","name":"How long is the tour?","acceptedAnswer":{"@type":"Answer","text":"Approximately 2.5 hours."}},
+    {"@type":"Question","name":"How to book?","acceptedAnswer":{"@type":"Answer","text":"Use the Book Now button on the Reservations page or contact us by WhatsApp."}}
+  ]
+}
+</script>
 
   <style>
     /* CSS Variables for consistent styling */

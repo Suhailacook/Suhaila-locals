@@ -10,270 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-/* HERO SECTION */
-.reservation-hero {
-    background: linear-gradient(rgba(0,0,0,0.5 ), rgba(0,0,0,0.5)), 
-                url('https://via.placeholder.com/1920x1080/D4AF37/FFFFFF?text=Aqaba+Cooking+Tour' ) no-repeat center center/cover;
-    color: #fff;
-    padding: 6rem 1rem 4rem 1rem;
-    border-radius: 0 0 40px 40px;
-    box-shadow: 0 8px 32px #3a86ff22;
-    text-align: center;
-    margin-bottom: 40px;
-    position: relative;
-    overflow: hidden;
-    background-attachment: scroll;
-    background-size: cover;
-}
-.reservation-hero h1 {
-    font-size: 3.5rem;
-    color: #fff;
-    margin-bottom: 1rem;
-    letter-spacing: 0.02em;
-    text-shadow: 0 2px 8px #3a86ff44;
-    font-family: 'Playfair Display', serif;
-    animation: slideInUp 1s ease-out forwards;
-    opacity: 0;
-    animation-delay: 0.5s;
-}
-.reservation-hero p {
-    font-size: 1.5rem;
-    color: #f1f3f8;
-    font-weight: 500;
-    margin-bottom: 0;
-    animation: fadeInScale 1s ease-out forwards;
-    opacity: 0;
-    animation-delay: 0.8s;
-}
-@media (max-width: 900px) {
-    .reservation-hero h1 { font-size: 2.2rem; }
-    .reservation-hero p { font-size: 1.1rem; }
-}
-@media (max-width: 600px) {
-    .reservation-hero h1 { font-size: 1.4rem; }
-}
-@media (max-width: 480px) {
-    .reservation-hero h1 { font-size: 1.1rem; }
-}
-
-/* RESERVATION CARDS - Use gallery style */
-.reservation-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto 40px auto;
-    padding: 0 1rem;
-}
-.reservation-item {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(58,134,255,0.08);
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    border: 1.5px solid #bde0fe;
-    min-height: 420px;
-}
-.reservation-item:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 12px 36px #3a86ff22;
-    border-color: #ffd60a;
-}
-.reservation-item img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 8px #bde0fe;
-}
-.reservation-item h3 {
-    font-size: 1.3em;
-    margin-bottom: 8px;
-    color: #3a86ff;
-    font-family: 'Playfair Display', serif;
-}
-.reservation-item p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    color: #555;
-    word-wrap: break-word;
-}
-.reservation-item .button {
-    display: inline-block;
-    padding: 10px 22px;
-    background-color: var(--secondary-color, #E76F51);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: 0.02em;
-    box-shadow: 0 2px 8px #3a86ff22;
-    border: none;
-    margin-top: auto;
-    margin-bottom: 18px;
-    transition: background 0.2s, color 0.2s, transform 0.2s;
-}
-.reservation-item .button:hover {
-    background-color: #3a86ff;
-    color: #fff;
-    transform: translateY(-2px) scale(1.04);
-    box-shadow: 0 6px 24px #3a86ff33;
-}
-
-/* BOOKING FORM */
-#booking-form-container {
-    margin-top: 50px;
-    text-align: center;
-    color: #3a86ff;
-    font-size: 1.3em;
-    animation: fadeIn 0.4s ease-in-out;
-}
-form#reservation-form {
-    max-width: 480px;
-    margin: 30px auto 40px auto;
-    background: #fff;
-    padding: 2rem 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(44,62,80,0.10);
-    display: none; /* Initially hidden */
-}
-.form-group {
-    margin-bottom: 20px;
-    text-align: left;
-}
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: #3a86ff;
-}
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #bde0fe;
-    border-radius: 6px;
-    font-size: 1em;
-    font-family: 'Inter', Arial, sans-serif;
-    background: #f8fafc;
-}
-.form-group textarea {
-    min-height: 60px;
-}
-.form-actions {
-    text-align: center;
-    margin-top: 18px;
-}
-.form-actions button[type="submit"] {
-    background-color: var(--secondary-color, #E76F51);
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    padding: 12px 28px;
-    font-size: 1.1em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s, transform 0.2s;
-    box-shadow: 0 2px 8px #3a86ff22;
-    margin: 0 auto;
-    display: inline-block;
-}
-.form-actions button[type="submit"]:hover {
-    background-color: #3a86ff;
-    color: #fff;
-    transform: translateY(-2px) scale(1.04);
-    box-shadow: 0 6px 24px #3a86ff33;
-}
-
-/* FORM MESSAGE CONTAINER */
-#form-message-container .success-message,
-#form-message-container .error-message {
-    text-align: center;
-    margin: 24px auto 0 auto;
-    font-weight: 600;
-    font-size: 1.15em;
-    border-radius: 10px;
-    padding: 16px 10px;
-    max-width: 430px;
-    box-shadow: 0 2px 8px #3a86ff22;
-    border: 2px solid transparent;
-    transition: background 0.2s, border 0.2s;
-}
-#form-message-container .success-message {
-    color: #155724;
-    background: #d4edda;
-    border-color: #c3e6cb;
-}
-#form-message-container .error-message {
-    color: #721c24;
-    background: #f8d7da;
-    border-color: #f5c6cb;
-}
-
-/* LOADING SPINNER */
-#loading-spinner {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2000;
-}
-
-/* ERROR POPUP (unique) */
-#error-popup {
-    display: none;
-    position: fixed;
-    z-index: 3000;
-    left: 0; top: 0; width: 100vw; height: 100vh;
-    background: rgba(34,34,59,0.35);
-    align-items: center;
-    justify-content: center;
-}
-#error-popup .popup-content {
-    background: #fff;
-    color: #721c24;
-    border: 2px solid #f5c6cb;
-    border-radius: 14px;
-    box-shadow: 0 8px 32px #3a86ff33;
-    padding: 32px 24px 18px 24px;
-    max-width: 350px;
-    margin: 120px auto 0 auto;
-    text-align: center;
-    position: relative;
-    font-size: 1.1em;
-    animation: fadeIn 0.3s;
-}
-#error-popup .close-btn {
-    position: absolute;
-    top: 8px;
-    right: 16px;
-    font-size: 1.6em;
-    color: #721c24;
-    cursor: pointer;
-    font-weight: bold;
-}
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes slideInUp {
-    from { opacity: 0; transform: translateY(50px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeInScale {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-}
-    </style>
 </head>
 <body>
     <!-- Mobile menu overlay -->
@@ -309,34 +45,49 @@ form#reservation-form {
         <!-- Experience 1 -->
         <div class="reservation-item">
             <img src="Experience1.jpg" loading="lazy" alt="Cooking Class in Aqaba">
-            <h3>Authentic Cooking Class</h3>
+            <h3><a href="cookingclass.html" title="Authentic Cooking Class">Authentic Cooking Class</a></h3>
             <p>Join our family in the kitchen and learn to prepare traditional dishes with recipes passed down for generations.</p>
             <p><strong>45$</strong></p>
             <a href="javascript:void(0);" class="button" onclick="openForm('Authentic Cooking Class')">Book Now</a>
+            <div class="card-footer">
+              <a href="cookingclass.html" class="learn-more" title="Learn more about Authentic Cooking Class" aria-label="Learn more about Authentic Cooking Class">Learn more</a>
+            </div>
         </div>
+
         <!-- Experience 2 -->
         <div class="reservation-item">
             <img src="Experience2.jpg" loading="lazy" alt="Walking Tour In Aqaba">
-            <h3>Walking tour in Aqaba</h3>
+            <h3><a href="walkingtour.html" title="Walking Tour in Aqaba">Walking Tour in Aqaba</a></h3>
             <p>Experience the Heart of Aqaba on Foot – A Guided Walking Tour Through History, Culture, and Coastal Beauty.</p>
             <p><strong>20$</strong></p>
-            <a href="javascript:void(0);" class="button" onclick="openForm('Food Taste Tour')">Book Now</a>
+            <a href="javascript:void(0);" class="button" onclick="openForm('Walking Tour in Aqaba')">Book Walking Tour in Aqaba</a>
+            <div class="card-footer">
+              <a href="walkingtour.html" class="learn-more" title="Learn more about Walking Tour in Aqaba" aria-label="Learn more about Walking Tour in Aqaba">Learn more</a>
+            </div>
         </div>
+
         <!-- Experience 3 -->
         <div class="reservation-item">
             <img src="Experience3.jpg" loading="lazy" alt="Dining Local Experience">
-            <h3>Dining Experience</h3>
+            <h3><a href="dinningexperience.html" title="Dining Experience">Dining Experience</a></h3>
             <p>Enjoy a meal with our family, sharing stories, recipes, and delicious food in a warm, inviting atmosphere.</p>
             <p><strong>15$</strong></p>
             <a href="javascript:void(0);" class="button" onclick="openForm('Dining Experience')">Book Now</a>
+            <div class="card-footer">
+              <a href="dinningexperience.html" class="learn-more" title="Learn more about Dining Experience" aria-label="Learn more about Dining Experience">Learn more</a>
+            </div>
         </div>
+
         <!-- Experience 4: Aqaba Glass Boat -->
         <div class="reservation-item">
             <img src="glass-boat.jpg" loading="lazy" alt="Aqaba Glass Boat Tour">
-            <h3>Aqaba Glass Boat</h3>
+            <h3><a href="glassboat.html" title="Aqaba Glass Boat">Aqaba Glass Boat</a></h3>
             <p>See Aqaba’s vibrant coral reefs and marine life through a glass-bottom boat—perfect for families and all ages.</p>
             <p><strong>25$</strong></p>
             <a href="javascript:void(0);" class="button" onclick="openForm('Aqaba Glass Boat')">Book Now</a>
+            <div class="card-footer">
+              <a href="glassboat.html" class="learn-more" title="Learn more about Aqaba Glass Boat" aria-label="Learn more about Aqaba Glass Boat">Learn more</a>
+            </div>
         </div>
     </div>
 

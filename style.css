@@ -1,39 +1,232 @@
 /* Consolidated root variables (replaces duplicate :root blocks) */
+/* ---------- Design tokens / system (consolidated) ---------- */
 :root{
   --color-primary: #D4AF37;      /* gold */
-  --color-accent:  #3A86FF;      /* blue accent */
+  --color-accent:  #3A86FF;      /* blue */
   --color-warm:    #E76F51;      /* terracotta */
   --bg-page:       #FFFFFF;
   --bg-surface:    #FAFBFD;
   --text-primary:  #12202B;
   --text-muted:    #6B7280;
   --muted-border:  #E6EEF9;
-  --glass-01:      rgba(255,255,255,0.6);
   --shadow-1:      0 8px 24px rgba(14,24,35,0.06);
   --shadow-2:      0 16px 40px rgba(14,24,35,0.08);
   --radius-sm:     8px;
   --radius-md:     12px;
   --radius-lg:     18px;
   --transition:    220ms cubic-bezier(.2,.9,.3,1);
-
-  /* kept tokens from the second block */
-  --primary-color: var(--color-primary);
-  --secondary-color: var(--color-warm);
-  --text-dark: #333333;
-  --text-light: #FFFFFF;
-  --background-light: #F8F8F8;
-  --background-dark: #2C3E50;
-  --accent-light: #A8DADC;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-  --border-radius: 8px;
-  --transition-speed: 0.3s ease-in-out;
-  --fast-transition: 0.2s ease-out;
-  --slow-transition: 0.6s ease-out;
-  --text-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.6);
-  --text-shadow-dark: 0 2px 4px rgba(255, 255, 255, 0.3);
+  --glass-01:      rgba(255,255,255,0.6);
 }
 
-/* General Styles & Resets */
+/* ---------- Fluid typography ---------- */
+h1 { font-size: clamp(1.6rem, 3.6vw, 3.5rem); line-height:1.05; }
+h2 { font-size: clamp(1.2rem, 2.6vw, 2.2rem); }
+
+/* ---------- Focus, accessibility ---------- */
+:focus {
+  outline: 3px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+  outline-offset: 3px;
+  transition: outline var(--transition);
+}
+.sr-only { position:absolute!important; width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0; }
+
+/* ---------- Buttons ---------- */
+.button, .btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:0.5rem;
+  padding:0.6rem 1.1rem; border-radius:999px; border:0; cursor:pointer;
+  font-weight:700; transition: transform var(--transition), box-shadow var(--transition), background .18s;
+}
+.button-primary {
+  background: linear-gradient(90deg,var(--color-primary), color-mix(in srgb, var(--color-primary) 70%, var(--color-accent) 30%));
+  color: #111;
+  box-shadow: var(--shadow-1);
+}
+.button-ghost {
+  background: transparent; color: var(--text-primary);
+  border: 1px solid var(--muted-border);
+}
+.button:hover { transform: translateY(-3px); }
+
+/* ---------- Reservation / hero / cards (moved from inline styles) ---------- */
+
+/* Hero */
+.reservation-hero {
+    background: linear-gradient(rgba(0,0,0,0.5 ), rgba(0,0,0,0.5)),
+                url('https://via.placeholder.com/1920x1080/D4AF37/FFFFFF?text=Aqaba+Cooking+Tour') no-repeat center center/cover;
+    color: #fff;
+    padding: 6rem 1rem 4rem 1rem;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 8px 32px #3a86ff22;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+    background-attachment: scroll;
+    background-size: cover;
+}
+.reservation-hero h1 { font-size: 3.5rem; color: #fff; margin-bottom: 1rem; letter-spacing: 0.02em; text-shadow: 0 2px 8px #3a86ff44; font-family: 'Playfair Display', serif; animation: slideInUp 1s ease-out forwards; opacity: 0; animation-delay: 0.5s; }
+.reservation-hero p { font-size: 1.5rem; color: #f1f3f8; font-weight: 500; margin-bottom: 0; animation: fadeInScale 1s ease-out forwards; opacity: 0; animation-delay: 0.8s; }
+@media (max-width: 900px) { .reservation-hero h1 { font-size: 2.2rem; } .reservation-hero p { font-size: 1.1rem; } }
+@media (max-width: 600px) { .reservation-hero h1 { font-size: 1.4rem; } }
+@media (max-width: 480px) { .reservation-hero h1 { font-size: 1.1rem; } }
+
+/* Reservation container & cards */
+.reservation-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 0 1rem;
+}
+.reservation-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(58,134,255,0.08);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border: 1.5px solid #bde0fe;
+  min-height: 420px;
+}
+.reservation-item:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 36px #3a86ff22;
+  border-color: #ffd60a;
+}
+.reservation-item img {
+  width: 100%; height: 180px; object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px #bde0fe;
+}
+.reservation-item h3 { font-size: 1.3em; margin-bottom: 8px; color: #3a86ff; font-family: 'Playfair Display', serif; }
+.reservation-item p { font-size: 1.1em; margin-bottom: 10px; color: #555; word-wrap: break-word; }
+.reservation-item .button {
+  background: linear-gradient(90deg, var(--color-primary), color-mix(in srgb, var(--color-primary) 70%, var(--color-accent) 30%));
+  color: #111;
+  padding: 10px 20px;
+  display: inline-block;
+  width: auto;
+  text-transform: none;
+  white-space: nowrap;
+  line-height: 1;
+  margin: 12px 0 14px;
+  box-shadow: 0 6px 18px rgba(14,24,35,0.08);
+  border: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+.reservation-item .button::after,
+.reservation-item .button::before {
+  display: none !important;
+  content: none !important;
+}
+.reservation-item p { margin-bottom: 8px; }
+.reservation-item .button.button-ghost {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: none;
+}
+
+/* --- Reservation card visual fixes --- */
+/* Force consistent heading color and ensure linked heading inherits the same color */
+.reservation-item h3 {
+  color: var(--accent-blue) !important; /* consistent blue title */
+  margin: 0.4rem 0 0.6rem;
+  font-weight: 700;
+}
+.reservation-item h3 a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Normalize CTA buttons inside cards (make them gold like other CTAs) */
+.reservation-item .button,
+.reservation-item .btn {
+  background: linear-gradient(90deg, var(--cta-gold-start), var(--cta-gold-end)) !important;
+  color: #111 !important;
+  padding: 10px 22px !important;
+  border-radius: 50px !important;
+  box-shadow: 0 8px 28px rgba(14,24,35,0.08) !important;
+  border: 0 !important;
+  display: inline-block !important;
+  text-align: center;
+  line-height: 1;
+  margin: 12px 0 14px;
+  white-space: nowrap;
+}
+
+/* Make secondary/learn-more link subtle and aligned */
+.reservation-item .learn-more {
+  display: block;
+  width: calc(100% - 28px);
+  margin: 8px 14px 18px;
+  padding: 10px 14px;
+  text-align: center;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-dark);
+  border: 1px solid var(--muted-border);
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: none;
+}
+
+/* ---------- Booking form styling ---------- */
+#booking-form-container { margin-top: 50px; text-align: center; color: #3a86ff; font-size: 1.3em; animation: fadeIn 0.4s ease-in-out; }
+form#reservation-form {
+  max-width: 480px; margin: 30px auto 40px auto; background: #fff; padding: 2rem 1.5rem; border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.10); display: none;
+}
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: 600; color: #3a86ff; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 10px; border: 1px solid #bde0fe; border-radius: 6px; font-size: 1em; font-family: 'Inter', Arial, sans-serif; background: #f8fafc;
+}
+.form-group textarea { min-height: 60px; }
+.form-actions { text-align: center; margin-top: 18px; }
+.form-actions button[type="submit"] {
+  background-color: var(--secondary-color, #E76F51); color: #fff; border: none; border-radius: 50px; padding: 12px 28px;
+  font-size: 1.1em; font-weight: 600; cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px #3a86ff22; margin: 0 auto; display: inline-block;
+}
+.form-actions button[type="submit"]:hover {
+  background-color: #3a86ff; color: #fff; transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 24px #3a86ff33;
+}
+
+/* ---------- Messages, spinner, error popup ---------- */
+#form-message-container .success-message, #form-message-container .error-message {
+  text-align: center; margin: 24px auto 0 auto; font-weight: 600; font-size: 1.15em; border-radius: 10px;
+  padding: 16px 10px; max-width: 430px; box-shadow: 0 2px 8px #3a86ff22; border: 2px solid transparent;
+  transition: background 0.2s, border 0.2s;
+}
+#form-message-container .success-message { color: #155724; background: #d4edda; border-color: #c3e6cb; }
+#form-message-container .error-message { color: #721c24; background: #f8d7da; border-color: #f5c6cb; }
+#loading-spinner { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2000; }
+#error-popup {
+  display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(34,34,59,0.35); align-items: center; justify-content: center;
+}
+#error-popup .popup-content {
+  background: #fff; color: #721c24; border: 2px solid #f5c6cb; border-radius: 14px;
+  box-shadow: 0 8px 32px #3a86ff33; padding: 32px 24px 18px 24px; max-width: 350px;
+  margin: 120px auto 0 auto; text-align: center; position: relative; font-size: 1.1em; animation: fadeIn 0.3s;
+}
+#error-popup .close-btn {
+  position: absolute; top: 8px; right: 16px; font-size: 1.6em; color: #721c24;
+  cursor: pointer; font-weight: bold;
+}
+
+/* ---------- General Styles & Resets ---------- */
 :root {
     --primary-color: #D4AF37; /* Warm Gold/Mustard */
     --secondary-color: #E76F51; /* Vibrant Terracotta/Burnt Orange */
