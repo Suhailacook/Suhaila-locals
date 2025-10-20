@@ -1,14 +1,17 @@
 /* Consolidated root variables (replaces duplicate :root blocks) */
 /* ---------- Design tokens / system (consolidated) ---------- */
 :root{
-  --color-primary: #D4AF37;      /* gold */
-  --color-accent:  #3A86FF;      /* blue */
-  --color-warm:    #E76F51;      /* terracotta */
-  --bg-page:       #FFFFFF;
-  --bg-surface:    #FAFBFD;
-  --text-primary:  #12202B;
-  --text-muted:    #6B7280;
-  --muted-border:  #E6EEF9;
+  /* --- Color Palette --- */
+  --color-primary: #D4AF37;      /* Warm Gold */
+  --color-secondary: #E76F51;    /* Terracotta/Burnt Orange */
+  --color-accent:  #00798C;      /* Deep Teal (New) */
+  --text-primary:  #1A1A1A;      /* Dark Charcoal (New) */
+  --text-muted:    #6B7280;      /* Muted Grey (Kept) */
+  --bg-page:       #FBFBFB;      /* Near-White (New) */
+  --bg-surface:    #FFFFFF;      /* Pure White (Refined) */
+  --muted-border:  #D4D4D4;      /* Light Grey (New) */
+  
+  /* --- Design System --- */
   --shadow-1:      0 8px 24px rgba(14,24,35,0.06);
   --shadow-2:      0 16px 40px rgba(14,24,35,0.08);
   --radius-sm:     8px;
@@ -37,13 +40,18 @@ h2 { font-size: clamp(1.2rem, 2.6vw, 2.2rem); }
   font-weight:700; transition: transform var(--transition), box-shadow var(--transition), background .18s;
 }
 .button-primary {
-  background: linear-gradient(90deg,var(--color-primary), color-mix(in srgb, var(--color-primary) 70%, var(--color-accent) 30%));
-  color: #111;
+  /* Adjusted gradient to use secondary color for a warmer feel */
+  background: linear-gradient(90deg,var(--color-primary), color-mix(in srgb, var(--color-primary) 70%, var(--color-secondary) 30%));
+  color: var(--text-primary);
   box-shadow: var(--shadow-1);
 }
 .button-ghost {
   background: transparent; color: var(--text-primary);
   border: 1px solid var(--muted-border);
+}
+.button-ghost:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+    color: var(--color-primary);
 }
 .button:hover { transform: translateY(-3px); }
 
@@ -228,20 +236,22 @@ form#reservation-form {
 
 /* ---------- General Styles & Resets ---------- */
 :root {
-    --primary-color: #D4AF37; /* Warm Gold/Mustard */
-    --secondary-color: #E76F51; /* Vibrant Terracotta/Burnt Orange */
-    --text-dark: #333333;
+    /* --- Merged and Cleaned Variables --- */
+    --primary-color: var(--color-primary);
+    --secondary-color: var(--color-secondary);
+    --accent-color: var(--color-accent);
+    --text-dark: var(--text-primary);
     --text-light: #FFFFFF;
-    --background-light: #F8F8F8;
+    --background-light: var(--bg-page);
     --background-dark: #2C3E50; /* Dark Blue/Grey for contrast */
-    --accent-light: #A8DADC; /* Light Teal/Aqua */
+    --accent-light: #A8DADC; /* Light Teal/Aqua (Kept for now) */
     --shadow-color: rgba(0, 0, 0, 0.1);
     --border-radius: 8px;
     --transition-speed: 0.3s ease-in-out;
-    --fast-transition: 0.2s ease-out; /* Added for quicker effects */
-    --slow-transition: 0.6s ease-out; /* Added for smoother, slower effects */
-    --text-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.6); /* For text over light backgrounds */
-    --text-shadow-dark: 0 2px 4px rgba(255, 255, 255, 0.3); /* For text over dark backgrounds */
+    --fast-transition: 0.2s ease-out;
+    --slow-transition: 0.6s ease-out;
+    --text-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.6);
+    --text-shadow-dark: 0 2px 4px rgba(255, 255, 255, 0.3);
 }
 
 *, *::before, *::after {
@@ -321,10 +331,10 @@ section {
 }
 
 .button:hover, .hero-cta:hover {
-    background: #3a86ff;
+    background: var(--color-accent); /* Use Deep Teal for button hover */
     color: #fff;
     transform: translateY(-2px) scale(1.04);
-    box-shadow: 0 6px 24px #3a86ff33;
+    box-shadow: 0 6px 24px color-mix(in srgb, var(--color-accent) 30%, transparent);
 }
 
 .highlight {
@@ -336,13 +346,14 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(90deg, #3a86ff 0%, #4361ee 100%);
+    /* Use the new color scheme for the navbar background */
+    background: linear-gradient(90deg, var(--color-accent) 0%, color-mix(in srgb, var(--color-accent) 80%, black) 100%);
     padding: 0 24px;
     min-height: 60px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 12px rgba(58,134,255,0.08);
+    box-shadow: 0 2px 12px color-mix(in srgb, var(--color-accent) 15%, transparent);
 }
 
 .navbar-links {
@@ -364,13 +375,13 @@ section {
 
 .navbar-links a.active,
 .navbar-links a:focus {
-    background: #ffd60a;
-    color: #22223b;
+    background: var(--color-primary);
+    color: var(--text-primary);
 }
 
 .navbar-links a:hover {
-    background: #bde0fe;
-    color: #3a86ff;
+    background: color-mix(in srgb, var(--color-primary) 20%, transparent);
+    color: var(--color-primary);
 }
 
 .hamburger {
