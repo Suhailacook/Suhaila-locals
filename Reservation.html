@@ -64,6 +64,10 @@
             <div class="card-footer">
               <a href="walkingtour.html" class="learn-more" title="Learn more about Walking Tour in Aqaba" aria-label="Learn more about Walking Tour in Aqaba">Learn more</a>
             </div>
+            <div class="card-popup" aria-hidden="true">
+              <p>Quick details • 2.5h • From 20$</p>
+              <a href="walkingtour.html" class="learn-more" title="Learn more">Learn more</a>
+            </div>
         </div>
 
         <!-- Experience 3 -->
@@ -247,6 +251,29 @@
         navbar.style.top = scrollTop > lastScrollTop ? '-60px' : '0';
         lastScrollTop = scrollTop;
     });
+
+    // small delegate to toggle popups on touch devices and close on outside click / Esc
+document.addEventListener('click', (e) => {
+  // close popups when clicking outside any .reservation-item
+  if (!e.target.closest('.reservation-item')) {
+    document.querySelectorAll('.card-popup.show').forEach(p => p.classList.remove('show'));
+    return;
+  }
+  // if device has no hover, toggle the popup on item click
+  if (window.matchMedia && window.matchMedia('(hover: none)').matches) {
+    const item = e.target.closest('.reservation-item');
+    const popup = item?.querySelector('.card-popup');
+    if (popup) {
+      // prevent immediate navigation when clicking inner links
+      if (e.target.closest('.learn-more')) return;
+      popup.classList.toggle('show');
+      e.preventDefault();
+    }
+  }
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') document.querySelectorAll('.card-popup.show').forEach(p => p.classList.remove('show'));
+});
     </script>
 </body>
 </html>

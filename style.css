@@ -1486,3 +1486,43 @@ footer a:hover {
   /* Ensure hover rules don't interfere on touch devices */
   .dropdown:hover .dropdown-content { display: none; }
 }
+
+/* Hover popup for reservation/gallery cards */
+.reservation-item { position: relative; overflow: visible; }
+.reservation-item .card-popup{
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translate(-50%, 12px) scale(.98);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 220ms var(--transition), opacity 220ms var(--transition);
+  background: #fff;
+  color: var(--text-dark);
+  box-shadow: 0 12px 36px rgba(14,24,35,0.12);
+  border-radius: 12px;
+  padding: 12px;
+  min-width: calc(100% - 36px);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.reservation-item .card-popup p{ margin:0; font-weight:600; font-size:0.95rem; color:var(--text-dark); }
+.reservation-item .card-popup .learn-more{ padding:8px 14px; border-radius: 8px; font-weight:700; background: linear-gradient(90deg,var(--color-primary),var(--color-accent)); color:#111; text-decoration:none; }
+
+/* show on hover/focus */
+.reservation-item:hover .card-popup,
+.reservation-item:focus-within .card-popup,
+.reservation-item .card-popup.show {
+  transform: translate(-50%, 0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* smaller on mobile */
+@media (max-width:700px){
+  .reservation-item .card-popup{ min-width: 88%; bottom: 12px; padding:10px; }
+  .reservation-item .card-popup p{ font-size:0.9rem; }
+}
