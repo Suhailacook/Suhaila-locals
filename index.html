@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,7 +77,7 @@
             <div class="gallery-grid">
                 <!-- Gallery Item 1 -->
                 <div class="gallery-item">
-                    <img src="cooking-class-aqaba.jpg" data-large-src="cooking-class-aqaba.jpg" alt="Cooking class in Aqaba" class="gallery-img" loading="lazy">
+                    <img src="cooking-class-aqaba.jpg" data-large-src="images/cooking-class-1600.jpg" alt="Cooking class in Aqaba" class="gallery-img" loading="lazy">
                     <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling )">
                         <span class="overlay-text">View Class</span>
                     </div>
@@ -488,7 +487,6 @@
 
 </body>
 </html>
-=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -515,8 +513,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"LocalBusiness","name":"Suhaila's Local Experiences","image":"https://suhailacook.github.io/Suhaila-locals/logo.png","url":"https://suhailacook.github.io/Suhaila-locals/","telephone":"+962798460448","address":{"@type":"PostalAddress","addressLocality":"Aqaba","addressCountry":"JO"}}
-    </script>
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Suhaila's Local Experiences","image":"https://suhailacook.github.io/Suhaila-locals/logo.png","url":"https://suhailacook.github.io/Suhaila-locals/","telephone":"+962798460448","address":{"@type":"PostalAddress","addressLocality":"Aqaba","addressCountry":"JO"}}
+</script>
 </head>
 <body>
   <div id="scroll-progress"></div>
@@ -529,7 +527,6 @@
     <div class="dropdown">
       <button class="dropbtn" aria-expanded="false" aria-controls="experiences-menu">Experiences</button>
       <div id="experiences-menu" class="dropdown-content" role="menu">
-        <a href="local-experiences.html" role="menuitem">All Experiences</a>
         <a href="cookingclass.html" role="menuitem">Cooking Class</a>
         <a href="walkingtour.html" role="menuitem">Walking Tour</a>
         <a href="glassboat.html" role="menuitem">Aqaba Glass Boat</a>
@@ -544,101 +541,199 @@
 
     <!-- Logo and Hero Section -->
     <section class="hero-section">
-        <img src="logo.png" alt="Suhaila's Locals Logo" class="logo-fade-in" width="120" height="120" />
+        <img src="logo.png" alt="Suhaila's Locals Logo" class="logo-fade-in" width="120" height="120" loading="eager" />
         <h1>Welcome to Suhaila's Local Experiences</h1>
         <p class="hero-subtitle">Cooking Classes & Walking Tours in Aqaba</p>
         <div class="hero-inner">
           <p class="hero-cta">
-            <a href="local-experiences.html" class="button button-primary" title="Explore All Our Local Experiences">Explore Our Experiences</a>
+            <!-- prominent, keyword-rich link -->
+            <a href="walkingtour.html" class="button button-primary" title="Walking Tour in Aqaba — Learn more & book">Walking Tour in Aqaba</a>
+            <!-- optional secondary CTA -->
+            <a href="Reservation.html?experience=Walking%20Tour%20in%20Aqaba" class="button button-ghost" title="Book the Walking Tour in Aqaba">Book Walking Tour in Aqaba</a>
           </p>
         </div>
+        <div class="hero-contact">
+           
+        </div>
+        <svg class="hero-wave" viewBox="0 0 1440 320"><path fill="#bde0fe" fill-opacity="1" d="M0,224L1440,96L1440,320L0,320Z"></path></svg>
     </section>
 
     <a class="skip-link" href="#main-content">Skip to content</a>
 <main id="main-content">
+        <!-- Modern Image Gallery -->
+        <section class="gallery-section">
+            <h2 class="gallery-title">Our Experiences Gallery</h2>
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <img src="cooking-class-aqaba.jpg" data-large-src="images/cooking-class-1600.jpg" alt="Cooking class in Aqaba" class="gallery-img" loading="lazy">
+                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling )">
+                        <span class="overlay-text">View Class</span>
+                    </div>
+                    <p class="gallery-caption">Authentic Cooking Class</p>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <img src="aqaba-walking-tour.jpg" alt="Aqaba walking tour" class="gallery-img" loading="lazy">
+                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling)">
+                        <span class="overlay-text">Explore Tour</span>
+                    </div>
+                    <p class="gallery-caption">Aqaba Walking Tour</p>
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <img src="image3.jpg" alt="Dining experience" class="gallery-img" loading="lazy">
+                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling)">
+                        <span class="overlay-text">Dining Experience</span>
+                    </div>
+                    <p class="gallery-caption">Traditional Dining</p>
+                </div>
+                <!-- Gallery Item 4: Aqaba Glass Boat -->
+                <div class="gallery-item">
+                    <figure>
+                        <img src="glass-boat.jpg" alt="Aqaba Glass Boat Tour" class="gallery-img" loading="lazy">
+                        <figcaption class="gallery-caption">Aqaba Glass Boat</figcaption>
+                    </figure>
+                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling.querySelector('img'))" role="button" tabindex="0">
+                        <span class="overlay-text">Glass Boat Tour</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Lightbox Modal (keep as is) -->
+            <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true" aria-label="Image viewer">
+                <button id="lightbox-close" class="lightbox-close" aria-label="Close" onclick="closeLightbox()">✕</button>
+                <button id="lightbox-prev" class="lightbox-arrow" aria-label="Previous image">&lt;</button>
+                <img id="lightbox-img" src="" alt="">
+                <button id="lightbox-next" class="lightbox-arrow" aria-label="Next image">&gt;</button>
+            </div>
+        </section>
 
-        <!-- About Suhaila Section (Shortened) -->
+        <!-- About Suhaila Section -->
         <section class="meet-family-section" id="about">
-          <img src="Family.jpg" alt="Suhaila Family" class="meet-family-img" loading="lazy">
+         <img src="Family.jpg" alt="Suhaila Family" class="meet-family-img" loading="lazy">
           <div class="meet-family-content">
             <h2>Meet the <span class="highlight">Suhaila Family</span></h2>
             <h3>Welcome to Our Culinary Family!</h3>
             <p>
               At Suhaila Family, cooking is a celebration of life and togetherness. Our kitchen is where generations share cherished recipes and create delicious memories.
             </p>
-            <a href="about.html" class="button">Learn More About Us</a>
+            <p>
+              Join us for authentic cooking classes, experience our warm family atmosphere, and let us cater your special events. Come be part of our culinary tradition!
+            </p>
           </div>
         </section>
 
-        <!-- Featured Experiences Section (New) -->
-        <section class="experiences">
-            <h2>Featured Experiences</h2>
-            <div class="product-gallery">
-                <article class="product-item">
-                    <img src="Experience1.jpg" alt="Traditional Jordanian Cooking Class in Aqaba" class="product-image" loading="lazy">
-                    <div class="product-info">
-                        <h3>Authentic Cooking Class</h3>
-                        <p>Learn to cook traditional dishes with our family recipes in Aqaba.</p>
-                        <p><a href="cookingclass.html">Read more</a></p>
-                        <p class="price">30JD</p>
-                    </div>
-                </article>
-                <article class="product-item">
-                    <img src="Experience2.jpg" alt="Walking and food taste tour in Aqaba" class="product-image" loading="lazy">
-                    <div class="product-info">
-                        <h3>Aqaba Walking Tour</h3>
-                        <p>Discover Aqaba’s hidden gems on a guided walking tour that blends history, culture, and flavor.</p>
-                        <p><a href="walkingtour.html">Read more</a></p>
-                        <p class="price">20JD</p>
-                    </div>
-                </article>
-                <article class="product-item">
-                    <img src="glass-boat.jpg" alt="Aqaba Glass Boat Tour" class="product-image" loading="lazy">
-                    <div class="product-info">
-                        <h3>Aqaba Glass Boat</h3>
-                        <p>Enjoy the beauty of Aqaba’s coral reefs and marine life with a relaxing glass boat tour.</p>
-                        <p><a href="glassboat.html">Read more</a></p>
-                        <p class="price">25JD</p>
-                    </div>
-                </article>
-            </div>
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="local-experiences.html" class="button">View All Experiences</a>
+        <!-- NEW: Featured Story with Text Overlap -->
+        <section class="featured-story-section">
+            <div class="featured-story-content">
+                <h2>Experience the Heart of Aqaba</h2>
+                <p>Dive deep into the local culture with our immersive market tours. Discover hidden gems, vibrant spices, and the true essence of Jordanian life.</p>
+                <a href="Reservation.html" class="button">Plan Your Visit</a>
             </div>
         </section>
 
-        <!-- Blog Section (Teaser) -->
+        <!-- Blog Section -->
         <section id="blog-section">
             <h2>Explore Our Blog</h2>
-            <p>Discover the history of Aqaba, its food culture, and behind-the-scenes insights.</p>
+            <p>Discover the history of Aqaba, its food culture, and behind-the-scenes insights. Join us on our journey to share the joy of local experiences in Aqaba.</p>
             <div class="recent-posts">
                 <article>
                     <h3>
                         <a href="food-culture.html">Discovering the Food Culture of Aqaba</a>
                     </h3>
-                    <p>Aqaba's culinary scene is a rich tapestry of flavors... <a href="food-culture.html">Read More</a></p>
+                    <p>Aqaba's culinary scene is a rich tapestry of flavors, showcasing the best of Jordanian cuisine with fresh seafood, local spices, and traditional dishes. <a href="https://suhaila-locals.space/food-culture.html">Read More</a></p>
                 </article>
                 <article>
                     <h3>
                         <a href="history-aqaba.html">Discover the Local History of Aqaba</a>
                     </h3>
-                    <p>Aqaba boasts a fascinating history that dates back to ancient times... <a href="history-aqaba.html">Read More</a></p>
+                    <p>Aqaba boasts a fascinating history that dates back to ancient times, serving as a vital port and trading hub in the region. Discover its historical landmarks and stories. <a href="history-aqaba.html">Read More</a></p>
                 </article>
             </div>
             <a href="Blog.html" class="button">Visit the Blog</a>
         </section>
 
-        <!-- Testimonials Section (Shortened) -->
+        <!-- WhatsApp Image Link -->
+        <a href="https://wa.me/+962798460448" target="_blank" rel="noopener noreferrer" class="whatsapp-fixed" aria-label="Contact Us on WhatsApp">
+           <img src="whatsapp.png" alt="Contact Us on WhatsApp" width="100" height="100" loading="lazy">
+        </a>
+
+      <section class="experiences">
+  <h2>Our local Experiences</h2>
+  <div class="product-gallery">
+    <article class="product-item">
+      <img src="Experience1.jpg" alt="Traditional Jordanian Cooking Class in Aqaba" class="product-image" loading="lazy">
+      <div class="product-info">
+        <h3>Authentic Cooking Class</h3>
+        <p>Learn to cook traditional dishes with our family recipes in Aqaba.</p>
+        <p><a href="cookingclass.html">Read more</a> | <a href="#" onclick="redirectToReservation('Authentic Cooking Class' )">Book Now</a></p>
+        <p class="price">30JD</p>
+      </div>
+    </article>
+
+    <article class="product-item">
+      <img src="Experience2.jpg" alt="Walking and food taste tour in Aqaba" class="product-image" loading="lazy">
+      <div class="product-info">
+        <h3>Aqaba Walking Tour</h3>
+        <p>Discover Aqaba’s hidden gems on a guided walking tour that blends history, culture, and flavor.</p>
+        <p><a href="walkingtour.html">Read more</a> | <a href="#" onclick="redirectToReservation('Food Taste Tour')">Book Now</a></p>
+        <p class="price">20JD</p>
+      </div>
+    </article>
+
+    <article class="product-item">
+      <img src="Experience3.jpg" alt="Dining Experience in a local Aqaba home" class="product-image" loading="lazy">
+      <div class="product-info">
+        <h3>Dining Experience</h3>
+        <p>Sharing meals, stories, and culture with our family.</p>
+        <p><a href="dinningexperience.html">Read more</a> | <a href="#" onclick="redirectToReservation('Dining Experience')">Book Now</a></p>
+        <p class="price">15JD</p>
+      </div>
+    </article>
+
+    <article class="product-item">
+      <img src="glass-boat.jpg" alt="Aqaba Glass Boat Tour" class="product-image" loading="lazy">
+      <div class="product-info">
+        <h3>Aqaba Glass Boat</h3>
+        <p>Enjoy the beauty of Aqaba’s coral reefs and marine life with a relaxing glass boat tour.</p>
+        <p>
+          <a href="glassboat.html">Read more</a> | 
+          <a href="#" onclick="redirectToReservation('Aqaba Glass Boat')">Book Now</a>
+        </p>
+        <p class="price">25JD</p>
+      </div>
+    </article>
+  </div>
+</section>
+        <!-- Advanced Review Section -->
         <section class="review-section-advanced">
             <h2>What Our Guests Say</h2>
             <div class="review-carousel">
                 <div class="review-card active">
                     <p>"Suhaila's cooking class was a delightful experience. I learned so much!"</p>
                     <div class="reviewer">
-                        <img src="avatar1.jpg" alt="Alex" class="review-avatar">
+                        <img src="avatar1.jpg" alt="Alex" class="review-avatar" loading="lazy">
                         <span>Alex</span>
                     </div>
                 </div>
+                <div class="review-card">
+                    <p>"A wonderful family atmosphere. I felt right at home!"</p>
+                    <div class="reviewer">
+                        <img src="avatar2.jpg" alt="Emma" class="review-avatar" loading="lazy">
+                        <span>Emma</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p>"The food was absolutely delicious! Highly recommended."</p>
+                    <div class="reviewer">
+                        <img src="avatar3.jpg" alt="John" class="review-avatar" loading="lazy">
+                        <span>John</span>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button onclick="prevReview()" aria-label="Previous review">&lt;</button>
+                <button onclick="nextReview()" aria-label="Next review">&gt;</button>
             </div>
         </section>
     </main>
@@ -648,10 +743,10 @@
         <p>Mobile: +962798460448</p>
         <p>Connect with us on:
             <a href="https://www.instagram.com/suhaila.cook" target="_blank">
-                <img src="instagram-icon.png" alt="Instagram" class="social-icon"> Instagram
+                <img src="instagram-icon.png" alt="Instagram" class="social-icon" loading="lazy"> Instagram
             </a> |
             <a href="https://web.facebook.com/suhailacook" target="_blank">
-                <img src="facebook-icon.png" alt="Facebook" class="social-icon"> Facebook
+                <img src="facebook-icon.png" alt="Facebook" class="social-icon" loading="lazy"> Facebook
             </a>
         </p>
         <p>&copy; 2024 Suhaila Cooking Experience. All rights reserved.</p>
@@ -659,7 +754,7 @@
 
 <script>
   // Mobile menu functionality
-  const hamburger = document.getElementById('hamburger');
+  const hamburger = document.getElementById('hamburger' );
   const navbarLinks = document.getElementById('navbarLinks');
   const menuOverlay = document.getElementById('menuOverlay');
   hamburger?.addEventListener('click', function () {
@@ -669,6 +764,20 @@
   menuOverlay?.addEventListener('click', function () {
     navbarLinks.classList.remove('open');
     menuOverlay.classList.remove('active');
+  });
+
+  // Navbar hide/show on scroll
+  document.addEventListener('DOMContentLoaded', function () {
+    let lastScrollY = window.scrollY;
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 60) {
+        navbar.style.top = '-80px';
+      } else {
+        navbar.style.top = '0';
+      }
+      lastScrollY = window.scrollY;
+    });
   });
 
   // Highlight active nav link
@@ -682,18 +791,188 @@
       link.setAttribute('aria-current', 'page');
     }
   });
+
+  // --- Replace existing lightbox code with this robust version ---
+  (function(){
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+
+  function getGalleryImages(){
+    return Array.from(document.querySelectorAll('.gallery-item img.gallery-img'));
+  }
+
+  let currentIndex = 0;
+
+  function showImageByIndex(idx){
+    const imgs = getGalleryImages();
+    if (!imgs.length || !lbImg) return;
+    // wrap index
+    currentIndex = ((idx % imgs.length) + imgs.length) % imgs.length;
+    const img = imgs[currentIndex];
+    const src = img.dataset.largeSrc || img.src;
+    lbImg.src = src;
+    lbImg.alt = img.alt || '';
+    lbImg.dataset.currentSrc = src;
+  }
+
+  window.openLightbox = function(el){
+    if (!el) return;
+    // normalize element to <img>
+    let imgEl = el.tagName === 'IMG' ? el : (el.querySelector && el.querySelector('img') ) || el.querySelector('.gallery-img');
+    const imgs = getGalleryImages();
+    let idx = imgs.findIndex(g => g === imgEl);
+    if (idx === -1 && imgEl) {
+      const target = imgEl.dataset.largeSrc || imgEl.src;
+      idx = imgs.findIndex(g => (g.dataset.largeSrc || g.src) === target);
+    }
+    if (idx === -1) idx = 0;
+    showImageByIndex(idx);
+    lightbox?.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeLightbox = function(){
+    lightbox?.classList.remove('active');
+    document.body.style.overflow = '';
+    // release image src after animation
+    setTimeout(() => { if(lbImg) lbImg.src = ''; delete lbImg.dataset.currentSrc; }, 300);
+  };
+
+  function prevImage(){ showImageByIndex(currentIndex - 1); }
+  function nextImage(){ showImageByIndex(currentIndex + 1); }
+
+  prevBtn?.addEventListener('click', ev => { ev.stopPropagation(); prevImage(); });
+  nextBtn?.addEventListener('click', ev => { ev.stopPropagation(); nextImage(); });
+
+  // close when clicking backdrop only (not image or controls)
+  lightbox?.addEventListener('click', (ev) => {
+    if (ev.target === lightbox) closeLightbox();
+  });
+
+  // keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox || !lightbox.classList.contains('active')) return;
+    if (e.key === 'ArrowLeft') prevImage();
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  // delegate overlay clicks (works regardless of markup variations)
+  document.addEventListener('click', (e) => {
+    const overlay = e.target.closest('.gallery-overlay');
+    if (!overlay) return;
+    const parent = overlay.closest('.gallery-item');
+    if (!parent) return;
+    const img = parent.querySelector('img.gallery-img');
+    if (img) openLightbox(img);
+  });
+})();
+  // Review carousel
+  let currentReview = 0;
+  const reviewCards = document.querySelectorAll('.review-card');
+  function showReviewCard(idx) {
+    reviewCards.forEach((card, i) => card.classList.toggle('active', i === idx));
+  }
+  function prevReview() {
+    currentReview = (currentReview - 1 + reviewCards.length) % reviewCards.length;
+    showReviewCard(currentReview);
+  }
+  function nextReview() {
+    currentReview = (currentReview + 1) % reviewCards.length;
+    showReviewCard(currentReview);
+  }
+  window.prevReview = prevReview;
+  window.nextReview = nextReview;
+  showReviewCard(currentReview);
+
+  // Book Now redirect
+  window.redirectToReservation = function (experienceName) {
+    window.location.href = "Reservation.html?experience=" + encodeURIComponent(experienceName);
+  };
+
+  // Scroll-triggered animations
+  document.addEventListener('DOMContentLoaded', () => {
+    const animateOnScrollElements = document.querySelectorAll(
+      '.gallery-title, .meet-family-section, .meet-family-section h2, .about-section h2, .about-text, #blog-section h2, .review-section-advanced h2, .featured-story-content'
+    );
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.12 };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    animateOnScrollElements.forEach(el => observer.observe(el));
+
+    const staggeredObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const childrenToAnimate = Array.from(entry.target.children);
+          childrenToAnimate.forEach((child, index) => {
+            setTimeout(() => {
+              child.classList.add('visible');
+            }, index * 150);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    // Observe containers that should animate children in sequence
+    const recentPostsContainer = document.querySelector('.recent-posts');
+    if (recentPostsContainer) staggeredObserver.observe(recentPostsContainer);
+
+    const productGalleryContainer = document.querySelector('.product-gallery');
+    if (productGalleryContainer) staggeredObserver.observe(productGalleryContainer);
+
+    const meetFamilyContainer = document.querySelector('.meet-family-section');
+    if (meetFamilyContainer) staggeredObserver.observe(meetFamilyContainer);
+
+    document.querySelectorAll('.product-item').forEach(el => el.classList.add('visible'));
+  });
 </script>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZYH4T50VY"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag( ) { dataLayer.push(arguments); }
   gtag('js', new Date());
-
   gtag('config', 'G-JZYH4T50VY');
+</script>
+
+<script>
+  // toggle dropdown on small screens
+  document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      if (window.innerWidth <= 800) {
+        e.preventDefault();
+        const dd = this.closest('.dropdown');
+        // close other open dropdowns first
+        document.querySelectorAll('.navbar .dropdown.open').forEach(o => { if (o !== dd) o.classList.remove('open'); });
+        dd.classList.toggle('open');
+      }
+    });
+  });
+
+  // click outside to close mobile dropdown
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 800) {
+      if (!e.target.closest('.navbar')) {
+        document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
+      }
+    }
+  });
+
+  // optional: close on resize from mobile -> desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 800) document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
+  });
 </script>
 
 </body>
 </html>
->>>>>>> d21af53c64a6603baca2089dd448670d1d5fd750
