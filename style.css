@@ -1068,9 +1068,8 @@ section {
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 12px 40px rgba(10,20,40,0.08);
-  transform: translateY(24px) scale(0.98);
-  opacity: 0;
-  transition: transform 600ms cubic-bezier(.2,.9,.3,1), opacity 550ms ease;
+  opacity: 1;
+  transition: none;
 }
 .meet-family-content {
   transform: translateY(24px);
@@ -1078,10 +1077,45 @@ section {
   transition: transform 600ms cubic-bezier(.2,.9,.3,1), opacity 550ms ease;
 }
 
-/* When observer sets .visible — animate into place */
-.meet-family-section.visible .meet-family-img,
-.meet-family-section.visible .meet-family-content {
-  transform: translateY(0) scale(1);
+.meet-family-content h2 {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 700ms cubic-bezier(.2,.9,.3,1) 100ms, opacity 600ms ease 100ms;
+}
+
+.meet-family-content h3 {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 700ms cubic-bezier(.2,.9,.3,1) 200ms, opacity 600ms ease 200ms;
+}
+
+.meet-family-content p {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 700ms cubic-bezier(.2,.9,.3,1) 300ms, opacity 600ms ease 300ms;
+}
+
+.meet-family-content p:nth-of-type(2) {
+  transition: transform 700ms cubic-bezier(.2,.9,.3,1) 400ms, opacity 600ms ease 400ms;
+}
+
+.meet-family-content .button {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 700ms cubic-bezier(.2,.9,.3,1) 500ms, opacity 600ms ease 500ms;
+}
+
+/* When observer sets .visible — animate text into place */
+.meet-family-section.visible .meet-family-img {
+  opacity: 1;
+}
+
+.meet-family-section.visible .meet-family-content,
+.meet-family-section.visible .meet-family-content h2,
+.meet-family-section.visible .meet-family-content h3,
+.meet-family-section.visible .meet-family-content p,
+.meet-family-section.visible .meet-family-content .button {
+  transform: translateY(0);
   opacity: 1;
 }
 
