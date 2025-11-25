@@ -132,9 +132,9 @@
         <input type="date" id="date" name="date" required aria-required="true">
       </div>
 
-      <div class="form-group">
-        <label for="attendees">Number of Attendees:</label>
-        <select id="attendees" name="attendees" required aria-required="true">
+	      <div class="form-group">
+	        <label for="attendees">Number of Attendees:</label>
+	        <select id="attendees" name="attendees" required aria-required="true">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -202,12 +202,46 @@
       };
     }
 
+    // Define the price list for each experience
+    const EXPERIENCE_PRICES = {
+      'Authentic Cooking Class': 45,
+      'Walking Tour in Aqaba': 20,
+      'Dining Experience': 15,
+      'Aqaba Glass Boat': 25
+    };
+
+    // Function to calculate the total price
+    function calculateTotalPrice() {
+      const experience = document.getElementById('experience').value;
+      const attendees = parseInt(document.getElementById('attendees').value, 10);
+      const pricePerPerson = EXPERIENCE_PRICES[experience] || 0;
+      const totalPrice = pricePerPerson * attendees;
+      return totalPrice.toFixed(2); // Format to 2 decimal places
+    }
+
     // Open the booking form and set the experience value
     function openForm(experience) {
       document.getElementById('experience').value = experience;
       const form = document.getElementById('reservation-form');
       form.style.display = 'block';
       form.scrollIntoView({ behavior: 'smooth' });
+      // Recalculate price when form is opened
+      updateTotalPriceField();
+    }
+
+    // Function to update the hidden total price field
+    function updateTotalPriceField() {
+      const totalPrice = calculateTotalPrice();
+      let totalInput = document.getElementById('total-price');
+      if (!totalInput) {
+        // Create the hidden input field if it doesn't exist
+        totalInput = document.createElement('input');
+        totalInput.type = 'hidden';
+        totalInput.id = 'total-price';
+        totalInput.name = 'Total Price'; // Name for Formspree email
+        document.getElementById('reservation-form').appendChild(totalInput);
+      }
+      totalInput.value = `$${totalPrice}`;
     }
 
     // Populate form if experience is in URL
@@ -276,8 +310,15 @@ document.addEventListener('click', (e) => {
   }
 });
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') document.querySelectorAll('.card-popup.show').forEach(p => p.classList.remove('show'));
-});
+	  if (e.key === 'Escape') document.querySelectorAll('.card-popup.show').forEach(p => p.classList.remove('show'));
+	});
+
+    // Add event listeners to update total price on change
+    document.getElementById('experience').addEventListener('change', updateTotalPriceField);
+    document.getElementById('attendees').addEventListener('change', updateTotalPriceField);
+
+    // Intercept form submission to ensure total price is calculated
+    document.getElementById('reservation-form').addEventListener('submit', updateTotalPriceField);
     </script>
 </body>
 </html>
