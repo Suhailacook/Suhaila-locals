@@ -107,7 +107,7 @@
     <!-- Error/Success Message Container -->
     <div id="form-message-container"></div>
     <!-- Popup Modal for Error -->
-    <div id="error-popup" style="display:none;">
+    <div id="error-popup" class="error-popup-hidden">
         <div class="popup-content">
             <span class="close-btn" onclick="closeErrorPopup()">&times;</span>
             <div id="popup-message"></div>
@@ -120,7 +120,7 @@
     </div>
     <form id="reservation-form" action="https://formspree.io/f/movkdnjg" method="POST" novalidate>
       <!-- keep honeypot -->
-      <input type="text" name="_gotcha" style="display:none" aria-hidden="true">
+      <input type="text" name="_gotcha" class="sr-only" aria-hidden="true">
 
       <div class="form-group">
         <label for="experience">Experience:</label>
