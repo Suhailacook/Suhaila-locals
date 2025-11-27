@@ -73,10 +73,10 @@
 <main id="main-content">
         <!-- Modern Image Gallery -->
         <section class="gallery-section">
-            <h2 class="gallery-title">Our Experiences Gallery</h2>
+            <h2 class="gallery-title" data-animate>Our Experiences Gallery</h2>
             <div class="gallery-grid">
                 <!-- Gallery Item 1 -->
-                <div class="gallery-item">
+                <div class="gallery-item" data-animate>
                     <img src="cooking-class-aqaba.jpg" data-large-src="images/cooking-class-1600.jpg" alt="Cooking class in Aqaba" class="gallery-img" loading="lazy">
                     <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling )">
                         <span class="overlay-text">View Class</span>
@@ -485,6 +485,6 @@
     if (window.innerWidth > 800) document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
   });
 </script>
-
+<script src="motion.js" defer></script>
 </body>
 </html>
