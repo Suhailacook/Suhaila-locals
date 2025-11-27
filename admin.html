@@ -313,8 +313,8 @@
     <a href="admin.html" class="active" aria-current="page">Admin</a>
   </nav>
 
-  <div class="admin-container" id="adminContainer" class="admin-container-hidden">
-    <div id="adminStatus" class="admin-status"></div>
+  <div class="admin-container" id="adminContainer" style="display:none;">
+    <div id="adminStatus" style="text-align:right; color:#3a86ff; font-weight:600; margin-bottom:10px;"></div>
     <div class="admin-tabs">
       <button class="admin-tab active" onclick="showTab('messages')">Messages</button>
       <button class="admin-tab" onclick="showTab('blog')">Blog Posts</button>
@@ -356,11 +356,11 @@
         <label for="blog-image">Image</label>
         <input type="file" id="blog-image" name="blog-image" accept="image/*" required>
         <button type="submit">Add Post</button>
-        <div id="blogFormMsg" class="blog-form-msg"></div>
+        <div id="blogFormMsg" style="margin-top:10px;"></div>
       </form>
 
       <!-- Edit Blog Post Form -->
-      <form class="admin-form" id="editBlogForm" class="admin-form-hidden" onsubmit="submitEdit(event)">
+      <form class="admin-form" id="editBlogForm" style="display:none;" onsubmit="submitEdit(event)">
         <h3>Edit Blog Post</h3>
         <input type="hidden" id="edit-id">
         <label for="edit-title">Title</label>
@@ -392,7 +392,7 @@
     </div>
 
     <!-- Admin Logins Section -->
-    <div class="admin-section" id="logins" class="admin-section-hidden">
+    <div class="admin-section" id="logins" style="display:none;">
       <h2>Admin Login Events</h2>
       <table class="admin-table" id="loginsTable">
         <tr>
