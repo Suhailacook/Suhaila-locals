@@ -229,10 +229,12 @@ a {
     gap: 1.5rem;
     transition: left 0.3s ease;
     z-index: 1000;
+    display: none; /* Explicitly hide the menu on mobile by default */
   }
   
   .navbar-links.active {
     left: 0;
+    display: flex; /* Explicitly show the menu when active */
   }
   
   .menu-overlay.active {
