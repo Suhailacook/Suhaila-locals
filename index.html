@@ -520,31 +520,67 @@
 </script>
 
 <script>
-  // toggle dropdown on small screens
+  // Mobile Menu Toggle
+  const hamburger = document.getElementById('hamburger');
+  const navbarLinks = document.getElementById('navbarLinks');
+  const menuOverlay = document.getElementById('menuOverlay');
+
+  // Toggle menu on hamburger click
+  if (hamburger) {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navbarLinks.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+    });
+  }
+
+  // Close menu when clicking on overlay
+  if (menuOverlay) {
+    menuOverlay.addEventListener('click', () => {
+      navbarLinks.classList.remove('active');
+      menuOverlay.classList.remove('active');
+    });
+  }
+
+  // Close menu when clicking on a link
+  document.querySelectorAll('.navbar-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navbarLinks.classList.remove('active');
+      menuOverlay.classList.remove('active');
+    });
+  });
+
+  // Toggle dropdown on small screens
   document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
     btn.addEventListener('click', function(e) {
       if (window.innerWidth <= 800) {
         e.preventDefault();
+        e.stopPropagation();
         const dd = this.closest('.dropdown');
         // close other open dropdowns first
-        document.querySelectorAll('.navbar .dropdown.open').forEach(o => { if (o !== dd) o.classList.remove('open'); });
-        dd.classList.toggle('open');
+        document.querySelectorAll('.navbar .dropdown.active').forEach(o => { if (o !== dd) o.classList.remove('active'); });
+        dd.classList.toggle('active');
       }
     });
   });
 
-  // click outside to close mobile dropdown
-  document.addEventListener('click', (e) => {
-    if (window.innerWidth <= 800) {
-      if (!e.target.closest('.navbar')) {
-        document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
-      }
+  // Close menu on resize from mobile to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navbarLinks.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      document.querySelectorAll('.navbar .dropdown.active').forEach(o => o.classList.remove('active'));
     }
   });
 
-  // optional: close on resize from mobile -> desktop
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 800) document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+      if (!e.target.closest('.navbar') && !e.target.closest('.hamburger')) {
+        navbarLinks.classList.remove('active');
+        menuOverlay.classList.remove('active');
+      }
+    }
   });
 </script>
 

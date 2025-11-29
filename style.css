@@ -245,10 +245,17 @@ a {
     box-shadow: none;
     margin-top: 0;
     padding-left: 1rem;
+    background-color: transparent;
   }
   
   .dropdown.active .dropdown-content {
-    display: block;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dropdown-content a {
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
   }
 }
 
