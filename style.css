@@ -855,10 +855,11 @@ a {
 }
 
 .product-image {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  display: block;
+  width: 100% !important;
+  height: 150px !important;
+  max-height: 150px !important;
+  object-fit: cover !important;
+  display: block !important;
   transition: var(--transition);
 }
 
@@ -911,6 +912,7 @@ a {
   }
   
   .product-image {
-    height: 120px;
+    height: 120px !important;
+    max-height: 120px !important;
   }
 }
