@@ -418,7 +418,7 @@ section {
 /* Hero Section */
 .hero-section {
     /* Enhanced background with parallax-like effect */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Aqaba view.jpg') no-repeat center center/cover;
     background-attachment: fixed; /* Key for parallax-like effect */
     color: var(--text-light);
     text-align: center;
