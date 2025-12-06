@@ -418,7 +418,7 @@ section {
 /* Hero Section */
 .hero-section {
     /* Enhanced background with parallax-like effect */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x1080/D4AF37/FFFFFF?text=Aqaba+Cooking+Tour') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-bg.jpg') no-repeat center center/cover;
     background-attachment: fixed; /* Key for parallax-like effect */
     color: var(--text-light);
     text-align: center;
@@ -427,7 +427,7 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 70vh;
+    min-height: 85vh; /* Taller hero section */
     position: relative;
     overflow: hidden; /* Ensure content doesn't spill */
 }
@@ -458,40 +458,36 @@ section {
 }
 
 .hero-section h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 5vw, 4.5rem); /* Larger, fluid font size */
     margin-bottom: 1rem;
     color: var(--text-light);
-    text-shadow: var(--text-shadow-light); /* Applied text shadow */
-    animation: slideInUp 1s ease-out forwards; /* Text motion */
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Stronger shadow */
+    animation: fadeInScale 1.5s ease-out forwards; /* New, more dynamic animation */
     opacity: 0; /* Start hidden for animation */
     animation-delay: 0.5s; /* Delay for h1 */
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: var(--text-shadow-light); /* Applied text shadow */
-    animation: slideInUp 1s ease-out forwards; /* Text motion */
-    opacity: 0; /* Start hidden for animation */
-    animation-delay: 0.8s; /* Delay for subtitle */
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem); /* Larger, fluid font size */
+    margin-bottom: 3rem; /* More space */
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    animation: fadeInScale 1.5s ease-out forwards;
+    opacity: 0;
+    animation-delay: 1s;
 }
 
-.hero-cta {
-    font-size: 1.2rem;
-    padding: 1rem 2.5rem;
-    background-color: var(--primary-color);
-    color: var(--background-dark); /* Dark text on gold button */
-    font-weight: 700;
-    animation: fadeInScale 1s ease-out forwards; /* Text motion */
-    opacity: 0; /* Start hidden for animation */
-    animation-delay: 1.2s; /* Delay for CTA */
+.hero-cta-group { /* New class for CTA container */
+    display: flex;
+    gap: 20px; /* More space between buttons */
+    animation: fadeInScale 1.5s ease-out forwards;
+    opacity: 0;
+    animation-delay: 1.5s;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.hero-cta:hover {
-    background-color: var(--secondary-color);
-    color: var(--text-light);
-}
+/* Remove the old .hero-cta styles as they are replaced by .button styles and the new .hero-cta-group */
 
 /* Image Gallery - Modern & Mobile Friendly */
 .gallery-section {
