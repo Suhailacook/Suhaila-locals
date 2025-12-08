@@ -1553,7 +1553,7 @@ footer a:hover {
 .reservation-item .card-popup .learn-more{ padding:8px 14px; border-radius: 8px; font-weight:700; background: linear-gradient(90deg,var(--color-primary),var(--color-accent)); color:#111; text-decoration:none; }
 
 /* show on hover/focus */
-.reservation-item:hover .card-popup,
+
 .reservation-item:focus-within .card-popup,
 .reservation-item .card-popup.show {
   transform: translate(-50%, 0) scale(1);
