@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: suhaila-locals
-    env: node
-    buildCommand: npm install
-    startCommand: node server.js
-    envVars:
-      - key: NODE_VERSION
-        value: 22
