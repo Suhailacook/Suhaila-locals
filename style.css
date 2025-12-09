@@ -1689,18 +1689,19 @@ footer a:hover {
     font-size: 2rem;
   }
   .post-hero-image {
-    height: 250px;
+    height: 200px; /* More aggressive reduction for tablets/large phones */
   }
   .post-image {
-    max-height: 300px; /* Reduce max height for smaller screens */
+    max-height: 250px; /* More aggressive reduction for tablets/large phones */
   }
 }
 
 @media (max-width: 500px) {
   .post-hero-image {
-    height: 180px; /* Further reduction for small phones */
+    height: 150px; /* Maximum aggressive reduction for small phones */
   }
   .post-image {
-    margin: 15px 0; /* Slightly reduced margin for tighter mobile layout */
+    max-height: 200px; /* Maximum aggressive reduction for small phones */
+    margin: 15px 0;
   }
 }
