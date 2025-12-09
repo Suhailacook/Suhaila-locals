@@ -1587,3 +1587,108 @@ footer a:hover {
         padding: 5px 0;
     }
 }
+
+/* -------------------------------------------------- */
+/* ---------- Blog Post Specific Styles (Moved from inline) ---------- */
+/* -------------------------------------------------- */
+
+.post-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+.post-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.post-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--color-accent); /* Using CSS variable for consistency */
+  margin-bottom: 10px;
+}
+.post-meta {
+  color: var(--text-muted); /* Using CSS variable for consistency */
+  font-size: 0.9rem;
+}
+.post-content h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--color-secondary); /* Using CSS variable for consistency */
+  margin-top: 30px;
+  border-bottom: 2px solid color-mix(in srgb, var(--color-secondary) 20%, transparent); /* Using color-mix for lighter border */
+  padding-bottom: 5px;
+}
+.post-content p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+.post-content strong {
+  color: var(--color-accent); /* Using CSS variable for consistency */
+}
+.post-content a {
+  color: var(--color-accent); /* Using CSS variable for consistency */
+  font-weight: bold;
+  text-decoration: none;
+}
+.post-content a:hover {
+  text-decoration: underline;
+}
+.local-tip {
+  border-left: 4px solid #E67E22;
+  background-color: #fff3e0;
+  padding: 15px;
+  margin: 20px 0;
+  font-style: italic;
+  border-radius: var(--radius-sm);
+}
+.local-tip strong {
+  color: #E67E22;
+}
+
+/* ---------- New Image and Layout Styles for Blog Posts ---------- */
+
+.post-hero-image {
+  width: 100%;
+  height: 350px; /* Fixed height for a strong visual impact */
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: 30px;
+  box-shadow: var(--shadow-1);
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin: 20px 0;
+  box-shadow: var(--shadow-1);
+}
+
+.image-caption {
+  display: block;
+  text-align: center;
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+  .post-container {
+    margin: 20px 10px;
+    padding: 15px;
+  }
+  .post-header h1 {
+    font-size: 2rem;
+  }
+  .post-hero-image {
+    height: 250px;
+  }
+}
