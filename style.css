@@ -1691,4 +1691,16 @@ footer a:hover {
   .post-hero-image {
     height: 250px;
   }
+  .post-image {
+    max-height: 300px; /* Reduce max height for smaller screens */
+  }
+}
+
+@media (max-width: 500px) {
+  .post-hero-image {
+    height: 180px; /* Further reduction for small phones */
+  }
+  .post-image {
+    margin: 15px 0; /* Slightly reduced margin for tighter mobile layout */
+  }
 }
