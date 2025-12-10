@@ -81,6 +81,31 @@
 </head>
 
 	<body>
+  <div id="scroll-progress"></div>
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div class="navbar-links" id="navbarLinks">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <div class="dropdown">
+      <button class="dropbtn" aria-expanded="false" aria-controls="experiences-menu">Experiences</button>
+      <div id="experiences-menu" class="dropdown-content" role="menu">
+        <a href="local-experiences.html" role="menuitem">All Experiences</a>
+        <a href="cookingclass.html" role="menuitem">Cooking Class</a>
+        <a href="walkingtour.html" role="menuitem">Walking Tour</a>
+        <a href="glassboat.html" role="menuitem">Aqaba Glass Boat</a>
+        <a href="dinningexperience.html" role="menuitem" class="active">Dining Experience</a>
+      </div>
+    </div>
+    <a href="Reservation.html">Reservations</a>
+    <a href="contact-Us.html">Contact</a>
+    <a href="Blog.html">Blog</a>
+  </div>
+</nav>
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+<main id="main-content">
 	  <!-- 1. Hero Section -->
 	  <section class="experience-hero">
 	    <img src="Family.jpg" alt="Guests sharing a traditional multi-course dinner in a welcoming Jordanian home in Aqaba." loading="lazy">
@@ -189,4 +214,45 @@
 	  <footer>
 	    <p>&copy; 2025 Suhaila’s Experiences | Aqaba, Jordan. All rights reserved.</p>
 	  </footer>
+
+<script>
+  // Mobile menu functionality
+  const hamburger = document.getElementById('hamburger');
+  const navbarLinks = document.getElementById('navbarLinks');
+  const menuOverlay = document.getElementById('menuOverlay');
+  hamburger?.addEventListener('click', function () {
+    navbarLinks.classList.toggle('open');
+    menuOverlay.classList.toggle('active');
+  });
+  menuOverlay?.addEventListener('click', function () {
+    navbarLinks.classList.remove('open');
+    menuOverlay.classList.remove('active');
+  });
+
+  // Navbar hide/show on scroll
+  document.addEventListener('DOMContentLoaded', function () {
+    let lastScrollY = window.scrollY;
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 60) {
+        navbar.style.top = '-80px';
+      } else {
+        navbar.style.top = '0';
+      }
+      lastScrollY = window.scrollY;
+    });
+  });
+
+  // Highlight active nav link
+  const currentPath = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll('.navbar a');
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    link.removeAttribute('aria-current');
+    if (link.getAttribute('href') === currentPath || (currentPath === "" && link.getAttribute('href') === "index.html")) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+</script>
 </html>
