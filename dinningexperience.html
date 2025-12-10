@@ -80,63 +80,113 @@
   </script>
 </head>
 
-<body>
-  <header>
-    <h1>Traditional Dining Experience</h1>
-    <p>Gather at the table for an evening of authentic flavors, genuine connection, and cultural warmth.</p>
-  </header>
+	<body>
+	  <!-- 1. Hero Section -->
+	  <section class="experience-hero">
+	    <img src="Family.jpg" alt="Guests sharing a traditional multi-course dinner in a welcoming Jordanian home in Aqaba." loading="lazy">
+	    <div class="hero-overlay">
+	      <h1>Traditional Dining Experience</h1>
+	    </div>
+	  </section>
 
-  <main>
-    <section class="experience-details fade-in-section">
-      <img src="images/dining-experience.jpg" alt="Guests sharing a traditional multi-course dinner in a welcoming Jordanian home in Aqaba." loading="lazy" />
-      <div class="experience-description">
-        <h2>A Taste of Home: Authentic Jordanian Hospitality</h2>
-        <p>
-          Be welcomed into a warm, local home in Aqaba where you’ll enjoy a lovingly prepared multi-course meal made from cherished family recipes passed through generations. This isn't just dining — it's a cultural exchange and shared meal.
-        </p>
+	  <div class="main-content-grid">
+	    <!-- Main Content Area -->
+	    <main>
+	      <!-- 2. Overview -->
+	      <section class="experience-section">
+	        <h2>Overview</h2>
+	        <p>
+	          Be welcomed into a warm, local home in Aqaba where you’ll enjoy a lovingly prepared multi-course meal made from cherished family recipes passed through generations. This isn't just dining — it's a cultural exchange and shared meal.
+	        </p>
+	      </section>
 
-        <h2>Experience Highlights</h2>
-        <ul>
-          <li>Authentic multi-course Jordanian dinner, featuring local specialties.</li>
-          <li>Hosted by a welcoming local family in their traditional home.</li>
-          <li>Engaging story-sharing and insightful cultural discussions over tea and coffee.</li>
-          <li>Opportunity to taste traditional dishes like Mansaf, Maqluba, and various mezze.</li>
-          <li>Vegetarian, vegan, and allergy-friendly options available upon request.</li>
-        </ul>
+	      <!-- 2.1. Quick Facts -->
+	      <section class="experience-section">
+	        <h2>Quick Facts</h2>
+	        <table class="quick-facts-table">
+	          <tr>
+	            <th>Duration</th>
+	            <td>2.5 Hours</td>
+	          </tr>
+	          <tr>
+	            <th>Group Size</th>
+	            <td>Intimate setting, max 10 guests</td>
+	          </tr>
+	          <tr>
+	            <th>Language</th>
+	            <td>English, Arabic</td>
+	          </tr>
+	          <tr>
+	            <th>Inclusions</th>
+	            <td>Multi-course traditional dinner, non-alcoholic beverages, and cultural conversation.</td>
+	          </tr>
+	           <tr>
+	            <th>Dietary</th>
+	            <td>Vegetarian, vegan, and allergy-friendly options available upon request.</td>
+	          </tr>
+	        </table>
+	      </section>
 
-        <a href="Reservation.html?experience=Dining%20Experience" class="button">Reserve Your Seat for an Unforgettable Evening</a>
-      </div>
-    </section>
-  </main>
+	      <!-- 3. Detailed Itinerary / Highlights -->
+	      <section class="experience-section">
+	        <h2>Experience Highlights</h2>
+	        <ul class="itinerary-list">
+	          <li>Authentic multi-course Jordanian dinner, featuring local specialties.</li>
+	          <li>Hosted by a welcoming local family in their traditional home.</li>
+	          <li>Engaging story-sharing and insightful cultural discussions over tea and coffee.</li>
+	          <li>Opportunity to taste traditional dishes like Mansaf, Maqluba, and various mezze.</li>
+	        </ul>
+	      </section>
 
-  <footer>
-    <p>&copy; 2025 Suhaila’s Experiences | Aqaba, Jordan. All rights reserved.</p>
-  </footer>
+	      <!-- 4. Host Profile -->
+	      <section class="experience-section">
+	        <h2>Meet Your Hosts</h2>
+	        <div class="host-profile">
+	          <img src="Family.jpg" alt="The Suhaila family welcoming guests.">
+	          <div>
+	            <h3>The Suhaila Family</h3>
+	            <p>Our family opens its home and heart to share the true taste of Jordanian hospitality. We believe the best way to experience a culture is through its food and the stories shared around the dinner table.</p>
+	          </div>
+	        </div>
+	      </section>
 
-  <script>
-    // JavaScript for scroll-triggered fade-in animations
-    document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('.fade-in-section');
+	      <!-- 5. Gallery -->
+	      <section class="experience-section">
+	        <h2>Gallery</h2>
+	        <div class="gallery">
+	          <img src="Sayadieh.jpg" alt="Traditional Sayadieh dish.">
+	          <img src="Houh1.jpg" alt="Guests enjoying the meal.">
+	          <img src="Houh2.jpg" alt="Traditional Jordanian dessert.">
+	        </div>
+	      </section>
 
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-      };
+	      <!-- 7. Reviews -->
+	      <section class="experience-section">
+	        <h2>Reviews</h2>
+	        <div class="review-summary">
+	          <div class="stars">★★★★★</div>
+	          <p>“The most authentic experience we had in Jordan. The food was incredible, but the warmth of the family was what made it truly special.”</p>
+	        </div>
+	        <blockquote>
+	          <p>“The most authentic experience we had in Jordan. The food was incredible, but the warmth of the family was what made it truly special.”</p>
+	          <footer>– Maria S., USA</footer>
+	        </blockquote>
+	      </section>
 
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
+	    </main>
 
-      sections.forEach(section => {
-        observer.observe(section);
-      });
-    });
-  </script>
-</body>
+	    <!-- Sidebar with Booking Module -->
+	    <aside>
+	      <div class="booking-module">
+	        <h3>Book Your Experience</h3>
+	        <div class="price">15 JOD</div>
+	        <p>per person</p>
+	        <a href="Reservation.html?experience=Dining%20Experience" class="button-cta">Reserve Your Seat Now!</a>
+	      </div>
+	    </aside>
+	  </div>
+
+	  <footer>
+	    <p>&copy; 2025 Suhaila’s Experiences | Aqaba, Jordan. All rights reserved.</p>
+	  </footer>
 </html>

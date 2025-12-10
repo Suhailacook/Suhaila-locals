@@ -14,126 +14,104 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    .experience-details {
-      max-width: 900px;
-      margin: 40px auto 0 auto;
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 4px 24px #3a86ff22;
-      padding: 2.5em 2em 2em 2em;
-      font-family: 'Roboto', Arial, sans-serif;
-    }
-    .experience-details img {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 14px;
-      margin: 0 auto 1.5em auto;
-      display: block;
-      box-shadow: 0 2px 12px #bde0fe55;
-    }
-    .experience-description h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-top: 1.5em;
-      color: #3a86ff;
-    }
-    .experience-description ul {
-      margin: 1em 0 2em 1.5em;
-      padding: 0;
-      color: #22223b;
-    }
-    .experience-description li {
-      margin-bottom: 0.7em;
-      font-size: 1.08em;
-    }
-    .button {
-      display: inline-block;
-      background: #3a86ff;
-      color: #fff;
-      padding: 0.8em 2em;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1.1em;
-      text-decoration: none;
-      margin-top: 1.5em;
-      transition: background 0.2s;
-    }
-    .button:hover {
-      background: #ffd60a;
-      color: #22223b;
-    }
-    .testimonial {
-      background: #f1f8ff;
-      border-left: 4px solid #3a86ff;
-      padding: 1em 1.5em;
-      margin: 2em 0 1em 0;
-      border-radius: 8px;
-      font-style: italic;
-      color: #22223b;
-    }
-    @media (max-width: 700px) {
-      .experience-details {
-        padding: 1em 0.5em;
-      }
-      .experience-details img {
-        max-width: 100%;
-      }
-    }
-  </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <div class="dropdown">
-        <a href="#" class="dropbtn active">Experiences</a>
-        <div class="dropdown-content">
-          <a href="cookingclass.html">Cooking Class</a>
-          <a href="walkingtour.html">Walking Tour</a>
-          <a href="glassboat.html" class="active">Aqaba Glass Boat</a>
-          <a href="dinningexperience.html">Dining Experience</a>
-        </div>
-      </div>
-      <a href="Reservation.html">Reservations</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact-Us.html">Contact</a>
-    </div>
-  </nav>
-  <header>
-    <h1>Aqaba Glass Boat Tour</h1>
-    <p>See the wonders of the Red Sea without getting wet! Perfect for families, couples, and all ages.</p>
-  </header>
-  <main class="experience-details">
+  <!-- 1. Hero Section -->
+  <section class="experience-hero">
     <img src="glass-boat.jpg" alt="Aqaba Glass Boat Tour on the Red Sea" loading="lazy">
-    <section class="experience-description">
-      <h2>About the Experience</h2>
-      <p>
-        Embark on a relaxing glass-bottom boat tour in Aqaba and discover the vibrant underwater world of the Red Sea. Marvel at colorful coral reefs, tropical fish, and maybe even spot a sea turtle—all from the comfort of your seat. Our friendly local crew will share stories and point out marine highlights along the way.
-      </p>
-      <h2>Highlights</h2>
-      <ul>
-        <li>See Aqaba’s famous coral reefs and marine life through a crystal-clear glass bottom.</li>
-        <li>Perfect for families, kids, and anyone who prefers to stay dry.</li>
-        <li>Guided by experienced local boat captains.</li>
-        <li>Comfortable shaded seating and refreshments on board.</li>
-        <li>Photo opportunities of Aqaba’s coastline and the Red Sea.</li>
-      </ul>
-      <h2>What’s Included</h2>
-      <ul>
-        <li>1-hour glass boat tour</li>
-        <li>Refreshments (water, juice, and snacks)</li>
-        <li>Life jackets and safety briefing</li>
-        <li>English and Arabic-speaking crew</li>
-      </ul>
-      <div class="testimonial">
-        <p>“A fantastic way to see the coral reefs with my kids! The boat was comfortable and the crew made it fun for everyone.”</p>
-        <span>– Ahmed, Amman</span>
+    <div class="hero-overlay">
+      <h1>Aqaba Glass Boat Tour</h1>
+    </div>
+  </section>
+
+  <div class="main-content-grid">
+    <!-- Main Content Area -->
+    <main>
+      <!-- 2. Overview -->
+      <section class="experience-section">
+        <h2>Overview</h2>
+        <p>
+          Embark on a relaxing glass-bottom boat tour in Aqaba and discover the vibrant underwater world of the Red Sea. Marvel at colorful coral reefs, tropical fish, and maybe even spot a sea turtle—all from the comfort of your seat. Our friendly local crew will share stories and point out marine highlights along the way.
+        </p>
+      </section>
+
+      <!-- 2.1. Quick Facts -->
+      <section class="experience-section">
+        <h2>Quick Facts</h2>
+        <table class="quick-facts-table">
+          <tr>
+            <th>Duration</th>
+            <td>1 Hour</td>
+          </tr>
+          <tr>
+            <th>Group Size</th>
+            <td>Up to 20 participants</td>
+          </tr>
+          <tr>
+            <th>Language</th>
+            <td>English, Arabic</td>
+          </tr>
+          <tr>
+            <th>Inclusions</th>
+            <td>Refreshments (water, juice, and snacks), Life jackets, Safety briefing.</td>
+          </tr>
+           <tr>
+            <th>Location</th>
+            <td>Aqaba Marine Park</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- 3. Detailed Itinerary / Highlights -->
+      <section class="experience-section">
+        <h2>Highlights</h2>
+        <ul class="itinerary-list">
+          <li>See Aqaba’s famous coral reefs and marine life through a crystal-clear glass bottom.</li>
+          <li>Perfect for families, kids, and anyone who prefers to stay dry.</li>
+          <li>Guided by experienced local boat captains.</li>
+          <li>Comfortable shaded seating and refreshments on board.</li>
+          <li>Photo opportunities of Aqaba’s coastline and the Red Sea.</li>
+        </ul>
+      </section>
+
+      <!-- 4. Host Profile (Skipped for boat tour) -->
+
+      <!-- 5. Gallery -->
+      <section class="experience-section">
+        <h2>Gallery</h2>
+        <div class="gallery">
+          <img src="glass-boat.jpg" alt="Glass boat on the Red Sea.">
+          <img src="Fish.jpg" alt="Tropical fish seen through the glass bottom.">
+          <img src="Aqaba view.jpg" alt="View of Aqaba coastline from the sea.">
+        </div>
+      </section>
+
+      <!-- 7. Reviews -->
+      <section class="experience-section">
+        <h2>Reviews</h2>
+        <div class="review-summary">
+          <div class="stars">★★★★★</div>
+          <p>“A fantastic way to see the coral reefs with my kids! The boat was comfortable and the crew made it fun for everyone.”</p>
+        </div>
+        <blockquote>
+          <p>“A fantastic way to see the coral reefs with my kids! The boat was comfortable and the crew made it fun for everyone.”</p>
+          <footer>– Ahmed, Amman</footer>
+        </blockquote>
+      </section>
+
+    </main>
+
+    <!-- Sidebar with Booking Module -->
+    <aside>
+      <div class="booking-module">
+        <h3>Book Your Experience</h3>
+        <div class="price">25 JOD</div>
+        <p>per person</p>
+        <a href="Reservation.html?experience=Aqaba%20Glass%20Boat" class="button-cta">Book Your Tour Now!</a>
       </div>
-      <a href="Reservation.html?experience=Aqaba%20Glass%20Boat" class="button">Book Your Glass Boat Tour</a>
-    </section>
-  </main>
+    </aside>
+  </div>
+
   <footer>
     <p>&copy; 2025 Suhaila’s Experiences | Aqaba, Jordan. All rights reserved.</p>
   </footer>
