@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aqaba Walking Tour: Food, Culture & History | Suhaila's Local Experiences</title>
+  <title>Historic Old Town Walking Tour: Secrets of the Medieval City | Suhaila's Local Experiences</title>
+  <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/walkingtour.html" />
   <meta name="description" content="Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history and culture with a local expert. Book your immersive experience now!" />
 
   <!-- Favicon -->
@@ -12,26 +14,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-
-  <!-- Open Graph / Facebook Meta Tags for Social Sharing -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://suhailacook.github.io/Suhaila-locals/walkingtour.html" />
-  <meta property="og:title" content="Aqaba Walking Tour: Food, Culture & History | Suhaila's Local Experiences" />
-  <meta property="og:description" content="Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history and culture with a local expert. Book your immersive experience now!" />
-  <meta property="og:image" content="https://suhailacook.github.io/Suhaila-locals/images/walking-tour-social.jpg" />
-  <meta property="og:image:alt" content="Tour guide leading a group through a bustling street in Aqaba" />
-
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://suhailacook.github.io/Suhaila-locals/walkingtour.html" />
-  <meta name="twitter:title" content="Aqaba Walking Tour: Food, Culture & History | Suhaila's Local Experiences" />
-  <meta name="twitter:description" content="Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history and culture with a local expert. Book your immersive experience now!" />
-  <meta name="twitter:image" content="https://suhailacook.github.io/Suhaila-locals/images/walking-tour-social.jpg" />
-
   <!-- Structured Data for SEO -->
   <script type="application/ld+json">
   {
@@ -39,421 +21,127 @@
     "@type": "TouristTrip",
     "name": "Aqaba Walking Food Tour",
     "description": "Guided walking food & culture tour in Aqaba — sample local dishes, visit markets and historic sites.",
-    "image": "https://suhailacook.github.io/Suhaila-locals/walkingtour-cover.jpg",
+    "image": "https://suhailacook.github.io/Suhaila-locals/aqaba-walking-tour.jpg",
     "url": "https://suhailacook.github.io/Suhaila-locals/walkingtour.html",
     "offers": {
       "@type": "Offer",
-      "price": "20",
+      "price": "35",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock"
-    },
-    "provider": {
-      "@type":"LocalBusiness",
-      "name":"Suhaila's Local Experiences",
-      "telephone":"+962776294742",
-      "address":{"@type":"PostalAddress","addressLocality":"Aqaba","addressCountry":"JO"}
     }
   }
   </script>
-  <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-    {"@type":"Question","name":"What does the walking tour include?","acceptedAnswer":{"@type":"Answer","text":"Visits to local food stalls, markets, historical stops and a tasting of traditional dishes."}},
-    {"@type":"Question","name":"How long is the tour?","acceptedAnswer":{"@type":"Answer","text":"Approximately 2.5 hours."}},
-    {"@type":"Question","name":"How to book?","acceptedAnswer":{"@type":"Answer","text":"Use the Book Now button on the Reservations page or contact us by WhatsApp."}}
-  ]
-}
-</script>
 
-  <style>
-    /* CSS Variables for consistent styling */
-    :root {
-      --primary-color: #E67E22; /* A warm, inviting orange */
-      --secondary-color: #2C3E50; /* Dark blue for contrast */
-      --accent-color: #3498DB; /* A vibrant blue for buttons/highlights */
-      --text-color: #333;
-      --light-bg: #F8F9FA;
-      --dark-bg: #212529;
-      --border-radius: 10px;
-      --box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1 );
-      --transition-speed: 0.3s ease-in-out;
-    }
-
-    /* Base Styles */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      color: var(--text-color);
-      background-color: var(--light-bg);
-      line-height: 1.6;
-      overflow-x: hidden; /* Prevent horizontal scroll from animations */
-    }
-
-    /* --- Keyframe Animations --- */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideInLeft {
-      from { opacity: 0; transform: translateX(-50px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    @keyframes slideInRight {
-      from { opacity: 0; transform: translateX(50px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    @keyframes scaleIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    @keyframes headerBgZoom {
-      from { transform: scale(1.05); }
-      to { transform: scale(1); }
-    }
-
-    /* --- Scroll-triggered Animations --- */
-    .animated-section {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-      will-change: opacity, transform; /* Optimize for animation */
-    }
-
-    .animated-section.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Specific animation for image when section is visible */
-    .animated-section.is-visible .experience-details img {
-      animation: slideInLeft 1s ease-out forwards;
-      animation-delay: 0.2s;
-    }
-
-    /* Staggered animation for description content */
-    .animated-section.is-visible .experience-description > * {
-      opacity: 0;
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-    .animated-section.is-visible .experience-description h2:nth-child(1) { animation-delay: 0.4s; }
-    .animated-section.is-visible .experience-description p:nth-of-type(1) { animation-delay: 0.6s; }
-    .animated-section.is-visible .experience-description h2:nth-of-type(2) { animation-delay: 0.8s; }
-    .animated-section.is-visible .experience-description ul { animation-delay: 1s; }
-    .animated-section.is-visible .experience-description ul li:nth-child(1) { animation-delay: 1.1s; }
-    .animated-section.is-visible .experience-description ul li:nth-child(2) { animation-delay: 1.2s; }
-    .animated-section.is-visible .experience-description ul li:nth-child(3) { animation-delay: 1.3s; }
-    .animated-section.is-visible .experience-description ul li:nth-child(4) { animation-delay: 1.4s; }
-    .animated-section.is-visible .experience-description ul li:nth-child(5) { animation-delay: 1.5s; }
-    .animated-section.is-visible .button { animation-delay: 1.6s; }
-
-
-    /* --- Header --- */
-    header {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/header-walking-tour-bg.jpg') no-repeat center center/cover; /* Replace with your header background image */
-      color: #fff;
-      text-align: center;
-      padding: 100px 20px 80px;
-      position: relative;
-      overflow: hidden;
-      background-attachment: fixed; /* For parallax effect */
-      animation: headerBgZoom 2s ease-out forwards; /* Initial zoom effect */
-    }
-
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      margin: 0;
-      font-size: 3.5rem;
-      animation: fadeInDown 1s forwards;
-      animation-delay: 0.2s;
-      opacity: 0; /* Start hidden for animation */
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-    }
-
-    header p {
-      font-size: 1.4rem;
-      margin-top: 15px;
-      animation: fadeInUp 1s forwards;
-      animation-delay: 0.4s;
-      opacity: 0; /* Start hidden for animation */
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
-    }
-
-    /* --- Main Content Section --- */
-    .experience-details {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 50px; /* Increased gap for better spacing */
-      max-width: 1100px;
-      margin: 80px auto;
-      padding: 0 25px;
-      align-items: flex-start;
-      justify-content: center; /* Center items when they wrap */
-    }
-
-    .experience-details img {
-      max-width: 500px;
-      width: 100%;
-      height: auto; /* Maintain aspect ratio */
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-      flex-shrink: 0; /* Prevent image from shrinking */
-      opacity: 0; /* Hidden initially for JS animation */
-      will-change: transform, opacity;
-    }
-
-    .experience-details img:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-    }
-
-    .experience-description {
-      flex: 1;
-      min-width: 300px; /* Ensure it doesn't get too narrow */
-    }
-
-    .experience-description h2 {
-      font-family: 'Playfair Display', serif;
-      color: var(--primary-color);
-      margin-top: 0;
-      margin-bottom: 20px;
-      font-size: 2rem;
-      border-bottom: 2px solid rgba(var(--primary-color), 0.2);
-      padding-bottom: 10px;
-      will-change: opacity, transform;
-    }
-
-    .experience-description p {
-      margin-bottom: 20px;
-      font-size: 1.05rem;
-      will-change: opacity, transform;
-    }
-
-    .experience-description ul {
-      list-style: none; /* Remove default bullet points */
-      padding-left: 0;
-      margin-bottom: 30px;
-      will-change: opacity, transform;
-    }
-
-    .experience-description ul li {
-      position: relative;
-      padding-left: 30px;
-      margin-bottom: 10px;
-      font-size: 1.05rem;
-      will-change: opacity, transform;
-    }
-
-    .experience-description ul li::before {
-      content: '✓'; /* Custom checkmark */
-      color: var(--accent-color);
-      position: absolute;
-      left: 0;
-      font-weight: bold;
-      font-size: 1.2em;
-      line-height: 1;
-    }
-
-    /* --- Button --- */
-    .button {
-      display: inline-block;
-      margin-top: 30px;
-      background-color: var(--accent-color);
-      color: #fff;
-      text-decoration: none;
-      padding: 16px 32px;
-      border-radius: 50px; /* Pill shape */
-      font-size: 1.1rem;
-      font-weight: bold;
-      transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
-      box-shadow: 0 4px 15px rgba(var(--accent-color), 0.3);
-      text-align: center;
-      will-change: transform, background-color, box-shadow;
-    }
-
-    .button:hover {
-      background-color: #2980B9; /* Darker blue on hover */
-      transform: translateY(-5px) scale(1.02); /* More pronounced lift */
-      box-shadow: 0 10px 25px rgba(var(--accent-color), 0.5);
-    }
-
-    .button:active {
-      transform: translateY(0);
-      box-shadow: 0 2px 10px rgba(var(--accent-color), 0.3);
-    }
-
-    /* --- Footer --- */
-    footer {
-      background-color: var(--secondary-color);
-      color: #fff;
-      text-align: center;
-      padding: 40px 10px;
-      margin-top: 80px;
-      font-size: 0.9rem;
-    }
-
-    /* --- Responsive Design --- */
-    @media (max-width: 992px) {
-      header h1 {
-        font-size: 3rem;
-      }
-      header p {
-        font-size: 1.3rem;
-      }
-      .experience-details {
-        margin: 60px auto;
-        gap: 40px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      header {
-        padding: 80px 20px 60px;
-        background-attachment: scroll; /* Disable parallax on mobile for performance */
-      }
-      header h1 {
-        font-size: 2.5rem;
-      }
-      header p {
-        font-size: 1.1rem;
-      }
-      .experience-details {
-        flex-direction: column;
-        align-items: center;
-        margin: 40px auto;
-        padding: 0 15px;
-        gap: 30px;
-      }
-      .experience-details img {
-        max-width: 90%;
-      }
-      .experience-description {
-        width: 100%;
-        min-width: unset;
-      }
-      .experience-description h2 {
-        font-size: 1.7rem;
-        margin-top: 20px; /* Adjusted for mobile */
-      }
-      .experience-description ul li,
-      .experience-description p {
-        font-size: 0.95rem;
-      }
-      .button {
-        padding: 14px 28px;
-        font-size: 1rem;
-        margin-top: 20px;
-      }
-      footer {
-        padding: 30px 10px;
-        margin-top: 60px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      .button {
-        width: 100%;
-        box-sizing: border-box; /* Include padding in width */
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <header>
-  <h1>Aqaba City Tour: Discover Aqaba by Walking</h1>
-  <p>Step into the soul of the city with our expertly guided tour, uncovering its hidden gems.</p>
-  </header>
 
-  <main>
-    <section class="experience-details animated-section">
-      <img src="images/walking-tour.jpg" alt="A passionate tour guide leading a small group through a historic street in Aqaba, pointing out local landmarks." loading="lazy" />
-      <div class="experience-description">
-        <h2>What You'll Experience: Discover Aqaba's Authentic Charm</h2>
-        <p>
-          Uncover the rich history, vibrant street life, and authentic local culture of Aqaba with a guided walking tour that weaves through bustling souks, ancient sites, and charming, tucked-away tea houses. Our local experts will share fascinating stories and insights, bringing the city to life around you.
-        </p>
+  <!-- 1. Hero Section -->
+  <section class="experience-hero">
+    <img src="aqaba-walking-tour.jpg" alt="A historic landmark in Aqaba at sunrise.">
+    <div class="hero-overlay">
+      <h1>Historic Old Town Walking Tour: Secrets of the Medieval City</h1>
+    </div>
+  </section>
 
-        <h2>Tour Highlights</h2>
-        <ul>
-          <li>An immersive 2.5-hour guided journey on foot through Aqaba's most captivating areas.</li>
-          <li>Gain unique insights into local culture, traditional architecture, and daily life.</li>
-          <li>Explore vibrant local markets (souks) and discover secret courtyards and hidden gems.</li>
-          <li>Enjoy a personalized experience with a small group, ensuring direct interaction with your guide.</li>
-          <li>Opportunity to sample local street food or traditional tea (optional, not included in price).</li>
+  <div class="main-content-grid">
+    <!-- Main Content Area -->
+    <main>
+      <!-- 2. Overview -->
+      <section class="experience-section">
+        <h2>Overview</h2>
+        <p>Step back in time and uncover the hidden stories of the Old Town. This tour is led by a local historian and focuses on the architecture, legends, and pivotal moments that shaped the city from the 13th century to the present day. It's an easy-paced, informative, and highly-rated experience.</p>
+      </section>
+
+      <!-- 2.1. Quick Facts -->
+      <section class="experience-section">
+        <h2>Quick Facts</h2>
+        <table class="quick-facts-table">
+          <tr>
+            <th>Duration</th>
+            <td>2.0 Hours</td>
+          </tr>
+          <tr>
+            <th>Group Size</th>
+            <td>Max 15 participants</td>
+          </tr>
+          <tr>
+            <th>Language</th>
+            <td>English, Spanish</td>
+          </tr>
+          <tr>
+            <th>Difficulty</th>
+            <td>Easy (Flat terrain, moderate pace)</td>
+          </tr>
+           <tr>
+            <th>Meeting Point</th>
+            <td>The Old Clock Tower</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- 3. Detailed Itinerary -->
+      <section class="experience-section">
+        <h2>What You'll See</h2>
+        <ul class="itinerary-list">
+            <li>**The Clock Tower:** The tour begins with the legend of the clockmaker and the city's oldest market square.</li>
+            <li>**Hidden Courtyards:** Discover the secret passages and private gardens tucked away from the main streets.</li>
+            <li>**The Merchant's Guild:** Learn about the powerful guilds that controlled the city's wealth and politics.</li>
+            <li>**Final Stop:** Concludes at the Cathedral, with recommendations for local cafes.</li>
         </ul>
+      </section>
 
-        <a href="Reservation.html?experience=Walking%20Tour" class="button">Book Your Immersive City Tour</a>
+      <!-- 4. Host Profile -->
+      <section class="experience-section">
+        <h2>Meet Your Guide</h2>
+        <div class="host-profile">
+          <img src="images/placeholder-guide.jpg" alt="Tour Guide Alex Vesper">
+          <div>
+            <h3>Alex Vesper</h3>
+            <p>Alex is a licensed city historian and lifelong resident. His passion for local folklore and architecture brings the stones of the Old Town to life.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Gallery -->
+      <section class="experience-section">
+        <h2>Gallery</h2>
+        <div class="gallery">
+          <img src="Experience1.jpg" alt="Historic street view.">
+          <img src="Experience2.jpg" alt="Close-up of architectural detail.">
+          <img src="Experience3.jpg" alt="Tour group in a sunny square.">
+        </div>
+      </section>
+
+      <!-- 7. Reviews -->
+      <section class="experience-section">
+        <h2>Reviews</h2>
+        <div class="review-summary">
+          <div class="stars">★★★★★</div>
+          <p>5.0/5.0 (Based on 312 reviews)</p>
+        </div>
+        <blockquote>
+          <p>"Alex was fantastic! The tour was engaging, informative, and perfectly paced. Highly recommend for anyone visiting the city."</p>
+          <footer>- David L.</footer>
+        </blockquote>
+      </section>
+
+    </main>
+
+    <!-- Sidebar with Booking Module -->
+    <aside>
+      <div class="booking-module">
+        <h3>Book Your Experience</h3>
+        <div class="price">$35</div>
+        <p>per person</p>
+        <a href="Reservation.html?experience=Historic%20Walking%20Tour" class="button-cta">Book Now</a>
       </div>
-    </section>
-  </main>
+    </aside>
+  </div>
 
   <footer>
     <p>&copy; 2025 Suhaila’s Experiences | Aqaba, Jordan. All rights reserved.</p>
   </footer>
 
-  <script>
-    // JavaScript for scroll-triggered fade-in animations
-    document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('.animated-section');
-
-      const observerOptions = {
-        root: null, // relative to the viewport
-        rootMargin: '0px',
-        threshold: 0.1 // Trigger when 10% of the section is visible
-      };
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target); // Stop observing once visible
-          }
-        });
-      }, observerOptions);
-
-      sections.forEach(section => {
-        observer.observe(section);
-      });
-    });
-
-    // Simple Parallax for Header Background (optional, can be removed if not desired)
-    // Note: background-attachment: fixed already provides a basic parallax.
-    // This JS adds a more controlled effect if needed, but fixed is often sufficient.
-    /*
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-      const scrollPosition = window.pageYOffset;
-      header.style.backgroundPositionY = -scrollPosition * 0.3 + 'px'; // Adjust 0.3 for speed
-    });
-    */
-  </script>
 </body>
 </html>
