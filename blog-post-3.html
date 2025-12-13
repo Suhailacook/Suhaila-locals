@@ -98,5 +98,34 @@
       menuOverlay.classList.remove('active');
     });
   </script>
+
+  <script>
+    // toggle dropdown on small screens
+    document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        if (window.innerWidth <= 800) {
+          e.preventDefault();
+          const dd = this.closest('.dropdown');
+          // close other open dropdowns first
+          document.querySelectorAll('.navbar .dropdown.open').forEach(o => { if (o !== dd) o.classList.remove('open'); });
+          dd.classList.toggle('open');
+        }
+      });
+    });
+
+    // click outside to close mobile dropdown
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 800) {
+        if (!e.target.closest('.navbar')) {
+          document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
+        }
+      }
+    });
+
+    // optional: close on resize from mobile -> desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 800) document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
+    });
+  </script>
 </body>
 </html>
