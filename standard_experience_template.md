@@ -43,7 +43,7 @@ A clean, neutral base with a single, professional accent color for high-impact e
 
 | **Price** | **Duration** | **Next Available** | **Action** |
 | :--- | :--- | :--- | :--- |
-| **$129** per person | 3.5 Hours | **Dec 20, 2025** at 6:00 PM | **[Book Now](#008080)** |
+| **90JD** per person | 3.5 Hours | **Dec 20, 2025** at 6:00 PM | **[Book Now](#008080)** |
 
 *(Note: This booking module should be visually distinct and highly prominent.)*
 
@@ -105,7 +105,7 @@ Chef Maria is a third-generation Roman chef with over 20 years of experience. Sh
 
 | **Price** | **Duration** | **Next Available** | **Action** |
 | :--- | :--- | :--- | :--- |
-| **$35** per person | 2.0 Hours | **Dec 21, 2025** at 10:00 AM | **[Book Now](#008080)** |
+| **25JD** per person | 2.0 Hours | **Dec 21, 2025** at 10:00 AM | **[Book Now](#008080)** |
 
 ### 2. Overview & Quick Facts
 

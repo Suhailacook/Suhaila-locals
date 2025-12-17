@@ -47,13 +47,13 @@
             <img src="Experience1.jpg" loading="lazy" alt="Cooking Class in Aqaba">
             <h3><a href="cookingclass.html" title="Authentic Cooking Class">Authentic Cooking Class</a></h3>
             <p>Join our family in the kitchen and learn to prepare traditional dishes with recipes passed down for generations.</p>
-            <p><strong>45$</strong></p>
+            <p><strong>30JD</strong></p>
              <a href="javascript:void(0);" class="button" onclick="openForm('Authentic Cooking Class')">Book Now</a>
             <div class="card-footer">
               <a href="cookingclass.html" class="learn-more" title="Learn more about Authentic Cooking Class" aria-label="Learn more about Authentic Cooking Class">Learn more</a>
             </div>
             <div class="card-popup" aria-hidden="true">
-              <p>Quick details • 3h • From 45$</p>
+              <p>Quick details • 3h • From 30JD</p>
               <a href="cookingclass.html" class="learn-more" title="Learn more">Learn more</a>
             </div>
         </div>
@@ -63,13 +63,13 @@
             <img src="Experience2.jpg" loading="lazy" alt="Walking Tour In Aqaba">
             <h3><a href="walkingtour.html" title="Walking Tour in Aqaba">Walking Tour in Aqaba</a></h3>
             <p>Experience the Heart of Aqaba on Foot – A Guided Walking Tour Through History, Culture, and Coastal Beauty.</p>
-            <p><strong>20$</strong></p>
+            <p><strong>20JD</strong></p>
             <a href="javascript:void(0);" class="button" onclick="openForm('Walking Tour in Aqaba')">Book Walking Tour in Aqaba</a>
             <div class="card-footer">
               <a href="walkingtour.html" class="learn-more" title="Learn more about Walking Tour in Aqaba" aria-label="Learn more about Walking Tour in Aqaba">Learn more</a>
             </div>
             <div class="card-popup" aria-hidden="true">
-              <p>Quick details • 2.5h • From 20$</p>
+              <p>Quick details • 2.5h • From 20JD</p>
               <a href="walkingtour.html" class="learn-more" title="Learn more">Learn more</a>
             </div>
         </div>
@@ -79,7 +79,7 @@
             <img src="Experience3.jpg" loading="lazy" alt="Dining Local Experience">
             <h3><a href="dinningexperience.html" title="Dining Experience">Dining Experience</a></h3>
             <p>Enjoy a meal with our family, sharing stories, recipes, and delicious food in a warm, inviting atmosphere.</p>
-            <p><strong>15$</strong></p>
+            <p><strong>15JD</strong></p>
             <a href="javascript:void(0);" class="button" onclick="openForm('Dining Experience')">Book Now</a>
             <div class="card-footer">
               <a href="dinningexperience.html" class="learn-more" title="Learn more about Dining Experience" aria-label="Learn more about Dining Experience">Learn more</a>
@@ -91,7 +91,7 @@
             <img src="glass-boat.jpg" loading="lazy" alt="Aqaba Glass Boat Tour">
             <h3><a href="glassboat.html" title="Aqaba Glass Boat">Aqaba Glass Boat</a></h3>
             <p>See Aqaba’s vibrant coral reefs and marine life through a glass-bottom boat—perfect for families and all ages.</p>
-            <p><strong>25$</strong></p>
+            <p><strong>25JD</strong></p>
             <a href="javascript:void(0);" class="button" onclick="openForm('Aqaba Glass Boat')">Book Now</a>
             <div class="card-footer">
               <a href="glassboat.html" class="learn-more" title="Learn more about Aqaba Glass Boat" aria-label="Learn more about Aqaba Glass Boat">Learn more</a>
@@ -204,7 +204,7 @@
 
     // Define the price list for each experience
     const EXPERIENCE_PRICES = {
-      'Authentic Cooking Class': 45,
+      'Authentic Cooking Class': 30,
       'Walking Tour in Aqaba': 20,
       'Dining Experience': 15,
       'Aqaba Glass Boat': 25
@@ -241,7 +241,7 @@
         totalInput.name = 'Total Price'; // Name for Formspree email
         document.getElementById('reservation-form').appendChild(totalInput);
       }
-      totalInput.value = `$${totalPrice}`;
+      totalInput.value = `${totalPrice}JD`;
     }
 
     // Populate form if experience is in URL
