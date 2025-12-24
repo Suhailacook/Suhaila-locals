@@ -87,16 +87,26 @@ img { max-width: 100%; display: block; }
   text-align: center;
 }
 
-.button-cta {
+.button-cta, .button-primary {
   background: var(--color-secondary);
   color: #fff !important;
   box-shadow: 0 4px 15px rgba(231, 111, 81, 0.4);
 }
 
-.button-cta:hover {
+.button-cta:hover, .button-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(231, 111, 81, 0.5);
   background-color: #d65d3f;
+}
+
+.button-ghost {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff !important;
+}
+.button-ghost:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-3px);
 }
 
 /* =========================================
@@ -625,7 +635,353 @@ blockquote footer {
 }
 
 /* =========================================
-   6. Mobile / Responsive
+   6. Home Page Specifics
+   ========================================= */
+
+/* Hero Section (Home) */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('Aqaba view.webp') no-repeat center center/cover;
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+}
+
+.hero-content-wrapper {
+  max-width: 900px;
+  z-index: 2;
+  animation: fadeIn 1s ease-out;
+}
+
+.hero-content-wrapper h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: #f1f3f8;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.logo-fade-in {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(255,255,255,0.3);
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Gallery Section (Home) */
+.gallery-section {
+  padding: 5rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--color-accent);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  height: 300px;
+}
+
+.gallery-item img.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img.gallery-img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.overlay-text {
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(5px);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Meet Family Section */
+.meet-family-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 0 2rem;
+}
+
+.meet-family-img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  transform: rotate(-2deg);
+  transition: transform 0.5s ease;
+}
+
+.meet-family-section:hover .meet-family-img {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.meet-family-content h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.meet-family-content h3 {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin-bottom: 1.5rem;
+}
+
+/* Featured Story Section */
+.featured-story-section {
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('aqaba-walking-tour.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  padding: 8rem 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-story-content {
+  background: rgba(255,255,255,0.95);
+  padding: 3rem;
+  border-radius: var(--radius-md);
+  max-width: 800px;
+  box-shadow: var(--shadow-lg);
+}
+
+.featured-story-content h2 {
+  color: var(--color-secondary);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Home Products/Experiences */
+.experiences {
+  padding: 5rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.experiences h2 {
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  margin-bottom: 3rem;
+}
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.product-item {
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.product-item img.product-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 1.5rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-info h3 {
+  color: var(--color-accent);
+  font-size: 1.3rem;
+}
+
+.product-info .price {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-top: auto;
+  text-align: right;
+}
+
+/* Review Section (Home) */
+.review-section-advanced {
+  background: #f0fdf4; /* Very light green/teal tint */
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.review-section-advanced h2 {
+  color: var(--color-accent-dark);
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.review-carousel {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.review-card {
+  display: none;
+  background: #fff;
+  padding: 3rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  animation: fadeIn 0.5s;
+}
+
+.review-card.active {
+  display: block;
+}
+
+.review-card p {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.reviewer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.review-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.carousel-controls {
+  margin-top: 2rem;
+}
+
+.carousel-controls button {
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  transition: background 0.2s;
+}
+
+.carousel-controls button:hover {
+  background: var(--color-secondary);
+}
+
+/* WhatsApp Fixed */
+.whatsapp-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2000;
+  transition: transform 0.3s;
+}
+.whatsapp-fixed:hover {
+  transform: scale(1.1);
+}
+.whatsapp-fixed img {
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   7. Mobile / Responsive
    ========================================= */
 @media (max-width: 900px) {
   .main-content-grid {
@@ -640,6 +996,15 @@ blockquote footer {
   
   .experience-hero {
     height: 40vh;
+  }
+  
+  .meet-family-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .meet-family-img {
+    order: -1; /* Image on top */
+    transform: none;
   }
 }
 
@@ -688,7 +1053,7 @@ blockquote footer {
 }
 
 /* =========================================
-   7. Animation Utilities
+   8. Animation Utilities
    ========================================= */
 @keyframes fadeIn {
   from { opacity: 0; }
