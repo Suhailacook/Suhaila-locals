@@ -173,7 +173,216 @@ img { max-width: 100%; display: block; }
 }
 
 /* =========================================
-   4. Experience Page Specifics (cookingclass.html)
+   4. Reservation Page Styles (Restored & Enhanced)
+   ========================================= */
+
+/* Reservation Hero */
+.reservation-hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('https://via.placeholder.com/1920x1080/D4AF37/FFFFFF?text=Aqaba+Cooking+Tour') no-repeat center center/cover;
+    color: #fff;
+    padding: 6rem 1rem 4rem 1rem;
+    border-radius: 0 0 40px 40px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+.reservation-hero h1 { 
+    font-size: 3.5rem; 
+    color: #fff; 
+    margin-bottom: 1rem; 
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5); 
+    animation: slideInUp 1s ease-out forwards;
+}
+.reservation-hero p { 
+    font-size: 1.5rem; 
+    color: #f1f3f8; 
+    font-weight: 500; 
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+/* Reservation Cards Container */
+.reservation-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 0 1rem;
+}
+
+/* Reservation Item Card */
+.reservation-item {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  min-height: 450px;
+  position: relative;
+}
+
+.reservation-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.reservation-item img {
+  width: 100%; 
+  height: 200px; 
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.reservation-item h3 { 
+    font-size: 1.4rem; 
+    margin: 10px 0; 
+    color: var(--color-accent);
+}
+.reservation-item h3 a { color: inherit; }
+
+.reservation-item p { 
+    padding: 0 15px;
+    font-size: 1rem;
+    color: var(--text-muted);
+    flex-grow: 1;
+}
+
+.reservation-item p strong {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-top: 10px;
+}
+
+/* Buttons inside card */
+.reservation-item .button {
+  background: var(--color-secondary);
+  color: #fff;
+  margin: 15px 0;
+  box-shadow: 0 4px 10px rgba(231,111,81,0.3);
+}
+.reservation-item .button:hover {
+  background: #d65d3f;
+  transform: translateY(-2px);
+}
+
+.card-footer {
+    padding-bottom: 20px;
+}
+.card-footer .learn-more {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* Popup on hover/click */
+.card-popup {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: rgba(255,255,255,0.95);
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: var(--shadow-lg);
+  width: 80%;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.reservation-item:hover .card-popup {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+.card-popup p { font-size: 0.85rem; margin: 0; padding: 0; text-align: left; }
+.card-popup a { font-size: 0.85rem; }
+
+/* Booking Form Styles */
+#booking-form-container { 
+    margin-top: 50px; 
+    text-align: center; 
+    color: var(--color-accent); 
+    font-size: 1.3em; 
+    animation: fadeIn 0.4s ease-in-out; 
+}
+
+form#reservation-form {
+  max-width: 500px; 
+  margin: 30px auto 60px auto; 
+  background: #fff; 
+  padding: 2.5rem; 
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg); 
+  display: none; /* Toggled by JS */
+  border-top: 5px solid var(--color-primary);
+}
+
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label { 
+    display: block; 
+    margin-bottom: 8px; 
+    font-weight: 600; 
+    color: var(--text-primary); 
+}
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; 
+  padding: 12px; 
+  border: 1px solid var(--border-color); 
+  border-radius: var(--radius-sm); 
+  font-size: 1rem; 
+  font-family: var(--font-body); 
+  background: #fdfdfd;
+  transition: border 0.3s;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--color-accent);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 121, 140, 0.1);
+}
+
+.form-actions { text-align: center; margin-top: 2rem; }
+.form-actions button[type="submit"] {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 14px;
+}
+
+/* Error/Success Messages */
+#form-message-container .success-message, #form-message-container .error-message {
+  text-align: center; margin: 24px auto; font-weight: 600; font-size: 1.1em; border-radius: 10px;
+  padding: 16px; max-width: 450px; 
+}
+#form-message-container .success-message { color: #065f46; background: #d1fae5; border: 1px solid #a7f3d0; }
+#form-message-container .error-message { color: #991b1b; background: #fee2e2; border: 1px solid #fecaca; }
+#loading-spinner { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2000; }
+#error-popup {
+  display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.5); align-items: center; justify-content: center;
+}
+#error-popup .popup-content {
+  background: #fff; padding: 30px; border-radius: 12px; max-width: 400px; text-align: center; position: relative;
+}
+#error-popup .close-btn {
+  position: absolute; top: 10px; right: 15px; font-size: 1.5rem; cursor: pointer;
+}
+
+
+/* =========================================
+   5. Experience Page Specifics (cookingclass.html)
    ========================================= */
 
 /* Hero Section */
@@ -416,7 +625,7 @@ blockquote footer {
 }
 
 /* =========================================
-   5. Mobile / Responsive
+   6. Mobile / Responsive
    ========================================= */
 @media (max-width: 900px) {
   .main-content-grid {
@@ -429,7 +638,6 @@ blockquote footer {
     order: -1; /* Move to top on mobile if desired, or keep at bottom */
   }
   
-  /* If you want booking module at bottom of content on mobile, remove order: -1 */
   .experience-hero {
     height: 40vh;
   }
@@ -480,7 +688,7 @@ blockquote footer {
 }
 
 /* =========================================
-   6. Animation Utilities
+   7. Animation Utilities
    ========================================= */
 @keyframes fadeIn {
   from { opacity: 0; }
