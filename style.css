@@ -904,6 +904,73 @@ blockquote footer {
   margin-bottom: 1rem;
 }
 
+/* Blog Section on Main Page */
+#blog-section {
+  padding: 5rem 1rem;
+  background-color: var(--bg-page); /* Consistent background */
+  text-align: center;
+}
+
+#blog-section h2 {
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+#blog-section p {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  color: var(--text-muted);
+}
+
+.recent-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+}
+
+.recent-posts article {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 2rem;
+  text-align: left;
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid var(--border-color);
+}
+
+.recent-posts article:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.recent-posts h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.recent-posts h3 a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.recent-posts h3 a:hover {
+  color: var(--color-secondary);
+}
+
+.recent-posts p {
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+}
+
+.recent-posts p a {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
 /* Home Products/Experiences */
 .experiences {
   padding: 5rem 1rem;
