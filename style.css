@@ -1126,7 +1126,94 @@ blockquote footer {
 }
 
 /* =========================================
-   7. Mobile / Responsive
+   7. Blog Post Specific Styles
+   ========================================= */
+
+.post-container {
+  max-width: 800px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+}
+
+.post-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.post-header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+.post-meta {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* Blog Hero Image */
+.post-hero-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-lg);
+}
+
+.post-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.post-content h2 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.post-content strong {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.local-tip {
+  background: #fff8e1; /* Light yellow background */
+  border-left: 5px solid var(--color-primary);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: var(--radius-sm);
+  font-style: italic;
+}
+
+/* Inline Images in Blog Post */
+.post-image {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.image-caption {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+/* =========================================
+   8. Mobile / Responsive
    ========================================= */
 @media (max-width: 900px) {
   .main-content-grid {
@@ -1198,7 +1285,7 @@ blockquote footer {
 }
 
 /* =========================================
-   8. Animation Utilities
+   9. Animation Utilities
    ========================================= */
 @keyframes fadeIn {
   from { opacity: 0; }
