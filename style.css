@@ -1305,3 +1305,12 @@ footer {
   padding: 3rem 1rem;
   margin-top: 4rem;
 }
+
+/* Social Icons (Fix for footer alignment) */
+.social-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
