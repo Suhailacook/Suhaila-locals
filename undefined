@@ -4,61 +4,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Authentic Jordanian Cooking Class in Aqaba | Learn Mansaf & Maqluba with Locals</title>
-  <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/cookingclass.html" />
-  <meta name="description" content="Master traditional Jordanian dishes like Mansaf and Maqluba in a hands-on cooking class in Aqaba. Join local chefs for an authentic, immersive culinary experience. Book your spot today!" />
-  <meta name="keywords" content="cooking class Aqaba, Jordan cooking class, Mansaf cooking class, Maqluba recipe, authentic Jordanian food, Suhaila cooking class, things to do in Aqaba">
+  <title>Aqaba Walking Tour: Food, Culture & History | Suhaila's Local Experiences</title>
+  <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/walkingtour.html" />
+  <meta name="description" content="Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history and culture with a local expert. Book your immersive experience now!" />
+  <meta name="keywords" content="Aqaba walking tour, walking food tour Aqaba, Aqaba local markets, Aqaba history tour, things to do in Aqaba, local guide Aqaba, street food Aqaba">
 
   <!-- Open Graph Tags -->
-  <meta property="og:title" content="Authentic Jordanian Cooking Class in Aqaba">
-  <meta property="og:description" content="Master traditional Jordanian dishes like Mansaf and Maqluba in a hands-on cooking class in Aqaba with Suhaila's family.">
-  <meta property="og:image" content="https://suhailacook.github.io/Suhaila-locals/cooking-class-aqaba.jpg">
-  <meta property="og:url" content="https://suhailacook.github.io/Suhaila-locals/cookingclass.html">
+  <meta property="og:title" content="Aqaba Walking Tour: Food, Culture & History">
+  <meta property="og:description" content="Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history.">
+  <meta property="og:image" content="https://suhailacook.github.io/Suhaila-locals/aqaba-walking-tour.jpg">
+  <meta property="og:url" content="https://suhailacook.github.io/Suhaila-locals/walkingtour.html">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Authentic Jordanian Cooking Class in Aqaba">
-  <meta name="twitter:description" content="Master traditional Jordanian dishes like Mansaf and Maqluba in a hands-on cooking class in Aqaba.">
-  <meta name="twitter:image" content="https://suhailacook.github.io/Suhaila-locals/cooking-class-aqaba.jpg">
+  <meta name="twitter:title" content="Aqaba Walking Tour: Food, Culture & History">
+  <meta name="twitter:description" content="Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history.">
+  <meta name="twitter:image" content="https://suhailacook.github.io/Suhaila-locals/aqaba-walking-tour.jpg">
 
   <!-- Favicon -->
   <link rel="icon" href="favicon.png" type="image/png">
 
-  <!-- Structured Data -->
+  <!-- Structured Data for SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "Authentic Jordanian Cooking Class in Aqaba",
-    "description": "Join our hands-on cooking class in Aqaba and learn to prepare traditional Jordanian dishes like Mansaf and Maqluba in a local home kitchen.",
-    "url": "https://suhailacook.github.io/Suhaila-locals/cookingclass.html",
-    "startDate": "2025-07-01T10:00",
-    "endDate": "2025-07-01T13:00",
-    "location": {
-      "@type": "Place",
-      "name": "Suhaila’s Kitchen",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Deir Yaseen street",
-        "addressLocality": "Aqaba",
-        "postalCode": "77110",
-        "addressCountry": "JO"
-      }
-    },
-    "image": [
-      "https://suhailacook.github.io/Suhaila-locals/cooking-class-aqaba.jpg"
-    ],
+    "@type": "TouristTrip",
+    "name": "Aqaba Walking Food Tour",
+    "description": "Guided walking food & culture tour in Aqaba — sample local dishes, visit markets and historic sites.",
+    "image": "https://suhailacook.github.io/Suhaila-locals/aqaba-walking-tour.jpg",
+    "url": "https://suhailacook.github.io/Suhaila-locals/walkingtour.html",
     "offers": {
       "@type": "Offer",
-      "url": "https://suhailacook.github.io/Suhaila-locals/Reservation.html?experience=Authentic%20Cooking%20Class",
-      "price": "30",
+      "price": "20",
       "priceCurrency": "JOD",
       "availability": "https://schema.org/InStock"
-    },
-    "performer": {
-      "@type": "Person",
-      "name": "Agareed"
     }
   }
   </script>
@@ -77,8 +57,8 @@
       <button class="dropbtn" aria-expanded="false" aria-controls="experiences-menu">Experiences</button>
       <div id="experiences-menu" class="dropdown-content" role="menu">
         <a href="local-experiences.html" role="menuitem">All Experiences</a>
-        <a href="cookingclass.html" role="menuitem" class="active">Cooking Class</a>
-        <a href="walkingtour.html" role="menuitem">Walking Tour</a>
+        <a href="cookingclass.html" role="menuitem">Cooking Class</a>
+        <a href="walkingtour.html" role="menuitem" class="active">Walking Tour</a>
         <a href="glassboat.html" role="menuitem">Aqaba Glass Boat</a>
         <a href="dinningexperience.html" role="menuitem">Dining Experience</a>
       </div>
@@ -89,14 +69,14 @@
   </div>
 </nav>
 
-    
+    <a class="skip-link" href="#main-content">Skip to content</a>
 <main id="main-content">
 
   <!-- 1. Hero Section -->
   <section class="experience-hero">
-    <img src="cooking-class-aqaba.jpg" alt="A vibrant, top-down view of a Jordanian meal being prepared.">
+    <img src="aqaba-walking-tour.jpg" alt="A tour guide leading a group through a bustling street in Aqaba.">
     <div class="hero-overlay">
-      <h1>Authentic Jordanian Cooking Class</h1>
+      <h1>Aqaba Walking Tour: Food, Culture & History</h1>
     </div>
   </section>
 
@@ -106,7 +86,7 @@
       <!-- 2. Overview -->
       <section class="experience-section">
         <h2>Overview</h2>
-        <p>Step into our family kitchen in the heart of Aqaba, where generations of traditional recipes come to life. This immersive experience is led by <b>Agareed</b>—our culinary matriarch—who’s been preparing Jordanian feasts since she was twelve. With laughter, stories, and the irresistible aroma of spices filling the air, you’ll feel like part of the family from the moment you arrive. Discover the secrets behind Jordan's national dishes and create unforgettable memories.</p>
+        <p>Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history and culture with a local expert. This tour is designed to give you an authentic, immersive experience away from the typical tourist spots.</p>
       </section>
 
       <!-- 2.1. Quick Facts -->
@@ -115,47 +95,47 @@
         <table class="quick-facts-table">
           <tr>
             <th>Duration</th>
-            <td>3 Hours</td>
+            <td>2.5 Hours</td>
           </tr>
           <tr>
             <th>Group Size</th>
-            <td>Small group sizes ensure personalized attention.</td>
+            <td>Max 12 participants</td>
           </tr>
           <tr>
             <th>Language</th>
-            <td>English</td>
+            <td>English, Arabic</td>
           </tr>
           <tr>
-            <th>Inclusions</th>
-            <td>All fresh, local ingredients, professional cooking equipment, and a delightful shared meal.</td>
+            <th>Difficulty</th>
+            <td>Easy (Moderate walking)</td>
           </tr>
            <tr>
-            <th>Location</th>
-            <td>Traditional home kitchen in Aqaba.</td>
+            <th>Inclusions</th>
+            <td>All food and drink tastings are included in the price.</td>
           </tr>
         </table>
       </section>
 
       <!-- 3. Detailed Itinerary -->
       <section class="experience-section">
-        <h2>What You'll Learn</h2>
+        <h2>What You'll See & Taste</h2>
         <ul class="itinerary-list">
-            <li>**Mansaf:** Jordan's national dish, a savory lamb and rice dish cooked in fermented dried yogurt sauce.</li>
-            <li>**Maqluba:** The famous "upside-down" dish with layers of meat, fried vegetables, and rice.</li>
-            <li>**Fresh Tabbouleh:** A vibrant and refreshing parsley and bulgur salad.</li>
-            <li>**Authentic Appetizers:** Learn to prepare traditional mezze like hummus or mutabal.</li>
+            <li>**Local Markets:** Visit the bustling vegetable and spice markets to see daily life in Aqaba.</li>
+            <li>**Street Food Delights:** Sample authentic local street food, including falafel, hummus, and traditional sweets.</li>
+            <li>**Historic Sites:** Stop at key historical points to learn about Aqaba's past as a port city.</li>
+            <li>**Hidden Gems:** Discover secret spots and local hangouts only known to residents.</li>
         </ul>
       </section>
 
       <!-- 4. Host Profile -->
       <section class="experience-section">
-        <h2>Meet Your Host</h2>
+        <h2>Meet Your Guide</h2>
         <div class="host-profile">
-          <!-- Using a generic placeholder as the specific image path 'images/chef-maria.jpg' might not exist -->
-          <img src="Family.jpg" alt="Agareed, the culinary matriarch.">
+          <!-- Using a generic placeholder as the specific image path 'images/placeholder-guide.jpg' might not exist -->
+          <img src="Group.jpg" alt="Local tour guide with a group.">
           <div>
-            <h3>Agareed</h3>
-            <p>Agareed is our culinary matriarch, who has been preparing Jordanian feasts for decades. Her classes are known for their warm, engaging atmosphere and authentic techniques.</p>
+            <h3>Local Expert Guide</h3>
+            <p>Our guides are licensed local historians and lifelong residents of Aqaba. Their passion for local folklore and culture brings the city to life.</p>
           </div>
         </div>
       </section>
@@ -164,9 +144,11 @@
       <section class="experience-section">
         <h2>Gallery</h2>
         <div class="gallery">
-          <img src="cookingclass1.jpeg" alt="Guests preparing Mansaf.">
-          <img src="cookingclass2.jpg" alt="A family-style meal.">
-          <img src="cookingclass3.jpg" alt="An instructor demonstrating how to make Maqluba.">
+          <img src="tourists-mosque.jpg" alt="Tourists visiting a local mosque in Aqaba" loading="lazy">
+          <img src="local-meat-market.jpg" alt="Traditional meat market in Aqaba" loading="lazy">
+          <img src="Experience1.jpg" alt="Historic street view.">
+          <img src="Experience2.jpg" alt="Close-up of architectural detail.">
+          <img src="Experience3.jpg" alt="Tour group in a sunny square.">
         </div>
       </section>
 
@@ -175,11 +157,11 @@
         <h2>Reviews</h2>
         <div class="review-summary">
           <div class="stars">★★★★★</div>
-          <p>“I never imagined making Maqluba would be this fun and easy! Agareed made me feel like part of the family, and the food was absolutely incredible. This was the highlight of my trip to Jordan!”</p>
+          <p>5.0/5.0 (Based on 312 reviews)</p>
         </div>
         <blockquote>
-          <p>“I never imagined making Maqluba would be this fun and easy! Agareed made me feel like part of the family, and the food was absolutely incredible. This was the highlight of my trip to Jordan!”</p>
-          <footer>- Samira, Germany</footer>
+          <p>"Alex was fantastic! The tour was engaging, informative, and perfectly paced. Highly recommend for anyone visiting the city."</p>
+          <footer>- David L.</footer>
         </blockquote>
       </section>
 
@@ -189,9 +171,9 @@
     <aside>
       <div class="booking-module">
         <h3>Book Your Experience</h3>
-        <div class="price">30 JOD</div>
+        <div class="price">20 JOD</div>
         <p>per person</p>
-        <a href="Reservation.html?experience=Authentic%20Cooking%20Class" class="button-cta">Book Your Hands-On Class Now!</a>
+        <a href="Reservation.html?experience=Historic%20Walking%20Tour" class="button-cta">Book Your Tour Now!</a>
       </div>
     </aside>
   </div>
