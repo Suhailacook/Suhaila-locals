@@ -3,51 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aqaba Glass Boat Tour | Red Sea Marine Experience</title>
-  <meta name="description" content="Enjoy Aqaba’s coral reefs and marine life on a glass-bottom boat tour. Perfect for families and all ages. Book your Aqaba Glass Boat experience today!" />
-  <meta name="keywords" content="Aqaba glass boat, glass bottom boat Aqaba, Red Sea boat tour, Aqaba marine life, coral reef tour Aqaba, family things to do Aqaba">
-  <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/glassboat.html" />
+  <title>Dining Experience in Aqaba — Traditional Jordanian Home Meal | Suhaila's Experiences</title>
+  <meta name="description" content="Join a traditional Jordanian dining experience in a local home in Aqaba. Taste Mansaf, Maqluba and family recipes while sharing stories with local hosts. Reserve now.">
+  <meta name="keywords" content="Aqaba dining experience, home cooked meal Aqaba, Jordanian food experience, eat with locals Aqaba, Mansaf Aqaba, Maqluba Aqaba, authentic dinner Jordan">
+  <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/dinningexperience.html">
 
-  <!-- Open Graph Tags -->
-  <meta property="og:title" content="Aqaba Glass Boat Tour | Red Sea Marine Experience">
-  <meta property="og:description" content="Enjoy Aqaba’s coral reefs and marine life on a glass-bottom boat tour. Perfect for families and all ages.">
-  <meta property="og:image" content="https://suhailacook.github.io/Suhaila-locals/glass-boat.jpg">
-  <meta property="og:url" content="https://suhailacook.github.io/Suhaila-locals/glassboat.html">
-  <meta property="og:type" content="website">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://suhailacook.github.io/Suhaila-locals/dinningexperience.html" />
+  <meta property="og:title" content="Dining Experience in Aqaba — Traditional Jordanian Home Meal | Suhaila's Experiences" />
+  <meta property="og:description" content="Join a traditional Jordanian dining experience in a local home in Aqaba. Taste Mansaf, Maqluba and family recipes while sharing stories with local hosts." />
+  <meta property="og:image" content="https://suhailacook.github.io/Suhaila-locals/Experience3.jpg" />
+  <meta property="og:image:alt" content="Guests sharing a traditional dinner in a Jordanian home" />
 
-  <!-- Twitter Card Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Aqaba Glass Boat Tour | Red Sea Marine Experience">
-  <meta name="twitter:description" content="Enjoy Aqaba’s coral reefs and marine life on a glass-bottom boat tour. Perfect for families and all ages.">
-  <meta name="twitter:image" content="https://suhailacook.github.io/Suhaila-locals/glass-boat.jpg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dining Experience in Aqaba — Traditional Jordanian Home Meal" />
+  <meta name="twitter:description" content="Taste Mansaf, Maqluba and family recipes while sharing stories with local hosts in Aqaba. Book your seat." />
+  <meta name="twitter:image" content="https://suhailacook.github.io/Suhaila-locals/Experience3.jpg" />
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.png" type="image/png">
-  
-  <!-- Structured Data -->
+  <!-- Structured Data (Event) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "TouristTrip",
-    "name": "Aqaba Glass Boat Tour",
-    "description": "A relaxing glass-bottom boat tour in Aqaba to discover the vibrant underwater world of the Red Sea.",
-    "image": "https://suhailacook.github.io/Suhaila-locals/glass-boat.jpg",
-    "url": "https://suhailacook.github.io/Suhaila-locals/glassboat.html",
+    "@type": "Event",
+    "name": "Traditional Jordanian Dining Experience in Aqaba",
+    "description": "Enjoy a traditional Jordanian home-cooked meal in Aqaba, sharing stories and experiencing local hospitality.",
+    "url": "https://suhailacook.github.io/Suhaila-locals/dinningexperience.html",
+    "startDate": "2025-07-01T19:00",
+    "endDate": "2025-07-01T21:30",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Suhaila’s Home Kitchen",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Aqaba",
+        "addressRegion": "Aqaba Governorate",
+        "postalCode": "77110",
+        "addressCountry": "JO"
+      }
+    },
+    "image": [
+      "https://suhailacook.github.io/Suhaila-locals/Experience3.jpg"
+    ],
     "offers": {
       "@type": "Offer",
-      "price": "25",
+      "url": "https://suhailacook.github.io/Suhaila-locals/Reservation.html?experience=Dining%20Experience",
+      "price": "15",
       "priceCurrency": "JOD",
       "availability": "https://schema.org/InStock"
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Suhaila’s Experiences",
+      "url": "https://suhailacook.github.io/Suhaila-locals/"
     }
   }
   </script>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.png" type="image/png">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZYH4T50VY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-JZYH4T50VY');
+  </script>
 </head>
-<body>
+
+	<body>
   <div id="scroll-progress"></div>
     <div class="menu-overlay" id="menuOverlay"></div>
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
@@ -61,8 +92,8 @@
         <a href="local-experiences.html" role="menuitem">All Experiences</a>
         <a href="cookingclass.html" role="menuitem">Cooking Class</a>
         <a href="walkingtour.html" role="menuitem">Walking Tour</a>
-        <a href="glassboat.html" role="menuitem" class="active">Aqaba Glass Boat</a>
-        <a href="dinningexperience.html" role="menuitem">Dining Experience</a>
+        <a href="glassboat.html" role="menuitem">Aqaba Glass Boat</a>
+        <a href="dinningexperience.html" role="menuitem" class="active">Dining Experience</a>
       </div>
     </div>
     <a href="Reservation.html">Reservations</a>
@@ -73,106 +104,114 @@
 
     <a class="skip-link" href="#main-content">Skip to content</a>
 <main id="main-content">
-  <!-- 1. Hero Section -->
-  <section class="experience-hero">
-    <img src="glass-boat.jpg" alt="Aqaba Glass Boat Tour on the Red Sea" loading="lazy">
-    <div class="hero-overlay">
-      <h1>Aqaba Glass Boat Tour</h1>
-    </div>
-  </section>
+	  <!-- 1. Hero Section -->
+	  <section class="experience-hero">
+	    <img src="Family.jpg" alt="Guests sharing a traditional multi-course dinner in a welcoming Jordanian home in Aqaba." loading="lazy">
+	    <div class="hero-overlay">
+	      <h1>Traditional Dining Experience</h1>
+	    </div>
+	  </section>
 
-  <div class="main-content-grid">
-    <!-- Main Content Area -->
-    <main>
-      <!-- 2. Overview -->
-      <section class="experience-section">
-        <h2>Overview</h2>
-        <p>
-          Embark on a relaxing glass-bottom boat tour in Aqaba and discover the vibrant underwater world of the Red Sea. Marvel at colorful coral reefs, tropical fish, and maybe even spot a sea turtle—all from the comfort of your seat. You also have the opportunity to jump in for a snorkeling adventure with provided equipment. This is a private boat experience, ensuring privacy and comfort for your group.
-        </p>
-      </section>
+	  <div class="main-content-grid">
+	    <!-- Main Content Area -->
+	    <main>
+	      <!-- 2. Overview -->
+	      <section class="experience-section">
+	        <h2>Overview</h2>
+	        <p>
+	          Be welcomed into a warm, local home in Aqaba where you’ll enjoy a lovingly prepared multi-course meal made from cherished family recipes passed through generations. This isn't just dining — it's a cultural exchange and shared meal.
+	        </p>
+	      </section>
 
-      <!-- 2.1. Quick Facts -->
-      <section class="experience-section">
-        <h2>Quick Facts</h2>
-        <table class="quick-facts-table">
-          <tr>
-            <th>Duration</th>
-            <td>2 Hours</td>
-          </tr>
-          <tr>
-            <th>Group Size</th>
-            <td>Private Boat (Max 6 people)</td>
-          </tr>
-          <tr>
-            <th>Language</th>
-            <td>English, Arabic</td>
-          </tr>
-          <tr>
-            <th>Inclusions</th>
-            <td>Water, Free towels, Snorkeling equipment, Life jackets, Safety briefing.</td>
-          </tr>
-           <tr>
-            <th>Location</th>
-            <td>Aqaba Marine Park</td>
-          </tr>
-        </table>
-      </section>
+	      <!-- 2.1. Quick Facts -->
+	      <section class="experience-section">
+	        <h2>Quick Facts</h2>
+	        <table class="quick-facts-table">
+	          <tr>
+	            <th>Duration</th>
+	            <td>2.5 Hours</td>
+	          </tr>
+	          <tr>
+	            <th>Group Size</th>
+	            <td>Intimate setting, max 10 guests</td>
+	          </tr>
+	          <tr>
+	            <th>Language</th>
+	            <td>English, Arabic</td>
+	          </tr>
+	          <tr>
+	            <th>Inclusions</th>
+	            <td>Multi-course traditional dinner, non-alcoholic beverages, and cultural conversation.</td>
+	          </tr>
+	           <tr>
+	            <th>Dietary</th>
+	            <td>Vegetarian, vegan, and allergy-friendly options available upon request.</td>
+	          </tr>
+	        </table>
+	      </section>
 
-      <!-- 3. Detailed Itinerary / Highlights -->
-      <section class="experience-section">
-        <h2>Highlights</h2>
-        <ul class="itinerary-list">
-          <li>See Aqaba’s famous coral reefs and marine life through a crystal-clear glass bottom.</li>
-          <li>Opportunity to go snorkeling with provided equipment and towels.</li>
-          <li>Private boat experience for up to 6 guests.</li>
-          <li>Guided by experienced local boat captains.</li>
-          <li>Comfortable shaded seating and water on board.</li>
-          <li>Photo opportunities of Aqaba’s coastline and the Red Sea.</li>
-        </ul>
-      </section>
+	      <!-- 3. Detailed Itinerary / Highlights -->
+	      <section class="experience-section">
+	        <h2>Experience Highlights</h2>
+	        <ul class="itinerary-list">
+	          <li>Authentic multi-course Jordanian dinner, featuring local specialties.</li>
+	          <li>Hosted by a welcoming local family in their traditional home.</li>
+	          <li>Engaging story-sharing and insightful cultural discussions over tea and coffee.</li>
+	          <li>Opportunity to taste traditional dishes like Mansaf, Maqluba, and various mezze.</li>
+	        </ul>
+	      </section>
 
-      <!-- 4. Host Profile (Skipped for boat tour) -->
+	      <!-- 4. Host Profile -->
+	      <section class="experience-section">
+	        <h2>Meet Your Hosts</h2>
+	        <div class="host-profile">
+	          <img src="Family.jpg" alt="The Suhaila family welcoming guests.">
+	          <div>
+	            <h3>The Suhaila Family</h3>
+	            <p>Our family opens its home and heart to share the true taste of Jordanian hospitality. We believe the best way to experience a culture is through its food and the stories shared around the dinner table.</p>
+	          </div>
+	        </div>
+	      </section>
 
-      <!-- 5. Gallery -->
-      <section class="experience-section">
-        <h2>Gallery</h2>
-        <div class="gallery">
-          <img src="glass-boat.jpg" alt="Glass boat on the Red Sea.">
-          <img src="Aqaba view.jpg" alt="View of Aqaba coastline from the sea.">
-          <img src="aqaba-marina.jpg" alt="View of the marina in Aqaba with boats and mountains.">
-        </div>
-      </section>
+	      <!-- 5. Gallery -->
+	      <section class="experience-section">
+	        <h2>Gallery</h2>
+	        <div class="gallery">
+	          <img src="Sayadieh.jpg" alt="Traditional Sayadieh dish.">
+	          <img src="Houh1.jpg" alt="Guests enjoying the meal.">
+	          <img src="Houh2.jpg" alt="Traditional Jordanian dessert.">
+	        </div>
+	      </section>
 
-      <!-- 7. Reviews -->
-      <section class="experience-section">
-        <h2>Reviews</h2>
-        <div class="review-summary">
-          <div class="stars">★★★★★</div>
-          <p>“A fantastic way to see the coral reefs with my kids! The boat was comfortable and the crew made it fun for everyone.”</p>
-        </div>
-        <blockquote>
-          <p>“A fantastic way to see the coral reefs with my kids! The boat was comfortable and the crew made it fun for everyone.”</p>
-          <footer>– Ahmed, Amman</footer>
-        </blockquote>
-      </section>
+	      <!-- 7. Reviews -->
+	      <section class="experience-section">
+	        <h2>Reviews</h2>
+	        <div class="review-summary">
+	          <div class="stars">★★★★★</div>
+	          <p>“The most authentic experience we had in Jordan. The food was incredible, but the warmth of the family was what made it truly special.”</p>
+	        </div>
+	        <blockquote>
+	          <p>“The most authentic experience we had in Jordan. The food was incredible, but the warmth of the family was what made it truly special.”</p>
+	          <footer>– Maria S., USA</footer>
+	        </blockquote>
+	      </section>
 
-    </main>
+	    </main>
 
-    <!-- Sidebar with Booking Module -->
-    <aside>
-      <div class="booking-module">
-        <h3>Book Your Experience</h3>
-        <div class="price">25 JOD</div>
-        <p>per hour (per boat, up to 6 guests)</p>
-        <a href="Reservation.html?experience=Aqaba%20Glass Boat" class="button-cta">Book Your Tour Now!</a>
-      </div>
-    </aside>
-  </div>
+	    <!-- Sidebar with Booking Module -->
+	    <aside>
+	      <div class="booking-module">
+	        <h3>Book Your Experience</h3>
+	        <div class="price">15 JOD</div>
+	        <p>per person</p>
+	        <a href="Reservation.html?experience=Dining%20Experience" class="button-cta">Reserve Your Seat Now!</a>
+	      </div>
+	    </aside>
+	  </div>
 
-  <footer>
-    <p>&copy; 2025 Suhaila’s Experiences | Aqaba, Jordan. All rights reserved.</p>
-  </footer>
+	  <footer>
+	    <p>&copy; 2025 Suhaila’s Experiences | Aqaba, Jordan. All rights reserved.</p>
+	  </footer>
 
 <script>
   // Mobile menu functionality
@@ -243,6 +282,4 @@
     if (window.innerWidth > 800) document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
   });
 </script>
-
-</body>
 </html>
