@@ -1,178 +1,257 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sayadieh: The Signature Seafood Dish of Aqaba | Local Food Guide</title>
-  <meta name="description" content="Discover Sayadieh, the traditional fish and rice dish that is the culinary heart of Aqaba. A local's guide to this flavorful Red Sea delicacy and where to find it." />
-  <meta name="keywords" content="Sayadieh Aqaba, Sayadieh recipe, Jordanian seafood, Aqaba fish market, best food in Aqaba, what to eat in Aqaba, authentic Jordanian food">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aqaba Walking Tour: Food, Culture & History | Suhaila's Local Experiences</title>
+  <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/walkingtour.html" />
+  <meta name="description" content="Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history and culture with a local expert. Book your immersive experience now!" />
+  <meta name="keywords" content="Aqaba walking tour, walking food tour Aqaba, Aqaba local markets, Aqaba history tour, things to do in Aqaba, local guide Aqaba, street food Aqaba">
 
   <!-- Open Graph Tags -->
-  <meta property="og:title" content="Sayadieh: The Signature Seafood Dish of Aqaba">
-  <meta property="og:description" content="Discover Sayadieh, the traditional fish and rice dish that is the culinary heart of Aqaba. A local's guide to this flavorful Red Sea delicacy.">
-  <meta property="og:image" content="https://suhailacook.github.io/Suhaila-locals/Sayadieh.jpg">
-  <meta property="og:url" content="https://suhailacook.github.io/Suhaila-locals/blog-post-3.html">
-  <meta property="og:type" content="article">
+  <meta property="og:title" content="Aqaba Walking Tour: Food, Culture & History">
+  <meta property="og:description" content="Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history.">
+  <meta property="og:image" content="https://suhailacook.github.io/Suhaila-locals/aqaba-walking-tour.jpg">
+  <meta property="og:url" content="https://suhailacook.github.io/Suhaila-locals/walkingtour.html">
+  <meta property="og:type" content="website">
 
   <!-- Twitter Card Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sayadieh: The Signature Seafood Dish of Aqaba">
-  <meta name="twitter:description" content="Discover Sayadieh, the traditional fish and rice dish that is the culinary heart of Aqaba.">
-  <meta name="twitter:image" content="https://suhailacook.github.io/Suhaila-locals/Sayadieh.jpg">
-
-  <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/blog-post-3.html" />
+  <meta name="twitter:title" content="Aqaba Walking Tour: Food, Culture & History">
+  <meta name="twitter:description" content="Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history.">
+  <meta name="twitter:image" content="https://suhailacook.github.io/Suhaila-locals/aqaba-walking-tour.jpg">
 
   <!-- Favicon -->
   <link rel="icon" href="favicon.png" type="image/png">
 
-  <!-- Structured Data -->
+  <!-- Structured Data for SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Sayadieh: The Signature Seafood Dish of Aqaba",
-    "image": "https://suhailacook.github.io/Suhaila-locals/Sayadieh.jpg",
-    "datePublished": "2025-12-08",
-    "author": {
-      "@type": "Organization",
-      "name": "Suhaila's Local Experiences"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Suhaila's Local Experiences",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://suhailacook.github.io/Suhaila-locals/logo.png"
-      }
-    },
-    "description": "A deep dive into Sayadieh, the famous fish and rice dish of Aqaba, Jordan."
+    "@type": "TouristTrip",
+    "name": "Aqaba Walking Food Tour",
+    "description": "Guided walking food & culture tour in Aqaba — sample local dishes, visit markets and historic sites.",
+    "image": "https://suhailacook.github.io/Suhaila-locals/aqaba-walking-tour.jpg",
+    "url": "https://suhailacook.github.io/Suhaila-locals/walkingtour.html",
+    "offers": {
+      "@type": "Offer",
+      "price": "20",
+      "priceCurrency": "JOD",
+      "availability": "https://schema.org/InStock"
+    }
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-  <div class="menu-overlay" id="menuOverlay"></div>
-  <nav class="navbar" role="navigation" aria-label="Main Navigation">
-    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
-    <div class="navbar-links" id="navbarLinks">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <div class="dropdown">
-        <button class="dropbtn" aria-expanded="false" aria-controls="experiences-menu">Experiences</button>
-        <div id="experiences-menu" class="dropdown-content" role="menu">
-          <a href="cookingclass.html" role="menuitem">Cooking Class</a>
-          <a href="walkingtour.html" role="menuitem">Walking Tour</a>
-          <a href="glassboat.html" role="menuitem">Aqaba Glass Boat</a>
-          <a href="dinningexperience.html" role="menuitem">Dining Experience</a>
+  <div id="scroll-progress"></div>
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div class="navbar-links" id="navbarLinks">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <div class="dropdown">
+      <button class="dropbtn" aria-expanded="false" aria-controls="experiences-menu">Experiences</button>
+      <div id="experiences-menu" class="dropdown-content" role="menu">
+        <a href="local-experiences.html" role="menuitem">All Experiences</a>
+        <a href="cookingclass.html" role="menuitem">Cooking Class</a>
+        <a href="walkingtour.html" role="menuitem" class="active">Walking Tour</a>
+        <a href="glassboat.html" role="menuitem">Aqaba Glass Boat</a>
+        <a href="dinningexperience.html" role="menuitem">Dining Experience</a>
+      </div>
+    </div>
+    <a href="Reservation.html">Reservations</a>
+    <a href="contact-Us.html">Contact</a>
+    <a href="Blog.html">Blog</a>
+  </div>
+</nav>
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+<main id="main-content">
+
+  <!-- 1. Hero Section -->
+  <section class="experience-hero">
+    <img src="aqaba-walking-tour.jpg" alt="A tour guide leading a group through a bustling street in Aqaba.">
+    <div class="hero-overlay">
+      <h1>Aqaba Walking Tour: Food, Culture & History</h1>
+    </div>
+  </section>
+
+  <div class="main-content-grid">
+    <!-- Main Content Area -->
+    <main>
+      <!-- 2. Overview -->
+      <section class="experience-section">
+        <h2>Overview</h2>
+        <p>Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history and culture with a local expert. This tour is designed to give you an authentic, immersive experience away from the typical tourist spots.</p>
+      </section>
+
+      <!-- 2.1. Quick Facts -->
+      <section class="experience-section">
+        <h2>Quick Facts</h2>
+        <table class="quick-facts-table">
+          <tr>
+            <th>Duration</th>
+            <td>2.5 Hours</td>
+          </tr>
+          <tr>
+            <th>Group Size</th>
+            <td>Max 12 participants</td>
+          </tr>
+          <tr>
+            <th>Language</th>
+            <td>English, Arabic</td>
+          </tr>
+          <tr>
+            <th>Difficulty</th>
+            <td>Easy (Moderate walking)</td>
+          </tr>
+           <tr>
+            <th>Inclusions</th>
+            <td>All food and drink tastings are included in the price.</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- 3. Detailed Itinerary -->
+      <section class="experience-section">
+        <h2>What You'll See & Taste</h2>
+        <ul class="itinerary-list">
+            <li>**Local Markets:** Visit the bustling vegetable and spice markets to see daily life in Aqaba.</li>
+            <li>**Street Food Delights:** Sample authentic local street food, including falafel, hummus, and traditional sweets.</li>
+            <li>**Historic Sites:** Stop at key historical points to learn about Aqaba's past as a port city.</li>
+            <li>**Hidden Gems:** Discover secret spots and local hangouts only known to residents.</li>
+        </ul>
+      </section>
+
+      <!-- 4. Host Profile -->
+      <section class="experience-section">
+        <h2>Meet Your Guide</h2>
+        <div class="host-profile">
+          <!-- Using a generic placeholder as the specific image path 'images/placeholder-guide.jpg' might not exist -->
+          <img src="Group.jpg" alt="Local tour guide with a group.">
+          <div>
+            <h3>Local Expert Guide</h3>
+            <p>Our guides are licensed local historians and lifelong residents of Aqaba. Their passion for local folklore and culture brings the city to life.</p>
+          </div>
         </div>
+      </section>
+
+      <!-- 5. Gallery -->
+      <section class="experience-section">
+        <h2>Gallery</h2>
+        <div class="gallery">
+          <img src="tourists-mosque.jpg" alt="Tourists visiting a local mosque in Aqaba" loading="lazy">
+          <img src="local-meat-market.jpg" alt="Traditional meat market in Aqaba" loading="lazy">
+          <!-- Replaced generic Experience image with new authentic one -->
+          <img src="aqaba-fish-market.jpg" alt="Fresh local fish at Aqaba market" loading="lazy">
+          <img src="Experience1.jpg" alt="Historic street view.">
+          <img src="Experience3.jpg" alt="Tour group in a sunny square.">
+        </div>
+      </section>
+
+      <!-- 7. Reviews -->
+      <section class="experience-section">
+        <h2>Reviews</h2>
+        <div class="review-summary">
+          <div class="stars">★★★★★</div>
+          <p>5.0/5.0 (Based on 312 reviews)</p>
+        </div>
+        <blockquote>
+          <p>"Alex was fantastic! The tour was engaging, informative, and perfectly paced. Highly recommend for anyone visiting the city."</p>
+          <footer>- David L.</footer>
+        </blockquote>
+      </section>
+
+    </main>
+
+    <!-- Sidebar with Booking Module -->
+    <aside>
+      <div class="booking-module">
+        <h3>Book Your Experience</h3>
+        <div class="price">20 JOD</div>
+        <p>per person</p>
+        <a href="Reservation.html?experience=Historic%20Walking%20Tour" class="button-cta">Book Your Tour Now!</a>
       </div>
-      <a href="Reservation.html">Reservations</a>
-      <a href="contact-Us.html">Contact</a>
-      <a href="Blog.html" class="active" aria-current="page">Blog</a>
-    </div>
-  </nav>
-
-  <main class="post-container">
-    <header class="post-header">
-      <h1>Sayadieh: The Signature Seafood Dish of Aqaba</h1>
-      <p class="post-meta">Published on December 8, 2025</p>
-    </header>
-    <!-- Fixed typo: Sayadeh.jpg -> Sayadieh.jpg -->
-    <img src="Sayadieh.jpg" alt="Sayadieh fish and rice dish served in Aqaba" class="post-hero-image">
-
-    <div class="post-content">
-      <p>Aqaba, Jordan's only coastal city, is a vibrant hub where the desert meets the sea. While the city is famous for its Red Sea diving and proximity to Wadi Rum, its culinary identity is rooted in the fresh catch of the day. The signature dish that truly captures the spirit of Aqaba's seaside location is **Sayadieh** (صيادية), a flavorful and aromatic fish and rice platter.</p>
-      <p>More than just a meal, Sayadieh is a celebration of the Red Sea's bounty, a dish that has been perfected by generations of local fishermen and cooks. It is a must-try for anyone looking for an authentic taste of the city.</p>
-
-      <h2>1. The Anatomy of Authentic Sayadieh</h2>
-      <p>Sayadieh is a layered dish, both in flavor and presentation. It consists of three main components that work in harmony:</p>
-      <ul>
-        <li><strong>The Fish:</strong> Traditionally, a firm white fish like grouper, sea bass, or cod is used. The fish is often marinated in a blend of lemon, garlic, and spices, then pan-fried or baked until golden and crispy.</li>
-        <li><strong>The Rice:</strong> This is the heart of the dish. The rice is cooked in a rich fish broth and infused with a blend of warm spices, most notably **cumin**, which gives the dish its characteristic earthy flavor and golden-brown color.</li>
-        <li><strong>The Toppings:</strong> The dish is crowned with a generous layer of deeply caramelized onions, which provide a sweet counterpoint to the savory fish and spices. Toasted nuts (pine nuts or almonds) and fresh parsley are often sprinkled on top for texture and color.</li>
-      </ul>
-      <div class="local-tip">
-        <strong>Local Tip:</strong> The secret to the rice's deep flavor is the **caramelized onion broth**. The onions are cooked until they are almost black, lending a rich, savory depth to the cooking liquid before the rice is added.
-      </div>
-      
-      <!-- Replaced generic image with the new authentic fish market image -->
-      <img src="aqaba-fish-market.jpg" alt="Fresh fish display at the local Aqaba fish market" class="post-image">
-      <span class="image-caption">Fresh catch of the day at the local Aqaba fish market, the starting point of any great Sayadieh.</span>
-
-      <h2>2. Sayadieh: A Coastal Tradition</h2>
-      <p>While variations of Sayadieh can be found across the Levant (Lebanon, Syria, Palestine), the Aqabawi version is distinct, emphasizing the freshness of the Red Sea fish and a generous use of local spices. It is a dish that speaks to the city's history as a vital port and fishing community.</p>
-      <p>The name itself, *Sayadieh*, is derived from the Arabic word for "fisherman" (*sayyad*), underscoring its deep connection to the sea. It is a dish often prepared for special occasions, family gatherings, and to celebrate a successful day's catch.</p>
-
-      <h2>3. Where to Enjoy the Best Sayadieh</h2>
-      <p>To experience the most authentic Sayadieh, you need to go where the locals go. Look for restaurants near the fish market or those that specialize in traditional Aqabawi cuisine.</p>
-      <ul>
-        <li><strong>The Fish Market Area:</strong> Restaurants in this area often source their fish directly from the daily catch, ensuring the freshest possible ingredients.</li>
-        <li><strong>Local Homes:</strong> The best Sayadieh is often home-cooked. Experiencing this dish in a local home is the ultimate way to appreciate its cultural significance.</li>
-      </ul>
-      <div class="local-tip">
-        <strong>Local Tip:</strong> For a truly immersive experience, consider a <a href="dinningexperience.html">Traditional Dining Experience</a> where you can share a home-cooked meal with a local family. This is the perfect setting to enjoy authentic Sayadieh and learn about its preparation firsthand. You can also explore our <a href="cookingclass.html">Authentic Jordanian Cooking Class</a> to master the techniques yourself!
-      </div>
-      <img src="cookingclass2.jpg" alt="Sayadieh served on a platter" class="post-image">
-      <span class="image-caption">Sayadieh, ready to be shared, topped with caramelized onions and nuts.</span>
-
-      <h2>4. Pairing and Presentation</h2>
-      <p>Sayadieh is typically served with a side of *da'oos* (a spicy tomato and chili sauce) and a simple salad or yogurt. The contrast between the warm, spiced rice and the cool, tangy sauce is what makes the dish so addictive.</p>
-      <p>The presentation is grand, with the rice forming a mound on a large platter, the fish placed on top, and the caramelized onions and nuts scattered over the entire dish. It is a communal meal, meant to be shared, reflecting the generous hospitality of the Jordanian people.</p>
-      <p>Next time you are in Aqaba, make sure to seek out this culinary masterpiece. It is a delicious journey into the heart of the city's coastal heritage. <a href="Reservation.html">Book your local experiences today and taste the heritage of Aqaba!</a></p>
-    </div>
-  </main>
+    </aside>
+  </div>
 
   <footer>
-    <p>&copy; 2024 Suhaila Local's Experience. All rights reserved.</p>
+    <p>&copy; 2025 Suhaila’s Experiences | Aqaba, Jordan. All rights reserved.</p>
   </footer>
 
-  <script>
-    // Simple script for hamburger menu and scroll behavior
-    const hamburger = document.getElementById('hamburger');
-    const navbarLinks = document.getElementById('navbarLinks');
-    const menuOverlay = document.getElementById('menuOverlay');
-    hamburger?.addEventListener('click', () => {
-      navbarLinks.classList.toggle('open');
-      menuOverlay.classList.toggle('active');
-    });
-    menuOverlay?.addEventListener('click', () => {
-      navbarLinks.classList.remove('open');
-      menuOverlay.classList.remove('active');
-    });
-  </script>
+<script>
+  // Mobile menu functionality
+  const hamburger = document.getElementById('hamburger');
+  const navbarLinks = document.getElementById('navbarLinks');
+  const menuOverlay = document.getElementById('menuOverlay');
+  hamburger?.addEventListener('click', function () {
+    navbarLinks.classList.toggle('open');
+    menuOverlay.classList.toggle('active');
+  });
+  menuOverlay?.addEventListener('click', function () {
+    navbarLinks.classList.remove('open');
+    menuOverlay.classList.remove('active');
+  });
 
-  <script>
-    // toggle dropdown on small screens
-    document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        if (window.innerWidth <= 800) {
-          e.preventDefault();
-          const dd = this.closest('.dropdown');
-          // close other open dropdowns first
-          document.querySelectorAll('.navbar .dropdown.open').forEach(o => { if (o !== dd) o.classList.remove('open'); });
-          dd.classList.toggle('open');
-        }
-      });
+  // Navbar hide/show on scroll
+  document.addEventListener('DOMContentLoaded', function () {
+    let lastScrollY = window.scrollY;
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 60) {
+        navbar.style.top = '-80px';
+      } else {
+        navbar.style.top = '0';
+      }
+      lastScrollY = window.scrollY;
     });
+  });
 
-    // click outside to close mobile dropdown
-    document.addEventListener('click', (e) => {
+  // Highlight active nav link
+  const currentPath = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll('.navbar a');
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    link.removeAttribute('aria-current');
+    if (link.getAttribute('href') === currentPath || (currentPath === "" && link.getAttribute('href') === "index.html")) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+</script>
+
+<script>
+  // toggle dropdown on small screens
+  document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
       if (window.innerWidth <= 800) {
-        if (!e.target.closest('.navbar')) {
-          document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
-        }
+        e.preventDefault();
+        const dd = this.closest('.dropdown');
+        // close other open dropdowns first
+        document.querySelectorAll('.navbar .dropdown.open').forEach(o => { if (o !== dd) o.classList.remove('open'); });
+        dd.classList.toggle('open');
       }
     });
+  });
 
-    // optional: close on resize from mobile -> desktop
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 800) document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
-    });
-  </script>
+  // click outside to close mobile dropdown
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 800) {
+      if (!e.target.closest('.navbar')) {
+        document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
+      }
+    }
+  });
+
+  // optional: close on resize from mobile -> desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 800) document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
+  });
+</script>
+
 </body>
 </html>
