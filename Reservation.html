@@ -168,6 +168,9 @@
         <textarea id="comments" name="comments" rows="4"></textarea>
       </div>
 
+      <!-- Price Display -->
+      <div id="price-display" style="font-size: 1.4rem; font-weight: bold; color: var(--color-primary); margin-bottom: 1.5rem; text-align: center; display: none; padding: 10px; border: 2px solid var(--border-color); border-radius: 8px; background: #fdfdfd;"></div>
+
       <!-- aria-live region for messages -->
       <div id="form-message" role="status" aria-live="polite" class="sr-only"></div>
 
@@ -216,6 +219,14 @@
       const attendees = parseInt(document.getElementById('attendees').value, 10);
       const pricePerPerson = EXPERIENCE_PRICES[experience] || 0;
       const totalPrice = pricePerPerson * attendees;
+      
+      // Update visual display
+      const displayEl = document.getElementById('price-display');
+      if (displayEl && experience) {
+        displayEl.textContent = `Total Estimated Price: ${totalPrice.toFixed(2)} JD`;
+        displayEl.style.display = 'block';
+      }
+      
       return totalPrice.toFixed(2); // Format to 2 decimal places
     }
 
@@ -253,7 +264,16 @@
     }
 
     // Initialize form population on page load
-    window.addEventListener('DOMContentLoaded', populateFormFromUrl);
+    window.addEventListener('DOMContentLoaded', () => {
+        populateFormFromUrl();
+        
+        // Date Validation: Prevent past dates
+        const dateInput = document.getElementById('date');
+        if(dateInput) {
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
+        }
+    });
 
     function showErrorPopup(message) {
         const errorMsg = typeof message === 'string' ? message : JSON.stringify(message);
@@ -270,12 +290,12 @@
     document.querySelectorAll("input, textarea, select").forEach((el) => {
         // Load saved value
         const savedValue = localStorage.getItem(el.name);
-        if (savedValue) {
+        if (savedValue && el.type !== 'hidden') {
             el.value = savedValue;
         }
         // Save value on input
         el.addEventListener("input", () => {
-            if (el.type !== 'password') { // Don't save passwords
+            if (el.type !== 'password' && el.type !== 'hidden') { // Don't save passwords
                 localStorage.setItem(el.name, el.value);
             }
         });
