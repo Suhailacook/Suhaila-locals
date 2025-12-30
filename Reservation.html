@@ -236,6 +236,37 @@
       </div>
     </form>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">Is transportation included? <span class="icon">+</span></button>
+                <div class="faq-answer">
+                    <p>Transportation is not automatically included, but we can help arrange a taxi for you if needed. Our meeting points are centrally located in Aqaba.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">What is the cancellation policy? <span class="icon">+</span></button>
+                <div class="faq-answer">
+                    <p>We understand plans change. You can cancel up to 24 hours before your scheduled experience for a full refund. Please contact us as soon as possible if you need to reschedule.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">Are vegetarian/vegan options available? <span class="icon">+</span></button>
+                <div class="faq-answer">
+                    <p>Yes! Jordanian cuisine is very friendly to vegetarians. For the cooking class and dining experience, please let us know your dietary restrictions in the booking comments, and we will happily accommodate you.</p>
+                </div>
+            </div>
+             <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">Do I need to pay in advance? <span class="icon">+</span></button>
+                <div class="faq-answer">
+                    <p>Payment is usually collected in cash (JOD) on the day of the experience. For large groups, we may request a deposit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2024 Suhaila Cooking Experience. All rights reserved.</p>
     </footer>
@@ -470,6 +501,14 @@
         inputs.forEach(input => {
             input.addEventListener('input', calculateTotalPrice);
             input.addEventListener('change', calculateTotalPrice);
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const expanded = button.getAttribute('aria-expanded') === 'true';
+                button.setAttribute('aria-expanded', !expanded);
+            });
         });
     });
 
