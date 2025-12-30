@@ -108,15 +108,36 @@
 
     <!-- Booking Form Section -->
     <div id="booking-form-container">
-        <p>Select one of the experiences above to start the booking form.</p>
+        <p>Select the experiences you would like to book below.</p>
     </div>
     <form id="reservation-form" action="https://formspree.io/f/movkdnjg" method="POST" novalidate>
       <!-- keep honeypot -->
       <input type="text" name="_gotcha" style="display:none" aria-hidden="true">
 
       <div class="form-group">
-        <label for="experience">Experience:</label>
-        <input type="text" id="experience" name="experience" required readonly aria-required="true">
+        <label>Select Experiences:</label>
+        <div class="checkbox-group">
+            <label class="checkbox-container">
+                <input type="checkbox" name="experience" value="Authentic Cooking Class" class="experience-checkbox">
+                <span class="checkmark"></span>
+                Authentic Cooking Class (30JD)
+            </label>
+            <label class="checkbox-container">
+                <input type="checkbox" name="experience" value="Walking Tour in Aqaba" class="experience-checkbox">
+                <span class="checkmark"></span>
+                Walking Tour in Aqaba (20JD)
+            </label>
+            <label class="checkbox-container">
+                <input type="checkbox" name="experience" value="Dining Experience" class="experience-checkbox">
+                <span class="checkmark"></span>
+                Dining Experience (15JD)
+            </label>
+            <label class="checkbox-container">
+                <input type="checkbox" name="experience" value="Aqaba Glass Boat" class="experience-checkbox">
+                <span class="checkmark"></span>
+                Aqaba Glass Boat (25JD)
+            </label>
+        </div>
       </div>
 
       <div class="form-group">
@@ -175,6 +196,68 @@
         <p>&copy; 2024 Suhaila Cooking Experience. All rights reserved.</p>
     </footer>
 
+    <!-- Add some specific styles for the checkboxes here or in style.css -->
+    <style>
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            user-select: none;
+            color: var(--text-primary);
+        }
+        .checkbox-container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+        .checkmark {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 20px;
+            width: 20px;
+            background-color: #eee;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .checkbox-container:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+        .checkbox-container input:checked ~ .checkmark {
+            background-color: var(--color-primary); /* Use your brand color */
+            border-color: var(--color-primary);
+        }
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        .checkbox-container input:checked ~ .checkmark:after {
+            display: block;
+        }
+        .checkbox-container .checkmark:after {
+            left: 7px;
+            top: 3px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    </style>
+
     <script>
     // Mobile menu functionality
     const hamburger = document.getElementById('hamburger' );
@@ -207,29 +290,46 @@
 
     // Function to calculate the total price
     function calculateTotalPrice() {
-      const experience = document.getElementById('experience').value;
-      const attendees = parseInt(document.getElementById('attendees').value, 10);
-      const pricePerPerson = EXPERIENCE_PRICES[experience] || 0;
-      const totalPrice = pricePerPerson * attendees;
+        let totalPerPerson = 0;
+        const checkboxes = document.querySelectorAll('.experience-checkbox:checked');
+        
+        checkboxes.forEach(cb => {
+            const price = EXPERIENCE_PRICES[cb.value] || 0;
+            totalPerPerson += price;
+        });
+
+        const attendees = parseInt(document.getElementById('attendees').value, 10);
+        const totalPrice = totalPerPerson * attendees;
       
-      // Update visual display
-      const displayEl = document.getElementById('price-display');
-      if (displayEl && experience) {
-        displayEl.textContent = `Total Estimated Price: ${totalPrice.toFixed(2)} JD`;
-        displayEl.style.display = 'block';
-      }
+        // Update visual display
+        const displayEl = document.getElementById('price-display');
+        if (displayEl && checkboxes.length > 0) {
+            displayEl.textContent = `Total Estimated Price: ${totalPrice.toFixed(2)} JD`;
+            displayEl.style.display = 'block';
+        } else if (displayEl) {
+            displayEl.style.display = 'none';
+        }
       
-      return totalPrice.toFixed(2); // Format to 2 decimal places
+        return totalPrice.toFixed(2); 
     }
 
-    // Open the booking form and set the experience value
+    // Open the booking form and select the experience
     function openForm(experience) {
-      document.getElementById('experience').value = experience;
-      const form = document.getElementById('reservation-form');
-      form.style.display = 'block';
-      form.scrollIntoView({ behavior: 'smooth' });
-      // Recalculate price when form is opened
-      updateTotalPriceField();
+        // Uncheck all first (optional, standard behavior for "Book This" buttons usually implies single selection reset, or we can additive. Let's reset for clarity unless manual)
+        document.querySelectorAll('.experience-checkbox').forEach(cb => cb.checked = false);
+
+        // Check the specific one
+        const targetCheckbox = document.querySelector(`.experience-checkbox[value="${experience}"]`);
+        if (targetCheckbox) {
+            targetCheckbox.checked = true;
+        }
+
+        const form = document.getElementById('reservation-form');
+        form.style.display = 'block';
+        form.scrollIntoView({ behavior: 'smooth' });
+        
+        // Recalculate price
+        updateTotalPriceField();
     }
 
     // Function to update the hidden total price field
@@ -280,6 +380,8 @@
     
     // Save form data to localStorage
     document.querySelectorAll("input, textarea, select").forEach((el) => {
+        if (el.type === 'checkbox') return; // Skip checkboxes for simple saving logic to avoid complexity
+        
         // Load saved value
         const savedValue = localStorage.getItem(el.name);
         if (savedValue && el.type !== 'hidden') {
@@ -326,11 +428,22 @@ document.addEventListener('keydown', (e) => {
 	});
 
     // Add event listeners to update total price on change
-    document.getElementById('experience').addEventListener('change', updateTotalPriceField);
+    document.querySelectorAll('.experience-checkbox').forEach(cb => {
+        cb.addEventListener('change', updateTotalPriceField);
+    });
     document.getElementById('attendees').addEventListener('change', updateTotalPriceField);
 
     // Intercept form submission to ensure total price is calculated
-    document.getElementById('reservation-form').addEventListener('submit', updateTotalPriceField);
+    document.getElementById('reservation-form').addEventListener('submit', function(e) {
+        // Validate at least one experience is selected
+        const checked = document.querySelectorAll('.experience-checkbox:checked');
+        if (checked.length === 0) {
+            e.preventDefault();
+            alert("Please select at least one experience.");
+            return;
+        }
+        updateTotalPriceField();
+    });
     </script>
 
 <script>
