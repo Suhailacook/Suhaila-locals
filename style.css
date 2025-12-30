@@ -390,6 +390,19 @@ form#reservation-form {
   position: absolute; top: 10px; right: 15px; font-size: 1.5rem; cursor: pointer;
 }
 
+/* Form Price Display */
+.form-price-display {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  display: none;
+  padding: 10px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: #fdfdfd;
+}
 
 /* =========================================
    5. Experience Page Specifics (cookingclass.html)
