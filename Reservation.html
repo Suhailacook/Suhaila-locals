@@ -48,7 +48,7 @@
             <h3><a href="cookingclass.html" title="Authentic Cooking Class">Authentic Cooking Class</a></h3>
             <p>Join our family in the kitchen and learn to prepare traditional dishes with recipes passed down for generations.</p>
             <p><strong>30JD</strong></p>
-             <a href="javascript:void(0);" class="button" onclick="openForm('Authentic Cooking Class')">Book Now</a>
+             <a href="javascript:void(0);" class="button" onclick="openForm('cooking')">Book Now</a>
             <div class="card-footer">
               <a href="cookingclass.html" class="learn-more" title="Learn more about Authentic Cooking Class" aria-label="Learn more about Authentic Cooking Class">Learn more</a>
             </div>
@@ -60,7 +60,7 @@
             <h3><a href="walkingtour.html" title="Walking Tour in Aqaba">Walking Tour in Aqaba</a></h3>
             <p>Experience the Heart of Aqaba on Foot – A Guided Walking Tour Through History, Culture, and Coastal Beauty.</p>
             <p><strong>20JD</strong></p>
-            <a href="javascript:void(0);" class="button" onclick="openForm('Walking Tour in Aqaba')">Book Walking Tour in Aqaba</a>
+            <a href="javascript:void(0);" class="button" onclick="openForm('walking')">Book Walking Tour in Aqaba</a>
             <div class="card-footer">
               <a href="walkingtour.html" class="learn-more" title="Learn more about Walking Tour in Aqaba" aria-label="Learn more about Walking Tour in Aqaba">Learn more</a>
             </div>
@@ -72,7 +72,7 @@
             <h3><a href="dinningexperience.html" title="Dining Experience">Dining Experience</a></h3>
             <p>Enjoy a meal with our family, sharing stories, recipes, and delicious food in a warm, inviting atmosphere.</p>
             <p><strong>15JD</strong></p>
-            <a href="javascript:void(0);" class="button" onclick="openForm('Dining Experience')">Book Now</a>
+            <a href="javascript:void(0);" class="button" onclick="openForm('dining')">Book Now</a>
             <div class="card-footer">
               <a href="dinningexperience.html" class="learn-more" title="Learn more about Dining Experience" aria-label="Learn more about Dining Experience">Learn more</a>
             </div>
@@ -84,7 +84,7 @@
             <h3><a href="glassboat.html" title="Aqaba Glass Boat">Aqaba Glass Boat</a></h3>
             <p>See Aqaba’s vibrant coral reefs and marine life through a glass-bottom boat—perfect for families and all ages.</p>
             <p><strong>25JD</strong></p>
-            <a href="javascript:void(0);" class="button" onclick="openForm('Aqaba Glass Boat')">Book Now</a>
+            <a href="javascript:void(0);" class="button" onclick="openForm('glassboat')">Book Now</a>
             <div class="card-footer">
               <a href="glassboat.html" class="learn-more" title="Learn more about Aqaba Glass Boat" aria-label="Learn more about Aqaba Glass Boat">Learn more</a>
             </div>
@@ -108,87 +108,131 @@
 
     <!-- Booking Form Section -->
     <div id="booking-form-container">
-        <p>Select the experiences you would like to book below.</p>
+        <p>Complete your booking details below.</p>
     </div>
     <form id="reservation-form" action="https://formspree.io/f/movkdnjg" method="POST" novalidate>
       <!-- keep honeypot -->
       <input type="text" name="_gotcha" style="display:none" aria-hidden="true">
-
+      
+      <!-- Contact Info Section -->
+      <h3 style="margin-top:0; color:var(--color-accent);">1. Contact Details</h3>
       <div class="form-group">
-        <label>Select Experiences:</label>
-        <div class="checkbox-group">
-            <label class="checkbox-container">
-                <input type="checkbox" name="experience" value="Authentic Cooking Class" class="experience-checkbox">
-                <span class="checkmark"></span>
-                Authentic Cooking Class (30JD)
-            </label>
-            <label class="checkbox-container">
-                <input type="checkbox" name="experience" value="Walking Tour in Aqaba" class="experience-checkbox">
-                <span class="checkmark"></span>
-                Walking Tour in Aqaba (20JD)
-            </label>
-            <label class="checkbox-container">
-                <input type="checkbox" name="experience" value="Dining Experience" class="experience-checkbox">
-                <span class="checkmark"></span>
-                Dining Experience (15JD)
-            </label>
-            <label class="checkbox-container">
-                <input type="checkbox" name="experience" value="Aqaba Glass Boat" class="experience-checkbox">
-                <span class="checkmark"></span>
-                Aqaba Glass Boat (25JD)
-            </label>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required aria-required="true">
-      </div>
-
-	      <div class="form-group">
-	        <label for="attendees">Number of Attendees:</label>
-	        <select id="attendees" name="attendees" required aria-required="true">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="name">Name:</label>
+        <label for="name">Full Name:</label>
         <input type="text" id="name" name="name" required aria-required="true">
       </div>
 
       <div class="form-group">
-        <label for="email">Email:</label>
+        <label for="email">Email Address:</label>
         <input type="email" id="email" name="email" required aria-required="true">
       </div>
 
       <div class="form-group">
-        <label for="phone">Phone:</label>
+        <label for="phone">Phone Number (WhatsApp):</label>
         <input type="tel" id="phone" name="phone" required aria-required="true" pattern="^\+?[0-9\s\-()]{6,}$" title="Enter a valid phone number">
       </div>
 
+      <!-- Experience Selection Section -->
+      <h3 style="margin-top:2rem; color:var(--color-accent);">2. Select Experiences</h3>
+      <p style="font-size:0.9rem; margin-bottom:1rem; color:#666;">Check the experiences you wish to book. You can select different dates and guest numbers for each.</p>
+
+      <!-- Cooking Class -->
+      <div class="experience-option-card">
+        <label class="checkbox-container main-checkbox">
+            <input type="checkbox" name="Book_Cooking_Class" value="Yes" class="experience-toggle" data-target="details-cooking" data-price="30">
+            <span class="checkmark"></span>
+            <strong>Authentic Cooking Class (30 JD/person)</strong>
+        </label>
+        <div id="details-cooking" class="experience-details collapsed">
+            <div class="form-row">
+                <div class="form-col">
+                    <label>Date:</label>
+                    <input type="date" name="Cooking_Class_Date" class="date-input">
+                </div>
+                <div class="form-col">
+                    <label>Guests:</label>
+                    <input type="number" name="Cooking_Class_Guests" min="1" value="2" class="guest-input">
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Walking Tour -->
+      <div class="experience-option-card">
+        <label class="checkbox-container main-checkbox">
+            <input type="checkbox" name="Book_Walking_Tour" value="Yes" class="experience-toggle" data-target="details-walking" data-price="20">
+            <span class="checkmark"></span>
+            <strong>Walking Tour in Aqaba (20 JD/person)</strong>
+        </label>
+        <div id="details-walking" class="experience-details collapsed">
+            <div class="form-row">
+                <div class="form-col">
+                    <label>Date:</label>
+                    <input type="date" name="Walking_Tour_Date" class="date-input">
+                </div>
+                <div class="form-col">
+                    <label>Guests:</label>
+                    <input type="number" name="Walking_Tour_Guests" min="1" value="2" class="guest-input">
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Dining Experience -->
+      <div class="experience-option-card">
+        <label class="checkbox-container main-checkbox">
+            <input type="checkbox" name="Book_Dining_Experience" value="Yes" class="experience-toggle" data-target="details-dining" data-price="15">
+            <span class="checkmark"></span>
+            <strong>Dining Experience (15 JD/person)</strong>
+        </label>
+        <div id="details-dining" class="experience-details collapsed">
+            <div class="form-row">
+                <div class="form-col">
+                    <label>Date:</label>
+                    <input type="date" name="Dining_Experience_Date" class="date-input">
+                </div>
+                <div class="form-col">
+                    <label>Guests:</label>
+                    <input type="number" name="Dining_Experience_Guests" min="1" value="2" class="guest-input">
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Glass Boat -->
+      <div class="experience-option-card">
+        <label class="checkbox-container main-checkbox">
+            <input type="checkbox" name="Book_Glass_Boat" value="Yes" class="experience-toggle" data-target="details-glassboat" data-price="25">
+            <span class="checkmark"></span>
+            <strong>Aqaba Glass Boat (25 JD/hour)</strong>
+        </label>
+        <div id="details-glassboat" class="experience-details collapsed">
+            <div class="form-row">
+                <div class="form-col">
+                    <label>Date:</label>
+                    <input type="date" name="Glass_Boat_Date" class="date-input">
+                </div>
+                <div class="form-col">
+                    <label>Hours/Trips:</label>
+                    <input type="number" name="Glass_Boat_Hours" min="1" value="1" class="guest-input">
+                </div>
+            </div>
+            <p style="font-size:0.85rem; margin-top:5px; color:#666;">*Price is per hour for the boat (up to 6 people).</p>
+        </div>
+      </div>
+
       <div class="form-group">
-        <label for="comments">Comments:</label>
-        <textarea id="comments" name="comments" rows="4"></textarea>
+        <label for="comments">Additional Comments / Special Requests:</label>
+        <textarea id="comments" name="comments" rows="3"></textarea>
       </div>
 
       <!-- Price Display -->
-      <div id="price-display" class="form-price-display"></div>
+      <div id="price-display" class="form-price-display">Total Estimated Price: 0.00 JD</div>
 
       <!-- aria-live region for messages -->
       <div id="form-message" role="status" aria-live="polite" class="sr-only"></div>
 
       <div class="form-actions">
-        <button id="reservation-submit" type="submit" class="button">Book Now</button>
+        <button id="reservation-submit" type="submit" class="button">Submit Booking Request</button>
       </div>
     </form>
 
@@ -196,14 +240,59 @@
         <p>&copy; 2024 Suhaila Cooking Experience. All rights reserved.</p>
     </footer>
 
-    <!-- Add some specific styles for the checkboxes here or in style.css -->
+    <!-- CSS for the new form structure -->
     <style>
-        .checkbox-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 10px;
+        .experience-option-card {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
         }
+        .experience-option-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .main-checkbox {
+            margin-bottom: 0;
+            width: 100%;
+        }
+        
+        .experience-details {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+            max-height: 500px; /* arbitrary large max-height */
+            opacity: 1;
+        }
+        
+        .experience-details.collapsed {
+            max-height: 0;
+            opacity: 0;
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+            pointer-events: none;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        .form-col {
+            flex: 1;
+        }
+        .form-col input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        /* Checkbox styling reuse */
         .checkbox-container {
             display: flex;
             align-items: center;
@@ -228,15 +317,15 @@
             transform: translateY(-50%);
             height: 20px;
             width: 20px;
-            background-color: #eee;
+            background-color: #fff;
             border-radius: 4px;
-            border: 1px solid #ccc;
+            border: 1px solid #aaa;
         }
         .checkbox-container:hover input ~ .checkmark {
-            background-color: #ccc;
+            background-color: #f0f0f0;
         }
         .checkbox-container input:checked ~ .checkmark {
-            background-color: var(--color-primary); /* Use your brand color */
+            background-color: var(--color-primary);
             border-color: var(--color-primary);
         }
         .checkmark:after {
@@ -256,6 +345,13 @@
             border-width: 0 2px 2px 0;
             transform: rotate(45deg);
         }
+        
+        @media (max-width: 500px) {
+            .form-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
     </style>
 
     <script>
@@ -272,130 +368,152 @@
         menuOverlay.classList.remove('active');
     });
 
-    // Function to get experience from URL parameter
-    function getQueryParams() {
-      const params = new URLSearchParams(window.location.search);
-      return {
-        experience: params.get('experience')
-      };
-    }
-
-    // Define the price list for each experience
-    const EXPERIENCE_PRICES = {
-      'Authentic Cooking Class': 30,
-      'Walking Tour in Aqaba': 20,
-      'Dining Experience': 15,
-      'Aqaba Glass Boat': 25
+    // Mapping short codes to IDs for easier openForm Logic
+    const ID_MAP = {
+        'cooking': 'details-cooking',
+        'Authentic Cooking Class': 'details-cooking',
+        'walking': 'details-walking',
+        'Walking Tour in Aqaba': 'details-walking',
+        'dining': 'details-dining',
+        'Dining Experience': 'details-dining',
+        'glassboat': 'details-glassboat',
+        'Aqaba Glass Boat': 'details-glassboat'
     };
+
+    // Main Function to toggle details visibility
+    function toggleDetails(checkbox) {
+        const targetId = checkbox.getAttribute('data-target');
+        const detailsDiv = document.getElementById(targetId);
+        
+        if (checkbox.checked) {
+            detailsDiv.classList.remove('collapsed');
+            // Add required attribute to inputs when visible so user doesn't forget them
+            detailsDiv.querySelectorAll('input').forEach(input => input.required = true);
+        } else {
+            detailsDiv.classList.add('collapsed');
+            // Remove required attribute when hidden
+            detailsDiv.querySelectorAll('input').forEach(input => input.required = false);
+        }
+        calculateTotalPrice();
+    }
 
     // Function to calculate the total price
     function calculateTotalPrice() {
-        let totalPerPerson = 0;
-        const checkboxes = document.querySelectorAll('.experience-checkbox:checked');
+        let total = 0;
+        const toggles = document.querySelectorAll('.experience-toggle');
         
-        checkboxes.forEach(cb => {
-            const price = EXPERIENCE_PRICES[cb.value] || 0;
-            totalPerPerson += price;
+        toggles.forEach(toggle => {
+            if (toggle.checked) {
+                const price = parseFloat(toggle.getAttribute('data-price')) || 0;
+                const targetId = toggle.getAttribute('data-target');
+                const detailsDiv = document.getElementById(targetId);
+                const quantityInput = detailsDiv.querySelector('.guest-input');
+                const quantity = parseInt(quantityInput.value) || 0;
+                
+                total += price * quantity;
+            }
         });
-
-        const attendees = parseInt(document.getElementById('attendees').value, 10);
-        const totalPrice = totalPerPerson * attendees;
       
         // Update visual display
         const displayEl = document.getElementById('price-display');
-        if (displayEl && checkboxes.length > 0) {
-            displayEl.textContent = `Total Estimated Price: ${totalPrice.toFixed(2)} JD`;
-            displayEl.style.display = 'block';
-        } else if (displayEl) {
-            displayEl.style.display = 'none';
+        if (displayEl) {
+            displayEl.textContent = `Total Estimated Price: ${total.toFixed(2)} JD`;
+            displayEl.style.display = total > 0 ? 'block' : 'none';
         }
-      
-        return totalPrice.toFixed(2); 
+        return total.toFixed(2);
     }
 
-    // Open the booking form and select the experience
-    function openForm(experience) {
-        // Uncheck all first (optional, standard behavior for "Book This" buttons usually implies single selection reset, or we can additive. Let's reset for clarity unless manual)
-        document.querySelectorAll('.experience-checkbox').forEach(cb => cb.checked = false);
-
-        // Check the specific one
-        const targetCheckbox = document.querySelector(`.experience-checkbox[value="${experience}"]`);
-        if (targetCheckbox) {
-            targetCheckbox.checked = true;
-        }
-
+    // Open form from "Book Now" buttons
+    function openForm(experienceKey) {
         const form = document.getElementById('reservation-form');
         form.style.display = 'block';
         form.scrollIntoView({ behavior: 'smooth' });
-        
-        // Recalculate price
-        updateTotalPriceField();
-    }
 
-    // Function to update the hidden total price field
-    function updateTotalPriceField() {
-      const totalPrice = calculateTotalPrice();
-      let totalInput = document.getElementById('total-price');
-      if (!totalInput) {
-        // Create the hidden input field if it doesn't exist
-        totalInput = document.createElement('input');
-        totalInput.type = 'hidden';
-        totalInput.id = 'total-price';
-        totalInput.name = 'Total Price'; // Name for Formspree email
-        document.getElementById('reservation-form').appendChild(totalInput);
-      }
-      totalInput.value = `${totalPrice}JD`;
-    }
-
-    // Populate form if experience is in URL
-    function populateFormFromUrl() {
-      const { experience } = getQueryParams();
-      if (experience) {
-        openForm(experience);
-      }
+        // Uncheck all first? No, let's keep it additive or just check the new one.
+        // Let's just find the checkbox associated with the key and check it.
+        const targetId = ID_MAP[experienceKey];
+        if (targetId) {
+            const toggle = document.querySelector(`.experience-toggle[data-target="${targetId}"]`);
+            if (toggle) {
+                if (!toggle.checked) {
+                    toggle.checked = true;
+                    toggleDetails(toggle);
+                }
+            }
+        }
     }
 
     // Initialize form population on page load
     window.addEventListener('DOMContentLoaded', () => {
-        populateFormFromUrl();
-        
-        // Date Validation: Prevent past dates
-        const dateInput = document.getElementById('date');
-        if(dateInput) {
-            const today = new Date().toISOString().split('T')[0];
-            dateInput.setAttribute('min', today);
+        // Handle URL params
+        const params = new URLSearchParams(window.location.search);
+        const expParam = params.get('experience');
+        if (expParam) {
+             openForm(expParam);
         }
-    });
-
-    function showErrorPopup(message) {
-        const errorMsg = typeof message === 'string' ? message : JSON.stringify(message);
-        document.getElementById('popup-message').innerText = errorMsg;
-        document.getElementById('error-popup').style.display = 'flex';
-    }
-
-    function closeErrorPopup() {
-        document.getElementById('error-popup').style.display = 'none';
-    }
-
-    
-    // Save form data to localStorage
-    document.querySelectorAll("input, textarea, select").forEach((el) => {
-        if (el.type === 'checkbox') return; // Skip checkboxes for simple saving logic to avoid complexity
         
-        // Load saved value
-        const savedValue = localStorage.getItem(el.name);
-        if (savedValue && el.type !== 'hidden') {
-            el.value = savedValue;
-        }
-        // Save value on input
-        el.addEventListener("input", () => {
-            if (el.type !== 'password' && el.type !== 'hidden') { // Don't save passwords
-                localStorage.setItem(el.name, el.value);
-            }
+        // Set Min Date for all date inputs
+        const today = new Date().toISOString().split('T')[0];
+        document.querySelectorAll('.date-input').forEach(input => {
+            input.setAttribute('min', today);
+        });
+        
+        // Attach listeners
+        const toggles = document.querySelectorAll('.experience-toggle');
+        toggles.forEach(toggle => {
+            toggle.addEventListener('change', function() {
+                toggleDetails(this);
+            });
+        });
+        
+        const inputs = document.querySelectorAll('.guest-input');
+        inputs.forEach(input => {
+            input.addEventListener('input', calculateTotalPrice);
+            input.addEventListener('change', calculateTotalPrice);
         });
     });
 
-    // Navbar hide on scroll down, show on scroll up
+    // Update hidden total price field before submit
+    document.getElementById('reservation-form').addEventListener('submit', function(e) {
+        const checked = document.querySelectorAll('.experience-toggle:checked');
+        if (checked.length === 0) {
+            e.preventDefault();
+            alert("Please select at least one experience to book.");
+            return;
+        }
+        
+        let totalInput = document.getElementById('total-price');
+        if (!totalInput) {
+            totalInput = document.createElement('input');
+            totalInput.type = 'hidden';
+            totalInput.id = 'total-price';
+            totalInput.name = 'Total Price'; 
+            this.appendChild(totalInput);
+        }
+        totalInput.value = calculateTotalPrice() + ' JD';
+    });
+
+    // Save contact info to localStorage
+    const contactFields = ['name', 'email', 'phone'];
+    contactFields.forEach(id => {
+        const el = document.getElementById(id);
+        if(el) {
+            const saved = localStorage.getItem(id);
+            if(saved) el.value = saved;
+            el.addEventListener('input', () => localStorage.setItem(id, el.value));
+        }
+    });
+
+    // Error Popup Helpers
+    function showErrorPopup(message) {
+        document.getElementById('popup-message').innerText = message;
+        document.getElementById('error-popup').style.display = 'flex';
+    }
+    function closeErrorPopup() {
+        document.getElementById('error-popup').style.display = 'none';
+    }
+    
+    // Navbar scroll effect
     let lastScrollTop = 0;
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', function() {
@@ -403,49 +521,7 @@
         navbar.style.top = scrollTop > lastScrollTop ? '-60px' : '0';
         lastScrollTop = scrollTop;
     });
-
-    // small delegate to toggle popups on touch devices and close on outside click / Esc
-document.addEventListener('click', (e) => {
-  // close popups when clicking outside any .reservation-item
-  if (!e.target.closest('.reservation-item')) {
-    document.querySelectorAll('.card-popup.show').forEach(p => p.classList.remove('show'));
-    return;
-  }
-  // if device has no hover, toggle the popup on item click
-  if (window.matchMedia && window.matchMedia('(hover: none)').matches) {
-    const item = e.target.closest('.reservation-item');
-    const popup = item?.querySelector('.card-popup');
-    if (popup) {
-      // prevent immediate navigation when clicking inner links
-      if (e.target.closest('.learn-more')) return;
-      popup.classList.toggle('show');
-      e.preventDefault();
-    }
-  }
-});
-document.addEventListener('keydown', (e) => {
-	  if (e.key === 'Escape') document.querySelectorAll('.card-popup.show').forEach(p => p.classList.remove('show'));
-	});
-
-    // Add event listeners to update total price on change
-    document.querySelectorAll('.experience-checkbox').forEach(cb => {
-        cb.addEventListener('change', updateTotalPriceField);
-    });
-    document.getElementById('attendees').addEventListener('change', updateTotalPriceField);
-
-    // Intercept form submission to ensure total price is calculated
-    document.getElementById('reservation-form').addEventListener('submit', function(e) {
-        // Validate at least one experience is selected
-        const checked = document.querySelectorAll('.experience-checkbox:checked');
-        if (checked.length === 0) {
-            e.preventDefault();
-            alert("Please select at least one experience.");
-            return;
-        }
-        updateTotalPriceField();
-    });
     </script>
-
 <script>
   // toggle dropdown on small screens
   document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
