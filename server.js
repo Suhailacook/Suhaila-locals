@@ -160,7 +160,7 @@ app.post('/api/reserve', async (req, res) => {
           <li><strong>Phone:</strong> ${phone}</li>
           <li><strong>Comments:</strong> ${comments || 'None'}</li>
         </ul>
-        <p>We look forward to welcoming you!<br>Suhaila Cooking Experience</p>
+        <p>We look forward to welcoming you!<br>Aqaba local experiences</p>
       `
     };
 
