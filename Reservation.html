@@ -419,12 +419,18 @@
         
         if (checkbox.checked) {
             detailsDiv.classList.remove('collapsed');
-            // Add required attribute to inputs when visible so user doesn't forget them
-            detailsDiv.querySelectorAll('input').forEach(input => input.required = true);
+            // Add required attribute and enable inputs when visible
+            detailsDiv.querySelectorAll('input').forEach(input => {
+                input.required = true;
+                input.disabled = false;
+            });
         } else {
             detailsDiv.classList.add('collapsed');
-            // Remove required attribute when hidden
-            detailsDiv.querySelectorAll('input').forEach(input => input.required = false);
+            // Remove required attribute and disable inputs when hidden
+            detailsDiv.querySelectorAll('input').forEach(input => {
+                input.required = false;
+                input.disabled = true;
+            });
         }
         calculateTotalPrice();
     }
@@ -490,9 +496,18 @@
             input.setAttribute('min', today);
         });
         
-        // Attach listeners
+        // Attach listeners and initialize state
         const toggles = document.querySelectorAll('.experience-toggle');
         toggles.forEach(toggle => {
+            // Initialize: if not checked, disable its inputs
+            if (!toggle.checked) {
+                const targetId = toggle.getAttribute('data-target');
+                const detailsDiv = document.getElementById(targetId);
+                if (detailsDiv) {
+                    detailsDiv.querySelectorAll('input').forEach(input => input.disabled = true);
+                }
+            }
+            
             toggle.addEventListener('change', function() {
                 toggleDetails(this);
             });
@@ -522,6 +537,13 @@
             return;
         }
         
+        // Disable all inputs in collapsed experience details so they aren't sent to Formspree
+        document.querySelectorAll('.experience-details.collapsed').forEach(details => {
+            details.querySelectorAll('input').forEach(input => {
+                input.disabled = true;
+            });
+        });
+
         let totalInput = document.getElementById('total-price');
         if (!totalInput) {
             totalInput = document.createElement('input');
