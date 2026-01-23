@@ -89,6 +89,18 @@
               <a href="glassboat.html" class="learn-more" title="Learn more about Aqaba Glass Boat" aria-label="Learn more about Aqaba Glass Boat">Learn more</a>
             </div>
         </div>
+
+        <!-- Experience 5: Ramadan Iftar -->
+        <div class="reservation-item">
+            <img src="Family.webp" loading="lazy" alt="Ramadan Iftar with a Local Family">
+            <h3><a href="iftar-experience-aqaba.html" title="Ramadan Iftar Experience">Ramadan Iftar Experience</a></h3>
+            <p>Experience the true spirit of Ramadan by sharing a traditional Iftar meal with our family in Aqaba.</p>
+            <p><strong>20JD</strong></p>
+            <a href="javascript:void(0);" class="button" onclick="openForm('iftar')">Book Now</a>
+            <div class="card-footer">
+              <a href="iftar-experience-aqaba.html" class="learn-more" title="Learn more about Ramadan Iftar Experience" aria-label="Learn more about Ramadan Iftar Experience">Learn more</a>
+            </div>
+        </div>
     </div>
 
     <!-- Loading Spinner -->
@@ -212,12 +224,33 @@
                     <input type="date" name="Glass_Boat_Date" class="date-input">
                 </div>
                 <div class="form-col">
-                    <label>Hours/Trips:</label>
-                    <input type="number" name="Glass_Boat_Hours" min="1" value="1" class="guest-input">
+                    <label>Guests:</label>
+                    <input type="number" name="Glass_Boat_Guests" min="1" value="2" class="guest-input">
                 </div>
             </div>
-            <p style="font-size:0.85rem; margin-top:5px; color:#666;">*Price is per hour for the boat (up to 6 people).</p>
         </div>
+      </div>
+
+      <!-- Ramadan Iftar -->
+      <div class="experience-option-card">
+        <label class="checkbox-container main-checkbox">
+            <input type="checkbox" name="Book_Ramadan_Iftar" value="Yes" class="experience-toggle" data-target="details-iftar" data-price="20">
+            <span class="checkmark"></span>
+            <strong>Ramadan Iftar Experience (20 JD/person)</strong>
+        </label>
+        <div id="details-iftar" class="experience-details collapsed">
+            <div class="form-row">
+                <div class="form-col">
+                    <label>Date:</label>
+                    <input type="date" name="Ramadan_Iftar_Date" class="date-input">
+                </div>
+                <div class="form-col">
+                    <label>Guests:</label>
+                    <input type="number" name="Ramadan_Iftar_Guests" min="1" value="2" class="guest-input">
+                </div>
+            </div>
+        </div>
+      </div>
       </div>
 
       <div class="form-group">
@@ -409,7 +442,9 @@
         'dining': 'details-dining',
         'Dining Experience': 'details-dining',
         'glassboat': 'details-glassboat',
-        'Aqaba Glass Boat': 'details-glassboat'
+        'Aqaba Glass Boat': 'details-glassboat',
+        'iftar': 'details-iftar',
+        'Ramadan Iftar': 'details-iftar'
     };
 
     // Main Function to toggle details visibility
