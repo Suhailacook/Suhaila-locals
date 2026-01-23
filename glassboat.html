@@ -22,27 +22,91 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "TouristAttraction",
+    "@type": "TouristTrip",
     "name": "Aqaba Glass Boat Tour",
-    "description": "A glass-bottom boat tour in Aqaba showcasing coral reefs and marine life.",
+    "description": "Embark on a relaxing glass-bottom boat tour in Aqaba and discover the vibrant underwater world of the Red Sea. Marvel at colorful coral reefs, tropical fish, and maybe even spot a sea turtle—all from the comfort of your seat.",
     "url": "https://suhailacook.github.io/Suhaila-locals/glassboat.html",
     "image": "https://suhailacook.github.io/Suhaila-locals/glass-boat.webp",
-    "touristType": [
-      "Family",
-      "Snorkeling"
-    ],
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 29.5319,
-      "longitude": 35.0061
+    "duration": "PT2H",
+    "provider": {
+      "@type": "Organization",
+      "name": "Aqaba local experiences",
+      "url": "https://suhailacook.github.io/Suhaila-locals/"
     },
     "offers": {
       "@type": "Offer",
       "price": "25",
       "priceCurrency": "JOD",
       "availability": "https://schema.org/InStock",
+      "url": "https://suhailacook.github.io/Suhaila-locals/Reservation.html?experience=Aqaba%20Glass%20Boat",
       "description": "Private boat tour price per hour"
-    }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "ratingCount": "1",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "location": {
+      "@type": "Place",
+      "name": "Aqaba Marine Park",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Aqaba",
+        "addressCountry": "JO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 29.5319,
+        "longitude": 35.0061
+      }
+    },
+    "itinerary": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "TouristAttraction",
+          "name": "Coral Reefs",
+          "description": "See Aqaba's famous coral reefs and marine life through a crystal-clear glass bottom."
+        },
+        {
+          "@type": "TouristAttraction",
+          "name": "Snorkeling Opportunity",
+          "description": "Opportunity to go snorkeling with provided equipment and towels."
+        },
+        {
+          "@type": "TouristAttraction",
+          "name": "Red Sea Marine Life",
+          "description": "Spot tropical fish, sea turtles, and other marine creatures."
+        },
+        {
+          "@type": "TouristAttraction",
+          "name": "Aqaba Coastline",
+          "description": "Photo opportunities of Aqaba's coastline and the Red Sea."
+        }
+      ]
+    },
+    "guide": {
+      "@type": "Person",
+      "name": "Experienced Local Boat Captain",
+      "description": "Knowledgeable local boat captains with expertise in Red Sea marine life"
+    },
+    "maximumAttendeeCapacity": "6",
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "reviewBody": "A fantastic way to see the coral reefs with my kids! The boat was comfortable and the crew made it fun for everyone.",
+        "author": {
+          "@type": "Person",
+          "name": "Ahmed"
+        }
+      }
+    ]
   }
   </script>
 </head>

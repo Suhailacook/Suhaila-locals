@@ -19,16 +19,84 @@
   {
     "@context": "https://schema.org",
     "@type": "TouristTrip",
-    "name": "Local Walking Tour Aqaba with Food Tasting",
-    "description": "Join our local walking tour in Aqaba with food tasting. Explore local markets, taste authentic street food, and discover the city's culture.",
+    "name": "Local Walking Tour in Aqaba with Food Tasting",
+    "description": "Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history and culture with a local expert.",
     "image": "https://suhailacook.github.io/Suhaila-locals/aqaba-walking-tour.webp",
     "url": "https://suhailacook.github.io/Suhaila-locals/walkingtour.html",
+    "duration": "PT2H30M",
+    "provider": {
+      "@type": "Organization",
+      "name": "Aqaba local experiences",
+      "url": "https://suhailacook.github.io/Suhaila-locals/"
+    },
     "offers": {
       "@type": "Offer",
       "price": "20",
       "priceCurrency": "JOD",
-      "availability": "https://schema.org/InStock"
-    }
+      "availability": "https://schema.org/InStock",
+      "url": "https://suhailacook.github.io/Suhaila-locals/Reservation.html?experience=Historic%20Walking%20Tour"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "ratingCount": "312",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "itinerary": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "TouristAttraction",
+          "name": "Local Markets",
+          "description": "Visit the bustling vegetable and spice markets to see daily life in Aqaba."
+        },
+        {
+          "@type": "TouristAttraction",
+          "name": "Street Food Delights",
+          "description": "Sample authentic local street food, including falafel, hummus, and traditional sweets."
+        },
+        {
+          "@type": "TouristAttraction",
+          "name": "Historic Sites",
+          "description": "Stop at key historical points to learn about Aqaba's past as a port city."
+        },
+        {
+          "@type": "TouristAttraction",
+          "name": "Hidden Gems",
+          "description": "Discover secret spots and local hangouts only known to residents."
+        }
+      ]
+    },
+    "guide": {
+      "@type": "Person",
+      "name": "Local Expert Guide",
+      "description": "Licensed local historians and lifelong residents of Aqaba"
+    },
+    "location": {
+      "@type": "Place",
+      "name": "Aqaba, Jordan",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Aqaba",
+        "addressCountry": "JO"
+      }
+    },
+    "maximumAttendeeCapacity": "12",
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "reviewBody": "Alex was fantastic! The tour was engaging, informative, and perfectly paced. Highly recommend for anyone visiting the city.",
+        "author": {
+          "@type": "Person",
+          "name": "David L."
+        }
+      }
+    ]
   }
   </script>
 
