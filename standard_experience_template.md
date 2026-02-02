@@ -53,7 +53,7 @@ This immersive masterclass takes you deep into the heart of Italian culinary tra
 
 | Quick Fact | Detail |
 | :--- | :--- |
-| **Duration** | 3.5 Hours |
+| **Duration** | 3.5 Hours / 2 Days |
 | **Group Size** | Max 10 participants |
 | **Language** | English |
 | **Inclusions** | All ingredients, a glass of wine, recipe booklet, and the meal you prepare. |
@@ -113,7 +113,7 @@ Step back in time and uncover the hidden stories of the Old Town. This tour is l
 
 | Quick Fact | Detail |
 | :--- | :--- |
-| **Duration** | 2.0 Hours |
+| **Duration** | 2.0 Hours / 3 Days |
 | **Group Size** | Max 15 participants |
 | **Language** | English, Spanish |
 | **Difficulty** | Easy (Flat terrain, moderate pace) |
