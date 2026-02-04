@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Local Recommendations: Trusted Services in Jordan | Suhaila Locals</title>
+  <meta name="description" content="Discover our hand-picked recommendations for your trip to Jordan. From reliable car rentals like Al-Salehin to local gems, we share services we sincerely trust." />
+  <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/recommendations.html" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .rec-container {
+      max-width: 1000px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+    }
+    .rec-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .rec-header h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      color: var(--color-accent);
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+    }
+    .rec-header p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .rec-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #eee;
+    }
+    @media (min-width: 768px) {
+      .rec-card {
+        flex-direction: row;
+      }
+      .rec-image {
+        width: 40%;
+      }
+      .rec-info {
+        width: 60%;
+      }
+    }
+    .rec-image {
+      background: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 250px;
+    }
+    .rec-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .rec-info {
+      padding: 2rem;
+    }
+    .rec-category {
+      display: inline-block;
+      background: var(--color-primary);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .rec-info h2 {
+      font-size: 1.8rem;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+      margin-top: 0;
+    }
+    .rec-description {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 1.5rem;
+    }
+    .rec-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .rec-features li {
+      font-size: 0.95rem;
+      color: #555;
+      display: flex;
+      align-items: center;
+    }
+    .rec-features li::before {
+      content: "✓";
+      color: #28a745;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    .rec-contact {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: var(--radius-sm);
+      border: 1px dashed #ccc;
+    }
+    .rec-contact h3 {
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: var(--color-accent);
+    }
+    .rec-contact p {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+    .whatsapp-link {
+      color: #25D366;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .whatsapp-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+    <div class="navbar-links" id="navbarLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <div class="dropdown">
+        <button class="dropbtn" aria-expanded="false" aria-controls="experiences-menu">Experiences</button>
+        <div id="experiences-menu" class="dropdown-content" role="menu">
+          <a href="cookingclass.html" role="menuitem">Cooking Class</a>
+          <a href="walkingtour.html" role="menuitem">Walking Tour</a>
+          <a href="glassboat.html" role="menuitem">Aqaba Glass Boat</a>
+          <a href="dinningexperience.html" role="menuitem">Dining Experience</a>
+          <a href="multi-day-aqaba-tour.html" role="menuitem">Multi-Day Adventure</a>
+        </div>
+      </div>
+      <a href="recommendations.html" class="active" aria-current="page">Recommendations</a>
+      <a href="Reservation.html">Reservations</a>
+      <a href="contact-Us.html">Contact</a>
+      <a href="Blog.html">Blog</a>
+    </div>
+  </nav>
+
+  <main class="rec-container">
+    <header class="rec-header">
+      <h1>Local Recommendations</h1>
+      <p>Planning a trip to Jordan? We've curated a list of proven, hassle-free services and local gems that we sincerely recommend to our guests to ensure your journey is as smooth as possible.</p>
+    </header>
+
+    <!-- Car Rental Recommendation -->
+    <article class="rec-card">
+      <div class="rec-image">
+        <img src="home.webp" alt="Car Rental in Jordan">
+      </div>
+      <div class="rec-info">
+        <span class="rec-category">Transport</span>
+        <h2>AL-SALEHIN Car Rental</h2>
+        <div class="rec-description">
+          <p>For a proven, hassle-free rental in Jordan, we recommend AL-SALEHIN with full confidence. They have proven their reliability time and again. Their rules are clear, agreements are transparent, and they truly deliver on their promises.</p>
+          <p>One of the biggest advantages is their comprehensive insurance—we've seen situations where tourists damaged a car and didn't have to pay a single dinar extra thanks to their full coverage.</p>
+        </div>
+        <ul class="rec-features">
+          <li>New fleet (~600 cars)</li>
+          <li>Automatic transmission</li>
+          <li>Full insurance (No deposit)</li>
+          <li>No credit card required</li>
+          <li>Unlimited mileage</li>
+          <li>Amman & Aqaba Airport pickup</li>
+          <li>1000 GB SIM card included</li>
+          <li>No car wash fee on return</li>
+        </ul>
+        <div class="rec-contact">
+          <h3>Contact Details</h3>
+          <p><strong>Owner:</strong> Waleed</p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/962795696042" class="whatsapp-link">+962 7 9569 6042</a></p>
+          <p><em>Mention "Suhaila Locals" when booking!</em></p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Placeholder for future recommendations -->
+    <div style="text-align: center; margin-top: 40px; color: #888; font-style: italic;">
+      <p>More local recommendations coming soon...</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="https://share.google/rdDzzUrFBVNFxzx0y" target="_blank" rel="noopener">Review Us on Google</a></p>
+    <p>&copy; 2026 Aqaba local experiences. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navbarLinks = document.getElementById('navbarLinks');
+    const menuOverlay = document.getElementById('menuOverlay');
+    hamburger.addEventListener('click', () => {
+      navbarLinks.classList.toggle('open');
+      menuOverlay.classList.toggle('active');
+    });
+    menuOverlay.addEventListener('click', () => {
+      navbarLinks.classList.remove('open');
+      menuOverlay.classList.remove('active');
+    });
+
+    // Dropdown toggle for mobile
+    document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        if (window.innerWidth <= 800) {
+          e.preventDefault();
+          const dd = this.closest('.dropdown');
+          document.querySelectorAll('.navbar .dropdown.open').forEach(o => { if (o !== dd) o.classList.remove('open'); });
+          dd.classList.toggle('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
