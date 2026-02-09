@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Book Online Cooking Class | Suhaila Locals</title>
   <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/online-booking.html" />
-  <meta name="description" content="Browse and book our live online Jordanian cooking classes. View the calendar, see what you'll cook, get the Zoom link, and book your spot today." />
+  <meta name="description" content="Book your live online Jordanian cooking class. Choose your dish, select a date, and join us via Zoom for an authentic culinary experience." />
 
   <!-- Favicon -->
   <link rel="icon" href="favicon.png" type="image/png">
@@ -15,266 +15,113 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   
-  <!-- FullCalendar CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet" />
-  
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
   
   <style>
-    .online-booking-container {
+    .booking-container {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .booking-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .booking-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+
+    .booking-header p {
+      color: #666;
+      font-size: 1.1rem;
+    }
+
+    .dish-selection {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
-      margin-top: 2rem;
+      margin-bottom: 3rem;
     }
 
-    .calendar-section {
-      background: #f9f9f9;
-      padding: 2rem;
+    .dish-card {
+      border: 2px solid #eee;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .event-details-section {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      border-left: 4px solid #d4a574;
-    }
-
-    .event-details-section h3 {
-      color: #2c3e50;
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
-    }
-
-    .event-detail-item {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid #eee;
-    }
-
-    .event-detail-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .event-detail-label {
-      font-weight: 600;
-      color: #d4a574;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .event-detail-value {
-      color: #2c3e50;
-      margin-top: 0.5rem;
-      line-height: 1.6;
-    }
-
-    .event-detail-value a {
-      color: #d4a574;
-      text-decoration: none;
-      font-weight: 600;
-      word-break: break-all;
-    }
-
-    .event-detail-value a:hover {
-      text-decoration: underline;
-    }
-
-    .menu-list {
-      list-style: none;
-      padding: 0;
-      margin: 0.5rem 0 0 0;
-    }
-
-    .menu-list li {
-      padding: 0.5rem 0;
-      color: #2c3e50;
-      padding-left: 1.5rem;
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
       position: relative;
     }
 
-    .menu-list li:before {
-      content: "🍽️";
+    .dish-card:hover {
+      border-color: #d4a574;
+      transform: translateY(-5px);
+    }
+
+    .dish-card.selected {
+      border-color: #d4a574;
+      background-color: rgba(212, 165, 116, 0.05);
+    }
+
+    .dish-card.selected::after {
+      content: '✓';
       position: absolute;
-      left: 0;
-    }
-
-    .price-display {
-      background: linear-gradient(135deg, #d4a574 0%, #c9956a 100%);
+      top: 10px;
+      right: 10px;
+      background: #d4a574;
       color: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .price-display .price-label {
-      font-size: 0.9rem;
-      opacity: 0.9;
-      margin-bottom: 0.5rem;
-    }
-
-    .price-display .price-amount {
-      font-size: 2rem;
-      font-weight: 700;
-    }
-
-    .booking-button {
-      width: 100%;
-      padding: 1rem;
-      background: linear-gradient(135deg, #d4a574 0%, #c9956a 100%);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .booking-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
-    }
-
-    .booking-button:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    .no-event-selected {
-      text-align: center;
-      padding: 2rem;
-      color: #999;
-      font-style: italic;
-    }
-
-    /* FullCalendar Customization */
-    .fc {
-      font-family: 'Inter', sans-serif;
-    }
-
-    .fc .fc-button-primary {
-      background-color: #d4a574;
-      border-color: #d4a574;
-    }
-
-    .fc .fc-button-primary:not(:disabled).fc-button-active {
-      background-color: #c9956a;
-      border-color: #c9956a;
-    }
-
-    .fc .fc-button-primary:hover {
-      background-color: #c9956a;
-    }
-
-    .fc .fc-daygrid-day.fc-day-other {
-      background-color: #fafafa;
-    }
-
-    .fc .fc-event {
-      background-color: #d4a574;
-      border-color: #d4a574;
-      cursor: pointer;
-    }
-
-    .fc .fc-event:hover {
-      background-color: #c9956a;
-      border-color: #c9956a;
-    }
-
-    .fc .fc-event-title {
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .fc-daygrid-day-number {
-      padding: 8px 4px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .online-booking-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .calendar-section {
-        padding: 1rem;
-      }
-
-      .event-details-section {
-        padding: 1rem;
-      }
-
-      .price-display .price-amount {
-        font-size: 1.5rem;
-      }
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
       align-items: center;
       justify-content: center;
+      font-weight: bold;
     }
 
-    .modal.active {
-      display: flex;
-    }
-
-    .modal-content {
-      background-color: white;
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 600px;
-      width: 90%;
-      max-height: 90vh;
-      overflow-y: auto;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    }
-
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid #f0f0f0;
-      padding-bottom: 1rem;
-    }
-
-    .modal-header h2 {
-      margin: 0;
+    .dish-card h3 {
+      margin-bottom: 0.5rem;
       color: #2c3e50;
     }
 
-    .close-btn {
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #999;
+    .dish-card p {
+      font-size: 0.9rem;
+      color: #666;
     }
 
-    .close-btn:hover {
-      color: #2c3e50;
+    .booking-form-section {
+      display: none;
+      border-top: 1px solid #eee;
+      padding-top: 2rem;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
     }
 
     .form-group {
       margin-bottom: 1.5rem;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
     }
 
     .form-group label {
@@ -285,6 +132,7 @@
     }
 
     .form-group input,
+    .form-group select,
     .form-group textarea {
       width: 100%;
       padding: 0.75rem;
@@ -295,36 +143,25 @@
     }
 
     .form-group input:focus,
+    .form-group select:focus,
     .form-group textarea:focus {
       outline: none;
       border-color: #d4a574;
       box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
     }
 
-    .form-group textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    .form-actions {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .form-actions button {
-      flex: 1;
-      padding: 0.75rem;
+    .btn-submit {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, #d4a574 0%, #c9956a 100%);
+      color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
+      font-size: 1.1rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
-    }
-
-    .btn-submit {
-      background: linear-gradient(135deg, #d4a574 0%, #c9956a 100%);
-      color: white;
+      margin-top: 1rem;
     }
 
     .btn-submit:hover {
@@ -332,27 +169,27 @@
       box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
     }
 
-    .btn-cancel {
-      background: #f0f0f0;
-      color: #2c3e50;
-    }
-
-    .btn-cancel:hover {
-      background: #e0e0e0;
-    }
-
     .success-message {
       display: none;
-      background: #d4edda;
-      color: #155724;
-      padding: 1rem;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-      border: 1px solid #c3e6cb;
+      text-align: center;
+      padding: 3rem;
+      background: #f0fff4;
+      border-radius: 12px;
+      border: 1px solid #c6f6d5;
+      color: #22543d;
     }
 
-    .success-message.active {
-      display: block;
+    .success-message h3 {
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .dish-selection, .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-group.full-width {
+        grid-column: span 1;
+      }
     }
   </style>
 </head>
@@ -386,7 +223,6 @@
 
   <!-- Main Content -->
   <main id="main-content">
-    <!-- Hero Section -->
     <section class="experience-hero">
       <img src="cooking-class-aqaba.webp" alt="Book Online Cooking Class">
       <div class="hero-overlay">
@@ -394,221 +230,114 @@
       </div>
     </section>
 
-    <!-- Booking Section -->
-    <div style="max-width: 1200px; margin: 0 auto; padding: 2rem 1rem;">
-      <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50;">Select a Class and Book Your Spot</h2>
-      
-      <div class="online-booking-container">
-        <!-- Calendar Section -->
-        <div class="calendar-section">
-          <h3 style="margin-top: 0; color: #2c3e50;">Available Classes</h3>
-          <div id="calendar"></div>
+    <div class="booking-container">
+      <div id="booking-flow">
+        <div class="booking-header">
+          <h2>What would you like to cook?</h2>
+          <p>Select your preferred dish to start your booking</p>
         </div>
 
-        <!-- Event Details Section -->
-        <div class="event-details-section">
-          <div id="event-details" class="no-event-selected">
-            Click on a class in the calendar to view details and book
+        <div class="dish-selection">
+          <div class="dish-card" onclick="selectDish('Traditional Jordanian Maqluba')">
+            <h3>Maqluba</h3>
+            <p>The famous "upside-down" rice dish with chicken and vegetables.</p>
+          </div>
+          <div class="dish-card" onclick="selectDish('Hummus & Falafel Workshop')">
+            <h3>Hummus & Falafel</h3>
+            <p>Master the secrets of creamy hummus and crispy falafel from scratch.</p>
           </div>
         </div>
+
+        <div id="form-section" class="booking-form-section">
+          <div class="booking-header">
+            <h2 id="selected-dish-title">Complete Your Booking</h2>
+            <p>Please provide your details and preferred date</p>
+          </div>
+
+          <form id="bookingForm" onsubmit="submitBooking(event)">
+            <input type="hidden" id="dishInput" name="dish">
+            
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="guestName">Full Name *</label>
+                <input type="text" id="guestName" name="name" required placeholder="Your full name">
+              </div>
+
+              <div class="form-group">
+                <label for="guestEmail">Email Address *</label>
+                <input type="email" id="guestEmail" name="email" required placeholder="your@email.com">
+              </div>
+
+              <div class="form-group">
+                <label for="bookingDate">Preferred Date *</label>
+                <input type="date" id="bookingDate" name="date" required>
+              </div>
+
+              <div class="form-group">
+                <label for="guestCount">Participants *</label>
+                <input type="number" id="guestCount" name="participants" min="1" max="10" value="1" required>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="dietaryRestrictions">Dietary Restrictions / Special Notes</label>
+                <textarea id="dietaryRestrictions" name="dietary_restrictions" placeholder="Any allergies or special requests?"></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Request Booking</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="success-message" class="success-message">
+        <h3>Booking Request Sent!</h3>
+        <p>Thank you for your interest. We have received your request for the <strong id="confirmed-dish"></strong> class. We will contact you shortly at <strong id="confirmed-email"></strong> to confirm the date and provide the Zoom link.</p>
+        <button class="btn-submit" style="width: auto; padding: 0.75rem 2rem; margin-top: 2rem;" onclick="location.reload()">Book Another Class</button>
       </div>
     </div>
   </main>
 
-  <!-- Booking Modal -->
-  <div id="bookingModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>Complete Your Booking</h2>
-        <button class="close-btn" onclick="closeBookingModal()">&times;</button>
-      </div>
-      
-      <div id="successMessage" class="success-message">
-        Thank you! Your booking has been submitted successfully. You'll receive a confirmation email shortly with the Zoom link.
-      </div>
-
-      <form id="bookingForm" onsubmit="submitBooking(event)">
-        <input type="hidden" id="selectedEventId" name="eventId">
-        <input type="hidden" id="selectedEventTitle" name="eventTitle">
-        <input type="hidden" id="selectedEventDateTime" name="eventDateTime">
-
-        <div class="form-group">
-          <label for="guestName">Full Name *</label>
-          <input type="text" id="guestName" name="name" required placeholder="Your full name">
-        </div>
-
-        <div class="form-group">
-          <label for="guestEmail">Email Address *</label>
-          <input type="email" id="guestEmail" name="email" required placeholder="your@email.com">
-        </div>
-
-        <div class="form-group">
-          <label for="guestPhone">Phone Number *</label>
-          <input type="tel" id="guestPhone" name="phone" required placeholder="+1 (555) 123-4567">
-        </div>
-
-        <div class="form-group">
-          <label for="guestCount">Number of Participants *</label>
-          <input type="number" id="guestCount" name="participants" min="1" max="10" value="1" required>
-        </div>
-
-        <div class="form-group">
-          <label for="dietaryRestrictions">Dietary Restrictions / Special Notes</label>
-          <textarea id="dietaryRestrictions" name="dietary_restrictions" placeholder="Any allergies or dietary preferences we should know about?"></textarea>
-        </div>
-
-        <div class="form-actions">
-          <button type="button" class="btn-cancel" onclick="closeBookingModal()">Cancel</button>
-          <button type="submit" class="btn-submit">Confirm Booking</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- Footer -->
   <footer>
     <p>Contact us: <a href="mailto:suhaila.cook@gmail.com">suhaila.cook@gmail.com</a></p>
     <p>&copy; 2026 Aqaba local experiences | Aqaba, Jordan. All rights reserved.</p>
   </footer>
 
-  <!-- FullCalendar JS -->
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
-  
-  <!-- Booking Script -->
   <script>
-    let calendar;
-    let selectedEvent = null;
-
-    document.addEventListener('DOMContentLoaded', function() {
-      initializeCalendar();
-      setupNavigation();
-    });
-
-    function initializeCalendar() {
-      const calendarEl = document.getElementById('calendar');
-      calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        headerToolbar: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'dayGridMonth,listMonth'
-        },
-        events: function(info, successCallback, failureCallback) {
-          fetch('data/online-classes.json')
-            .then(response => response.json())
-            .then(data => {
-              successCallback(data);
-            })
-            .catch(error => {
-              console.error('Error loading events:', error);
-              failureCallback(error);
-            });
-        },
-        eventClick: function(info) {
-          selectedEvent = info.event;
-          displayEventDetails(info.event);
-        },
-        dateClick: function(info) {
-          // Optional: Allow clicking on dates to see if there are events
+    function selectDish(dishName) {
+      // Update UI
+      document.querySelectorAll('.dish-card').forEach(card => {
+        card.classList.remove('selected');
+        if (card.querySelector('h3').innerText.includes(dishName.split(' ')[0])) {
+          card.classList.add('selected');
         }
       });
-      calendar.render();
-    }
 
-    function displayEventDetails(event) {
-      const detailsDiv = document.getElementById('event-details');
-      const props = event.extendedProps;
+      // Set hidden input
+      document.getElementById('dishInput').value = dishName;
+      document.getElementById('selected-dish-title').innerText = 'Booking: ' + dishName;
       
-      let menuHTML = '';
-      if (props.menu) {
-        const menuItems = props.menu.split(',').map(item => `<li>${item.trim()}</li>`);
-        menuHTML = `<ul class="menu-list">${menuItems.join('')}</ul>`;
-      }
-
-      const startTime = new Date(event.start);
-      const endTime = new Date(event.end);
-      const dateStr = startTime.toLocaleDateString('en-US', { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric' 
-      });
-      const timeStr = `${startTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })} - ${endTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`;
-
-      detailsDiv.innerHTML = `
-        <h3>${event.title}</h3>
-        
-        <div class="price-display">
-          <div class="price-label">Price per camera/connection</div>
-          <div class="price-amount">${props.price}</div>
-        </div>
-
-        <div class="event-detail-item">
-          <div class="event-detail-label">📅 Date & Time</div>
-          <div class="event-detail-value">
-            <strong>${dateStr}</strong><br>
-            ${timeStr}
-          </div>
-        </div>
-
-        <div class="event-detail-item">
-          <div class="event-detail-label">🍽️ Menu</div>
-          <div class="event-detail-value">
-            ${menuHTML}
-          </div>
-        </div>
-
-        <div class="event-detail-item">
-          <div class="event-detail-label">📝 Description</div>
-          <div class="event-detail-value">${props.description}</div>
-        </div>
-
-        <div class="event-detail-item">
-          <div class="event-detail-label">🔗 Zoom Link</div>
-          <div class="event-detail-value">
-            <a href="${props.zoomLink}" target="_blank" rel="noopener noreferrer">Join via Zoom</a>
-            <br><small style="color: #999;">(Provided after booking confirmation)</small>
-          </div>
-        </div>
-
-        <button class="booking-button" onclick="openBookingModal('${event.id}', '${event.title}', '${dateStr} ${timeStr}')">
-          Book This Class
-        </button>
-      `;
-    }
-
-    function openBookingModal(eventId, eventTitle, eventDateTime) {
-      document.getElementById('selectedEventId').value = eventId;
-      document.getElementById('selectedEventTitle').value = eventTitle;
-      document.getElementById('selectedEventDateTime').value = eventDateTime;
-      document.getElementById('bookingModal').classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeBookingModal() {
-      document.getElementById('bookingModal').classList.remove('active');
-      document.body.style.overflow = 'auto';
-      document.getElementById('bookingForm').reset();
-      document.getElementById('successMessage').classList.remove('active');
+      // Show form
+      document.getElementById('form-section').style.display = 'block';
+      document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
     }
 
     function submitBooking(event) {
       event.preventDefault();
       
-      const formData = new FormData(document.getElementById('bookingForm'));
+      const form = document.getElementById('bookingForm');
+      const formData = new FormData(form);
       const data = {
+        dish: formData.get('dish'),
         name: formData.get('name'),
         email: formData.get('email'),
-        phone: formData.get('phone'),
+        date: formData.get('date'),
         participants: formData.get('participants'),
         dietary_restrictions: formData.get('dietary_restrictions'),
-        eventTitle: formData.get('eventTitle'),
-        eventDateTime: formData.get('eventDateTime'),
-        bookingType: 'Online Cooking Class'
+        bookingType: 'Online Cooking Class Request'
       };
 
       // Send to Formspree
-      fetch('https://formspree.io/f/movkdnjg', { // Connected to your existing Formspree account
+      fetch('https://formspree.io/f/movkdnjg', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -617,95 +346,45 @@
       })
       .then(response => {
         if (response.ok) {
-          document.getElementById('successMessage').classList.add('active');
-          setTimeout(() => {
-            closeBookingModal();
-          }, 2000);
+          document.getElementById('booking-flow').style.display = 'none';
+          document.getElementById('confirmed-dish').innerText = data.dish;
+          document.getElementById('confirmed-email').innerText = data.email;
+          document.getElementById('success-message').style.display = 'block';
         } else {
-          alert('There was an error submitting your booking. Please try again.');
+          alert('There was an error submitting your request. Please try again.');
         }
       })
       .catch(error => {
         console.error('Error:', error);
-        alert('There was an error submitting your booking. Please try again.');
+        alert('There was an error submitting your request. Please try again.');
       });
     }
 
     // Navigation setup
-    function setupNavigation() {
-      const hamburger = document.getElementById('hamburger');
-      const navbarLinks = document.getElementById('navbarLinks');
-      const menuOverlay = document.getElementById('menuOverlay');
+    const hamburger = document.getElementById('hamburger');
+    const navbarLinks = document.getElementById('navbarLinks');
+    const menuOverlay = document.getElementById('menuOverlay');
 
-      hamburger?.addEventListener('click', function () {
-        navbarLinks.classList.toggle('open');
-        menuOverlay.classList.toggle('active');
-      });
+    hamburger?.addEventListener('click', function () {
+      navbarLinks.classList.toggle('open');
+      menuOverlay.classList.toggle('active');
+    });
 
-      menuOverlay?.addEventListener('click', function () {
-        navbarLinks.classList.remove('open');
-        menuOverlay.classList.remove('active');
-      });
+    menuOverlay?.addEventListener('click', function () {
+      navbarLinks.classList.remove('open');
+      menuOverlay.classList.remove('active');
+    });
 
-      // Navbar scroll effect
-      let lastScrollY = window.scrollY;
-      const navbar = document.querySelector('.navbar');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > lastScrollY && window.scrollY > 60) {
-          navbar.style.top = '-80px';
-        } else {
-          navbar.style.top = '0';
-        }
-        lastScrollY = window.scrollY;
-      });
-
-      // Highlight active nav link
-      const currentPath = window.location.pathname.split("/").pop();
-      const navLinks = document.querySelectorAll('.navbar a');
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        link.removeAttribute('aria-current');
-        if (link.getAttribute('href') === 'online-booking.html') {
-          link.classList.add('active');
-          link.setAttribute('aria-current', 'page');
-        }
-      });
-
-      // Dropdown toggle on small screens
-      document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-          if (window.innerWidth <= 800) {
-            e.preventDefault();
-            const dd = this.closest('.dropdown');
-            document.querySelectorAll('.navbar .dropdown.open').forEach(o => { 
-              if (o !== dd) o.classList.remove('open'); 
-            });
-            dd.classList.toggle('open');
-          }
-        });
-      });
-
-      document.addEventListener('click', (e) => {
-        if (window.innerWidth <= 800) {
-          if (!e.target.closest('.navbar')) {
-            document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
-          }
-        }
-      });
-
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 800) {
-          document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
-        }
-      });
-    }
-
-    // Close modal when clicking outside
-    window.addEventListener('click', function(event) {
-      const modal = document.getElementById('bookingModal');
-      if (event.target === modal) {
-        closeBookingModal();
+    // Navbar scroll effect
+    let lastScrollY = window.scrollY;
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 60) {
+        navbar.style.top = '-80px';
+      } else {
+        navbar.style.top = '0';
       }
+      lastScrollY = window.scrollY;
     });
   </script>
 </body>
