@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Traditional Jordanian Maqluba",
+    "start": "2026-03-15T18:00:00",
+    "end": "2026-03-15T20:00:00",
+    "extendedProps": {
+      "menu": "Maqluba (Upside-down chicken and rice), Arabic Salad, Yogurt with Cucumber",
+      "zoomLink": "https://zoom.us/j/example1",
+      "price": "20 USD",
+      "description": "Master the art of Jordan's most famous dish."
+    }
+  },
+  {
+    "id": "2",
+    "title": "Hummus & Falafel Workshop",
+    "start": "2026-03-22T17:00:00",
+    "end": "2026-03-22T19:00:00",
+    "extendedProps": {
+      "menu": "Creamy Hummus from scratch, Crispy Falafel, Tahini Sauce",
+      "zoomLink": "https://zoom.us/j/example2",
+      "price": "20 USD",
+      "description": "Learn the secrets to perfect street food at home."
+    }
+  }
+]
