@@ -19,3 +19,31 @@
         margin-bottom: 0 !important;
     }
 }
+
+/* Blog Card styles for Gallery Layout */
+.blog-card {
+    background: var(--bg-surface);
+    padding: 0 !important; /* Reset gallery-item padding if any */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+}
+.blog-card-content {
+    padding: 2rem;
+    text-align: left;
+}
+.blog-card h3 {
+    font-size: 1.3rem !important;
+    margin-bottom: 1rem;
+}
+.blog-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+@media (max-width: 600px) {
+    .blog-card {
+        height: 250px !important; /* Match gallery-item mobile height */
+    }
+}
