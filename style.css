@@ -47,3 +47,16 @@
         height: 250px !important; /* Match gallery-item mobile height */
     }
 }
+
+/* Product Item Horizontal Scroll for Mobile */
+@media (max-width: 600px) {
+    .gallery-grid .product-item {
+        height: auto !important; /* Allow product items to expand based on content */
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+    }
+    .gallery-grid .product-item img.product-image {
+        height: 180px; /* Slightly smaller image on mobile to save space */
+    }
+}
