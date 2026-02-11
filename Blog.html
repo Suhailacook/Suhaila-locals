@@ -98,8 +98,10 @@
     }
     .blog-image {
       width: 100%;
-      height: 250px; /* Fixed height for consistency */
-      object-fit: cover;
+      height: auto;
+      max-height: 400px;
+      object-fit: contain;
+      background-color: #f0f0f0; /* Optional: light background for aspect ratio gaps */
     }
     .blog-content {
       padding: 1.5em;
