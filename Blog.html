@@ -188,18 +188,29 @@
       .blog-hero p { font-size: 1.1rem; }
     }
     @media (max-width: 600px) {
-      .blog-hero h1 { font-size: 1.8rem; padding-top: 2rem; }
+      .blog-hero {
+        padding: 5rem 1rem 3rem 1rem;
+        border-radius: 0 0 25px 25px;
+      }
+      .blog-hero h1 { font-size: 1.8rem; }
       .gallery-blog { 
         grid-template-columns: 1fr; 
-        padding: 1em;
-        gap: 2em;
+        padding: 1rem;
+        gap: 1.5rem;
+        margin: 1rem auto;
       }
       .blog-card {
         max-width: 100%;
-        height: auto; /* Allow card to grow with content on mobile */
+        height: auto !important; /* Override any fixed height */
       }
       .blog-image-container {
-        height: 200px; /* Slightly shorter image on mobile */
+        height: 220px;
+      }
+      .blog-content {
+        padding: 1.2rem;
+      }
+      .blog-content h2 {
+        font-size: 1.2rem;
       }
     }
     @media (max-width: 480px) {
