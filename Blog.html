@@ -73,7 +73,7 @@
     }
     .gallery-blog {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 2em;
       max-width: 1200px;
       margin: 2em auto;
@@ -91,17 +91,26 @@
       transform: translateY(40px);
       animation: fadeInUp 1.2s 0.7s ease-out forwards;
       height: 100%;
+      text-decoration: none; /* Make card clickable and remove link styling */
+      color: inherit;
     }
     .blog-card:hover {
-      transform: translateY(-8px) scale(1.03);
+      transform: translateY(-8px) scale(1.02);
       box-shadow: 0 12px 36px #3a86ff22;
     }
-    .blog-image {
+    .blog-image-container {
       width: 100%;
-      height: auto;
-      max-height: 400px;
+      height: 250px;
+      background-color: #f9f9f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .blog-image {
+      max-width: 100%;
+      max-height: 100%;
       object-fit: contain;
-      background-color: #f0f0f0; /* Optional: light background for aspect ratio gaps */
     }
     .blog-content {
       padding: 1.5em;
@@ -109,7 +118,6 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
     }
     .blog-content h2 {
       font-size: 1.3em;
@@ -121,7 +129,7 @@
     .blog-content p {
       font-size: 1em;
       color: #555;
-      margin-bottom: 1em;
+      margin-bottom: 1.5em;
       line-height: 1.5;
     }
     .blog-content em {
@@ -130,31 +138,32 @@
       display: block;
       margin-bottom: 0.5em;
     }
-    .blog-content a {
-      color: #3a86ff;
+    .read-more-btn {
+      background-color: #3a86ff;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
       font-weight: bold;
       text-decoration: none;
-      transition: color 0.2s;
+      transition: background-color 0.2s, transform 0.2s;
       margin-top: auto;
       display: inline-block;
+      align-self: center;
     }
-    .blog-content a:hover {
-      color: #E76F51;
-      text-decoration: underline;
+    .blog-card:hover .read-more-btn {
+      background-color: #E76F51;
+      transform: scale(1.05);
     }
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      background: var(--background-dark);
-      color: var(--text-light);
+      background: #1A1A1A;
+      color: #fff;
       font-size: 1.1rem;
     }
     footer a {
-      color: var(--primary-color);
+      color: #D4AF37;
       text-decoration: underline;
-    }
-    footer a:hover {
-      color: var(--secondary-color);
     }
     @media (max-width: 900px) {
       .gallery-blog {
@@ -218,177 +227,102 @@
 
   <main>
     <section class="gallery-blog" id="blogPosts">
-      <!-- NEW BLOG POST -->
-      <article class="blog-card">
-        <img src="Fish.jpg" alt="Colorful marine life in the Red Sea, Aqaba" class="blog-image">
+      <!-- ARTICLE 1 -->
+      <a href="blog-post-best-diving-aqaba.html" class="blog-card">
+        <div class="blog-image-container">
+          <img src="Fish.jpg" alt="Colorful marine life in the Red Sea, Aqaba" class="blog-image">
+        </div>
         <div class="blog-content">
           <h2>Best Diving Centre in Aqaba: Why We Recommend Coral Garden</h2>
           <p><em>February 7, 2026</em></p>
           <p>Looking for the best diving experience in Aqaba? Discover why Coral Garden Diving Center is our top pick for exploring the Red Sea's wrecks and reefs...</p>
-          <a href="blog-post-best-diving-aqaba.html">Read More</a>
+          <span class="read-more-btn">Read More</span>
         </div>
-      </article>
-      <article class="blog-card">
-        <img src="Aqaba view.webp" alt="Stunning view of Aqaba and the Red Sea" class="blog-image">
+      </a>
+
+      <!-- ARTICLE 2 -->
+      <a href="blog-post-aqaba-visa-free.html" class="blog-card">
+        <div class="blog-image-container">
+          <img src="Aqaba view.webp" alt="Stunning view of Aqaba and the Red Sea" class="blog-image">
+        </div>
         <div class="blog-content">
           <h2>Aqaba Visa-Free Entry: The Suhaila-Locals Guide to Saving Money</h2>
           <p><em>February 7, 2026</em></p>
           <p>Save $56 on your Jordan trip! Learn how to get the Aqaba visa-free entry (ASEZA visa), eligibility requirements, and why Aqaba is the best gateway to Petra and Wadi Rum...</p>
-          <a href="blog-post-aqaba-visa-free.html">Read More</a>
+          <span class="read-more-btn">Read More</span>
         </div>
-      </article>
-      <article class="blog-card">
-        <img src="Experience2.webp" alt="Spices and local culture in Jordan" class="blog-image">
+      </a>
+
+      <!-- ARTICLE 3 -->
+      <a href="blog-post-jordan-phrases.html" class="blog-card">
+        <div class="blog-image-container">
+          <img src="Experience2.webp" alt="Spices and local culture in Jordan" class="blog-image">
+        </div>
         <div class="blog-content">
           <h2>Essential Arabic Phrases & Etiquette for Your Jordan Trip</h2>
           <p><em>February 5, 2026</em></p>
           <p>Learn the most important Arabic phrases and cultural etiquette for visiting Jordan. From greetings like A-Salaam Alaikum to dining tips, travel like a local...</p>
-          <a href="blog-post-jordan-phrases.html">Read More</a>
+          <span class="read-more-btn">Read More</span>
         </div>
-      </article>
-      <article class="blog-card">
-        <img src="Aqaba view.webp" alt="Panoramic view of Aqaba city and the Red Sea" class="blog-image">
+      </a>
+
+      <!-- ARTICLE 4 -->
+      <a href="blog-post-is-aqaba-worth-visiting.html" class="blog-card">
+        <div class="blog-image-container">
+          <img src="Aqaba view.webp" alt="Panoramic view of Aqaba city and the Red Sea" class="blog-image">
+        </div>
         <div class="blog-content">
           <h2>Is Aqaba Worth Visiting? 7 Reasons Why You Can't Miss It in 2026</h2>
           <p><em>February 5, 2026</em></p>
           <p>Wondering if Aqaba is worth a visit? Discover 7 reasons why this Red Sea gem is a must on your Jordan itinerary, from world-class snorkeling to authentic local food...</p>
-          <a href="blog-post-is-aqaba-worth-visiting.html">Read More</a>
+          <span class="read-more-btn">Read More</span>
         </div>
-      </article>
-      <article class="blog-card">
-        <img src="images/solo-traveler-dining.jpg" alt="Solo traveler enjoying a local meal in Aqaba" class="blog-image">
+      </a>
+
+      <!-- ARTICLE 5 -->
+      <a href="blog-post-solo-female-travel-jordan.html" class="blog-card">
+        <div class="blog-image-container">
+          <img src="images/solo-traveler-dining.jpg" alt="Solo traveler enjoying a local meal in Aqaba" class="blog-image">
+        </div>
         <div class="blog-content">
           <h2>Solo Female Travel Tips in Jordan: A Local's Guide to Safety & Culture</h2>
           <p><em>February 4, 2026 (Updated Feb 5)</em></p>
           <p>Navigate Jordan as a solo female traveler with these essential tips on modesty, safety, and cultural awareness from a local perspective...</p>
-          <a href="blog-post-solo-female-travel-jordan.html">Read More</a>
+          <span class="read-more-btn">Read More</span>
         </div>
-      </article>
+      </a>
 
-      <article class="blog-card">
-        <img src="images/shakira-aqaba.png" alt="Shakira in Aqaba" class="blog-image">
+      <!-- ARTICLE 6 -->
+      <a href="blog-post-shakira-aqaba.html" class="blog-card">
+        <div class="blog-image-container">
+          <img src="images/shakira-aqaba.png" alt="Shakira in Aqaba" class="blog-image">
+        </div>
         <div class="blog-content">
           <h2>Shakira in Aqaba 2026: The Ultimate Local's Guide to the Concert & City</h2>
           <p><em>February 3, 2026 (Updated Feb 5)</em></p>
           <p>Planning to see Shakira in Aqaba on March 28, 2026? Discover local tips for the best food, hidden gems, and how to make the most of your concert trip to Jordan...</p>
-          <a href="blog-post-shakira-aqaba.html">Read More</a>
+          <span class="read-more-btn">Read More</span>
         </div>
-      </article>
+      </a>
 
-      <article class="blog-card">
-        <img src="aqaba-beach-night-local.webp" alt="Aqaba beach at night with local atmosphere" class="blog-image">
+      <!-- ARTICLE 7 -->
+      <a href="blog-post-aqaba-after-dark.html" class="blog-card">
+        <div class="blog-image-container">
+          <img src="aqaba-beach-night-local.webp" alt="Aqaba beach at night with local atmosphere" class="blog-image">
+        </div>
         <div class="blog-content">
           <h2>Aqaba After Dark: A Local's Guide to Nightlife and Evening Charm</h2>
           <p><em>January 29, 2026</em></p>
-          <p>Discover Aqaba's authentic nightlife. From the Corniche promenade to late-night street food, traditional coffee culture, and the magical Old Town Souk...</p>
-          <a href="blog-post-aqaba-nightlife.html">Read More</a>
+          <p>Experience Aqaba after sunset. From lively seaside cafes to the best spots for a moonlit walk, discover how the city comes alive at night...</p>
+          <span class="read-more-btn">Read More</span>
         </div>
-      </article>
-
-      <article class="blog-card">
-        <img src="aqaba-beach-sunset.webp" alt="Beautiful sunset over Aqaba beach" class="blog-image">
-        <div class="blog-content">
-          <h2>The Best Time to Visit Aqaba: A Local's Guide to Seasons, Sun, and Sea</h2>
-          <p><em>January 29, 2026</em></p>
-          <p>Discover the best time to visit Aqaba. Learn about seasonal weather, water temperatures, local events, and when to plan your perfect trip to the Red Sea...</p>
-          <a href="blog-post-best-time-aqaba.html">Read More</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <img src="Experience2.webp" alt="Spices and local culture in Jordan" class="blog-image">
-        <div class="blog-content">
-          <h2>Jordan Pass: The Ultimate Practical Guide for Travelers</h2>
-          <p><em>January 23, 2026</em></p>
-          <p>Everything you need to know about the Jordan Pass in 2026. Learn how to save money on visas and entry fees to Petra, Wadi Rum, and more...</p>
-          <a href="blog-post-jordan-pass.html">Read More</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <img src="tourists-mosque.webp" alt="Tourists visiting a mosque in Jordan" class="blog-image">
-        <div class="blog-content">
-          <h2>Traveling to Jordan During Ramadan 2026: A Local's Guide</h2>
-          <p><em>January 23, 2026</em></p>
-          <p>Planning to visit Jordan during Ramadan 2026? Discover essential tips, traditions, and what to expect during this holy month in Aqaba and beyond...</p>
-          <a href="blog-post-ramadan-2026.html">Read More</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <img src="images/aqaba-food/mansaf.jpg" alt="Traditional Jordanian Mansaf" class="blog-image">
-        <div class="blog-content">
-          <h2>The Best Food Tips in Aqaba: A Local's Guide to Authentic Flavors</h2>
-          <p><em>January 18, 2026</em></p>
-          <p>Explore the best food in Aqaba with our local guide. From the best falafel and kenafeh to traditional Mansaf and fresh seafood at the fish market...</p>
-          <a href="blog-post-aqaba-food-tips.html">Read More</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <img src="Group.webp" alt="A group of people enjoying street food in a local market in Aqaba" class="blog-image">
-        <div class="blog-content">
-          <h2>The Ultimate Aqaba Street Food Guide: 5 Must-Try Local Secrets</h2>
-          <p><em>January 16, 2026</em></p>
-          <p>Discover the best street food in Aqaba with this local's guide. Find the best shawarma, manakish, and Kunafa, and learn about the local spice and fish markets...</p>
-          <a href="blog-post-street-food.html">Read More</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <img src="Experience2.webp" alt="Spices in Aqaba Market" class="blog-image">
-        <div class="blog-content">
-          <h2>The Scents of the Souk: 5 Spices You Must Buy in Aqaba</h2>
-          <p><em>February 20, 2026</em></p>
-          <p>Discover the essential spices of Jordanian cuisine found in Aqaba's souks, from tangy Sumac to the aromatic Mansaf blend...</p>
-          <a href="blog-post-spices.html">Read More</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <img src="Aqaba view.webp" alt="Panoramic view of Aqaba" class="blog-image">
-        <div class="blog-content">
-          <h2>Discovering Aqaba: History, Culture, and Ayla</h2>
-          <p><em>January 15, 2026</em></p>
-          <p>Explore the rich history of Aqaba, from the ancient Islamic city of Ayla to its unique coastal culture, traditions, and the Mamluk Fort...</p>
-          <a href="blog-post.html">Read More</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <img src="Sayadieh.webp" alt="Traditional Aqaba Fish and Rice Dish Sayadieh" class="blog-image">
-        <div class="blog-content">
-          <h2>Sayadieh: The Signature Seafood Dish of Aqaba</h2>
-          <p><em>December 8, 2025</em></p>
-          <p>Discover Sayadieh, the traditional fish and rice dish that is the culinary heart of Aqaba. A local's guide to this flavorful Red Sea delicacy...</p>
-          <a href="sayadieh-traditional-food-aqaba.html">Read More</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <img src="Houh1.webp" alt="Traditional Aqaba Dessert Al-Hooh" class="blog-image">
-        <div class="blog-content">
-          <h2>The Sweet Secret of Aqaba: Discovering Al-Hooh Dessert</h2>
-          <p><em>December 8, 2025</em></p>
-          <p>Discover Al-Hooh, Aqaba's traditional layered dessert made with nuts, honey, and local butter. A true taste of local heritage...</p>
-          <a href="blog-post-2.html">Read More</a>
-        </div>
-      </article>
-      <article class="blog-card">
-        <img src="Group.webp" alt="Aqaba Old Town" class="blog-image">
-        <div class="blog-content">
-          <h2>The Ultimate Local's Guide to Things to Do in Aqaba</h2>
-          <p><em>November 25, 2025</em></p>
-          <p>Discover the real Aqaba with this local's guide to non-touristy things to do, including the best souks, street food, and hidden gems...</p>
-          <a href="blog-post-1.html">Read More</a>
-        </div>
-      </article>
+      </a>
     </section>
   </main>
 
   <footer>
     <p><a href="https://share.google/rdDzzUrFBVNFxzx0y" target="_blank" rel="noopener">Review Us on Google</a></p>
-        <p>&copy; 2024 Aqaba local experiences. All rights reserved.</p>
+    <p>&copy; 2026 Aqaba local experiences. All rights reserved.</p>
   </footer>
 
   <script>
@@ -402,54 +336,6 @@
     menuOverlay.addEventListener('click', () => {
       navbarLinks.classList.remove('open');
       menuOverlay.classList.remove('active');
-    });
-
-    const navbar = document.querySelector('.navbar');
-    let lastScrollPosition = 0;
-    window.addEventListener('scroll', () => {
-      const currentScrollPosition = window.scrollY;
-      navbar.style.top = currentScrollPosition > lastScrollPosition ? '-60px' : '0';
-      lastScrollPosition = currentScrollPosition;
-    });
-
-    const currentPath = window.location.pathname.split("/").pop();
-    const navLinks = document.querySelectorAll('.navbar a');
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      link.removeAttribute('aria-current');
-      if (link.getAttribute('href') === currentPath) {
-        link.classList.add('active');
-        link.setAttribute('aria-current', 'page');
-      }
-    });
-  </script>
-
-  <script>
-    // toggle dropdown on small screens
-    document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        if (window.innerWidth <= 800) {
-          e.preventDefault();
-          const dd = this.closest('.dropdown');
-          // close other open dropdowns first
-          document.querySelectorAll('.navbar .dropdown.open').forEach(o => { if (o !== dd) o.classList.remove('open'); });
-          dd.classList.toggle('open');
-        }
-      });
-    });
-
-    // click outside to close mobile dropdown
-    document.addEventListener('click', (e) => {
-      if (window.innerWidth <= 800) {
-        if (!e.target.closest('.navbar')) {
-          document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
-        }
-      }
-    });
-
-    // optional: close on resize from mobile -> desktop
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 800) document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
     });
   </script>
 </body>
