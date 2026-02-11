@@ -91,7 +91,7 @@
       transform: translateY(40px);
       animation: fadeInUp 1.2s 0.7s ease-out forwards;
       height: 100%;
-      text-decoration: none; /* Make card clickable and remove link styling */
+      text-decoration: none;
       color: inherit;
     }
     .blog-card:hover {
@@ -102,15 +102,14 @@
       width: 100%;
       height: 250px;
       background-color: #f9f9f9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: block; /* Changed from flex to block for standard img behavior */
       overflow: hidden;
     }
     .blog-image {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Shows full image */
+      display: block;
     }
     .blog-content {
       padding: 1.5em;
@@ -282,7 +281,7 @@
       <!-- ARTICLE 5 -->
       <a href="blog-post-solo-female-travel-jordan.html" class="blog-card">
         <div class="blog-image-container">
-          <img src="images/solo-traveler-dining.jpg" alt="Solo traveler enjoying a local meal in Aqaba" class="blog-image">
+          <img src="Experience1.webp" alt="Solo traveler enjoying a local meal in Aqaba" class="blog-image">
         </div>
         <div class="blog-content">
           <h2>Solo Female Travel Tips in Jordan: A Local's Guide to Safety & Culture</h2>
@@ -295,7 +294,7 @@
       <!-- ARTICLE 6 -->
       <a href="blog-post-shakira-aqaba.html" class="blog-card">
         <div class="blog-image-container">
-          <img src="images/shakira-aqaba.png" alt="Shakira in Aqaba" class="blog-image">
+          <img src="Group.webp" alt="Shakira in Aqaba" class="blog-image">
         </div>
         <div class="blog-content">
           <h2>Shakira in Aqaba 2026: The Ultimate Local's Guide to the Concert & City</h2>
