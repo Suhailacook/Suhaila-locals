@@ -20,8 +20,9 @@
   <link rel="stylesheet" href="style.css">
   
   <style>
+    /* Enhanced Booking Container */
     .booking-container {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 4rem auto;
       padding: 2rem;
       background: white;
@@ -46,6 +47,7 @@
       font-size: 1.1rem;
     }
 
+    /* Dish Selection Cards with Enhanced Styling */
     .dish-selection {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -56,21 +58,25 @@
     .dish-card {
       border: 2px solid #eee;
       border-radius: 12px;
-      padding: 1.5rem;
+      padding: 2rem;
       cursor: pointer;
       transition: all 0.3s ease;
       text-align: center;
       position: relative;
+      background: #fafafa;
     }
 
     .dish-card:hover {
       border-color: #d4a574;
       transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(212, 165, 116, 0.15);
+      background: #fff;
     }
 
     .dish-card.selected {
       border-color: #d4a574;
       background-color: rgba(212, 165, 116, 0.05);
+      box-shadow: 0 8px 24px rgba(212, 165, 116, 0.2);
     }
 
     .dish-card.selected::after {
@@ -80,30 +86,167 @@
       right: 10px;
       background: #d4a574;
       color: white;
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
+      font-size: 1.2rem;
     }
 
     .dish-card h3 {
       margin-bottom: 0.5rem;
       color: #2c3e50;
+      font-size: 1.5rem;
+      font-family: 'Playfair Display', serif;
     }
 
     .dish-card p {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    /* Price Display in Card */
+    .dish-price {
+      display: inline-block;
+      background: #d4a574;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Ingredients Section */
+    .ingredients-section {
+      display: none;
+      background: #f9f7f4;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid #d4a574;
+      animation: slideDown 0.4s ease;
+    }
+
+    .ingredients-section.show {
+      display: block;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .ingredients-section h3 {
+      color: #2c3e50;
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .ingredients-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .ingredient-item {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #e0d5cc;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .ingredient-item::before {
+      content: '✓';
+      color: #d4a574;
+      font-weight: bold;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .ingredient-item span {
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    .ingredients-note {
+      background: white;
+      border-left: 3px solid #d4a574;
+      padding: 1rem;
+      margin-top: 1.5rem;
+      border-radius: 6px;
       font-size: 0.9rem;
       color: #666;
     }
 
+    /* Pricing Breakdown */
+    .pricing-breakdown {
+      display: none;
+      background: #f0f8f5;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid #d4e8e0;
+    }
+
+    .pricing-breakdown.show {
+      display: block;
+    }
+
+    .pricing-breakdown h4 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .pricing-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #d4e8e0;
+      font-size: 0.95rem;
+    }
+
+    .pricing-row:last-child {
+      border-bottom: none;
+      padding-top: 1rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #d4a574;
+    }
+
+    .pricing-row span:first-child {
+      color: #666;
+    }
+
+    .pricing-row span:last-child {
+      color: #2c3e50;
+    }
+
+    /* Booking Form Section */
     .booking-form-section {
       display: none;
-      border-top: 1px solid #eee;
+      border-top: 2px solid #eee;
       padding-top: 2rem;
       animation: fadeIn 0.5s ease;
+    }
+
+    .booking-form-section.show {
+      display: block;
     }
 
     @keyframes fadeIn {
@@ -141,6 +284,7 @@
       border-radius: 6px;
       font-family: 'Inter', sans-serif;
       font-size: 1rem;
+      transition: border-color 0.3s ease;
     }
 
     .form-group input:focus,
@@ -151,6 +295,12 @@
       box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
     }
 
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    /* Submit Button */
     .btn-submit {
       width: 100%;
       padding: 1rem;
@@ -167,29 +317,122 @@
 
     .btn-submit:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+      box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
     }
 
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    /* Success Message */
     .success-message {
       display: none;
       text-align: center;
       padding: 3rem;
       background: #f0fff4;
       border-radius: 12px;
-      border: 1px solid #c6f6d5;
+      border: 2px solid #c6f6d5;
       color: #22543d;
+    }
+
+    .success-message.show {
+      display: block;
     }
 
     .success-message h3 {
       margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #22543d;
+    }
+
+    .success-message p {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .success-message .btn-submit {
+      width: auto;
+      padding: 0.75rem 2rem;
+      margin-top: 2rem;
+      display: inline-block;
+    }
+
+    /* What's Included Section */
+    .whats-included {
+      background: #fff8f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid #f0e6d8;
+    }
+
+    .whats-included h4 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .included-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .included-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .included-item::before {
+      content: '•';
+      color: #d4a574;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .booking-container {
+        padding: 1.5rem;
+        margin: 2rem 1rem;
+      }
+
+      .booking-header h2 {
+        font-size: 1.8rem;
+      }
+
+      .dish-selection, .form-grid, .ingredients-grid, .included-list {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+
+      .ingredient-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .ingredient-item::before {
+        order: -1;
+      }
     }
 
     @media (max-width: 600px) {
-      .dish-selection, .form-grid {
-        grid-template-columns: 1fr;
+      .booking-header h2 {
+        font-size: 1.5rem;
       }
-      .form-group.full-width {
-        grid-column: span 1;
+
+      .dish-card {
+        padding: 1.5rem;
+      }
+
+      .dish-card h3 {
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -212,7 +455,7 @@
           <a href="glassboat.html" role="menuitem">Aqaba Glass Boat</a>
           <a href="dinningexperience.html" role="menuitem">Dining Experience</a>
           <a href="iftar-experience-aqaba.html" role="menuitem">Ramadan Iftar</a>
-</div>
+        </div>
       </div>
       <a href="online-booking.html">Online Experience</a>
       <a href="Reservation.html">Reservations</a>
@@ -228,31 +471,86 @@
       <img src="cooking-class-aqaba.webp" alt="Book Online Cooking Class">
       <div class="hero-overlay">
         <h1>Book Your Online Cooking Class</h1>
+        <p>Learn authentic Jordanian cuisine from the comfort of your home</p>
       </div>
     </section>
 
     <div class="booking-container">
       <div id="booking-flow">
         <div class="booking-header">
-          <h2>What would you like to cook?</h2>
-          <p>Select your preferred dish to start your booking</p>
+          <h2>Choose Your Culinary Experience</h2>
+          <p>Select a dish to explore ingredients, pricing, and book your live class</p>
         </div>
 
+        <!-- Dish Selection Cards -->
         <div class="dish-selection">
-          <div class="dish-card" onclick="selectDish('Traditional Jordanian Maqluba')">
-            <h3>Maqluba</h3>
+          <!-- Maqluba Card -->
+          <div class="dish-card" onclick="selectDish('Traditional Jordanian Maqluba', this)">
+            <h3>🍚 Maqluba</h3>
             <p>The famous "upside-down" rice dish with chicken and vegetables.</p>
+            <div class="dish-price">$20 USD</div>
           </div>
-          <div class="dish-card" onclick="selectDish('Hummus & Falafel Workshop')">
-            <h3>Hummus & Falafel</h3>
+
+          <!-- Hummus & Falafel Card -->
+          <div class="dish-card" onclick="selectDish('Hummus & Falafel Workshop', this)">
+            <h3>🥙 Hummus & Falafel</h3>
             <p>Master the secrets of creamy hummus and crispy falafel from scratch.</p>
+            <div class="dish-price">$20 USD</div>
           </div>
         </div>
 
+        <!-- Ingredients Section -->
+        <div id="ingredients-section" class="ingredients-section">
+          <h3>📋 What You'll Need</h3>
+          <div class="ingredients-grid" id="ingredients-grid"></div>
+          <div class="ingredients-note">
+            <strong>📌 Note:</strong> A detailed ingredient list and prep instructions will be sent 48 hours before your class. All ingredients are commonly available in regular grocery stores.
+          </div>
+        </div>
+
+        <!-- Pricing Breakdown -->
+        <div id="pricing-section" class="pricing-breakdown">
+          <h4>💰 Pricing Breakdown</h4>
+          <div class="pricing-row">
+            <span>Per camera/connection</span>
+            <span>$20.00</span>
+          </div>
+          <div class="pricing-row">
+            <span>Perfect for individuals or households cooking together</span>
+            <span>✓</span>
+          </div>
+          <div class="pricing-row">
+            <span>2-2.5 hour live interactive session</span>
+            <span>✓</span>
+          </div>
+          <div class="pricing-row">
+            <span>Live Q&A with Agareed</span>
+            <span>✓</span>
+          </div>
+          <div class="pricing-row">
+            <span><strong>Total</strong></span>
+            <span><strong>$20.00</strong></span>
+          </div>
+        </div>
+
+        <!-- What's Included -->
+        <div id="whats-included" class="whats-included">
+          <h4>✨ What's Included</h4>
+          <div class="included-list">
+            <div class="included-item">Live Zoom session with expert Agareed</div>
+            <div class="included-item">Step-by-step guidance for each dish</div>
+            <div class="included-item">Ingredient list sent 48 hours before</div>
+            <div class="included-item">Interactive Q&A session</div>
+            <div class="included-item">Cultural insights and stories</div>
+            <div class="included-item">Zoom recording link (if available)</div>
+          </div>
+        </div>
+
+        <!-- Booking Form Section -->
         <div id="form-section" class="booking-form-section">
           <div class="booking-header">
             <h2 id="selected-dish-title">Complete Your Booking</h2>
-            <p>Please provide your details and preferred date</p>
+            <p>Provide your details and preferred date to secure your spot</p>
           </div>
 
           <form id="bookingForm" onsubmit="submitBooking(event)">
@@ -275,25 +573,29 @@
               </div>
 
               <div class="form-group">
-                <label for="guestCount">Participants *</label>
+                <label for="guestCount">Number of Participants *</label>
                 <input type="number" id="guestCount" name="participants" min="1" max="10" value="1" required>
               </div>
 
               <div class="form-group full-width">
                 <label for="dietaryRestrictions">Dietary Restrictions / Special Notes</label>
-                <textarea id="dietaryRestrictions" name="dietary_restrictions" placeholder="Any allergies or special requests?"></textarea>
+                <textarea id="dietaryRestrictions" name="dietary_restrictions" placeholder="Any allergies or special requests? We'll do our best to accommodate."></textarea>
               </div>
             </div>
 
-            <button type="submit" class="btn-submit">Request Booking</button>
+            <button type="submit" class="btn-submit">Confirm Booking Request</button>
           </form>
         </div>
       </div>
 
+      <!-- Success Message -->
       <div id="success-message" class="success-message">
-        <h3>Booking Request Sent!</h3>
-        <p>Thank you for your interest. We have received your request for the <strong id="confirmed-dish"></strong> class. We will contact you shortly at <strong id="confirmed-email"></strong> to confirm the date and provide the Zoom link.</p>
-        <button class="btn-submit" style="width: auto; padding: 0.75rem 2rem; margin-top: 2rem;" onclick="location.reload()">Book Another Class</button>
+        <h3>✓ Booking Request Sent!</h3>
+        <p>Thank you for your interest in our online cooking class!</p>
+        <p>We have received your request for the <strong id="confirmed-dish"></strong> class.</p>
+        <p>We will contact you shortly at <strong id="confirmed-email"></strong> to confirm the date and provide the Zoom link.</p>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #666;">Spaces are limited to ensure an intimate and interactive experience.</p>
+        <button class="btn-submit" onclick="location.reload()">Book Another Class</button>
       </div>
     </div>
   </main>
@@ -304,21 +606,67 @@
   </footer>
 
   <script>
-    function selectDish(dishName) {
+    // Ingredient data for each dish
+    const dishesData = {
+      'Traditional Jordanian Maqluba': {
+        ingredients: [
+          'Chicken (1.5 kg)',
+          'Rice (2 cups)',
+          'Eggplant (2 medium)',
+          'Cauliflower (1 head)',
+          'Potatoes (3 medium)',
+          'Onions (2 large)',
+          'Garlic (4 cloves)',
+          'Chicken broth (4 cups)',
+          'Olive oil',
+          'Salt & pepper',
+          'Spices (cumin, cinnamon, allspice)'
+        ]
+      },
+      'Hummus & Falafel Workshop': {
+        ingredients: [
+          'Chickpeas (2 cans)',
+          'Tahini (1/2 cup)',
+          'Lemon juice (3 lemons)',
+          'Garlic (4 cloves)',
+          'Parsley (fresh)',
+          'Cilantro (fresh)',
+          'Cumin (1 tsp)',
+          'Paprika',
+          'Olive oil',
+          'Salt & pepper',
+          'Water',
+          'Oil for frying'
+        ]
+      }
+    };
+
+    function selectDish(dishName, element) {
       // Update UI
       document.querySelectorAll('.dish-card').forEach(card => {
         card.classList.remove('selected');
-        if (card.querySelector('h3').innerText.includes(dishName.split(' ')[0])) {
-          card.classList.add('selected');
-        }
       });
+      element.classList.add('selected');
 
       // Set hidden input
       document.getElementById('dishInput').value = dishName;
       document.getElementById('selected-dish-title').innerText = 'Booking: ' + dishName;
       
-      // Show form
-      document.getElementById('form-section').style.display = 'block';
+      // Show ingredients
+      const ingredientsSection = document.getElementById('ingredients-section');
+      const ingredientsGrid = document.getElementById('ingredients-grid');
+      const ingredients = dishesData[dishName].ingredients;
+      
+      ingredientsGrid.innerHTML = ingredients.map(ing => 
+        `<div class="ingredient-item"><span>${ing}</span></div>`
+      ).join('');
+      
+      ingredientsSection.classList.add('show');
+      document.getElementById('pricing-section').classList.add('show');
+      document.getElementById('whats-included').classList.add('show');
+      document.getElementById('form-section').classList.add('show');
+      
+      // Scroll to form
       document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
     }
 
@@ -350,7 +698,8 @@
           document.getElementById('booking-flow').style.display = 'none';
           document.getElementById('confirmed-dish').innerText = data.dish;
           document.getElementById('confirmed-email').innerText = data.email;
-          document.getElementById('success-message').style.display = 'block';
+          document.getElementById('success-message').classList.add('show');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
           alert('There was an error submitting your request. Please try again.');
         }
@@ -387,6 +736,37 @@
       }
       lastScrollY = window.scrollY;
     });
+
+    // Dropdown toggle on small screens
+    document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        if (window.innerWidth <= 800) {
+          e.preventDefault();
+          const dd = this.closest('.dropdown');
+          document.querySelectorAll('.navbar .dropdown.open').forEach(o => { 
+            if (o !== dd) o.classList.remove('open'); 
+          });
+          dd.classList.toggle('open');
+        }
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 800) {
+        if (!e.target.closest('.navbar')) {
+          document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
+        }
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 800) {
+        document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
+      }
+    });
+
+    // Set minimum date to today
+    document.getElementById('bookingDate').min = new Date().toISOString().split('T')[0];
   </script>
 </body>
 </html>
