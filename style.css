@@ -230,3 +230,60 @@
 .product-info p:nth-of-type(2) a {
     display: inline-block;
 }
+
+/* Blog Card Enhancements */
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 450px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.blog-card .gallery-img {
+    height: 220px; /* Fixed height for the image part */
+    width: 100%;
+    object-fit: cover;
+}
+
+.blog-card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.blog-card-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.blog-card-content h3 a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.blog-card-content h3 a:hover {
+    color: var(--color-secondary);
+}
+
+.blog-card-content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.blog-card-content a {
+    font-weight: 600;
+    color: var(--color-secondary);
+}
