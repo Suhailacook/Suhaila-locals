@@ -1,20 +1,20 @@
 
 :root {
-    --color-primary: #D4AF37;
-    --color-secondary: #E76F51;
-    --color-accent: #00798C;
-    --color-accent-dark: #005f6e;
-    --text-primary: #1A1A1A;
+    --color-primary: #008080; /* Teal for professional accent */
+    --color-secondary: #E76F51; /* Keep for potential contrast */
+    --color-accent: #008080; /* Teal */
+    --color-accent-dark: #005f6e; /* Darker Teal */
+    --text-primary: #1A1A1A; /* Charcoal Black */
     --text-muted: #555555;
-    --bg-page: #F9FAFB;
+    --bg-page: #FFFFFF; /* Clean White */
     --bg-surface: #FFFFFF;
     --border-color: #E5E7EB;
-    --font-heading: 'Playfair Display', serif;
+    --font-heading: 'Work Sans', sans-serif;
     --font-body: 'Inter', sans-serif;
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
-    --shadow-glow: 0 0 20px rgba(212, 175, 55, 0.3);
+    --shadow-glow: 0 0 20px rgba(0, 128, 128, 0.3);
     --radius-sm: 8px;
     --radius-md: 16px;
     --radius-lg: 24px;
@@ -42,12 +42,7 @@ body {
     overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     line-height: 1.2;
     color: var(--text-primary);
@@ -55,19 +50,24 @@ h6 {
 }
 
 h1 {
-    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-size: clamp(3rem, 6vw, 4rem); /* Larger & Bolder */
+    font-weight: 700;
 }
 
 h2 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-size: clamp(2rem, 4vw, 2.5rem); /* Semi-bold */
+    font-weight: 600;
 }
 
 h3 {
     font-size: 1.5rem;
+    font-weight: 600;
 }
+
 
 p {
     margin-bottom: 1.2rem;
+    font-size: 1.1rem; /* Slightly larger body text */
 }
 
 a {
@@ -77,7 +77,7 @@ a {
 }
 
 a:hover {
-    color: var(--color-secondary);
+    color: var(--color-accent-dark);
 }
 
 img {
@@ -91,10 +91,10 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 28px;
+    padding: 14px 32px; /* More padding */
     border-radius: 50px;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.1rem; /* Larger font size */
     letter-spacing: 0.5px;
     cursor: pointer;
     transition: all var(--transition);
@@ -104,16 +104,16 @@ img {
 
 .button-cta,
 .button-primary {
-    background: var(--color-secondary);
+    background: var(--color-accent); /* Teal */
     color: #fff !important;
-    box-shadow: 0 4px 15px rgba(231, 111, 81, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 128, 128, 0.4);
 }
 
 .button-cta:hover,
 .button-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(231, 111, 81, 0.5);
-    background-color: #d65d3f;
+    box-shadow: 0 8px 25px rgba(0, 128, 128, 0.5);
+    background-color: var(--color-accent-dark);
 }
 
 .button-ghost {
@@ -131,13 +131,13 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to right, #0F2027, #203A43, #2C5364);
+    background: #fff; /* White background */
     padding: 0 2rem;
     height: 80px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-sm); /* Subtle shadow */
     transition: top 0.3s;
 }
 
@@ -167,7 +167,7 @@ img {
 
 .navbar-links a,
 .dropbtn {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-primary); /* Dark text */
     font-weight: 500;
     padding: 8px 16px;
     border-radius: 6px;
@@ -178,15 +178,15 @@ img {
 .navbar-links a:hover,
 .navbar-links a.active,
 .dropbtn:hover {
-    color: var(--color-primary);
-    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-accent);
+    background: rgba(0, 128, 128, 0.05);
 }
 
 .hamburger {
     display: none;
     background: none;
     border: none;
-    color: #fff;
+    color: var(--text-primary); /* Dark icon */
     font-size: 1.8rem;
     cursor: pointer;
 }
@@ -223,9 +223,22 @@ img {
 
 .dropdown-content a:hover {
     background-color: #f3f4f6;
-    color: var(--color-secondary);
+    color: var(--color-accent);
 }
 
+.hero-section {
+    position: relative;
+    height: 90vh; /* Shorter hero */
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Aqaba view.webp') no-repeat center center/cover;
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+}
+/* ... Keep the rest of the original CSS ... */
 .reservation-hero {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('aqaba-beach-sunset.jpg') no-repeat center center/cover;
     color: #fff;
