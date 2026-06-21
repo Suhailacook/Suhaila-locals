@@ -1,3 +1,3 @@
 User-agent: *
-Allow: /Suhaila-locals/
+Allow: /
 Sitemap: https://suhailacook.github.io/Suhaila-locals/sitemap.xml
