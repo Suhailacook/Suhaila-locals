@@ -18,16 +18,28 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Authentic Jordanian Cooking Class",
+    "@type": "Event",
+    "name": "Authentic Jordanian Cooking Class in Aqaba",
     "description": "Join our hands-on cooking class in Aqaba and learn to prepare traditional Jordanian dishes like Mansaf and Maqluba in a local home kitchen.",
     "url": "https://suhailacook.github.io/Suhaila-locals/cookingclass.html",
+    "startDate": "2025-07-01T10:00",
+    "endDate": "2025-07-01T13:00",
+    "duration": "PT3H",
     "image": [
       "https://suhailacook.github.io/Suhaila-locals/cooking-class-aqaba.webp"
     ],
-    "brand": {
-        "@type": "Brand",
-        "name": "Aqaba local experiences"
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Aqaba local experiences Kitchen",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Deir Yaseen street",
+        "addressLocality": "Aqaba",
+        "postalCode": "77110",
+        "addressCountry": "JO"
+      }
     },
     "offers": {
       "@type": "Offer",
@@ -36,6 +48,16 @@
       "priceCurrency": "JOD",
       "availability": "https://schema.org/InStock"
     },
+    "performer": {
+      "@type": "Person",
+      "name": "Agareed",
+      "description": "Culinary matriarch with decades of experience preparing Jordanian feasts"
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Aqaba local experiences",
+      "url": "https://suhailacook.github.io/Suhaila-locals/"
+    },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
@@ -43,6 +65,7 @@
       "bestRating": "5",
       "worstRating": "1"
     },
+    "maximumAttendeeCapacity": "12",
     "review": [
       {
         "@type": "Review",
@@ -97,7 +120,7 @@
 
   <!-- 1. Hero Section -->
   <section class="experience-hero">
-    <img src="cooking-class-aqaba.webp" alt="A vibrant, top-down view of a Jordanian meal being prepared." />
+    <img src="cooking-class-aqaba.webp" alt="A vibrant, top-down view of a Jordanian meal being prepared.">
     <div class="hero-overlay">
       <h1>Authentic Jordanian Cooking Class in Aqaba</h1>
     </div>
@@ -112,7 +135,7 @@
         <p>Step into our family kitchen in the heart of Aqaba, where generations of traditional recipes come to life. This immersive experience is led by <b>Agareed</b>—our culinary matriarch—who’s been preparing Jordanian feasts since she was twelve. With laughter, stories, and the irresistible aroma of spices filling the air, you’ll feel like part of the family from the moment you arrive. Discover the secrets behind Jordan's national dishes and create unforgettable memories.</p>
         
         <div class="experience-image-container" style="margin-top: 20px; text-align: center;">
-          <img src="hospitality-dates-cooking-class.jpg" alt="A warm welcome with traditional Jordanian coffee and dates" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />
+          <img src="hospitality-dates-cooking-class.jpg" alt="A warm welcome with traditional Jordanian coffee and dates" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
           <p style="font-style: italic; color: #666; margin-top: 10px;">A warm welcome awaits you with traditional coffee and dates.</p>
         </div>
       </section>
@@ -122,23 +145,23 @@
         <h2>Quick Facts</h2>
         <table class="quick-facts-table">
           <tr>
-            <th><i class="fas fa-clock"></i> Duration</th>
+            <th>Duration</th>
             <td>3 Hours</td>
           </tr>
           <tr>
-            <th><i class="fas fa-users"></i> Group Size</th>
+            <th>Group Size</th>
             <td>Small group sizes ensure personalized attention.</td>
           </tr>
           <tr>
-            <th><i class="fas fa-globe"></i> Language</th>
+            <th>Language</th>
             <td>English</td>
           </tr>
           <tr>
-            <th><i class="fas fa-concierge-bell"></i> Inclusions</th>
+            <th>Inclusions</th>
             <td>All fresh, local ingredients, professional cooking equipment, and a delightful shared meal.</td>
           </tr>
            <tr>
-            <th><i class="fas fa-map-marker-alt"></i> Location</th>
+            <th>Location</th>
             <td>Traditional home kitchen in Aqaba.</td>
           </tr>
         </table>
@@ -148,10 +171,10 @@
       <section class="experience-section">
         <h2>What You'll Learn</h2>
         <ul class="itinerary-list">
-            <li><strong>Mansaf:</strong> Jordan's national dish, a savory lamb and rice dish cooked in fermented dried yogurt sauce.</li>
-            <li><strong>Maqluba:</strong> The famous "upside-down" dish with layers of meat, fried vegetables, and rice.</li>
-            <li><strong>Fresh Tabbouleh:</strong> A vibrant and refreshing parsley and bulgur salad.</li>
-            <li><strong>Authentic Appetizers:</strong> Learn to prepare traditional mezze like hummus or mutabal.</li>
+            <li>**Mansaf:** Jordan's national dish, a savory lamb and rice dish cooked in fermented dried yogurt sauce.</li>
+            <li>**Maqluba:** The famous "upside-down" dish with layers of meat, fried vegetables, and rice.</li>
+            <li>**Fresh Tabbouleh:** A vibrant and refreshing parsley and bulgur salad.</li>
+            <li>**Authentic Appetizers:** Learn to prepare traditional mezze like hummus or mutabal.</li>
         </ul>
       </section>
 
@@ -160,7 +183,7 @@
         <h2>Meet Your Host</h2>
         <div class="host-profile">
           <!-- Using a generic placeholder as the specific image path 'images/chef-maria.jpg' might not exist -->
-          <img src="Family.webp" alt="Agareed, the culinary matriarch." />
+          <img src="Family.webp" alt="Agareed, the culinary matriarch.">
           <div>
             <h3>Agareed</h3>
             <p>Agareed is our culinary matriarch, who has been preparing Jordanian feasts for decades. Her classes are known for their warm, engaging atmosphere and authentic techniques.</p>
@@ -172,10 +195,10 @@
 	      <section class="experience-section">
 	        <h2>Gallery</h2>
 	        <div class="gallery">
-	          <img src="sayadieh-aqaba-dish.jpg" alt="Traditional Sayadieh dish prepared in class." />
-	          <img src="cookingclass1.webp" alt="Guests preparing Mansaf." />
-	          <img src="cookingclass2.webp" alt="A family-style meal." />
-	          <img src="cookingclass3.webp" alt="An instructor demonstrating how to make Maqluba." />
+	          <img src="sayadieh-aqaba-dish.jpg" alt="Traditional Sayadieh dish prepared in class.">
+	          <img src="cookingclass1.webp" alt="Guests preparing Mansaf.">
+	          <img src="cookingclass2.webp" alt="A family-style meal.">
+	          <img src="cookingclass3.webp" alt="An instructor demonstrating how to make Maqluba.">
 	        </div>
 	      </section>
 
@@ -210,7 +233,75 @@
         <p>&copy; 2025 Aqaba local experiences | Aqaba, Jordan. All rights reserved.</p>
   </footer>
 
-<script src="js/main.js"></script>
+<script>
+  // Mobile menu functionality
+  const hamburger = document.getElementById('hamburger');
+  const navbarLinks = document.getElementById('navbarLinks');
+  const menuOverlay = document.getElementById('menuOverlay');
+  hamburger?.addEventListener('click', function () {
+    navbarLinks.classList.toggle('open');
+    menuOverlay.classList.toggle('active');
+  });
+  menuOverlay?.addEventListener('click', function () {
+    navbarLinks.classList.remove('open');
+    menuOverlay.classList.remove('active');
+  });
+
+  // Navbar hide/show on scroll
+  document.addEventListener('DOMContentLoaded', function () {
+    let lastScrollY = window.scrollY;
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 60) {
+        navbar.style.top = '-80px';
+      } else {
+        navbar.style.top = '0';
+      }
+      lastScrollY = window.scrollY;
+    });
+  });
+
+  // Highlight active nav link
+  const currentPath = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll('.navbar a');
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    link.removeAttribute('aria-current');
+    if (link.getAttribute('href') === currentPath || (currentPath === "" && link.getAttribute('href') === "index.html")) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+</script>
+
+<script>
+  // toggle dropdown on small screens
+  document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      if (window.innerWidth <= 800) {
+        e.preventDefault();
+        const dd = this.closest('.dropdown');
+        // close other open dropdowns first
+        document.querySelectorAll('.navbar .dropdown.open').forEach(o => { if (o !== dd) o.classList.remove('open'); });
+        dd.classList.toggle('open');
+      }
+    });
+  });
+
+  // click outside to close mobile dropdown
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 800) {
+      if (!e.target.closest('.navbar')) {
+        document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
+      }
+    }
+  });
+
+  // optional: close on resize from mobile -> desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 800) document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
+  });
+</script>
 
 </body>
 </html>
