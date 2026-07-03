@@ -1,23 +1,44 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Experiences in Aqaba | Aqaba local experiences</title>
-    <meta name="description" content="Explore all local experiences offered by Aqaba local experiences, including cooking classes, walking tours, glass boat trips, and dining experiences in Aqaba.">
-    <meta name="keywords" content="local experiences, Aqaba experiences, cooking class, walking tour, glass boat, dining experience, Aqaba local experiences">
-    <meta name="author" content="Aqaba local experiences">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/local-experiences.html">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aqaba Walking Tour: Food, Culture & History | Aqaba local experiences</title>
+  <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/walkingtour.html" />
+  <meta name="description" content="Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history and culture with a local expert. Book your immersive experience now!" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "name": "Aqaba Walking Food Tour",
+    "description": "Guided walking food & culture tour in Aqaba — sample local dishes, visit markets and historic sites.",
+    "image": "https://suhailacook.github.io/Suhaila-locals/aqaba-walking-tour.jpg",
+    "url": "https://suhailacook.github.io/Suhaila-locals/walkingtour.html",
+    "offers": {
+      "@type": "Offer",
+      "price": "20",
+      "priceCurrency": "JOD",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="scroll-progress"></div>
     <div class="menu-overlay" id="menuOverlay"></div>
-    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+<nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <div class="brand"><a href="index.html">Aqaba local experiences</a></div>
   <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
   <div class="navbar-links" id="navbarLinks">
     <a href="index.html">Home</a>
@@ -25,7 +46,6 @@
     <div class="dropdown">
       <button class="dropbtn" aria-expanded="false" aria-controls="experiences-menu">Experiences</button>
       <div id="experiences-menu" class="dropdown-content" role="menu">
-        <a href="local-experiences.html" role="menuitem" class="active">All Experiences</a>
         <a href="cookingclass.html" role="menuitem">Cooking Class</a>
         <a href="walkingtour.html" role="menuitem">Walking Tour</a>
         <a href="glassboat.html" role="menuitem">Aqaba Glass Boat</a>
@@ -40,160 +60,116 @@
 
     <a class="skip-link" href="#main-content">Skip to content</a>
 <main id="main-content">
-    <!-- Hero Section for Experiences Page -->
-    <section class="hero-section">
-        <h1>All Our Local Experiences</h1>
-        <p class="hero-subtitle">Find the perfect adventure in Aqaba, from culinary journeys to cultural tours.</p>
-        <div class="hero-inner">
-          <p class="hero-cta">
-            <a href="Reservation.html" class="button button-primary" title="Book Your Experience Now">Book Now</a>
-          </p>
-        </div>
-    </section>
 
-    <!-- Modern Image Gallery (Moved from index.html) -->
-    <section class="gallery-section">
-        <h2 class="gallery-title">Our Experiences Gallery</h2>
-        <div class="gallery-grid">
-            <!-- Gallery Item 1 -->
-            <div class="gallery-item">
-                <img src="cooking-class-aqaba.jpg" data-large-src="images/cooking-class-1600.jpg" alt="Cooking class in Aqaba" class="gallery-img" loading="lazy">
-                <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling )">
-                    <span class="overlay-text">View Class</span>
-                </div>
-                <p class="gallery-caption">Authentic Cooking Class</p>
-            </div>
-            <!-- Gallery Item 2 -->
-            <div class="gallery-item">
-                <img src="aqaba-walking-tour.jpg" alt="Aqaba walking tour" class="gallery-img" loading="lazy">
-                <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling)">
-                    <span class="overlay-text">Explore Tour</span>
-                </div>
-                <p class="gallery-caption">Aqaba Walking Tour</p>
-            </div>
-            <!-- Gallery Item 3 -->
-            <div class="gallery-item">
-                <img src="image3.jpg" alt="Dining experience" class="gallery-img" loading="lazy">
-                <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling)">
-                    <span class="overlay-text">Dining Experience</span>
-                </div>
-                <p class="gallery-caption">Traditional Dining</p>
-            </div>
-            <!-- Gallery Item 4: Aqaba Glass Boat -->
-            <div class="gallery-item">
-                <figure>
-                    <img src="glass-boat.jpg" alt="Aqaba Glass Boat Tour" class="gallery-img" loading="lazy">
-                    <figcaption class="gallery-caption">Aqaba Glass Boat</figcaption>
-                </figure>
-                <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling.querySelector('img'))" role="button" tabindex="0">
-                    <span class="overlay-text">Glass Boat Tour</span>
-                </div>
-            </div>
-        </div>
-        <!-- Lightbox Modal (keep as is) -->
-        <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true" aria-label="Image viewer">
-            <button id="lightbox-close" class="lightbox-close" aria-label="Close" onclick="closeLightbox()">✕</button>
-            <button id="lightbox-prev" class="lightbox-arrow" aria-label="Previous image">&lt;</button>
-            <img id="lightbox-img" src="" alt="">
-            <button id="lightbox-next" class="lightbox-arrow" aria-label="Next image">&gt;</button>
-        </div>
-    </section>
-
-  <!-- Our local Experiences (Product List) (Moved from index.html) -->
-  <section class="experiences">
-    <h2>Our local Experiences</h2>
-    <div class="product-gallery">
-      <article class="product-item">
-        <img src="Experience1.jpg" alt="Traditional Jordanian Cooking Class in Aqaba" class="product-image" loading="lazy">
-        <div class="product-info">
-          <h3>Authentic Cooking Class</h3>
-          <p>Learn to cook traditional dishes with our family recipes in Aqaba.</p>
-          <p><a href="cookingclass.html">Read more</a> | <a href="#" onclick="redirectToReservation('Authentic Cooking Class')">Book Now</a></p>
-          <p class="price">30JD</p>
-        </div>
-      </article>
-
-      <article class="product-item">
-        <img src="Experience2.jpg" alt="Walking and food taste tour in Aqaba" class="product-image" loading="lazy">
-        <div class="product-info">
-          <h3>Aqaba Walking Tour</h3>
-          <p>Discover Aqaba’s hidden gems on a guided walking tour that blends history, culture, and flavor.</p>
-          <p><a href="walkingtour.html">Read more</a> | <a href="#" onclick="redirectToReservation('Food Taste Tour')">Book Now</a></p>
-          <p class="price">20JD</p>
-        </div>
-      </article>
-
-      <article class="product-item">
-        <img src="Experience3.jpg" alt="Dining Experience in a local Aqaba home" class="product-image" loading="lazy">
-        <div class="product-info">
-          <h3>Dining Experience</h3>
-          <p>Sharing meals, stories, and culture with our family.</p>
-          <p><a href="dinningexperience.html">Read more</a> | <a href="#" onclick="redirectToReservation('Dining Experience')">Book Now</a></p>
-          <p class="price">15JD</p>
-        </div>
-      </article>
-
-      <article class="product-item">
-        <img src="glass-boat.jpg" alt="Aqaba Glass Boat Tour" class="product-image" loading="lazy">
-        <div class="product-info">
-          <h3>Aqaba Glass Boat</h3>
-          <p>Enjoy the beauty of Aqaba’s coral reefs and marine life with a relaxing glass boat tour.</p>
-          <p>
-            <a href="glassboat.html">Read more</a> | 
-            <a href="#" onclick="redirectToReservation('Aqaba Glass Boat')">Book Now</a>
-          </p>
-          <p class="price">25JD</p>
-        </div>
-      </article>
+  <!-- 1. Hero Section -->
+  <section class="experience-hero">
+    <img src="aqaba-walking-tour.jpg" alt="A tour guide leading a group through a bustling street in Aqaba.">
+    <div class="hero-overlay">
+      <h1>Aqaba Walking Tour: Food, Culture & History</h1>
     </div>
   </section>
 
-    <!-- Advanced Review Section (Moved from index.html) -->
-    <section class="review-section-advanced">
-        <h2>What Our Guests Say</h2>
-        <div class="review-carousel">
-            <div class="review-card active">
-                <p>"Aqaba local experiences cooking class was a delightful experience. I learned so much!"</p>
-                <div class="reviewer">
-                    <img src="avatar1.jpg" alt="Alex" class="review-avatar">
-                    <span>Alex</span>
-                </div>
-            </div>
-            <div class="review-card">
-                <p>"A wonderful family atmosphere. I felt right at home!"</p>
-                <div class="reviewer">
-                    <img src="avatar2.jpg" alt="Emma" class="review-avatar">
-                    <span>Emma</span>
-                </div>
-            </div>
-            <div class="review-card">
-                <p>"The food was absolutely delicious! Highly recommended."</p>
-                <div class="reviewer">
-                    <img src="avatar3.jpg" alt="John" class="review-avatar">
-                    <span>John</span>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-controls">
-            <button onclick="prevReview()" aria-label="Previous review">&lt;</button>
-            <button onclick="nextReview()" aria-label="Next review">&gt;</button>
-        </div>
-    </section>
-</main>
+  <div class="main-content-grid">
+    <!-- Main Content Area -->
+    <main>
+      <!-- 2. Overview -->
+      <section class="experience-section">
+        <h2>Overview</h2>
+        <p>Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history and culture with a local expert. This tour is designed to give you an authentic, immersive experience away from the typical tourist spots.</p>
+      </section>
 
-    <footer>
-        <p>Contact us: <a href="mailto:suhaila.cook@gmail.com">suhaila.cook@gmail.com</a></p>
-        <p>Mobile: +962776294742</p>
-        <p>Connect with us on:
-            <a href="https://www.instagram.com/suhaila.cook" target="_blank">
-                <img src="instagram-icon.png" alt="Instagram" class="social-icon"> Instagram
-            </a> |
-            <a href="https://web.facebook.com/suhailacook" target="_blank">
-                <img src="facebook-icon.png" alt="Facebook" class="social-icon"> Facebook
-            </a>
-        </p>
-        <p>&copy; 2024 Aqaba local experiences. All rights reserved.</p>
-    </footer>
+      <!-- 2.1. Quick Facts -->
+      <section class="experience-section">
+        <h2>Quick Facts</h2>
+        <table class="quick-facts-table">
+          <tr>
+            <th>Duration</th>
+            <td>2.5 Hours</td>
+          </tr>
+          <tr>
+            <th>Group Size</th>
+            <td>Max 12 participants</td>
+          </tr>
+          <tr>
+            <th>Language</th>
+            <td>English, Arabic</td>
+          </tr>
+          <tr>
+            <th>Difficulty</th>
+            <td>Easy (Moderate walking)</td>
+          </tr>
+           <tr>
+            <th>Inclusions</th>
+            <td>All food and drink tastings are included in the price.</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- 3. Detailed Itinerary -->
+      <section class="experience-section">
+        <h2>What You'll See & Taste</h2>
+        <ul class="itinerary-list">
+            <li>**Local Markets:** Visit the bustling vegetable and spice markets to see daily life in Aqaba.</li>
+            <li>**Street Food Delights:** Sample authentic local street food, including falafel, hummus, and traditional sweets.</li>
+            <li>**Historic Sites:** Stop at key historical points to learn about Aqaba's past as a port city.</li>
+            <li>**Hidden Gems:** Discover secret spots and local hangouts only known to residents.</li>
+        </ul>
+      </section>
+
+      <!-- 4. Host Profile -->
+      <section class="experience-section">
+        <h2>Meet Your Guide</h2>
+        <div class="host-profile">
+          <!-- Using a generic placeholder as the specific image path 'images/placeholder-guide.jpg' might not exist -->
+          <img src="Group.jpg" alt="Local tour guide with a group.">
+          <div>
+            <h3>Local Expert Guide</h3>
+            <p>Our guides are licensed local historians and lifelong residents of Aqaba. Their passion for local folklore and culture brings the city to life.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Gallery -->
+      <section class="experience-section">
+        <h2>Gallery</h2>
+        <div class="gallery">
+          <img src="tourists-mosque.jpg" alt="Tourists visiting a local mosque in Aqaba" loading="lazy">
+          <img src="local-meat-market.jpg" alt="Traditional meat market in Aqaba" loading="lazy">
+          <img src="Experience1.jpg" alt="Historic street view.">
+          <img src="Experience2.jpg" alt="Close-up of architectural detail.">
+          <img src="Experience3.jpg" alt="Tour group in a sunny square.">
+        </div>
+      </section>
+
+      <!-- 7. Reviews -->
+      <section class="experience-section">
+        <h2>Reviews</h2>
+        <div class="review-summary">
+          <div class="stars">★★★★★</div>
+          <p>5.0/5.0 (Based on 312 reviews)</p>
+        </div>
+        <blockquote>
+          <p>"Alex was fantastic! The tour was engaging, informative, and perfectly paced. Highly recommend for anyone visiting the city."</p>
+          <footer>- David L.</footer>
+        </blockquote>
+      </section>
+
+    </main>
+
+    <!-- Sidebar with Booking Module -->
+    <aside>
+      <div class="booking-module">
+        <h3>Book Your Experience</h3>
+        <div class="price">20 JOD</div>
+        <p>per person</p>
+        <a href="Reservation.html?experience=Historic%20Walking%20Tour" class="button-cta">Book Your Tour Now!</a>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Aqaba local experiences | Aqaba, Jordan. All rights reserved.</p>
+  </footer>
 
 <script>
   // Mobile menu functionality
@@ -234,159 +210,6 @@
       link.setAttribute('aria-current', 'page');
     }
   });
-
-  // --- Lightbox code (copied from index.html) ---
-  (function(){
-  const lightbox = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightbox-img');
-  const prevBtn = document.getElementById('lightbox-prev');
-  const nextBtn = document.getElementById('lightbox-next');
-
-  function getGalleryImages(){
-    return Array.from(document.querySelectorAll('.gallery-item img.gallery-img'));
-  }
-
-  let currentIndex = 0;
-
-  function showImageByIndex(idx){
-    const imgs = getGalleryImages();
-    if (!imgs.length || !lbImg) return;
-    // wrap index
-    currentIndex = ((idx % imgs.length) + imgs.length) % imgs.length;
-    const img = imgs[currentIndex];
-    const src = img.dataset.largeSrc || img.src;
-    lbImg.src = src;
-    lbImg.alt = img.alt || '';
-    lbImg.dataset.currentSrc = src;
-  }
-
-  window.openLightbox = function(el){
-    if (!el) return;
-    // normalize element to <img>
-    let imgEl = el.tagName === 'IMG' ? el : (el.querySelector && el.querySelector('img') ) || el.querySelector('.gallery-img');
-    const imgs = getGalleryImages();
-    let idx = imgs.findIndex(g => g === imgEl);
-    if (idx === -1 && imgEl) {
-      const target = imgEl.dataset.largeSrc || imgEl.src;
-      idx = imgs.findIndex(g => (g.dataset.largeSrc || g.src) === target);
-    }
-    if (idx === -1) idx = 0;
-    showImageByIndex(idx);
-    lightbox?.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  };
-
-  window.closeLightbox = function(){
-    lightbox?.classList.remove('active');
-    document.body.style.overflow = '';
-    // release image src after animation
-    setTimeout(() => { if(lbImg) lbImg.src = ''; delete lbImg.dataset.currentSrc; }, 300);
-  };
-
-  function prevImage(){ showImageByIndex(currentIndex - 1); }
-  function nextImage(){ showImageByIndex(currentIndex + 1); }
-
-  prevBtn?.addEventListener('click', ev => { ev.stopPropagation(); prevImage(); });
-  nextBtn?.addEventListener('click', ev => { ev.stopPropagation(); nextImage(); });
-
-  // close when clicking backdrop only (not image or controls)
-  lightbox?.addEventListener('click', (ev) => {
-    if (ev.target === lightbox) closeLightbox();
-  });
-
-  // keyboard navigation
-  document.addEventListener('keydown', (e) => {
-    if (!lightbox || !lightbox.classList.contains('active')) return;
-    if (e.key === 'ArrowLeft') prevImage();
-    if (e.key === 'ArrowRight') nextImage();
-    if (e.key === 'Escape') closeLightbox();
-  });
-
-  // delegate overlay clicks (works regardless of markup variations)
-  document.addEventListener('click', (e) => {
-    const overlay = e.target.closest('.gallery-overlay');
-    if (!overlay) return;
-    const parent = overlay.closest('.gallery-item');
-    if (!parent) return;
-    const img = parent.querySelector('img.gallery-img');
-    if (img) openLightbox(img);
-  });
-})();
-
-  // Review carousel
-  let currentReview = 0;
-  const reviewCards = document.querySelectorAll('.review-card');
-  function showReviewCard(idx) {
-    reviewCards.forEach((card, i) => card.classList.toggle('active', i === idx));
-  }
-  function prevReview() {
-    currentReview = (currentReview - 1 + reviewCards.length) % reviewCards.length;
-    showReviewCard(currentReview);
-  }
-  function nextReview() {
-    currentReview = (currentReview + 1) % reviewCards.length;
-    showReviewCard(currentReview);
-  }
-  window.prevReview = prevReview;
-  window.nextReview = nextReview;
-  showReviewCard(currentReview);
-
-  // Book Now redirect
-  window.redirectToReservation = function (experienceName) {
-    window.location.href = "Reservation.html?experience=" + encodeURIComponent(experienceName);
-  };
-
-  // Scroll-triggered animations
-  document.addEventListener('DOMContentLoaded', () => {
-    const animateOnScrollElements = document.querySelectorAll(
-      '.gallery-title, .meet-family-section, .meet-family-section h2, .about-section h2, .about-text, #blog-section h2, .review-section-advanced h2, .featured-story-content'
-    );
-    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.12 };
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-    animateOnScrollElements.forEach(el => observer.observe(el));
-
-    const staggeredObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const childrenToAnimate = Array.from(entry.target.children);
-          childrenToAnimate.forEach((child, index) => {
-            setTimeout(() => {
-              child.classList.add('visible');
-            }, index * 150);
-          });
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    // Observe containers that should animate children in sequence
-    const recentPostsContainer = document.querySelector('.recent-posts');
-    if (recentPostsContainer) staggeredObserver.observe(recentPostsContainer);
-
-    const productGalleryContainer = document.querySelector('.product-gallery');
-    if (productGalleryContainer) staggeredObserver.observe(productGalleryContainer);
-
-    const meetFamilyContainer = document.querySelector('.meet-family-section');
-    if (meetFamilyContainer) staggeredObserver.observe(meetFamilyContainer);
-
-    document.querySelectorAll('.product-item').forEach(el => el.classList.add('visible'));
-  });
-</script>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JZYH4T50VY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag( ) { dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', 'G-JZYH4T50VY');
 </script>
 
 <script>
@@ -418,6 +241,8 @@
   });
 </script>
 
+<script src="js/navbar.js"></script>
 </body>
 </html>
+
 

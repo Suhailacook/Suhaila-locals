@@ -1,165 +1,248 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Aqaba local experiences</title>
-    <meta name="description" content="Contact Aqaba local experiences to learn more about Aqaba’s unique local experiences, including tours and cooking classes.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aqaba Walking Tour: Food, Culture & History | Aqaba local experiences</title>
+  <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/walkingtour.html" />
+  <meta name="description" content="Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history and culture with a local expert. Book your immersive experience now!" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "name": "Aqaba Walking Food Tour",
+    "description": "Guided walking food & culture tour in Aqaba — sample local dishes, visit markets and historic sites.",
+    "image": "https://suhailacook.github.io/Suhaila-locals/aqaba-walking-tour.jpg",
+    "url": "https://suhailacook.github.io/Suhaila-locals/walkingtour.html",
+    "offers": {
+      "@type": "Offer",
+      "price": "20",
+      "priceCurrency": "JOD",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Mobile menu overlay -->
+  <div id="scroll-progress"></div>
     <div class="menu-overlay" id="menuOverlay"></div>
-    <!-- Navigation Menu -->
-    <nav class="navbar" role="navigation" aria-label="Main Navigation">
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
-        <div class="navbar-links" id="navbarLinks">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <div class="dropdown">
-                <a href="#" class="dropbtn">Experiences</a>
-                <div class="dropdown-content">
-                    <a href="cookingclass.html">Cooking Class</a>
-                    <a href="walkingtour.html">Walking Tour</a>
-                    <a href="glassboat.html">Aqaba Glass Boat</a>
-                    <a href="dinningexperience.html">Dining Experience</a>
-                </div>
-            </div>
-            <a href="Reservation.html">Reservations</a>
-            <a href="contact-Us.html" class="active">Contact</a>
-            <a href="Blog.html">Blog</a>
+<nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <div class="brand"><a href="index.html">Aqaba local experiences</a></div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div class="navbar-links" id="navbarLinks">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <div class="dropdown">
+      <button class="dropbtn" aria-expanded="false" aria-controls="experiences-menu">Experiences</button>
+      <div id="experiences-menu" class="dropdown-content" role="menu">
+        <a href="cookingclass.html" role="menuitem">Cooking Class</a>
+        <a href="walkingtour.html" role="menuitem">Walking Tour</a>
+        <a href="glassboat.html" role="menuitem">Aqaba Glass Boat</a>
+        <a href="dinningexperience.html" role="menuitem">Dining Experience</a>
+      </div>
+    </div>
+    <a href="Reservation.html">Reservations</a>
+    <a href="contact-Us.html">Contact</a>
+    <a href="Blog.html">Blog</a>
+  </div>
+</nav>
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+<main id="main-content">
+
+  <!-- 1. Hero Section -->
+  <section class="experience-hero">
+    <img src="aqaba-walking-tour.jpg" alt="A tour guide leading a group through a bustling street in Aqaba.">
+    <div class="hero-overlay">
+      <h1>Aqaba Walking Tour: Food, Culture & History</h1>
+    </div>
+  </section>
+
+  <div class="main-content-grid">
+    <!-- Main Content Area -->
+    <main>
+      <!-- 2. Overview -->
+      <section class="experience-section">
+        <h2>Overview</h2>
+        <p>Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history and culture with a local expert. This tour is designed to give you an authentic, immersive experience away from the typical tourist spots.</p>
+      </section>
+
+      <!-- 2.1. Quick Facts -->
+      <section class="experience-section">
+        <h2>Quick Facts</h2>
+        <table class="quick-facts-table">
+          <tr>
+            <th>Duration</th>
+            <td>2.5 Hours</td>
+          </tr>
+          <tr>
+            <th>Group Size</th>
+            <td>Max 12 participants</td>
+          </tr>
+          <tr>
+            <th>Language</th>
+            <td>English, Arabic</td>
+          </tr>
+          <tr>
+            <th>Difficulty</th>
+            <td>Easy (Moderate walking)</td>
+          </tr>
+           <tr>
+            <th>Inclusions</th>
+            <td>All food and drink tastings are included in the price.</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- 3. Detailed Itinerary -->
+      <section class="experience-section">
+        <h2>What You'll See & Taste</h2>
+        <ul class="itinerary-list">
+            <li>**Local Markets:** Visit the bustling vegetable and spice markets to see daily life in Aqaba.</li>
+            <li>**Street Food Delights:** Sample authentic local street food, including falafel, hummus, and traditional sweets.</li>
+            <li>**Historic Sites:** Stop at key historical points to learn about Aqaba's past as a port city.</li>
+            <li>**Hidden Gems:** Discover secret spots and local hangouts only known to residents.</li>
+        </ul>
+      </section>
+
+      <!-- 4. Host Profile -->
+      <section class="experience-section">
+        <h2>Meet Your Guide</h2>
+        <div class="host-profile">
+          <!-- Using a generic placeholder as the specific image path 'images/placeholder-guide.jpg' might not exist -->
+          <img src="Group.jpg" alt="Local tour guide with a group.">
+          <div>
+            <h3>Local Expert Guide</h3>
+            <p>Our guides are licensed local historians and lifelong residents of Aqaba. Their passion for local folklore and culture brings the city to life.</p>
+          </div>
         </div>
-    </nav>
+      </section>
 
-    <!-- Hero Section -->
-    <div class="contact-hero">
-        <h1>Contact Us</h1>
-        <p>We're here to help! Reach out with any questions or inquiries about our experiences in Aqaba.</p>
-    </div>
+      <!-- 5. Gallery -->
+      <section class="experience-section">
+        <h2>Gallery</h2>
+        <div class="gallery">
+          <img src="tourists-mosque.jpg" alt="Tourists visiting a local mosque in Aqaba" loading="lazy">
+          <img src="local-meat-market.jpg" alt="Traditional meat market in Aqaba" loading="lazy">
+          <img src="Experience1.jpg" alt="Historic street view.">
+          <img src="Experience2.jpg" alt="Close-up of architectural detail.">
+          <img src="Experience3.jpg" alt="Tour group in a sunny square.">
+        </div>
+      </section>
 
-    <!-- Contact Form Container -->
-    <div class="contact-container">
-        <h2>Contact <span class="highlight">Us</span></h2>
-        <form action="https://formspree.io/f/mnnvjklj" method="POST" id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      <!-- 7. Reviews -->
+      <section class="experience-section">
+        <h2>Reviews</h2>
+        <div class="review-summary">
+          <div class="stars">★★★★★</div>
+          <p>5.0/5.0 (Based on 312 reviews)</p>
+        </div>
+        <blockquote>
+          <p>"Alex was fantastic! The tour was engaging, informative, and perfectly paced. Highly recommend for anyone visiting the city."</p>
+          <footer>- David L.</footer>
+        </blockquote>
+      </section>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    </main>
 
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" placeholder="e.g., +962776294742" required>
+    <!-- Sidebar with Booking Module -->
+    <aside>
+      <div class="booking-module">
+        <h3>Book Your Experience</h3>
+        <div class="price">20 JOD</div>
+        <p>per person</p>
+        <a href="Reservation.html?experience=Historic%20Walking%20Tour" class="button-cta">Book Your Tour Now!</a>
+      </div>
+    </aside>
+  </div>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+  <footer>
+    <p>&copy; 2025 Aqaba local experiences | Aqaba, Jordan. All rights reserved.</p>
+  </footer>
 
-            <button type="submit">Send Message</button>
-            <div id="formStatus"></div>
-        </form>
-    </div>
+<script>
+  // Mobile menu functionality
+  const hamburger = document.getElementById('hamburger');
+  const navbarLinks = document.getElementById('navbarLinks');
+  const menuOverlay = document.getElementById('menuOverlay');
+  hamburger?.addEventListener('click', function () {
+    navbarLinks.classList.toggle('open');
+    menuOverlay.classList.toggle('active');
+  });
+  menuOverlay?.addEventListener('click', function () {
+    navbarLinks.classList.remove('open');
+    menuOverlay.classList.remove('active');
+  });
 
-    <!-- Footer Section -->
-    <footer>
-        <p>Contact us: <a href="mailto:suhaila.cook@gmail.com">suhaila.cook@gmail.com</a></p>
-        <p>Mobile: +962776294742</p>
-        <p>Connect with us on:
-            <a href="https://www.instagram.com/suhaila.cook" target="_blank">
-                <img src="instagram-icon.png" alt="Instagram" class="social-icon"> Instagram
-            </a> |
-            <a href="https://web.facebook.com/suhailacook" target="_blank">
-                <img src="facebook-icon.png" alt="Facebook" class="social-icon"> Facebook
-            </a>
-        </p>
-        <h3>Find Us Here:</h3>
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d515.9586386475576!2d34.99579176906436!3d29.54717876188753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x150071000d983327%3A0xc66defbe37987710!2sSuhaila!5e0!3m2!1sen!2sjo!4v1730633996092!5m2!1sen!2sjo" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-        <p>&copy; 2024 Aqaba local experiences. All rights reserved.</p>
-    </footer>
+  // Navbar hide/show on scroll
+  document.addEventListener('DOMContentLoaded', function () {
+    let lastScrollY = window.scrollY;
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 60) {
+        navbar.style.top = '-80px';
+      } else {
+        navbar.style.top = '0';
+      }
+      lastScrollY = window.scrollY;
+    });
+  });
 
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="scrollToTop" aria-label="Scroll to Top">↑</button>
+  // Highlight active nav link
+  const currentPath = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll('.navbar a');
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    link.removeAttribute('aria-current');
+    if (link.getAttribute('href') === currentPath || (currentPath === "" && link.getAttribute('href') === "index.html")) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+</script>
 
-    <script>
-        // Mobile menu functionality
-        const hamburger = document.getElementById('hamburger');
-        const navbarLinks = document.getElementById('navbarLinks');
-        const menuOverlay = document.getElementById('menuOverlay');
-        hamburger.addEventListener('click', function() {
-            navbarLinks.classList.toggle('open');
-            menuOverlay.classList.toggle('active');
-        });
-        menuOverlay.addEventListener('click', function() {
-            navbarLinks.classList.remove('open');
-            menuOverlay.classList.remove('active');
-        });
+<script>
+  // toggle dropdown on small screens
+  document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      if (window.innerWidth <= 800) {
+        e.preventDefault();
+        const dd = this.closest('.dropdown');
+        // close other open dropdowns first
+        document.querySelectorAll('.navbar .dropdown.open').forEach(o => { if (o !== dd) o.classList.remove('open'); });
+        dd.classList.toggle('open');
+      }
+    });
+  });
 
-        // Scroll to top button
-        const scrollToTopButton = document.getElementById('scrollToTop');
-        window.addEventListener('scroll', function () {
-            if (window.pageYOffset > 100) {
-                scrollToTopButton.style.display = 'block';
-            } else {
-                scrollToTopButton.style.display = 'none';
-            }
-        });
-        scrollToTopButton.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+  // click outside to close mobile dropdown
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 800) {
+      if (!e.target.closest('.navbar')) {
+        document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
+      }
+    }
+  });
 
-        // Navbar hide on scroll down, show on scroll up
-        const navbar = document.querySelector('.navbar');
-        let lastScrollPosition = 0;
-        window.addEventListener('scroll', () => {
-            let currentScrollPosition = window.scrollY;
-            if (currentScrollPosition > lastScrollPosition) {
-                navbar.style.top = '-60px';
-            } else {
-                navbar.style.top = '0';
-            }
-            lastScrollPosition = currentScrollPosition;
-        });
+  // optional: close on resize from mobile -> desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 800) document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
+  });
+</script>
 
-        // Optional: Show a success message after form submit (for AJAX, but Formspree also redirects by default)
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            document.getElementById('formStatus').innerHTML = "Sending...";
-        });
-    </script>
-
-    <script>
-      // toggle dropdown on small screens
-      document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-          if (window.innerWidth <= 800) {
-            e.preventDefault();
-            const dd = this.closest('.dropdown');
-            // close other open dropdowns first
-            document.querySelectorAll('.navbar .dropdown.open').forEach(o => { if (o !== dd) o.classList.remove('open'); });
-            dd.classList.toggle('open');
-          }
-        });
-      });
-
-      // click outside to close mobile dropdown
-      document.addEventListener('click', (e) => {
-        if (window.innerWidth <= 800) {
-          if (!e.target.closest('.navbar')) {
-            document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
-          }
-        }
-      });
-
-      // optional: close on resize from mobile -> desktop
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 800) document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
-      });
-    </script>
+<script src="js/navbar.js"></script>
 </body>
 </html>
+
+

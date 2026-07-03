@@ -1,89 +1,44 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dining Experience in Aqaba — Traditional Jordanian Home Meal | Aqaba local experiences</title>
-  <meta name="description" content="Join a traditional Jordanian dining experience in a local home in Aqaba. Taste Mansaf, Maqluba and family recipes while sharing stories with local hosts. Reserve now.">
-  <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/dinningexperience.html">
+  <title>Aqaba Walking Tour: Food, Culture & History | Aqaba local experiences</title>
+  <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/walkingtour.html" />
+  <meta name="description" content="Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history and culture with a local expert. Book your immersive experience now!" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://suhailacook.github.io/Suhaila-locals/dinningexperience.html" />
-  <meta property="og:title" content="Dining Experience in Aqaba — Traditional Jordanian Home Meal | Aqaba local experiences" />
-  <meta property="og:description" content="Join a traditional Jordanian dining experience in a local home in Aqaba. Taste Mansaf, Maqluba and family recipes while sharing stories with local hosts." />
-  <meta property="og:image" content="https://suhailacook.github.io/Suhaila-locals/images/dining-experience.jpg" />
-  <meta property="og:image:alt" content="Guests sharing a traditional dinner in a Jordanian home" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dining Experience in Aqaba — Traditional Jordanian Home Meal" />
-  <meta name="twitter:description" content="Taste Mansaf, Maqluba and family recipes while sharing stories with local hosts in Aqaba. Book your seat." />
-  <meta name="twitter:image" content="https://suhailacook.github.io/Suhaila-locals/images/dining-experience.jpg" />
-
-  <!-- Structured Data (Event) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "Traditional Jordanian Dining Experience in Aqaba",
-    "description": "Enjoy a traditional Jordanian home-cooked meal in Aqaba, sharing stories and experiencing local hospitality.",
-    "url": "https://suhailacook.github.io/Suhaila-locals/dinningexperience.html",
-    "startDate": "2025-07-01T19:00",
-    "endDate": "2025-07-01T21:30",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "location": {
-      "@type": "Place",
-      "name": "Aqaba local experiences Home Kitchen",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "",
-        "addressLocality": "Aqaba",
-        "addressRegion": "Aqaba Governorate",
-        "postalCode": "77110",
-        "addressCountry": "JO"
-      }
-    },
-    "image": [
-      "https://suhailacook.github.io/Suhaila-locals/images/dining-experience.jpg"
-    ],
-    "offers": {
-      "@type": "Offer",
-      "url": "https://suhailacook.github.io/Suhaila-locals/Reservation.html?experience=Dining%20Experience",
-      "price": "25",
-      "priceCurrency": "JOD",
-      "availability": "https://schema.org/InStock"
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "Aqaba local experiences",
-      "url": "https://suhailacook.github.io/Suhaila-locals/"
-    }
-  }
-  </script>
-
+  <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
 
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZYH4T50VY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
-    gtag('js', new Date());
-    gtag('config', 'G-JZYH4T50VY');
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "name": "Aqaba Walking Food Tour",
+    "description": "Guided walking food & culture tour in Aqaba — sample local dishes, visit markets and historic sites.",
+    "image": "https://suhailacook.github.io/Suhaila-locals/aqaba-walking-tour.jpg",
+    "url": "https://suhailacook.github.io/Suhaila-locals/walkingtour.html",
+    "offers": {
+      "@type": "Offer",
+      "price": "20",
+      "priceCurrency": "JOD",
+      "availability": "https://schema.org/InStock"
+    }
+  }
   </script>
-</head>
 
-	<body>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
   <div id="scroll-progress"></div>
     <div class="menu-overlay" id="menuOverlay"></div>
-    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+<nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <div class="brand"><a href="index.html">Aqaba local experiences</a></div>
   <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
   <div class="navbar-links" id="navbarLinks">
     <a href="index.html">Home</a>
@@ -91,11 +46,10 @@
     <div class="dropdown">
       <button class="dropbtn" aria-expanded="false" aria-controls="experiences-menu">Experiences</button>
       <div id="experiences-menu" class="dropdown-content" role="menu">
-        <a href="local-experiences.html" role="menuitem">All Experiences</a>
         <a href="cookingclass.html" role="menuitem">Cooking Class</a>
         <a href="walkingtour.html" role="menuitem">Walking Tour</a>
         <a href="glassboat.html" role="menuitem">Aqaba Glass Boat</a>
-        <a href="dinningexperience.html" role="menuitem" class="active">Dining Experience</a>
+        <a href="dinningexperience.html" role="menuitem">Dining Experience</a>
       </div>
     </div>
     <a href="Reservation.html">Reservations</a>
@@ -106,114 +60,116 @@
 
     <a class="skip-link" href="#main-content">Skip to content</a>
 <main id="main-content">
-	  <!-- 1. Hero Section -->
-	  <section class="experience-hero">
-	    <img src="Family.jpg" alt="Guests sharing a traditional multi-course dinner in a welcoming Jordanian home in Aqaba." loading="lazy">
-	    <div class="hero-overlay">
-	      <h1>Traditional Dining Experience</h1>
-	    </div>
-	  </section>
 
-	  <div class="main-content-grid">
-	    <!-- Main Content Area -->
-	    <main>
-	      <!-- 2. Overview -->
-	      <section class="experience-section">
-	        <h2>Overview</h2>
-	        <p>
-	          Be welcomed into a warm, local home in Aqaba where you’ll enjoy a lovingly prepared multi-course meal made from cherished family recipes passed through generations. This isn't just dining — it's a cultural exchange and shared meal.
-	        </p>
-	      </section>
+  <!-- 1. Hero Section -->
+  <section class="experience-hero">
+    <img src="aqaba-walking-tour.jpg" alt="A tour guide leading a group through a bustling street in Aqaba.">
+    <div class="hero-overlay">
+      <h1>Aqaba Walking Tour: Food, Culture & History</h1>
+    </div>
+  </section>
 
-	      <!-- 2.1. Quick Facts -->
-	      <section class="experience-section">
-	        <h2>Quick Facts</h2>
-	        <table class="quick-facts-table">
-	          <tr>
-	            <th>Duration</th>
-	            <td>2.5 Hours</td>
-	          </tr>
-	          <tr>
-	            <th>Group Size</th>
-	            <td>Intimate setting, max 10 guests</td>
-	          </tr>
-	          <tr>
-	            <th>Language</th>
-	            <td>English, Arabic</td>
-	          </tr>
-	          <tr>
-	            <th>Inclusions</th>
-	            <td>Multi-course traditional dinner, non-alcoholic beverages, and cultural conversation.</td>
-	          </tr>
-	           <tr>
-	            <th>Dietary</th>
-	            <td>Vegetarian, vegan, and allergy-friendly options available upon request.</td>
-	          </tr>
-	        </table>
-	      </section>
+  <div class="main-content-grid">
+    <!-- Main Content Area -->
+    <main>
+      <!-- 2. Overview -->
+      <section class="experience-section">
+        <h2>Overview</h2>
+        <p>Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history and culture with a local expert. This tour is designed to give you an authentic, immersive experience away from the typical tourist spots.</p>
+      </section>
 
-	      <!-- 3. Detailed Itinerary / Highlights -->
-	      <section class="experience-section">
-	        <h2>Experience Highlights</h2>
-	        <ul class="itinerary-list">
-	          <li>Authentic multi-course Jordanian dinner, featuring local specialties.</li>
-	          <li>Hosted by a welcoming local family in their traditional home.</li>
-	          <li>Engaging story-sharing and insightful cultural discussions over tea and coffee.</li>
-	          <li>Opportunity to taste traditional dishes like Mansaf, Maqluba, and various mezze.</li>
-	        </ul>
-	      </section>
+      <!-- 2.1. Quick Facts -->
+      <section class="experience-section">
+        <h2>Quick Facts</h2>
+        <table class="quick-facts-table">
+          <tr>
+            <th>Duration</th>
+            <td>2.5 Hours</td>
+          </tr>
+          <tr>
+            <th>Group Size</th>
+            <td>Max 12 participants</td>
+          </tr>
+          <tr>
+            <th>Language</th>
+            <td>English, Arabic</td>
+          </tr>
+          <tr>
+            <th>Difficulty</th>
+            <td>Easy (Moderate walking)</td>
+          </tr>
+           <tr>
+            <th>Inclusions</th>
+            <td>All food and drink tastings are included in the price.</td>
+          </tr>
+        </table>
+      </section>
 
-	      <!-- 4. Host Profile -->
-	      <section class="experience-section">
-	        <h2>Meet Your Hosts</h2>
-	        <div class="host-profile">
-	          <img src="Family.jpg" alt="The Aqaba local experiences family welcoming guests.">
-	          <div>
-	            <h3>The Aqaba local experiences family</h3>
-	            <p>Our family opens its home and heart to share the true taste of Jordanian hospitality. We believe the best way to experience a culture is through its food and the stories shared around the dinner table.</p>
-	          </div>
-	        </div>
-	      </section>
+      <!-- 3. Detailed Itinerary -->
+      <section class="experience-section">
+        <h2>What You'll See & Taste</h2>
+        <ul class="itinerary-list">
+            <li>**Local Markets:** Visit the bustling vegetable and spice markets to see daily life in Aqaba.</li>
+            <li>**Street Food Delights:** Sample authentic local street food, including falafel, hummus, and traditional sweets.</li>
+            <li>**Historic Sites:** Stop at key historical points to learn about Aqaba's past as a port city.</li>
+            <li>**Hidden Gems:** Discover secret spots and local hangouts only known to residents.</li>
+        </ul>
+      </section>
 
-	      <!-- 5. Gallery -->
-	      <section class="experience-section">
-	        <h2>Gallery</h2>
-	        <div class="gallery">
-	          <img src="Sayadieh.jpg" alt="Traditional Sayadieh dish.">
-	          <img src="Houh1.jpg" alt="Guests enjoying the meal.">
-	          <img src="Houh2.jpg" alt="Traditional Jordanian dessert.">
-	        </div>
-	      </section>
+      <!-- 4. Host Profile -->
+      <section class="experience-section">
+        <h2>Meet Your Guide</h2>
+        <div class="host-profile">
+          <!-- Using a generic placeholder as the specific image path 'images/placeholder-guide.jpg' might not exist -->
+          <img src="Group.jpg" alt="Local tour guide with a group.">
+          <div>
+            <h3>Local Expert Guide</h3>
+            <p>Our guides are licensed local historians and lifelong residents of Aqaba. Their passion for local folklore and culture brings the city to life.</p>
+          </div>
+        </div>
+      </section>
 
-	      <!-- 7. Reviews -->
-	      <section class="experience-section">
-	        <h2>Reviews</h2>
-	        <div class="review-summary">
-	          <div class="stars">★★★★★</div>
-	          <p>“The most authentic experience we had in Jordan. The food was incredible, but the warmth of the family was what made it truly special.”</p>
-	        </div>
-	        <blockquote>
-	          <p>“The most authentic experience we had in Jordan. The food was incredible, but the warmth of the family was what made it truly special.”</p>
-	          <footer>– Maria S., USA</footer>
-	        </blockquote>
-	      </section>
+      <!-- 5. Gallery -->
+      <section class="experience-section">
+        <h2>Gallery</h2>
+        <div class="gallery">
+          <img src="tourists-mosque.jpg" alt="Tourists visiting a local mosque in Aqaba" loading="lazy">
+          <img src="local-meat-market.jpg" alt="Traditional meat market in Aqaba" loading="lazy">
+          <img src="Experience1.jpg" alt="Historic street view.">
+          <img src="Experience2.jpg" alt="Close-up of architectural detail.">
+          <img src="Experience3.jpg" alt="Tour group in a sunny square.">
+        </div>
+      </section>
 
-	    </main>
+      <!-- 7. Reviews -->
+      <section class="experience-section">
+        <h2>Reviews</h2>
+        <div class="review-summary">
+          <div class="stars">★★★★★</div>
+          <p>5.0/5.0 (Based on 312 reviews)</p>
+        </div>
+        <blockquote>
+          <p>"Alex was fantastic! The tour was engaging, informative, and perfectly paced. Highly recommend for anyone visiting the city."</p>
+          <footer>- David L.</footer>
+        </blockquote>
+      </section>
 
-	    <!-- Sidebar with Booking Module -->
-	    <aside>
-	      <div class="booking-module">
-	        <h3>Book Your Experience</h3>
-	        <div class="price">15 JOD</div>
-	        <p>per person</p>
-	        <a href="Reservation.html?experience=Dining%20Experience" class="button-cta">Reserve Your Seat Now!</a>
-	      </div>
-	    </aside>
-	  </div>
+    </main>
 
-	  <footer>
-	    <p>&copy; 2025 Aqaba local experiences | Aqaba, Jordan. All rights reserved.</p>
-	  </footer>
+    <!-- Sidebar with Booking Module -->
+    <aside>
+      <div class="booking-module">
+        <h3>Book Your Experience</h3>
+        <div class="price">20 JOD</div>
+        <p>per person</p>
+        <a href="Reservation.html?experience=Historic%20Walking%20Tour" class="button-cta">Book Your Tour Now!</a>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Aqaba local experiences | Aqaba, Jordan. All rights reserved.</p>
+  </footer>
 
 <script>
   // Mobile menu functionality
@@ -284,4 +240,9 @@
     if (window.innerWidth > 800) document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
   });
 </script>
+
+<script src="js/navbar.js"></script>
+</body>
 </html>
+
+

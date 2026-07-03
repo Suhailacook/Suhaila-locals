@@ -1,332 +1,248 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard | Aqaba local experiences</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aqaba Walking Tour: Food, Culture & History | Aqaba local experiences</title>
+  <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/walkingtour.html" />
+  <meta name="description" content="Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history and culture with a local expert. Book your immersive experience now!" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "name": "Aqaba Walking Food Tour",
+    "description": "Guided walking food & culture tour in Aqaba — sample local dishes, visit markets and historic sites.",
+    "image": "https://suhailacook.github.io/Suhaila-locals/aqaba-walking-tour.jpg",
+    "url": "https://suhailacook.github.io/Suhaila-locals/walkingtour.html",
+    "offers": {
+      "@type": "Offer",
+      "price": "20",
+      "priceCurrency": "JOD",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="admin-hero">
-    <h1>Admin Dashboard</h1>
-    <p>Manage messages, blog posts, and products for Aqaba local experiences.</p>
-  </header>
-
-  <nav class="navbar">
+  <div id="scroll-progress"></div>
+    <div class="menu-overlay" id="menuOverlay"></div>
+<nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <div class="brand"><a href="index.html">Aqaba local experiences</a></div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div class="navbar-links" id="navbarLinks">
     <a href="index.html">Home</a>
-    <a href="admin.html" class="active" aria-current="page">Admin</a>
-  </nav>
-
-  <div class="admin-container" id="adminContainer">
-    <div id="adminStatus"></div>
-    <div class="admin-tabs">
-      <button class="admin-tab active" onclick="showTab('messages')">Messages</button>
-      <button class="admin-tab" onclick="showTab('blog')">Blog Posts</button>
-      <button class="admin-tab" onclick="showTab('products')">Products</button>
-      <button class="admin-tab" onclick="showTab('logins')">Admin Logins</button>
+    <a href="about.html">About Us</a>
+    <div class="dropdown">
+      <button class="dropbtn" aria-expanded="false" aria-controls="experiences-menu">Experiences</button>
+      <div id="experiences-menu" class="dropdown-content" role="menu">
+        <a href="cookingclass.html" role="menuitem">Cooking Class</a>
+        <a href="walkingtour.html" role="menuitem">Walking Tour</a>
+        <a href="glassboat.html" role="menuitem">Aqaba Glass Boat</a>
+        <a href="dinningexperience.html" role="menuitem">Dining Experience</a>
+      </div>
     </div>
+    <a href="Reservation.html">Reservations</a>
+    <a href="contact-Us.html">Contact</a>
+    <a href="Blog.html">Blog</a>
+  </div>
+</nav>
 
-    <!-- Messages Section -->
-    <div class="admin-section active" id="messages">
-      <h2>Contact Messages</h2>
-      <table class="admin-table" id="messagesTable">
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Message</th>
-          <th>Delete</th>
-        </tr>
-      </table>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+<main id="main-content">
+
+  <!-- 1. Hero Section -->
+  <section class="experience-hero">
+    <img src="aqaba-walking-tour.jpg" alt="A tour guide leading a group through a bustling street in Aqaba.">
+    <div class="hero-overlay">
+      <h1>Aqaba Walking Tour: Food, Culture & History</h1>
     </div>
+  </section>
 
-    <!-- Blog Posts Section -->
-    <div class="admin-section" id="blog">
-      <h2>Manage Blog Posts</h2>
-      <table class="admin-table" id="blogTable">
-        <tr>
-          <th>Title</th>
-          <th>Date</th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-      </table>
+  <div class="main-content-grid">
+    <!-- Main Content Area -->
+    <main>
+      <!-- 2. Overview -->
+      <section class="experience-section">
+        <h2>Overview</h2>
+        <p>Discover the real Aqaba on a guided walking tour. Explore local markets, taste authentic street food, and uncover the city's rich history and culture with a local expert. This tour is designed to give you an authentic, immersive experience away from the typical tourist spots.</p>
+      </section>
 
-      <form class="admin-form" id="blogForm" enctype="multipart/form-data">
-        <h3>Add New Blog Post</h3>
-        <label for="blog-title">Title</label>
-        <input type="text" id="blog-title" name="blog-title" required>
-        <label for="blog-content">Content</label>
-        <textarea id="blog-content" name="blog-content" rows="4" required></textarea>
-        <label for="blog-image">Image</label>
-        <input type="file" id="blog-image" name="blog-image" accept="image/*" required>
-        <button type="submit">Add Post</button>
-        <div id="blogFormMsg"></div>
-      </form>
+      <!-- 2.1. Quick Facts -->
+      <section class="experience-section">
+        <h2>Quick Facts</h2>
+        <table class="quick-facts-table">
+          <tr>
+            <th>Duration</th>
+            <td>2.5 Hours</td>
+          </tr>
+          <tr>
+            <th>Group Size</th>
+            <td>Max 12 participants</td>
+          </tr>
+          <tr>
+            <th>Language</th>
+            <td>English, Arabic</td>
+          </tr>
+          <tr>
+            <th>Difficulty</th>
+            <td>Easy (Moderate walking)</td>
+          </tr>
+           <tr>
+            <th>Inclusions</th>
+            <td>All food and drink tastings are included in the price.</td>
+          </tr>
+        </table>
+      </section>
 
-      <!-- Edit Blog Post Form -->
-      <form class="admin-form" id="editBlogForm" onsubmit="submitEdit(event)">
-        <h3>Edit Blog Post</h3>
-        <input type="hidden" id="edit-id">
-        <label for="edit-title">Title</label>
-        <input type="text" id="edit-title" required>
-        <label for="edit-content">Content</label>
-        <textarea id="edit-content" rows="4" required></textarea>
-        <button type="submit">Update Post</button>
-      </form>
-    </div>
+      <!-- 3. Detailed Itinerary -->
+      <section class="experience-section">
+        <h2>What You'll See & Taste</h2>
+        <ul class="itinerary-list">
+            <li>**Local Markets:** Visit the bustling vegetable and spice markets to see daily life in Aqaba.</li>
+            <li>**Street Food Delights:** Sample authentic local street food, including falafel, hummus, and traditional sweets.</li>
+            <li>**Historic Sites:** Stop at key historical points to learn about Aqaba's past as a port city.</li>
+            <li>**Hidden Gems:** Discover secret spots and local hangouts only known to residents.</li>
+        </ul>
+      </section>
 
-    <!-- Products Section -->
-    <div class="admin-section" id="products">
-      <h2>Edit Products</h2>
-      <table class="admin-table" id="productsTable">
-        <tr>
-          <th>Product</th>
-          <th>Price</th>
-          <th>Delete</th>
-        </tr>
-      </table>
-      <form class="admin-form" id="productForm">
-        <h3>Add New Product</h3>
-        <label for="product-name">Product Name</label>
-        <input type="text" id="product-name" name="product-name" required>
-        <label for="product-price">Price</label>
-        <input type="text" id="product-price" name="product-price" required>
-        <button type="submit">Add Product</button>
-      </form>
-    </div>
+      <!-- 4. Host Profile -->
+      <section class="experience-section">
+        <h2>Meet Your Guide</h2>
+        <div class="host-profile">
+          <!-- Using a generic placeholder as the specific image path 'images/placeholder-guide.jpg' might not exist -->
+          <img src="Group.jpg" alt="Local tour guide with a group.">
+          <div>
+            <h3>Local Expert Guide</h3>
+            <p>Our guides are licensed local historians and lifelong residents of Aqaba. Their passion for local folklore and culture brings the city to life.</p>
+          </div>
+        </div>
+      </section>
 
-    <!-- Admin Logins Section -->
-    <div class="admin-section" id="logins">
-      <h2>Admin Login Events</h2>
-      <table class="admin-table" id="loginsTable">
-        <tr>
-          <th>Date</th>
-          <th>Username</th>
-          <th>IP Address</th>
-        </tr>
-      </table>
-    </div>
+      <!-- 5. Gallery -->
+      <section class="experience-section">
+        <h2>Gallery</h2>
+        <div class="gallery">
+          <img src="tourists-mosque.jpg" alt="Tourists visiting a local mosque in Aqaba" loading="lazy">
+          <img src="local-meat-market.jpg" alt="Traditional meat market in Aqaba" loading="lazy">
+          <img src="Experience1.jpg" alt="Historic street view.">
+          <img src="Experience2.jpg" alt="Close-up of architectural detail.">
+          <img src="Experience3.jpg" alt="Tour group in a sunny square.">
+        </div>
+      </section>
 
-    <div class="admin-actions">
-      <button onclick="logout()">Logout</button>
-    </div>
+      <!-- 7. Reviews -->
+      <section class="experience-section">
+        <h2>Reviews</h2>
+        <div class="review-summary">
+          <div class="stars">★★★★★</div>
+          <p>5.0/5.0 (Based on 312 reviews)</p>
+        </div>
+        <blockquote>
+          <p>"Alex was fantastic! The tour was engaging, informative, and perfectly paced. Highly recommend for anyone visiting the city."</p>
+          <footer>- David L.</footer>
+        </blockquote>
+      </section>
+
+    </main>
+
+    <!-- Sidebar with Booking Module -->
+    <aside>
+      <div class="booking-module">
+        <h3>Book Your Experience</h3>
+        <div class="price">20 JOD</div>
+        <p>per person</p>
+        <a href="Reservation.html?experience=Historic%20Walking%20Tour" class="button-cta">Book Your Tour Now!</a>
+      </div>
+    </aside>
   </div>
 
-  <!-- Simple login modal -->
-  <div id="loginModal">
-    <div>
-      <h2>Admin Login</h2>
-      <input type="password" id="adminPassword" placeholder="Enter admin password">
-      <button onclick="login()">Login</button>
-      <div id="loginError"></div>
-    </div>
-  </div>
-</body>
+  <footer>
+    <p>&copy; 2025 Aqaba local experiences | Aqaba, Jordan. All rights reserved.</p>
+  </footer>
+
 <script>
-  const ADMIN_PASSWORD = "ACTact123";
+  // Mobile menu functionality
+  const hamburger = document.getElementById('hamburger');
+  const navbarLinks = document.getElementById('navbarLinks');
+  const menuOverlay = document.getElementById('menuOverlay');
+  hamburger?.addEventListener('click', function () {
+    navbarLinks.classList.toggle('open');
+    menuOverlay.classList.toggle('active');
+  });
+  menuOverlay?.addEventListener('click', function () {
+    navbarLinks.classList.remove('open');
+    menuOverlay.classList.remove('active');
+  });
 
-  function login() {
-    const input = document.getElementById('adminPassword').value;
-    if (input === ADMIN_PASSWORD) {
-      document.getElementById('loginModal').style.display = 'none';
-      document.getElementById('adminContainer').style.display = '';
-      document.getElementById('adminStatus').textContent = "Admin logged in";
-      loadAllData();
-
-      // After successful login:
-      fetch('/api/admin-logins', { method: 'POST' });
-    } else {
-      document.getElementById('loginError').textContent = "Incorrect password.";
-    }
-  }
-
-  function logout() {
-    document.getElementById('adminContainer').style.display = 'none';
-    document.getElementById('loginModal').style.display = 'flex';
-    document.getElementById('adminPassword').value = '';
-    document.getElementById('adminStatus').textContent = "";
-  }
-
-  function showTab(tab) {
-    document.querySelectorAll('.admin-section').forEach(sec => sec.style.display = 'none');
-    document.getElementById(tab).style.display = '';
-    if (tab === 'logins') loadLogins();
-  }
-
-  async function loadAllData() {
-    await Promise.all([loadMessages(), loadBlog(), loadProducts(), loadLogins()]);
-  }
-
-  async function loadMessages() {
-    const res = await fetch('/api/messages');
-    const data = await res.json();
-    const table = document.getElementById('messagesTable');
-    table.innerHTML = `<tr><th>Name</th><th>Email</th><th>Message</th><th>Delete</th></tr>`;
-    data.forEach(msg => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${msg.name}</td>
-        <td>${msg.email}</td>
-        <td>${msg.message}</td>
-        <td><button onclick="deleteMessage('${msg.id || msg._id}')">Delete</button></td>
-      `;
-      table.appendChild(row);
-    });
-  }
-
-  async function deleteMessage(id) {
-    await fetch('/api/messages/' + id, { method: 'DELETE' });
-    loadMessages();
-  }
-
-  async function loadBlog() {
-    const res = await fetch('/api/blog');
-    const data = await res.json();
-    const table = document.getElementById('blogTable');
-    table.innerHTML = `<tr><th>Title</th><th>Date</th><th>Edit</th><th>Delete</th></tr>`;
-    data.forEach(post => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${post.title}</td>
-        <td>${new Date(post.date).toLocaleDateString()}</td>
-        <td><button onclick="editPost('${post.id}', \`${post.title.replace(/`/g, '\\`')}\`, \`${post.content.replace(/`/g, '\\`')}\`)">Edit</button></td>
-        <td><button onclick="deleteBlog('${post.id}')">Delete</button></td>
-      `;
-      table.appendChild(row);
-    });
-  }
-
-  async function deleteBlog(id) {
-    await fetch('/api/blog/' + id, { method: 'DELETE' });
-    loadBlog();
-  }
-
-  async function loadProducts() {
-    const res = await fetch('/api/products');
-    const data = await res.json();
-    const table = document.getElementById('productsTable');
-    table.innerHTML = `<tr><th>Product</th><th>Price</th><th>Delete</th></tr>`;
-    data.forEach(prod => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${prod.name}</td>
-        <td>${prod.price}</td>
-        <td><button onclick="deleteProduct('${prod._id || prod.id}')">Delete</button></td>
-      `;
-      table.appendChild(row);
-    });
-  }
-
-  async function deleteProduct(id) {
-    await fetch('/api/products/' + id, { method: 'DELETE' });
-    loadProducts();
-  }
-
-  async function loadLogins() {
-    const res = await fetch('/api/admin-logins');
-    const data = await res.json();
-    const table = document.getElementById('loginsTable');
-    table.innerHTML = `<tr><th>Date</th><th>Username</th><th>IP Address</th></tr>`;
-    data.forEach(event => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${new Date(event.timestamp).toLocaleString()}</td>
-        <td>${event.username || 'admin'}</td>
-        <td>${event.ip || ''}</td>
-      `;
-      table.appendChild(row);
-    });
-  }
-
-  document.getElementById('blogForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const title = document.getElementById('blog-title').value.trim();
-    const content = document.getElementById('blog-content').value.trim();
-    const imageInput = document.getElementById('blog-image');
-    const msgDiv = document.getElementById('blogFormMsg');
-    msgDiv.textContent = '';
-
-    if (!title || !content || !imageInput.files[0]) {
-      msgDiv.textContent = 'Please fill in all fields and select an image.';
-      msgDiv.style.color = 'red';
-      return;
-    }
-
-    try {
-      const formData = new FormData();
-      formData.append('title', title);
-      formData.append('content', content);
-      formData.append('image', imageInput.files[0]);
-
-      const res = await fetch('/api/blog', {
-        method: 'POST',
-        body: formData
-      });
-
-      if (res.ok) {
-        msgDiv.textContent = 'Blog post added!';
-        msgDiv.style.color = 'green';
-        this.reset();
-        loadBlog();
+  // Navbar hide/show on scroll
+  document.addEventListener('DOMContentLoaded', function () {
+    let lastScrollY = window.scrollY;
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 60) {
+        navbar.style.top = '-80px';
       } else {
-        msgDiv.textContent = 'Failed to add post.';
-        msgDiv.style.color = 'red';
+        navbar.style.top = '0';
       }
-    } catch (err) {
-      msgDiv.textContent = 'Error connecting to server.';
-      msgDiv.style.color = 'red';
-    }
-  });
-
-  document.getElementById('productForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const name = document.getElementById('product-name').value;
-    const price = document.getElementById('product-price').value;
-    await fetch('/api/products', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, price })
+      lastScrollY = window.scrollY;
     });
-    this.reset();
-    loadProducts();
   });
 
-  function editPost(id, title, content) {
-    document.getElementById('edit-id').value = id;
-    document.getElementById('edit-title').value = title;
-    document.getElementById('edit-content').value = content;
-    document.getElementById('editBlogForm').style.display = 'block';
-    window.scrollTo({ top: document.getElementById('editBlogForm').offsetTop - 100, behavior: 'smooth' });
-  }
-
-  function submitEdit(event) {
-    event.preventDefault();
-    const id = document.getElementById('edit-id').value;
-    const title = document.getElementById('edit-title').value;
-    const content = document.getElementById('edit-content').value;
-
-    fetch(`/api/blog/${id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title, content })
-    })
-    .then(res => res.json())
-    .then(() => {
-      alert('Post updated!');
-      document.getElementById('editBlogForm').style.display = 'none';
-      loadBlog();
-    })
-    .catch(() => alert('Failed to update post.'));
-  }
-
-  document.getElementById('adminContainer').style.display = 'none';
-  document.getElementById('adminPassword').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') login();
+  // Highlight active nav link
+  const currentPath = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll('.navbar a');
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    link.removeAttribute('aria-current');
+    if (link.getAttribute('href') === currentPath || (currentPath === "" && link.getAttribute('href') === "index.html")) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    }
   });
 </script>
+
+<script>
+  // toggle dropdown on small screens
+  document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      if (window.innerWidth <= 800) {
+        e.preventDefault();
+        const dd = this.closest('.dropdown');
+        // close other open dropdowns first
+        document.querySelectorAll('.navbar .dropdown.open').forEach(o => { if (o !== dd) o.classList.remove('open'); });
+        dd.classList.toggle('open');
+      }
+    });
+  });
+
+  // click outside to close mobile dropdown
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 800) {
+      if (!e.target.closest('.navbar')) {
+        document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
+      }
+    }
+  });
+
+  // optional: close on resize from mobile -> desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 800) document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
+  });
+</script>
+
+<script src="js/navbar.js"></script>
+</body>
 </html>
+
 
