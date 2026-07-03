@@ -99,7 +99,7 @@
     <!-- Error/Success Message Container -->
     <div id="form-message-container"></div>
     <!-- Popup Modal for Error -->
-    <div id="error-popup" style="display:none;">
+    <div id="error-popup">
         <div class="popup-content">
             <span class="close-btn" onclick="closeErrorPopup()">&times;</span>
             <div id="popup-message"></div>
@@ -112,10 +112,10 @@
     </div>
     <form id="reservation-form" action="https://formspree.io/f/movkdnjg" method="POST" novalidate>
       <!-- keep honeypot -->
-      <input type="text" name="_gotcha" style="display:none" aria-hidden="true">
+      <input type="text" name="_gotcha" aria-hidden="true">
       
       <!-- Contact Info Section -->
-      <h3 style="margin-top:0; color:var(--color-accent);">1. Contact Details</h3>
+      <h3>1. Contact Details</h3>
       <div class="form-group">
         <label for="name">Full Name:</label>
         <input type="text" id="name" name="name" required aria-required="true">
@@ -132,8 +132,8 @@
       </div>
 
       <!-- Experience Selection Section -->
-      <h3 style="margin-top:2rem; color:var(--color-accent);">2. Select Experiences</h3>
-      <p style="font-size:0.9rem; margin-bottom:1rem; color:#666;">Check the experiences you wish to book. You can select different dates and guest numbers for each.</p>
+      <h3>2. Select Experiences</h3>
+      <p>Check the experiences you wish to book. You can select different dates and guest numbers for each.</p>
 
       <!-- Cooking Class -->
       <div class="experience-option-card">
@@ -216,7 +216,7 @@
                     <input type="number" name="Glass_Boat_Hours" min="1" value="1" class="guest-input">
                 </div>
             </div>
-            <p style="font-size:0.85rem; margin-top:5px; color:#666;">*Price is per hour for the boat (up to 6 people).</p>
+            <p>*Price is per hour for the boat (up to 6 people).</p>
         </div>
       </div>
 
@@ -272,118 +272,7 @@
     </footer>
 
     <!-- CSS for the new form structure -->
-    <style>
-        .experience-option-card {
-            background: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-            transition: all 0.3s ease;
-        }
-        .experience-option-card:hover {
-            border-color: var(--color-primary);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .main-checkbox {
-            margin-bottom: 0;
-            width: 100%;
-        }
-        
-        .experience-details {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
-            max-height: 500px; /* arbitrary large max-height */
-            opacity: 1;
-        }
-        
-        .experience-details.collapsed {
-            max-height: 0;
-            opacity: 0;
-            margin-top: 0;
-            padding-top: 0;
-            border-top: none;
-            pointer-events: none;
-        }
-
-        .form-row {
-            display: flex;
-            gap: 15px;
-        }
-        .form-col {
-            flex: 1;
-        }
-        .form-col input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        
-        /* Checkbox styling reuse */
-        .checkbox-container {
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding-left: 30px;
-            cursor: pointer;
-            font-size: 1rem;
-            user-select: none;
-            color: var(--text-primary);
-        }
-        .checkbox-container input {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-            height: 0;
-            width: 0;
-        }
-        .checkmark {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 20px;
-            width: 20px;
-            background-color: #fff;
-            border-radius: 4px;
-            border: 1px solid #aaa;
-        }
-        .checkbox-container:hover input ~ .checkmark {
-            background-color: #f0f0f0;
-        }
-        .checkbox-container input:checked ~ .checkmark {
-            background-color: var(--color-primary);
-            border-color: var(--color-primary);
-        }
-        .checkmark:after {
-            content: "";
-            position: absolute;
-            display: none;
-        }
-        .checkbox-container input:checked ~ .checkmark:after {
-            display: block;
-        }
-        .checkbox-container .checkmark:after {
-            left: 7px;
-            top: 3px;
-            width: 5px;
-            height: 10px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-        }
-        
-        @media (max-width: 500px) {
-            .form-row {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-    </style>
+    
 
     <script>
     // Mobile menu functionality
@@ -591,3 +480,4 @@
 </script>
 </body>
 </html>
+
