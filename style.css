@@ -41,7 +41,8 @@ header,footer{width:100%}
 .navbar .brand{font-weight:800;font-size:1.1rem;color:var(--color-text)}
 .navbar-links{display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap}
 .navbar-links a,.dropbtn{color:var(--color-text);font-weight:600;padding:0.75rem 1rem;border-radius:999px;transition:background var(--transition),color var(--transition);white-space:nowrap}
-.navbar-links a:hover,.navbar-links a.active,.dropbtn:hover,.dropbtn.active{background:rgba(0,121,140,0.12);color:var(--color-accent-dark)}
+.navbar-links a:hover,.navbar-links a.active,.dropbtn:hover{background:rgba(0,121,140,0.12);color:var(--color-accent-dark)}
+.dropbtn.active{background:transparent;color:var(--color-text)}
 .hamburger{display:none;background:none;border:none;color:var(--color-text);font-size:1.9rem;line-height:1;cursor:pointer;padding:0.5rem}
 .dropdown{position:relative}
 .dropdown > .dropbtn::after{content:'▾';margin-left:0.35rem;font-size:0.75rem;transition:transform var(--transition)}
