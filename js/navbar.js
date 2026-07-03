@@ -68,6 +68,19 @@
     }catch(e){}
   });
 
+  // If any dropdown child matches the current path, mark the parent dropbtn active
+  dropdowns.forEach(dd=>{
+    const items = Array.from(dd.querySelectorAll('.dropdown-content a'));
+    const btn = dd.querySelector('.dropbtn');
+    if (!btn || !items.length) return;
+    for (const it of items){
+      try{
+        const href = new URL(it.href, location.origin).pathname;
+        if (href === path || (href !== '/' && path.startsWith(href))){ btn.classList.add('active'); break }
+      }catch(e){}
+    }
+  });
+
   // Insert skip link for accessibility if not present
   if (!document.querySelector('.skip-link')){
     const skip = document.createElement('a');
