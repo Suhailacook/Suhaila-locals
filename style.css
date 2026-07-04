@@ -375,18 +375,20 @@ form#reservation-form {
 }
 .form-group input, .form-group select, .form-group textarea {
   width: 100%; 
-  padding: 12px; 
+  padding: 14px; 
   border: 1px solid var(--border-color); 
   border-radius: var(--radius-sm); 
   font-size: 1rem; 
   font-family: var(--font-body); 
-  background: #fdfdfd;
-  transition: border 0.3s;
+  background: #FAFAFA;
+transition: all 0.25s ease;
+   color: var(--text-primary);
 }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
     border-color: var(--color-accent);
+   background: var(--bg-surface);
     outline: none;
-box-shadow: 0 0 0 4px var(--border-color), 0 0 0 6px var(--color-accent);
+box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px var(--color-primary);
    transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
@@ -418,16 +420,17 @@ box-shadow: 0 0 0 4px var(--border-color), 0 0 0 6px var(--color-accent);
 
 /* Form Price Display */
 .form-price-display {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: var(--color-primary);
-  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 2rem;
   text-align: center;
   display: none;
-  padding: 10px;
-  border: 2px solid var(--border-color);
+  padding: 12px;
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  background: #fdfdfd;
+  background:rgba(17, 45, 50, 0.03);
+   letter-spacing: 0.5px;
 }
 
 /* =========================================
