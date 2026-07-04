@@ -85,6 +85,9 @@ img { max-width: 100%; display: block; }
   transition: all var(--transition);
   border: none;
   text-align: center;
+   user-select: none;
+   -webkit-user-select: none;
+   
 }
 
 .button-cta, .button-primary {
@@ -122,6 +125,7 @@ img { max-width: 100%; display: block; }
   position: sticky;
   top: 0;
   z-index: 1000;
+   will-change: transform;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   transition: top 0.3s;
 }
@@ -371,7 +375,8 @@ form#reservation-form {
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
     border-color: var(--color-accent);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 121, 140, 0.1);
+box-shadow: 0 0 0 4px var(--border-color), 0 0 0 6px var(--color-accent);
+   transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .form-actions { text-align: center; margin-top: 2rem; }
@@ -783,6 +788,8 @@ blockquote footer {
   font-weight: 600;
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(5px);
+   transform: scale(0.9);
+  transition: transform var(--transition);
 }
 
 .gallery-caption {
