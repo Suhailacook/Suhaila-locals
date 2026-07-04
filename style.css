@@ -4,7 +4,7 @@
    ========================================= */
 :root {
   /* --- Brand Colors --- */
-  --color-primary: #D4AF37;      /* Warm Gold - Accents, Highlights */
+  --color-primary: #FFE699;      /* Warm Gold - Accents, Highlights */
   --color-secondary: #E76F51;    /* Terracotta - CTAs, Warmth */
   --color-accent:  #00798C;      /* Deep Teal - Headings, Primary Elements */
   --color-accent-dark: #005f6e;  /* Darker Teal for hover/active */
@@ -444,7 +444,7 @@ form#reservation-form {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.1) 100%);
+  background: linear-gradient(to top, rgba(15, 32, 39, 0.85) 0%, rgba(32, 58, 67, 0.4) 60%,, rgba(0,0,0,0.2) 100%);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -912,7 +912,14 @@ blockquote footer {
 /* Featured Story Section */
 .featured-story-section {
   position: relative;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('aqaba-walking-tour.webp') no-repeat center center/cover;
+  background: linear-gradient(
+                to bottom, 
+                var(--bg-page) 0%, 
+                rgba(0,0,0,0.6) 15%, 
+                rgba(0,0,0,0.6) 85%, 
+                var(--bg-page) 100%
+              ), 
+              url('aqaba-walking-tour.webp') no-repeat center center/cover;
   background-attachment: fixed;
   padding: 8rem 1rem;
   text-align: center;
@@ -1066,7 +1073,7 @@ blockquote footer {
 
 /* Review Section (Home) */
 .review-section-advanced {
-  background: #f0fdf4; /* Very light green/teal tint */
+  background:rgba(0, 121, 140, 0.05);
   padding: 5rem 1rem;
   text-align: center;
 }
@@ -1699,11 +1706,11 @@ footer {
 /* Category Badge Colors */
 .blog-category.culinary { background-color: var(--color-secondary) !important; }
 .blog-category.travel-safety { background-color: #E76F51 !important; }
-.blog-category.national-pride { background-color: #D4AF37 !important; }
+.blog-category.national-pride { background-color: #FFE699 !important; }
 .blog-category.travel-tips { background-color: var(--color-accent) !important; }
 .blog-category.adventure { background-color: #00798C !important; }
 .blog-category.culture { background-color: #A3704C !important; }
-.blog-category.events { background-color: #D4AF37 !important; }
+.blog-category.events { background-color: #FFE699 !important; }
 .blog-category.safety-culture { background-color: #6C757D !important; }
 
 /* Reading time styling */
