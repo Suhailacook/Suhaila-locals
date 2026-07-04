@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -43,39 +46,48 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
+  /* Suhaila Locals Brand Colors */
+  --color-gold: #D4AF37;
+  --color-terracotta: #E76F51;
+  --color-teal: #00798C;
+  --color-teal-dark: #005f6e;
+  --color-cream: #F9FAFB;
+  --color-charcoal: #1A1A1A;
+  --color-text-muted: #555555;
+  
+  --primary: #00798C;
+  --primary-foreground: #F9FAFB;
+  --sidebar-primary: #00798C;
+  --sidebar-primary-foreground: #F9FAFB;
+  --chart-1: #D4AF37;
+  --chart-2: #E76F51;
+  --chart-3: #00798C;
+  --chart-4: #005f6e;
+  --chart-5: #1A1A1A;
+  --radius: 0.75rem;
+  --background: oklch(0.98 0.001 80);
+  --foreground: oklch(0.1 0.01 65);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
+  --card-foreground: oklch(0.1 0.01 65);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
+  --popover-foreground: oklch(0.1 0.01 65);
+  --secondary: #E76F51;
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.9 0.002 80);
+  --muted-foreground: #555555;
+  --accent: #D4AF37;
+  --accent-foreground: #1A1A1A;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(0.92 0.004 286.32);
   --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
+  --ring: #00798C;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-accent: #D4AF37;
+  --sidebar-accent-foreground: #1A1A1A;
   --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --sidebar-ring: #00798C;
 }
 
 .dark {
@@ -119,6 +131,17 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+  }
+  h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
