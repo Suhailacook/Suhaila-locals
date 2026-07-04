@@ -132,6 +132,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
 }
 
+/* Added background, border, font, and cursor resets for the button element */
 .navbar-links a, .dropbtn {
   color: rgba(255,255,255,0.9);
   font-weight: 500;
@@ -139,11 +140,20 @@ img { max-width: 100%; display: block; }
   border-radius: 6px;
   font-size: 1rem;
   transition: all 0.2s;
+  background: transparent;    /* Removes default browser white/gray background */
+  border: none;               /* Removes default button border outline */
+  font-family: var(--font-body); /* Inherits page typography layout cleanly */
+  cursor: pointer;            /* Shows hand pointer cursor like standard links */
+  outline: none;
 }
 
-.navbar-links a:hover, .navbar-links a.active, .dropbtn:hover {
-  color: var(--color-primary);
-  background: rgba(255,255,255,0.1);
+/* Explicitly handles the hover and active states for links and the dropdown class */
+.navbar-links a:hover, 
+.navbar-links a.active, 
+.dropbtn:hover,
+.dropbtn.active {
+  color: var(--color-primary) !important;
+  background: rgba(255,255,255,0.1) !important;
 }
 
 .hamburger {
