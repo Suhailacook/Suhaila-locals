@@ -347,12 +347,23 @@ img { max-width: 100%; display: block; }
 form#reservation-form {
   max-width: 500px; 
   margin: 30px auto 60px auto; 
-  background: #fff; 
+  background: var(--bg-surface); 
   padding: 2.5rem; 
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg); 
   display: none; /* Toggled by JS */
   border-top: 5px solid var(--color-primary);
+   animation: formSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes formSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .form-group { margin-bottom: 20px; text-align: left; }
