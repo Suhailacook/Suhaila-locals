@@ -189,7 +189,7 @@ img { max-width: 100%; display: block; }
 /* Reservation Hero */
 .reservation-hero {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                url('aqaba-beach-sunset.jpg') no-repeat center center/cover;
+                url('aqaba-beach-sunset.webp') no-repeat center center/cover;
     color: #fff;
     padding: 6rem 1rem 4rem 1rem;
     border-radius: 0 0 40px 40px;
@@ -902,7 +902,7 @@ blockquote footer {
 /* Featured Story Section */
 .featured-story-section {
   position: relative;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('aqaba-walking-tour.jpg') no-repeat center center/cover;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('aqaba-walking-tour.webp') no-repeat center center/cover;
   background-attachment: fixed;
   padding: 8rem 1rem;
   text-align: center;
