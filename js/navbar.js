@@ -59,12 +59,17 @@
   });
 
   // Highlight active link based on current URL
+  const currentFilename = location.pathname.split('/').pop() || 'index.html';
   const links = document.querySelectorAll('.navbar-links a');
-  const path = location.pathname.replace(/\/g,'/');
+  
   links.forEach(a=>{
     try{
-      const href = new URL(a.href, location.origin).pathname;
-      if (href === path || (href !== '/' && path.startsWith(href))){ a.classList.add('active') }
+      const href = new URL(a.href, location.origin).pathname.split('/').pop() || 'index.html';
+      if (href === currentFilename){ 
+        a.classList.add('active'); 
+      } else {
+        a.classList.remove('active');
+      }
     }catch(e){}
   });
 
@@ -73,10 +78,13 @@
     const items = Array.from(dd.querySelectorAll('.dropdown-content a'));
     const btn = dd.querySelector('.dropbtn');
     if (!btn || !items.length) return;
+    
+    btn.classList.remove('active');
+    
     for (const it of items){
       try{
-        const href = new URL(it.href, location.origin).pathname;
-        if (href === path || (href !== '/' && path.startsWith(href))){ btn.classList.add('active'); break }
+        const href = new URL(it.href, location.origin).pathname.split('/').pop() || 'index.html';
+        if (href === currentFilename){ btn.classList.add('active'); break }
       }catch(e){}
     }
   });
