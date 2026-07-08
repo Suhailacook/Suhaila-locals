@@ -26,6 +26,7 @@
     menu.classList.add('open');
     btn && btn.classList.add('open');
     overlay && overlay.classList.add('active');
+    document.body.classList.add('menu-open');
     untrap = trapFocus(menu);
     document.body.style.overflow = 'hidden';
   }
@@ -34,6 +35,7 @@
     menu.classList.remove('open');
     btn && btn.classList.remove('open');
     overlay && overlay.classList.remove('active');
+    document.body.classList.remove('menu-open');
     if (untrap) { untrap(); untrap = null }
     document.body.style.overflow = '';
   }
