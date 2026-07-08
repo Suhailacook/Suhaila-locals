@@ -134,6 +134,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   gap: 1.5rem;
   align-items: center;
+  overflow: hidden;
 }
 
 /* Added background, border, font, and cursor resets for the button element */
@@ -1332,22 +1333,26 @@ body {
     position: fixed;
     top: 80px;
     right: 0;
-    width: 100%;
-    max-width: 80vw;
+    width: 100vw;
+    max-width: 100vw;
     height: calc(100vh - 80px);
     background: #1a2a33;
     flex-direction: column;
     align-items: flex-start;
     padding: 2rem;
-    transform: translateX(100%);
+    transform: translateX(100vw);
     transition: transform 0.3s ease;
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 999;
+    visibility: hidden;
+    pointer-events: none;
   }
   
   .navbar-links.open {
     transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
   }
   
   .navbar-links a, .dropbtn {
