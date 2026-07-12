@@ -171,75 +171,10 @@
     <p>&copy; 2025 Aqaba local experiences | Aqaba, Jordan. All rights reserved.</p>
   </footer>
 
-<script>
-  // Mobile menu functionality
-  const hamburger = document.getElementById('hamburger');
-  const navbarLinks = document.getElementById('navbarLinks');
-  const menuOverlay = document.getElementById('menuOverlay');
-  hamburger?.addEventListener('click', function () {
-    navbarLinks.classList.toggle('open');
-    menuOverlay.classList.toggle('active');
-  });
-  menuOverlay?.addEventListener('click', function () {
-    navbarLinks.classList.remove('open');
-    menuOverlay.classList.remove('active');
-  });
 
-  // Navbar hide/show on scroll
-  document.addEventListener('DOMContentLoaded', function () {
-    let lastScrollY = window.scrollY;
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > lastScrollY && window.scrollY > 60) {
-        navbar.style.top = '-80px';
-      } else {
-        navbar.style.top = '0';
-      }
-      lastScrollY = window.scrollY;
-    });
-  });
 
-  // Highlight active nav link
-  const currentPath = window.location.pathname.split("/").pop();
-  const navLinks = document.querySelectorAll('.navbar a');
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    link.removeAttribute('aria-current');
-    if (link.getAttribute('href') === currentPath || (currentPath === "" && link.getAttribute('href') === "index.html")) {
-      link.classList.add('active');
-      link.setAttribute('aria-current', 'page');
-    }
-  });
-</script>
 
-<script>
-  // toggle dropdown on small screens
-  document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      if (window.innerWidth <= 800) {
-        e.preventDefault();
-        const dd = this.closest('.dropdown');
-        // close other open dropdowns first
-        document.querySelectorAll('.navbar .dropdown.open').forEach(o => { if (o !== dd) o.classList.remove('open'); });
-        dd.classList.toggle('open');
-      }
-    });
-  });
 
-  // click outside to close mobile dropdown
-  document.addEventListener('click', (e) => {
-    if (window.innerWidth <= 800) {
-      if (!e.target.closest('.navbar')) {
-        document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
-      }
-    }
-  });
-
-  // optional: close on resize from mobile -> desktop
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 800) document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
-  });
-</script>
-
+<script src="js/navbar.js"></script>
 </body>
 </html>
