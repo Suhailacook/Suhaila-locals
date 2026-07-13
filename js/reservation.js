@@ -54,6 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const experienceParam = urlParams.get('experience');
     
     if (experienceParam) {
+        if (form) {
+            form.style.display = 'block';
+        }
         const expMap = {
             'cooking': 'Book_Cooking_Class',
             'walking': 'Book_Walking_Tour',
@@ -64,7 +67,9 @@ document.addEventListener('DOMContentLoaded', function() {
             'Dining Experience': 'Book_Dining_Experience',
             'Aqaba Glass Boat': 'Book_Glass_Boat',
             'Walking Tour in Aqaba': 'Book_Walking_Tour',
-            'Historic Walking Tour': 'Book_Walking_Tour'
+            'Historic Walking Tour': 'Book_Walking_Tour',
+            'iftar': 'Book_Dining_Experience',
+            'Ramadan Iftar': 'Book_Dining_Experience'
         };
 
         const fieldName = expMap[experienceParam] || expMap[decodeURIComponent(experienceParam)];
@@ -104,6 +109,11 @@ document.addEventListener('DOMContentLoaded', function() {
  * Global function to open form for a specific experience on the reservation page
  */
 window.openForm = function(experienceType) {
+    const form = document.getElementById('reservation-form');
+    if (form) {
+        form.style.display = 'block';
+    }
+
     const expMap = {
         'cooking': 'Book_Cooking_Class',
         'walking': 'Book_Walking_Tour',
@@ -121,7 +131,6 @@ window.openForm = function(experienceType) {
         }
     } else {
         // Just scroll to form if type not found
-        const form = document.getElementById('reservation-form');
         if (form) form.scrollIntoView({ behavior: 'smooth' });
     }
 };
