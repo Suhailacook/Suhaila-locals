@@ -8,1158 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <style>
-        /* ===== RESET & BASE ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
-            background: #f6f4f0;
-            color: #1a2634;
-            line-height: 1.7;
-            scroll-behavior: smooth;
-        }
-
-        /* ===== NAVBAR ===== */
-        .navbar {
-            background: #0f2b4a;
-            padding: 14px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 3px solid #f9d56e;
-        }
-
-        .navbar .logo {
-            color: #f9d56e;
-            font-size: 1.6rem;
-            font-weight: 900;
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-        }
-
-        .navbar .logo img {
-            height: 36px;
-            width: auto;
-            display: inline-block;
-        }
-
-        .navbar .logo span {
-            color: #ffffff;
-            font-weight: 300;
-        }
-
-        .navbar-links {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .navbar-links a {
-            color: #dce6ef;
-            text-decoration: none;
-            padding: 8px 20px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-links a:hover,
-        .navbar-links a.active {
-            background: #f9d56e;
-            color: #0f2b4a;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 14px rgba(249, 213, 110, 0.3);
-        }
-
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 4px 8px;
-            transition: 0.3s;
-        }
-
-        .hamburger:hover {
-            color: #f9d56e;
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-            .navbar-links {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                gap: 4px;
-                padding-top: 14px;
-            }
-            .navbar-links.open {
-                display: flex;
-            }
-            .navbar-links a {
-                width: 100%;
-                text-align: center;
-                padding: 10px;
-            }
-            .navbar {
-                padding: 12px 20px;
-            }
-            .navbar .logo img {
-                height: 28px;
-            }
-        }
-
-        /* ===== HERO ===== */
-        .reservation-hero {
-            background: linear-gradient(145deg, #0f2b4a 0%, #1a4a6a 40%, #2d7a9b 100%);
-            color: white;
-            padding: 60px 24px 72px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .reservation-hero .hero-bg-image {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.12;
-            pointer-events: none;
-        }
-
-        .reservation-hero .hero-shape {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 20% 80%, rgba(249, 213, 110, 0.08), transparent 60%);
-            pointer-events: none;
-        }
-
-        .reservation-hero .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .reservation-hero .hero-logo {
-            max-height: 80px;
-            width: auto;
-            margin-bottom: 16px;
-            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
-        }
-
-        .reservation-hero h1 {
-            font-size: 3.2rem;
-            font-weight: 900;
-            letter-spacing: -1px;
-            line-height: 1.2;
-        }
-
-        .reservation-hero h1 span {
-            color: #f9d56e;
-            position: relative;
-        }
-
-        .reservation-hero h1 span::after {
-            content: '';
-            position: absolute;
-            bottom: 4px;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: rgba(249, 213, 110, 0.3);
-            border-radius: 4px;
-        }
-
-        .reservation-hero p {
-            max-width: 680px;
-            margin: 16px auto 0;
-            opacity: 0.92;
-            font-size: 1.2rem;
-            font-weight: 400;
-            line-height: 1.6;
-        }
-
-        .reservation-hero .hero-badge {
-            display: inline-block;
-            margin-top: 20px;
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(8px);
-            padding: 8px 28px;
-            border-radius: 60px;
-            font-size: 0.85rem;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-
-        @media (max-width: 600px) {
-            .reservation-hero h1 {
-                font-size: 2.2rem;
-            }
-            .reservation-hero p {
-                font-size: 1rem;
-            }
-            .reservation-hero {
-                padding: 40px 16px 50px;
-            }
-            .reservation-hero .hero-logo {
-                max-height: 50px;
-            }
-        }
-
-        /* ===== CARDS ===== */
-        .reservation-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 32px;
-            max-width: 1200px;
-            margin: -40px auto 48px;
-            padding: 0 24px;
-            position: relative;
-            z-index: 3;
-        }
-
-        .reservation-item {
-            background: white;
-            border-radius: 32px;
-            padding: 24px 24px 28px;
-            box-shadow: 0 12px 44px rgba(0, 0, 0, 0.06);
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
-            border: 1px solid #e8e2d9;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .reservation-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #f9d56e, #f0c84a);
-            opacity: 0;
-            transition: 0.4s;
-        }
-
-        .reservation-item:hover::before {
-            opacity: 1;
-        }
-
-        .reservation-item:hover {
-            transform: translateY(-14px);
-            box-shadow: 0 30px 70px rgba(15, 43, 74, 0.12);
-            border-color: #f9d56e;
-        }
-
-        .reservation-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 20px;
-            background: #dce3ec;
-            margin-bottom: 16px;
-            transition: all 0.5s ease;
-        }
-
-        .reservation-item:hover img {
-            transform: scale(1.02);
-        }
-
-        .reservation-item .badge {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: rgba(15, 43, 74, 0.85);
-            backdrop-filter: blur(6px);
-            color: white;
-            padding: 4px 16px;
-            border-radius: 40px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            text-transform: uppercase;
-        }
-
-        .reservation-item h3 a {
-            color: #0f2b4a;
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: 800;
-            transition: 0.3s;
-        }
-
-        .reservation-item h3 a:hover {
-            color: #1f5a7a;
-        }
-
-        .reservation-item .description {
-            color: #3d4f64;
-            font-size: 0.95rem;
-            margin: 8px 0 6px;
-            flex: 1;
-            line-height: 1.6;
-        }
-
-        .reservation-item .price-tag {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: #0f2b4a;
-            margin: 8px 0 4px;
-        }
-
-        .reservation-item .price-tag small {
-            font-weight: 400;
-            font-size: 0.85rem;
-            color: #5e6f82;
-        }
-
-        .button {
-            display: inline-block;
-            background: #f9d56e;
-            color: #0f2b4a;
-            border: none;
-            padding: 12px 36px;
-            border-radius: 60px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            margin-top: 10px;
-            box-shadow: 0 4px 16px rgba(249, 213, 110, 0.3);
-            border: 1px solid transparent;
-            letter-spacing: 0.3px;
-        }
-
-        .button:hover {
-            background: #edc84a;
-            transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 8px 32px rgba(249, 213, 110, 0.45);
-        }
-
-        .button:active {
-            transform: scale(0.96);
-        }
-
-        .card-footer {
-            margin-top: 14px;
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .learn-more {
-            color: #1f5a7a;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 0.9rem;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .learn-more:hover {
-            border-bottom-color: #f9d56e;
-            color: #0f2b4a;
-            transform: translateX(4px);
-        }
-
-        @media (max-width: 480px) {
-            .reservation-item img {
-                height: 160px;
-            }
-            .reservation-item .badge {
-                top: 12px;
-                right: 12px;
-                font-size: 0.6rem;
-                padding: 3px 12px;
-            }
-        }
-
-        /* ===== SUCCESS MESSAGE ===== */
-        #form-message-container {
-            max-width: 800px;
-            margin: 0 auto 20px;
-            padding: 0 24px;
-        }
-
-        .success-message {
-            background: linear-gradient(135deg, #e6f7ed, #d4f0e0);
-            border: 2px solid #2e9b6b;
-            color: #0f2b4a;
-            padding: 20px 32px;
-            border-radius: 20px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 1.05rem;
-            display: none;
-            box-shadow: 0 4px 20px rgba(46, 155, 107, 0.15);
-        }
-
-        .success-message.show {
-            display: block;
-            animation: fadeSlide 0.6s ease;
-        }
-
-        @keyframes fadeSlide {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ===== FORM ===== */
-        #booking-form-container {
-            max-width: 800px;
-            margin: 8px auto 16px;
-            padding: 0 24px;
-        }
-
-        #booking-form-container p {
-            font-size: 1.25rem;
-            color: #1e3b5a;
-            font-weight: 700;
-            text-align: center;
-            position: relative;
-        }
-
-        #booking-form-container p::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: #f9d56e;
-            margin: 6px auto 0;
-            border-radius: 4px;
-        }
-
-        /* ===== ENHANCED FORM ===== */
-        #reservation-form {
-            background: white;
-            max-width: 800px;
-            margin: 0 auto 48px;
-            padding: 40px 42px 44px;
-            border-radius: 36px;
-            box-shadow: 0 8px 48px rgba(0, 0, 0, 0.04);
-            border: 1px solid #e8e2d9;
-            transition: all 0.4s ease;
-        }
-
-        #reservation-form:hover {
-            box-shadow: 0 16px 60px rgba(0, 0, 0, 0.07);
-        }
-
-        /* ===== STEP PROGRESS ===== */
-        .step-progress {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 32px;
-            padding: 0 8px;
-            position: relative;
-        }
-
-        .step-progress::before {
-            content: '';
-            position: absolute;
-            top: 24px;
-            left: 40px;
-            right: 40px;
-            height: 3px;
-            background: #e8e2d9;
-            z-index: 0;
-        }
-
-        .step-progress .step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .step-progress .step .step-number {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: #e8e2d9;
-            color: #8a9baa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: 0.4s ease;
-            border: 3px solid transparent;
-        }
-
-        .step-progress .step.active .step-number {
-            background: #f9d56e;
-            color: #0f2b4a;
-            border-color: #0f2b4a;
-            box-shadow: 0 4px 16px rgba(249, 213, 110, 0.4);
-        }
-
-        .step-progress .step.completed .step-number {
-            background: #2e9b6b;
-            color: white;
-        }
-
-        .step-progress .step .step-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #5e6f82;
-            text-align: center;
-        }
-
-        .step-progress .step.active .step-label {
-            color: #0f2b4a;
-        }
-
-        @media (max-width: 600px) {
-            .step-progress .step .step-label {
-                font-size: 0.6rem;
-            }
-            .step-progress .step .step-number {
-                width: 36px;
-                height: 36px;
-                font-size: 0.8rem;
-            }
-            .step-progress::before {
-                top: 18px;
-                left: 20px;
-                right: 20px;
-            }
-        }
-
-        /* ===== FORM STEPS ===== */
-        .form-step {
-            display: none;
-            animation: fadeStep 0.5s ease;
-        }
-
-        .form-step.active {
-            display: block;
-        }
-
-        @keyframes fadeStep {
-            0% {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        #reservation-form h3 {
-            color: #0f2b4a;
-            font-size: 1.3rem;
-            font-weight: 800;
-            margin: 20px 0 14px;
-            border-bottom: 3px solid #f9d56e;
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-
-        #reservation-form h3:first-of-type {
-            margin-top: 0;
-        }
-
-        .form-group {
-            margin-bottom: 22px;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            color: #1e3b5a;
-            margin-bottom: 5px;
-            font-size: 0.95rem;
-        }
-
-        .form-group label .required {
-            color: #d32f2f;
-            margin-right: 2px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 14px 20px;
-            border-radius: 16px;
-            border: 2px solid #dce3ec;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: #fafaf8;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #f9d56e;
-            box-shadow: 0 0 0 5px rgba(249, 213, 110, 0.12);
-            background: white;
-        }
-
-        .form-group input.success,
-        .form-group textarea.success {
-            border-color: #2e9b6b;
-            background: #f0faf5;
-        }
-
-        .form-group input.error,
-        .form-group textarea.error {
-            border-color: #d32f2f;
-            background: #fdf0f0;
-        }
-
-        .form-group .error-message {
-            color: #d32f2f;
-            font-size: 0.8rem;
-            margin-top: 4px;
-            display: none;
-        }
-
-        .form-group .error-message.show {
-            display: block;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #a0b0c0;
-        }
-
-        /* ===== EXPERIENCE CARDS IN FORM ===== */
-        .experience-option-card {
-            background: #fafaf8;
-            border-radius: 22px;
-            padding: 20px 24px;
-            margin-bottom: 18px;
-            border: 2px solid #e8e2d9;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .experience-option-card:hover {
-            border-color: #c8bdaa;
-            background: #fcfcfa;
-        }
-
-        .experience-option-card.selected {
-            border-color: #f9d56e;
-            background: #fefcf5;
-            box-shadow: 0 0 0 4px rgba(249, 213, 110, 0.12);
-        }
-
-        .checkbox-container {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            cursor: pointer;
-            font-size: 1rem;
-            padding: 2px 0;
-        }
-
-        .checkbox-container input[type="checkbox"] {
-            width: 24px;
-            height: 24px;
-            accent-color: #f9d56e;
-            cursor: pointer;
-            flex-shrink: 0;
-            border-radius: 6px;
-        }
-
-        .checkbox-container strong {
-            font-weight: 600;
-            color: #0f2b4a;
-        }
-
-        .experience-details {
-            margin-top: 18px;
-            padding-top: 18px;
-            border-top: 1.5px dashed #dce3ec;
-        }
-
-        .experience-details.collapsed {
-            display: none;
-        }
-
-        .form-row {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .form-col {
-            flex: 1;
-            min-width: 150px;
-        }
-
-        .form-col label {
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: #1e3b5a;
-            display: block;
-            margin-bottom: 3px;
-        }
-
-        .form-col input {
-            width: 100%;
-            padding: 12px 18px;
-            border-radius: 14px;
-            border: 2px solid #dce3ec;
-            font-family: inherit;
-            font-size: 0.95rem;
-            background: white;
-            transition: 0.3s;
-        }
-
-        .form-col input:focus {
-            outline: none;
-            border-color: #f9d56e;
-            box-shadow: 0 0 0 4px rgba(249, 213, 110, 0.1);
-        }
-
-        .experience-details .hint {
-            font-size: 0.85rem;
-            color: #5e6f82;
-            margin-top: 12px;
-            font-style: italic;
-            background: #f0f4fa;
-            padding: 8px 16px;
-            border-radius: 12px;
-        }
-
-        /* ===== BOOKING SUMMARY ===== */
-        #booking-summary {
-            background: linear-gradient(145deg, #f0f4fa, #e8edf5);
-            padding: 20px 24px;
-            border-radius: 20px;
-            margin: 24px 0 20px;
-            border: 2px solid #f9d56e;
-            display: none;
-        }
-
-        #booking-summary.show {
-            display: block;
-            animation: fadeSlide 0.4s ease;
-        }
-
-        #booking-summary h4 {
-            color: #0f2b4a;
-            font-size: 1.1rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        #booking-summary .summary-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 6px 0;
-            border-bottom: 1px solid rgba(15, 43, 74, 0.06);
-            font-size: 0.95rem;
-        }
-
-        #booking-summary .summary-item:last-child {
-            border-bottom: none;
-        }
-
-        #booking-summary .summary-total {
-            font-weight: 800;
-            font-size: 1.1rem;
-            color: #0f2b4a;
-            padding-top: 10px;
-            border-top: 2px solid rgba(15, 43, 74, 0.1);
-            margin-top: 6px;
-        }
-
-        /* ===== PRICE DISPLAY ===== */
-        .form-price-display {
-            background: linear-gradient(145deg, #f0f4fa, #e8edf5);
-            padding: 18px 28px;
-            border-radius: 20px;
-            font-size: 1.35rem;
-            font-weight: 800;
-            color: #0f2b4a;
-            margin: 24px 0 20px;
-            text-align: center;
-            border: 2px solid #f9d56e;
-            box-shadow: 0 2px 16px rgba(249, 213, 110, 0.12);
-        }
-
-        /* ===== FORM NAVIGATION ===== */
-        .form-nav {
-            display: flex;
-            justify-content: space-between;
-            gap: 16px;
-            margin-top: 24px;
-            flex-wrap: wrap;
-        }
-
-        .form-nav .button {
-            min-width: 140px;
-            padding: 14px 32px;
-            font-size: 1rem;
-            margin: 0;
-        }
-
-        .form-nav .button-secondary {
-            background: transparent;
-            border: 2px solid #dce3ec;
-            box-shadow: none;
-        }
-
-        .form-nav .button-secondary:hover {
-            background: #f0f4fa;
-            border-color: #f9d56e;
-            box-shadow: none;
-            transform: scale(1.02);
-        }
-
-        @media (max-width: 600px) {
-            #reservation-form {
-                padding: 24px 18px 30px;
-                border-radius: 28px;
-            }
-            .form-row {
-                flex-direction: column;
-                gap: 14px;
-            }
-            .form-price-display {
-                font-size: 1.1rem;
-                padding: 14px 18px;
-            }
-            .form-nav .button {
-                width: 100%;
-                text-align: center;
-            }
-            .experience-option-card {
-                padding: 16px 18px;
-            }
-        }
-
-        /* ===== LOADING SPINNER ===== */
-        #loading-spinner {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 43, 74, 0.6);
-            backdrop-filter: blur(8px);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #loading-spinner .spinner-box {
-            background: white;
-            padding: 40px 52px;
-            border-radius: 32px;
-            text-align: center;
-            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.25);
-            animation: pulseIn 0.5s ease;
-        }
-
-        @keyframes pulseIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.92);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        #loading-spinner .spinner-box .spinner-icon {
-            font-size: 3.8rem;
-            display: block;
-            margin-bottom: 8px;
-            animation: spin 1.2s linear infinite;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        #loading-spinner .spinner-box p {
-            font-weight: 700;
-            color: #0f2b4a;
-            font-size: 1.1rem;
-            margin: 0;
-        }
-
-        /* ===== ERROR POPUP ===== */
-        #error-popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(6px);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .popup-content {
-            background: white;
-            padding: 38px 40px 44px;
-            width: 92%;
-            max-width: 460px;
-            border-radius: 32px;
-            position: relative;
-            text-align: center;
-            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.25);
-            animation: pulseIn 0.4s ease;
-        }
-
-        .popup-content .close-btn {
-            position: absolute;
-            right: 16px;
-            top: 12px;
-            font-size: 30px;
-            cursor: pointer;
-            color: #8a9baa;
-            transition: all 0.3s ease;
-            background: none;
-            border: none;
-            padding: 4px 8px;
-            line-height: 1;
-        }
-
-        .popup-content .close-btn:hover {
-            color: #d32f2f;
-            transform: rotate(90deg);
-        }
-
-        .popup-content .popup-icon {
-            font-size: 3.4rem;
-            margin-bottom: 8px;
-        }
-
-        .popup-content #popup-message {
-            font-size: 1.1rem;
-            color: #1a2634;
-            line-height: 1.8;
-        }
-
-        /* ===== FAQ ===== */
-        .faq-section {
-            max-width: 800px;
-            margin: 10px auto 60px;
-            padding: 0 24px;
-        }
-
-        .faq-section h2 {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: #0f2b4a;
-            text-align: center;
-            margin-bottom: 32px;
-            letter-spacing: -0.5px;
-            position: relative;
-        }
-
-        .faq-section h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: #f9d56e;
-            margin: 8px auto 0;
-            border-radius: 4px;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #e8e2d9;
-            padding: 4px 0;
-        }
-
-        .faq-question {
-            width: 100%;
-            text-align: left;
-            padding: 20px 0;
-            background: none;
-            border: none;
-            font-family: inherit;
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: #0f2b4a;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: 0.3s ease;
-        }
-
-        .faq-question:hover {
-            color: #1f5a7a;
-        }
-
-        .faq-question .icon {
-            font-size: 1.6rem;
-            transition: 0.3s;
-            color: #f9d56e;
-            font-weight: 300;
-            flex-shrink: 0;
-            margin-left: 12px;
-        }
-
-        .faq-question.active .icon {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            display: none;
-            padding: 0 0 22px 0;
-            color: #3d4f64;
-            font-size: 0.98rem;
-            line-height: 1.8;
-        }
-
-        .faq-answer.open {
-            display: block;
-            animation: fadeSlide 0.4s ease;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: #0f2b4a;
-            color: #b0c9dd;
-            text-align: center;
-            padding: 36px 24px 28px;
-            border-top: 4px solid #f9d56e;
-        }
-
-        footer .footer-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 12px;
-        }
-
-        footer .footer-logo img {
-            height: 32px;
-            width: auto;
-        }
-
-        footer .footer-logo span {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #f9d56e;
-        }
-
-        footer p {
-            opacity: 0.6;
-            font-size: 0.9rem;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-
-        footer .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            margin-bottom: 12px;
-            flex-wrap: wrap;
-        }
-
-        footer .footer-links a {
-            color: #b0c9dd;
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: 0.3s;
-        }
-
-        footer .footer-links a:hover {
-            color: #f9d56e;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 480px) {
-            .reservation-container {
-                padding: 0 12px;
-                gap: 20px;
-            }
-            .reservation-item {
-                padding: 16px 16px 20px;
-            }
-            .popup-content {
-                padding: 28px 20px 32px;
-            }
-            .faq-section h2 {
-                font-size: 1.6rem;
-            }
-            footer .footer-logo img {
-                height: 24px;
-            }
-        }
-
-        /* ===== UTILITY ===== */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
-    </style>
+    <!-- ===== MASTER STYLESHEET ===== -->
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
-        <a href="index.html" class="logo">
+        <a href="index.html" class="logo-text">
             <img src="images/logo.png" alt="Aqaba Experiences Logo" onerror="this.style.display='none'" />
             <span>|</span> Aqaba Experiences
         </a>
@@ -1175,13 +31,10 @@
 
     <!-- ===== HERO ===== -->
     <section class="reservation-hero">
-        <img src="images/hero-bg.jpg" alt="" class="hero-bg-image" onerror="this.style.display='none'" />
         <div class="hero-shape"></div>
         <div class="hero-content">
-            <img src="images/hero-logo.png" alt="Aqaba Experiences" class="hero-logo" onerror="this.style.display='none'" />
             <h1>📅 <span>Reserve</span> Your Aqaba Experience</h1>
             <p>Choose from authentic cooking classes, guided walking tours, glass boat adventures, and traditional dining with local families.</p>
-            <div class="hero-badge">✨ Handpicked local experiences · Family-run · Authentic Jordanian hospitality</div>
         </div>
     </section>
 
@@ -1298,7 +151,6 @@
                 Check the experiences you wish to book. You can select different dates and guest numbers for each.
             </p>
 
-            <!-- Cooking Class -->
             <div class="experience-option-card" data-experience="cooking">
                 <label class="checkbox-container">
                     <input type="checkbox" name="Book_Cooking_Class" value="Yes" class="experience-toggle" data-target="details-cooking" data-price="30" />
@@ -1318,7 +170,6 @@
                 </div>
             </div>
 
-            <!-- Walking Tour -->
             <div class="experience-option-card" data-experience="walking">
                 <label class="checkbox-container">
                     <input type="checkbox" name="Book_Walking_Tour" value="Yes" class="experience-toggle" data-target="details-walking" data-price="20" />
@@ -1338,7 +189,6 @@
                 </div>
             </div>
 
-            <!-- Dining Experience -->
             <div class="experience-option-card" data-experience="dining">
                 <label class="checkbox-container">
                     <input type="checkbox" name="Book_Dining_Experience" value="Yes" class="experience-toggle" data-target="details-dining" data-price="15" />
@@ -1358,7 +208,6 @@
                 </div>
             </div>
 
-            <!-- Glass Boat -->
             <div class="experience-option-card" data-experience="glassboat">
                 <label class="checkbox-container">
                     <input type="checkbox" name="Book_Glass_Boat" value="Yes" class="experience-toggle" data-target="details-glassboat" data-price="25" />
@@ -1479,18 +328,36 @@
             document.getElementById('navbarLinks').classList.toggle('open');
         });
 
+        // ===== TOGGLE EXPERIENCE DETAILS + PRICE =====
+        document.querySelectorAll('.experience-toggle').forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                const targetId = this.dataset.target;
+                const details = document.getElementById(targetId);
+                const card = this.closest('.experience-option-card');
+                if (details) {
+                    if (this.checked) {
+                        details.classList.remove('collapsed');
+                        if (card) card.classList.add('selected');
+                    } else {
+                        details.classList.add('collapsed');
+                        if (card) card.classList.remove('selected');
+                    }
+                }
+                updatePrice();
+                if (currentStep === 3) updateSummary();
+            });
+        });
+
         // ===== STEP NAVIGATION =====
         let currentStep = 1;
         const totalSteps = 3;
 
         function goToStep(step) {
-            // Validate step 1 before proceeding
             if (step === 2 && currentStep === 1) {
                 const name = document.getElementById('name').value.trim();
                 const email = document.getElementById('email').value.trim();
                 const phone = document.getElementById('phone').value.trim();
                 let valid = true;
-
                 if (!name) {
                     document.getElementById('name').classList.add('error');
                     document.getElementById('name').nextElementSibling.classList.add('show');
@@ -1499,7 +366,6 @@
                     document.getElementById('name').classList.remove('error');
                     document.getElementById('name').nextElementSibling.classList.remove('show');
                 }
-
                 if (!email || !email.includes('@')) {
                     document.getElementById('email').classList.add('error');
                     document.getElementById('email').nextElementSibling.classList.add('show');
@@ -1508,7 +374,6 @@
                     document.getElementById('email').classList.remove('error');
                     document.getElementById('email').nextElementSibling.classList.remove('show');
                 }
-
                 if (!phone || phone.length < 6) {
                     document.getElementById('phone').classList.add('error');
                     document.getElementById('phone').nextElementSibling.classList.add('show');
@@ -1517,74 +382,36 @@
                     document.getElementById('phone').classList.remove('error');
                     document.getElementById('phone').nextElementSibling.classList.remove('show');
                 }
-
                 if (!valid) return;
             }
-
             if (step < 1 || step > totalSteps) return;
             currentStep = step;
-
-            // Update form steps
             document.querySelectorAll('.form-step').forEach(el => {
                 el.classList.remove('active');
                 if (parseInt(el.dataset.step) === step) {
                     el.classList.add('active');
                 }
             });
-
-            // Update progress steps
             document.querySelectorAll('.step-progress .step').forEach(el => {
                 const s = parseInt(el.dataset.step);
                 el.classList.remove('active', 'completed');
-                if (s === step) {
-                    el.classList.add('active');
-                } else if (s < step) {
-                    el.classList.add('completed');
-                }
+                if (s === step) el.classList.add('active');
+                else if (s < step) el.classList.add('completed');
             });
-
-            // Update summary when going to step 3
-            if (step === 3) {
-                updateSummary();
-            }
-
-            // Scroll to top of form
+            if (step === 3) updateSummary();
             document.getElementById('reservation-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         window.goToStep = goToStep;
-
-        // ===== TOGGLE EXPERIENCE DETAILS + PRICE =====
-        document.querySelectorAll('.experience-toggle').forEach(function(checkbox) {
-            checkbox.addEventListener('change', function() {
-                const targetId = this.dataset.target;
-                const details = document.getElementById(targetId);
-                const card = this.closest('.experience-option-card');
-
-                if (details) {
-                    if (this.checked) {
-                        details.classList.remove('collapsed');
-                        card.classList.add('selected');
-                    } else {
-                        details.classList.add('collapsed');
-                        card.classList.remove('selected');
-                    }
-                }
-                updatePrice();
-                if (currentStep === 3) updateSummary();
-            });
-        });
 
         // ===== UPDATE PRICE =====
         function updatePrice() {
             let total = 0;
             let items = [];
-
             document.querySelectorAll('.experience-toggle:checked').forEach(function(cb) {
                 const price = parseFloat(cb.dataset.price) || 0;
                 const targetId = cb.dataset.target;
                 const details = document.getElementById(targetId);
                 const label = cb.closest('.checkbox-container').querySelector('strong')?.textContent || 'Experience';
-
                 if (details) {
                     const guestInput = details.querySelector('.guest-input');
                     let guests = 1;
@@ -1596,18 +423,13 @@
                     items.push({ label: label, guests: guests, price: price, subtotal: subtotal });
                 }
             });
-
-            // Update price display
             document.getElementById('price-display').textContent = '💰 Estimated Total Price: ' + total.toFixed(2) + ' JD';
             const finalDisplay = document.getElementById('price-display-final');
             if (finalDisplay) {
                 finalDisplay.textContent = '💰 Total: ' + total.toFixed(2) + ' JD';
             }
-
-            // Store for summary
             window._bookingItems = items;
             window._bookingTotal = total;
-
             return { items, total };
         }
 
@@ -1616,15 +438,12 @@
             const summaryContainer = document.getElementById('summary-content');
             const totalSpan = document.getElementById('summary-total-price');
             const { items, total } = updatePrice();
-
             if (!summaryContainer) return;
-
             if (items.length === 0) {
                 summaryContainer.innerHTML = '<p style="color:#5e6f82; text-align:center; padding:10px 0;">No experiences selected yet.</p>';
                 totalSpan.textContent = '0.00 JD';
                 return;
             }
-
             let html = '';
             items.forEach(item => {
                 const name = item.label.replace(/\(.*\)/, '').trim();
@@ -1635,12 +454,10 @@
                     </div>
                 `;
             });
-
             summaryContainer.innerHTML = html;
             totalSpan.textContent = total.toFixed(2) + ' JD';
         }
 
-        // Listen to guest input changes
         document.addEventListener('input', function(e) {
             if (e.target.classList.contains('guest-input') || e.target.classList.contains('date-input')) {
                 updatePrice();
@@ -1653,16 +470,13 @@
             const form = document.getElementById('reservation-form');
             if (form) {
                 form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                // Go to step 2
                 goToStep(2);
-
                 const checkboxes = document.querySelectorAll('.experience-toggle');
                 const map = { cooking: 0, walking: 1, dining: 2, glassboat: 3 };
                 const idx = map[type];
                 if (idx !== undefined && checkboxes[idx]) {
                     checkboxes[idx].checked = true;
                     checkboxes[idx].dispatchEvent(new Event('change'));
-                    // Highlight the card
                     const card = checkboxes[idx].closest('.experience-option-card');
                     if (card) {
                         card.style.borderColor = '#f9d56e';
@@ -1692,34 +506,6 @@
             });
         });
 
-        // ===== REAL-TIME FIELD VALIDATION =====
-        document.querySelectorAll('#reservation-form input, #reservation-form textarea').forEach(function(input) {
-            input.addEventListener('blur', function() {
-                if (this.hasAttribute('required') && this.value.trim() === '') {
-                    this.classList.add('error');
-                    const errorMsg = this.parentElement.querySelector('.error-message');
-                    if (errorMsg) errorMsg.classList.add('show');
-                } else if (this.type === 'email' && this.value.trim() && !this.value.includes('@')) {
-                    this.classList.add('error');
-                    const errorMsg = this.parentElement.querySelector('.error-message');
-                    if (errorMsg) errorMsg.classList.add('show');
-                } else {
-                    this.classList.remove('error');
-                    this.classList.add('success');
-                    const errorMsg = this.parentElement.querySelector('.error-message');
-                    if (errorMsg) errorMsg.classList.remove('show');
-                }
-            });
-
-            input.addEventListener('input', function() {
-                if (this.value.trim() !== '') {
-                    this.classList.remove('error');
-                    const errorMsg = this.parentElement.querySelector('.error-message');
-                    if (errorMsg) errorMsg.classList.remove('show');
-                }
-            });
-        });
-
         // ===== FORM SUBMISSION =====
         const form = document.getElementById('reservation-form');
         const spinner = document.getElementById('loading-spinner');
@@ -1729,13 +515,10 @@
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-
-            // Validate step 1 again
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const phone = document.getElementById('phone').value.trim();
             let valid = true;
-
             if (!name) {
                 document.getElementById('name').classList.add('error');
                 document.getElementById('name').nextElementSibling.classList.add('show');
@@ -1751,13 +534,10 @@
                 document.getElementById('phone').nextElementSibling.classList.add('show');
                 valid = false;
             }
-
             if (!valid) {
                 goToStep(1);
                 return;
             }
-
-            // Check if at least one experience is selected
             const checked = document.querySelectorAll('.experience-toggle:checked');
             if (checked.length === 0) {
                 popupMessage.textContent = 'Please select at least one experience to book.';
@@ -1765,17 +545,12 @@
                 goToStep(2);
                 return;
             }
-
             spinner.style.display = 'flex';
-
             const formData = new FormData(form);
-
             fetch(form.action, {
                     method: 'POST',
                     body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 })
                 .then(response => {
                     spinner.style.display = 'none';
@@ -1809,19 +584,16 @@
                 });
         });
 
-        // ===== CLOSE ERROR POPUP =====
         function closeErrorPopup() {
             document.getElementById('error-popup').style.display = 'none';
         }
         window.closeErrorPopup = closeErrorPopup;
 
         document.getElementById('error-popup').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeErrorPopup();
-            }
+            if (e.target === this) closeErrorPopup();
         });
 
-        // ===== INITIAL PRICE =====
+        // Initial price
         updatePrice();
     </script>
 
