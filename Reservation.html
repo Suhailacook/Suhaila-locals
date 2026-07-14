@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Mobile menu overlay -->
     <div class="menu-overlay" id="menuOverlay"></div>
-    <!-- Navigation Menu -->
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
         <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
         <div class="navbar-links" id="navbarLinks">
@@ -35,14 +33,11 @@
         </div>
     </nav>
 
-    <!-- Reservation Hero Section -->
     <div class="reservation-hero">
         <h1>Book Your Aqaba Cooking Class or Walking Tour</h1>
         <p>Experience authentic Jordanian hospitality with Aqaba local experiences family—choose a hands-on cooking class or a guided walking food tour in Aqaba.</p>
     </div>
-    <!-- Reservation Section -->
     <div class="reservation-container">
-        <!-- Experience 1 -->
         <div class="reservation-item">
             <img src="Experience1.webp" loading="lazy" alt="Cooking Class in Aqaba">
             <h3><a href="cookingclass.html" title="Authentic Cooking Class">Authentic Cooking Class</a></h3>
@@ -54,7 +49,6 @@
             </div>
         </div>
 
-        <!-- Experience 2 -->
         <div class="reservation-item">
             <img src="Experience2.webp" loading="lazy" alt="Walking Tour In Aqaba">
             <h3><a href="walkingtour.html" title="Walking Tour in Aqaba">Walking Tour in Aqaba</a></h3>
@@ -66,7 +60,6 @@
             </div>
         </div>
 
-        <!-- Experience 3 -->
         <div class="reservation-item">
             <img src="Experience3.webp" loading="lazy" alt="Dining Local Experience">
             <h3><a href="dinningexperience.html" title="Dining Experience">Dining Experience</a></h3>
@@ -78,7 +71,6 @@
             </div>
         </div>
 
-        <!-- Experience 4: Aqaba Glass Boat -->
         <div class="reservation-item">
             <img src="glass-boat.webp" loading="lazy" alt="Aqaba Glass Boat Tour">
             <h3><a href="glassboat.html" title="Aqaba Glass Boat">Aqaba Glass Boat</a></h3>
@@ -91,14 +83,11 @@
         </div>
     </div>
 
-    <!-- Loading Spinner -->
     <div id="loading-spinner">
         <img src="loading-spinner.gif" alt="Loading...">
     </div>
 
-    <!-- Error/Success Message Container -->
     <div id="form-message-container"></div>
-    <!-- Popup Modal for Error -->
     <div id="error-popup">
         <div class="popup-content">
             <span class="close-btn" onclick="closeErrorPopup()">&times;</span>
@@ -106,15 +95,12 @@
         </div>
     </div>
 
-    <!-- Booking Form Section -->
     <div id="booking-form-container">
         <p>Complete your booking details below.</p>
     </div>
     <form id="reservation-form" action="https://formspree.io/f/movkdnjg" method="POST" novalidate>
-      <!-- keep honeypot -->
-      <input type="text" name="_gotcha" aria-hidden="true">
+      <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
       
-      <!-- Contact Info Section -->
       <h3>1. Contact Details</h3>
       <div class="form-group">
         <label for="name">Full Name:</label>
@@ -131,11 +117,9 @@
         <input type="tel" id="phone" name="phone" required aria-required="true" pattern="^\+?[0-9\s\-()]{6,}$" title="Enter a valid phone number">
       </div>
 
-      <!-- Experience Selection Section -->
       <h3>2. Select Experiences</h3>
       <p>Check the experiences you wish to book. You can select different dates and guest numbers for each.</p>
 
-      <!-- Cooking Class -->
       <div class="experience-option-card">
         <label class="checkbox-container main-checkbox">
             <input type="checkbox" name="Book_Cooking_Class" value="Yes" class="experience-toggle" data-target="details-cooking" data-price="30">
@@ -156,7 +140,6 @@
         </div>
       </div>
 
-      <!-- Walking Tour -->
       <div class="experience-option-card">
         <label class="checkbox-container main-checkbox">
             <input type="checkbox" name="Book_Walking_Tour" value="Yes" class="experience-toggle" data-target="details-walking" data-price="20">
@@ -177,7 +160,6 @@
         </div>
       </div>
 
-      <!-- Dining Experience -->
       <div class="experience-option-card">
         <label class="checkbox-container main-checkbox">
             <input type="checkbox" name="Book_Dining_Experience" value="Yes" class="experience-toggle" data-target="details-dining" data-price="15">
@@ -198,7 +180,6 @@
         </div>
       </div>
 
-      <!-- Glass Boat -->
       <div class="experience-option-card">
         <label class="checkbox-container main-checkbox">
             <input type="checkbox" name="Book_Glass_Boat" value="Yes" class="experience-toggle" data-target="details-glassboat" data-price="25">
@@ -225,10 +206,8 @@
         <textarea id="comments" name="comments" rows="3"></textarea>
       </div>
 
-      <!-- Price Display -->
       <div id="price-display" class="form-price-display">Total Estimated Price: 0.00 JD</div>
 
-      <!-- aria-live region for messages -->
       <div id="form-message" role="status" aria-live="polite" class="sr-only"></div>
 
       <div class="form-actions">
@@ -236,7 +215,6 @@
       </div>
     </form>
 
-    <!-- FAQ Section -->
     <section class="faq-section">
         <h2>Frequently Asked Questions</h2>
         <div class="faq-container">
@@ -268,7 +246,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Aqaba local experiences. All rights reserved.</p>
+        <p>&copy; 2026 Aqaba local experiences. All rights reserved.</p>
     </footer>
 
     <style>
@@ -279,9 +257,14 @@
         .form-price-display { font-size: 1.2rem; font-weight: bold; margin: 20px 0; color: #2c3e50; }
         .faq-answer { display: none; padding: 10px 0; }
         .faq-question { width: 100%; text-align: left; padding: 15px 0; background: none; border: none; border-bottom: 1px solid #eee; cursor: pointer; display: flex; justify-content: space-between; font-weight: 600; }
+        
+        /* Loading Spinner and Error Modal styling */
+        #loading-spinner { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; }
+        #error-popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; }
+        .popup-content { background: white; margin: 15% auto; padding: 20px; width: 80%; max-width: 500px; border-radius: 8px; position: relative; }
+        .close-btn { position: absolute; right: 15px; top: 10px; font-size: 24px; cursor: pointer; }
     </style>
     <script src="js/reservation.js"></script>
     <script src="js/navbar.js"></script>
 </body>
 </html>
-
