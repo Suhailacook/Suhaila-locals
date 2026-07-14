@@ -8,329 +8,25 @@
     <meta name="keywords" content="contact us, Aqaba local experiences, tours in Aqaba, cooking class Jordan, contact Suhaila, things to do in Aqaba">
     <meta name="author" content="Aqaba local experiences">
 
-    <!-- Open Graph Metadata -->
     <meta property="og:title" content="Contact Us | Aqaba Local Experiences">
     <meta property="og:description" content="Reach out to us with any questions or inquiries about our tours, cooking classes, and local hospitality in Aqaba.">
     <meta property="og:image" content="https://suhailacook.github.io/Suhaila-locals/logo.png">
     <meta property="og:url" content="https://suhailacook.github.io/Suhaila-locals/contact-Us.html">
     <meta property="og:type" content="website">
 
-    <!-- Favicon -->
     <link rel="icon" href="favicon.png" type="image/png">
-    
-    <!-- Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Core Stylesheet -->
+
+    <!-- ===== MASTER STYLESHEET ===== -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Custom Page Styles -->
-    <style>
-        /* Fade-in animations */
-        .animate-fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-        }
-        .delay-1 { animation-delay: 0.15s; }
-        .delay-2 { animation-delay: 0.3s; }
-        
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Hero styling */
-        .contact-hero-section {
-            position: relative;
-            height: 40vh;
-            min-height: 300px;
-            width: 100%;
-            overflow: hidden;
-            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            margin-bottom: 4rem;
-        }
-
-        .contact-hero-section img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.65);
-            transition: transform 6s ease;
-        }
-
-        .contact-hero-section:hover img {
-            transform: scale(1.05);
-        }
-
-        .contact-hero-content {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 1.5rem;
-        }
-
-        .contact-hero-content h1 {
-            color: #ffffff;
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        .contact-hero-content p {
-            color: rgba(255, 255, 255, 0.95);
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            max-width: 650px;
-            text-shadow: 0 1px 5px rgba(0,0,0,0.2);
-            line-height: 1.5;
-        }
-
-        /* Main Contact Layout */
-        .contact-layout {
-            max-width: 1200px;
-            margin: 0 auto 5rem;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 4rem;
-        }
-
-        @media (max-width: 900px) {
-            .contact-layout {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-        }
-
-        /* Left side: Info Cards */
-        .contact-info-panel h2 {
-            font-size: 2.2rem;
-            color: var(--color-accent);
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-info-panel p.intro-text {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 2.5rem;
-        }
-
-        .info-card-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .info-card {
-            background: var(--bg-surface);
-            border-radius: var(--radius-md);
-            padding: 2rem;
-            box-shadow: var(--shadow-sm);
-            border-left: 5px solid var(--border-color);
-            transition: all var(--transition);
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-        }
-
-        .info-card:hover {
-            transform: translateX(5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .info-card.card-email { border-left-color: var(--color-accent); }
-        .info-card.card-phone { border-left-color: var(--color-secondary); }
-        .info-card.card-location { border-left-color: var(--color-primary); }
-
-        .info-card-icon {
-            font-size: 2.5rem;
-            line-height: 1;
-        }
-
-        .info-card-content h3 {
-            font-size: 1.15rem;
-            color: var(--color-accent);
-            margin-bottom: 0.35rem;
-        }
-
-        .info-card-content p, .info-card-content a {
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-bottom: 0;
-            line-height: 1.5;
-        }
-        
-        .info-card-content a:hover {
-            color: var(--color-secondary);
-        }
-
-        /* Right side: Contact Form Card */
-        .contact-form-card {
-            background: var(--bg-surface);
-            border-radius: var(--radius-lg);
-            padding: 3.5rem 3rem;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
-        }
-
-        .contact-form-card h2 {
-            font-size: 1.8rem;
-            color: var(--text-primary);
-            margin-bottom: 2rem;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 1rem;
-        }
-
-        .contact-form-card .form-group {
-            margin-bottom: 1.8rem;
-        }
-
-        .contact-form-card label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.6rem;
-            color: var(--text-primary);
-            font-size: 0.95rem;
-        }
-
-        .contact-form-card input, .contact-form-card textarea {
-            width: 100%;
-            padding: 14px 16px;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-sm);
-            font-size: 1rem;
-            font-family: var(--font-body);
-            background: #fafafa;
-            transition: all var(--transition);
-        }
-
-        .contact-form-card input:focus, .contact-form-card textarea:focus {
-            outline: none;
-            border-color: var(--color-accent);
-            background: #ffffff;
-            box-shadow: 0 0 0 3px rgba(0, 121, 140, 0.15);
-        }
-
-        .contact-form-card textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .contact-form-card button[type="submit"] {
-            width: 100%;
-            padding: 16px;
-            border-radius: 50px;
-            background: var(--color-secondary);
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(231, 111, 81, 0.4);
-            transition: all var(--transition);
-            margin-top: 1rem;
-        }
-
-        .contact-form-card button[type="submit"]:hover {
-            background: #d65d3f;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(231, 111, 81, 0.5);
-        }
-
-        .contact-form-card button[type="submit"]:active {
-            transform: translateY(0);
-        }
-
-        #formStatus {
-            margin-top: 1rem;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        /* Map Section */
-        .map-section {
-            max-width: 1200px;
-            margin: 4rem auto 6rem;
-            padding: 0 2rem;
-        }
-
-        .map-section h2 {
-            font-size: 2.2rem;
-            color: var(--color-accent);
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .map-wrapper {
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
-            height: 450px;
-            position: relative;
-        }
-
-        .map-wrapper iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Scroll progress bar */
-        #scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 4px;
-            background: var(--color-secondary);
-            z-index: 1001;
-            transition: width 0.1s ease;
-        }
-
-        /* Scroll to Top Button override */
-        .scrollToTop {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--color-accent);
-            color: #ffffff;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition);
-            display: none;
-            z-index: 99;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .scrollToTop:hover {
-            background: var(--color-accent-dark);
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-    </style>
 </head>
 <body>
     <div id="scroll-progress"></div>
     <div class="menu-overlay" id="menuOverlay"></div>
-    
-    <!-- Navigation Bar -->
+
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
         <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
         <div class="navbar-links" id="navbarLinks">
@@ -350,8 +46,7 @@
             <a href="Blog.html">Blog</a>
         </div>
     </nav>
-    
-    <!-- Page Hero Section -->
+
     <section class="contact-hero-section">
         <img src="aqaba-marina.webp" alt="Aqaba Marina beach views, Jordan" onerror="this.src='aqaba-marina.webp';">
         <div class="contact-hero-content">
@@ -362,15 +57,13 @@
 
     <main id="main-content">
         <div class="contact-layout">
-            <!-- Left Side: Contact Information panel -->
             <section class="contact-info-panel animate-fade-in delay-2">
                 <h2>Get in Touch</h2>
                 <p class="intro-text">
                     Whether you would like to book a private tour, have dietary questions for our cooking classes, or just want to say hello, feel free to reach out. We would love to welcome you!
                 </p>
-                
+
                 <div class="info-card-list">
-                    <!-- Info Card 1: Email -->
                     <div class="info-card card-email">
                         <span class="info-card-icon">✉️</span>
                         <div class="info-card-content">
@@ -378,8 +71,7 @@
                             <p><a href="mailto:suhaila.cook@gmail.com">suhaila.cook@gmail.com</a></p>
                         </div>
                     </div>
-                    
-                    <!-- Info Card 2: Phone -->
+
                     <div class="info-card card-phone">
                         <span class="info-card-icon">📞</span>
                         <div class="info-card-content">
@@ -387,8 +79,7 @@
                             <p><a href="tel:+962776294742">+962 77 629 4742</a></p>
                         </div>
                     </div>
-                    
-                    <!-- Info Card 3: Location -->
+
                     <div class="info-card card-location">
                         <span class="info-card-icon">📍</span>
                         <div class="info-card-content">
@@ -398,14 +89,12 @@
                     </div>
                 </div>
             </section>
-            
-            <!-- Right Side: Contact Form Card -->
+
             <section class="contact-form-card animate-fade-in delay-2">
                 <h2>Send Us a Message</h2>
                 <form action="https://formspree.io/f/mnnvjklj" method="POST" id="contactForm">
-                    <!-- honeypot prevention -->
                     <input type="text" name="_gotcha" style="display:none">
-                    
+
                     <div class="form-group">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -432,14 +121,13 @@
             </section>
         </div>
 
-        <!-- Google Map Section -->
         <section class="map-section animate-fade-in delay-2">
             <h2>Find Us in Aqaba</h2>
             <div class="map-wrapper">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d515.9586386475576!2d34.99579176906436!3d29.54717876188753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x150071000d983327%3A0xc66defbe37987710!2sSuhaila!5e0!3m2!1sen!2sjo!4v1730633996092!5m2!1sen!2sjo" 
-                    allowfullscreen="" 
-                    loading="lazy" 
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d515.9586386475576!2d34.99579176906436!3d29.54717876188753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x150071000d983327%3A0xc66defbe37987710!2sSuhaila!5e0!3m2!1sen!2sjo!4v1730633996092!5m2!1sen!2sjo"
+                    allowfullscreen=""
+                    loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
                     title="Google Map location of Suhaila's experiences kitchen in Aqaba">
                 </iframe>
@@ -447,7 +135,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>Contact us: <a href="mailto:suhaila.cook@gmail.com">suhaila.cook@gmail.com</a></p>
         <p>Mobile: <a href="tel:+962776294742">+962776294742</a></p>
@@ -462,27 +149,20 @@
         <p>&copy; 2026 Aqaba local experiences. All rights reserved.</p>
     </footer>
 
-    <!-- Scroll to Top Button -->
     <button id="scrollToTop" class="scrollToTop" aria-label="Scroll to Top">↑</button>
 
-    <!-- Scripts -->
-    
-
     <script>
-        // Dropdown toggle on small screens
         document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
             btn.addEventListener('click', function(e) {
                 if (window.innerWidth <= 800) {
                     e.preventDefault();
                     const dd = this.closest('.dropdown');
-                    // close other open dropdowns first
                     document.querySelectorAll('.navbar .dropdown.open').forEach(o => { if (o !== dd) o.classList.remove('open'); });
                     dd.classList.toggle('open');
                 }
             });
         });
 
-        // Click outside to close mobile dropdown
         document.addEventListener('click', (e) => {
             if (window.innerWidth <= 800) {
                 if (!e.target.closest('.navbar')) {
@@ -491,11 +171,23 @@
             }
         });
 
-        // Close on resize from mobile -> desktop
         window.addEventListener('resize', () => {
             if (window.innerWidth > 800) document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
         });
+
+        // Scroll to Top
+        const scrollBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'flex';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
-<script src="js/navbar.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 </html>
