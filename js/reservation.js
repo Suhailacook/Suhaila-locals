@@ -4,8 +4,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Handle Experience Toggles and Price Calculation
     const form = document.getElementById('reservation-form');
+    
+    // Ensure form element is visible when logic executes
     if (form) {
         const toggles = form.querySelectorAll('.experience-toggle');
         const priceDisplay = document.getElementById('price-display');
@@ -15,11 +16,16 @@ document.addEventListener('DOMContentLoaded', function() {
             let total = 0;
             toggles.forEach(toggle => {
                 if (toggle.checked) {
-                    const price = parseFloat(toggle.dataset.price);
+                    const price = parseFloat(toggle.dataset.price) || 0;
                     const targetId = toggle.dataset.target;
                     const detailsDiv = document.getElementById(targetId);
-                    const guests = parseInt(detailsDiv.querySelector('.guest-input').value) || 0;
-                    total += price * guests;
+                    
+                    if (detailsDiv) {
+                        const inputField = detailsDiv.querySelector('.guest-input');
+                        // Prevent negative inputs via Math.max
+                        const count = Math.max(0, parseInt(inputField ? inputField.value : 0) || 0);
+                        total += price * count;
+                    }
                 }
             });
             if (priceDisplay) {
@@ -32,20 +38,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 const targetId = this.dataset.target;
                 const detailsDiv = document.getElementById(targetId);
                 
-                if (this.checked) {
-                    detailsDiv.classList.remove('collapsed');
-                } else {
-                    detailsDiv.classList.add('collapsed');
+                if (detailsDiv) {
+                    if (this.checked) {
+                        detailsDiv.classList.remove('collapsed');
+                    } else {
+                        detailsDiv.classList.add('collapsed');
+                    }
                 }
                 calculateTotal();
             });
         });
 
+        // Event listener safely attached to both guest counts and glass boat hours
         guestInputs.forEach(input => {
             input.addEventListener('input', calculateTotal);
         });
 
-        // Initial calculation
         calculateTotal();
     }
 
@@ -54,9 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const experienceParam = urlParams.get('experience');
     
     if (experienceParam) {
-        if (form) {
-            form.style.display = 'block';
-        }
         const expMap = {
             'cooking': 'Book_Cooking_Class',
             'walking': 'Book_Walking_Tour',
@@ -72,16 +77,16 @@ document.addEventListener('DOMContentLoaded', function() {
             'Ramadan Iftar': 'Book_Dining_Experience'
         };
 
-        const fieldName = expMap[experienceParam] || expMap[decodeURIComponent(experienceParam)];
+        const fieldName = expMap[experienceParam];
         if (fieldName) {
             const checkbox = document.querySelector(`input[name="${fieldName}"]`);
             if (checkbox) {
                 checkbox.checked = true;
-                // Trigger change event to show details
                 checkbox.dispatchEvent(new Event('change'));
-                // Scroll to the form
+                
                 setTimeout(() => {
-                    checkbox.closest('.experience-option-card').scrollIntoView({ behavior: 'smooth' });
+                    const card = checkbox.closest('.experience-option-card');
+                    if (card) card.scrollIntoView({ behavior: 'smooth' });
                 }, 500);
             }
         }
@@ -110,10 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 window.openForm = function(experienceType) {
     const form = document.getElementById('reservation-form');
-    if (form) {
-        form.style.display = 'block';
-    }
-
+    
     const expMap = {
         'cooking': 'Book_Cooking_Class',
         'walking': 'Book_Walking_Tour',
@@ -127,17 +129,17 @@ window.openForm = function(experienceType) {
         if (checkbox) {
             checkbox.checked = true;
             checkbox.dispatchEvent(new Event('change'));
-            checkbox.closest('.experience-option-card').scrollIntoView({ behavior: 'smooth' });
+            
+            const card = checkbox.closest('.experience-option-card');
+            if (card) {
+                card.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     } else {
-        // Just scroll to form if type not found
         if (form) form.scrollIntoView({ behavior: 'smooth' });
     }
 };
 
-/**
- * Global function to redirect to reservation page with experience pre-selected
- */
 window.redirectToReservation = function(experienceName) {
     window.location.href = `Reservation.html?experience=${encodeURIComponent(experienceName)}`;
 };
