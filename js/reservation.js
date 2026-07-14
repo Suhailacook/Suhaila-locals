@@ -1,12 +1,15 @@
 /**
  * Reservation Page Logic
- * Handles experience selection, form toggles, price calculation, and deep-linking
+ * Handles experience selection, form toggles, price calculation, deep-linking,
+ * FAQ interactions, and seamless AJAX form submission.
  */
 
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('reservation-form');
     
-    // Ensure form element is visible when logic executes
+    // ==========================================
+    // 1. Handle Experience Toggles and Pricing
+    // ==========================================
     if (form) {
         const toggles = form.querySelectorAll('.experience-toggle');
         const priceDisplay = document.getElementById('price-display');
@@ -22,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     if (detailsDiv) {
                         const inputField = detailsDiv.querySelector('.guest-input');
-                        // Prevent negative inputs via Math.max
+                        // Prevent negative inputs or NaN values
                         const count = Math.max(0, parseInt(inputField ? inputField.value : 0) || 0);
                         total += price * count;
                     }
@@ -49,15 +52,18 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Event listener safely attached to both guest counts and glass boat hours
+        // Event listener attached to both guest counts and glass boat hours
         guestInputs.forEach(input => {
             input.addEventListener('input', calculateTotal);
         });
 
+        // Run initial calculation
         calculateTotal();
     }
 
-    // 2. Handle Query Parameters for Pre-selection
+    // ==========================================
+    // 2. Handle Query Parameters (Deep-Linking)
+    // ==========================================
     const urlParams = new URLSearchParams(window.location.search);
     const experienceParam = urlParams.get('experience');
     
@@ -92,7 +98,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // ==========================================
     // 3. FAQ Toggles
+    // ==========================================
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(question => {
         question.addEventListener('click', () => {
@@ -108,10 +116,85 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // ==========================================
+    // 4. AJAX Form Submission (Formspree)
+    // ==========================================
+    if (form) {
+        const spinner = document.getElementById('loading-spinner');
+        const errorPopup = document.getElementById('error-popup');
+        const popupMessage = document.getElementById('popup-message');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent full page redirection
+
+            // Basic front-end validation check
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            if (!name || !email || !phone) {
+                showError("Please fill out all required contact fields.");
+                return;
+            }
+
+            // Show loading spinner while requesting
+            if (spinner) spinner.style.display = 'block';
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (spinner) spinner.style.display = 'none';
+                if (response.ok) {
+                    // Redirects on success (Create a thank-you.html or replace with your desired redirect)
+                    window.location.href = "thank-you.html"; 
+                } else {
+                    response.json().then(data => {
+                        if (Object.prototype.hasOwnProperty.call(data, 'errors')) {
+                            showError(data['errors'].map(err => err['message']).join(", "));
+                        } else {
+                            showError("Oops! There was a problem submitting your form.");
+                        }
+                    });
+                }
+            })
+            .catch(error => {
+                if (spinner) spinner.style.display = 'none';
+                showError("We encountered a network error. Please try again.");
+            });
+        });
+
+        function showError(message) {
+            if (errorPopup && popupMessage) {
+                popupMessage.textContent = message;
+                errorPopup.style.display = 'block';
+            } else {
+                alert(message);
+            }
+        }
+
+        // Global function to close error modal
+        window.closeErrorPopup = function() {
+            if (errorPopup) {
+                errorPopup.style.display = 'none';
+            }
+        };
+    }
 });
 
+// ==========================================
+// 5. Global Navigation & Deep-Link Functions
+// ==========================================
+
 /**
- * Global function to open form for a specific experience on the reservation page
+ * Globally opens form details for a specific experience ID from on-page action buttons
  */
 window.openForm = function(experienceType) {
     const form = document.getElementById('reservation-form');
@@ -140,6 +223,9 @@ window.openForm = function(experienceType) {
     }
 };
 
+/**
+ * Redirects user to the reservations page with query parameters prefilled
+ */
 window.redirectToReservation = function(experienceName) {
     window.location.href = `Reservation.html?experience=${encodeURIComponent(experienceName)}`;
 };
