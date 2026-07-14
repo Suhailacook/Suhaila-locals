@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserve Your Spot | Aqaba Local Experiences</title>
+    <meta name="description" content="Book authentic Aqaba cooking classes, walking tours, glass boat rides, and dining experiences with local families." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <!-- ===== MASTER STYLESHEET ===== -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="logo-text">
+            <img src="images/logo.png" alt="Aqaba Experiences Logo" onerror="this.style.display='none'" />
+            <span>|</span> Aqaba Experiences
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">☰</button>
+        <div class="navbar-links" id="navbarLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="Reservation.html" class="active">Reservations</a>
+            <a href="contact-Us.html">Contact</a>
+            <a href="Blog.html">Blog</a>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="reservation-hero">
+        <div class="hero-shape"></div>
+        <div class="hero-content">
+            <h1>📅 <span>Reserve</span> Your Aqaba Experience</h1>
+            <p>Choose from authentic cooking classes, guided walking tours, glass boat adventures, and traditional dining with local families.</p>
+        </div>
+    </section>
+
+    <!-- ===== EXPERIENCE CARDS ===== -->
+    <div class="reservation-container">
+        <div class="reservation-item">
+            <img src="images/Experience1.webp" loading="lazy" alt="Cooking Class in Aqaba" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%231b4a6f%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🍳%3C/text%3E%3C/svg%3E'" />
+            <span class="badge">🌿 Authentic</span>
+            <h3><a href="cookingclass.html">Authentic Cooking Class</a></h3>
+            <p class="description">Join our family in the kitchen and learn to prepare traditional dishes with recipes passed down for generations.</p>
+            <div class="price-tag">30 JD <small>/ person</small></div>
+            <a href="javascript:void(0);" class="button" onclick="openForm('cooking')">Book Now</a>
+            <div class="card-footer">
+                <a href="cookingclass.html" class="learn-more">Learn more →</a>
+            </div>
+        </div>
+
+        <div class="reservation-item">
+            <img src="images/Experience2.webp" loading="lazy" alt="Walking Tour in Aqaba" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23a06b3f%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🚶%3C/text%3E%3C/svg%3E'" />
+            <span class="badge">🚶 Guided</span>
+            <h3><a href="walkingtour.html">Walking Tour in Aqaba</a></h3>
+            <p class="description">Experience the Heart of Aqaba on Foot – A Guided Walking Tour Through History, Culture, and Coastal Beauty.</p>
+            <div class="price-tag">20 JD <small>/ person</small></div>
+            <a href="javascript:void(0);" class="button" onclick="openForm('walking')">Book Now</a>
+            <div class="card-footer">
+                <a href="walkingtour.html" class="learn-more">Learn more →</a>
+            </div>
+        </div>
+
+        <div class="reservation-item">
+            <img src="images/Experience3.webp" loading="lazy" alt="Dining Local Experience" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%237a5535%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🍽️%3C/text%3E%3C/svg%3E'" />
+            <span class="badge">🍽️ Family-Style</span>
+            <h3><a href="dinningexperience.html">Dining Experience</a></h3>
+            <p class="description">Enjoy a meal with our family, sharing stories, recipes, and delicious food in a warm, inviting atmosphere.</p>
+            <div class="price-tag">15 JD <small>/ person</small></div>
+            <a href="javascript:void(0);" class="button" onclick="openForm('dining')">Book Now</a>
+            <div class="card-footer">
+                <a href="dinningexperience.html" class="learn-more">Learn more →</a>
+            </div>
+        </div>
+
+        <div class="reservation-item">
+            <img src="images/glass-boat.webp" loading="lazy" alt="Aqaba Glass Boat Tour" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23216254%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🚤%3C/text%3E%3C/svg%3E'" />
+            <span class="badge">🪸 Adventure</span>
+            <h3><a href="glassboat.html">Aqaba Glass Boat</a></h3>
+            <p class="description">See Aqaba's vibrant coral reefs and marine life through a glass-bottom boat—perfect for families and all ages.</p>
+            <div class="price-tag">25 JD <small>/ hour</small></div>
+            <a href="javascript:void(0);" class="button" onclick="openForm('glassboat')">Book Now</a>
+            <div class="card-footer">
+                <a href="glassboat.html" class="learn-more">Learn more →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SUCCESS MESSAGE ===== -->
+    <div id="form-message-container">
+        <div id="success-message" class="success-message">
+            ✅ Your booking request was sent successfully! We'll contact you within 24 hours to confirm.
+        </div>
+    </div>
+
+    <!-- ===== BOOKING FORM ===== -->
+    <div id="booking-form-container">
+        <p>📝 Complete your booking details below</p>
+    </div>
+
+    <form id="reservation-form" action="https://formspree.io/f/movkdnjg" method="POST" novalidate>
+        <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off" />
+
+        <!-- ===== STEP PROGRESS ===== -->
+        <div class="step-progress" id="stepProgress">
+            <div class="step active" data-step="1">
+                <div class="step-number">1</div>
+                <span class="step-label">Contact</span>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-number">2</div>
+                <span class="step-label">Experiences</span>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-number">3</div>
+                <span class="step-label">Review</span>
+            </div>
+        </div>
+
+        <!-- ===== STEP 1: CONTACT DETAILS ===== -->
+        <div class="form-step active" data-step="1">
+            <h3>1. Contact Details</h3>
+            <div class="form-group">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name" />
+                <div class="error-message">Please enter your full name</div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com" />
+                <div class="error-message">Please enter a valid email address</div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number (WhatsApp) <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="+962 7XXXXXXXX" />
+                <div class="error-message">Please enter a valid phone number</div>
+            </div>
+
+            <div class="form-nav">
+                <button type="button" class="button" onclick="goToStep(2)">Next →</button>
+            </div>
+        </div>
+
+        <!-- ===== STEP 2: SELECT EXPERIENCES ===== -->
+        <div class="form-step" data-step="2">
+            <h3>2. Select Your Experiences</h3>
+            <p style="color: #3d4f64; margin-bottom: 16px; font-size: 0.95rem;">
+                Check the experiences you wish to book. You can select different dates and guest numbers for each.
+            </p>
+
+            <div class="experience-option-card" data-experience="cooking">
+                <label class="checkbox-container">
+                    <input type="checkbox" name="Book_Cooking_Class" value="Yes" class="experience-toggle" data-target="details-cooking" data-price="30" />
+                    <strong>🍳 Authentic Cooking Class (30 JD / person)</strong>
+                </label>
+                <div id="details-cooking" class="experience-details collapsed">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Date:</label>
+                            <input type="date" name="Cooking_Class_Date" class="date-input" />
+                        </div>
+                        <div class="form-col">
+                            <label>Guests:</label>
+                            <input type="number" name="Cooking_Class_Guests" class="guest-input" min="1" value="2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-option-card" data-experience="walking">
+                <label class="checkbox-container">
+                    <input type="checkbox" name="Book_Walking_Tour" value="Yes" class="experience-toggle" data-target="details-walking" data-price="20" />
+                    <strong>🚶 Guided Walking Tour (20 JD / person)</strong>
+                </label>
+                <div id="details-walking" class="experience-details collapsed">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Date:</label>
+                            <input type="date" name="Walking_Tour_Date" class="date-input" />
+                        </div>
+                        <div class="form-col">
+                            <label>Guests:</label>
+                            <input type="number" name="Walking_Tour_Guests" class="guest-input" min="1" value="2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-option-card" data-experience="dining">
+                <label class="checkbox-container">
+                    <input type="checkbox" name="Book_Dining_Experience" value="Yes" class="experience-toggle" data-target="details-dining" data-price="15" />
+                    <strong>🍽️ Family Dining Experience (15 JD / person)</strong>
+                </label>
+                <div id="details-dining" class="experience-details collapsed">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Date:</label>
+                            <input type="date" name="Dining_Experience_Date" class="date-input" />
+                        </div>
+                        <div class="form-col">
+                            <label>Guests:</label>
+                            <input type="number" name="Dining_Experience_Guests" class="guest-input" min="1" value="2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-option-card" data-experience="glassboat">
+                <label class="checkbox-container">
+                    <input type="checkbox" name="Book_Glass_Boat" value="Yes" class="experience-toggle" data-target="details-glassboat" data-price="25" />
+                    <strong>🪸 Glass Boat Tour (25 JD / hour)</strong>
+                </label>
+                <div id="details-glassboat" class="experience-details collapsed">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Date:</label>
+                            <input type="date" name="Glass_Boat_Date" class="date-input" />
+                        </div>
+                        <div class="form-col">
+                            <label>Hours / Trips:</label>
+                            <input type="number" name="Glass_Boat_Hours" class="guest-input" min="1" value="1" />
+                        </div>
+                    </div>
+                    <div class="hint">* Price is per hour for the boat (up to 6 people).</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Additional Comments / Special Requests:</label>
+                <textarea id="comments" name="comments" rows="3" placeholder="Dietary restrictions, accessibility needs, or any special requests..."></textarea>
+            </div>
+
+            <div id="price-display" class="form-price-display">💰 Estimated Total Price: 0.00 JD</div>
+
+            <div class="form-nav">
+                <button type="button" class="button button-secondary" onclick="goToStep(1)">← Back</button>
+                <button type="button" class="button" onclick="goToStep(3)">Review Booking →</button>
+            </div>
+        </div>
+
+        <!-- ===== STEP 3: REVIEW & SUBMIT ===== -->
+        <div class="form-step" data-step="3">
+            <h3>3. Review Your Booking</h3>
+            <p style="color: #3d4f64; margin-bottom: 16px; font-size: 0.95rem;">
+                Please review your selections before submitting.
+            </p>
+
+            <div id="booking-summary" class="show">
+                <h4>📋 Booking Summary</h4>
+                <div id="summary-content"></div>
+                <div class="summary-total">Total: <span id="summary-total-price">0.00 JD</span></div>
+            </div>
+
+            <div id="price-display-final" class="form-price-display">💰 Total: 0.00 JD</div>
+
+            <div id="form-message" role="status" aria-live="polite" class="sr-only"></div>
+
+            <div class="form-nav">
+                <button type="button" class="button button-secondary" onclick="goToStep(2)">← Back</button>
+                <button type="submit" class="button" id="reservation-submit">✅ Confirm & Submit</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- ===== LOADING SPINNER ===== -->
+    <div id="loading-spinner">
+        <div class="spinner-box">
+            <span class="spinner-icon">⏳</span>
+            <p>Sending your booking request...</p>
+        </div>
+    </div>
+
+    <!-- ===== ERROR POPUP ===== -->
+    <div id="error-popup">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closeErrorPopup()">✕</button>
+            <div class="popup-icon">⚠️</div>
+            <div id="popup-message">Something went wrong. Please try again or contact us directly.</div>
+        </div>
+    </div>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq-section">
+        <h2>❓ Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">Is transportation included? <span class="icon">+</span></button>
+                <div class="faq-answer">Transportation is not automatically included, but we can help arrange a taxi for you. Our meeting points are centrally located in Aqaba.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What is the cancellation policy? <span class="icon">+</span></button>
+                <div class="faq-answer">You can cancel up to 24 hours before your scheduled experience for a full refund. Please contact us as soon as possible if you need to reschedule.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Are vegetarian / vegan options available? <span class="icon">+</span></button>
+                <div class="faq-answer">Yes! Jordanian cuisine is very vegetarian-friendly. Please let us know your dietary restrictions in the booking comments and we will happily accommodate you.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Do I need to pay in advance? <span class="icon">+</span></button>
+                <div class="faq-answer">Payment is typically collected in cash (JOD) on the day of the experience. For large groups, we may request a deposit.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="Reservation.html">Reservations</a>
+            <a href="contact-Us.html">Contact</a>
+            <a href="Blog.html">Blog</a>
+        </div>
+        <div class="footer-logo">
+            <img src="images/logo.png" alt="Aqaba Experiences" onerror="this.style.display='none'" />
+            <span>Aqaba Experiences</span>
+        </div>
+        <p>&copy; 2026 Aqaba Local Experiences. All rights reserved.</p>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // ===== HAMBURGER TOGGLE =====
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('navbarLinks').classList.toggle('open');
+        });
+
+        // ===== TOGGLE EXPERIENCE DETAILS + PRICE =====
+        document.querySelectorAll('.experience-toggle').forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                const targetId = this.dataset.target;
+                const details = document.getElementById(targetId);
+                const card = this.closest('.experience-option-card');
+                if (details) {
+                    if (this.checked) {
+                        details.classList.remove('collapsed');
+                        if (card) card.classList.add('selected');
+                    } else {
+                        details.classList.add('collapsed');
+                        if (card) card.classList.remove('selected');
+                    }
+                }
+                updatePrice();
+                if (currentStep === 3) updateSummary();
+            });
+        });
+
+        // ===== STEP NAVIGATION =====
+        let currentStep = 1;
+        const totalSteps = 3;
+
+        function goToStep(step) {
+            if (step === 2 && currentStep === 1) {
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                let valid = true;
+                if (!name) {
+                    document.getElementById('name').classList.add('error');
+                    document.getElementById('name').nextElementSibling.classList.add('show');
+                    valid = false;
+                } else {
+                    document.getElementById('name').classList.remove('error');
+                    document.getElementById('name').nextElementSibling.classList.remove('show');
+                }
+                if (!email || !email.includes('@')) {
+                    document.getElementById('email').classList.add('error');
+                    document.getElementById('email').nextElementSibling.classList.add('show');
+                    valid = false;
+                } else {
+                    document.getElementById('email').classList.remove('error');
+                    document.getElementById('email').nextElementSibling.classList.remove('show');
+                }
+                if (!phone || phone.length < 6) {
+                    document.getElementById('phone').classList.add('error');
+                    document.getElementById('phone').nextElementSibling.classList.add('show');
+                    valid = false;
+                } else {
+                    document.getElementById('phone').classList.remove('error');
+                    document.getElementById('phone').nextElementSibling.classList.remove('show');
+                }
+                if (!valid) return;
+            }
+            if (step < 1 || step > totalSteps) return;
+            currentStep = step;
+            document.querySelectorAll('.form-step').forEach(el => {
+                el.classList.remove('active');
+                if (parseInt(el.dataset.step) === step) {
+                    el.classList.add('active');
+                }
+            });
+            document.querySelectorAll('.step-progress .step').forEach(el => {
+                const s = parseInt(el.dataset.step);
+                el.classList.remove('active', 'completed');
+                if (s === step) el.classList.add('active');
+                else if (s < step) el.classList.add('completed');
+            });
+            if (step === 3) updateSummary();
+            document.getElementById('reservation-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        window.goToStep = goToStep;
+
+        // ===== UPDATE PRICE =====
+        function updatePrice() {
+            let total = 0;
+            let items = [];
+            document.querySelectorAll('.experience-toggle:checked').forEach(function(cb) {
+                const price = parseFloat(cb.dataset.price) || 0;
+                const targetId = cb.dataset.target;
+                const details = document.getElementById(targetId);
+                const label = cb.closest('.checkbox-container').querySelector('strong')?.textContent || 'Experience';
+                if (details) {
+                    const guestInput = details.querySelector('.guest-input');
+                    let guests = 1;
+                    if (guestInput) {
+                        guests = parseInt(guestInput.value) || 1;
+                    }
+                    const subtotal = price * guests;
+                    total += subtotal;
+                    items.push({ label: label, guests: guests, price: price, subtotal: subtotal });
+                }
+            });
+            document.getElementById('price-display').textContent = '💰 Estimated Total Price: ' + total.toFixed(2) + ' JD';
+            const finalDisplay = document.getElementById('price-display-final');
+            if (finalDisplay) {
+                finalDisplay.textContent = '💰 Total: ' + total.toFixed(2) + ' JD';
+            }
+            window._bookingItems = items;
+            window._bookingTotal = total;
+            return { items, total };
+        }
+
+        // ===== UPDATE SUMMARY =====
+        function updateSummary() {
+            const summaryContainer = document.getElementById('summary-content');
+            const totalSpan = document.getElementById('summary-total-price');
+            const { items, total } = updatePrice();
+            if (!summaryContainer) return;
+            if (items.length === 0) {
+                summaryContainer.innerHTML = '<p style="color:#5e6f82; text-align:center; padding:10px 0;">No experiences selected yet.</p>';
+                totalSpan.textContent = '0.00 JD';
+                return;
+            }
+            let html = '';
+            items.forEach(item => {
+                const name = item.label.replace(/\(.*\)/, '').trim();
+                html += `
+                    <div class="summary-item">
+                        <span>${name} × ${item.guests}</span>
+                        <span>${item.subtotal.toFixed(2)} JD</span>
+                    </div>
+                `;
+            });
+            summaryContainer.innerHTML = html;
+            totalSpan.textContent = total.toFixed(2) + ' JD';
+        }
+
+        document.addEventListener('input', function(e) {
+            if (e.target.classList.contains('guest-input') || e.target.classList.contains('date-input')) {
+                updatePrice();
+                if (currentStep === 3) updateSummary();
+            }
+        });
+
+        // ===== OPEN FORM FROM CARDS =====
+        function openForm(type) {
+            const form = document.getElementById('reservation-form');
+            if (form) {
+                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                goToStep(2);
+                const checkboxes = document.querySelectorAll('.experience-toggle');
+                const map = { cooking: 0, walking: 1, dining: 2, glassboat: 3 };
+                const idx = map[type];
+                if (idx !== undefined && checkboxes[idx]) {
+                    checkboxes[idx].checked = true;
+                    checkboxes[idx].dispatchEvent(new Event('change'));
+                    const card = checkboxes[idx].closest('.experience-option-card');
+                    if (card) {
+                        card.style.borderColor = '#f9d56e';
+                        card.style.boxShadow = '0 0 0 5px rgba(249,213,110,0.2)';
+                        setTimeout(() => {
+                            card.style.borderColor = '';
+                            card.style.boxShadow = '';
+                        }, 2500);
+                    }
+                }
+            }
+        }
+        window.openForm = openForm;
+
+        // ===== FAQ TOGGLE =====
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('.icon');
+                if (answer) {
+                    answer.classList.toggle('open');
+                    this.classList.toggle('active');
+                    if (icon) {
+                        icon.textContent = answer.classList.contains('open') ? '−' : '+';
+                    }
+                }
+            });
+        });
+
+        // ===== FORM SUBMISSION =====
+        const form = document.getElementById('reservation-form');
+        const spinner = document.getElementById('loading-spinner');
+        const errorPopup = document.getElementById('error-popup');
+        const popupMessage = document.getElementById('popup-message');
+        const successMsg = document.getElementById('success-message');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            let valid = true;
+            if (!name) {
+                document.getElementById('name').classList.add('error');
+                document.getElementById('name').nextElementSibling.classList.add('show');
+                valid = false;
+            }
+            if (!email || !email.includes('@')) {
+                document.getElementById('email').classList.add('error');
+                document.getElementById('email').nextElementSibling.classList.add('show');
+                valid = false;
+            }
+            if (!phone || phone.length < 6) {
+                document.getElementById('phone').classList.add('error');
+                document.getElementById('phone').nextElementSibling.classList.add('show');
+                valid = false;
+            }
+            if (!valid) {
+                goToStep(1);
+                return;
+            }
+            const checked = document.querySelectorAll('.experience-toggle:checked');
+            if (checked.length === 0) {
+                popupMessage.textContent = 'Please select at least one experience to book.';
+                errorPopup.style.display = 'flex';
+                goToStep(2);
+                return;
+            }
+            spinner.style.display = 'flex';
+            const formData = new FormData(form);
+            fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                })
+                .then(response => {
+                    spinner.style.display = 'none';
+                    if (response.ok) {
+                        successMsg.classList.add('show');
+                        form.reset();
+                        document.querySelectorAll('.experience-details').forEach(function(el) {
+                            el.classList.add('collapsed');
+                        });
+                        document.querySelectorAll('.experience-toggle').forEach(function(cb) {
+                            cb.checked = false;
+                        });
+                        document.querySelectorAll('.experience-option-card').forEach(function(card) {
+                            card.classList.remove('selected');
+                        });
+                        updatePrice();
+                        goToStep(1);
+                        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        setTimeout(() => {
+                            successMsg.classList.remove('show');
+                        }, 8000);
+                    } else {
+                        popupMessage.textContent = 'There was a problem sending your booking. Please try again or contact us directly.';
+                        errorPopup.style.display = 'flex';
+                    }
+                })
+                .catch(error => {
+                    spinner.style.display = 'none';
+                    popupMessage.textContent = 'Network error. Please check your connection and try again.';
+                    errorPopup.style.display = 'flex';
+                });
+        });
+
+        function closeErrorPopup() {
+            document.getElementById('error-popup').style.display = 'none';
+        }
+        window.closeErrorPopup = closeErrorPopup;
+
+        document.getElementById('error-popup').addEventListener('click', function(e) {
+            if (e.target === this) closeErrorPopup();
+        });
+
+        // Initial price
+        updatePrice();
+    </script>
+
+</body>
+</html>
