@@ -90,6 +90,62 @@ a:hover {
     width: 0%;
     transition: width 0.1s ease;
 }
+/* ===== AUDIO PLAYER ===== */
+.audio-player-container {
+    margin: 20px 0 30px;
+    padding: 20px 24px;
+    background: #f0f4fa;
+    border-radius: 16px;
+    border: 1px solid #dce3ec;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.audio-player-container .audio-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.audio-player-container .audio-info {
+    flex: 1;
+}
+
+.audio-player-container .audio-info strong {
+    display: block;
+    color: #0f2b4a;
+    font-size: 0.9rem;
+}
+
+.audio-player-container .audio-info small {
+    color: #5a6c7d;
+    font-size: 0.8rem;
+}
+
+.audio-player-container audio {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 30px;
+    background: #e8edf5;
+    outline: none;
+}
+
+.audio-player-container audio::-webkit-media-controls-panel {
+    background: #e8edf5;
+}
+
+@media (max-width: 600px) {
+    .audio-player-container {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        padding: 16px;
+    }
+    .audio-player-container audio {
+        max-width: 100%;
+    }
+}
 
 /* ===== BUTTONS ===== */
 .button {
