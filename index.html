@@ -304,6 +304,79 @@
         <p>&copy; 2026 Aqaba local experiences. All rights reserved.</p>
     </footer>
 
+    <!-- ===== STICKY MOBILE CTA ===== -->
+<div class="mobile-cta" id="mobileCta">
+    <a href="Reservation.html" class="button cta-book">📅 Book Now</a>
+    <a href="https://wa.me/962776294742?text=Hi!%20I'd%20like%20to%20book%20an%20experience%20with%20Aqaba%20local%20experiences." class="button cta-whatsapp" target="_blank">💬 WhatsApp</a>
+</div>
+
+<style>
+/* Sticky Mobile CTA */
+.mobile-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0f2b4a;
+    padding: 12px 16px;
+    z-index: 999;
+    gap: 10px;
+    justify-content: center;
+    border-top: 3px solid #f9d56e;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
+}
+
+.mobile-cta .button {
+    flex: 1;
+    text-align: center;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    margin: 0;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.mobile-cta .cta-book {
+    background: #f9d56e;
+    color: #0f2b4a;
+    box-shadow: 0 4px 16px rgba(249, 213, 110, 0.3);
+}
+
+.mobile-cta .cta-book:hover {
+    background: #edc84a;
+    transform: scale(1.02);
+}
+
+.mobile-cta .cta-whatsapp {
+    background: #25D366;
+    color: white;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+}
+
+.mobile-cta .cta-whatsapp:hover {
+    background: #1da851;
+    transform: scale(1.02);
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+    .mobile-cta {
+        display: flex;
+    }
+    body {
+        padding-bottom: 80px;
+    }
+}
+
+/* Show on tablet too if needed */
+@media (max-width: 992px) {
+    /* Uncomment if you want it on tablets too */
+    /* .mobile-cta { display: flex; } */
+}
+</style>
+
     <!-- ===== SCRIPTS (CLEANED & MERGED) ===== -->
     <script>
         // ===== SCROLL PROGRESS =====
@@ -436,6 +509,7 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZYH4T50VY">
     </script>
+    
 
 </body>
 </html>
