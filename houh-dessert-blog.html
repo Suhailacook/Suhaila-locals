@@ -1,90 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Sweet Secret of Aqaba: Discovering Al-Hooh Dessert</title>
-  <meta name="description" content="Discover Al-Hooh, Aqaba's traditional layered dessert made with nuts, honey, and local butter. Learn about this authentic Aqabawi sweet and where to find the best." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The Sweet Secret of Aqaba: Discovering Al-Hooh Dessert</title>
+    <meta name="description" content="Discover Al-Hooh, Aqaba's traditional layered dessert made with nuts, honey, and local butter. Learn about this authentic Aqabawi sweet and where to find the best." />
+    <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/blog-post-2.html" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://suhailacook.github.io/Suhaila-locals/blog-post-2.html"
+        },
+        "headline": "The Sweet Secret of Aqaba: Discovering Al-Hooh Dessert",
+        "description": "Discover Al-Hooh, Aqaba's traditional layered dessert made with nuts, honey, and local butter. Learn about this authentic Aqabawi sweet and where to find the best.",
+        "image": "https://suhailacook.github.io/Suhaila-locals/images/Houh2.webp",
+        "author": {
+            "@type": "Organization",
+            "name": "Aqaba local experiences",
+            "url": "https://suhailacook.github.io/Suhaila-locals/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Aqaba local experiences",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://suhailacook.github.io/Suhaila-locals/images/logo.png"
+            }
+        },
+        "datePublished": "2025-12-08",
+        "dateModified": "2025-12-08"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- ===== MASTER STYLESHEET ===== -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="menu-overlay" id="menuOverlay"></div>
-  <nav class="navbar" role="navigation" aria-label="Main Navigation">
-    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
-    <div class="navbar-links" id="navbarLinks">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <div class="dropdown">
-        <a href="#" class="dropbtn">Experiences</a>
-        <div class="dropdown-content">
-          <a href="cookingclass.html">Cooking Class</a>
-          <a href="walkingtour.html">Walking Tour</a>
-          <a href="glassboat.html">Aqaba Glass Boat</a>
-          <a href="dinningexperience.html">Dining Experience</a>
+
+    <!-- ===== SCROLL PROGRESS ===== -->
+    <div id="scroll-progress"></div>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- ===== NAVBAR (STANDARD) ===== -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="logo-text">
+            <img src="images/logo.png" alt="Aqaba local experiences Logo" onerror="this.style.display='none'" />
+            <span>|</span> Aqaba locals
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">☰</button>
+        <div class="navbar-links" id="navbarLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About us</a>
+            <div class="dropdown">
+                <button class="dropbtn" aria-expanded="false" aria-controls="experiences-menu">Experiences</button>
+                <div id="experiences-menu" class="dropdown-content" role="menu">
+                    <a href="cookingclass.html" role="menuitem">Cooking Class</a>
+                    <a href="walkingtour.html" role="menuitem">Walking Tour</a>
+                    <a href="glassboat.html" role="menuitem">Aqaba Glass Boat</a>
+                    <a href="dinningexperience.html" role="menuitem">Dining Experience</a>
+                    <a href="iftar-experience-aqaba.html" role="menuitem">Ramadan Iftar</a>
+                </div>
+            </div>
+            <a href="Reservation.html">Reservations</a>
+            <a href="contact-Us.html">Contact</a>
+            <a href="Blog.html" class="active" aria-current="page">Blog</a>
         </div>
-      </div>
-      <a href="Reservation.html">Reservations</a>
-      <a href="contact-Us.html">Contact</a>
-      <a href="Blog.html" class="active" aria-current="page">Blog</a>
-    </div>
-  </nav>
+    </nav>
 
-  <main class="post-container">
-    <header class="post-header">
-      <h1>The Sweet Secret of Aqaba: Discovering Al-Hooh</h1>
-      <p class="post-meta">Published on December 8, 2025</p>
-    </header>
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="post-container">
+        <header class="post-header">
+            <span class="post-category">Culinary</span>
+            <h1>The Sweet Secret of Aqaba: Discovering Al-Hooh</h1>
+            <div class="post-meta">
+                <span>📅 December 8, 2025</span>
+                <span>⏱️ 4 min read</span>
+                <span>✍️ By Suhaila</span>
+            </div>
+        </header>
 
-    <div class="post-content">
-      <p>Aqaba, Jordan's only coastal city, is a melting pot of culture, history, and, most importantly, flavor. While many visitors are drawn to the Red Sea's clear waters or the city's bustling souks, a true local experience is incomplete without indulging in the region's unique culinary traditions. Among these, one dessert stands out as a true Aqabawi specialty: <strong>Al-Hooh</strong> (sometimes spelled Hooh). This is more than just a sweet treat; it is a taste of local heritage, passed down through generations.</p>
+        <img src="images/Houh2.webp" alt="Traditional Aqaba Al-Hooh dessert" class="post-hero-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22%3E%3Crect width=%22800%22 height=%22400%22 fill=%22%23f9d56e%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 fill=%22%230f2b4a%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🍯%3C/text%3E%3C/svg%3E'" />
 
-      <h2>What is Al-Hooh?</h2>
-      <p>Al-Hooh is a traditional Aqabawi dessert that is distinct from the more widely known Jordanian sweets like Knafeh or Baklava. It is characterized by its rich, layered structure and deep, comforting sweetness. The dessert represents the culinary identity of Aqaba and is a source of pride for the local community.</p>
-      <p><strong>The Structure:</strong> Al-Hooh is made of several thin layers of dough, similar to pastry or phyllo, creating a delicate yet sturdy foundation. <strong>The Filling:</strong> These layers are generously interspersed with a mixture of nuts (often walnuts or coconut), butter (local Jordanian ghee is preferred), and a blend of sweeteners. <strong>The Sweeteners:</strong> The sweet profile is complex, often featuring a combination of honey, condensed milk, and molasses, creating a depth of flavor that is both rich and satisfying. <strong>The Preparation:</strong> The dessert is typically roasted in an oven, which gives the dough a perfect, slightly crisp texture, and then finished with a final soaking in a sweet syrup or a dusting of sugar.</p>
+        <div class="post-content">
+            <p>Aqaba, Jordan's only coastal city, is a melting pot of culture, history, and, most importantly, flavor. While many visitors are drawn to the Red Sea's clear waters or the city's bustling souks, a true local experience is incomplete without indulging in the region's unique culinary traditions. Among these, one dessert stands out as a true Aqabawi specialty: <strong>Al-Hooh</strong> (sometimes spelled Hooh). This is more than just a sweet treat; it is a taste of local heritage, passed down through generations.</p>
 
-      <h2>A Taste of Heritage</h2>
-      <p>The dessert is a testament to the simple, yet profound, culinary history of the region. Its preparation is often a communal affair, symbolizing the warmth and hospitality of the Aqabawi people. The use of local ingredients like olive oil (in some recipes) and local butter speaks to the deep connection between the food and the land. Every bite of Al-Hooh tells a story of tradition, family, and the rich cultural tapestry of Aqaba.</p>
-      <div class="local-tip">
-        <strong>Local Tip:</strong> To experience Al-Hooh at its most authentic, seek out small, local bakeries or, better yet, find a local cooking experience. Learning to make it yourself is the best way to appreciate the skill and tradition involved. Our <a href="cookingclass.html">Authentic Jordanian Cooking Class</a> can be customized to include traditional sweet-making, giving you hands-on experience in creating this beloved dessert.
-      </div>
+            <h2>What is Al-Hooh?</h2>
+            <p>Al-Hooh is a traditional Aqabawi dessert that is distinct from the more widely known Jordanian sweets like Knafeh or Baklava. It is characterized by its rich, layered structure and deep, comforting sweetness. The dessert represents the culinary identity of Aqaba and is a source of pride for the local community.</p>
+            <p><strong>The Structure:</strong> Al-Hooh is made of several thin layers of dough, similar to pastry or phyllo, creating a delicate yet sturdy foundation. <strong>The Filling:</strong> These layers are generously interspersed with a mixture of nuts (often walnuts or coconut), butter (local Jordanian ghee is preferred), and a blend of sweeteners. <strong>The Sweeteners:</strong> The sweet profile is complex, often featuring a combination of honey, condensed milk, and molasses, creating a depth of flavor that is both rich and satisfying. <strong>The Preparation:</strong> The dessert is typically roasted in an oven, which gives the dough a perfect, slightly crisp texture, and then finished with a final soaking in a sweet syrup or a dusting of sugar.</p>
 
-      <h2>Where to Find the Best Al-Hooh</h2>
-      <p>While Al-Hooh is a local specialty, it is not as ubiquitous as other desserts. You may need to ask around for the best local spot. Look for bakeries or sweet shops that specialize in traditional Aqabawi sweets. Ask for "Al-Hooh" or "King Al-Hooh," a known local variation that has gained popularity among both locals and visitors.</p>
-      <p>Indulging in Al-Hooh is not just about satisfying a sweet tooth; it's about participating in a cherished local tradition. It's the perfect way to conclude a day of exploring the hidden gems of Aqaba. The layers of dough, nuts, and honey represent the layers of history and culture that make Aqaba such a special destination. Whether you enjoy it with a cup of strong Arabic coffee or share it with new friends, Al-Hooh is an experience that connects you to the heart of Aqaba.</p>
+            <h2>A Taste of Heritage</h2>
+            <p>The dessert is a testament to the simple, yet profound, culinary history of the region. Its preparation is often a communal affair, symbolizing the warmth and hospitality of the Aqabawi people. The use of local ingredients like olive oil (in some recipes) and local butter speaks to the deep connection between the food and the land. Every bite of Al-Hooh tells a story of tradition, family, and the rich cultural tapestry of Aqaba.</p>
 
-      <h2>Bringing Al-Hooh Home</h2>
-      <p>If you fall in love with Al-Hooh during your visit, consider learning to make it yourself. The process is not as complicated as it might seem, and the reward is a delicious taste of Aqaba that you can recreate at home. Many local families are happy to share their recipes and techniques with visitors who show genuine interest in their culinary traditions. The ingredients are relatively simple to source, and the satisfaction of creating this traditional dessert is immeasurable.</p>
-      <div class="local-tip">
-        <strong>Local Tip:</strong> When visiting Aqaba, don't just taste the food—experience it. From the bustling souks to the tranquil Red Sea, Aqaba offers experiences for every traveler. But for a truly authentic taste of the city's heart, make sure to seek out and savor the sweet, layered delight of Al-Hooh. <a href="Reservation.html">Book your local experiences today and start your culinary adventure!</a>
-      </div>
-    </div>
-  </main>
+            <div class="local-tip">
+                <strong>💡 Local Tip:</strong> To experience Al-Hooh at its most authentic, seek out small, local bakeries or, better yet, find a local cooking experience. Learning to make it yourself is the best way to appreciate the skill and tradition involved. Our <a href="cookingclass.html">Authentic Jordanian Cooking Class</a> can be customized to include traditional sweet-making, giving you hands-on experience in creating this beloved dessert.
+            </div>
 
-  <footer>
-    <p>&copy; 2024 Aqaba local experiences. All rights reserved.</p>
-  </footer>
+            <h2>Where to Find the Best Al-Hooh</h2>
+            <p>While Al-Hooh is a local specialty, it is not as ubiquitous as other desserts. You may need to ask around for the best local spot. Look for bakeries or sweet shops that specialize in traditional Aqabawi sweets. Ask for "Al-Hooh" or "King Al-Hooh," a known local variation that has gained popularity among both locals and visitors.</p>
+            <p>Indulging in Al-Hooh is not just about satisfying a sweet tooth; it's about participating in a cherished local tradition. It's the perfect way to conclude a day of exploring the hidden gems of Aqaba. The layers of dough, nuts, and honey represent the layers of history and culture that make Aqaba such a special destination. Whether you enjoy it with a cup of strong Arabic coffee or share it with new friends, Al-Hooh is an experience that connects you to the heart of Aqaba.</p>
 
-  <script>
-    // Simple script for hamburger menu and scroll behavior
-    const hamburger = document.getElementById('hamburger');
-    const navbarLinks = document.getElementById('navbarLinks');
-    const menuOverlay = document.getElementById('menuOverlay');
-    hamburger.addEventListener('click', () => {
-      navbarLinks.classList.toggle('open');
-      menuOverlay.classList.toggle('active');
-    });
-    menuOverlay.addEventListener('click', () => {
-      navbarLinks.classList.remove('open');
-      menuOverlay.classList.remove('active');
-    });
-  </script>
+            <h2>Bringing Al-Hooh Home</h2>
+            <p>If you fall in love with Al-Hooh during your visit, consider learning to make it yourself. The process is not as complicated as it might seem, and the reward is a delicious taste of Aqaba that you can recreate at home. Many local families are happy to share their recipes and techniques with visitors who show genuine interest in their culinary traditions. The ingredients are relatively simple to source, and the satisfaction of creating this traditional dessert is immeasurable.</p>
 
-  
-<script src="js/navbar.js"></script>
+            <div class="local-tip">
+                <strong>💡 Local Tip:</strong> When visiting Aqaba, don't just taste the food—experience it. From the bustling souks to the tranquil Red Sea, Aqaba offers experiences for every traveler. But for a truly authentic taste of the city's heart, make sure to seek out and savor the sweet, layered delight of Al-Hooh. <a href="Reservation.html">Book your local experiences today and start your culinary adventure!</a>
+            </div>
+        </div>
+
+        <!-- Back to Blog -->
+        <a href="Blog.html" class="back-to-blog">← Back to Blog</a>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="Reservation.html">Reservations</a>
+            <a href="contact-Us.html">Contact</a>
+            <a href="Blog.html">Blog</a>
+        </div>
+        <div class="footer-logo">
+            <img src="images/logo.png" alt="Aqaba Experiences" onerror="this.style.display='none'" />
+            <span>Aqaba Experiences</span>
+        </div>
+        <p>&copy; 2026 Aqaba local experiences. All rights reserved.</p>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // ===== HAMBURGER TOGGLE =====
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('navbarLinks').classList.toggle('open');
+        });
+
+        // ===== DROPDOWN TOGGLE (universal click) =====
+        const dropdownBtn = document.querySelector('.dropbtn');
+        const dropdown = document.querySelector('.dropdown');
+
+        if (dropdownBtn && dropdown) {
+            dropdownBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropdown.classList.toggle('open');
+                const expanded = dropdown.classList.contains('open');
+                this.setAttribute('aria-expanded', expanded);
+            });
+
+            // Close the dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('open');
+                    dropdownBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        // ===== SCROLL PROGRESS =====
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            const progressBar = document.getElementById('scroll-progress');
+            if (progressBar) {
+                progressBar.style.width = progress + '%';
+            }
+        });
+    </script>
+    <script src="js/navbar.js"></script>
+
 </body>
 </html>
-
