@@ -331,6 +331,9 @@
         <p>&copy; 2026 Aqaba Local Experiences. All rights reserved.</p>
     </footer>
 
+    <!-- ===== CANVAS CONFETTI CDN ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+
     <!-- ===== SCRIPTS ===== -->
     <script>
         // ===== HAMBURGER TOGGLE =====
@@ -516,7 +519,57 @@
             });
         });
 
-        // ===== FORM SUBMISSION =====
+        // ===== CONFETTI CELEBRATION =====
+        function fireConfetti() {
+            // First burst
+            confetti({
+                particleCount: 150,
+                spread: 80,
+                origin: { y: 0.6 },
+                colors: ['#f9d56e', '#0f2b4a', '#e76f51', '#25D366', '#f44336', '#2196F3', '#FF9800']
+            });
+
+            // Second burst after 300ms
+            setTimeout(() => {
+                confetti({
+                    particleCount: 100,
+                    spread: 100,
+                    origin: { y: 0.5, x: 0.3 },
+                    colors: ['#f9d56e', '#e76f51', '#2e9b6b', '#FF9800']
+                });
+                confetti({
+                    particleCount: 100,
+                    spread: 100,
+                    origin: { y: 0.5, x: 0.7 },
+                    colors: ['#f9d56e', '#0f2b4a', '#2196F3', '#25D366']
+                });
+            }, 300);
+
+            // Third burst after 600ms
+            setTimeout(() => {
+                confetti({
+                    particleCount: 60,
+                    spread: 60,
+                    origin: { y: 0.4 },
+                    startVelocity: 35,
+                    colors: ['#f9d56e', '#e76f51', '#d32f2f', '#2e9b6b', '#FF9800']
+                });
+            }, 600);
+
+            // Long-distance confetti
+            setTimeout(() => {
+                confetti({
+                    particleCount: 80,
+                    spread: 120,
+                    origin: { y: 0.7, x: 0.5 },
+                    startVelocity: 25,
+                    gravity: 0.3,
+                    colors: ['#f9d56e', '#0f2b4a', '#e76f51', '#25D366']
+                });
+            }, 900);
+        }
+
+        // ===== FORM SUBMISSION WITH CONFETTI =====
         const form = document.getElementById('reservation-form');
         const spinner = document.getElementById('loading-spinner');
         const errorPopup = document.getElementById('error-popup');
@@ -565,6 +618,9 @@
                 .then(response => {
                     spinner.style.display = 'none';
                     if (response.ok) {
+                        // ===== TRIGGER CONFETTI ON SUCCESS =====
+                        fireConfetti();
+
                         successMsg.classList.add('show');
                         form.reset();
                         document.querySelectorAll('.experience-details').forEach(function(el) {
@@ -606,24 +662,16 @@
         // Initial price
         updatePrice();
 
-        // ===== DROPDOWN TOGGLE (for all screens) =====
+        // ===== DROPDOWN TOGGLE FOR MOBILE =====
         const dropdownBtn = document.querySelector('.dropbtn');
-        const dropdown = document.querySelector('.dropdown');
-
-        if (dropdownBtn && dropdown) {
+        if (dropdownBtn) {
             dropdownBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                dropdown.classList.toggle('open');
-                const expanded = dropdown.classList.contains('open');
-                this.setAttribute('aria-expanded', expanded);
-            });
-
-            // Close the dropdown when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!dropdown.contains(e.target)) {
-                    dropdown.classList.remove('open');
-                    dropdownBtn.setAttribute('aria-expanded', 'false');
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const parent = this.closest('.dropdown');
+                    if (parent) {
+                        parent.classList.toggle('open');
+                    }
                 }
             });
         }
