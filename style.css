@@ -69,6 +69,307 @@ body {
     position: relative;
     z-index: 3;
 }
+/* ===== AI TRIP PLANNER POPUP ===== */
+.trip-planner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 43, 74, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.trip-planner-overlay.active {
+    display: flex;
+}
+
+.trip-planner-modal {
+    background: white;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 28px;
+    padding: 36px 32px 40px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+    animation: tripFadeIn 0.4s ease;
+}
+
+@keyframes tripFadeIn {
+    0% { opacity: 0; transform: scale(0.95) translateY(20px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.trip-planner-close {
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #8a9baa;
+    cursor: pointer;
+    transition: 0.3s;
+    line-height: 1;
+}
+
+.trip-planner-close:hover {
+    color: #d32f2f;
+    transform: rotate(90deg);
+}
+
+.trip-step {
+    display: none;
+    animation: tripFadeIn 0.4s ease;
+}
+
+.trip-step.active {
+    display: block;
+}
+
+.trip-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.trip-icon {
+    font-size: 2.8rem;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.trip-header h2 {
+    font-size: 1.6rem;
+    color: #0f2b4a;
+    margin-bottom: 4px;
+    font-weight: 800;
+}
+
+.trip-header p {
+    color: #5a6c7d;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.trip-question {
+    margin: 20px 0 28px;
+}
+
+.trip-question label {
+    font-weight: 700;
+    color: #0f2b4a;
+    font-size: 1.05rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.trip-question label span {
+    font-weight: 400;
+    color: #8a9baa;
+    font-size: 0.85rem;
+}
+
+.trip-checkbox-group,
+.trip-radio-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.trip-checkbox-group label,
+.trip-radio-group label {
+    background: #f6f8fa;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.trip-checkbox-group label:hover,
+.trip-radio-group label:hover {
+    background: #eef2f7;
+}
+
+.trip-checkbox-group input:checked + label,
+.trip-radio-group input:checked + label {
+    border-color: #f9d56e;
+    background: #fefcf5;
+}
+
+.trip-checkbox-group input[type="checkbox"],
+.trip-radio-group input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #f9d56e;
+    flex-shrink: 0;
+}
+
+.trip-nav {
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.trip-nav .button {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.trip-nav .button-secondary {
+    background: #f0f4fa;
+    color: #1a2634;
+    box-shadow: none;
+}
+
+.trip-nav .button-secondary:hover {
+    background: #e3eaf3;
+}
+
+.trip-results {
+    margin: 20px 0 16px;
+    display: grid;
+    gap: 16px;
+}
+
+.trip-result-item {
+    background: #fafaf8;
+    border-radius: 16px;
+    padding: 16px 20px;
+    border: 1px solid #e8e2d9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    transition: 0.3s;
+}
+
+.trip-result-item:hover {
+    border-color: #f9d56e;
+    background: #fefcf5;
+}
+
+.trip-result-item .info h4 {
+    font-size: 1.1rem;
+    color: #0f2b4a;
+    margin-bottom: 2px;
+}
+
+.trip-result-item .info p {
+    margin: 0;
+    color: #5a6c7d;
+    font-size: 0.9rem;
+}
+
+.trip-result-item .info .tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.trip-result-item .info .tags span {
+    background: #e8edf5;
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    color: #1a2634;
+    font-weight: 600;
+}
+
+.trip-result-item .price-book {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.trip-result-item .price-book .price {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #0f2b4a;
+}
+
+.trip-result-item .price-book .price small {
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: #5a6c7d;
+}
+
+.trip-result-item .price-book .book-link {
+    display: inline-block;
+    margin-top: 4px;
+    background: #f9d56e;
+    color: #0f2b4a;
+    padding: 4px 16px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.trip-result-item .price-book .book-link:hover {
+    background: #edc84a;
+    transform: scale(1.03);
+}
+
+.trip-no-results {
+    text-align: center;
+    padding: 30px 0;
+    color: #5a6c7d;
+}
+
+.trip-no-results .big-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 600px) {
+    .trip-planner-modal {
+        padding: 24px 18px 30px;
+        border-radius: 20px;
+    }
+    .trip-checkbox-group,
+    .trip-radio-group {
+        grid-template-columns: 1fr;
+    }
+    .trip-nav {
+        flex-direction: column;
+    }
+    .trip-nav .button {
+        width: 100%;
+    }
+    .trip-result-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .trip-result-item .price-book {
+        text-align: center;
+    }
+    .trip-header h2 {
+        font-size: 1.3rem;
+    }
+}
 
 img {
     max-width: 100%;
