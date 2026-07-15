@@ -34,10 +34,10 @@
             "image": "https://suhailacook.github.io/Suhaila-locals/images/logo.png",
             "url": "https://suhailacook.github.io/Suhaila-locals/",
             "telephone": "+962776294742",
-            "address": { 
-                "@type": "PostalAddress", 
-                "addressLocality": "Aqaba", 
-                "addressCountry": "JO" 
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Aqaba",
+                "addressCountry": "JO"
             },
             "aggregateRating": {
                 "@type": "AggregateRating",
@@ -97,6 +97,27 @@
             </div>
         </div>
     </section>
+
+    <!-- ===== WELCOME AUDIO PLAYER ===== -->
+    <div class="welcome-audio">
+        <div class="welcome-audio-content">
+            <div class="audio-icon-wrapper">
+                <span class="pulse-dot"></span>
+                <span class="audio-icon">🎧</span>
+            </div>
+            <div class="audio-text">
+                <strong>👋 Welcome to Aqaba!</strong>
+                <p>Listen to a special message from our family</p>
+            </div>
+            <button class="audio-toggle-btn" id="audioToggleBtn" aria-label="Play/Pause audio">
+                <span id="audioPlayIcon">▶</span>
+            </button>
+            <audio id="welcomeAudio" preload="metadata" loop>
+                <source src="audio/welcome.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
 
     <!-- ===== MAIN CONTENT ===== -->
     <main id="main-content">
@@ -305,79 +326,195 @@
     </footer>
 
     <!-- ===== STICKY MOBILE CTA ===== -->
-<div class="mobile-cta" id="mobileCta">
-    <a href="Reservation.html" class="button cta-book">📅 Book Now</a>
-    <a href="https://wa.me/962776294742?text=Hi!%20I'd%20like%20to%20book%20an%20experience%20with%20Aqaba%20local%20experiences." class="button cta-whatsapp" target="_blank">💬 WhatsApp</a>
-</div>
+    <div class="mobile-cta" id="mobileCta">
+        <a href="Reservation.html" class="button cta-book">📅 Book Now</a>
+        <a href="https://wa.me/962776294742?text=Hi!%20I'd%20like%20to%20book%20an%20experience%20with%20Aqaba%20local%20experiences." class="button cta-whatsapp" target="_blank">💬 WhatsApp</a>
+    </div>
 
-<style>
-/* Sticky Mobile CTA */
-.mobile-cta {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #0f2b4a;
-    padding: 12px 16px;
-    z-index: 999;
-    gap: 10px;
-    justify-content: center;
-    border-top: 3px solid #f9d56e;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
-}
+    <!-- ===== AUDIO PLAYER STYLES ===== -->
+    <style>
+        /* Welcome Audio Player */
+        .welcome-audio {
+            max-width: 700px;
+            margin: -30px auto 40px;
+            padding: 0 24px;
+            position: relative;
+            z-index: 3;
+        }
 
-.mobile-cta .button {
-    flex: 1;
-    text-align: center;
-    padding: 12px 16px;
-    font-size: 0.95rem;
-    margin: 0;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-}
+        .welcome-audio-content {
+            background: white;
+            border-radius: 20px;
+            padding: 16px 24px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border: 1px solid #e8e2d9;
+            transition: 0.3s;
+        }
 
-.mobile-cta .cta-book {
-    background: #f9d56e;
-    color: #0f2b4a;
-    box-shadow: 0 4px 16px rgba(249, 213, 110, 0.3);
-}
+        .welcome-audio-content:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            border-color: #f9d56e;
+        }
 
-.mobile-cta .cta-book:hover {
-    background: #edc84a;
-    transform: scale(1.02);
-}
+        .audio-icon-wrapper {
+            position: relative;
+            flex-shrink: 0;
+        }
 
-.mobile-cta .cta-whatsapp {
-    background: #25D366;
-    color: white;
-    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
-}
+        .audio-icon {
+            font-size: 2rem;
+            display: block;
+            line-height: 1;
+        }
 
-.mobile-cta .cta-whatsapp:hover {
-    background: #1da851;
-    transform: scale(1.02);
-}
+        .pulse-dot {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            width: 12px;
+            height: 12px;
+            background: #25D366;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            border: 2px solid white;
+        }
 
-/* Show only on mobile */
-@media (max-width: 768px) {
-    .mobile-cta {
-        display: flex;
-    }
-    body {
-        padding-bottom: 80px;
-    }
-}
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+            100% { transform: scale(0.8); opacity: 1; }
+        }
 
-/* Show on tablet too if needed */
-@media (max-width: 992px) {
-    /* Uncomment if you want it on tablets too */
-    /* .mobile-cta { display: flex; } */
-}
-</style>
+        .audio-text {
+            flex: 1;
+        }
 
-    <!-- ===== SCRIPTS (CLEANED & MERGED) ===== -->
+        .audio-text strong {
+            display: block;
+            color: #0f2b4a;
+            font-size: 1rem;
+        }
+
+        .audio-text p {
+            margin: 0;
+            color: #5a6c7d;
+            font-size: 0.85rem;
+        }
+
+        .audio-toggle-btn {
+            background: #f9d56e;
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #0f2b4a;
+            flex-shrink: 0;
+            box-shadow: 0 4px 16px rgba(249, 213, 110, 0.3);
+        }
+
+        .audio-toggle-btn:hover {
+            background: #edc84a;
+            transform: scale(1.05);
+        }
+
+        .audio-toggle-btn.playing {
+            background: #e76f51;
+            color: white;
+            box-shadow: 0 4px 16px rgba(231, 111, 81, 0.3);
+        }
+
+        .audio-toggle-btn.playing:hover {
+            background: #d65d3f;
+        }
+
+        @media (max-width: 600px) {
+            .welcome-audio-content {
+                flex-wrap: wrap;
+                padding: 14px 18px;
+                gap: 10px;
+            }
+            .audio-text strong {
+                font-size: 0.9rem;
+            }
+            .audio-text p {
+                font-size: 0.8rem;
+            }
+            .audio-toggle-btn {
+                width: 38px;
+                height: 38px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Sticky Mobile CTA */
+        .mobile-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #0f2b4a;
+            padding: 12px 16px;
+            z-index: 999;
+            gap: 10px;
+            justify-content: center;
+            border-top: 3px solid #f9d56e;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
+        }
+
+        .mobile-cta .button {
+            flex: 1;
+            text-align: center;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            margin: 0;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .mobile-cta .cta-book {
+            background: #f9d56e;
+            color: #0f2b4a;
+            box-shadow: 0 4px 16px rgba(249, 213, 110, 0.3);
+        }
+
+        .mobile-cta .cta-book:hover {
+            background: #edc84a;
+            transform: scale(1.02);
+        }
+
+        .mobile-cta .cta-whatsapp {
+            background: #25D366;
+            color: white;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+        }
+
+        .mobile-cta .cta-whatsapp:hover {
+            background: #1da851;
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-cta {
+                display: flex;
+            }
+            body {
+                padding-bottom: 80px;
+            }
+        }
+    </style>
+
+    <!-- ===== SCRIPTS ===== -->
     <script>
         // ===== SCROLL PROGRESS =====
         window.addEventListener('scroll', function() {
@@ -489,7 +626,6 @@
                 this.setAttribute('aria-expanded', expanded);
             });
 
-            // Close the dropdown when clicking outside
             document.addEventListener('click', function(e) {
                 if (!dropdown.contains(e.target)) {
                     dropdown.classList.remove('open');
@@ -498,9 +634,54 @@
             });
         }
 
+        // ===== WELCOME AUDIO PLAYER =====
+        const audio = document.getElementById('welcomeAudio');
+        const toggleBtn = document.getElementById('audioToggleBtn');
+        const playIcon = document.getElementById('audioPlayIcon');
+
+        // Auto-play attempt
+        function tryAutoPlay() {
+            audio.play().then(() => {
+                toggleBtn.classList.add('playing');
+                playIcon.textContent = '⏸';
+            }).catch(() => {
+                // Auto-play blocked by browser; user needs to click
+                console.log('Auto-play blocked. Click to play.');
+            });
+        }
+
+        // Try to autoplay on page load
+        document.addEventListener('DOMContentLoaded', tryAutoPlay);
+
+        // Also try on user interaction (scroll, click, etc.)
+        document.addEventListener('click', function() {
+            if (audio.paused) {
+                tryAutoPlay();
+            }
+        }, { once: true });
+
+        // Toggle play/pause on button click
+        toggleBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (audio.paused) {
+                audio.play();
+                this.classList.add('playing');
+                playIcon.textContent = '⏸';
+            } else {
+                audio.pause();
+                this.classList.remove('playing');
+                playIcon.textContent = '▶';
+            }
+        });
+
+        // Reset icon when audio ends
+        audio.addEventListener('ended', function() {
+            toggleBtn.classList.remove('playing');
+            playIcon.textContent = '▶';
+        });
+
         // ===== GOOGLE ANALYTICS =====
         window.dataLayer = window.dataLayer || [];
-
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-JZYH4T50VY');
@@ -509,7 +690,6 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZYH4T50VY">
     </script>
-    
 
 </body>
 </html>
