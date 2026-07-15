@@ -98,7 +98,7 @@
         </div>
     </section>
 
-    <!-- ===== AI TRIP PLANNER BUTTON (FIXED MARGIN) ===== -->
+    <!-- ===== AI TRIP PLANNER BUTTON ===== -->
     <div style="text-align:center; margin: 20px 0 10px;">
         <button class="button" id="planTripBtn" style="background:#f9d56e; font-size:1.1rem; padding:16px 40px; box-shadow:0 8px 30px rgba(249,213,110,0.4); border:1px solid #f0c84a;">
             🤖 Plan My Trip
@@ -158,8 +158,41 @@
         <section class="gallery-section">
             <h2 class="gallery-title">Our Experiences Gallery</h2>
             <div class="gallery-grid">
-                <!-- Your gallery items go here -->
-                <!-- (Keep your existing gallery items) -->
+                <div class="gallery-item">
+                    <img src="images/cooking-class-aqaba.webp" alt="Cooking class in Aqaba" class="gallery-img" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%231b4a6f%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🍳%3C/text%3E%3C/svg%3E'" />
+                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling)">
+                        <span class="overlay-text">View Class</span>
+                    </div>
+                    <p class="gallery-caption">Authentic Cooking Class</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/aqaba-walking-tour.webp" alt="Aqaba walking tour" class="gallery-img" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23a06b3f%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🚶%3C/text%3E%3C/svg%3E'" />
+                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling)">
+                        <span class="overlay-text">Explore Tour</span>
+                    </div>
+                    <p class="gallery-caption">Aqaba Walking Tour</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image3.jpg" alt="Dining experience" class="gallery-img" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%237a5535%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🍽️%3C/text%3E%3C/svg%3E'" />
+                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling)">
+                        <span class="overlay-text">Dining Experience</span>
+                    </div>
+                    <p class="gallery-caption">Traditional Dining</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/glass-boat.webp" alt="Aqaba Glass Boat Tour" class="gallery-img" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23216254%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🚤%3C/text%3E%3C/svg%3E'" />
+                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling)">
+                        <span class="overlay-text">Glass Boat Tour</span>
+                    </div>
+                    <p class="gallery-caption">Aqaba Glass Boat</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/aqaba-marina.webp" alt="Aqaba Marina View" class="gallery-img" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%231f5a7a%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E⛵%3C/text%3E%3C/svg%3E'" />
+                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling)">
+                        <span class="overlay-text">Marina View</span>
+                    </div>
+                    <p class="gallery-caption">Aqaba Marina</p>
+                </div>
             </div>
 
             <!-- Lightbox -->
@@ -200,8 +233,45 @@
         <section class="experiences">
             <h2>Our Local Experiences</h2>
             <div class="product-gallery">
-                <!-- Your product items go here -->
-                <!-- (Keep your existing product items) -->
+                <article class="product-item">
+                    <img src="images/Experience1.webp" alt="Traditional Jordanian Cooking Class in Aqaba" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%231b4a6f%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🍳%3C/text%3E%3C/svg%3E'" />
+                    <div class="product-info">
+                        <h3>Authentic Cooking Class</h3>
+                        <p>Learn to cook traditional dishes with our family recipes in Aqaba.</p>
+                        <p><a href="cookingclass.html">Read more</a> | <a href="#" onclick="redirectToReservation('Authentic Cooking Class')">Book Now</a></p>
+                        <p class="price">30 JD</p>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <img src="images/Experience2.webp" alt="Walking and food taste tour in Aqaba" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23a06b3f%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🚶%3C/text%3E%3C/svg%3E'" />
+                    <div class="product-info">
+                        <h3>Aqaba Walking Tour</h3>
+                        <p>Discover Aqaba's hidden gems on a guided walking tour that blends history, culture, and flavor.</p>
+                        <p><a href="walkingtour.html">Read more</a> | <a href="#" onclick="redirectToReservation('Food Taste Tour')">Book Now</a></p>
+                        <p class="price">20 JD</p>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <img src="images/Experience3.webp" alt="Dining Experience in a local Aqaba home" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%237a5535%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🍽️%3C/text%3E%3C/svg%3E'" />
+                    <div class="product-info">
+                        <h3>Dining Experience</h3>
+                        <p>Sharing meals, stories, and culture with our family.</p>
+                        <p><a href="dinningexperience.html">Read more</a> | <a href="#" onclick="redirectToReservation('Dining Experience')">Book Now</a></p>
+                        <p class="price">15 JD</p>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <img src="images/glass-boat.webp" alt="Aqaba Glass Boat Tour" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23216254%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🚤%3C/text%3E%3C/svg%3E'" />
+                    <div class="product-info">
+                        <h3>Aqaba Glass Boat</h3>
+                        <p>Enjoy Aqaba's coral reefs and marine life with a relaxing glass boat tour or snorkeling adventure.</p>
+                        <p><a href="glassboat.html">Read more</a> | <a href="#" onclick="redirectToReservation('Aqaba Glass Boat')">Book Now</a></p>
+                        <p class="price">25 JD / hour</p>
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -758,7 +828,16 @@
                 const budget = getBudget();
 
                 if (!companions) {
-                    alert('Please tell us who you\'re traveling with.');
+                    alert('Please tell us who you\');
+            }
+
+            function generateRecommendations() {
+                const interests = getSelectedInterests();
+                const companions = getCompanions();
+                const budget = getBudget();
+
+                if (!companions) {
+                    alert('Please tell us who you\'re traveling withre traveling with.');
                     return;
                 }
                 if (!budget) {
@@ -767,7 +846,22 @@
                 }
 
                 const recs = recommend(interests, companions, budget);
-                showStep('results');
+                showStep('results.');
+                    return;
+                }
+                if (!budget) {
+                    alert('Please select your budget.');
+                    return;
+                }
+
+                const recs = recommend(interests, companions, budget);
+               ');
+
+                if (recs.length === 0) {
+                    resultsContainer.innerHTML = `
+                        <div class="trip-no-results">
+                            <span class="big-icon">😅</span>
+                            <p>We couldn't find any experiences matching your preferences. showStep('results');
 
                 if (recs.length === 0) {
                     resultsContainer.innerHTML = `
@@ -781,17 +875,44 @@
 
                 let html = '';
                 recs.forEach(exp => {
-                    const tagHtml = exp.tags.map(t => `<span>${t}</span>`).join('');
+                    const tagHtml = exp.tags.map(t => Try adjusting your selections!</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                let html = '';
+                recs.forEach(exp => {
+                    const tagHtml = exp.tags.map(t => `<span>${t `<span>${t}</span>`).join('');
+                    html += `
+                        <div class="trip-result-item">
+                            <div class="info">
+                                <h4>${exp.name}</span>`).join('');
                     html += `
                         <div class="trip-result-item">
                             <div class="info">
                                 <h4>${exp.name}</h4>
                                 <p>${exp.desc}</p>
+                                <div class="tags}</h4>
+                                <p>${exp.desc}</p>
                                 <div class="tags">${tagHtml}</div>
                             </div>
                             <div class="price-book">
-                                <div class="price">${exp.price} JD <small>/ person</small></div>
+                                <div class="price">">${tagHtml}</div>
+                            </div>
+                            <div class="price-book">
+                                <div${exp.price} JD <small>/ person</small></div>
+                                <a href="${exp.url}" class="book-link">Book Now →</a class="price">${exp.price} JD <small>/ person</small></div>
                                 <a href="${exp.url}" class="book-link">Book Now →</a>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                resultsContainer.innerHTML = html;
+            }
+
+            window.goToStep>
                             </div>
                         </div>
                     `;
@@ -805,7 +926,25 @@
                     const interests = getSelectedInterests();
                     if (interests.length === 0) {
                         alert('Please select at least one interest.');
+                        return = function(step) {
+                if (step === 2) {
+                    const interests = getSelectedInterests();
+                    if (interests.length === 0) {
+                        alert('Please select at least one interest.');
                         return;
+                    }
+                }
+                showStep(step);
+            };
+
+            window.generateRecommendations = generateRecommendations;
+            window.resetPlanner = function() {
+                resetForm();
+                showStep(1);
+            };
+
+            if (openBtn) {
+                openBtn.addEventListener('click', function();
                     }
                 }
                 showStep(step);
@@ -826,7 +965,23 @@
             }
 
             if (closeBtn) {
+                closeBtn.addEventListener('click', function {
+                    popup.classList.add('active');
+                    popup.style.display = 'flex';
+                    resetForm();
+                });
+            }
+
+            if (closeBtn) {
                 closeBtn.addEventListener('click', function() {
+                    popup.classList.remove('active');
+                    popup.style.display = 'none';
+                });
+            }
+
+            popup.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    popup.classList.remove() {
                     popup.classList.remove('active');
                     popup.style.display = 'none';
                 });
@@ -837,7 +992,15 @@
                     popup.classList.remove('active');
                     popup.style.display = 'none';
                 }
+           ('active');
+                    popup.style.display = 'none';
+                }
             });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    popup.classList.remove('active');
+                    popup.style.display = });
 
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
@@ -847,18 +1010,35 @@
             });
 
             resetForm();
-            console.log('🤖 AI Trip Planner loaded!');
+            console.log('🤖 AI Trip Planner 'none';
+                }
+            });
+
+            resetForm();
+            console.log(' loaded!');
+        })();
+
+        // ===== GOOGLE ANALYTICS =====
+        window.dataLayer =🤖 AI Trip Planner loaded!');
         })();
 
         // ===== GOOGLE ANALYTICS =====
         window.dataLayer = window.dataLayer || [];
+        function gtag() { data window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
+        gtag('js',Layer.push(arguments); }
         gtag('js', new Date());
-        gtag('config', 'G-JZYH4T50VY');
+        gtag('config', ' new Date());
+        gtag('config', 'G-JZYH4TG-JZYH4T50VY');
     </script>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZYH4T50VY">
+    <script async src="https://www.googletagmanager.com/gtag50VY');
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G/js?id=G-JZYH4T50VY">
+    </script-JZYH4T50VY">
     </script>
 
 </body>
