@@ -10,11 +10,11 @@
 
     <meta property="og:title" content="About Us | Aqaba Local Experiences">
     <meta property="og:description" content="Discover the story, passion, and family behind Aqaba's most authentic cooking classes and walking tours.">
-    <meta property="og:image" content="https://suhailacook.github.io/Suhaila-locals/about-photo.webp">
+    <meta property="og:image" content="https://suhailacook.github.io/Suhaila-locals/images/about-photo.webp">
     <meta property="og:url" content="https://suhailacook.github.io/Suhaila-locals/about.html">
     <meta property="og:type" content="website">
 
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="images/favicon.png" type="image/png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,11 +27,16 @@
     <div id="scroll-progress"></div>
     <div class="menu-overlay" id="menuOverlay"></div>
 
+    <!-- ===== NAVBAR (FIXED) ===== -->
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+        <a href="index.html" class="logo-text">
+            <img src="images/logo.png" alt="Aqaba local experiences Logo" onerror="this.style.display='none'" />
+            <span>|</span> Aqaba locals
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">☰</button>
         <div class="navbar-links" id="navbarLinks">
             <a href="index.html">Home</a>
-            <a href="about.html" aria-current="page" class="active">About Us</a>
+            <a href="about.html" class="active">About us</a>
             <div class="dropdown">
                 <button class="dropbtn" aria-expanded="false" aria-controls="experiences-menu">Experiences</button>
                 <div id="experiences-menu" class="dropdown-content" role="menu">
@@ -39,6 +44,7 @@
                     <a href="walkingtour.html" role="menuitem">Walking Tour</a>
                     <a href="glassboat.html" role="menuitem">Aqaba Glass Boat</a>
                     <a href="dinningexperience.html" role="menuitem">Dining Experience</a>
+                    <a href="iftar-experience-aqaba.html" role="menuitem">Ramadan Iftar</a>
                 </div>
             </div>
             <a href="Reservation.html">Reservations</a>
@@ -48,7 +54,7 @@
     </nav>
 
     <section class="about-hero-section">
-        <img src="aqaba-beach-sunset.webp" alt="Aqaba beach sunset, Jordan" onerror="this.src='aqaba-beach-sunset.webp';">
+        <img src="images/aqaba-beach-sunset.webp" alt="Aqaba beach sunset, Jordan" onerror="this.src='images/aqaba-beach-sunset.webp';">
         <div class="about-hero-content">
             <h1 class="animate-fade-in">Our Journey</h1>
             <p class="animate-fade-in delay-1">Discover the story, the passion, and the local family behind Aqaba's most authentic experiences.</p>
@@ -66,7 +72,7 @@
 
             <section class="meet-family-section animate-fade-in delay-3">
                 <div class="meet-family-img-wrapper">
-                    <img src="about-photo.webp" alt="Suhaila and Family smiling in their kitchen" class="meet-family-img" onerror="this.src='about-photo.webp';">
+                    <img src="images/about-photo.webp" alt="Suhaila and Family smiling in their kitchen" class="meet-family-img" onerror="this.src='images/about-photo.webp';">
                 </div>
                 <div class="meet-family-content">
                     <h2>Meet Suhaila</h2>
@@ -120,103 +126,44 @@
         <p>Mobile: <a href="tel:+962776294742">+962776294742</a></p>
         <p>Connect with us on:
             <a href="https://www.instagram.com/suhaila.cook" target="_blank" rel="noopener">
-                <img src="instagram-icon.png" alt="Instagram" class="social-icon"> Instagram
+                <img src="images/instagram-icon.png" alt="Instagram" class="social-icon"> Instagram
             </a> |
             <a href="https://web.facebook.com/suhailacook" target="_blank" rel="noopener">
-                <img src="facebook-icon.png" alt="Facebook" class="social-icon"> Facebook
+                <img src="images/facebook-icon.png" alt="Facebook" class="social-icon"> Facebook
             </a>
         </p>
         <p>&copy; 2026 Aqaba local experiences. All rights reserved.</p>
     </footer>
 
+    <!-- ===== SCRIPTS (FIXED) ===== -->
     <script>
-        document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                if (window.innerWidth <= 800) {
-                    e.preventDefault();
-                    const dd = this.closest('.dropdown');
-                    document.querySelectorAll('.navbar .dropdown.open').forEach(o => { if (o !== dd) o.classList.remove('open'); });
-                    dd.classList.toggle('open');
+        // ===== HAMBURGER TOGGLE =====
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('navbarLinks').classList.toggle('open');
+        });
+
+        // ===== DROPDOWN TOGGLE (universal click) =====
+        const dropdownBtn = document.querySelector('.dropbtn');
+        const dropdown = document.querySelector('.dropdown');
+
+        if (dropdownBtn && dropdown) {
+            dropdownBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropdown.classList.toggle('open');
+                const expanded = dropdown.classList.contains('open');
+                this.setAttribute('aria-expanded', expanded);
+            });
+
+            // Close the dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('open');
+                    dropdownBtn.setAttribute('aria-expanded', 'false');
                 }
             });
-        });
-
-        document.addEventListener('click', (e) => {
-            if (window.innerWidth <= 800) {
-                if (!e.target.closest('.navbar')) {
-                    document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
-                }
-            }
-        });
-
-<<<<<<< HEAD
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 800) document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
-        });
+        }
     </script>
     <script src="js/navbar.js"></script>
-=======
-    // Highlight active nav link
-    const currentPath = window.location.pathname.split("/").pop();
-    const navLinks = document.querySelectorAll('.navbar a');
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      link.removeAttribute('aria-current');
-      if (link.getAttribute('href') === currentPath) {
-        link.classList.add('active');
-        link.setAttribute('aria-current', 'page');
-      }
-    });
-
-    // Experiences dropdown ARIA and keyboard support
-    const dropbtn = document.querySelector('.dropbtn');
-    const dropdown = document.querySelector('.dropdown');
-    const experiencesMenu = document.getElementById('experiences-menu');
-    
-    if (dropbtn && experiencesMenu && dropdown) {
-      dropbtn.setAttribute('aria-expanded', 'false');
-      experiencesMenu.setAttribute('aria-hidden', 'true');
-
-      dropbtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const expanded = dropbtn.getAttribute('aria-expanded') === 'true';
-        dropbtn.setAttribute('aria-expanded', String(!expanded));
-        experiencesMenu.setAttribute('aria-hidden', String(expanded));
-        dropdown.classList.toggle('open');
-      });
-
-      // Close dropdown when a link is clicked
-      experiencesMenu.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-          dropbtn.setAttribute('aria-expanded', 'false');
-          experiencesMenu.setAttribute('aria-hidden', 'true');
-          dropdown.classList.remove('open');
-        });
-      });
-
-      dropbtn.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          dropbtn.click();
-          experiencesMenu.querySelector('a')?.focus();
-        } else if (e.key === 'Escape') {
-          dropbtn.setAttribute('aria-expanded','false');
-          experiencesMenu.setAttribute('aria-hidden','true');
-          dropdown.classList.remove('open');
-          dropbtn.focus();
-        }
-      });
-
-      // Close submenu on outside click
-      document.addEventListener('click', (e) => {
-        if (!dropbtn.contains(e.target) && !experiencesMenu.contains(e.target)) {
-          dropbtn.setAttribute('aria-expanded','false');
-          experiencesMenu.setAttribute('aria-hidden','true');
-          dropdown.classList.remove('open');
-        }
-      });
-    }
-</script>
->>>>>>> 7fa0927 (Organize images and update paths)
 </body>
 </html>
