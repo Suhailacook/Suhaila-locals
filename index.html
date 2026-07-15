@@ -24,6 +24,8 @@
     <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/">
     <!-- ===== MASTER STYLESHEET ===== -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- ===== UPDATED SCHEMA WITH AGGREGATE RATING ===== -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -32,7 +34,16 @@
             "image": "https://suhailacook.github.io/Suhaila-locals/images/logo.png",
             "url": "https://suhailacook.github.io/Suhaila-locals/",
             "telephone": "+962776294742",
-            "address": { "@type": "PostalAddress", "addressLocality": "Aqaba", "addressCountry": "JO" }
+            "address": { 
+                "@type": "PostalAddress", 
+                "addressLocality": "Aqaba", 
+                "addressCountry": "JO" 
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "47"
+            }
         }
     </script>
 </head>
@@ -61,6 +72,7 @@
                     <a href="walkingtour.html" role="menuitem">Walking Tour</a>
                     <a href="glassboat.html" role="menuitem">Aqaba Glass Boat</a>
                     <a href="dinningexperience.html" role="menuitem">Dining Experience</a>
+                    <a href="iftar-experience-aqaba.html" role="menuitem">Ramadan Iftar</a>
                 </div>
             </div>
             <a href="Reservation.html">Reservations</a>
@@ -292,7 +304,7 @@
         <p>&copy; 2026 Aqaba local experiences. All rights reserved.</p>
     </footer>
 
-    <!-- ===== SCRIPTS ===== -->
+    <!-- ===== SCRIPTS (CLEANED & MERGED) ===== -->
     <script>
         // ===== SCROLL PROGRESS =====
         window.addEventListener('scroll', function() {
@@ -336,7 +348,6 @@
             document.body.style.overflow = '';
         }
 
-<<<<<<< HEAD
         function changeLightbox(direction) {
             currentLightboxIndex = (currentLightboxIndex + direction + lightboxImages.length) % lightboxImages.length;
             lightboxImg.src = lightboxImages[currentLightboxIndex];
@@ -357,56 +368,6 @@
         // ===== REVIEW CAROUSEL =====
         let currentReview = 0;
         const reviews = document.querySelectorAll('.review-card');
-=======
-  // Experiences dropdown ARIA and keyboard support
-  const dropbtn = document.querySelector('.dropbtn');
-  const dropdown = document.querySelector('.dropdown');
-  const experiencesMenu = document.getElementById('experiences-menu');
-  
-  if (dropbtn && experiencesMenu && dropdown) {
-    dropbtn.setAttribute('aria-expanded', 'false');
-    experiencesMenu.setAttribute('aria-hidden', 'true');
-
-    dropbtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const expanded = dropbtn.getAttribute('aria-expanded') === 'true';
-      dropbtn.setAttribute('aria-expanded', String(!expanded));
-      experiencesMenu.setAttribute('aria-hidden', String(expanded));
-      dropdown.classList.toggle('open');
-    });
-
-    // Close dropdown when a link is clicked
-    experiencesMenu.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        dropbtn.setAttribute('aria-expanded', 'false');
-        experiencesMenu.setAttribute('aria-hidden', 'true');
-        dropdown.classList.remove('open');
-      });
-    });
-
-    dropbtn.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        dropbtn.click();
-        experiencesMenu.querySelector('a')?.focus();
-      } else if (e.key === 'Escape') {
-        dropbtn.setAttribute('aria-expanded','false');
-        experiencesMenu.setAttribute('aria-hidden','true');
-        dropdown.classList.remove('open');
-        dropbtn.focus();
-      }
-    });
-
-    // Close submenu on outside click
-    document.addEventListener('click', (e) => {
-      if (!dropbtn.contains(e.target) && !experiencesMenu.contains(e.target)) {
-        dropbtn.setAttribute('aria-expanded','false');
-        experiencesMenu.setAttribute('aria-hidden','true');
-        dropdown.classList.remove('open');
-      }
-    });
-  }
->>>>>>> 7fa0927 (Organize images and update paths)
 
         function showReview(index) {
             reviews.forEach((card, i) => {
@@ -442,16 +403,24 @@
             return false;
         }
 
-        // ===== DROPDOWN TOGGLE FOR MOBILE =====
+        // ===== DROPDOWN TOGGLE (Universal Click) =====
         const dropdownBtn = document.querySelector('.dropbtn');
-        if (dropdownBtn) {
+        const dropdown = document.querySelector('.dropdown');
+
+        if (dropdownBtn && dropdown) {
             dropdownBtn.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    const parent = this.closest('.dropdown');
-                    if (parent) {
-                        parent.classList.toggle('open');
-                    }
+                e.preventDefault();
+                e.stopPropagation();
+                dropdown.classList.toggle('open');
+                const expanded = dropdown.classList.contains('open');
+                this.setAttribute('aria-expanded', expanded);
+            });
+
+            // Close the dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('open');
+                    dropdownBtn.setAttribute('aria-expanded', 'false');
                 }
             });
         }
