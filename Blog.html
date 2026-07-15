@@ -32,19 +32,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- ===== SCROLL PROGRESS ===== -->
+    <div id="scroll-progress"></div>
+
     <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- ===== NAVBAR (STANDARD) ===== -->
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+        <a href="index.html" class="logo-text">
+            <img src="images/logo.png" alt="Aqaba local experiences Logo" onerror="this.style.display='none'" />
+            <span>|</span> Aqaba locals
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">☰</button>
         <div class="navbar-links" id="navbarLinks">
             <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
+            <a href="about.html">About us</a>
             <div class="dropdown">
-                <a href="#" class="dropbtn">Experiences</a>
-                <div class="dropdown-content">
-                    <a href="cookingclass.html">Cooking Class</a>
-                    <a href="walkingtour.html">Walking Tour</a>
-                    <a href="glassboat.html">Aqaba Glass Boat</a>
-                    <a href="dinningexperience.html">Dining Experience</a>
+                <button class="dropbtn" aria-expanded="false" aria-controls="experiences-menu">Experiences</button>
+                <div id="experiences-menu" class="dropdown-content" role="menu">
+                    <a href="cookingclass.html" role="menuitem">Cooking Class</a>
+                    <a href="walkingtour.html" role="menuitem">Walking Tour</a>
+                    <a href="glassboat.html" role="menuitem">Aqaba Glass Boat</a>
+                    <a href="dinningexperience.html" role="menuitem">Dining Experience</a>
+                    <a href="iftar-experience-aqaba.html" role="menuitem">Ramadan Iftar</a>
                 </div>
             </div>
             <a href="Reservation.html">Reservations</a>
@@ -157,7 +167,6 @@
                 </div>
             </article>
 
-<<<<<<< HEAD
             <article class="blog-card" data-category="Culinary">
                 <div class="blog-image-wrapper">
                     <span class="blog-category culinary">Culinary</span>
@@ -173,57 +182,6 @@
                     <a href="blog-post-spices.html" class="read-more-btn">Read More</a>
                 </div>
             </article>
-=======
-    // Experiences dropdown ARIA and keyboard support
-    const dropbtn = document.querySelector('.dropbtn');
-    const dropdown = document.querySelector('.dropdown');
-    const experiencesMenu = document.getElementById('experiences-menu');
-    
-    if (dropbtn && experiencesMenu && dropdown) {
-      dropbtn.setAttribute('aria-expanded', 'false');
-      experiencesMenu.setAttribute('aria-hidden', 'true');
-
-      dropbtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const expanded = dropbtn.getAttribute('aria-expanded') === 'true';
-        dropbtn.setAttribute('aria-expanded', String(!expanded));
-        experiencesMenu.setAttribute('aria-hidden', String(expanded));
-        dropdown.classList.toggle('open');
-      });
-
-      // Close dropdown when a link is clicked
-      experiencesMenu.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-          dropbtn.setAttribute('aria-expanded', 'false');
-          experiencesMenu.setAttribute('aria-hidden', 'true');
-          dropdown.classList.remove('open');
-        });
-      });
-
-      dropbtn.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          dropbtn.click();
-          experiencesMenu.querySelector('a')?.focus();
-        } else if (e.key === 'Escape') {
-          dropbtn.setAttribute('aria-expanded','false');
-          experiencesMenu.setAttribute('aria-hidden','true');
-          dropdown.classList.remove('open');
-          dropbtn.focus();
-        }
-      });
-
-      // Close submenu on outside click
-      document.addEventListener('click', (e) => {
-        if (!dropbtn.contains(e.target) && !experiencesMenu.contains(e.target)) {
-          dropbtn.setAttribute('aria-expanded','false');
-          experiencesMenu.setAttribute('aria-hidden','true');
-          dropdown.classList.remove('open');
-        }
-      });
-    }
-
->>>>>>> 7fa0927 (Organize images and update paths)
 
             <article class="blog-card" data-category="Travel Tips">
                 <div class="blog-image-wrapper">
@@ -505,42 +463,63 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Aqaba local experiences. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="Reservation.html">Reservations</a>
+            <a href="contact-Us.html">Contact</a>
+            <a href="Blog.html">Blog</a>
+        </div>
+        <div class="footer-logo">
+            <img src="images/logo.png" alt="Aqaba Experiences" onerror="this.style.display='none'" />
+            <span>Aqaba Experiences</span>
+        </div>
+        <p>&copy; 2026 Aqaba local experiences. All rights reserved.</p>
     </footer>
 
+    <!-- ===== SCRIPTS ===== -->
     <script>
-        const hamburger = document.getElementById('hamburger');
-        const navbarLinks = document.getElementById('navbarLinks');
-        const menuOverlay = document.getElementById('menuOverlay');
-        hamburger.addEventListener('click', () => {
-            navbarLinks.classList.toggle('open');
-            menuOverlay.classList.toggle('active');
-        });
-        menuOverlay.addEventListener('click', () => {
-            navbarLinks.classList.remove('open');
-            menuOverlay.classList.remove('active');
+        // ===== HAMBURGER TOGGLE =====
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('navbarLinks').classList.toggle('open');
         });
 
+        // ===== DROPDOWN TOGGLE (universal click) =====
+        const dropdownBtn = document.querySelector('.dropbtn');
+        const dropdown = document.querySelector('.dropdown');
+
+        if (dropdownBtn && dropdown) {
+            dropdownBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropdown.classList.toggle('open');
+                const expanded = dropdown.classList.contains('open');
+                this.setAttribute('aria-expanded', expanded);
+            });
+
+            // Close the dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('open');
+                    dropdownBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        // ===== NAVBAR HIDE/SHOW ON SCROLL =====
         const navbar = document.querySelector('.navbar');
         let lastScrollPosition = 0;
         window.addEventListener('scroll', () => {
             const currentScrollPosition = window.scrollY;
-            navbar.style.top = currentScrollPosition > lastScrollPosition ? '-80px' : '0';
+            if (currentScrollPosition > lastScrollPosition) {
+                navbar.style.top = '-80px';
+            } else {
+                navbar.style.top = '0';
+            }
             lastScrollPosition = currentScrollPosition;
         });
 
-        const currentPath = window.location.pathname.split("/").pop();
-        const navLinks = document.querySelectorAll('.navbar a');
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            link.removeAttribute('aria-current');
-            if (link.getAttribute('href') === currentPath) {
-                link.classList.add('active');
-                link.setAttribute('aria-current', 'page');
-            }
-        });
-
-        // Blog search, filter, and pagination controller
+        // ===== BLOG SEARCH, FILTER, AND PAGINATION =====
         document.addEventListener('DOMContentLoaded', () => {
             const blogSearch = document.getElementById('blogSearch');
             const filterPills = document.querySelectorAll('.filter-pill');
