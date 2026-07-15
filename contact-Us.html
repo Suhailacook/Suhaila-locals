@@ -187,6 +187,76 @@
         scrollBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+<<<<<<< HEAD
+=======
+
+        // Navbar hide on scroll down, show on scroll up
+        const navbar = document.querySelector('.navbar');
+        let lastScrollPosition = 0;
+        window.addEventListener('scroll', () => {
+            let currentScrollPosition = window.scrollY;
+            if (currentScrollPosition > lastScrollPosition) {
+                navbar.style.top = '-60px';
+            } else {
+                navbar.style.top = '0';
+            }
+            lastScrollPosition = currentScrollPosition;
+        });
+
+        // Optional: Show a success message after form submit (for AJAX, but Formspree also redirects by default)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            document.getElementById('formStatus').innerHTML = "Sending...";
+        });
+
+        // Experiences dropdown ARIA and keyboard support
+        const dropbtn = document.querySelector('.dropbtn');
+        const dropdown = document.querySelector('.dropdown');
+        const experiencesMenu = document.getElementById('experiences-menu');
+        
+        if (dropbtn && experiencesMenu && dropdown) {
+          dropbtn.setAttribute('aria-expanded', 'false');
+          experiencesMenu.setAttribute('aria-hidden', 'true');
+
+          dropbtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const expanded = dropbtn.getAttribute('aria-expanded') === 'true';
+            dropbtn.setAttribute('aria-expanded', String(!expanded));
+            experiencesMenu.setAttribute('aria-hidden', String(expanded));
+            dropdown.classList.toggle('open');
+          });
+
+          // Close dropdown when a link is clicked
+          experiencesMenu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+              dropbtn.setAttribute('aria-expanded', 'false');
+              experiencesMenu.setAttribute('aria-hidden', 'true');
+              dropdown.classList.remove('open');
+            });
+          });
+
+          dropbtn.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              dropbtn.click();
+              experiencesMenu.querySelector('a')?.focus();
+            } else if (e.key === 'Escape') {
+              dropbtn.setAttribute('aria-expanded','false');
+              experiencesMenu.setAttribute('aria-hidden','true');
+              dropdown.classList.remove('open');
+              dropbtn.focus();
+            }
+          });
+
+          // Close submenu on outside click
+          document.addEventListener('click', (e) => {
+            if (!dropbtn.contains(e.target) && !experiencesMenu.contains(e.target)) {
+              dropbtn.setAttribute('aria-expanded','false');
+              experiencesMenu.setAttribute('aria-hidden','true');
+              dropdown.classList.remove('open');
+            }
+          });
+        }
+>>>>>>> 7fa0927 (Organize images and update paths)
     </script>
     <script src="js/navbar.js"></script>
 </body>
