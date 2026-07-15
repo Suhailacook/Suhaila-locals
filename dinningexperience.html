@@ -198,6 +198,7 @@
 	        </blockquote>
 	      </section>
 
+<<<<<<< HEAD
 	    </main>
 
 	    <!-- Sidebar with Booking Module -->
@@ -219,3 +220,61 @@
 
 
 </html>
+=======
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+
+      // Experiences dropdown ARIA and keyboard support
+      const dropbtn = document.querySelector('.dropbtn');
+      const dropdown = document.querySelector('.dropdown');
+      const experiencesMenu = document.getElementById('experiences-menu');
+      
+      if (dropbtn && experiencesMenu && dropdown) {
+        dropbtn.setAttribute('aria-expanded', 'false');
+        experiencesMenu.setAttribute('aria-hidden', 'true');
+
+        dropbtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const expanded = dropbtn.getAttribute('aria-expanded') === 'true';
+          dropbtn.setAttribute('aria-expanded', String(!expanded));
+          experiencesMenu.setAttribute('aria-hidden', String(expanded));
+          dropdown.classList.toggle('open');
+        });
+
+        // Close dropdown when a link is clicked
+        experiencesMenu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            dropbtn.setAttribute('aria-expanded', 'false');
+            experiencesMenu.setAttribute('aria-hidden', 'true');
+            dropdown.classList.remove('open');
+          });
+        });
+
+        dropbtn.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            dropbtn.click();
+            experiencesMenu.querySelector('a')?.focus();
+          } else if (e.key === 'Escape') {
+            dropbtn.setAttribute('aria-expanded','false');
+            experiencesMenu.setAttribute('aria-hidden','true');
+            dropdown.classList.remove('open');
+            dropbtn.focus();
+          }
+        });
+
+        // Close submenu on outside click
+        document.addEventListener('click', (e) => {
+          if (!dropbtn.contains(e.target) && !experiencesMenu.contains(e.target)) {
+            dropbtn.setAttribute('aria-expanded','false');
+            experiencesMenu.setAttribute('aria-hidden','true');
+            dropdown.classList.remove('open');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+>>>>>>> 7fa0927 (Organize images and update paths)
