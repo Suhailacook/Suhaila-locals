@@ -700,323 +700,242 @@
 
             console.log('🧭 "What to Do Today" widget loaded!');
         })();
+// ============================================================
+// AI TRIP PLANNER (FIXED)
+// ============================================================
+(function() {
+    // Experience Data
+    const experiences = [
+        {
+            id: 'cooking',
+            name: 'Authentic Cooking Class',
+            price: 30,
+            tags: ['Culinary', 'Cultural/History'],
+            desc: 'Learn traditional Jordanian recipes in a local home kitchen.',
+            familyFriendly: true,
+            url: 'cookingclass.html'
+        },
+        {
+            id: 'walking',
+            name: 'Aqaba Walking Tour',
+            price: 20,
+            tags: ['Adventure', 'Cultural/History'],
+            desc: 'Explore Aqaba\'s hidden gems with a passionate local guide.',
+            familyFriendly: true,
+            url: 'walkingtour.html'
+        },
+        {
+            id: 'glassboat',
+            name: 'Aqaba Glass Boat',
+            price: 25,
+            tags: ['Adventure', 'Relaxation'],
+            desc: 'Discover vibrant coral reefs and marine life through a glass-bottom boat.',
+            familyFriendly: true,
+            url: 'glassboat.html'
+        },
+        {
+            id: 'dining',
+            name: 'Family Dining Experience',
+            price: 15,
+            tags: ['Culinary', 'Relaxation', 'Cultural/History'],
+            desc: 'Share a traditional meal with a local family and hear their stories.',
+            familyFriendly: true,
+            url: 'dinningexperience.html'
+        },
+        {
+            id: 'iftar',
+            name: 'Ramadan Iftar',
+            price: 20,
+            tags: ['Culinary', 'Cultural/History'],
+            desc: 'Break the fast with a local family during Ramadan — a truly special experience.',
+            familyFriendly: true,
+            url: 'iftar-experience-aqaba.html'
+        }
+    ];
 
-        // ============================================================
-        // AI TRIP PLANNER
-        // ============================================================
-        (function() {
-            // Experience Data
-            const experiences = [
-                {
-                    id: 'cooking',
-                    name: 'Authentic Cooking Class',
-                    price: 30,
-                    tags: ['Culinary', 'Cultural/History'],
-                    desc: 'Learn traditional Jordanian recipes in a local home kitchen.',
-                    familyFriendly: true,
-                    url: 'cookingclass.html'
-                },
-                {
-                    id: 'walking',
-                    name: 'Aqaba Walking Tour',
-                    price: 20,
-                    tags: ['Adventure', 'Cultural/History'],
-                    desc: 'Explore Aqaba\'s hidden gems with a passionate local guide.',
-                    familyFriendly: true,
-                    url: 'walkingtour.html'
-                },
-                {
-                    id: 'glassboat',
-                    name: 'Aqaba Glass Boat',
-                    price: 25,
-                    tags: ['Adventure', 'Relaxation'],
-                    desc: 'Discover vibrant coral reefs and marine life through a glass-bottom boat.',
-                    familyFriendly: true,
-                    url: 'glassboat.html'
-                },
-                {
-                    id: 'dining',
-                    name: 'Family Dining Experience',
-                    price: 15,
-                    tags: ['Culinary', 'Relaxation', 'Cultural/History'],
-                    desc: 'Share a traditional meal with a local family and hear their stories.',
-                    familyFriendly: true,
-                    url: 'dinningexperience.html'
-                },
-                {
-                    id: 'iftar',
-                    name: 'Ramadan Iftar',
-                    price: 20,
-                    tags: ['Culinary', 'Cultural/History'],
-                    desc: 'Break the fast with a local family during Ramadan — a truly special experience.',
-                    familyFriendly: true,
-                    url: 'iftar-experience-aqaba.html'
-                }
-            ];
+    const popup = document.getElementById('tripPlannerPopup');
+    const closeBtn = document.getElementById('tripPlannerClose');
+    const openBtn = document.getElementById('planTripBtn');
+    const steps = {
+        1: document.getElementById('step1'),
+        2: document.getElementById('step2'),
+        3: document.getElementById('step3'),
+        results: document.getElementById('stepResults')
+    };
+    const resultsContainer = document.getElementById('tripResultsContainer');
 
-            const popup = document.getElementById('tripPlannerPopup');
-            const closeBtn = document.getElementById('tripPlannerClose');
-            const openBtn = document.getElementById('planTripBtn');
-            const steps = {
-                1: document.getElementById('step1'),
-                2: document.getElementById('step2'),
-                3: document.getElementById('step3'),
-                results: document.getElementById('stepResults')
-            };
-            const resultsContainer = document.getElementById('tripResultsContainer');
+    // Debug: log elements to ensure they exist
+    console.log('🔍 AI Trip Planner elements:', { popup, openBtn, closeBtn, steps });
 
-            function showStep(stepId) {
-                Object.keys(steps).forEach(key => {
-                    steps[key].classList.remove('active');
-                });
-                if (steps[stepId]) {
-                    steps[stepId].classList.add('active');
-                }
+    function showStep(stepId) {
+        Object.keys(steps).forEach(key => {
+            if (steps[key]) steps[key].classList.remove('active');
+        });
+        if (steps[stepId]) {
+            steps[stepId].classList.add('active');
+        }
+    }
+
+    function getSelectedInterests() {
+        const checks = document.querySelectorAll('.interest-check:checked');
+        return Array.from(checks).map(el => el.value);
+    }
+
+    function getCompanions() {
+        const selected = document.querySelector('input[name="companions"]:checked');
+        return selected ? selected.value : null;
+    }
+
+    function getBudget() {
+        const selected = document.querySelector('input[name="budget"]:checked');
+        return selected ? selected.value : null;
+    }
+
+    function resetForm() {
+        document.querySelectorAll('.interest-check').forEach(el => el.checked = false);
+        document.querySelectorAll('input[name="companions"]').forEach(el => el.checked = false);
+        document.querySelectorAll('input[name="budget"]').forEach(el => el.checked = false);
+        showStep(1);
+    }
+
+    function recommend(interests, companions, budget) {
+        let filtered = experiences;
+        if (budget === 'budget') {
+            filtered = filtered.filter(e => e.price <= 20);
+        } else if (budget === 'mid-range') {
+            filtered = filtered.filter(e => e.price >= 20 && e.price <= 30);
+        }
+
+        if (interests.length === 0) {
+            return filtered.slice(0, 2);
+        }
+
+        const scored = filtered.map(exp => {
+            const matchCount = exp.tags.filter(tag => interests.includes(tag)).length;
+            let bonus = 0;
+            if (companions === 'family' && exp.familyFriendly) bonus += 1;
+            if (companions === 'couple' && exp.tags.includes('Relaxation')) bonus += 1;
+            if (companions === 'solo' && exp.tags.includes('Adventure')) bonus += 1;
+            if (companions === 'friends' && exp.tags.includes('Adventure')) bonus += 1;
+            return { ...exp, score: matchCount + bonus * 0.5 };
+        });
+
+        scored.sort((a, b) => b.score - a.score);
+        return scored.slice(0, 2);
+    }
+
+    function generateRecommendations() {
+        const interests = getSelectedInterests();
+        const companions = getCompanions();
+        const budget = getBudget();
+
+        if (!companions) {
+            alert('Please tell us who you\'re traveling with.');
+            return;
+        }
+        if (!budget) {
+            alert('Please select your budget.');
+            return;
+        }
+
+        const recs = recommend(interests, companions, budget);
+        showStep('results');
+
+        if (recs.length === 0) {
+            resultsContainer.innerHTML = `
+                <div class="trip-no-results">
+                    <span class="big-icon">😅</span>
+                    <p>We couldn't find any experiences matching your preferences. Try adjusting your selections!</p>
+                </div>
+            `;
+            return;
+        }
+
+        let html = '';
+        recs.forEach(exp => {
+            const tagHtml = exp.tags.map(t => `<span>${t}</span>`).join('');
+            html += `
+                <div class="trip-result-item">
+                    <div class="info">
+                        <h4>${exp.name}</h4>
+                        <p>${exp.desc}</p>
+                        <div class="tags">${tagHtml}</div>
+                    </div>
+                    <div class="price-book">
+                        <div class="price">${exp.price} JD <small>/ person</small></div>
+                        <a href="${exp.url}" class="book-link">Book Now →</a>
+                    </div>
+                </div>
+            `;
+        });
+
+        resultsContainer.innerHTML = html;
+    }
+
+    window.goToStep = function(step) {
+        if (step === 2) {
+            const interests = getSelectedInterests();
+            if (interests.length === 0) {
+                alert('Please select at least one interest.');
+                return;
             }
+        }
+        showStep(step);
+    };
 
-            function getSelectedInterests() {
-                const checks = document.querySelectorAll('.interest-check:checked');
-                return Array.from(checks).map(el => el.value);
-            }
+    window.generateRecommendations = generateRecommendations;
+    window.resetPlanner = function() {
+        resetForm();
+        showStep(1);
+    };
 
-            function getCompanions() {
-                const selected = document.querySelector('input[name="companions"]:checked');
-                return selected ? selected.value : null;
-            }
-
-            function getBudget() {
-                const selected = document.querySelector('input[name="budget"]:checked');
-                return selected ? selected.value : null;
-            }
-
-            function resetForm() {
-                document.querySelectorAll('.interest-check').forEach(el => el.checked = false);
-                document.querySelectorAll('input[name="companions"]').forEach(el => el.checked = false);
-                document.querySelectorAll('input[name="budget"]').forEach(el => el.checked = false);
-                showStep(1);
-            }
-
-            function recommend(interests, companions, budget) {
-                let filtered = experiences;
-                if (budget === 'budget') {
-                    filtered = filtered.filter(e => e.price <= 20);
-                } else if (budget === 'mid-range') {
-                    filtered = filtered.filter(e => e.price >= 20 && e.price <= 30);
-                }
-
-                if (interests.length === 0) {
-                    return filtered.slice(0, 2);
-                }
-
-                const scored = filtered.map(exp => {
-                    const matchCount = exp.tags.filter(tag => interests.includes(tag)).length;
-                    let bonus = 0;
-                    if (companions === 'family' && exp.familyFriendly) bonus += 1;
-                    if (companions === 'couple' && exp.tags.includes('Relaxation')) bonus += 1;
-                    if (companions === 'solo' && exp.tags.includes('Adventure')) bonus += 1;
-                    if (companions === 'friends' && exp.tags.includes('Adventure')) bonus += 1;
-                    return { ...exp, score: matchCount + bonus * 0.5 };
-                });
-
-                scored.sort((a, b) => b.score - a.score);
-                return scored.slice(0, 2);
-            }
-
-            function generateRecommendations() {
-                const interests = getSelectedInterests();
-                const companions = getCompanions();
-                const budget = getBudget();
-
-                if (!companions) {
-                    alert('Please tell us who you\');
-            }
-
-            function generateRecommendations() {
-                const interests = getSelectedInterests();
-                const companions = getCompanions();
-                const budget = getBudget();
-
-                if (!companions) {
-                    alert('Please tell us who you\'re traveling withre traveling with.');
-                    return;
-                }
-                if (!budget) {
-                    alert('Please select your budget.');
-                    return;
-                }
-
-                const recs = recommend(interests, companions, budget);
-                showStep('results.');
-                    return;
-                }
-                if (!budget) {
-                    alert('Please select your budget.');
-                    return;
-                }
-
-                const recs = recommend(interests, companions, budget);
-               ');
-
-                if (recs.length === 0) {
-                    resultsContainer.innerHTML = `
-                        <div class="trip-no-results">
-                            <span class="big-icon">😅</span>
-                            <p>We couldn't find any experiences matching your preferences. showStep('results');
-
-                if (recs.length === 0) {
-                    resultsContainer.innerHTML = `
-                        <div class="trip-no-results">
-                            <span class="big-icon">😅</span>
-                            <p>We couldn't find any experiences matching your preferences. Try adjusting your selections!</p>
-                        </div>
-                    `;
-                    return;
-                }
-
-                let html = '';
-                recs.forEach(exp => {
-                    const tagHtml = exp.tags.map(t => Try adjusting your selections!</p>
-                        </div>
-                    `;
-                    return;
-                }
-
-                let html = '';
-                recs.forEach(exp => {
-                    const tagHtml = exp.tags.map(t => `<span>${t `<span>${t}</span>`).join('');
-                    html += `
-                        <div class="trip-result-item">
-                            <div class="info">
-                                <h4>${exp.name}</span>`).join('');
-                    html += `
-                        <div class="trip-result-item">
-                            <div class="info">
-                                <h4>${exp.name}</h4>
-                                <p>${exp.desc}</p>
-                                <div class="tags}</h4>
-                                <p>${exp.desc}</p>
-                                <div class="tags">${tagHtml}</div>
-                            </div>
-                            <div class="price-book">
-                                <div class="price">">${tagHtml}</div>
-                            </div>
-                            <div class="price-book">
-                                <div${exp.price} JD <small>/ person</small></div>
-                                <a href="${exp.url}" class="book-link">Book Now →</a class="price">${exp.price} JD <small>/ person</small></div>
-                                <a href="${exp.url}" class="book-link">Book Now →</a>
-                            </div>
-                        </div>
-                    `;
-                });
-
-                resultsContainer.innerHTML = html;
-            }
-
-            window.goToStep>
-                            </div>
-                        </div>
-                    `;
-                });
-
-                resultsContainer.innerHTML = html;
-            }
-
-            window.goToStep = function(step) {
-                if (step === 2) {
-                    const interests = getSelectedInterests();
-                    if (interests.length === 0) {
-                        alert('Please select at least one interest.');
-                        return = function(step) {
-                if (step === 2) {
-                    const interests = getSelectedInterests();
-                    if (interests.length === 0) {
-                        alert('Please select at least one interest.');
-                        return;
-                    }
-                }
-                showStep(step);
-            };
-
-            window.generateRecommendations = generateRecommendations;
-            window.resetPlanner = function() {
+    // ---- Open Popup ----
+    if (openBtn) {
+        openBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('✅ Plan My Trip button clicked!');
+            if (popup) {
+                popup.classList.add('active');
+                popup.style.display = 'flex';
                 resetForm();
-                showStep(1);
-            };
-
-            if (openBtn) {
-                openBtn.addEventListener('click', function();
-                    }
-                }
-                showStep(step);
-            };
-
-            window.generateRecommendations = generateRecommendations;
-            window.resetPlanner = function() {
-                resetForm();
-                showStep(1);
-            };
-
-            if (openBtn) {
-                openBtn.addEventListener('click', function() {
-                    popup.classList.add('active');
-                    popup.style.display = 'flex';
-                    resetForm();
-                });
+                console.log('✅ Popup opened.');
+            } else {
+                console.error('❌ Popup element not found!');
             }
+        });
+    } else {
+        console.error('❌ "Plan My Trip" button (#planTripBtn) not found!');
+    }
 
-            if (closeBtn) {
-                closeBtn.addEventListener('click', function {
-                    popup.classList.add('active');
-                    popup.style.display = 'flex';
-                    resetForm();
-                });
+    // ---- Close Popup ----
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            if (popup) {
+                popup.classList.remove('active');
+                popup.style.display = 'none';
             }
+        });
+    }
 
-            if (closeBtn) {
-                closeBtn.addEventListener('click', function() {
-                    popup.classList.remove('active');
-                    popup.style.display = 'none';
-                });
+    if (popup) {
+        popup.addEventListener('click', function(e) {
+            if (e.target === this) {
+                popup.classList.remove('active');
+                popup.style.display = 'none';
             }
+        });
+    }
 
-            popup.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    popup.classList.remove() {
-                    popup.classList.remove('active');
-                    popup.style.display = 'none';
-                });
-            }
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && popup && popup.classList.contains('active')) {
+            popup.classList.remove('active');
+            popup.style.display = 'none';
+        }
+    });
 
-            popup.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    popup.classList.remove('active');
-                    popup.style.display = 'none';
-                }
-           ('active');
-                    popup.style.display = 'none';
-                }
-            });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    popup.classList.remove('active');
-                    popup.style.display = });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    popup.classList.remove('active');
-                    popup.style.display = 'none';
-                }
-            });
-
-            resetForm();
-            console.log('🤖 AI Trip Planner 'none';
-                }
-            });
-
-            resetForm();
-            console.log(' loaded!');
-        })();
+    resetForm();
+    console.log('🤖 AI Trip Planner loaded!');
+})();
 
         // ===== GOOGLE ANALYTICS =====
         window.dataLayer =🤖 AI Trip Planner loaded!');
