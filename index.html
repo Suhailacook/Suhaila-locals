@@ -119,6 +119,31 @@
         </div>
     </div>
 
+    <!-- ============================================================ -->
+    <!-- ===== WHAT TO DO TODAY WIDGET (NEW) ===== -->
+    <!-- ============================================================ -->
+    <div class="today-widget" id="todayWidget">
+        <div class="today-widget-content">
+            <div class="widget-left">
+                <span class="widget-icon" id="widgetIcon">🌅</span>
+            </div>
+            <div class="widget-middle">
+                <div class="widget-time">
+                    🕐 <span id="widgetTime">Loading...</span> <span class="widget-timezone">(Aqaba Time)</span>
+                </div>
+                <div class="widget-message" id="widgetMessage">
+                    <strong>Good Morning! ☀️</strong>
+                    <p id="widgetSuggestion">Start your day with a refreshing Walking Tour through Aqaba's hidden gems!</p>
+                </div>
+            </div>
+            <div class="widget-right">
+                <a href="Reservation.html" class="button widget-btn" id="widgetBtn">Book Now</a>
+                <button class="widget-dismiss" id="widgetDismiss" aria-label="Dismiss widget">✕</button>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================ -->
+
     <!-- ===== MAIN CONTENT ===== -->
     <main id="main-content">
 
@@ -331,8 +356,12 @@
         <a href="https://wa.me/962776294742?text=Hi!%20I'd%20like%20to%20book%20an%20experience%20with%20Aqaba%20local%20experiences." class="button cta-whatsapp" target="_blank">💬 WhatsApp</a>
     </div>
 
-    <!-- ===== AUDIO PLAYER STYLES ===== -->
+    <!-- ===== STYLES (Includes Widget & Existing) ===== -->
     <style>
+        /* ============================================================
+           EXISTING STYLES (Audio, Mobile CTA)
+           ============================================================ */
+
         /* Welcome Audio Player */
         .welcome-audio {
             max-width: 700px;
@@ -512,6 +541,152 @@
                 padding-bottom: 80px;
             }
         }
+
+        /* ============================================================
+           NEW: WHAT TO DO TODAY WIDGET
+           ============================================================ */
+        .today-widget {
+            max-width: 1000px;
+            margin: -20px auto 40px;
+            padding: 0 24px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .today-widget-content {
+            background: white;
+            border-radius: 20px;
+            padding: 16px 24px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e8e2d9;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .today-widget-content:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            border-color: #f9d56e;
+        }
+
+        .widget-left {
+            flex-shrink: 0;
+        }
+
+        .widget-icon {
+            font-size: 2.8rem;
+            line-height: 1;
+            display: block;
+        }
+
+        .widget-middle {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .widget-time {
+            font-size: 0.85rem;
+            color: #5a6c7d;
+            margin-bottom: 2px;
+        }
+
+        .widget-timezone {
+            color: #8a9baa;
+            font-size: 0.75rem;
+        }
+
+        .widget-message strong {
+            display: block;
+            color: #0f2b4a;
+            font-size: 1.15rem;
+        }
+
+        .widget-message p {
+            margin: 0;
+            color: #3d4f64;
+            font-size: 0.95rem;
+        }
+
+        .widget-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .widget-btn {
+            padding: 8px 24px;
+            font-size: 0.85rem;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .widget-dismiss {
+            background: none;
+            border: none;
+            color: #8a9baa;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 4px 8px;
+            transition: 0.3s;
+            line-height: 1;
+        }
+
+        .widget-dismiss:hover {
+            color: #d32f2f;
+            transform: rotate(90deg);
+        }
+
+        @media (max-width: 768px) {
+            .today-widget-content {
+                flex-wrap: wrap;
+                padding: 14px 18px;
+                gap: 10px;
+            }
+            .widget-left {
+                flex-basis: auto;
+            }
+            .widget-icon {
+                font-size: 2rem;
+            }
+            .widget-middle {
+                flex-basis: 100%;
+                order: 2;
+            }
+            .widget-right {
+                flex-basis: auto;
+                order: 1;
+                margin-right: auto;
+            }
+            .widget-btn {
+                padding: 6px 16px;
+                font-size: 0.8rem;
+            }
+            .widget-message strong {
+                font-size: 1rem;
+            }
+            .widget-message p {
+                font-size: 0.85rem;
+            }
+            .widget-time {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .today-widget {
+                margin: -10px auto 30px;
+                padding: 0 16px;
+            }
+            .today-widget-content {
+                padding: 12px 14px;
+            }
+            .widget-icon {
+                font-size: 1.6rem;
+            }
+        }
     </style>
 
     <!-- ===== SCRIPTS ===== -->
@@ -645,22 +820,17 @@
                 toggleBtn.classList.add('playing');
                 playIcon.textContent = '⏸';
             }).catch(() => {
-                // Auto-play blocked by browser; user needs to click
                 console.log('Auto-play blocked. Click to play.');
             });
         }
 
-        // Try to autoplay on page load
         document.addEventListener('DOMContentLoaded', tryAutoPlay);
-
-        // Also try on user interaction (scroll, click, etc.)
         document.addEventListener('click', function() {
             if (audio.paused) {
                 tryAutoPlay();
             }
         }, { once: true });
 
-        // Toggle play/pause on button click
         toggleBtn.addEventListener('click', function(e) {
             e.stopPropagation();
             if (audio.paused) {
@@ -674,11 +844,111 @@
             }
         });
 
-        // Reset icon when audio ends
         audio.addEventListener('ended', function() {
             toggleBtn.classList.remove('playing');
             playIcon.textContent = '▶';
         });
+
+        // ============================================================
+        // NEW: WHAT TO DO TODAY WIDGET
+        // ============================================================
+        (function() {
+            // Aqaba time zone (UTC+3)
+            const AQABA_OFFSET = 3;
+
+            function getAqabaTime() {
+                const now = new Date();
+                const utcHours = now.getUTCHours();
+                const utcMinutes = now.getUTCMinutes();
+                let aqabaHours = (utcHours + AQABA_OFFSET) % 24;
+                return { hours: aqabaHours, minutes: utcMinutes };
+            }
+
+            function formatTime(hours, minutes) {
+                const period = hours >= 12 ? 'PM' : 'AM';
+                const h12 = hours % 12 || 12;
+                const m = String(minutes).padStart(2, '0');
+                return `${h12}:${m} ${period}`;
+            }
+
+            function updateWidget() {
+                const { hours, minutes } = getAqabaTime();
+                const timeStr = formatTime(hours, minutes);
+
+                const timeEl = document.getElementById('widgetTime');
+                if (timeEl) timeEl.textContent = timeStr;
+
+                let icon, greeting, suggestion, btnText, emoji;
+
+                // Morning: 6 AM – 11:59 AM
+                if (hours >= 6 && hours < 12) {
+                    icon = '🌅';
+                    greeting = 'Good Morning! ☀️';
+                    suggestion = 'Start your day with a refreshing Walking Tour through Aqaba\'s hidden gems and local markets!';
+                    btnText = 'Book Walking Tour';
+                    emoji = '🚶';
+                }
+                // Afternoon: 12 PM – 4:59 PM
+                else if (hours >= 12 && hours < 17) {
+                    icon = '🌤️';
+                    greeting = 'Good Afternoon! 🏖️';
+                    suggestion = 'Enjoy the crystal-clear waters of the Red Sea with a relaxing Glass Boat Tour!';
+                    btnText = 'Book Glass Boat';
+                    emoji = '🚤';
+                }
+                // Evening: 5 PM – 8:59 PM
+                else if (hours >= 17 && hours < 21) {
+                    icon = '🌅';
+                    greeting = 'Good Evening! 🌅';
+                    suggestion = 'Experience authentic Jordanian hospitality with a traditional Family Dining Experience!';
+                    btnText = 'Book Dining';
+                    emoji = '🍽️';
+                }
+                // Night: 9 PM – 5:59 AM
+                else {
+                    icon = '🌙';
+                    greeting = 'Good Night! 🌙';
+                    suggestion = 'Plan ahead for tomorrow! Book your experience now and wake up to an adventure.';
+                    btnText = 'Plan Tomorrow';
+                    emoji = '📅';
+                }
+
+                const iconEl = document.getElementById('widgetIcon');
+                const msgEl = document.getElementById('widgetMessage');
+                const btnEl = document.getElementById('widgetBtn');
+
+                if (iconEl) iconEl.textContent = icon;
+                if (msgEl) msgEl.innerHTML = `<strong>${greeting}</strong><p id="widgetSuggestion">${suggestion}</p>`;
+                if (btnEl) btnEl.textContent = `${emoji} ${btnText}`;
+            }
+
+            updateWidget();
+            setInterval(updateWidget, 60000);
+
+            // Dismiss widget
+            const dismissBtn = document.getElementById('widgetDismiss');
+            if (dismissBtn) {
+                dismissBtn.addEventListener('click', function() {
+                    const widget = document.getElementById('todayWidget');
+                    if (widget) {
+                        widget.style.transition = 'all 0.4s ease';
+                        widget.style.opacity = '0';
+                        widget.style.transform = 'translateY(-20px)';
+                        setTimeout(() => {
+                            widget.style.display = 'none';
+                        }, 400);
+                    }
+                    localStorage.setItem('widgetDismissed', 'true');
+                });
+            }
+
+            if (localStorage.getItem('widgetDismissed') === 'true') {
+                const widget = document.getElementById('todayWidget');
+                if (widget) widget.style.display = 'none';
+            }
+
+            console.log('🧭 "What to Do Today" widget loaded!');
+        })();
 
         // ===== GOOGLE ANALYTICS =====
         window.dataLayer = window.dataLayer || [];
