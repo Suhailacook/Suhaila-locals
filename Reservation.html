@@ -606,16 +606,24 @@
         // Initial price
         updatePrice();
 
-        // ===== DROPDOWN TOGGLE FOR MOBILE =====
+        // ===== DROPDOWN TOGGLE (for all screens) =====
         const dropdownBtn = document.querySelector('.dropbtn');
-        if (dropdownBtn) {
+        const dropdown = document.querySelector('.dropdown');
+
+        if (dropdownBtn && dropdown) {
             dropdownBtn.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    const parent = this.closest('.dropdown');
-                    if (parent) {
-                        parent.classList.toggle('open');
-                    }
+                e.preventDefault();
+                e.stopPropagation();
+                dropdown.classList.toggle('open');
+                const expanded = dropdown.classList.contains('open');
+                this.setAttribute('aria-expanded', expanded);
+            });
+
+            // Close the dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('open');
+                    dropdownBtn.setAttribute('aria-expanded', 'false');
                 }
             });
         }
