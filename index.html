@@ -584,12 +584,12 @@
             });
         }
 
-        document.addEventListener('DOMContentLoaded', tryAutoPlay);
-        document.addEventListener('click', function() {
-            if (audio.paused) {
-                tryAutoPlay();
-            }
-        }, { once: true });
+        // document.addEventListener('DOMContentLoaded', tryAutoPlay);
+        // document.addEventListener('click', function() {
+        //     if (audio.paused) {
+        //         tryAutoPlay();
+        //     }
+        // }, { once: true });
 
         toggleBtn.addEventListener('click', function(e) {
             e.stopPropagation();
