@@ -105,27 +105,6 @@
         </button>
     </div>
 
-    <!-- ===== WELCOME AUDIO PLAYER ===== -->
-    <div class="welcome-audio">
-        <div class="welcome-audio-content">
-            <div class="audio-icon-wrapper">
-                <span class="pulse-dot"></span>
-                <span class="audio-icon">🎧</span>
-            </div>
-            <div class="audio-text">
-                <strong>👋 Welcome to Aqaba!</strong>
-                <p>Listen to a special message from our family</p>
-            </div>
-            <button class="audio-toggle-btn" id="audioToggleBtn" aria-label="Play/Pause audio">
-                <span id="audioPlayIcon">▶</span>
-            </button>
-            <audio id="welcomeAudio" preload="metadata" loop>
-                <source src="Aqaba boat.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-    </div>
-
     <!-- ============================================================ -->
     <!-- ===== WHAT TO DO TODAY WIDGET ===== -->
     <!-- ============================================================ -->
@@ -570,45 +549,6 @@
             });
         }
 
-        // ===== WELCOME AUDIO PLAYER =====
-        const audio = document.getElementById('welcomeAudio');
-        const toggleBtn = document.getElementById('audioToggleBtn');
-        const playIcon = document.getElementById('audioPlayIcon');
-
-        function tryAutoPlay() {
-            audio.play().then(() => {
-                toggleBtn.classList.add('playing');
-                playIcon.textContent = '⏸';
-            }).catch(() => {
-                console.log('Auto-play blocked. Click to play.');
-            });
-        }
-
-        // document.addEventListener('DOMContentLoaded', tryAutoPlay);
-        // document.addEventListener('click', function() {
-        //     if (audio.paused) {
-        //         tryAutoPlay();
-        //     }
-        // }, { once: true });
-
-        toggleBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            if (audio.paused) {
-                audio.play();
-                this.classList.add('playing');
-                playIcon.textContent = '⏸';
-            } else {
-                audio.pause();
-                this.classList.remove('playing');
-                playIcon.textContent = '▶';
-            }
-        });
-
-        audio.addEventListener('ended', function() {
-            toggleBtn.classList.remove('playing');
-            playIcon.textContent = '▶';
-        });
-
         // ============================================================
         // WHAT TO DO TODAY WIDGET
         // ============================================================
@@ -982,19 +922,6 @@
 
         gtag('js', new Date());
         gtag('config', 'G-JZYH4T50VY');
-    </script>
-
-</body>
-</html>
-    <!-- Google tag (gtag.js).push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-JZYH4T50VY');
-    </script>
-
-    <!-- Google tag ( -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZYH4T50VY">
-gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZYH4T50VY">
     </script>
 
 </body>
