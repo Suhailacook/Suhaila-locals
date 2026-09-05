@@ -148,12 +148,41 @@ a:hover {
     }
 }
 
+/* ----- Plan My Trip Button ----- */
+.plan-trip-band {
+    max-width: 1000px;
+    margin: 24px auto 0;
+    padding: 0 24px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+.plan-trip-btn {
+    display: inline-block;
+    background: #f9d56e;
+    border: 1px solid #f0c84a;
+    border-radius: 999px;
+    color: #0f2b4a;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 16px 40px;
+    box-shadow: 0 8px 30px rgba(249, 213, 110, 0.4);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.plan-trip-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 36px rgba(249, 213, 110, 0.5);
+}
+
 /* ============================================================
    WHAT TO DO TODAY WIDGET (FIXED SPACING)
    ============================================================ */
 .today-widget {
     max-width: 1000px;
-    margin: 10px auto 40px;
+    margin: 14px auto 40px;
     padding: 0 24px;
     position: relative;
     z-index: 3;
@@ -1292,61 +1321,6 @@ footer .footer-social a:hover .social-icon {
 
 .meet-family-section .meet-family-content .button {
     margin-top: 18px;
-}
-
-/* ----- Featured Story ----- */
-.featured-story-section {
-    background: linear-gradient(145deg, #0f2b4a, #1a4a6a);
-    color: white;
-    padding: 60px 24px;
-    text-align: center;
-    margin: 10px 0 30px;
-    position: relative;
-    overflow: hidden;
-}
-
-.featured-story-section::before {
-    content: '🏜️';
-    position: absolute;
-    left: 30px;
-    bottom: 0;
-    font-size: 140px;
-    opacity: 0.06;
-    pointer-events: none;
-}
-
-.featured-story-section::after {
-    content: '🌊';
-    position: absolute;
-    right: 30px;
-    top: 0;
-    font-size: 120px;
-    opacity: 0.06;
-    pointer-events: none;
-}
-
-.featured-story-section .featured-story-content {
-    position: relative;
-    z-index: 2;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.featured-story-section h2 {
-    font-size: 2.4rem;
-    font-weight: 900;
-    letter-spacing: -0.5px;
-}
-
-.featured-story-section h2 span {
-    color: #f9d56e;
-}
-
-.featured-story-section p {
-    opacity: 0.85;
-    font-size: 1.1rem;
-    margin: 12px auto 20px;
-    max-width: 550px;
 }
 
 /* ----- Experiences (Product Cards) ----- */
@@ -3854,14 +3828,6 @@ blockquote footer {
     }
     .meet-family-section .meet-family-content h2 {
         font-size: 1.8rem;
-    }
-
-    /* Featured Story */
-    .featured-story-section h2 {
-        font-size: 1.8rem;
-    }
-    .featured-story-section p {
-        font-size: 1rem;
     }
 
     /* Lightbox */
