@@ -232,6 +232,12 @@
         <priority>0.6</priority>
     </url>
 
+    <url>
+        <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-amr-diab-aqaba-2026.html</loc>
+        <lastmod>2026-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
     <!-- ===== EXTRA/INFORMATIONAL PAGES (Priority: 0.4) ===== -->
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/food-culture.html</loc>
