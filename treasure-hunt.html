@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Aqaba Old Town Treasure Hunt</title>
+    <meta name="description" content="A free, self-guided treasure hunt through Aqaba's old town. Follow 5 clues to real landmarks, learn the local history, and unlock a discount on your next Suhaila local experience.">
+    <meta property="og:title" content="Free Aqaba Old Town Treasure Hunt">
+    <meta property="og:description" content="A free, self-guided treasure hunt through Aqaba's old town. Follow 5 clues to real landmarks and unlock a discount on your next local experience.">
+    <meta property="og:image" content="https://suhailacook.github.io/Suhaila-locals/images/aqaba-fort-mosque.webp">
+    <meta property="og:url" content="https://suhailacook.github.io/Suhaila-locals/treasure-hunt.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Aqaba Old Town Treasure Hunt">
+    <meta name="twitter:description" content="A free, self-guided treasure hunt through Aqaba's old town. Follow 5 clues to real landmarks and unlock a discount on your next local experience.">
+    <meta name="twitter:image" content="https://suhailacook.github.io/Suhaila-locals/images/aqaba-fort-mosque.webp">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/treasure-hunt.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZYH4T50VY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JZYH4T50VY');
+    </script>
+
+    <style>
+        .hunt-intro {
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+        .hunt-progress-bar {
+            max-width: 500px;
+            margin: 0 auto 3rem;
+            background: rgba(15, 43, 74, 0.08);
+            border-radius: 999px;
+            height: 14px;
+            overflow: hidden;
+        }
+        .hunt-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #f9d56e, #e76f51);
+            border-radius: 999px;
+            transition: width 0.4s ease;
+        }
+        .hunt-progress-label {
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            color: #0f2b4a;
+        }
+        .hunt-stops {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .hunt-stop {
+            border: 1px solid rgba(15, 43, 74, 0.12);
+            border-radius: 16px;
+            padding: 1.75rem;
+            background: #fff;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .hunt-stop.found {
+            border-color: #2e9b6b;
+            box-shadow: 0 0 0 3px rgba(46, 155, 107, 0.12);
+        }
+        .hunt-stop-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .hunt-stop-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #0f2b4a;
+            color: #f9d56e;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .hunt-stop.found .hunt-stop-number {
+            background: #2e9b6b;
+            color: #fff;
+        }
+        .hunt-stop-title {
+            font-weight: 700;
+            color: #0f2b4a;
+        }
+        .hunt-clue {
+            font-style: italic;
+            color: #3d4f64;
+            margin-bottom: 1rem;
+        }
+        .hunt-reveal {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed rgba(15, 43, 74, 0.15);
+        }
+        .hunt-reveal.open {
+            display: block;
+        }
+        .hunt-reveal img {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 10px;
+            margin-bottom: 0.75rem;
+        }
+        .hunt-answer {
+            font-weight: 700;
+            color: #e76f51;
+            margin-bottom: 0.4rem;
+        }
+        .hunt-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        .hunt-btn {
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 600;
+            border-radius: 999px;
+            padding: 0.55rem 1.2rem;
+            font-size: 0.9rem;
+        }
+        .hunt-btn-reveal {
+            background: rgba(15, 43, 74, 0.08);
+            color: #0f2b4a;
+        }
+        .hunt-btn-found {
+            background: #f9d56e;
+            color: #0f2b4a;
+        }
+        .hunt-stop.found .hunt-btn-found {
+            background: #2e9b6b;
+            color: #fff;
+        }
+        .hunt-complete-panel {
+            display: none;
+            max-width: 700px;
+            margin: 3rem auto 0;
+            text-align: center;
+            background: linear-gradient(135deg, #1a2a33 0%, #0f2027 100%);
+            color: #fff;
+            border-radius: 20px;
+            padding: 2.5rem 1.75rem;
+        }
+        .hunt-complete-panel.show {
+            display: block;
+        }
+        .hunt-complete-panel h2 {
+            color: #f9d56e;
+        }
+        .hunt-code {
+            display: inline-block;
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: rgba(249, 213, 110, 0.15);
+            border: 1px dashed #f9d56e;
+            color: #f9d56e;
+            padding: 0.6rem 1.4rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+        .hunt-reset {
+            display: block;
+            text-align: center;
+            margin: 2.5rem auto 0;
+            font-size: 0.85rem;
+            color: #7a8a99;
+            background: none;
+            border: none;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="scroll-progress"></div>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="logo-text">
+            <img loading="lazy" src="images/logo.png" alt="Aqaba local experiences Logo" onerror="this.style.display='none'" />
+            <span>|</span> Aqaba locals
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+        <div class="navbar-links" id="navbarLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About us</a>
+            <div class="dropdown" id="dropdownMenu">
+                <button class="dropbtn" aria-expanded="false" aria-controls="experiences-menu">Experiences</button>
+                <div id="experiences-menu" class="dropdown-content" role="menu">
+                    <a href="cookingclass.html" role="menuitem">Cooking Class</a>
+                    <a href="walkingtour.html" role="menuitem">Walking Tour</a>
+                    <a href="glassboat.html" role="menuitem">Aqaba Glass Boat</a>
+                    <a href="dinningexperience.html" role="menuitem">Dining Experience</a>
+                    <a href="iftar-experience-aqaba.html" role="menuitem">Ramadan Iftar</a>
+                </div>
+            </div>
+            <a href="Reservation.html">Reservations</a>
+            <a href="contact-Us.html">Contact</a>
+            <a href="Blog.html">Blog</a>
+        </div>
+    </nav>
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <section class="hero-section" id="main-content">
+        <div class="hero-shape"></div>
+        <div class="hero-content-wrapper">
+            <span class="hero-eyebrow">Free Self-Guided Adventure</span>
+            <h1>The Aqaba Old Town <span class="highlight">Treasure Hunt</span></h1>
+            <p class="hero-subtitle">Five real landmarks. Five local clues. Find them all and unlock a discount on your next Suhaila experience.</p>
+        </div>
+    </section>
+
+    <main>
+        <section style="padding: 3rem 1.25rem;">
+            <div class="hunt-intro">
+                <p>This free hunt takes you on foot through Aqaba's old town — the same streets our Walking Tour and Cooking Class guests explore. Read each clue, walk to the spot in real life, then tap "Reveal" to confirm you found it and learn the story behind it. No booking, no sign-up — just wander, discover, and see you at the finish line.</p>
+            </div>
+
+            <div class="hunt-progress-bar">
+                <div class="hunt-progress-fill" id="huntProgressFill"></div>
+            </div>
+            <p class="hunt-progress-label"><span id="huntProgressCount">0</span> / 5 landmarks found</p>
+
+            <div class="hunt-stops" id="huntStops">
+
+                <div class="hunt-stop" data-stop="1">
+                    <div class="hunt-stop-header">
+                        <span class="hunt-stop-number">1</span>
+                        <span class="hunt-stop-title">The Old Fortress</span>
+                    </div>
+                    <p class="hunt-clue">"Look for thick stone walls that have watched over this port since the 1500s. Sultans built me to guard pilgrims heading to Mecca — find the fortress with cannons still facing the sea."</p>
+                    <div class="hunt-actions">
+                        <button class="hunt-btn hunt-btn-reveal" data-action="reveal">Reveal Answer</button>
+                        <button class="hunt-btn hunt-btn-found" data-action="found">I Found It!</button>
+                    </div>
+                    <div class="hunt-reveal">
+                        <img src="images/aqaba-fort-mosque.webp" alt="Aqaba Fort (Mamluk Castle)" loading="lazy">
+                        <p class="hunt-answer">Aqaba Fort (Mamluk Castle)</p>
+                        <p>Built by the Mamluks in the 16th century, this fort later played a role in the famous 1917 Arab Revolt — the same events immortalized in "Lawrence of Arabia."</p>
+                    </div>
+                </div>
+
+                <div class="hunt-stop" data-stop="2">
+                    <div class="hunt-stop-header">
+                        <span class="hunt-stop-number">2</span>
+                        <span class="hunt-stop-title">The House of Prayer</span>
+                    </div>
+                    <p class="hunt-clue">"From the fort, walk toward the golden call to prayer. I'm named after the Sharif who led a revolt, and my minaret rises near the seafront promenade."</p>
+                    <div class="hunt-actions">
+                        <button class="hunt-btn hunt-btn-reveal" data-action="reveal">Reveal Answer</button>
+                        <button class="hunt-btn hunt-btn-found" data-action="found">I Found It!</button>
+                    </div>
+                    <div class="hunt-reveal">
+                        <p class="hunt-answer">Sharif Hussein Bin Ali Mosque</p>
+                        <p>Named after Sharif Hussein bin Ali, who launched the Great Arab Revolt of 1916 from this very region of Jordan.</p>
+                    </div>
+                </div>
+
+                <div class="hunt-stop" data-stop="3">
+                    <div class="hunt-stop-header">
+                        <span class="hunt-stop-number">3</span>
+                        <span class="hunt-stop-title">Scented Alleys</span>
+                    </div>
+                    <p class="hunt-clue">"Follow your nose into the alleys where sacks of cardamom, sumac, and za'atar spill onto the street. Bargain like a local for the best blend in town."</p>
+                    <div class="hunt-actions">
+                        <button class="hunt-btn hunt-btn-reveal" data-action="reveal">Reveal Answer</button>
+                        <button class="hunt-btn hunt-btn-found" data-action="found">I Found It!</button>
+                    </div>
+                    <div class="hunt-reveal">
+                        <img src="images/aqaba-spice-market-display.webp" alt="Aqaba spice souk" loading="lazy">
+                        <p class="hunt-answer">The Spice Souk</p>
+                        <p>Za'atar, a wild thyme blend, has flavored Levantine kitchens for centuries — grab some here, it's exactly what goes into Suhaila's cooking class recipes.</p>
+                    </div>
+                </div>
+
+                <div class="hunt-stop" data-stop="4">
+                    <div class="hunt-stop-header">
+                        <span class="hunt-stop-number">4</span>
+                        <span class="hunt-stop-title">Catch of the Day</span>
+                    </div>
+                    <p class="hunt-clue">"Nearby, the morning's Red Sea catch glistens on ice. Follow the smell of the sea and the shouting fishmongers to find it."</p>
+                    <div class="hunt-actions">
+                        <button class="hunt-btn hunt-btn-reveal" data-action="reveal">Reveal Answer</button>
+                        <button class="hunt-btn hunt-btn-found" data-action="found">I Found It!</button>
+                    </div>
+                    <div class="hunt-reveal">
+                        <img src="images/aqaba-fish-market.webp" alt="Aqaba fish souk" loading="lazy">
+                        <p class="hunt-answer">The Fish Souk</p>
+                        <p>Aqaba's fishing fleet still brings in the day's catch every morning — much of what ends up in Suhaila's Sayadieh comes straight from here.</p>
+                    </div>
+                </div>
+
+                <div class="hunt-stop" data-stop="5">
+                    <div class="hunt-stop-header">
+                        <span class="hunt-stop-number">5</span>
+                        <span class="hunt-stop-title">Where the City Meets the Sea</span>
+                    </div>
+                    <p class="hunt-clue">"End your hunt where fishing boats bob beside pleasure yachts, and the Red Sea stretches out toward four countries at once."</p>
+                    <div class="hunt-actions">
+                        <button class="hunt-btn hunt-btn-reveal" data-action="reveal">Reveal Answer</button>
+                        <button class="hunt-btn hunt-btn-found" data-action="found">I Found It!</button>
+                    </div>
+                    <div class="hunt-reveal">
+                        <img src="images/aqaba-marina.webp" alt="Aqaba Marina" loading="lazy">
+                        <p class="hunt-answer">Aqaba Marina</p>
+                        <p>From this spot on a clear day, you can see four countries touching the same gulf: Jordan, Israel, Egypt, and Saudi Arabia.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hunt-complete-panel" id="huntCompletePanel">
+                <h2>You Found Them All! 🎉</h2>
+                <p>You just walked the same streets our guests explore on the guided Walking Tour and Cooking Class — with a bit of local history along the way.</p>
+                <div class="hunt-code">TREASURE10</div>
+                <p>Show this code on WhatsApp to unlock 10% off your next booking with us.</p>
+                <div class="hero-cta-group" style="margin-top: 1.5rem;">
+                    <a href="https://wa.me/962776294742?text=Hi!%20I%20just%20finished%20the%20Aqaba%20Treasure%20Hunt%20and%20found%20code%20TREASURE10" class="button button-primary" target="_blank" rel="noopener">Claim on WhatsApp</a>
+                    <a href="Reservation.html" class="button button-ghost">Book an Experience</a>
+                </div>
+            </div>
+
+            <button class="hunt-reset" id="huntReset" type="button">Reset my progress</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img loading="lazy" src="images/logo.png" alt="Aqaba Experiences" onerror="this.style.display='none'" />
+                    <span>Aqaba Experiences</span>
+                </div>
+                <p class="footer-tagline">Your local connection to the heart and soul of Aqaba.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/suhaila.cook" target="_blank" rel="noopener" aria-label="Instagram">
+                        <img loading="lazy" src="images/instagram-icon.png" alt="Instagram" class="social-icon" />
+                    </a>
+                    <a href="https://web.facebook.com/suhailacook" target="_blank" rel="noopener" aria-label="Facebook">
+                        <img loading="lazy" src="images/facebook-icon.png" alt="Facebook" class="social-icon" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="local-experiences.html">Experiences</a>
+                <a href="Reservation.html">Reservations</a>
+                <a href="Blog.html">Blog</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <a href="mailto:suhaila.cook@gmail.com">suhaila.cook@gmail.com</a>
+                <a href="tel:+962776294742">+962 77 629 4742</a>
+                <span class="footer-location">Aqaba, Jordan</span>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Aqaba local experiences. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script>
+        (function() {
+            var STORAGE_KEY = 'aqaba-treasure-hunt-progress';
+            var stops = document.querySelectorAll('.hunt-stop');
+            var progressFill = document.getElementById('huntProgressFill');
+            var progressCount = document.getElementById('huntProgressCount');
+            var completePanel = document.getElementById('huntCompletePanel');
+            var resetBtn = document.getElementById('huntReset');
+
+            function loadProgress() {
+                try {
+                    var raw = localStorage.getItem(STORAGE_KEY);
+                    return raw ? JSON.parse(raw) : {};
+                } catch (e) {
+                    return {};
+                }
+            }
+
+            function saveProgress(progress) {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+                } catch (e) { /* ignore, non-critical */ }
+            }
+
+            function render() {
+                var progress = loadProgress();
+                var foundCount = 0;
+                stops.forEach(function(stop) {
+                    var id = stop.dataset.stop;
+                    if (progress[id]) {
+                        stop.classList.add('found');
+                        foundCount++;
+                    } else {
+                        stop.classList.remove('found');
+                    }
+                });
+                var pct = (foundCount / stops.length) * 100;
+                progressFill.style.width = pct + '%';
+                progressCount.textContent = foundCount;
+                if (foundCount === stops.length) {
+                    completePanel.classList.add('show');
+                } else {
+                    completePanel.classList.remove('show');
+                }
+            }
+
+            stops.forEach(function(stop) {
+                var revealBtn = stop.querySelector('[data-action="reveal"]');
+                var foundBtn = stop.querySelector('[data-action="found"]');
+                var revealPanel = stop.querySelector('.hunt-reveal');
+
+                revealBtn.addEventListener('click', function() {
+                    revealPanel.classList.toggle('open');
+                    revealBtn.textContent = revealPanel.classList.contains('open') ? 'Hide Answer' : 'Reveal Answer';
+                });
+
+                foundBtn.addEventListener('click', function() {
+                    var progress = loadProgress();
+                    var id = stop.dataset.stop;
+                    progress[id] = !progress[id];
+                    saveProgress(progress);
+                    render();
+                    if (progress[id]) {
+                        revealPanel.classList.add('open');
+                        revealBtn.textContent = 'Hide Answer';
+                    }
+                });
+            });
+
+            resetBtn.addEventListener('click', function() {
+                saveProgress({});
+                render();
+            });
+
+            render();
+        })();
+    </script>
+</body>
+</html>
