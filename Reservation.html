@@ -264,6 +264,10 @@
 
             <div id="price-display" class="form-price-display">💰 Estimated Total Price: 0.00 JD</div>
 
+            <div class="form-group">
+                <div id="experience-error" class="error-message">Please select at least one experience to continue.</div>
+            </div>
+
             <div class="form-nav">
                 <button type="button" class="button button-secondary" onclick="goToStep(1)">← Back</button>
                 <button type="button" class="button" onclick="goToStep(3)">Review Booking →</button>
@@ -440,6 +444,16 @@
                     document.getElementById('phone').nextElementSibling.classList.remove('show');
                 }
                 if (!valid) return;
+            }
+            if (step === 3 && currentStep === 2) {
+                const anyExperienceChecked = document.querySelectorAll('.experience-toggle:checked').length > 0;
+                const experienceError = document.getElementById('experience-error');
+                if (!anyExperienceChecked) {
+                    if (experienceError) experienceError.classList.add('show');
+                    return;
+                } else if (experienceError) {
+                    experienceError.classList.remove('show');
+                }
             }
             if (step < 1 || step > totalSteps) return;
             currentStep = step;
