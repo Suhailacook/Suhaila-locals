@@ -454,23 +454,6 @@
 
     <!-- ===== SCRIPTS (CLEAN & FIXED) ===== -->
     <script>
-        // ===== SCROLL PROGRESS =====
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = (scrollTop / docHeight) * 100;
-            document.getElementById('scroll-progress').style.width = progress + '%';
-        });
-
-        // ===== HAMBURGER TOGGLE =====
-        document.getElementById('hamburger').addEventListener('click', function() {
-            document.getElementById('navbarLinks').classList.toggle('open');
-            const dropdown = document.querySelector('.dropdown');
-            if (dropdown) {
-                dropdown.classList.toggle('open');
-            }
-        });
-
         // ===== LIGHTBOX =====
         let lightboxImages = [];
         let currentLightboxIndex = 0;
@@ -549,27 +532,6 @@
         function redirectToReservation(experience) {
             window.location.href = 'Reservation.html?experience=' + encodeURIComponent(experience);
             return false;
-        }
-
-        // ===== DROPDOWN TOGGLE (Universal Click) =====
-        const dropdownBtn = document.querySelector('.dropbtn');
-        const dropdown = document.querySelector('.dropdown');
-
-        if (dropdownBtn && dropdown) {
-            dropdownBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                dropdown.classList.toggle('open');
-                const expanded = dropdown.classList.contains('open');
-                this.setAttribute('aria-expanded', expanded);
-            });
-
-            document.addEventListener('click', function(e) {
-                if (!dropdown.contains(e.target)) {
-                    dropdown.classList.remove('open');
-                    dropdownBtn.setAttribute('aria-expanded', 'false');
-                }
-            });
         }
 
         // ============================================================
@@ -956,6 +918,8 @@
         gtag('js', new Date());
         gtag('config', 'G-JZYH4T50VY');
     </script>
+    <script src="js/navbar.js"></script>
+    <script src="js/scroll-progress.js"></script>
 
 </body>
 </html>

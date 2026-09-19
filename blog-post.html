@@ -169,38 +169,6 @@
         </div>
     </footer>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navbarLinks = document.getElementById('navbarLinks');
-    const menuOverlay = document.getElementById('menuOverlay');
-    hamburger?.addEventListener('click', () => {
-      navbarLinks.classList.toggle('open');
-      menuOverlay.classList.toggle('active');
-    });
-    menuOverlay?.addEventListener('click', () => {
-      navbarLinks.classList.remove('open');
-      menuOverlay.classList.remove('active');
-    });
-
-    // Mobile Dropdown Logic
-    document.querySelectorAll('.navbar .dropbtn').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        if (window.innerWidth <= 800) {
-          e.preventDefault();
-          const dd = this.closest('.dropdown');
-          document.querySelectorAll('.navbar .dropdown.open').forEach(o => { if (o !== dd) o.classList.remove('open'); });
-          dd.classList.toggle('open');
-        }
-      });
-    });
-    document.addEventListener('click', (e) => {
-      if (window.innerWidth <= 800) {
-        if (!e.target.closest('.navbar')) {
-          document.querySelectorAll('.navbar .dropdown.open').forEach(o => o.classList.remove('open'));
-        }
-      }
-    });
-  </script>
 <script src="js/navbar.js"></script>
 </body>
 </html>
