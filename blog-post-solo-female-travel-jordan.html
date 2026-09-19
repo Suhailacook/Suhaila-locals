@@ -201,33 +201,6 @@
 
     <!-- ===== SCRIPTS ===== -->
     <script>
-        // ===== HAMBURGER TOGGLE =====
-        document.getElementById('hamburger').addEventListener('click', function() {
-            document.getElementById('navbarLinks').classList.toggle('open');
-        });
-
-        // ===== DROPDOWN TOGGLE (universal click) =====
-        const dropdownBtn = document.querySelector('.dropbtn');
-        const dropdown = document.querySelector('.dropdown');
-
-        if (dropdownBtn && dropdown) {
-            dropdownBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                dropdown.classList.toggle('open');
-                const expanded = dropdown.classList.contains('open');
-                this.setAttribute('aria-expanded', expanded);
-            });
-
-            // Close the dropdown when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!dropdown.contains(e.target)) {
-                    dropdown.classList.remove('open');
-                    dropdownBtn.setAttribute('aria-expanded', 'false');
-                }
-            });
-        }
-
         // ===== SCROLL PROGRESS =====
         window.addEventListener('scroll', function() {
             const scrollTop = window.scrollY;

@@ -1020,6 +1020,15 @@ footer .footer-bottom p {
     letter-spacing: 0.3px;
 }
 
+footer .visitor-counter {
+    margin-top: 12px;
+}
+
+footer .visitor-counter img {
+    vertical-align: middle;
+    opacity: 0.9;
+}
+
 @media (max-width: 800px) {
     footer .footer-grid {
         grid-template-columns: 1fr;
