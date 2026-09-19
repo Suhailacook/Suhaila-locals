@@ -109,7 +109,7 @@
     <!-- ===== WHAT TO DO TODAY WIDGET ===== -->
     <!-- ============================================================ -->
     <div class="today-widget" id="todayWidget">
-        <div class="today-widget-content">
+        <div class="today-widget-content" id="todayWidgetContent">
             <div class="widget-left">
                 <span class="widget-icon" id="widgetIcon">🌅</span>
             </div>
@@ -124,6 +124,7 @@
             </div>
             <div class="widget-right">
                 <a href="Reservation.html" class="button widget-btn" id="widgetBtn">Book Now</a>
+                <button class="widget-toggle" id="widgetToggle" aria-label="Expand suggestion" aria-expanded="false">⌄</button>
                 <button class="widget-dismiss" id="widgetDismiss" aria-label="Dismiss widget">✕</button>
             </div>
         </div>
@@ -453,23 +454,6 @@
 
     <!-- ===== SCRIPTS (CLEAN & FIXED) ===== -->
     <script>
-        // ===== SCROLL PROGRESS =====
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = (scrollTop / docHeight) * 100;
-            document.getElementById('scroll-progress').style.width = progress + '%';
-        });
-
-        // ===== HAMBURGER TOGGLE =====
-        document.getElementById('hamburger').addEventListener('click', function() {
-            document.getElementById('navbarLinks').classList.toggle('open');
-            const dropdown = document.querySelector('.dropdown');
-            if (dropdown) {
-                dropdown.classList.toggle('open');
-            }
-        });
-
         // ===== LIGHTBOX =====
         let lightboxImages = [];
         let currentLightboxIndex = 0;
@@ -550,27 +534,6 @@
             return false;
         }
 
-        // ===== DROPDOWN TOGGLE (Universal Click) =====
-        const dropdownBtn = document.querySelector('.dropbtn');
-        const dropdown = document.querySelector('.dropdown');
-
-        if (dropdownBtn && dropdown) {
-            dropdownBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                dropdown.classList.toggle('open');
-                const expanded = dropdown.classList.contains('open');
-                this.setAttribute('aria-expanded', expanded);
-            });
-
-            document.addEventListener('click', function(e) {
-                if (!dropdown.contains(e.target)) {
-                    dropdown.classList.remove('open');
-                    dropdownBtn.setAttribute('aria-expanded', 'false');
-                }
-            });
-        }
-
         // ============================================================
         // WHAT TO DO TODAY WIDGET
         // ============================================================
@@ -638,6 +601,16 @@
 
             updateWidget();
             setInterval(updateWidget, 60000);
+
+            const widgetContent = document.getElementById('todayWidgetContent');
+            const toggleBtn = document.getElementById('widgetToggle');
+            if (widgetContent && toggleBtn) {
+                widgetContent.addEventListener('click', function(e) {
+                    if (e.target.closest('#widgetDismiss') || e.target.closest('#widgetBtn')) return;
+                    const expanded = widgetContent.classList.toggle('expanded');
+                    toggleBtn.setAttribute('aria-expanded', expanded);
+                });
+            }
 
             const dismissBtn = document.getElementById('widgetDismiss');
             if (dismissBtn) {
@@ -945,6 +918,8 @@
         gtag('js', new Date());
         gtag('config', 'G-JZYH4T50VY');
     </script>
+    <script src="js/navbar.js"></script>
+    <script src="js/scroll-progress.js"></script>
 
 </body>
 </html>
