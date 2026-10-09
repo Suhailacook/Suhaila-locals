@@ -21,6 +21,648 @@
     <!-- ===== MASTER STYLESHEET ===== -->
     <link rel="stylesheet" href="style.min.css" />
 
+    <!-- ===== ENHANCED RESERVATION STYLES ===== -->
+    <style>
+        /* CSS Variables for consistent theming */
+        :root {
+            --color-primary: #1b4a6f;
+            --color-primary-light: #2d6a9f;
+            --color-primary-dark: #0f2b4a;
+            --color-accent: #f9d56e;
+            --color-accent-dark: #e8c24d;
+            --color-success: #2e9b6b;
+            --color-danger: #d32f2f;
+            --color-warning: #ff9800;
+            --color-light: #f5f7fa;
+            --color-light-gray: #e8eef5;
+            --color-medium-gray: #a8b5c4;
+            --color-dark-gray: #5e6f82;
+            --color-text: #1a2332;
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 1rem;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --transition-fast: 150ms ease-in-out;
+            --transition-normal: 250ms ease-in-out;
+        }
+
+        /* Form Enhancements */
+        .form-step {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 247, 250, 0.95) 100%);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            padding: var(--spacing-2xl);
+            margin: var(--spacing-xl) auto;
+            max-width: 900px;
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-step h3 {
+            color: var(--color-primary);
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Input Styling */
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: var(--spacing-md) var(--spacing-lg);
+            border: 2px solid var(--color-light-gray);
+            border-radius: var(--radius-md);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.95rem;
+            background-color: white;
+            color: var(--color-text);
+            transition: all var(--transition-fast);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(27, 74, 111, 0.1);
+            background-color: #fafbfc;
+        }
+
+        .form-group input:hover,
+        .form-group textarea:hover {
+            border-color: var(--color-primary-light);
+        }
+
+        .form-group input.error,
+        .form-group textarea.error {
+            border-color: var(--color-danger);
+            background-color: rgba(211, 47, 47, 0.02);
+        }
+
+        /* Experience Option Cards */
+        .experience-option-card {
+            background: white;
+            border: 2px solid var(--color-light-gray);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            transition: all var(--transition-normal);
+            cursor: pointer;
+        }
+
+        .experience-option-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .experience-option-card.selected {
+            background: linear-gradient(135deg, rgba(45, 106, 159, 0.03) 0%, rgba(249, 213, 110, 0.05) 100%);
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(27, 74, 111, 0.08);
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            accent-color: var(--color-primary);
+            flex-shrink: 0;
+        }
+
+        .checkbox-container strong {
+            color: var(--color-primary);
+            font-size: 1.05rem;
+        }
+
+        /* Experience Details */
+        .experience-details {
+            max-height: 500px;
+            opacity: 1;
+            overflow: visible;
+            transition: all var(--transition-normal);
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid var(--color-light-gray);
+        }
+
+        .experience-details.collapsed {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-col label {
+            display: block;
+            color: var(--color-dark-gray);
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .form-col input {
+            width: 100%;
+            padding: var(--spacing-md) var(--spacing-lg);
+            border: 2px solid var(--color-light-gray);
+            border-radius: var(--radius-md);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            transition: all var(--transition-fast);
+        }
+
+        .form-col input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(27, 74, 111, 0.1);
+        }
+
+        .hint {
+            font-size: 0.85rem;
+            color: var(--color-medium-gray);
+            font-style: italic;
+            margin-top: var(--spacing-sm);
+        }
+
+        /* Step Progress */
+        .step-progress {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-2xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-sm);
+            flex: 1;
+            position: relative;
+            opacity: 0.5;
+            transition: all var(--transition-fast);
+        }
+
+        .step::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--color-light-gray);
+            transition: width var(--transition-fast);
+        }
+
+        .step:last-child::after {
+            display: none;
+        }
+
+        .step.active,
+        .step.completed {
+            opacity: 1;
+        }
+
+        .step.completed::after {
+            width: 50%;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--color-light-gray);
+            color: var(--color-dark-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all var(--transition-fast);
+            border: 2px solid var(--color-light-gray);
+        }
+
+        .step.active .step-number {
+            background: var(--color-accent);
+            color: var(--color-primary);
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 4px rgba(249, 213, 110, 0.2);
+            transform: scale(1.1);
+        }
+
+        .step.completed .step-number {
+            background: var(--color-success);
+            color: white;
+            border-color: var(--color-success);
+        }
+
+        .step-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-dark-gray);
+        }
+
+        /* Button Styles */
+        .button {
+            display: inline-block;
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--radius-md);
+            border: none;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            white-space: nowrap;
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(27, 74, 111, 0.2);
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px -1px rgba(27, 74, 111, 0.3);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        .button-secondary {
+            background: white;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            box-shadow: none;
+        }
+
+        .button-secondary:hover {
+            background: var(--color-light);
+        }
+
+        /* Price Display */
+        .form-price-display {
+            background: linear-gradient(135deg, rgba(45, 106, 159, 0.05) 0%, rgba(249, 213, 110, 0.1) 100%);
+            border: 2px solid var(--color-light-gray);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin: var(--spacing-xl) 0;
+            transition: all var(--transition-fast);
+        }
+
+        .form-price-display:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Summary Styles */
+        #booking-summary {
+            background: linear-gradient(135deg, rgba(46, 155, 107, 0.05) 0%, rgba(249, 213, 110, 0.05) 100%);
+            border: 2px solid var(--color-light-gray);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        #booking-summary h4 {
+            color: var(--color-primary);
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--spacing-md) var(--spacing-lg);
+            background: white;
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-sm);
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: flex-end;
+            padding: var(--spacing-lg);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            border-top: 2px solid var(--color-light-gray);
+            margin-top: var(--spacing-lg);
+        }
+
+        /* Error Messages */
+        .error-message {
+            color: var(--color-danger);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: var(--spacing-sm);
+            display: none;
+            animation: slideDown 0.2s ease-out;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-4px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, rgba(46, 155, 107, 0.1) 0%, rgba(46, 155, 107, 0.05) 100%);
+            border: 2px solid var(--color-success);
+            color: var(--color-success);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin: var(--spacing-xl) auto;
+            max-width: 900px;
+            font-weight: 600;
+            text-align: center;
+            font-size: 1.05rem;
+            animation: slideDown 0.3s ease-out;
+            box-shadow: 0 0 0 4px rgba(46, 155, 107, 0.1);
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* Loading Spinner */
+        #loading-spinner {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            backdrop-filter: blur(2px);
+        }
+
+        .spinner-box {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-2xl);
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .spinner-icon {
+            font-size: 3rem;
+            display: block;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Error Popup */
+        #error-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            backdrop-filter: blur(2px);
+        }
+
+        .popup-content {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-2xl);
+            max-width: 400px;
+            position: relative;
+            box-shadow: var(--shadow-xl);
+            animation: popIn 0.3s ease-out;
+        }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .popup-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: var(--spacing-md);
+            right: var(--spacing-md);
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--color-dark-gray);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .close-btn:hover {
+            color: var(--color-primary);
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-step {
+                padding: var(--spacing-xl);
+                margin: var(--spacing-lg) var(--spacing-md);
+            }
+
+            .form-step h3 {
+                font-size: 1.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+
+            .step-progress {
+                flex-direction: column;
+                gap: var(--spacing-xl);
+            }
+
+            .step::after {
+                display: none;
+            }
+
+            .form-nav {
+                display: flex;
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+
+            .button {
+                width: 100%;
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+
+            .button-secondary {
+                order: -1;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: var(--spacing-md) var(--spacing-md);
+                font-size: 16px;
+            }
+
+            .experience-option-card {
+                padding: var(--spacing-md);
+            }
+
+            #booking-summary {
+                padding: var(--spacing-lg);
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .form-step,
+            .button,
+            .experience-option-card,
+            .error-message,
+            .success-message,
+            .popup-content {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-light: #1a2332;
+                --color-light-gray: #2d3e52;
+                --color-text: #f5f7fa;
+            }
+
+            .form-step {
+                background: linear-gradient(135deg, rgba(26, 35, 50, 0.95) 0%, rgba(45, 62, 82, 0.95) 100%);
+            }
+
+            .form-group input,
+            .form-group textarea,
+            .form-col input {
+                background-color: #0f1419;
+                color: #f5f7fa;
+                border-color: #2d3e52;
+            }
+
+            .form-group input:focus,
+            .form-group textarea:focus,
+            .form-col input:focus {
+                background-color: #1a2332;
+                border-color: #2d6a9f;
+            }
+
+            .experience-option-card {
+                background: #0f1419;
+                border-color: #2d3e52;
+            }
+
+            .experience-option-card:hover {
+                border-color: #2d6a9f;
+            }
+
+            #booking-summary {
+                background: linear-gradient(135deg, rgba(46, 155, 107, 0.1) 0%, rgba(249, 213, 110, 0.05) 100%);
+                border-color: #2d3e52;
+            }
+
+            .summary-item {
+                background: #1a2332;
+            }
+
+            .form-price-display {
+                background: rgba(45, 106, 159, 0.1);
+                border-color: #2d3e52;
+            }
+
+            .popup-content {
+                background: #0f1419;
+            }
+
+            #popup-message {
+                color: #f5f7fa;
+            }
+        }
+    </style>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZYH4T50VY"></script>
     <script>
@@ -644,6 +1286,46 @@
         const popupMessage = document.getElementById('popup-message');
         const successMsg = document.getElementById('success-message');
 
+        // ===== FILTER FORM DATA - SEND ONLY SELECTED EXPERIENCES =====
+        function getFilteredFormData(form) {
+            const filtered = new FormData();
+
+            // Add contact info (always included)
+            filtered.append('name', document.getElementById('name').value.trim());
+            filtered.append('email', document.getElementById('email').value.trim());
+            filtered.append('phone', document.getElementById('phone').value.trim());
+            filtered.append('comments', document.getElementById('comments').value.trim());
+
+            // Add ONLY selected experiences with their data
+            const checkedExperiences = document.querySelectorAll('.experience-toggle:checked');
+            checkedExperiences.forEach(checkbox => {
+                const fieldName = checkbox.name;
+                filtered.append(fieldName, checkbox.value);
+
+                const targetId = checkbox.dataset.target;
+                const details = document.getElementById(targetId);
+                if (details) {
+                    const dateInput = details.querySelector('.date-input');
+                    const guestInput = details.querySelector('.guest-input');
+
+                    // Construct field names based on experience type
+                    const baseFieldName = fieldName.replace('Book_', '').replace('_', ' ');
+                    if (dateInput && dateInput.name) {
+                        filtered.append(dateInput.name, dateInput.value);
+                    }
+                    if (guestInput && guestInput.name) {
+                        filtered.append(guestInput.name, guestInput.value);
+                    }
+                }
+            });
+
+            // Add pricing summary for reference
+            filtered.append('_total_price', window._bookingTotal || 0);
+            filtered.append('_booking_summary', JSON.stringify(window._bookingItems || []));
+
+            return filtered;
+        }
+
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('name').value.trim();
@@ -677,10 +1359,13 @@
                 return;
             }
             spinner.style.display = 'flex';
-            const formData = new FormData(form);
+
+            // FILTER THE FORM DATA - ONLY SEND SELECTED EXPERIENCES
+            const filteredFormData = getFilteredFormData(form);
+
             fetch(form.action, {
                     method: 'POST',
-                    body: formData,
+                    body: filteredFormData,
                     headers: { 'Accept': 'application/json' }
                 })
                 .then(response => {
