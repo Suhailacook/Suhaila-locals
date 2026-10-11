@@ -900,6 +900,26 @@
                 </div>
             </div>
 
+            <div class="experience-option-card" data-experience="houh">
+                <label class="checkbox-container">
+                    <input type="checkbox" name="Book_Houh_Delivery" value="Yes" class="experience-toggle" data-target="details-houh" data-price="10" />
+                    <strong>🍮 Houh Delivery - Authentic Aqabawi Sweet (10 JD / plate)</strong>
+                </label>
+                <div id="details-houh" class="experience-details collapsed">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Delivery Date:</label>
+                            <input type="date" name="Houh_Delivery_Date" class="date-input" />
+                        </div>
+                        <div class="form-col">
+                            <label>Number of Plates (min. 3):</label>
+                            <input type="number" name="Houh_Delivery_Plates" class="guest-input" min="3" value="3" />
+                        </div>
+                    </div>
+                    <div class="hint">* Minimum 3 plates. Free delivery within Aqaba. 24 hours advance notice required.</div>
+                </div>
+            </div>
+
             <div class="form-group">
                 <label for="comments">Additional Comments / Special Requests:</label>
                 <textarea id="comments" name="comments" rows="3" placeholder="Dietary restrictions, accessibility needs, or any special requests..."></textarea>
@@ -1195,7 +1215,7 @@
                 form.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 goToStep(2);
                 const checkboxes = document.querySelectorAll('.experience-toggle');
-                const map = { cooking: 0, walking: 1, dining: 2, glassboat: 3 };
+                const map = { cooking: 0, walking: 1, dining: 2, glassboat: 3, houh: 4 };
                 const idx = map[type];
                 if (idx !== undefined && checkboxes[idx]) {
                     checkboxes[idx].checked = true;
