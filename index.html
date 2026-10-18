@@ -100,38 +100,74 @@
         </div>
     </section>
 
-    <!-- ===== AI TRIP PLANNER BUTTON ===== -->
-    <div class="plan-trip-band">
-        <button class="plan-trip-btn" id="planTripBtn">🤖 Plan My Trip</button>
-    </div>
-
-    <!-- ============================================================ -->
-    <!-- ===== WHAT TO DO TODAY WIDGET ===== -->
-    <!-- ============================================================ -->
-    <div class="today-widget" id="todayWidget">
-        <div class="today-widget-content">
-            <div class="widget-left">
-                <span class="widget-icon" id="widgetIcon">🌅</span>
-            </div>
-            <div class="widget-middle">
-                <div class="widget-time">
-                    🕐 <span id="widgetTime">Loading...</span> <span class="widget-timezone">(Aqaba Time)</span>
-                </div>
-                <div class="widget-message" id="widgetMessage">
-                    <strong>Good Morning! ☀️</strong>
-                    <p id="widgetSuggestion">Start your day with a refreshing Walking Tour through Aqaba's hidden gems!</p>
-                </div>
-            </div>
-            <div class="widget-right">
-                <a href="Reservation.html" class="button widget-btn" id="widgetBtn">Book Now</a>
-                <button class="widget-dismiss" id="widgetDismiss" aria-label="Dismiss widget">✕</button>
-            </div>
-        </div>
-    </div>
-    <!-- ============================================================ -->
-
     <!-- ===== MAIN CONTENT ===== -->
     <main id="main-content">
+
+        <!-- ===== EXPERIENCES ===== -->
+        <section class="experiences">
+            <h2>Our Local Experiences</h2>
+            <div class="product-gallery">
+                <article class="product-item">
+                    <img src="images/Experience1.webp" alt="Traditional Jordanian Cooking Class in Aqaba" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%231b4a6f%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🍳%3C/text%3E%3C/svg%3E'" />
+                    <div class="product-info">
+                        <h3>Authentic Cooking Class</h3>
+                        <p>Learn to cook traditional dishes with our family recipes in Aqaba.</p>
+                        <p><a href="cookingclass.html">Read more</a> | <a href="#" onclick="redirectToReservation('Authentic Cooking Class')">Book Now</a></p>
+                        <p class="price">30 JD</p>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <img src="images/Experience2.webp" alt="Walking and food taste tour in Aqaba" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23a06b3f%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🚶%3C/text%3E%3C/svg%3E'" />
+                    <div class="product-info">
+                        <h3>Aqaba Walking Tour</h3>
+                        <p>Discover Aqaba's hidden gems on a guided walking tour that blends history, culture, and flavor.</p>
+                        <p><a href="walkingtour.html">Read more</a> | <a href="#" onclick="redirectToReservation('Food Taste Tour')">Book Now</a></p>
+                        <p class="price">20 JD</p>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <img src="images/Experience3.webp" alt="Dining Experience in a local Aqaba home" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%237a5535%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🍽️%3C/text%3E%3C/svg%3E'" />
+                    <div class="product-info">
+                        <h3>Dining Experience</h3>
+                        <p>Sharing meals, stories, and culture with our family.</p>
+                        <p><a href="dinningexperience.html">Read more</a> | <a href="#" onclick="redirectToReservation('Dining Experience')">Book Now</a></p>
+                        <p class="price">15 JD</p>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <img src="images/glass-boat.webp" alt="Aqaba Glass Boat Tour" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23216254%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🚤%3C/text%3E%3C/svg%3E'" />
+                    <div class="product-info">
+                        <h3>Aqaba Glass Boat</h3>
+                        <p>Enjoy Aqaba's coral reefs and marine life with a relaxing glass boat tour or snorkeling adventure.</p>
+                        <p><a href="glassboat.html">Read more</a> | <a href="#" onclick="redirectToReservation('Aqaba Glass Boat')">Book Now</a></p>
+                        <p class="price">25 JD / hour</p>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <img src="images/houh-delivery.webp" alt="Authentic Aqabawi Houh Sweet Delivery" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23d4a574%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🍮%3C/text%3E%3C/svg%3E'" />
+                    <div class="product-info">
+                        <h3>Houh Delivery</h3>
+                        <p>Taste authentic Aqabawi tradition with our delicate, hand-prepared Houh — fresh pastry soaked in aromatic syrup. Free delivery within Aqaba.</p>
+                        <p><a href="houh-delivery.html">Read more</a> | <a href="#" onclick="redirectToReservation('Houh Delivery')">Book Now</a></p>
+                        <p class="price">10 JD / plate</p>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <img src="images/cooking-class-aqaba.webp" alt="Live online Jordanian cooking class via Zoom" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%231b4a6f%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E💻%3C/text%3E%3C/svg%3E'" />
+                    <div class="product-info">
+                        <h3>Online Cooking Class</h3>
+                        <p>Can't make it to Aqaba? Cook with us live over Zoom &mdash; hummus &amp; falafel, maqluba, mansaf, or tabbouleh, wherever you are.</p>
+                        <p><a href="cookingclass-online.html">Read more</a> | <a href="online-booking.html">Book Now</a></p>
+                        <p class="price">$20 / person</p>
+                    </div>
+                </article>
+            </div>
+        </section>
 
         <!-- ===== GALLERY ===== -->
         <section class="gallery-section">
@@ -199,71 +235,31 @@
             </div>
         </section>
 
-        <!-- ===== EXPERIENCES ===== -->
-        <section class="experiences">
-            <h2>Our Local Experiences</h2>
-            <div class="product-gallery">
-                <article class="product-item">
-                    <img src="images/Experience1.webp" alt="Traditional Jordanian Cooking Class in Aqaba" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%231b4a6f%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🍳%3C/text%3E%3C/svg%3E'" />
-                    <div class="product-info">
-                        <h3>Authentic Cooking Class</h3>
-                        <p>Learn to cook traditional dishes with our family recipes in Aqaba.</p>
-                        <p><a href="cookingclass.html">Read more</a> | <a href="#" onclick="redirectToReservation('Authentic Cooking Class')">Book Now</a></p>
-                        <p class="price">30 JD</p>
-                    </div>
-                </article>
+        <!-- ===== TRIP PLANNING TOOLS ===== -->
+        <div class="plan-trip-band">
+            <button class="plan-trip-btn" id="planTripBtn">🤖 Plan My Trip</button>
+        </div>
 
-                <article class="product-item">
-                    <img src="images/Experience2.webp" alt="Walking and food taste tour in Aqaba" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23a06b3f%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🚶%3C/text%3E%3C/svg%3E'" />
-                    <div class="product-info">
-                        <h3>Aqaba Walking Tour</h3>
-                        <p>Discover Aqaba's hidden gems on a guided walking tour that blends history, culture, and flavor.</p>
-                        <p><a href="walkingtour.html">Read more</a> | <a href="#" onclick="redirectToReservation('Food Taste Tour')">Book Now</a></p>
-                        <p class="price">20 JD</p>
+        <div class="today-widget" id="todayWidget">
+            <div class="today-widget-content">
+                <div class="widget-left">
+                    <span class="widget-icon" id="widgetIcon">🌅</span>
+                </div>
+                <div class="widget-middle">
+                    <div class="widget-time">
+                        🕐 <span id="widgetTime">Loading...</span> <span class="widget-timezone">(Aqaba Time)</span>
                     </div>
-                </article>
-
-                <article class="product-item">
-                    <img src="images/Experience3.webp" alt="Dining Experience in a local Aqaba home" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%237a5535%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🍽️%3C/text%3E%3C/svg%3E'" />
-                    <div class="product-info">
-                        <h3>Dining Experience</h3>
-                        <p>Sharing meals, stories, and culture with our family.</p>
-                        <p><a href="dinningexperience.html">Read more</a> | <a href="#" onclick="redirectToReservation('Dining Experience')">Book Now</a></p>
-                        <p class="price">15 JD</p>
+                    <div class="widget-message" id="widgetMessage">
+                        <strong>Good Morning! ☀️</strong>
+                        <p id="widgetSuggestion">Start your day with a refreshing Walking Tour through Aqaba's hidden gems!</p>
                     </div>
-                </article>
-
-                <article class="product-item">
-                    <img src="images/glass-boat.webp" alt="Aqaba Glass Boat Tour" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23216254%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🚤%3C/text%3E%3C/svg%3E'" />
-                    <div class="product-info">
-                        <h3>Aqaba Glass Boat</h3>
-                        <p>Enjoy Aqaba's coral reefs and marine life with a relaxing glass boat tour or snorkeling adventure.</p>
-                        <p><a href="glassboat.html">Read more</a> | <a href="#" onclick="redirectToReservation('Aqaba Glass Boat')">Book Now</a></p>
-                        <p class="price">25 JD / hour</p>
-                    </div>
-                </article>
-
-                <article class="product-item">
-                    <img src="images/houh-delivery.webp" alt="Authentic Aqabawi Houh Sweet Delivery" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23d4a574%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🍮%3C/text%3E%3C/svg%3E'" />
-                    <div class="product-info">
-                        <h3>Houh Delivery</h3>
-                        <p>Taste authentic Aqabawi tradition with our delicate, hand-prepared Houh — fresh pastry soaked in aromatic syrup. Free delivery within Aqaba.</p>
-                        <p><a href="houh-delivery.html">Read more</a> | <a href="#" onclick="redirectToReservation('Houh Delivery')">Book Now</a></p>
-                        <p class="price">10 JD / plate</p>
-                    </div>
-                </article>
-
-                <article class="product-item">
-                    <img src="images/cooking-class-aqaba.webp" alt="Live online Jordanian cooking class via Zoom" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%231b4a6f%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E💻%3C/text%3E%3C/svg%3E'" />
-                    <div class="product-info">
-                        <h3>Online Cooking Class</h3>
-                        <p>Can't make it to Aqaba? Cook with us live over Zoom &mdash; hummus &amp; falafel, maqluba, mansaf, or tabbouleh, wherever you are.</p>
-                        <p><a href="cookingclass-online.html">Read more</a> | <a href="online-booking.html">Book Now</a></p>
-                        <p class="price">$20 / person</p>
-                    </div>
-                </article>
+                </div>
+                <div class="widget-right">
+                    <a href="Reservation.html" class="button widget-btn" id="widgetBtn">Book Now</a>
+                    <button class="widget-dismiss" id="widgetDismiss" aria-label="Dismiss widget">✕</button>
+                </div>
             </div>
-        </section>
+        </div>
 
         <!-- ===== BLOG ===== -->
         <section id="blog-section">
