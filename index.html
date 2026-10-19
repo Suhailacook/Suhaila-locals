@@ -104,6 +104,24 @@
     <!-- ===== MAIN CONTENT ===== -->
     <main id="main-content">
 
+        <!-- ===== MEET FAMILY ===== -->
+        <section class="meet-family-section" id="about">
+            <img src="images/Family.webp" alt="Aqaba local experiences family" class="meet-family-img" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22500%22 height=%22400%22%3E%3Crect width=%22500%22 height=%22400%22 fill=%22%230f2b4a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E👨‍👩‍👧‍👦%3C/text%3E%3C/svg%3E'" />
+            <div class="meet-family-content">
+                <h2>Meet the <span class="highlight">Aqaba local experiences family</span></h2>
+                <h3>Your Guides to Authentic Aqaba</h3>
+                <p>
+                    Welcome to our home! The Aqaba local experiences family is more than just a cooking class; we are your local connection to the heart and soul of Aqaba. We believe the best way to experience a culture is through its people, its food, and its hidden corners.
+                </p>
+                <p>
+                    From the vibrant spices of our kitchen to the bustling energy of the local markets on our walking tours, and the shared stories over a traditional dining experience, we invite you to become part of our family. Come and discover the authentic local life with us.
+                </p>
+                <a href="about.html" class="button button-primary">Our Story</a>
+            </div>
+        </section>
+
+        
+
         <!-- ===== EXPERIENCES ===== -->
         <section class="experiences" id="experiences">
             <h2>Our Local Experiences</h2>
@@ -170,6 +188,8 @@
             </div>
         </section>
 
+        
+
         <!-- ===== GALLERY ===== -->
         <section class="gallery-section">
             <h2 class="gallery-title">Our Experiences Gallery</h2>
@@ -220,53 +240,13 @@
             </div>
         </section>
 
-        <!-- ===== MEET FAMILY ===== -->
-        <section class="meet-family-section" id="about">
-            <img src="images/Family.webp" alt="Aqaba local experiences family" class="meet-family-img" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22500%22 height=%22400%22%3E%3Crect width=%22500%22 height=%22400%22 fill=%22%230f2b4a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E👨‍👩‍👧‍👦%3C/text%3E%3C/svg%3E'" />
-            <div class="meet-family-content">
-                <h2>Meet the <span class="highlight">Aqaba local experiences family</span></h2>
-                <h3>Your Guides to Authentic Aqaba</h3>
-                <p>
-                    Welcome to our home! The Aqaba local experiences family is more than just a cooking class; we are your local connection to the heart and soul of Aqaba. We believe the best way to experience a culture is through its people, its food, and its hidden corners.
-                </p>
-                <p>
-                    From the vibrant spices of our kitchen to the bustling energy of the local markets on our walking tours, and the shared stories over a traditional dining experience, we invite you to become part of our family. Come and discover the authentic local life with us.
-                </p>
-                <a href="about.html" class="button button-primary">Our Story</a>
-            </div>
-        </section>
-
-        <!-- ===== TRIP PLANNING TOOLS ===== -->
-        <div class="plan-trip-band">
-            <button class="plan-trip-btn" id="planTripBtn">🤖 Plan My Trip</button>
-        </div>
-
-        <div class="today-widget" id="todayWidget">
-            <div class="today-widget-content">
-                <div class="widget-left">
-                    <span class="widget-icon" id="widgetIcon">🌅</span>
-                </div>
-                <div class="widget-middle">
-                    <div class="widget-time">
-                        🕐 <span id="widgetTime">Loading...</span> <span class="widget-timezone">(Aqaba Time)</span>
-                    </div>
-                    <div class="widget-message" id="widgetMessage">
-                        <strong>Good Morning! ☀️</strong>
-                        <p id="widgetSuggestion">Start your day with a refreshing Walking Tour through Aqaba's hidden gems!</p>
-                    </div>
-                </div>
-                <div class="widget-right">
-                    <a href="Reservation.html" class="button widget-btn" id="widgetBtn">Book Now</a>
-                    <button class="widget-dismiss" id="widgetDismiss" aria-label="Dismiss widget">✕</button>
-                </div>
-            </div>
-        </div>
+        
 
         <!-- ===== BLOG ===== -->
-        <section id="blog-section">
-            <h2>Explore Our Blog</h2>
-            <p>Discover the history of Aqaba, its food culture, and behind-the-scenes insights. Join us on our journey to share the joy of local experiences in Aqaba.</p>
-            <div class="recent-posts">
+        <section id="blog-section" aria-labelledby="local-stories-title">
+            <h2 id="local-stories-title">Aqaba Through Local Eyes</h2>
+            <p>Explore local food traditions, stories, and behind-the-scenes insights from the people who call Aqaba home.</p>
+            <div class="recent-posts" aria-label="Local stories and food guides">
                 <article>
                     <h3><a href="sayadieh-traditional-food-aqaba.html">Sayadieh: The Signature Seafood Dish of Aqaba</a></h3>
                     <p>Discover Sayadieh, the traditional fish and rice dish that is the culinary heart of Aqaba. A local's guide to this flavorful Red Sea delicacy... <a href="sayadieh-traditional-food-aqaba.html">Read More</a></p>
@@ -278,6 +258,8 @@
             </div>
             <a href="Blog.html" class="button">Visit the Blog</a>
         </section>
+
+        
 
         <!-- ===== REVIEWS ===== -->
         <section class="review-section-advanced">
@@ -311,7 +293,48 @@
             </div>
         </section>
 
-    </main>
+    
+
+        <!-- ===== PLAN YOUR VISIT ===== -->
+        <section class="plan-visit-section" aria-labelledby="plan-visit-title">
+            <div class="plan-visit-copy">
+                <p class="plan-visit-eyebrow">YOUR AQABA STORY STARTS HERE</p>
+                <h2 id="plan-visit-title">Plan your Aqaba experience</h2>
+                <p>Tell us what you love, and let’s find a local experience that fits your visit.</p>
+            </div>
+            <div class="plan-visit-actions">
+                <a href="Reservation.html" class="button button-primary">Plan Your Visit <span aria-hidden="true">↗</span></a>
+                <a href="https://wa.me/message/XW5T6AR3LHINN1" class="plan-visit-contact" target="_blank" rel="noopener noreferrer">Ask us on WhatsApp</a>
+            </div>
+        </section>
+
+        <!-- ===== TRIP PLANNING TOOLS ===== -->
+        <div class="plan-trip-band">
+            <button class="plan-trip-btn" id="planTripBtn">🤖 Plan My Trip</button>
+        </div>
+
+        <div class="today-widget" id="todayWidget">
+            <div class="today-widget-content">
+                <div class="widget-left">
+                    <span class="widget-icon" id="widgetIcon">🌅</span>
+                </div>
+                <div class="widget-middle">
+                    <div class="widget-time">
+                        🕐 <span id="widgetTime">Loading...</span> <span class="widget-timezone">(Aqaba Time)</span>
+                    </div>
+                    <div class="widget-message" id="widgetMessage">
+                        <strong>Good Morning! ☀️</strong>
+                        <p id="widgetSuggestion">Start your day with a refreshing Walking Tour through Aqaba's hidden gems!</p>
+                    </div>
+                </div>
+                <div class="widget-right">
+                    <a href="Reservation.html" class="button widget-btn" id="widgetBtn">Book Now</a>
+                    <button class="widget-dismiss" id="widgetDismiss" aria-label="Dismiss widget">✕</button>
+                </div>
+            </div>
+        </div>
+
+        </main>
 
     <!-- ===== WHATSAPP FIXED ===== -->
     <a href="https://wa.me/message/XW5T6AR3LHINN1" target="_blank" rel="noopener noreferrer" class="whatsapp-fixed" aria-label="Contact Us on WhatsApp">
