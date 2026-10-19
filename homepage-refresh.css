@@ -1,0 +1,102 @@
+/* Homepage-only refinements: preserve the shared layout and existing photos. */
+.homepage .navbar-links .nav-reserve {
+    background: #f9d56e;
+    color: #0f2b4a;
+}
+
+.homepage .hero-contact {
+    margin-top: 14px;
+    font-size: 0.95rem;
+}
+
+.homepage .hero-contact a {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.homepage .product-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.homepage .product-info .price {
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+.homepage .product-info .experience-detail {
+    color: #45596c;
+    font-size: 0.85rem;
+}
+
+.homepage .product-info .experience-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 14px;
+    margin-top: 14px;
+}
+
+.homepage .experience-actions a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage .product-info .experience-reserve {
+    background: #f9d56e;
+    color: #0f2b4a;
+    border-radius: 999px;
+    padding: 8px 16px;
+}
+
+.homepage .product-info .experience-reserve:hover {
+    background: #f1c64c;
+    color: #0f2b4a;
+}
+
+.homepage .whatsapp-fixed {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 6px 6px 14px;
+    border-radius: 999px;
+    background: #fff;
+    color: #0f2b4a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.homepage .whatsapp-fixed:hover {
+    transform: translateY(-3px);
+}
+
+.homepage a:focus-visible {
+    outline: 3px solid #00798c;
+    outline-offset: 4px;
+}
+
+.homepage .hero-section a:focus-visible {
+    outline-color: #f9d56e;
+}
+
+@media (max-width: 600px) {
+    .homepage .whatsapp-fixed {
+        right: 12px;
+        bottom: 12px;
+        gap: 6px;
+        padding: 4px 4px 4px 12px;
+        font-size: 0.8rem;
+    }
+
+    .homepage .whatsapp-fixed img {
+        width: 40px;
+        height: 40px;
+    }
+}

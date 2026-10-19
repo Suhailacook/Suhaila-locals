@@ -24,6 +24,7 @@
     <link rel="canonical" href="https://suhailacook.github.io/Suhaila-locals/">
     <!-- ===== MASTER STYLESHEET ===== -->
     <link rel="stylesheet" href="style.min.css">
+    <link rel="stylesheet" href="homepage-refresh.css">
 
     <!-- ===== UPDATED SCHEMA WITH AGGREGATE RATING ===== -->
     <script type="application/ld+json">
@@ -47,7 +48,7 @@
         }
     </script>
 </head>
-<body>
+<body class="homepage">
 
     <!-- ===== SCROLL PROGRESS ===== -->
     <div id="scroll-progress"></div>
@@ -76,7 +77,7 @@
                     <a href="iftar-experience-aqaba.html" role="menuitem">Ramadan Iftar</a>
                 </div>
             </div>
-            <a href="Reservation.html">Reservations</a>
+            <a href="Reservation.html" class="nav-reserve">Reserve an experience</a>
             <a href="contact-Us.html">Contact</a>
             <a href="Blog.html">Blog</a>
         </div>
@@ -90,13 +91,14 @@
         <div class="hero-shape" aria-hidden="true"></div>
         <div class="hero-content-wrapper">
             <span class="hero-eyebrow"><span class="hero-eyebrow-dot" aria-hidden="true"></span> Locally hosted · Aqaba, Jordan</span>
-            <h1 id="hero-title">Feel the real <span class="highlight">Aqaba.</span></h1>
-            <p class="hero-subtitle">From the colors of the Red Sea to the flavors of our family table, discover Aqaba through the people who call it home.</p>
+            <h1 id="hero-title">Experience Aqaba <span class="highlight">like a local</span></h1>
+            <p class="hero-subtitle">Join our family for cooking, local food, and guided walks through the Aqaba we call home.</p>
             <div class="hero-cta-group">
-                <a href="#experiences" class="button button-primary" title="Explore local experiences in Aqaba">Explore Local Experiences <span aria-hidden="true">↗</span></a>
-                <a href="Reservation.html" class="button button-ghost" title="Reserve your local experience in Aqaba">Plan Your Visit</a>
+                <a href="#experiences" class="button button-primary" title="Explore local experiences in Aqaba">Explore experiences <span aria-hidden="true">↗</span></a>
+                <a href="Reservation.html" class="button button-ghost" title="Reserve your local experience in Aqaba">Reserve an experience</a>
             </div>
             <p class="hero-local-note"><span aria-hidden="true">✦</span> Real places. Local stories. Jordanian hospitality.</p>
+            <p class="hero-contact"><a href="https://wa.me/message/XW5T6AR3LHINN1" target="_blank" rel="noopener noreferrer">Questions? Chat with our family on WhatsApp</a></p>
         </div>
         <a class="hero-scroll-cue" href="#experiences" aria-label="Scroll to explore experiences"><span aria-hidden="true">↓</span></a>
     </section>
@@ -112,9 +114,10 @@
                     <img src="images/Experience1.webp" alt="Traditional Jordanian Cooking Class in Aqaba" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%231b4a6f%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🍳%3C/text%3E%3C/svg%3E'" />
                     <div class="product-info">
                         <h3>Authentic Cooking Class</h3>
-                        <p>Learn to cook traditional dishes with our family recipes in Aqaba.</p>
-                        <p><a href="cookingclass.html">Read more</a> | <a href="#" onclick="redirectToReservation('Authentic Cooking Class')">Book Now</a></p>
+                        <p>Cook traditional Jordanian dishes with family recipes and enjoy a taste of Aqaba.</p>
                         <p class="price">30 JD</p>
+                        <p class="experience-detail">3 hours</p>
+                        <p class="experience-actions"><a href="cookingclass.html">View details</a> <a href="Reservation.html?experience=Authentic%20Cooking%20Class" class="experience-reserve" aria-label="Reserve Authentic Cooking Class">Reserve</a></p>
                     </div>
                 </article>
 
@@ -122,9 +125,10 @@
                     <img src="images/Experience2.webp" alt="Walking and food taste tour in Aqaba" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23a06b3f%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🚶%3C/text%3E%3C/svg%3E'" />
                     <div class="product-info">
                         <h3>Aqaba Walking Tour</h3>
-                        <p>Discover Aqaba's hidden gems on a guided walking tour that blends history, culture, and flavor.</p>
-                        <p><a href="walkingtour.html">Read more</a> | <a href="#" onclick="redirectToReservation('Food Taste Tour')">Book Now</a></p>
+                        <p>Explore hidden corners, hear local stories, and sample Aqaba's flavors with a local guide.</p>
                         <p class="price">20 JD</p>
+                        <p class="experience-detail">2.5 hours</p>
+                        <p class="experience-actions"><a href="walkingtour.html">View details</a> <a href="Reservation.html?experience=Food%20Taste%20Tour" class="experience-reserve" aria-label="Reserve Aqaba Walking Tour">Reserve</a></p>
                     </div>
                 </article>
 
@@ -132,9 +136,10 @@
                     <img src="images/Experience3.webp" alt="Dining Experience in a local Aqaba home" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%237a5535%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🍽️%3C/text%3E%3C/svg%3E'" />
                     <div class="product-info">
                         <h3>Dining Experience</h3>
-                        <p>Sharing meals, stories, and culture with our family.</p>
-                        <p><a href="dinningexperience.html">Read more</a> | <a href="#" onclick="redirectToReservation('Dining Experience')">Book Now</a></p>
+                        <p>Share a traditional meal and stories around a local family's table.</p>
                         <p class="price">15 JD</p>
+                        <p class="experience-detail">2.5 hours</p>
+                        <p class="experience-actions"><a href="dinningexperience.html">View details</a> <a href="Reservation.html?experience=Dining%20Experience" class="experience-reserve" aria-label="Reserve Dining Experience">Reserve</a></p>
                     </div>
                 </article>
 
@@ -142,9 +147,10 @@
                     <img src="images/glass-boat.webp" alt="Aqaba Glass Boat Tour" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23216254%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🚤%3C/text%3E%3C/svg%3E'" />
                     <div class="product-info">
                         <h3>Aqaba Glass Boat</h3>
-                        <p>Enjoy Aqaba's coral reefs and marine life with a relaxing glass boat tour or snorkeling adventure.</p>
-                        <p><a href="glassboat.html">Read more</a> | <a href="#" onclick="redirectToReservation('Aqaba Glass Boat')">Book Now</a></p>
+                        <p>See the Red Sea's coral reefs and marine life from a glass boat, or head out for a snorkeling adventure.</p>
                         <p class="price">25 JD / hour</p>
+                        <p class="experience-detail">2 hours</p>
+                        <p class="experience-actions"><a href="glassboat.html">View details</a> <a href="Reservation.html?experience=Aqaba%20Glass%20Boat" class="experience-reserve" aria-label="Reserve Aqaba Glass Boat">Reserve</a></p>
                     </div>
                 </article>
 
@@ -152,9 +158,10 @@
                     <img src="images/houh-delivery.webp" alt="Authentic Aqabawi Houh Sweet Delivery" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23d4a574%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E🍮%3C/text%3E%3C/svg%3E'" />
                     <div class="product-info">
                         <h3>Houh Delivery</h3>
-                        <p>Taste authentic Aqabawi tradition with our delicate, hand-prepared Houh — fresh pastry soaked in aromatic syrup. Free delivery within Aqaba.</p>
-                        <p><a href="houh-delivery.html">Read more</a> | <a href="#" onclick="redirectToReservation('Houh Delivery')">Book Now</a></p>
+                        <p>Enjoy hand-prepared Aqabawi Houh, a delicate pastry soaked in aromatic syrup. Free delivery within Aqaba.</p>
                         <p class="price">10 JD / plate</p>
+                        <p class="experience-detail">Minimum 3 plates · Order at least 24 hours ahead</p>
+                        <p class="experience-actions"><a href="houh-delivery.html">View details</a> <a href="Reservation.html?experience=Houh%20Delivery" class="experience-reserve" aria-label="Reserve Houh Delivery">Reserve</a></p>
                     </div>
                 </article>
 
@@ -162,9 +169,9 @@
                     <img src="images/cooking-class-aqaba.webp" alt="Live online Jordanian cooking class via Zoom" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%231b4a6f%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2264%22 fill=%22%23f9d56e%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E💻%3C/text%3E%3C/svg%3E'" />
                     <div class="product-info">
                         <h3>Online Cooking Class</h3>
-                        <p>Can't make it to Aqaba? Cook with us live over Zoom &mdash; hummus &amp; falafel, maqluba, mansaf, or tabbouleh, wherever you are.</p>
-                        <p><a href="cookingclass-online.html">Read more</a> | <a href="online-booking.html">Book Now</a></p>
+                        <p>Cook Jordanian favorites live over Zoom, wherever you are &mdash; hummus &amp; falafel, maqluba, mansaf, or tabbouleh.</p>
                         <p class="price">$20 / person</p>
+                        <p class="experience-actions"><a href="cookingclass-online.html">View details</a> <a href="online-booking.html" class="experience-reserve" aria-label="Reserve Online Cooking Class">Reserve</a></p>
                     </div>
                 </article>
             </div>
@@ -314,7 +321,8 @@
     </main>
 
     <!-- ===== WHATSAPP FIXED ===== -->
-    <a href="https://wa.me/message/XW5T6AR3LHINN1" target="_blank" rel="noopener noreferrer" class="whatsapp-fixed" aria-label="Contact Us on WhatsApp">
+    <a href="https://wa.me/message/XW5T6AR3LHINN1" target="_blank" rel="noopener noreferrer" class="whatsapp-fixed" aria-label="Contact our family on WhatsApp">
+        <span>WhatsApp</span>
         <img src="images/whatsapp.png" alt="Contact Us on WhatsApp" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2256%22 height=%2256%22%3E%3Crect width=%2256%22 height=%2256%22 fill=%22%2325d366%22 rx=%2228%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2232%22 fill=%22white%22 text-anchor=%22middle%22 dominant-baseline=%22central%22%3E💬%3C/text%3E%3C/svg%3E'" />
     </a>
 
