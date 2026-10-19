@@ -4344,3 +4344,21 @@ blockquote footer {
         gap: 12px;
     }
 }
+
+
+
+/* ===== Homepage brand-story section order and conversion CTA ===== */
+#main-content>.meet-family-section{margin-top:clamp(36px,6vw,84px);margin-bottom:clamp(42px,6vw,84px)}
+#main-content>.experiences,#main-content>.gallery-section,#main-content>#blog-section,#main-content>.review-section-advanced{margin-top:clamp(42px,6vw,84px);margin-bottom:clamp(42px,6vw,84px)}
+#main-content>.experiences>h2,#main-content>.gallery-section>.gallery-title,#main-content>#blog-section>h2,#main-content>.review-section-advanced>h2{max-width:900px;margin-left:auto;margin-right:auto;text-align:center}
+#blog-section{scroll-margin-top:100px}
+.plan-visit-section{display:flex;align-items:center;justify-content:space-between;gap:28px;max-width:1180px;margin:clamp(48px,7vw,96px) auto 36px;padding:clamp(28px,5vw,58px);border-radius:18px;background:linear-gradient(125deg,#123e49,#1d6064);color:#fff;box-shadow:0 18px 48px rgba(12,48,55,.14)}
+.plan-visit-copy{max-width:650px}
+.plan-visit-eyebrow{margin:0 0 12px;color:#efd6a6;font-size:.74rem;font-weight:700;letter-spacing:.14em}
+.plan-visit-section h2{margin:0;color:#fff;font-family:var(--font-heading,Georgia,serif);font-size:clamp(1.8rem,3.4vw,3rem);line-height:1.12}
+.plan-visit-section .plan-visit-copy>p:last-child{margin:14px 0 0;color:rgba(255,255,255,.84);line-height:1.75}
+.plan-visit-actions{display:flex;flex-direction:column;align-items:flex-start;gap:13px;flex-shrink:0}
+.plan-visit-actions .button{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:14px 22px;border-radius:5px;background:#efd6a6;color:#183b40;text-decoration:none;font-weight:700}
+.plan-visit-actions .button:hover{background:#f8e7c6}
+.plan-visit-contact{color:#fff;text-underline-offset:4px;font-size:.92rem}
+@media(max-width:720px){.plan-visit-section{align-items:stretch;flex-direction:column;margin-left:16px;margin-right:16px;padding:28px 22px}.plan-visit-actions{align-items:stretch}.plan-visit-actions .button{justify-content:center}.plan-visit-contact{text-align:center}}
