@@ -1,22 +1,22 @@
 /* Suhaila Locals — Jordanian editorial homepage direction
-   Warm sandstone, terracotta, olive and heritage-inspired detailing.
+   Warm ivory, deep teal, muted sage and heritage-inspired detailing.
    Homepage-only overrides; booking pages and shared functionality remain untouched. */
 :root {
-  --sl-sand: #f3eadb;
-  --sl-paper: #fbf7ee;
-  --sl-terracotta: #a84f36;
-  --sl-terracotta-dark: #813b2a;
-  --sl-olive: #777a55;
-  --sl-forest: #203d34;
-  --sl-ink: #292b24;
-  --sl-muted: #716c60;
-  --sl-line: #d9c8b1;
+  --sl-sand: #f0eee3;
+  --sl-paper: #faf8f0;
+  --sl-terracotta: #17504d;
+  --sl-terracotta-dark: #103c3a;
+  --sl-olive: #c7c6a5;
+  --sl-forest: #174b48;
+  --sl-ink: #252c29;
+  --sl-muted: #6c7169;
+  --sl-line: #d7d4c7;
 }
 body.homepage {
   background: var(--sl-paper);
   color: var(--sl-ink);
   font-family: Inter, Arial, sans-serif;
-  background-image: radial-gradient(rgba(127,94,61,.055) .7px, transparent .7px);
+  background-image: radial-gradient(rgba(56,79,73,.045) .7px, transparent .7px);
   background-size: 7px 7px;
 }
 .homepage .navbar {
@@ -24,7 +24,7 @@ body.homepage {
   padding: 10px clamp(18px, 5vw, 76px);
   background: var(--sl-paper);
   border-bottom: 1px solid var(--sl-line);
-  box-shadow: 0 3px 18px rgba(45,34,20,.05);
+  box-shadow: 0 3px 18px rgba(29,55,50,.06);
 }
 .homepage .logo-text { color: var(--sl-forest); font-family: Georgia, serif; font-size: 1.25rem; letter-spacing: -.035em; }
 .homepage .logo-text img { max-height: 48px; width: auto; }
@@ -34,7 +34,7 @@ body.homepage {
 .homepage .navbar-links a.active:after,
 .homepage .navbar-links a:hover:after { background: var(--sl-terracotta); }
 .homepage .navbar-links .nav-reserve,
-.homepage .navbar-links a.nav-reserve { background: var(--sl-terracotta); color: #fff8ee; border-radius: 3px; padding: 12px 19px; }
+.homepage .navbar-links a.nav-reserve { background: var(--sl-terracotta); color: #fbf8ed; border-radius: 3px; padding: 12px 19px; }
 .homepage .hamburger { color: var(--sl-forest); }
 .homepage .hero-section {
   position: relative;
@@ -89,8 +89,8 @@ body.homepage {
 .homepage .review-section-advanced > h2 { color: var(--sl-forest); font: 700 clamp(2rem, 3vw, 3rem)/1.08 Georgia, serif; letter-spacing: -.035em; }
 .homepage .experiences > h2 { text-align: left; max-width: 1220px; margin: 0 auto 26px; }
 .homepage .product-gallery { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; max-width: 1220px; margin: 0 auto; }
-.homepage .product-item { background: #fffaf1; border: 1px solid #e5d8c5; border-radius: 4px; overflow: hidden; box-shadow: 0 7px 20px rgba(57,43,26,.07); transition: transform .25s ease, box-shadow .25s ease; }
-.homepage .product-item:hover { transform: translateY(-4px); box-shadow: 0 13px 28px rgba(57,43,26,.12); }
+.homepage .product-item { background: #faf8f0; border: 1px solid #e5d8c5; border-radius: 4px; overflow: hidden; box-shadow: 0 7px 20px rgba(29,55,50,.07); transition: transform .25s ease, box-shadow .25s ease; }
+.homepage .product-item:hover { transform: translateY(-4px); box-shadow: 0 13px 28px rgba(29,55,50,.12); }
 .homepage .product-image { width: 100%; aspect-ratio: 1.42 / 1; object-fit: cover; display: block; }
 .homepage .product-info { padding: 18px 19px 20px; text-align: left; display: flex; flex-direction: column; min-height: 190px; }
 .homepage .product-info h3 { color: var(--sl-forest); font: 700 1.28rem/1.2 Georgia, serif; margin: 0 0 8px; }
@@ -122,23 +122,23 @@ body.homepage {
 .homepage #blog-section > p { max-width: 1220px; margin-left: auto; margin-right: auto; }
 .homepage #blog-section > p { color: var(--sl-muted); line-height: 1.7; }
 .homepage .recent-posts { max-width: 1220px; margin: 28px auto 0; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
-.homepage .recent-posts article { background: var(--sl-paper); border: 1px solid #dfd0bb; border-radius: 4px; padding: 24px; box-shadow: 0 5px 16px rgba(57,43,26,.05); }
+.homepage .recent-posts article { background: var(--sl-paper); border: 1px solid #dfd0bb; border-radius: 4px; padding: 24px; box-shadow: 0 5px 16px rgba(29,55,50,.05); }
 .homepage .recent-posts h3 { font: 700 1.22rem/1.25 Georgia, serif; }
 .homepage .recent-posts h3 a { color: var(--sl-forest); text-decoration-color: var(--sl-terracotta); text-underline-offset: 4px; }
 .homepage .recent-posts p { color: var(--sl-muted); line-height: 1.65; }
 .homepage .review-section-advanced { padding: 56px clamp(18px, 4vw, 64px); background: var(--sl-terracotta); color: #fff7eb; }
 .homepage .review-section-advanced > h2 { color: #fff7eb; max-width: 1220px; margin: 0 auto 25px; }
 .homepage .review-carousel { max-width: 1220px; margin: auto; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
-.homepage .review-card { background: #f8efe0; color: var(--sl-ink); border: 1px solid rgba(255,255,255,.3); border-radius: 4px; padding: 23px; box-shadow: none; }
+.homepage .review-card { background: #f4f1e6; color: var(--sl-ink); border: 1px solid rgba(255,255,255,.28); border-radius: 4px; padding: 23px; box-shadow: none; }
 .homepage .review-card p { color: #514d43; line-height: 1.7; }
 .homepage .reviewer span { color: var(--sl-forest); font-weight: 700; }
 .homepage footer { background: var(--sl-forest); color: #f8efe0; border-top: 5px solid var(--sl-terracotta); padding-top: 42px; }
 .homepage footer a { color: #f8efe0; }
-.homepage footer h3 { color: #f0d3ad; }
+.homepage footer h3 { color: #d9d3a8; }
 .homepage .whatsapp-float { filter: saturate(.8); }
 .homepage #tripPlannerPopup .trip-planner-modal { border-radius: 5px; }
 .homepage a:focus-visible,
-.homepage button:focus-visible { outline: 3px solid #c87955; outline-offset: 3px; }
+.homepage button:focus-visible { outline: 3px solid #a9b9a5; outline-offset: 3px; }
 @media (max-width: 900px) {
   .homepage .hero-section { grid-template-columns: 1fr; min-height: 0; }
   .homepage .hero-shape { position: relative; inset: auto; grid-column: 1; grid-row: 1; height: 310px; clip-path: none; background-position: center; }
