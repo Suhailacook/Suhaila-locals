@@ -1,0 +1,590 @@
+/*
+ * Warm Jordanian homepage refresh
+ * Homepage-only visual redesign. Existing HTML, reservation links and scripts remain intact.
+ */
+body.homepage {
+  --wj-ink: #24352c;
+  --wj-forest: #263f35;
+  --wj-forest-deep: #1c3028;
+  --wj-terracotta: #b75e43;
+  --wj-terracotta-dark: #96472f;
+  --wj-sand: #f5efe4;
+  --wj-cream: #fffdf8;
+  --wj-olive: #7a8052;
+  --wj-gold: #d9b66f;
+  --wj-muted: #6e756c;
+  background: var(--wj-sand);
+  color: var(--wj-ink);
+}
+
+.homepage .navbar {
+  background: rgba(255, 253, 248, 0.97);
+  color: var(--wj-ink);
+  padding: 12px clamp(16px, 4vw, 54px);
+  border-bottom: 1px solid rgba(38, 63, 53, 0.12);
+  box-shadow: 0 8px 28px rgba(36, 53, 44, 0.07);
+  backdrop-filter: blur(14px);
+}
+
+.homepage .navbar .logo-text {
+  color: var(--wj-forest);
+  gap: 10px;
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.homepage .navbar .logo-text img {
+  height: 42px;
+  max-width: 150px;
+  object-fit: contain;
+}
+
+.homepage .navbar .logo-text span {
+  color: #c6b99f;
+}
+
+.homepage .navbar-links {
+  gap: 3px;
+}
+
+.homepage .navbar-links a,
+.homepage .navbar-links .dropbtn {
+  color: var(--wj-forest);
+  border-radius: 999px;
+  padding: 9px 13px;
+  font-size: 0.88rem;
+}
+
+.homepage .navbar-links a:hover,
+.homepage .navbar-links a.active,
+.homepage .navbar-links .dropbtn:hover {
+  background: #e9dfcb;
+  color: var(--wj-forest-deep);
+  box-shadow: none;
+  transform: none;
+}
+
+.homepage .navbar-links .nav-reserve {
+  background: var(--wj-terracotta);
+  color: #fffdf8;
+  padding-inline: 18px;
+}
+
+.homepage .navbar-links .nav-reserve:hover {
+  background: var(--wj-terracotta-dark);
+  color: #fff;
+}
+
+.homepage .hero-section {
+  min-height: 590px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: clamp(70px, 10vw, 120px) 24px;
+  background:
+    linear-gradient(90deg, rgba(26, 43, 34, 0.88) 0%, rgba(26, 43, 34, 0.66) 54%, rgba(26, 43, 34, 0.22) 100%),
+    url("images/aqaba-beach-sunset.webp") center 48% / cover no-repeat,
+    var(--wj-forest);
+}
+
+.homepage .hero-section .hero-shape {
+  background: radial-gradient(circle at 12% 90%, rgba(217, 182, 111, 0.2), transparent 42%);
+}
+
+.homepage .hero-content-wrapper {
+  width: min(100%, 1050px);
+  margin: 0 auto;
+}
+
+.homepage .hero-section .hero-eyebrow {
+  color: #f2d8a0;
+  background: rgba(255, 253, 248, 0.1);
+  border-color: rgba(242, 216, 160, 0.48);
+  letter-spacing: 0.11em;
+}
+
+.homepage .hero-section h1 {
+  max-width: 760px;
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 6vw, 5.1rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.homepage .hero-section h1 .highlight {
+  color: #f0c982;
+}
+
+.homepage .hero-section .hero-subtitle {
+  max-width: 590px;
+  margin-top: 22px;
+  color: rgba(255, 253, 248, 0.9);
+  font-size: clamp(1.02rem, 1.8vw, 1.2rem);
+  line-height: 1.8;
+}
+
+.homepage .hero-cta-group {
+  justify-content: flex-start;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.homepage .hero-cta-group .button {
+  min-height: 48px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.homepage .hero-cta-group .button-primary {
+  background: var(--wj-terracotta);
+  border-color: var(--wj-terracotta);
+  color: #fffdf8;
+  box-shadow: 0 10px 28px rgba(12, 22, 16, 0.18);
+}
+
+.homepage .hero-cta-group .button-primary:hover {
+  background: var(--wj-terracotta-dark);
+  border-color: var(--wj-terracotta-dark);
+  transform: translateY(-2px);
+}
+
+.homepage .hero-cta-group .button-ghost {
+  border-color: rgba(255, 253, 248, 0.65);
+  color: #fffdf8;
+  background: rgba(255, 253, 248, 0.08);
+}
+
+.homepage .hero-local-note {
+  color: #f3e7d0;
+  margin-top: 22px;
+  font-size: 0.92rem;
+}
+
+.homepage .hero-contact a {
+  color: #f2d8a0;
+}
+
+.homepage .hero-scroll-cue {
+  color: #fffdf8;
+  border-color: rgba(255, 253, 248, 0.55);
+}
+
+.homepage .experiences {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: clamp(58px, 7vw, 88px) 24px;
+}
+
+.homepage .experiences h2,
+.homepage .gallery-title,
+.homepage #blog-section h2,
+.homepage .review-section-advanced h2 {
+  color: var(--wj-forest);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  letter-spacing: -0.035em;
+}
+
+.homepage .experiences h2::after,
+.homepage .gallery-title::after {
+  width: 54px;
+  height: 3px;
+  background: var(--wj-terracotta);
+  margin-top: 15px;
+}
+
+.homepage .product-gallery {
+  gap: 22px;
+  margin-top: 36px;
+}
+
+.homepage .product-item {
+  overflow: hidden;
+  text-align: left;
+  padding: 0 0 22px;
+  border: 1px solid rgba(68, 77, 59, 0.12);
+  border-radius: 18px;
+  background: var(--wj-cream);
+  box-shadow: 0 8px 26px rgba(43, 52, 39, 0.055);
+}
+
+.homepage .product-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(183, 94, 67, 0.35);
+  box-shadow: 0 18px 40px rgba(43, 52, 39, 0.11);
+}
+
+.homepage .product-item .product-image {
+  height: 220px;
+  border-radius: 0;
+  margin: 0 0 18px;
+  background: #e4dac6;
+}
+
+.homepage .product-info {
+  padding: 0 22px;
+}
+
+.homepage .product-item .product-info h3 {
+  color: var(--wj-forest);
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.homepage .product-item .product-info p {
+  color: var(--wj-muted);
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+.homepage .product-info .price {
+  color: var(--wj-terracotta) !important;
+  font-size: 1.12rem !important;
+}
+
+.homepage .product-info .experience-actions {
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.homepage .product-info .experience-actions a:not(.experience-reserve) {
+  color: var(--wj-forest);
+  text-decoration: underline;
+  text-decoration-color: #c7bda7;
+  text-underline-offset: 4px;
+}
+
+.homepage .product-info .experience-reserve {
+  background: var(--wj-terracotta);
+  color: #fffdf8;
+  border-radius: 999px;
+  padding: 9px 17px;
+}
+
+.homepage .product-info .experience-reserve:hover {
+  background: var(--wj-terracotta-dark);
+  color: #fff;
+}
+
+.homepage .gallery-section {
+  max-width: none;
+  margin: 0;
+  padding: clamp(56px, 7vw, 86px) max(24px, calc((100% - 1190px) / 2));
+  background: #eae2d2;
+}
+
+.homepage .gallery-title {
+  margin-bottom: 34px;
+}
+
+.homepage .gallery-grid {
+  gap: 16px;
+}
+
+.homepage .gallery-item {
+  border: 0;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(43, 52, 39, 0.1);
+  background: var(--wj-cream);
+}
+
+.homepage .gallery-item:hover {
+  border-color: transparent;
+  transform: translateY(-4px);
+}
+
+.homepage .gallery-item img {
+  height: 230px;
+}
+
+.homepage .gallery-item .gallery-overlay {
+  background: linear-gradient(180deg, rgba(28, 48, 40, 0.04), rgba(28, 48, 40, 0.7));
+}
+
+.homepage .gallery-caption {
+  color: var(--wj-forest);
+  background: var(--wj-cream);
+  font-weight: 700;
+}
+
+.homepage .meet-family-section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(64px, 8vw, 100px) 24px;
+  gap: clamp(28px, 5vw, 64px);
+}
+
+.homepage .meet-family-section .meet-family-img {
+  height: 460px;
+  border-radius: 18px;
+  box-shadow: 16px 16px 0 #e4d4b8;
+  border: 0;
+}
+
+.homepage .meet-family-section .meet-family-content h2 {
+  color: var(--wj-forest);
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.homepage .meet-family-section .meet-family-content h2 .highlight {
+  color: var(--wj-terracotta);
+}
+
+.homepage .meet-family-section .meet-family-content h3 {
+  color: var(--wj-olive);
+}
+
+.homepage .meet-family-section .meet-family-content p {
+  color: var(--wj-muted);
+  line-height: 1.85;
+}
+
+.homepage .button,
+.homepage a.button {
+  border-radius: 999px;
+}
+
+.homepage .meet-family-content .button-primary,
+.homepage #blog-section > .button {
+  background: var(--wj-terracotta);
+  color: #fffdf8;
+  border-color: var(--wj-terracotta);
+}
+
+.homepage .plan-trip-band {
+  margin: 0 auto 24px;
+}
+
+.homepage .plan-trip-btn {
+  background: var(--wj-forest);
+  border-color: var(--wj-forest);
+  color: #fffdf8;
+  box-shadow: 0 8px 24px rgba(38, 63, 53, 0.18);
+}
+
+.homepage .plan-trip-btn:hover {
+  background: var(--wj-forest-deep);
+  box-shadow: 0 12px 30px rgba(38, 63, 53, 0.24);
+}
+
+.homepage .today-widget-content {
+  border-color: #e3d8c5;
+  border-radius: 16px;
+  box-shadow: 0 8px 26px rgba(43, 52, 39, 0.06);
+}
+
+.homepage #blog-section {
+  max-width: none;
+  margin: 0;
+  padding: clamp(58px, 7vw, 82px) 24px;
+  background: var(--wj-cream);
+}
+
+.homepage #blog-section > h2,
+.homepage #blog-section > p,
+.homepage #blog-section .recent-posts,
+.homepage #blog-section > .button {
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.homepage #blog-section > p {
+  color: var(--wj-muted);
+  margin-top: 14px;
+  margin-bottom: 28px;
+}
+
+.homepage #blog-section .recent-posts article {
+  background: var(--wj-sand);
+  border: 1px solid #e8dece;
+  border-radius: 16px;
+  padding: 26px;
+}
+
+.homepage #blog-section .recent-posts h3 a {
+  color: var(--wj-forest);
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+.homepage #blog-section .recent-posts p {
+  color: var(--wj-muted);
+}
+
+.homepage .review-section-advanced {
+  background: var(--wj-sand);
+  padding: clamp(58px, 7vw, 84px) 24px;
+}
+
+.homepage .review-section-advanced h2 {
+  margin-bottom: 30px;
+}
+
+.homepage .review-card {
+  background: var(--wj-cream);
+  border: 1px solid #e6ddce;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(43, 52, 39, 0.06);
+}
+
+.homepage .reviewer span {
+  color: var(--wj-forest);
+  font-weight: 700;
+}
+
+.homepage footer {
+  background: var(--wj-forest-deep);
+  border-top: 4px solid var(--wj-gold);
+  color: #e5e4d8;
+}
+
+.homepage footer a {
+  color: #e5e4d8;
+}
+
+.homepage footer a:hover,
+.homepage footer .footer-column h3,
+.homepage footer .footer-logo span {
+  color: #f0c982;
+}
+
+.homepage .whatsapp-fixed {
+  color: var(--wj-forest);
+}
+
+.homepage a:focus-visible,
+.homepage button:focus-visible {
+  outline: 3px solid var(--wj-terracotta);
+  outline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .homepage .navbar {
+    padding: 10px 18px;
+  }
+
+  .homepage .navbar .logo-text img {
+    height: 38px;
+  }
+
+  .homepage .hero-section {
+    min-height: 540px;
+    background-position: center, 60% center, center;
+  }
+
+  .homepage .meet-family-section .meet-family-img {
+    height: 360px;
+  }
+}
+
+@media (max-width: 600px) {
+  .homepage .navbar .logo-text {
+    font-size: 1rem;
+    gap: 7px;
+  }
+
+  .homepage .navbar .logo-text img {
+    max-width: 112px;
+    height: 34px;
+  }
+
+  .homepage .navbar-links a,
+  .homepage .navbar-links .dropbtn {
+    padding: 10px 12px;
+  }
+
+  .homepage .hero-section {
+    min-height: 590px;
+    padding: 74px 22px 82px;
+    text-align: left;
+    background:
+      linear-gradient(90deg, rgba(26, 43, 34, 0.86), rgba(26, 43, 34, 0.52)),
+      url("images/aqaba-beach-sunset.webp") center / cover no-repeat,
+      var(--wj-forest);
+  }
+
+  .homepage .hero-section h1 {
+    font-size: clamp(2.65rem, 12vw, 3.8rem);
+  }
+
+  .homepage .hero-cta-group {
+    align-items: stretch;
+    flex-direction: column;
+    max-width: 320px;
+  }
+
+  .homepage .hero-cta-group .button {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .homepage .experiences {
+    padding: 54px 16px;
+  }
+
+  .homepage .product-gallery {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .homepage .product-item .product-image {
+    height: 230px;
+  }
+
+  .homepage .product-info {
+    padding: 0 19px;
+  }
+
+  .homepage .gallery-section {
+    padding: 54px 16px;
+  }
+
+  .homepage .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .homepage .gallery-item img {
+    height: 150px;
+  }
+
+  .homepage .gallery-caption {
+    font-size: 0.82rem;
+    padding: 10px 8px;
+  }
+
+  .homepage .meet-family-section {
+    grid-template-columns: 1fr;
+    padding: 58px 22px;
+  }
+
+  .homepage .meet-family-section .meet-family-img {
+    height: 290px;
+    box-shadow: 8px 8px 0 #e4d4b8;
+  }
+
+  .homepage #blog-section .recent-posts article {
+    padding: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .homepage *,
+  .homepage *::before,
+  .homepage *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
