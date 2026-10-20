@@ -557,3 +557,60 @@ body.homepage {
     padding: 8px 12px;
   }
 }
+
+
+/* Mobile polish based on the live-page screenshot */
+.homepage .family-experience-point div {
+  min-width: 0;
+}
+.homepage .family-experience-point strong {
+  display: block;
+  margin: 0 0 5px;
+  line-height: 1.35;
+}
+.homepage .family-experience-point div span:not(.family-point-icon) {
+  display: block;
+  line-height: 1.55;
+}
+.homepage .meet-family-content .family-cta-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+}
+.homepage .meet-family-content .family-cta-group > a {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+@media (max-width: 560px) {
+  .homepage .meet-family-content .family-cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .homepage .meet-family-content .family-cta-group .button {
+    width: 100%;
+    min-height: 50px;
+    padding: 13px 16px;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.35;
+  }
+  .homepage .meet-family-content .family-cta-group .family-secondary-link {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 7px;
+    width: auto;
+    padding: 2px 0;
+    line-height: 1.45;
+    white-space: normal;
+  }
+  .homepage .plan-trip-band {
+    padding: 18px 16px 8px;
+  }
+  .homepage .today-widget {
+    margin-bottom: 26px;
+  }
+}
