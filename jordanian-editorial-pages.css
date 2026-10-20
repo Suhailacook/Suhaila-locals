@@ -1,0 +1,113 @@
+/* Aqaba Local Experiences — shared editorial design for interior pages */
+:root {
+  --sl-sand: #f0eee3;
+  --sl-paper: #faf8f0;
+  --sl-terracotta: #17504d;
+  --sl-terracotta-dark: #103c3a;
+  --sl-olive: #c7c6a5;
+  --sl-forest: #174b48;
+  --sl-ink: #252c29;
+  --sl-muted: #6c7169;
+  --sl-line: #d7d4c7;
+}
+html { scroll-behavior: smooth; }
+body:not(.homepage) {
+  color: var(--sl-ink);
+  background-color: var(--sl-paper);
+  background-image: radial-gradient(rgba(56,79,73,.035) .7px, transparent .7px);
+  background-size: 7px 7px;
+  font-family: Inter, Arial, sans-serif;
+}
+body:not(.homepage) .navbar {
+  box-sizing: border-box;
+  min-height: 76px;
+  padding: 10px clamp(18px, 5vw, 76px);
+  background: var(--sl-paper);
+  border-bottom: 1px solid var(--sl-line);
+  box-shadow: 0 3px 18px rgba(29,55,50,.06);
+}
+body:not(.homepage) .logo-text,
+body:not(.homepage) .navbar .logo-text {
+  color: var(--sl-forest);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: -.025em;
+}
+body:not(.homepage) .navbar a,
+body:not(.homepage) .navbar .dropbtn { color: var(--sl-forest); }
+body:not(.homepage) .navbar a:hover,
+body:not(.homepage) .navbar .dropbtn:hover { color: var(--sl-terracotta-dark); }
+body:not(.homepage) .hamburger { color: var(--sl-forest); }
+body:not(.homepage) h1,
+body:not(.homepage) h2,
+body:not(.homepage) h3 {
+  color: var(--sl-forest);
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: -.025em;
+}
+body:not(.homepage) p { line-height: 1.75; }
+body:not(.homepage) a { text-underline-offset: 4px; }
+body:not(.homepage) .button,
+body:not(.homepage) button.button,
+body:not(.homepage) .btn,
+body:not(.homepage) .button-primary,
+body:not(.homepage) .nav-reserve {
+  border-radius: 4px;
+}
+body:not(.homepage) .button-primary,
+body:not(.homepage) .nav-reserve,
+body:not(.homepage) .experience-reserve,
+body:not(.homepage) .btn-primary {
+  background: var(--sl-forest);
+  border-color: var(--sl-forest);
+  color: var(--sl-paper);
+}
+body:not(.homepage) .button-primary:hover,
+body:not(.homepage) .nav-reserve:hover,
+body:not(.homepage) .experience-reserve:hover,
+body:not(.homepage) .btn-primary:hover {
+  background: var(--sl-terracotta-dark);
+  border-color: var(--sl-terracotta-dark);
+  color: #fff;
+}
+body:not(.homepage) input,
+body:not(.homepage) select,
+body:not(.homepage) textarea {
+  max-width: 100%;
+  border-color: var(--sl-line);
+  border-radius: 4px;
+}
+body:not(.homepage) input:focus,
+body:not(.homepage) select:focus,
+body:not(.homepage) textarea:focus {
+  outline-color: #8aa6a0;
+  border-color: var(--sl-forest);
+}
+body:not(.homepage) footer {
+  background: var(--sl-forest);
+  color: var(--sl-paper);
+  border-top: 4px solid var(--sl-olive);
+}
+body:not(.homepage) footer h2,
+body:not(.homepage) footer h3 { color: #e5dfc4; }
+body:not(.homepage) footer a { color: var(--sl-paper); }
+body:not(.homepage) img { max-width: 100%; }
+@media (max-width: 900px) {
+  html, body:not(.homepage) {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: clip;
+  }
+  body:not(.homepage) .navbar,
+  body:not(.homepage) main,
+  body:not(.homepage) footer,
+  body:not(.homepage) header,
+  body:not(.homepage) section {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
+  }
+  body:not(.homepage) .navbar { padding-left: 18px; padding-right: 18px; }
+  body:not(.homepage) img { height: auto; }
+}
