@@ -1,0 +1,178 @@
+/* Suhaila Locals — Jordanian editorial homepage direction
+   Warm sandstone, terracotta, olive and heritage-inspired detailing.
+   Homepage-only overrides; booking pages and shared functionality remain untouched. */
+:root {
+  --sl-sand: #f3eadb;
+  --sl-paper: #fbf7ee;
+  --sl-terracotta: #a84f36;
+  --sl-terracotta-dark: #813b2a;
+  --sl-olive: #777a55;
+  --sl-forest: #203d34;
+  --sl-ink: #292b24;
+  --sl-muted: #716c60;
+  --sl-line: #d9c8b1;
+}
+body.homepage {
+  background: var(--sl-paper);
+  color: var(--sl-ink);
+  font-family: Inter, Arial, sans-serif;
+  background-image: radial-gradient(rgba(127,94,61,.055) .7px, transparent .7px);
+  background-size: 7px 7px;
+}
+.homepage .navbar {
+  min-height: 76px;
+  padding: 10px clamp(18px, 5vw, 76px);
+  background: var(--sl-paper);
+  border-bottom: 1px solid var(--sl-line);
+  box-shadow: 0 3px 18px rgba(45,34,20,.05);
+}
+.homepage .logo-text { color: var(--sl-forest); font-family: Georgia, serif; font-size: 1.25rem; letter-spacing: -.035em; }
+.homepage .logo-text img { max-height: 48px; width: auto; }
+.homepage .navbar-links { gap: clamp(12px, 2vw, 28px); }
+.homepage .navbar-links a,
+.homepage .navbar-links .dropbtn { color: var(--sl-forest); font-size: .88rem; }
+.homepage .navbar-links a.active:after,
+.homepage .navbar-links a:hover:after { background: var(--sl-terracotta); }
+.homepage .navbar-links .nav-reserve,
+.homepage .navbar-links a.nav-reserve { background: var(--sl-terracotta); color: #fff8ee; border-radius: 3px; padding: 12px 19px; }
+.homepage .hamburger { color: var(--sl-forest); }
+.homepage .hero-section {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(280px, .82fr) minmax(0, 1.18fr);
+  align-items: stretch;
+  min-height: 450px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--sl-sand);
+  border-bottom: 1px solid var(--sl-line);
+}
+.homepage .hero-shape {
+  position: absolute;
+  inset: 0 0 0 42%;
+  z-index: 0;
+  background:
+    linear-gradient(90deg, rgba(32,61,52,.08), rgba(32,61,52,.02)),
+    url("images/aqaba-marina.webp") center 52% / cover no-repeat;
+  clip-path: polygon(5% 0,100% 0,100% 100%,0 100%,3% 75%,0 52%,4% 28%);
+}
+.homepage .hero-content-wrapper {
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+  align-self: center;
+  max-width: none;
+  width: auto;
+  padding: clamp(32px, 5vw, 72px) clamp(24px, 5vw, 74px);
+  margin: 0;
+  background: linear-gradient(90deg, var(--sl-sand) 84%, rgba(243,234,219,.94));
+}
+.homepage .hero-eyebrow { color: var(--sl-terracotta-dark); text-transform: uppercase; letter-spacing: .16em; font-size: .72rem; font-weight: 700; }
+.homepage #hero-title { max-width: 540px; color: var(--sl-forest); font: 700 clamp(2.6rem, 4.7vw, 4.8rem)/.99 Georgia, "Times New Roman", serif; letter-spacing: -.045em; margin: 18px 0; }
+.homepage #hero-title .highlight { color: var(--sl-terracotta); }
+.homepage .hero-subtitle { max-width: 410px; color: #514f43; font-size: 1rem; line-height: 1.75; }
+.homepage .hero-cta-group { margin-top: 25px; }
+.homepage .button,
+.homepage .button-primary,
+.homepage .button-ghost { border-radius: 3px; font-weight: 650; }
+.homepage .button-primary,
+.homepage .hero-cta-group .button-primary { background: var(--sl-terracotta); color: white; border: 1px solid var(--sl-terracotta); box-shadow: none; }
+.homepage .button-primary:hover,
+.homepage .hero-cta-group .button-primary:hover { background: var(--sl-terracotta-dark); }
+.homepage .button-ghost,
+.homepage .hero-cta-group .button-ghost { background: transparent; border: 1px solid var(--sl-forest); color: var(--sl-forest); }
+.homepage .experiences { padding: 52px clamp(18px, 4vw, 64px) 58px; background: var(--sl-paper); }
+.homepage .experiences > h2,
+.homepage .gallery-title,
+.homepage #blog-section > h2,
+.homepage .review-section-advanced > h2 { color: var(--sl-forest); font: 700 clamp(2rem, 3vw, 3rem)/1.08 Georgia, serif; letter-spacing: -.035em; }
+.homepage .experiences > h2 { text-align: left; max-width: 1220px; margin: 0 auto 26px; }
+.homepage .product-gallery { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; max-width: 1220px; margin: 0 auto; }
+.homepage .product-item { background: #fffaf1; border: 1px solid #e5d8c5; border-radius: 4px; overflow: hidden; box-shadow: 0 7px 20px rgba(57,43,26,.07); transition: transform .25s ease, box-shadow .25s ease; }
+.homepage .product-item:hover { transform: translateY(-4px); box-shadow: 0 13px 28px rgba(57,43,26,.12); }
+.homepage .product-image { width: 100%; aspect-ratio: 1.42 / 1; object-fit: cover; display: block; }
+.homepage .product-info { padding: 18px 19px 20px; text-align: left; display: flex; flex-direction: column; min-height: 190px; }
+.homepage .product-info h3 { color: var(--sl-forest); font: 700 1.28rem/1.2 Georgia, serif; margin: 0 0 8px; }
+.homepage .product-info p,
+.homepage .product-info .experience-detail { color: var(--sl-muted); font-size: .9rem; line-height: 1.6; }
+.homepage .product-info .price { color: var(--sl-terracotta-dark); font-weight: 750; margin-top: auto; padding-top: 12px; }
+.homepage .product-info .experience-reserve { background: var(--sl-terracotta); color: #fffaf1; border-radius: 3px; padding: 10px 15px; }
+.homepage .product-info .experience-reserve:hover { background: var(--sl-terracotta-dark); color: white; }
+.homepage .gallery-section { padding: 58px clamp(18px, 4vw, 64px) 64px; background: #e9e1d2; border-top: 1px solid var(--sl-line); border-bottom: 1px solid var(--sl-line); }
+.homepage .gallery-section:before { content: "LOCAL LIFE · FOOD · CRAFT · SEA"; display: block; max-width: 1220px; margin: 0 auto 10px; color: var(--sl-terracotta-dark); letter-spacing: .18em; font-size: .68rem; font-weight: 750; }
+.homepage .gallery-title { max-width: 1220px; margin: 0 auto 28px; text-align: left; }
+.homepage .gallery-grid { max-width: 1220px; margin: auto; display: grid; grid-template-columns: 1.2fr .8fr .8fr; grid-auto-rows: 220px; gap: 14px; }
+.homepage .gallery-item { position: relative; min-width: 0; overflow: hidden; border-radius: 3px; background: #d1c0a5; }
+.homepage .gallery-item:first-child { grid-row: span 2; }
+.homepage .gallery-item:nth-child(4) { grid-column: span 2; }
+.homepage .gallery-img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.homepage .gallery-item:hover .gallery-img { transform: scale(1.04); }
+.homepage .gallery-overlay { background: linear-gradient(0deg, rgba(21,39,32,.82), transparent 70%); color: #fff8ee; opacity: 1; display: flex; align-items: flex-end; justify-content: flex-start; padding: 18px; }
+.homepage .gallery-overlay h3,
+.homepage .gallery-overlay p { color: #fff8ee; text-align: left; }
+.homepage .meet-family-section { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(300px,.95fr); align-items: stretch; gap: 0; padding: 0; margin: 0; background: var(--sl-paper); border-bottom: 1px solid var(--sl-line); }
+.homepage .meet-family-img { width: 100%; height: 100%; min-height: 390px; object-fit: cover; }
+.homepage .meet-family-content { padding: clamp(30px, 5vw, 76px); align-self: center; }
+.homepage .meet-family-content h2 { color: var(--sl-forest); font: 700 clamp(2rem, 3.3vw, 3.3rem)/1.05 Georgia, serif; letter-spacing: -.035em; }
+.homepage .meet-family-content .highlight { color: var(--sl-terracotta); }
+.homepage .meet-family-content p { color: var(--sl-muted); line-height: 1.8; }
+.homepage #blog-section { padding: 58px clamp(18px, 4vw, 64px) 66px; background: #f0e6d6; }
+.homepage #blog-section > h2,
+.homepage #blog-section > p { max-width: 1220px; margin-left: auto; margin-right: auto; }
+.homepage #blog-section > p { color: var(--sl-muted); line-height: 1.7; }
+.homepage .recent-posts { max-width: 1220px; margin: 28px auto 0; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+.homepage .recent-posts article { background: var(--sl-paper); border: 1px solid #dfd0bb; border-radius: 4px; padding: 24px; box-shadow: 0 5px 16px rgba(57,43,26,.05); }
+.homepage .recent-posts h3 { font: 700 1.22rem/1.25 Georgia, serif; }
+.homepage .recent-posts h3 a { color: var(--sl-forest); text-decoration-color: var(--sl-terracotta); text-underline-offset: 4px; }
+.homepage .recent-posts p { color: var(--sl-muted); line-height: 1.65; }
+.homepage .review-section-advanced { padding: 56px clamp(18px, 4vw, 64px); background: var(--sl-terracotta); color: #fff7eb; }
+.homepage .review-section-advanced > h2 { color: #fff7eb; max-width: 1220px; margin: 0 auto 25px; }
+.homepage .review-carousel { max-width: 1220px; margin: auto; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+.homepage .review-card { background: #f8efe0; color: var(--sl-ink); border: 1px solid rgba(255,255,255,.3); border-radius: 4px; padding: 23px; box-shadow: none; }
+.homepage .review-card p { color: #514d43; line-height: 1.7; }
+.homepage .reviewer span { color: var(--sl-forest); font-weight: 700; }
+.homepage footer { background: var(--sl-forest); color: #f8efe0; border-top: 5px solid var(--sl-terracotta); padding-top: 42px; }
+.homepage footer a { color: #f8efe0; }
+.homepage footer h3 { color: #f0d3ad; }
+.homepage .whatsapp-float { filter: saturate(.8); }
+.homepage #tripPlannerPopup .trip-planner-modal { border-radius: 5px; }
+.homepage a:focus-visible,
+.homepage button:focus-visible { outline: 3px solid #c87955; outline-offset: 3px; }
+@media (max-width: 900px) {
+  .homepage .hero-section { grid-template-columns: 1fr; min-height: 0; }
+  .homepage .hero-shape { position: relative; inset: auto; grid-column: 1; grid-row: 1; height: 310px; clip-path: none; background-position: center; }
+  .homepage .hero-content-wrapper { grid-column: 1; grid-row: 2; padding: 32px 24px 38px; background: var(--sl-sand); }
+  .homepage #hero-title { font-size: clamp(2.5rem, 9vw, 4rem); }
+  .homepage .product-gallery { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .homepage .gallery-grid { grid-template-columns: repeat(2,minmax(0,1fr)); grid-auto-rows: 180px; }
+  .homepage .gallery-item:first-child { grid-row: span 2; }
+  .homepage .gallery-item:nth-child(4) { grid-column: auto; }
+  .homepage .meet-family-section { grid-template-columns: 1fr; }
+  .homepage .meet-family-img { min-height: 300px; max-height: 430px; }
+  .homepage .recent-posts { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .homepage .review-carousel { grid-template-columns: 1fr; }
+  .homepage .review-card:not(.active) { display: block; }
+}
+@media (max-width: 560px) {
+  .homepage .navbar { padding: 10px 16px; }
+  .homepage .logo-text { font-size: 1.02rem; }
+  .homepage .logo-text img { max-height: 39px; }
+  .homepage .hero-shape { height: 235px; }
+  .homepage .experiences { padding: 36px 16px 42px; }
+  .homepage .product-gallery { grid-template-columns: 1fr; gap: 15px; }
+  .homepage .product-image { aspect-ratio: 1.65 / 1; }
+  .homepage .product-info { min-height: 0; }
+  .homepage .gallery-section { padding: 38px 16px 42px; }
+  .homepage .gallery-grid { grid-template-columns: repeat(2,minmax(0,1fr)); grid-auto-rows: 155px; gap: 9px; }
+  .homepage .gallery-item:first-child { grid-row: auto; }
+  .homepage .gallery-overlay { padding: 10px; }
+  .homepage .gallery-overlay h3 { font-size: .85rem; }
+  .homepage .meet-family-content { padding: 34px 22px 40px; }
+  .homepage #blog-section { padding: 38px 16px 44px; }
+  .homepage .recent-posts { grid-template-columns: 1fr; }
+  .homepage .review-section-advanced { padding: 38px 16px 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .homepage * { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
