@@ -614,3 +614,48 @@ body.homepage {
     margin-bottom: 26px;
   }
 }
+
+
+/* Emergency mobile viewport-width safeguard: prevent the homepage rendering in a narrow left column */
+@media (max-width: 900px) {
+  html,
+  body.homepage {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow-x: clip;
+  }
+  body.homepage > .navbar,
+  body.homepage > .hero-section,
+  body.homepage > main,
+  body.homepage > .plan-trip-band,
+  body.homepage > .today-widget {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .homepage .navbar {
+    box-sizing: border-box;
+  }
+  .homepage .hero-section,
+  .homepage .meet-family-section,
+  .homepage #main-content,
+  .homepage .plan-trip-band,
+  .homepage .today-widget {
+    box-sizing: border-box;
+    min-width: 0;
+  }
+  .homepage .meet-family-section {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .homepage .meet-family-photo-wrap,
+  .homepage .meet-family-content {
+    width: 100%;
+    min-width: 0;
+  }
+}
