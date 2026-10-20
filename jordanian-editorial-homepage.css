@@ -176,3 +176,138 @@ body.homepage {
 @media (prefers-reduced-motion: reduce) {
   .homepage * { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* Meet the family — warm, editorial and welcoming */
+.homepage .meet-family-section {
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr);
+  background: var(--sl-sand);
+  overflow: hidden;
+}
+.homepage .meet-family-photo-wrap {
+  position: relative;
+  min-height: 560px;
+  background: #d9dfd2;
+  overflow: hidden;
+}
+.homepage .meet-family-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  max-height: 760px;
+  object-fit: cover;
+  object-position: center;
+}
+.homepage .meet-family-photo-note {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  max-width: calc(100% - 48px);
+  padding: 11px 15px;
+  color: #fffaf0;
+  background: rgba(19, 59, 55, .88);
+  font-size: .78rem;
+  letter-spacing: .035em;
+  line-height: 1.45;
+}
+.homepage .meet-family-content {
+  padding: clamp(34px, 5vw, 78px);
+  align-self: center;
+}
+.homepage .family-eyebrow {
+  margin: 0 0 18px;
+  color: var(--sl-terracotta-dark);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  line-height: 1.5;
+}
+.homepage .meet-family-content h2 {
+  margin: 0 0 22px;
+  font-size: clamp(2.25rem, 3.7vw, 3.65rem);
+  line-height: 1.03;
+}
+.homepage .meet-family-content .family-intro {
+  color: var(--sl-forest);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.08rem, 1.45vw, 1.28rem);
+  line-height: 1.65;
+}
+.homepage .meet-family-content > p:not(.family-eyebrow) {
+  max-width: 620px;
+}
+.homepage .family-experience-points {
+  display: grid;
+  gap: 16px;
+  margin: 27px 0 30px;
+}
+.homepage .family-experience-point {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 13px;
+  align-items: start;
+}
+.homepage .family-point-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #b8c4b4;
+  border-radius: 50%;
+  color: var(--sl-forest);
+  background: rgba(250, 248, 240, .72);
+  font-size: .75rem;
+  font-weight: 800;
+}
+.homepage .family-experience-point strong,
+.homepage .family-experience-point span:not(.family-point-icon) {
+  display: block;
+}
+.homepage .family-experience-point strong {
+  margin: 1px 0 4px;
+  color: var(--sl-forest);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+}
+.homepage .family-experience-point div span {
+  color: var(--sl-muted);
+  font-size: .88rem;
+  line-height: 1.55;
+}
+.homepage .family-cta-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.homepage .family-cta-group .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 12px 17px;
+}
+.homepage .family-secondary-link {
+  color: var(--sl-forest);
+  font-size: .9rem;
+  font-weight: 750;
+  text-decoration: underline;
+  text-decoration-color: #aebbaa;
+  text-underline-offset: 5px;
+}
+.homepage .family-secondary-link:hover { color: var(--sl-terracotta-dark); }
+@media (max-width: 900px) {
+  .homepage .meet-family-section { grid-template-columns: 1fr; }
+  .homepage .meet-family-photo-wrap { min-height: 0; height: clamp(290px, 58vw, 470px); }
+  .homepage .meet-family-img { min-height: 0; height: 100%; max-height: none; }
+  .homepage .meet-family-content { padding: clamp(30px, 6vw, 58px); }
+}
+@media (max-width: 560px) {
+  .homepage .meet-family-photo-wrap { height: 300px; }
+  .homepage .meet-family-photo-note { left: 14px; bottom: 14px; max-width: calc(100% - 28px); }
+  .homepage .meet-family-content { padding: 32px 21px 38px; }
+  .homepage .meet-family-content h2 { font-size: clamp(2.1rem, 10vw, 2.8rem); }
+  .homepage .family-experience-points { gap: 14px; margin: 23px 0 26px; }
+  .homepage .family-cta-group { align-items: flex-start; flex-direction: column; gap: 15px; }
+}
