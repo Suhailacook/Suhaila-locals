@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'Food Taste Tour': 'Book_Walking_Tour',
             'Dining Experience': 'Book_Dining_Experience',
             'Aqaba Glass Boat': 'Book_Glass_Boat',
+            'Houh Delivery': 'Book_Houh_Delivery',
             'Walking Tour in Aqaba': 'Book_Walking_Tour',
             'Historic Walking Tour': 'Book_Walking_Tour',
             'iftar': 'Book_Dining_Experience',
@@ -203,7 +204,8 @@ window.openForm = function(experienceType) {
         'cooking': 'Book_Cooking_Class',
         'walking': 'Book_Walking_Tour',
         'dining': 'Book_Dining_Experience',
-        'glassboat': 'Book_Glass_Boat'
+        'glassboat': 'Book_Glass_Boat',
+        'houh': 'Book_Houh_Delivery'
     };
 
     const fieldName = expMap[experienceType];
