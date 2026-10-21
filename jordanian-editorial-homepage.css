@@ -842,3 +842,93 @@ body.homepage {
     padding: 4px;
   }
 }
+
+
+/* Site-wide mobile booking and navigation polish for the homepage */
+.homepage {
+  overflow-wrap: break-word;
+}
+.homepage .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+}
+.homepage .navbar .logo-text {
+  min-width: 0;
+  max-width: calc(100% - 58px);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.homepage .navbar .hamburger {
+  flex: 0 0 auto;
+  min-width: 44px;
+  min-height: 44px;
+}
+.homepage img,
+.homepage video,
+.homepage iframe {
+  max-width: 100%;
+}
+@media (max-width: 768px) {
+  .homepage .navbar {
+    padding: 10px 16px;
+    gap: 8px;
+  }
+  .homepage .navbar .logo-text {
+    font-size: 1.08rem;
+    gap: 6px;
+  }
+  .homepage .navbar .logo-text img {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+  }
+  .homepage .navbar-links.open {
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 12px 0 16px;
+  }
+  .homepage .navbar-links a,
+  .homepage .navbar-links .dropbtn {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .homepage .hero-content-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+  .homepage .hero-cta-group,
+  .homepage .experience-actions,
+  .homepage .family-cta-group {
+    max-width: 100%;
+  }
+  .homepage .hero-cta-group .button,
+  .homepage .experience-actions a,
+  .homepage .family-cta-group a {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .homepage input,
+  .homepage select,
+  .homepage textarea {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
+    font-size: 16px;
+  }
+}
+@media (max-width: 420px) {
+  .homepage .navbar {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .homepage .navbar .logo-text > span {
+    display: none;
+  }
+}
