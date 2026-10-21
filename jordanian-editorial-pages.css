@@ -575,3 +575,51 @@ body.reservation-page .success-message {
   .navbar .logo-text { gap: 7px; font-size: 1.08rem !important; }
   .navbar .logo-text img { max-width: 36px !important; max-height: 36px !important; }
 }
+
+
+/* Final authoritative navbar overrides: identical logo treatment and navigation rhythm */
+.navbar .logo-text img {
+  width: 40px !important;
+  height: 40px !important;
+  max-width: 40px !important;
+  max-height: 40px !important;
+  padding: 4px !important;
+  box-sizing: border-box !important;
+  object-fit: contain !important;
+  border-radius: 50% !important;
+  background: #174b48 !important;
+  flex: 0 0 40px !important;
+}
+.navbar .logo-text > span {
+  color: #d8d1a2 !important;
+  margin-inline: 0 !important;
+}
+.navbar .navbar-links > a.active:not(.nav-reserve) {
+  color: #174b48 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+.navbar .navbar-links > a.nav-reserve,
+.navbar .navbar-links > a[href="Reservation.html"] {
+  min-height: 42px !important;
+  padding: 11px 18px !important;
+  border-radius: 999px !important;
+  background: #fbd66b !important;
+  color: #174b48 !important;
+  box-shadow: 0 4px 14px rgba(210, 173, 67, .16) !important;
+}
+.navbar .navbar-links > a.nav-reserve.active,
+.navbar .navbar-links > a[href="Reservation.html"].active {
+  background: #fbd66b !important;
+  color: #174b48 !important;
+}
+@media (max-width: 900px) {
+  .navbar .logo-text img {
+    width: 38px !important;
+    height: 38px !important;
+    max-width: 38px !important;
+    max-height: 38px !important;
+    flex-basis: 38px !important;
+  }
+}
