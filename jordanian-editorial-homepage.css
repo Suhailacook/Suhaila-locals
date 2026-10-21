@@ -659,3 +659,65 @@ body.homepage {
     min-width: 0;
   }
 }
+
+
+/* Review carousel: make the active review fill the centered container instead of one grid track */
+.homepage .review-carousel {
+  display: block !important;
+  width: min(100%, 760px);
+  max-width: 760px;
+  margin: 0 auto 22px;
+  padding: 0;
+  overflow: hidden;
+}
+.homepage .review-carousel > .review-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+.homepage .review-card.active {
+  width: 100%;
+  max-width: 100%;
+  min-height: 0;
+  padding: clamp(26px, 4vw, 42px) clamp(22px, 5vw, 58px);
+  border-radius: 8px;
+  text-align: center;
+}
+.homepage .review-card.active p {
+  max-width: 58ch;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-wrap: anywhere;
+}
+.homepage .review-card.active .reviewer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.homepage .carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+.homepage .carousel-controls button {
+  flex: 0 0 44px;
+}
+@media (max-width: 560px) {
+  .homepage .review-section-advanced {
+    padding: 34px 16px 38px;
+  }
+  .homepage .review-carousel {
+    width: 100%;
+    max-width: 100%;
+  }
+  .homepage .review-card.active {
+    padding: 25px 20px 27px;
+  }
+  .homepage .review-card.active p {
+    font-size: 1.08rem;
+    line-height: 1.6;
+  }
+}
