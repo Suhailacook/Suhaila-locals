@@ -721,3 +721,53 @@ body.homepage {
     line-height: 1.6;
   }
 }
+
+
+/* Desktop refinement: fill the family photo panel and keep navigation within the viewport */
+.homepage .meet-family-photo-wrap {
+  position: relative;
+  align-self: stretch;
+  min-height: 560px;
+  height: 100%;
+  overflow: hidden;
+}
+.homepage .meet-family-photo-wrap .meet-family-img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  object-fit: cover;
+  object-position: center;
+}
+@media (min-width: 901px) and (max-width: 1350px) {
+  .homepage .navbar {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+  .homepage .navbar-links {
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+  .homepage .navbar-links a,
+  .homepage .navbar-links .dropbtn {
+    font-size: .8rem;
+    white-space: nowrap;
+  }
+  .homepage .navbar-links .nav-reserve,
+  .homepage .navbar-links a.nav-reserve {
+    padding: 10px 12px;
+  }
+}
+@media (max-width: 900px) {
+  .homepage .meet-family-photo-wrap {
+    height: clamp(290px, 58vw, 470px);
+    min-height: 0;
+  }
+  .homepage .meet-family-photo-wrap .meet-family-img {
+    min-height: 0 !important;
+    height: 100% !important;
+  }
+}
