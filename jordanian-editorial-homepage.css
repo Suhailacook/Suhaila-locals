@@ -771,3 +771,28 @@ body.homepage {
     height: 100% !important;
   }
 }
+
+
+/* Improve contrast for the hero reassurance line and WhatsApp link on ivory */
+.homepage .hero-content-wrapper .hero-trust,
+.homepage .hero-content-wrapper .hero-proof,
+.homepage .hero-content-wrapper .hero-note,
+.homepage .hero-content-wrapper .hero-meta {
+  color: var(--sl-forest) !important;
+}
+.homepage .hero-content-wrapper a[href*="wa.me"],
+.homepage .hero-content-wrapper a[href*="whatsapp"],
+.homepage .hero-content-wrapper .whatsapp-link,
+.homepage .hero-content-wrapper .hero-whatsapp,
+.homepage .hero-content-wrapper .hero-contact-link {
+  color: var(--sl-forest) !important;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.homepage .hero-content-wrapper .hero-trust::before,
+.homepage .hero-content-wrapper .hero-proof::before,
+.homepage .hero-content-wrapper .hero-note::before,
+.homepage .hero-content-wrapper .hero-meta::before {
+  color: var(--sl-olive);
+}
