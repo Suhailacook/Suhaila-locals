@@ -293,3 +293,130 @@ body:not(.homepage) section > * {
     padding-right: 12px;
   }
 }
+
+
+/* Reservation page: align its colors with the Suhaila forest, ivory and muted-gold brand */
+body.reservation-page {
+  --color-primary: #174b48;
+  --color-primary-light: #24635d;
+  --color-primary-dark: #103c3a;
+  --color-accent: #c7c6a5;
+  --color-accent-dark: #b3b181;
+  --color-light: #faf8f0;
+  --color-light-gray: #e2dfd2;
+  --color-medium-gray: #858779;
+  --color-dark-gray: #62685f;
+  --color-text: #252c29;
+  background-color: var(--sl-paper);
+  color: var(--sl-ink);
+}
+body.reservation-page .reservation-hero {
+  background: linear-gradient(120deg, #174b48 0%, #205b55 100%) !important;
+  color: var(--sl-paper);
+}
+body.reservation-page .reservation-hero h1,
+body.reservation-page .reservation-hero h1 span {
+  color: var(--sl-paper) !important;
+}
+body.reservation-page .reservation-hero h1 span {
+  color: #e0d9a8 !important;
+}
+body.reservation-page .reservation-hero p {
+  color: rgba(250, 248, 240, .92) !important;
+}
+body.reservation-page .reservation-container {
+  background: transparent;
+}
+body.reservation-page .reservation-item {
+  background: #fffefa !important;
+  border: 1px solid var(--sl-line) !important;
+  box-shadow: 0 12px 32px rgba(23, 75, 72, .08) !important;
+}
+body.reservation-page .reservation-item h3,
+body.reservation-page .reservation-item h3 a,
+body.reservation-page .reservation-item .price-tag {
+  color: var(--sl-forest) !important;
+}
+body.reservation-page .reservation-item .description,
+body.reservation-page .reservation-item p {
+  color: #68716a;
+}
+body.reservation-page .reservation-item .badge {
+  background: var(--sl-forest) !important;
+  color: var(--sl-paper) !important;
+}
+body.reservation-page .reservation-item .button,
+body.reservation-page .reservation-item a.button {
+  background: var(--sl-forest) !important;
+  border: 1px solid var(--sl-forest) !important;
+  color: var(--sl-paper) !important;
+  box-shadow: 0 4px 12px rgba(23, 75, 72, .16) !important;
+}
+body.reservation-page .reservation-item .button:hover,
+body.reservation-page .reservation-item a.button:hover {
+  background: var(--sl-terracotta-dark) !important;
+  border-color: var(--sl-terracotta-dark) !important;
+}
+body.reservation-page .reservation-item .learn-more,
+body.reservation-page .reservation-item .card-footer a {
+  color: var(--sl-forest) !important;
+}
+body.reservation-page .reservation-item .learn-more:hover,
+body.reservation-page .reservation-item .card-footer a:hover {
+  color: var(--sl-terracotta-dark) !important;
+}
+body.reservation-page .form-step,
+body.reservation-page #booking-summary,
+body.reservation-page .success-message {
+  background: #fffefa !important;
+  border-color: var(--sl-line) !important;
+}
+body.reservation-page .form-step h3,
+body.reservation-page #booking-summary h4,
+body.reservation-page .summary-total,
+body.reservation-page .form-price-display {
+  color: var(--sl-forest) !important;
+}
+body.reservation-page .experience-option-card {
+  border-color: var(--sl-line) !important;
+}
+body.reservation-page .experience-option-card:hover,
+body.reservation-page .experience-option-card.selected {
+  border-color: var(--sl-forest) !important;
+  background: #f4f2e8 !important;
+}
+body.reservation-page .checkbox-container strong {
+  color: var(--sl-forest) !important;
+}
+body.reservation-page .checkbox-container input[type="checkbox"],
+body.reservation-page .step.active .step-number {
+  accent-color: var(--sl-forest);
+}
+body.reservation-page .step.active .step-number {
+  background: var(--sl-forest) !important;
+  border-color: var(--sl-forest) !important;
+  color: var(--sl-paper) !important;
+  box-shadow: 0 0 0 4px rgba(23, 75, 72, .12) !important;
+}
+body.reservation-page .step.completed .step-number {
+  background: #6d856d !important;
+  border-color: #6d856d !important;
+}
+body.reservation-page .form-price-display {
+  background: #f4f2e8 !important;
+  border-color: var(--sl-line) !important;
+}
+body.reservation-page .summary-item {
+  background: #f7f5ec !important;
+  border-left-color: var(--sl-olive) !important;
+}
+body.reservation-page .form-group input:focus,
+body.reservation-page .form-group textarea:focus,
+body.reservation-page .form-group select:focus,
+body.reservation-page .form-col input:focus {
+  border-color: var(--sl-forest) !important;
+  box-shadow: 0 0 0 3px rgba(23, 75, 72, .12) !important;
+}
+body.reservation-page .success-message {
+  color: var(--sl-forest) !important;
+}
