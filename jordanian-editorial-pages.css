@@ -111,3 +111,185 @@ body:not(.homepage) img { max-width: 100%; }
   body:not(.homepage) .navbar { padding-left: 18px; padding-right: 18px; }
   body:not(.homepage) img { height: auto; }
 }
+
+
+/* Mobile-first layout and booking usability pass */
+body:not(.homepage) {
+  overflow-wrap: break-word;
+}
+body:not(.homepage) .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+}
+body:not(.homepage) .navbar .logo-text {
+  min-width: 0;
+  max-width: calc(100% - 58px);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+}
+body:not(.homepage) .navbar .logo-text img {
+  width: 42px;
+  height: 42px;
+  max-width: 42px;
+  flex: 0 0 42px;
+  object-fit: contain;
+}
+body:not(.homepage) .navbar .hamburger {
+  flex: 0 0 auto;
+  color: var(--sl-forest);
+  padding: 8px;
+  min-width: 44px;
+  min-height: 44px;
+}
+body:not(.homepage) .navbar-links {
+  min-width: 0;
+}
+body:not(.homepage) .navbar-links a,
+body:not(.homepage) .navbar-links .dropbtn {
+  box-sizing: border-box;
+}
+body:not(.homepage) img,
+body:not(.homepage) video,
+body:not(.homepage) iframe {
+  max-width: 100%;
+}
+body:not(.homepage) input,
+body:not(.homepage) select,
+body:not(.homepage) textarea,
+body:not(.homepage) button {
+  font: inherit;
+}
+body:not(.homepage) input,
+body:not(.homepage) select,
+body:not(.homepage) textarea {
+  box-sizing: border-box;
+  min-width: 0;
+}
+body:not(.homepage) button,
+body:not(.homepage) .button,
+body:not(.homepage) .btn,
+body:not(.homepage) .nav-reserve {
+  min-height: 44px;
+}
+body:not(.homepage) .footer-grid > *,
+body:not(.homepage) main > *,
+body:not(.homepage) section > * {
+  min-width: 0;
+}
+@media (max-width: 768px) {
+  body:not(.homepage) .navbar {
+    padding: 10px 16px;
+    gap: 8px;
+  }
+  body:not(.homepage) .navbar .logo-text {
+    font-size: 1.08rem;
+    gap: 6px;
+    letter-spacing: -.02em;
+  }
+  body:not(.homepage) .navbar .logo-text img {
+    width: 38px;
+    height: 38px;
+    max-width: 38px;
+    flex-basis: 38px;
+  }
+  body:not(.homepage) .navbar-links.open {
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 12px 0 16px;
+  }
+  body:not(.homepage) .navbar-links a,
+  body:not(.homepage) .navbar-links .dropbtn {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body:not(.homepage) .dropdown-content a {
+    white-space: normal;
+  }
+  body:not(.homepage) main,
+  body:not(.homepage) section,
+  body:not(.homepage) header,
+  body:not(.homepage) footer,
+  body:not(.homepage) .story-container,
+  body:not(.homepage) .experience-container,
+  body:not(.homepage) .reservation-container,
+  body:not(.homepage) .content-container {
+    width: 100%;
+    max-width: 100%;
+  }
+  body:not(.homepage) .story-container,
+  body:not(.homepage) .experience-container,
+  body:not(.homepage) .reservation-container,
+  body:not(.homepage) .content-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  body:not(.homepage) h1 {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+  body:not(.homepage) h2 {
+    font-size: clamp(1.45rem, 5.5vw, 2rem);
+    line-height: 1.2;
+  }
+  body:not(.homepage) p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  body:not(.homepage) .button,
+  body:not(.homepage) .btn,
+  body:not(.homepage) .button-primary,
+  body:not(.homepage) .btn-primary,
+  body:not(.homepage) .nav-reserve {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+  body:not(.homepage) .form-row {
+    min-width: 0;
+  }
+  body:not(.homepage) .form-row > *,
+  body:not(.homepage) .form-group,
+  body:not(.homepage) .form-group input,
+  body:not(.homepage) .form-group select,
+  body:not(.homepage) .form-group textarea {
+    min-width: 0;
+    max-width: 100%;
+  }
+  body:not(.homepage) input,
+  body:not(.homepage) select,
+  body:not(.homepage) textarea {
+    font-size: 16px;
+  }
+  body:not(.homepage) .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+@media (max-width: 420px) {
+  body:not(.homepage) .navbar .logo-text > span {
+    display: none;
+  }
+  body:not(.homepage) .navbar .logo-text {
+    gap: 8px;
+  }
+  body:not(.homepage) .navbar {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  body:not(.homepage) .story-container,
+  body:not(.homepage) .experience-container,
+  body:not(.homepage) .reservation-container,
+  body:not(.homepage) .content-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
