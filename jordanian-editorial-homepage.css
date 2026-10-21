@@ -810,3 +810,35 @@ body.homepage {
 .homepage .hero-contact a:hover {
   color: var(--sl-terracotta-dark) !important;
 }
+
+
+/* Make the original gold logo stand out clearly against the ivory header */
+.homepage .navbar .logo-text {
+  gap: 10px;
+}
+.homepage .navbar .logo-text img {
+  box-sizing: border-box;
+  display: block;
+  width: 52px;
+  height: 52px;
+  max-height: none;
+  padding: 5px;
+  object-fit: contain;
+  flex: 0 0 52px;
+  border-radius: 50%;
+  background: var(--sl-forest);
+  border: 1px solid rgba(199,198,165,.75);
+  filter: contrast(1.15) saturate(1.2);
+}
+.homepage .navbar .logo-text > span {
+  color: var(--sl-line);
+  margin: 0 1px;
+}
+@media (max-width: 560px) {
+  .homepage .navbar .logo-text img {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+    padding: 4px;
+  }
+}
