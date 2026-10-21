@@ -796,3 +796,17 @@ body.homepage {
 .homepage .hero-content-wrapper .hero-meta::before {
   color: var(--sl-olive);
 }
+
+
+/* Exact hero supporting-copy selectors */
+.homepage .hero-local-note,
+.homepage .hero-contact,
+.homepage .hero-contact a {
+  color: var(--sl-forest) !important;
+}
+.homepage .hero-local-note span {
+  color: #8a9168;
+}
+.homepage .hero-contact a:hover {
+  color: var(--sl-terracotta-dark) !important;
+}
