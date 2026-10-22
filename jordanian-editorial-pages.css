@@ -623,3 +623,12 @@ body.reservation-page .success-message {
     flex-basis: 38px !important;
   }
 }
+
+/* Keep the Blog hero heading readable against its dark gradient. */
+body:not(.homepage) .blog-hero h1 {
+  color: #fff;
+}
+
+body:not(.homepage) .blog-hero p {
+  color: rgba(255, 255, 255, .92);
+}
