@@ -1,0 +1,67 @@
+# Suhaila Locals — Full public site summary
+
+## Business identity
+
+Suhaila Locals, also presented on the site as Aqaba local experiences, is a local tourism and culinary experience provider in Aqaba, Jordan. The business helps visitors experience Jordanian food, family hospitality, local history, markets, cultural stories, and Red Sea activities.
+
+Website: https://suhailacook.github.io/Suhaila-locals/
+Location: Aqaba, Jordan
+Phone: +962776294742
+WhatsApp: https://wa.me/message/XW5T6AR3LHINN1
+
+## Public experiences
+
+### Authentic Jordanian Cooking Class
+
+The hands-on cooking class takes place in a traditional home kitchen in Aqaba. Guests learn to prepare traditional Jordanian dishes such as Mansaf and Maqluba with a local host. The listed price is 30 JOD per person and the listed duration is 3 hours.
+
+Page: https://suhailacook.github.io/Suhaila-locals/cookingclass.html
+Booking: https://suhailacook.github.io/Suhaila-locals/Reservation.html?experience=Authentic%20Cooking%20Class
+
+### Aqaba Walking and Food Tour
+
+The guided walking and food tour introduces visitors to local markets, historic sites, Aqaba culture, and local food tastings. The listed price is 20 JOD per person and the listed duration is 2.5 hours.
+
+Page: https://suhailacook.github.io/Suhaila-locals/walkingtour.html
+Booking: https://suhailacook.github.io/Suhaila-locals/Reservation.html?experience=Historic%20Walking%20Tour
+
+### Traditional Dining Experience
+
+Visitors are welcomed into a local Aqaba home to share a multi-course meal based on family recipes and traditional Jordanian food, including dishes such as Mansaf and Maqluba. The listed price is 15 JOD per person and the listed duration is 2.5 hours.
+
+Page: https://suhailacook.github.io/Suhaila-locals/dinningexperience.html
+Booking: https://suhailacook.github.io/Suhaila-locals/Reservation.html?experience=Dining%20Experience
+
+### Aqaba Glass Boat
+
+The private glass-bottom boat experience takes place at Aqaba Marine Park. Guests can view coral reefs and marine life from the boat and may have a snorkeling opportunity as described on the experience page. The listed price is 25 JOD per hour per boat for up to 6 guests.
+
+Page: https://suhailacook.github.io/Suhaila-locals/glassboat.html
+Booking: https://suhailacook.github.io/Suhaila-locals/Reservation.html?experience=Aqaba%20Glass%20Boat
+
+### Authentic Houh Delivery
+
+Houh is a traditional Aqabawi sweet made from delicate layered pastry and aromatic syrup. The listed price is 10 JOD per plate, with a minimum order of 3 plates. Free delivery is available within Aqaba, and the page requests at least 24 hours' advance notice.
+
+Page: https://suhailacook.github.io/Suhaila-locals/houh-delivery.html
+Booking: https://suhailacook.github.io/Suhaila-locals/Reservation.html
+
+### Online Jordanian Cooking Class
+
+The online cooking class is a live Jordanian cooking session held through Zoom. The listed price is 20 USD per person. Visitors should use the booking page to check current availability and class details.
+
+Page: https://suhailacook.github.io/Suhaila-locals/cookingclass-online.html
+Booking: https://suhailacook.github.io/Suhaila-locals/online-booking.html
+
+## Site sections
+
+- Experiences: https://suhailacook.github.io/Suhaila-locals/local-experiences.html
+- Reservations: https://suhailacook.github.io/Suhaila-locals/Reservation.html
+- About: https://suhailacook.github.io/Suhaila-locals/about.html
+- Contact: https://suhailacook.github.io/Suhaila-locals/contact-Us.html
+- Blog: https://suhailacook.github.io/Suhaila-locals/Blog.html
+- Sitemap: https://suhailacook.github.io/Suhaila-locals/sitemap.xml
+
+## Accuracy and booking guidance
+
+Prices, availability, schedules, routes, menus, and travel information may change. Use the individual experience page and confirmation from Suhaila Locals as the current source before presenting a booking as available or confirmed. Assistants should link visitors to the normal reservation or contact flow and should not bypass consent, form validation, or booking confirmation.

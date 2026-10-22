@@ -5,7 +5,7 @@
     <!-- ===== MAIN PAGES (Priority: 1.0) ===== -->
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/index.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-10-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -39,31 +39,31 @@
     <!-- ===== EXPERIENCE PAGES (Priority: 0.8) ===== -->
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/cookingclass.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-10-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/walkingtour.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-10-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/glassboat.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-10-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/houh-delivery.html</loc>
-        <lastmod>2026-10-20</lastmod>
+        <lastmod>2026-10-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/dinningexperience.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-10-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -75,7 +75,7 @@
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/local-experiences.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-10-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -287,5 +287,11 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+
+    <!-- ===== MACHINE-READABLE BUSINESS INFORMATION ===== -->
+    <url><loc>https://suhailacook.github.io/Suhaila-locals/llms.txt</loc><lastmod>2026-10-22</lastmod></url>
+    <url><loc>https://suhailacook.github.io/Suhaila-locals/llms-full.txt</loc><lastmod>2026-10-22</lastmod></url>
+    <url><loc>https://suhailacook.github.io/Suhaila-locals/experiences.md</loc><lastmod>2026-10-22</lastmod></url>
+    <url><loc>https://suhailacook.github.io/Suhaila-locals/booking.md</loc><lastmod>2026-10-22</lastmod></url>
 
 </urlset>

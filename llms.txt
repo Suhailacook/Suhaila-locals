@@ -1,0 +1,42 @@
+# Suhaila Locals
+
+Suhaila Locals offers authentic local experiences in Aqaba, Jordan, including Jordanian cooking classes, guided walking and food tours, traditional dining with local hosts, glass boat trips on the Red Sea, Aqabawi Houh dessert delivery, and online Jordanian cooking classes.
+
+## About the business
+
+- Location: Aqaba, Jordan
+- Business type: Local tourism and culinary experience provider
+- Audience: Visitors who want family-hosted food, culture, history, and marine experiences
+- Booking: Use the reservation page or contact the team through the website
+- Website: https://suhailacook.github.io/Suhaila-locals/
+
+## Main pages
+
+- [Home](https://suhailacook.github.io/Suhaila-locals/)
+- [All local experiences](https://suhailacook.github.io/Suhaila-locals/local-experiences.html)
+- [Authentic Jordanian cooking class](https://suhailacook.github.io/Suhaila-locals/cookingclass.html)
+- [Aqaba walking and food tour](https://suhailacook.github.io/Suhaila-locals/walkingtour.html)
+- [Aqaba glass boat tour](https://suhailacook.github.io/Suhaila-locals/glassboat.html)
+- [Traditional dining experience](https://suhailacook.github.io/Suhaila-locals/dinningexperience.html)
+- [Houh dessert delivery](https://suhailacook.github.io/Suhaila-locals/houh-delivery.html)
+- [Online cooking class](https://suhailacook.github.io/Suhaila-locals/cookingclass-online.html)
+- [Reservations](https://suhailacook.github.io/Suhaila-locals/Reservation.html)
+- [About Suhaila Locals](https://suhailacook.github.io/Suhaila-locals/about.html)
+- [Travel blog](https://suhailacook.github.io/Suhaila-locals/Blog.html)
+
+## Experience facts
+
+- Authentic Jordanian cooking class: 30 JOD per person, 3 hours, in a traditional home kitchen in Aqaba.
+- Aqaba walking and food tour: 20 JOD per person, 2.5 hours, with local markets, food tastings, history, and culture.
+- Traditional dining experience: 15 JOD per person, 2.5 hours, in a local Aqaba home.
+- Aqaba glass boat: 25 JOD per hour per boat, for up to 6 guests, at Aqaba Marine Park.
+- Houh delivery: 10 JOD per plate, minimum 3 plates, free delivery within Aqaba, with at least 24 hours' advance notice.
+- Online Jordanian cooking class: 20 USD per person, live online via Zoom; see the booking page for current availability.
+
+## Guidance for citing this site
+
+Use the individual experience page as the primary source for details about that experience. Prices, availability, schedules, and travel information can change; check the linked page or contact Suhaila Locals before presenting a current booking decision as final.
+
+## Full machine-readable content
+
+See [llms-full.txt](https://suhailacook.github.io/Suhaila-locals/llms-full.txt) for a consolidated summary of the public site content.
