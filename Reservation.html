@@ -708,8 +708,15 @@
         <div class="hero-shape"></div>
         <div class="hero-content">
             <h1>📅 <span>Reserve</span> Your Aqaba Experience</h1>
-            <p>Choose from authentic cooking classes, guided walking tours, glass boat adventures, and traditional dining with local families.</p>
+            <p>Choose your experience and send a booking request. We will check availability and confirm with you personally within 24 hours.</p>
         </div>
+    </section>
+
+    <!-- ===== FREE REQUEST-BASED BOOKING ===== -->
+    <section class="booking-policy" aria-labelledby="booking-policy-title" style="max-width: 900px; margin: 28px auto 10px; padding: 20px 24px; border: 1px solid #dbe5ef; border-radius: 16px; background: #f7fafc; text-align: center;">
+        <h2 id="booking-policy-title" style="margin: 0 0 8px; color: #0f2b4a; font-size: 1.25rem;">Free booking request — no payment required</h2>
+        <p style="margin: 0 auto 14px; color: #3d4f64; line-height: 1.6;">Submit your preferred date and guest details below. This is a request, not an automatic confirmation. We will contact you by WhatsApp or email to confirm availability and payment details.</p>
+        <a href="https://wa.me/962776294742?text=Hello%20Suhaila%20Locals%2C%20I%20would%20like%20to%20ask%20about%20booking%20an%20experience%20in%20Aqaba." target="_blank" rel="noopener noreferrer" class="button button-secondary" style="display: inline-block;">Prefer WhatsApp? Message us</a>
     </section>
 
     <!-- ===== EXPERIENCE CARDS ===== -->
@@ -772,11 +779,13 @@
 
     <!-- ===== BOOKING FORM ===== -->
     <div id="booking-form-container">
-        <p>📝 Complete your booking details below</p>
+        <p>📝 Send your free booking request below — we normally reply within 24 hours</p>
     </div>
 
     <form id="reservation-form" action="https://formspree.io/f/movkdnjg" method="POST" novalidate>
         <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off" />
+        <input type="hidden" name="_subject" value="New Suhaila Locals booking request" />
+        <input type="hidden" name="booking_status" value="Request only — manual confirmation required" />
 
         <!-- ===== STEP PROGRESS ===== -->
         <div class="step-progress" id="stepProgress">
@@ -958,8 +967,9 @@
 
             <div class="form-nav">
                 <button type="button" class="button button-secondary" onclick="goToStep(2)">← Back</button>
-                <button type="submit" class="button" id="reservation-submit">✅ Confirm & Submit</button>
+                <button type="submit" class="button" id="reservation-submit">✅ Send Booking Request</button>
             </div>
+            <p style="margin: 16px auto 0; max-width: 620px; text-align: center; color: #5e6f82; font-size: 0.88rem; line-height: 1.5;">No payment is taken on this page. Your booking becomes confirmed only after we reply and agree the details with you.</p>
         </div>
     </form>
 
