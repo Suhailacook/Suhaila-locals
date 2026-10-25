@@ -1,23 +1,9 @@
-# robots.txt for Suhaila Locals
-# https://suhailacook.github.io/Suhaila-locals/
-# Public pages are available to search and answer-engine crawlers.
-# Keep this policy aligned with any CDN or WAF bot rules.
+# Suhaila Locals crawler policy
+# Public website: https://suhailacook.github.io/Suhaila-locals/
 
+# All public pages, booking pages, stylesheets, scripts, and images may be crawled.
 User-agent: *
 Allow: /
-Crawl-delay: 2
 
-# Search/answer discovery crawlers are explicitly allowed for public content.
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Claude-SearchBot
-Allow: /
-
-User-agent: Googlebot
-Allow: /
-
+# Sitemap location for URL discovery.
 Sitemap: https://suhailacook.github.io/Suhaila-locals/sitemap.xml
