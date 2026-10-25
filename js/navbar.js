@@ -31,9 +31,10 @@
 
   // ===== Menu Open/Close Functions =====
   function openMenu(){
-    if (!menu) return;
+    if (!menu || !btn) return;
     menu.classList.add('open');
-    btn && btn.classList.add('open');
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
     overlay && overlay.classList.add('active');
     document.body.classList.add('menu-open');
     untrap = trapFocus(menu);
@@ -50,6 +51,7 @@
     if (!menu) return;
     menu.classList.remove('open');
     btn && btn.classList.remove('open');
+    btn && btn.setAttribute('aria-expanded', 'false');
     overlay && overlay.classList.remove('active');
     document.body.classList.remove('menu-open');
     if (untrap) { 
@@ -220,21 +222,7 @@
   // Ensure hamburger button has proper ARIA attributes
   if (btn) {
     btn.setAttribute('aria-label', 'Toggle navigation menu');
-    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-expanded', menu && menu.classList.contains('open') ? 'true' : 'false');
     btn.setAttribute('aria-controls', 'navbarLinks');
-    
-    // Update aria-expanded when menu state changes
-    const originalOpen = openMenu;
-    const originalClose = closeMenu;
-    
-    window.openMenu = function() {
-      originalOpen();
-      btn.setAttribute('aria-expanded', 'true');
-    };
-    
-    window.closeMenu = function() {
-      originalClose();
-      btn.setAttribute('aria-expanded', 'false');
-    };
   }
 })();
