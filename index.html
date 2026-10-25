@@ -111,31 +111,14 @@
         <a class="hero-scroll-cue" href="#experiences" aria-label="Scroll to explore experiences"><span aria-hidden="true">↓</span></a>
     </section>
 
-        <!-- ===== TRIP PLANNING TOOLS ===== -->
-        <div class="plan-trip-band">
-            <button class="plan-trip-btn" id="planTripBtn">🤖 Plan My Trip</button>
-        </div>
-
-        <div class="today-widget" id="todayWidget">
-            <div class="today-widget-content">
-                <div class="widget-left">
-                    <span class="widget-icon" id="widgetIcon">🌅</span>
-                </div>
-                <div class="widget-middle">
-                    <div class="widget-time">
-                        🕐 <span id="widgetTime">Loading...</span> <span class="widget-timezone">(Aqaba Time)</span>
-                    </div>
-                    <div class="widget-message" id="widgetMessage">
-                        <strong>Good Morning! ☀️</strong>
-                        <p id="widgetSuggestion">Start your day with a refreshing Walking Tour through Aqaba's hidden gems!</p>
-                    </div>
-                </div>
-                <div class="widget-right">
-                    <a href="Reservation.html" class="button widget-btn" id="widgetBtn">Book Now</a>
-                    <button class="widget-dismiss" id="widgetDismiss" aria-label="Dismiss widget">✕</button>
-                </div>
-            </div>
-        </div>
+        <!-- ===== TRUST + BOOKING PATH ===== -->
+        <section class="trust-strip" aria-label="Booking information">
+            <div class="trust-item"><strong>Family-run in Aqaba</strong><span>Real local hosts and personal attention.</span></div>
+            <div class="trust-item"><strong>Reply within 24 hours</strong><span>Send a request and we check the date with you.</span></div>
+            <div class="trust-item"><strong>Vegetarian options</strong><span>Tell us your dietary needs before we confirm.</span></div>
+            <div class="trust-item"><strong>Simple payment</strong><span>No payment is required to send a request.</span></div>
+            <a href="Reservation.html" class="trust-cta">Request a booking <span aria-hidden="true">↗</span></a>
+        </section>
 
     <!-- ===== MAIN CONTENT ===== -->
     <main id="main-content">
@@ -609,98 +592,6 @@
                 }
             });
         }
-
-        // ============================================================
-        // WHAT TO DO TODAY WIDGET
-        // ============================================================
-        (function() {
-            const AQABA_OFFSET = 3;
-
-            function getAqabaTime() {
-                const now = new Date();
-                const utcHours = now.getUTCHours();
-                const utcMinutes = now.getUTCMinutes();
-                let aqabaHours = (utcHours + AQABA_OFFSET) % 24;
-                return { hours: aqabaHours, minutes: utcMinutes };
-            }
-
-            function formatTime(hours, minutes) {
-                const period = hours >= 12 ? 'PM' : 'AM';
-                const h12 = hours % 12 || 12;
-                const m = String(minutes).padStart(2, '0');
-                return `${h12}:${m} ${period}`;
-            }
-
-            function updateWidget() {
-                const { hours, minutes } = getAqabaTime();
-                const timeStr = formatTime(hours, minutes);
-
-                const timeEl = document.getElementById('widgetTime');
-                if (timeEl) timeEl.textContent = timeStr;
-
-                let icon, greeting, suggestion, btnText, emoji;
-
-                if (hours >= 6 && hours < 12) {
-                    icon = '🌅';
-                    greeting = 'Good Morning! ☀️';
-                    suggestion = 'Start your day with a refreshing Walking Tour through Aqaba\'s hidden gems and local markets!';
-                    btnText = 'Book Walking Tour';
-                    emoji = '🚶';
-                } else if (hours >= 12 && hours < 17) {
-                    icon = '🌤️';
-                    greeting = 'Good Afternoon! 🏖️';
-                    suggestion = 'Enjoy the crystal-clear waters of the Red Sea with a relaxing Glass Boat Tour!';
-                    btnText = 'Book Glass Boat';
-                    emoji = '🚤';
-                } else if (hours >= 17 && hours < 21) {
-                    icon = '🌅';
-                    greeting = 'Good Evening! 🌅';
-                    suggestion = 'Experience authentic Jordanian hospitality with a traditional Family Dining Experience!';
-                    btnText = 'Book Dining';
-                    emoji = '🍽️';
-                } else {
-                    icon = '🌙';
-                    greeting = 'Good Night! 🌙';
-                    suggestion = 'Plan ahead for tomorrow! Book your experience now and wake up to an adventure.';
-                    btnText = 'Plan Tomorrow';
-                    emoji = '📅';
-                }
-
-                const iconEl = document.getElementById('widgetIcon');
-                const msgEl = document.getElementById('widgetMessage');
-                const btnEl = document.getElementById('widgetBtn');
-
-                if (iconEl) iconEl.textContent = icon;
-                if (msgEl) msgEl.innerHTML = `<strong>${greeting}</strong><p id="widgetSuggestion">${suggestion}</p>`;
-                if (btnEl) btnEl.textContent = `${emoji} ${btnText}`;
-            }
-
-            updateWidget();
-            setInterval(updateWidget, 60000);
-
-            const dismissBtn = document.getElementById('widgetDismiss');
-            if (dismissBtn) {
-                dismissBtn.addEventListener('click', function() {
-                    const widget = document.getElementById('todayWidget');
-                    if (widget) {
-                        widget.style.transition = 'all 0.4s ease';
-                        widget.style.opacity = '0';
-                        widget.style.transform = 'translateY(-20px)';
-                        setTimeout(() => {
-                            widget.style.display = 'none';
-                        }, 400);
-                    }
-                    localStorage.setItem('widgetDismissed', 'true');
-                });
-            }
-
-            if (localStorage.getItem('widgetDismissed') === 'true') {
-                const widget = document.getElementById('todayWidget');
-                if (widget) widget.style.display = 'none';
-            }
-
-            console.log('🧭 "What to Do Today" widget loaded!');
-        })();
 
         // ============================================================
         // AI TRIP PLANNER (FIXED)

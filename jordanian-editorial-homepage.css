@@ -82,6 +82,37 @@ body.homepage {
 .homepage .hero-cta-group .button-primary:hover { background: var(--sl-terracotta-dark); }
 .homepage .button-ghost,
 .homepage .hero-cta-group .button-ghost { background: transparent; border: 1px solid var(--sl-forest); color: var(--sl-forest); }
+.homepage .trust-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+  gap: 0;
+  align-items: stretch;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 18px clamp(18px, 4vw, 64px);
+  background: #e9e1d2;
+  border-bottom: 1px solid var(--sl-line);
+}
+.homepage .trust-item { padding: 5px 18px; border-right: 1px solid rgba(23, 75, 72, .18); }
+.homepage .trust-item strong { display: block; color: var(--sl-forest); font-size: .82rem; line-height: 1.3; }
+.homepage .trust-item span { display: block; margin-top: 4px; color: var(--sl-muted); font-size: .76rem; line-height: 1.4; }
+.homepage .trust-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 152px;
+  margin-left: 18px;
+  padding: 11px 15px;
+  align-self: center;
+  background: var(--sl-terracotta);
+  color: #fffaf1;
+  border-radius: 3px;
+  font-size: .82rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.homepage .trust-cta:hover { background: var(--sl-terracotta-dark); color: #fffaf1; }
 .homepage .experiences { padding: 52px clamp(18px, 4vw, 64px) 58px; background: var(--sl-paper); }
 .homepage .experiences > h2,
 .homepage .gallery-title,
@@ -144,6 +175,9 @@ body.homepage {
   .homepage .hero-shape { position: relative; inset: auto; grid-column: 1; grid-row: 1; height: 310px; clip-path: none; background-position: center; }
   .homepage .hero-content-wrapper { grid-column: 1; grid-row: 2; padding: 32px 24px 38px; background: var(--sl-sand); }
   .homepage #hero-title { font-size: clamp(2.5rem, 9vw, 4rem); }
+  .homepage .trust-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 17px 18px; }
+  .homepage .trust-item { padding: 8px 12px; border-right: 0; border-bottom: 1px solid rgba(23, 75, 72, .18); }
+  .homepage .trust-cta { grid-column: 1 / -1; margin: 14px 0 0; }
   .homepage .product-gallery { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .homepage .gallery-grid { grid-template-columns: repeat(2,minmax(0,1fr)); grid-auto-rows: 180px; }
   .homepage .gallery-item:first-child { grid-row: span 2; }
@@ -159,6 +193,10 @@ body.homepage {
   .homepage .logo-text { font-size: 1.02rem; }
   .homepage .logo-text img { max-height: 39px; }
   .homepage .hero-shape { height: 235px; }
+  .homepage .trust-strip { grid-template-columns: 1fr; padding: 13px 16px; }
+  .homepage .trust-item { padding: 11px 0; border-bottom: 1px solid rgba(23, 75, 72, .18); }
+  .homepage .trust-item:last-of-type { border-bottom: 0; }
+  .homepage .trust-cta { grid-column: auto; margin: 12px 0 2px; }
   .homepage .experiences { padding: 36px 16px 42px; }
   .homepage .product-gallery { grid-template-columns: 1fr; gap: 15px; }
   .homepage .product-image { aspect-ratio: 1.65 / 1; }
