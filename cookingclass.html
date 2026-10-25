@@ -25,39 +25,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
+    <!-- This is a bookable experience, not a single dated event.
+         Do not use Event markup with a past or invented start date. -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Event",
+        "@type": "Service",
         "name": "Authentic Jordanian Cooking Class in Aqaba",
-        "description": "Join our hands-on cooking class in Aqaba and learn to prepare traditional Jordanian dishes like Mansaf and Maqluba in a local home kitchen.",
+        "serviceType": "Jordanian cooking class",
+        "description": "Join a hands-on cooking experience in Aqaba and learn traditional Jordanian dishes such as Mansaf and Maqluba with a local host.",
         "url": "https://suhailacook.github.io/Suhaila-locals/cookingclass.html",
-        "startDate": "2025-07-01T10:00",
-        "endDate": "2025-07-01T13:00",
-        "location": {
-            "@type": "Place",
-            "name": "Aqaba local experiences Kitchen",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Deir Yaseen street",
-                "addressLocality": "Aqaba",
-                "postalCode": "77110",
-                "addressCountry": "JO"
-            }
+        "image": "https://suhailacook.github.io/Suhaila-locals/images/cooking-class-aqaba.webp",
+        "areaServed": {
+            "@type": "City",
+            "name": "Aqaba"
         },
-        "image": [
-            "https://suhailacook.github.io/Suhaila-locals/cooking-class-aqaba.webp"
-        ],
+        "provider": {
+            "@type": "Person",
+            "name": "Agareed"
+        },
         "offers": {
             "@type": "Offer",
             "url": "https://suhailacook.github.io/Suhaila-locals/Reservation.html?experience=Authentic%20Cooking%20Class",
             "price": "30",
-            "priceCurrency": "JOD",
-            "availability": "https://schema.org/InStock"
-        },
-        "performer": {
-            "@type": "Person",
-            "name": "Agareed"
+            "priceCurrency": "JOD"
         }
     }
     </script>
