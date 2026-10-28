@@ -594,20 +594,22 @@ body.reservation-page .success-message {
   color: #d8d1a2 !important;
   margin-inline: 0 !important;
 }
-.navbar .navbar-links > a.active:not(.nav-reserve) {
+.navbar .navbar-links > a.active:not(.nav-reserve),
+.navbar .navbar-links .dropbtn.active,
+.navbar .navbar-links .dropdown-content a.active {
   color: #174b48 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
+  background: #fbd66b !important;
+  box-shadow: 0 4px 14px rgba(210, 173, 67, .16) !important;
+  border-radius: 999px !important;
 }
 .navbar .navbar-links > a.nav-reserve,
 .navbar .navbar-links > a[href="Reservation.html"] {
   min-height: 42px !important;
   padding: 11px 18px !important;
   border-radius: 999px !important;
-  background: #fbd66b !important;
+  background: transparent !important;
   color: #174b48 !important;
-  box-shadow: 0 4px 14px rgba(210, 173, 67, .16) !important;
+  box-shadow: none !important;
 }
 .navbar .navbar-links > a.nav-reserve.active,
 .navbar .navbar-links > a[href="Reservation.html"].active {
