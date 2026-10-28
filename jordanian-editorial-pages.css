@@ -749,3 +749,98 @@ body.blog-page footer .footer-social img {
     overflow-wrap: anywhere;
   }
 }
+
+/* Experience pages: use the same brand footer without allowing the mobile logo row to overflow. */
+body:not(.homepage):not(.blog-page) footer {
+  background: #174b48;
+  color: #f8efe0;
+  border-top: 5px solid #17504d;
+  padding-top: 42px;
+}
+body:not(.homepage):not(.blog-page) footer a { color: #f8efe0; }
+body:not(.homepage):not(.blog-page) footer a:hover { color: #fbd66b; }
+body:not(.homepage):not(.blog-page) footer h3 { color: #d9d3a8; }
+body:not(.homepage):not(.blog-page) footer .footer-logo {
+  min-width: 0;
+  align-items: center;
+}
+body:not(.homepage):not(.blog-page) footer .footer-logo img {
+  width: 72px;
+  height: 72px;
+  max-width: 72px;
+  max-height: 72px;
+  object-fit: contain;
+}
+body:not(.homepage):not(.blog-page) footer .footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+body:not(.homepage):not(.blog-page) footer .footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+}
+body:not(.homepage):not(.blog-page) footer .footer-social img {
+  width: 22px;
+  height: 22px;
+  max-width: 22px;
+  object-fit: contain;
+}
+@media (max-width: 560px) {
+  body:not(.homepage):not(.blog-page) footer {
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 18px 20px;
+    box-sizing: border-box;
+  }
+  body:not(.homepage):not(.blog-page) footer .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    gap: 28px;
+  }
+  body:not(.homepage):not(.blog-page) footer .footer-brand,
+  body:not(.homepage):not(.blog-page) footer .footer-column {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+  body:not(.homepage):not(.blog-page) footer .footer-logo {
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  body:not(.homepage):not(.blog-page) footer .footer-logo img {
+    width: 72px;
+    height: 72px;
+    max-width: 72px;
+    max-height: 72px;
+  }
+  body:not(.homepage):not(.blog-page) footer .footer-tagline {
+    max-width: 30ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  body:not(.homepage):not(.blog-page) footer .footer-social {
+    justify-content: center;
+    max-width: 100%;
+  }
+  body:not(.homepage):not(.blog-page) footer .footer-column {
+    align-items: center;
+  }
+  body:not(.homepage):not(.blog-page) footer .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+  body:not(.homepage):not(.blog-page) footer .footer-bottom > * {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+}
