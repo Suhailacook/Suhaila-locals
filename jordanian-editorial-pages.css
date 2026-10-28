@@ -561,6 +561,14 @@ body.reservation-page .success-message {
   }
   .navbar .navbar-links > a.nav-reserve,
   .navbar .navbar-links > a[href="Reservation.html"] { justify-content: center; }
+  .navbar .navbar-links > a.active:not(.nav-reserve),
+  .navbar .navbar-links .dropbtn.active,
+  .navbar .navbar-links .dropdown-content a.active {
+    width: fit-content;
+    align-self: flex-start;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
   .navbar .dropdown { width: 100%; }
   .navbar .dropdown-content {
     position: static;
