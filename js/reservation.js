@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'Dining Experience': 'Book_Dining_Experience',
             'Aqaba Glass Boat': 'Book_Glass_Boat',
             'Houh Delivery': 'Book_Houh_Delivery',
+            'Aqaba Walking Tour': 'Book_Walking_Tour',
             'Walking Tour in Aqaba': 'Book_Walking_Tour',
             'Historic Walking Tour': 'Book_Walking_Tour',
             'iftar': 'Book_Dining_Experience',

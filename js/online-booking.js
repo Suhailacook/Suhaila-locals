@@ -78,7 +78,7 @@ function displayEventDetails(event) {
     <h3>${event.title}</h3>
     
     <div class="price-display">
-      <div class="price-label">Price per camera/connection</div>
+      <div class="price-label">Price per person</div>
       <div class="price-amount">${props.price}</div>
     </div>
 

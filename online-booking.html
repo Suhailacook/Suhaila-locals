@@ -34,7 +34,7 @@
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Authentic Jordanian Online Cooking Class",
-    "description": "Live, interactive online cooking classes via Zoom to learn traditional Jordanian dishes like Hummus, Falafel, and Maqluba.",
+    "description": "Live, interactive online cooking classes via Zoom to learn traditional Jordanian dishes like Hummus, Falafel, and Maqluba. $20 USD per participant.",
     "serviceType": "Online Cooking Class",
     "provider": {
       "@type": "Organization",
@@ -45,6 +45,7 @@
       "@type": "Offer",
       "priceCurrency": "USD",
       "price": "20",
+      "description": "$20 USD per participant",
       "url": "https://suhailacook.github.io/Suhaila-locals/online-booking.html",
       "availability": "https://schema.org/InStock",
       "validFrom": "2026-03-29"
@@ -560,7 +561,7 @@
       <div id="booking-flow">
         <div class="booking-header">
           <h2>Choose Your Authentic Jordanian Culinary Experience</h2>
-          <p>Select a dish to explore ingredients, pricing, and book your live class</p>
+          <p>Select a dish to explore ingredients, pricing, and request your live class</p>
         </div>
 
         <!-- Dish Selection Cards -->
@@ -573,7 +574,7 @@
             </div>
             <h3>🍚 Maqluba</h3>
             <p>The famous "upside-down" rice dish with chicken and vegetables.</p>
-            <div class="dish-price">$20 USD</div>
+            <div class="dish-price">$20 USD / person</div>
           </div>
 
           <!-- Hummus & Falafel Card -->
@@ -582,9 +583,9 @@
               <img loading="lazy" src="images/aqaba-food/falafel.jpg" alt="Hummus & Falafel" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
               <span style="position: absolute; top: 10px; right: 10px; background: #e8f5e9; color: #2e7d32; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">🌱 VEGAN</span>
             </div>
-            <h3>🥙 Hummus & Falafel</h3>
+            <h3>🥙 Hummus &amp; Falafel</h3>
             <p>Master the secrets of creamy hummus and crispy falafel from scratch.</p>
-            <div class="dish-price">$20 USD</div>
+            <div class="dish-price">$20 USD / person</div>
           </div>
 
           <!-- Mansaf Card -->
@@ -595,7 +596,7 @@
             </div>
             <h3>🍖 Jordanian Mansaf</h3>
             <p>Master the national dish of Jordan: lamb cooked in a rich yogurt sauce.</p>
-            <div class="dish-price">$20 USD</div>
+            <div class="dish-price">$20 USD / person</div>
           </div>
 
           <!-- Tabbouleh & Baba Ganoush Card -->
@@ -604,9 +605,9 @@
               <img loading="lazy" src="images/aqaba-food/tabbouleh.jpg" alt="Tabbouleh & Baba Ganoush" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
               <span style="position: absolute; top: 10px; right: 10px; background: #e8f5e9; color: #2e7d32; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">🌱 VEGAN</span>
             </div>
-            <h3>🥗 Tabbouleh & Baba Ganoush</h3>
+            <h3>🥗 Tabbouleh &amp; Baba Ganoush</h3>
             <p>Learn to make the perfect zesty salad and smoky eggplant dip.</p>
-            <div class="dish-price">$20 USD</div>
+            <div class="dish-price">$20 USD / person</div>
           </div>
         </div>
 
@@ -623,12 +624,12 @@
         <div id="pricing-section" class="pricing-breakdown">
           <h4>💰 Pricing Breakdown</h4>
           <div class="pricing-row">
-            <span>Per camera/connection</span>
+            <span>Price per person</span>
             <span>$20.00</span>
           </div>
           <div class="pricing-row">
-            <span>Perfect for individuals or households cooking together</span>
-            <span>✓</span>
+            <span>Number of participants</span>
+            <span id="pricing-participants">1</span>
           </div>
           <div class="pricing-row">
             <span>2-2.5 hour live interactive session</span>
@@ -640,7 +641,7 @@
           </div>
           <div class="pricing-row">
             <span><strong>Total</strong></span>
-            <span><strong>$20.00</strong></span>
+            <span><strong id="pricing-total">$20.00</strong></span>
           </div>
         </div>
 
@@ -660,8 +661,8 @@
         <!-- Booking Form Section -->
         <div id="form-section" class="booking-form-section">
           <div class="booking-header">
-            <h2 id="selected-dish-title">Complete Your Online Cooking Class Booking</h2>
-            <p>Provide your details and preferred date to secure your spot</p>
+            <h2 id="selected-dish-title">Request an Online Cooking Class</h2>
+            <p>Provide your details and preferred date to request a class</p>
           </div>
 
           <form id="bookingForm" onsubmit="submitBooking(event)">
@@ -694,7 +695,7 @@
               </div>
             </div>
 
-            <button type="submit" class="btn-submit">Confirm Booking Request</button>
+            <button type="submit" class="btn-submit">Send Booking Request</button>
           </form>
         </div>
       </div>
@@ -703,14 +704,9 @@
       <div id="success-message" class="success-message">
         <h3>✓ Booking Request Sent!</h3>
         <p>Thank you for your interest in our online cooking class!</p>
-        <p>We have received your request for the <strong id="confirmed-dish"></strong> class.</p>
-        <p>We will contact you shortly at <strong id="confirmed-email"></strong> to confirm the date and provide the Zoom link.</p>
-
-        <div style="background: #fff; border: 1px solid #c6f6d5; border-radius: 10px; padding: 1.5rem; margin-top: 1.5rem; text-align: center;">
-          <p style="font-weight: 700; color: #22543d; margin-bottom: 0.5rem;">One last step: secure your spot with payment</p>
-          <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">Classes are limited to a few students, so your spot is confirmed once payment is received.</p>
-          <a href="https://www.paypal.me/Mohammeddalaeen/20" target="_blank" rel="noopener" class="btn-submit" style="width: auto; display: inline-block; background: #0070ba; text-decoration: none;" onclick="if (window.gtag) gtag('event', 'paypal_payment_click', {value: 20, currency: 'USD'});">💳 Pay $20 via PayPal</a>
-        </div>
+        <p>We have received your request for the <strong id="confirmed-dish"></strong> class for <strong id="confirmed-participants"></strong> participant(s). Estimated total: <strong id="confirmed-total"></strong> ($20 per person).</p>
+        <p>We will contact you at <strong id="confirmed-email"></strong> to confirm availability and the date.</p>
+        <p>No payment is due when you submit this request. After we confirm availability and the participant total, we will email you the next steps for payment.</p>
 
         <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #666;">Spaces are limited to ensure an intimate and interactive experience.</p>
         <button class="btn-submit" onclick="location.reload()">Book Another Class</button>
@@ -825,6 +821,14 @@
       }
     };
 
+    const PRICE_PER_PERSON = 20;
+
+    function updatePricing() {
+      const participants = Math.max(1, parseInt(document.getElementById('guestCount').value, 10) || 1);
+      document.getElementById('pricing-participants').textContent = participants;
+      document.getElementById('pricing-total').textContent = `$${(PRICE_PER_PERSON * participants).toFixed(2)}`;
+    }
+
     function selectDish(dishName, element) {
       // Update UI
       document.querySelectorAll('.dish-card').forEach(card => {
@@ -834,7 +838,7 @@
 
       // Set hidden input
       document.getElementById('dishInput').value = dishName;
-      document.getElementById('selected-dish-title').innerText = 'Booking: ' + dishName;
+      document.getElementById('selected-dish-title').innerText = 'Request: ' + dishName;
       
       // Show ingredients
       const ingredientsSection = document.getElementById('ingredients-section');
@@ -849,6 +853,7 @@
       document.getElementById('pricing-section').classList.add('show');
       document.getElementById('whats-included').classList.add('show');
       document.getElementById('form-section').classList.add('show');
+      updatePricing();
       
       // Scroll to form
       document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
@@ -858,13 +863,17 @@
       event.preventDefault();
       
       const form = document.getElementById('bookingForm');
+      if (!form.reportValidity()) return;
       const formData = new FormData(form);
+      const participants = Math.max(1, parseInt(document.getElementById('guestCount').value, 10) || 1);
+      const email = document.getElementById('guestEmail').value.trim();
       const data = {
         dish: formData.get('dish'),
         name: formData.get('name'),
-        email: formData.get('email'),
+        email: email,
         date: formData.get('date'),
-        participants: formData.get('participants'),
+        participants: participants,
+        total_price: `$${(PRICE_PER_PERSON * participants).toFixed(2)} USD`,
         dietary_restrictions: formData.get('dietary_restrictions'),
         bookingType: 'Online Cooking Class Request'
       };
@@ -881,7 +890,9 @@
         if (response.ok) {
           document.getElementById('booking-flow').style.display = 'none';
           document.getElementById('confirmed-dish').innerText = data.dish;
-          document.getElementById('confirmed-email').innerText = data.email;
+          document.getElementById('confirmed-email').textContent = data.email;
+          document.getElementById('confirmed-participants').textContent = data.participants;
+          document.getElementById('confirmed-total').textContent = data.total_price;
           document.getElementById('success-message').classList.add('show');
           window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
@@ -893,6 +904,11 @@
         alert('There was an error submitting your request. Please try again.');
       });
     }
+
+    const guestCountInput = document.getElementById('guestCount');
+    guestCountInput.addEventListener('input', updatePricing);
+    guestCountInput.addEventListener('change', updatePricing);
+    updatePricing();
 
     // Navigation setup
     const hamburger = document.getElementById('hamburger');
