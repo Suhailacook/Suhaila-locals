@@ -1073,21 +1073,34 @@ body.homepage {
   .homepage .footer-column {
     width: 100%;
     max-width: 100%;
-    text-align: left;
+    text-align: center;
   }
   .homepage .footer-logo {
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
   }
   .homepage .footer-logo img {
-    width: 88px !important;
-    height: 88px !important;
-    max-width: 88px !important;
-    max-height: 88px !important;
+    width: 72px !important;
+    height: 72px !important;
+    max-width: 72px !important;
+    max-height: 72px !important;
+  }
+  .homepage .footer-logo span {
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
   .homepage .footer-tagline {
-    max-width: 34ch;
+    max-width: 30ch;
     line-height: 1.6;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .homepage .footer-social {
+    justify-content: center;
+    max-width: 100%;
   }
   .homepage .footer-bottom {
     display: flex;
