@@ -107,6 +107,28 @@
     color: #0f2b4a;
 }
 
+.paypal-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.75rem 0 1rem;
+    padding: 0.85rem 1.25rem;
+    border-radius: 8px;
+    background: #0070ba;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 8px 18px rgba(0, 112, 186, 0.22);
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.paypal-button:hover {
+    background: #005ea6;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 11px 24px rgba(0, 112, 186, 0.28);
+}
+
 @media (max-width: 760px) {
     .online-class-features,
     .online-class-timeline {
