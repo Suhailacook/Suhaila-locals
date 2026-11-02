@@ -626,6 +626,27 @@
 
           <form id="bookingForm" onsubmit="submitBooking(event)">
             <input type="hidden" id="dishInput" name="dish">
+
+            <div class="calendar-panel" aria-labelledby="calendar-title">
+              <div class="calendar-heading">
+                <div>
+                  <span class="calendar-kicker">Live class schedule</span>
+                  <h3 id="calendar-title">Choose your preferred date</h3>
+                </div>
+                <span class="calendar-zone">Aqaba · GMT+3</span>
+              </div>
+              <div class="calendar-toolbar">
+                <button type="button" id="calendar-prev" class="calendar-nav" aria-label="Previous month">‹</button>
+                <strong id="calendar-month" aria-live="polite"></strong>
+                <button type="button" id="calendar-next" class="calendar-nav" aria-label="Next month">›</button>
+              </div>
+              <div class="calendar-weekdays" aria-hidden="true">
+                <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+              </div>
+              <div id="calendar-days" class="calendar-days" role="grid" aria-label="Available class dates"></div>
+              <p id="calendar-selection" class="calendar-selection" aria-live="polite">Select a date to continue.</p>
+              <p class="calendar-note">Your date and time are requests and will be confirmed personally within 24 hours.</p>
+            </div>
             
             <div class="form-grid">
               <div class="form-group">
@@ -908,6 +929,7 @@
     // Set minimum date to today
     document.getElementById('bookingDate').min = new Date().toISOString().split('T')[0];
   </script>
+  <script src="js/online-calendar.js"></script>
 <script src="js/navbar.js"></script>
     <script src="js/site-interactions.js"></script>
 </body>
