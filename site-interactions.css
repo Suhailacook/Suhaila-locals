@@ -1,0 +1,122 @@
+/* Suhaila Locals — site-wide motion system */
+
+:root {
+    --site-motion: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Every page gets a calm entrance without hiding content from non-JS users. */
+.site-reveal {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+    transition: opacity 0.7s var(--site-motion), transform 0.7s var(--site-motion);
+    transition-delay: var(--site-delay, 0ms);
+}
+
+.site-reveal.site-reveal-scale {
+    transform: translate3d(0, 18px, 0) scale(0.975);
+}
+
+.site-reveal.site-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Shared heroes gain subtle depth while preserving the existing artwork. */
+.hero-section,
+.reservation-hero,
+.contact-hero-section,
+.blog-hero,
+.experience-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.hero-section::after,
+.reservation-hero::after,
+.contact-hero-section::after,
+.blog-hero::after,
+.experience-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(circle at var(--site-pointer-x, 50%) var(--site-pointer-y, 40%), rgba(249, 213, 110, 0.17), transparent 27%);
+    transition: opacity 0.6s ease;
+}
+
+.site-pointer-active::after {
+    opacity: 1;
+}
+
+.hero-section > *,
+.reservation-hero > *,
+.contact-hero-section > *,
+.blog-hero > *,
+.experience-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Consistent interactive depth for common content cards. */
+.site-tilt {
+    --site-tilt-x: 0deg;
+    --site-tilt-y: 0deg;
+    transform: perspective(900px) rotateX(var(--site-tilt-x)) rotateY(var(--site-tilt-y)) translateY(var(--site-lift, 0px));
+    transform-style: preserve-3d;
+    transition: transform 0.55s var(--site-motion), box-shadow 0.55s ease;
+    will-change: transform;
+}
+
+.site-tilt:hover {
+    --site-lift: -5px;
+    box-shadow: 0 20px 44px rgba(15, 43, 74, 0.12);
+}
+
+.site-ripple-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.site-ripple {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.38);
+    pointer-events: none;
+    transform: scale(0);
+    animation: site-ripple 0.65s ease-out;
+}
+
+@keyframes site-ripple {
+    to { transform: scale(18); opacity: 0; }
+}
+
+@media (max-width: 800px), (pointer: coarse) {
+    .site-tilt {
+        transform: none;
+    }
+
+    .site-tilt:hover {
+        --site-lift: 0;
+        box-shadow: inherit;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-reveal,
+    .site-tilt {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .site-ripple,
+    .site-pointer-active::after {
+        animation: none;
+        opacity: 0;
+    }
+}
