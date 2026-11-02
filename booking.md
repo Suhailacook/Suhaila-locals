@@ -10,7 +10,7 @@ Suhaila Locals accepts booking requests for local experiences in Aqaba, Jordan. 
 
 ## Important booking facts
 
-The cooking class costs 30 JOD per person and lasts 3 hours. The walking and food tour costs 20 JOD per person and lasts 2.5 hours. The dining experience costs 15 JOD per person and lasts 2.5 hours. The glass boat costs 25 JOD per hour per boat for up to 6 guests. Houh delivery costs 10 JOD per plate, requires a minimum order of 3 plates, is delivered within Aqaba, and needs at least 24 hours' advance notice. The online cooking class specializes in hummus and falafel, costs 20 USD per person, and takes place live over Zoom.
+The cooking class costs 30 JOD per person and lasts 3 hours. The walking and food tour costs 20 JOD per person and lasts 2.5 hours. The dining experience costs 15 JOD per person and lasts 2.5 hours. The glass boat costs 25 JOD per hour per boat for up to 6 guests. Houh delivery costs 10 JOD per plate, requires a minimum order of 3 plates, is delivered within Aqaba, and needs at least 24 hours' advance notice. The online cooking class specializes in hummus and falafel, costs 20 USD per camera, and takes place live over Zoom.
 
 Prices and availability may change. Treat the individual experience page and confirmation from Suhaila Locals as the current source for a booking decision.
 

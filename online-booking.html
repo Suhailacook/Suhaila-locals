@@ -34,7 +34,7 @@
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Authentic Jordanian Online Cooking Class",
-    "description": "Live, interactive Hummus & Falafel cooking class via Zoom. Learn both recipes from scratch for $20 USD per participant.",
+    "description": "Live, interactive Hummus & Falafel cooking class via Zoom. Learn both recipes from scratch for $20 USD per camera.",
     "serviceType": "Online Cooking Class",
     "provider": {
       "@type": "Organization",
@@ -45,7 +45,7 @@
       "@type": "Offer",
       "priceCurrency": "USD",
       "price": "20",
-      "description": "$20 USD per participant",
+      "description": "$20 USD per camera",
       "url": "https://suhailacook.github.io/Suhaila-locals/online-booking.html",
       "availability": "https://schema.org/InStock",
       "validFrom": "2026-03-29"
@@ -556,7 +556,7 @@
             </div>
             <h3>🥙 Hummus &amp; Falafel</h3>
             <p>Master the secrets of creamy hummus and crispy falafel from scratch.</p>
-            <div class="dish-price">$20 USD / person</div>
+            <div class="dish-price">$20 USD / camera</div>
           </div>
 
           </div>
@@ -576,7 +576,7 @@
         <div id="pricing-section" class="pricing-breakdown">
           <h4>💰 Pricing Breakdown</h4>
           <div class="pricing-row">
-            <span>Price per person</span>
+            <span>Price per camera</span>
             <span>$20.00</span>
           </div>
           <div class="pricing-row">
@@ -656,7 +656,7 @@
       <div id="success-message" class="success-message">
         <h3>✓ Booking Request Sent!</h3>
         <p>Thank you for your interest in our online cooking class!</p>
-        <p>We have received your request for the <strong id="confirmed-dish"></strong> class for <strong id="confirmed-participants"></strong> participant(s). Estimated total: <strong id="confirmed-total"></strong> ($20 per person).</p>
+        <p>We have received your request for the <strong id="confirmed-dish"></strong> class for <strong id="confirmed-participants"></strong> participant(s). Estimated total: <strong id="confirmed-total"></strong> ($20 per camera).</p>
         <p>We will contact you at <strong id="confirmed-email"></strong> to confirm availability and the date.</p>
         <p>No payment is due when you submit this request. After we confirm availability and the participant total, we will email you the next steps for payment.</p>
 
@@ -736,12 +736,12 @@
       },
     };
 
-    const PRICE_PER_PERSON = 20;
+    const PRICE_PER_CAMERA = 20;
 
     function updatePricing() {
       const participants = Math.max(1, parseInt(document.getElementById('guestCount').value, 10) || 1);
       document.getElementById('pricing-participants').textContent = participants;
-      document.getElementById('pricing-total').textContent = `$${(PRICE_PER_PERSON * participants).toFixed(2)}`;
+      document.getElementById('pricing-total').textContent = `$${PRICE_PER_CAMERA.toFixed(2)}`;
     }
 
     function selectDish(dishName, element) {
@@ -788,7 +788,7 @@
         email: email,
         date: formData.get('date'),
         participants: participants,
-        total_price: `$${(PRICE_PER_PERSON * participants).toFixed(2)} USD`,
+        total_price: `$${PRICE_PER_CAMERA.toFixed(2)} USD`,
         dietary_restrictions: formData.get('dietary_restrictions'),
         bookingType: 'Online Cooking Class Request'
       };
