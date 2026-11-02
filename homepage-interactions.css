@@ -1,0 +1,127 @@
+/* Suhaila Locals — lightweight interaction layer
+   Designed to enhance the editorial homepage without changing its content. */
+
+:root {
+    --interaction-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Hero depth: the existing photo remains the focus while the glow follows the pointer. */
+.hero-section {
+    --hero-pointer-x: 50%;
+    --hero-pointer-y: 42%;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    inset: -12%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background: radial-gradient(circle at var(--hero-pointer-x) var(--hero-pointer-y), rgba(240, 214, 166, 0.2), transparent 23%);
+    transition: opacity 0.8s ease;
+}
+
+.hero-section .hero-shape {
+    transform: translate3d(var(--hero-shift-x, 0), var(--hero-shift-y, 0), 0) scale(1.04);
+    transition: transform 0.8s var(--interaction-ease);
+}
+
+.hero-section .hero-content-wrapper,
+.hero-section .hero-scroll-cue {
+    z-index: 1;
+}
+
+/* Reveal-on-scroll states are applied by homepage-interactions.js. */
+[data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+    transition: opacity 0.75s var(--interaction-ease), transform 0.75s var(--interaction-ease);
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal="scale"] {
+    transform: translate3d(0, 18px, 0) scale(0.97);
+}
+
+[data-reveal].is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* Cards respond to a pointer with a restrained depth effect. */
+[data-tilt] {
+    --tilt-x: 0deg;
+    --tilt-y: 0deg;
+    --tilt-lift: 0px;
+    transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(var(--tilt-lift));
+    transform-style: preserve-3d;
+    transition: transform 0.55s var(--interaction-ease), box-shadow 0.55s ease;
+    will-change: transform;
+}
+
+[data-tilt]:hover {
+    --tilt-lift: -6px;
+    box-shadow: 0 22px 45px rgba(15, 43, 74, 0.14);
+}
+
+.product-item[data-tilt] .product-image,
+.gallery-item[data-tilt] .gallery-img {
+    transition: transform 0.7s var(--interaction-ease), filter 0.7s ease;
+}
+
+.product-item[data-tilt]:hover .product-image,
+.gallery-item[data-tilt]:hover .gallery-img {
+    transform: scale(1.045);
+    filter: saturate(1.08);
+}
+
+.hero-scroll-cue {
+    animation: gentle-bob 2.6s ease-in-out infinite;
+}
+
+@keyframes gentle-bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(7px); }
+}
+
+@media (max-width: 800px), (pointer: coarse) {
+    [data-tilt] {
+        transform: none;
+        transition: box-shadow 0.35s ease;
+    }
+
+    [data-tilt]:hover {
+        --tilt-lift: 0;
+        box-shadow: var(--shadow-md, 0 8px 30px rgba(0,0,0,0.06));
+    }
+
+    .hero-section::after {
+        opacity: 0.28;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    [data-tilt] {
+        transform: none;
+        transition: none;
+    }
+
+    .hero-scroll-cue,
+    .hero-section .hero-shape {
+        animation: none;
+        transition: none;
+    }
+
+    .hero-section::after {
+        display: none;
+    }
+}
