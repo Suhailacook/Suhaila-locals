@@ -546,6 +546,16 @@
           <p>Explore the ingredients and request your live Hummus & Falafel class</p>
         </div>
 
+        <div class="booking-prep-panel">
+          <h3>Prepare for your live class</h3>
+          <p>Have these ready before we meet on Zoom:</p>
+          <ul>
+            <li>Cooked chickpeas for hummus and dried chickpeas soaked overnight for falafel</li>
+            <li>Tahini, lemon, garlic, parsley, cilantro, cumin, and neutral oil</li>
+            <li>A food processor or blender, mixing bowl, stovetop, and frying pan</li>
+          </ul>
+        </div>
+
         <!-- Dish Selection Cards -->
         <div class="dish-selection">
           <!-- Hummus & Falafel Card -->
@@ -558,9 +568,6 @@
             <p>Master the secrets of creamy hummus and crispy falafel from scratch.</p>
             <div class="dish-price">$20 USD / camera</div>
           </div>
-
-          </div>
-        </div>
         </div>
 
         <!-- Ingredients Section -->
@@ -637,6 +644,17 @@
               </div>
 
               <div class="form-group">
+                <label for="bookingTime">Preferred Time (Aqaba, GMT+3) *</label>
+                <select id="bookingTime" name="time" required>
+                  <option value="">Choose a time</option>
+                  <option value="10:00">10:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="19:00">19:00</option>
+                </select>
+              </div>
+
+              <div class="form-group">
                 <label for="guestCount">Number of Participants *</label>
                 <input type="number" id="guestCount" name="participants" min="1" max="10" value="1" required>
               </div>
@@ -645,6 +663,11 @@
                 <label for="dietaryRestrictions">Dietary Restrictions / Special Notes</label>
                 <textarea id="dietaryRestrictions" name="dietary_restrictions" placeholder="Any allergies or special requests? We'll do our best to accommodate."></textarea>
               </div>
+            </div>
+
+            <div class="paypal-note" role="note">
+              <span aria-hidden="true">🔒</span>
+              <div><strong>Secure payment by PayPal</strong><br>Send your request first. After we confirm the date, we will share the secure PayPal payment link. No payment is due with this request.</div>
             </div>
 
             <button type="submit" class="btn-submit">Send Booking Request</button>
@@ -787,6 +810,7 @@
         name: formData.get('name'),
         email: email,
         date: formData.get('date'),
+        time: formData.get('time'),
         participants: participants,
         total_price: `$${PRICE_PER_CAMERA.toFixed(2)} USD`,
         dietary_restrictions: formData.get('dietary_restrictions'),

@@ -1,0 +1,122 @@
+/* Online Hummus & Falafel class — focused visual refresh */
+.online-class-features,
+.online-class-timeline,
+.booking-prep-panel {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.online-class-features {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.online-class-feature,
+.online-class-timeline li,
+.booking-prep-panel {
+    background: linear-gradient(145deg, #fffdf8, #f8f4ec);
+    border: 1px solid #eadfce;
+    border-radius: 14px;
+    padding: 1.15rem;
+}
+
+.online-class-feature {
+    min-height: 145px;
+}
+
+.online-class-feature .feature-icon {
+    display: block;
+    font-size: 1.8rem;
+    margin-bottom: 0.6rem;
+}
+
+.online-class-feature strong {
+    display: block;
+    color: #0f2b4a;
+    margin-bottom: 0.35rem;
+}
+
+.online-class-feature span,
+.online-class-timeline li,
+.booking-prep-panel p,
+.booking-prep-panel li {
+    color: #5f6870;
+    line-height: 1.65;
+}
+
+.online-class-timeline {
+    list-style: none;
+    padding: 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    counter-reset: class-step;
+}
+
+.online-class-timeline li {
+    counter-increment: class-step;
+    position: relative;
+    padding-top: 3.2rem;
+}
+
+.online-class-timeline li::before {
+    content: counter(class-step, decimal-leading-zero);
+    position: absolute;
+    top: 1rem;
+    left: 1.15rem;
+    color: #d48742;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.online-class-timeline strong {
+    display: block;
+    color: #0f2b4a;
+    margin-bottom: 0.35rem;
+}
+
+.booking-prep-panel {
+    display: block;
+    border-left: 4px solid #d48742;
+}
+
+.booking-prep-panel h3 {
+    color: #0f2b4a;
+    margin: 0 0 0.65rem;
+}
+
+.booking-prep-panel ul {
+    margin: 0.7rem 0 0;
+    padding-left: 1.2rem;
+}
+
+.paypal-note {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin: 1rem 0;
+    padding: 0.95rem 1rem;
+    border: 1px solid #c8e0d6;
+    border-radius: 10px;
+    background: #f2fbf7;
+    color: #31594d;
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.paypal-note strong {
+    color: #0f2b4a;
+}
+
+@media (max-width: 760px) {
+    .online-class-features,
+    .online-class-timeline {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .online-class-feature,
+    .online-class-timeline li {
+        transition: none !important;
+    }
+}
