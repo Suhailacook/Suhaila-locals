@@ -1,0 +1,163 @@
+/* Suhaila Locals — contact and reservation interaction layer */
+
+:root {
+    --form-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Progressive reveal for the contact and reservation journeys. */
+[data-form-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+    transition: opacity 0.7s var(--form-ease), transform 0.7s var(--form-ease);
+    transition-delay: var(--form-reveal-delay, 0ms);
+}
+
+[data-form-reveal="scale"] {
+    transform: translate3d(0, 18px, 0) scale(0.975);
+}
+
+[data-form-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Contact cards lift gently and keep the interaction tactile. */
+.info-card,
+.reservation-item {
+    transition: transform 0.45s var(--form-ease), box-shadow 0.45s ease, border-color 0.35s ease;
+}
+
+.info-card:hover,
+.reservation-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 42px rgba(15, 43, 74, 0.12);
+}
+
+.info-card .info-card-icon {
+    transition: transform 0.45s var(--form-ease);
+}
+
+.info-card:hover .info-card-icon {
+    transform: scale(1.12) rotate(-4deg);
+}
+
+/* Animated form focus states. */
+.form-group,
+.form-col {
+    position: relative;
+}
+
+.form-group label,
+.form-col label {
+    transition: color 0.25s ease, transform 0.25s var(--form-ease);
+}
+
+.form-group:focus-within label,
+.form-col:focus-within label {
+    color: var(--color-primary, #1b4a6f);
+}
+
+.contact-form-card input,
+.contact-form-card textarea,
+#reservation-form input,
+#reservation-form textarea,
+#reservation-form select {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, transform 0.3s var(--form-ease);
+}
+
+.contact-form-card input:focus,
+.contact-form-card textarea:focus,
+#reservation-form input:focus,
+#reservation-form textarea:focus,
+#reservation-form select:focus {
+    transform: translateY(-1px);
+}
+
+.form-group.has-value label {
+    color: var(--color-primary, #1b4a6f);
+}
+
+.field-meta {
+    display: block;
+    margin-top: 5px;
+    color: var(--text-light, #8a9baa);
+    font-size: 0.75rem;
+    text-align: right;
+}
+
+/* Selection feedback on reservation experiences. */
+.experience-option-card.selected {
+    animation: selection-pop 0.42s var(--form-ease);
+}
+
+.experience-option-card .checkbox-container strong {
+    transition: color 0.25s ease;
+}
+
+.experience-option-card.selected .checkbox-container strong {
+    color: var(--color-primary, #1b4a6f);
+}
+
+@keyframes selection-pop {
+    0% { transform: scale(1); }
+    45% { transform: scale(1.012); }
+    100% { transform: scale(1); }
+}
+
+/* Button feedback without changing the existing submit behavior. */
+.contact-form-card button[type="submit"],
+#reservation-form button[type="submit"] {
+    position: relative;
+    overflow: hidden;
+}
+
+.form-ripple {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.42);
+    transform: scale(0);
+    animation: form-ripple 0.65s ease-out;
+    pointer-events: none;
+}
+
+@keyframes form-ripple {
+    to { transform: scale(18); opacity: 0; }
+}
+
+.is-sending {
+    cursor: wait;
+    opacity: 0.78;
+}
+
+@media (max-width: 800px) {
+    .info-card:hover,
+    .reservation-item:hover {
+        transform: none;
+        box-shadow: var(--shadow-md, 0 8px 30px rgba(0, 0, 0, 0.06));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-form-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .info-card,
+    .reservation-item,
+    .contact-form-card input,
+    .contact-form-card textarea,
+    #reservation-form input,
+    #reservation-form textarea,
+    #reservation-form select {
+        transition: none;
+    }
+
+    .experience-option-card.selected,
+    .form-ripple {
+        animation: none;
+    }
+}
