@@ -1,0 +1,110 @@
+/* Suhaila Locals — local-experience flow enhancement
+   Scoped to the homepage so existing pages and booking flows stay untouched. */
+.homepage .local-day-section {
+  display: grid;
+  grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr);
+  gap: clamp(36px, 8vw, 110px);
+  align-items: start;
+  padding: clamp(60px, 8vw, 112px) clamp(18px, 5vw, 76px);
+  background: #f7f4ec;
+  border-top: 1px solid var(--sl-line);
+  border-bottom: 1px solid var(--sl-line);
+}
+.homepage .local-day-intro {
+  max-width: 440px;
+  position: sticky;
+  top: 28px;
+}
+.homepage .local-day-eyebrow {
+  margin: 0 0 18px;
+  color: var(--sl-terracotta-dark);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+.homepage .local-day-intro h2 {
+  margin: 0;
+  color: var(--sl-forest);
+  font: 700 clamp(2.35rem, 4vw, 4.3rem)/.98 Georgia, serif;
+  letter-spacing: -.045em;
+}
+.homepage .local-day-intro h2 span { color: var(--sl-terracotta); font-style: italic; }
+.homepage .local-day-intro > p:not(.local-day-eyebrow) {
+  max-width: 390px;
+  margin: 24px 0 28px;
+  color: var(--sl-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.homepage .local-day-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding-bottom: 4px;
+  color: var(--sl-forest);
+  border-bottom: 1px solid var(--sl-terracotta);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.homepage .local-day-link span { color: var(--sl-terracotta); font-size: 1.05rem; transition: transform .2s ease; }
+.homepage .local-day-link:hover span { transform: translate(3px, -3px); }
+.homepage .local-day-steps { border-top: 1px solid rgba(23,75,72,.24); }
+.homepage .local-day-step {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) 46px;
+  gap: 18px;
+  align-items: start;
+  padding: 26px 0 28px;
+  border-bottom: 1px solid rgba(23,75,72,.24);
+}
+.homepage .local-day-number {
+  padding-top: 3px;
+  color: var(--sl-terracotta);
+  font: 500 1.15rem Georgia, serif;
+}
+.homepage .local-day-step-label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--sl-terracotta-dark);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.homepage .local-day-step h3 {
+  margin: 0;
+  color: var(--sl-forest);
+  font: 700 clamp(1.45rem, 2.2vw, 2.05rem)/1.1 Georgia, serif;
+  letter-spacing: -.025em;
+}
+.homepage .local-day-step p {
+  max-width: 550px;
+  margin: 9px 0 0;
+  color: var(--sl-muted);
+  line-height: 1.7;
+}
+.homepage .local-day-symbol {
+  justify-self: end;
+  color: var(--sl-terracotta);
+  font: 2.5rem/1 Georgia, serif;
+  transform: rotate(-12deg);
+}
+.homepage .local-day-step:nth-child(2) .local-day-symbol { color: var(--sl-forest); transform: rotate(10deg); }
+.homepage .local-day-step:nth-child(3) .local-day-symbol { color: #a58c52; transform: rotate(-5deg); }
+@media (max-width: 900px) {
+  .homepage .local-day-section { grid-template-columns: 1fr; gap: 42px; }
+  .homepage .local-day-intro { position: static; max-width: 640px; }
+}
+@media (max-width: 560px) {
+  .homepage .local-day-section { padding: 46px 16px 52px; gap: 32px; }
+  .homepage .local-day-intro > p:not(.local-day-eyebrow) { font-size: .94rem; line-height: 1.7; }
+  .homepage .local-day-step { grid-template-columns: 38px minmax(0, 1fr) 28px; gap: 11px; padding: 22px 0; }
+  .homepage .local-day-symbol { font-size: 1.9rem; }
+  .homepage .local-day-step p { font-size: .9rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .homepage .local-day-link span { transition: none; }
+}
