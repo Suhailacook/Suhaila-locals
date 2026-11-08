@@ -192,6 +192,27 @@
             margin-bottom: var(--spacing-md);
         }
 
+        .booking-details-row {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .availability-note {
+            margin: 0 auto 22px;
+            max-width: 900px;
+            padding: 14px 20px;
+            border: 1px solid #f0c84a;
+            border-radius: 14px;
+            background: #fffaf0;
+            color: #0f2b4a;
+            text-align: center;
+            line-height: 1.55;
+        }
+
+        .availability-note strong {
+            display: block;
+            margin-bottom: 2px;
+        }
+
         .form-col label {
             display: block;
             color: var(--color-dark-gray);
@@ -548,7 +569,8 @@
                 font-size: 1.5rem;
             }
 
-            .form-row {
+            .form-row,
+            .booking-details-row {
                 grid-template-columns: 1fr;
                 gap: var(--spacing-md);
             }
@@ -711,13 +733,17 @@
         <div class="hero-content">
             <h1>📅 <span>Reserve</span> Your Aqaba Experience</h1>
             <p>Choose your experience and send a booking request. We will check availability and confirm with you personally within 24 hours.</p>
+            <div class="availability-note" role="note" aria-label="Availability information">
+                <strong>Available every day from 6:00 PM</strong>
+                Select your preferred evening time below. Times are shown in Jordan time (Asia/Amman); we will confirm the exact slot with you.
+            </div>
         </div>
     </section>
 
     <!-- ===== FREE REQUEST-BASED BOOKING ===== -->
     <section class="booking-policy" aria-labelledby="booking-policy-title" style="max-width: 900px; margin: 28px auto 10px; padding: 20px 24px; border: 1px solid #dbe5ef; border-radius: 16px; background: #f7fafc; text-align: center;">
         <h2 id="booking-policy-title" style="margin: 0 0 8px; color: #0f2b4a; font-size: 1.25rem;">Free booking request — no payment required</h2>
-        <p style="margin: 0 auto 14px; color: #3d4f64; line-height: 1.6;">Submit your preferred date and guest details below. This is a request, not an automatic confirmation. We will contact you by WhatsApp or email to confirm availability and payment details.</p>
+        <p style="margin: 0 auto 14px; color: #3d4f64; line-height: 1.6;">Submit your preferred date, evening time, and guest details below. This is a request, not an automatic confirmation. We will contact you by WhatsApp or email to confirm availability and payment details.</p>
         <a href="https://wa.me/962776294742?text=Hello%20Suhaila%20Locals%2C%20I%20would%20like%20to%20ask%20about%20booking%20an%20experience%20in%20Aqaba." target="_blank" rel="noopener noreferrer" class="button button-secondary" style="display: inline-block;">Prefer WhatsApp? Message us</a>
     </section>
 
@@ -842,10 +868,23 @@
                     <strong>🍳 Authentic Cooking Class (30 JD / person)</strong>
                 </label>
                 <div id="details-cooking" class="experience-details collapsed">
-                    <div class="form-row">
+                    <div class="form-row booking-details-row">
                         <div class="form-col">
                             <label>Date:</label>
                             <input type="date" name="Cooking_Class_Date" class="date-input" />
+                        </div>
+                        <div class="form-col">
+                            <label for="Cooking_Class_Time">Time (Jordan):</label>
+                            <select id="Cooking_Class_Time" name="Cooking_Class_Time" class="time-input" required>
+                                <option value="">Select time</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
                         </div>
                         <div class="form-col">
                             <label>Guests:</label>
@@ -861,10 +900,23 @@
                     <strong>🚶 Aqaba Walking Tour (20 JD / person)</strong>
                 </label>
                 <div id="details-walking" class="experience-details collapsed">
-                    <div class="form-row">
+                    <div class="form-row booking-details-row">
                         <div class="form-col">
                             <label>Date:</label>
                             <input type="date" name="Walking_Tour_Date" class="date-input" />
+                        </div>
+                        <div class="form-col">
+                            <label for="Walking_Tour_Time">Time (Jordan):</label>
+                            <select id="Walking_Tour_Time" name="Walking_Tour_Time" class="time-input" required>
+                                <option value="">Select time</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
                         </div>
                         <div class="form-col">
                             <label>Guests:</label>
@@ -880,10 +932,23 @@
                     <strong>🍽️ Family Dining Experience (15 JD / person)</strong>
                 </label>
                 <div id="details-dining" class="experience-details collapsed">
-                    <div class="form-row">
+                    <div class="form-row booking-details-row">
                         <div class="form-col">
                             <label>Date:</label>
                             <input type="date" name="Dining_Experience_Date" class="date-input" />
+                        </div>
+                        <div class="form-col">
+                            <label for="Dining_Experience_Time">Time (Jordan):</label>
+                            <select id="Dining_Experience_Time" name="Dining_Experience_Time" class="time-input" required>
+                                <option value="">Select time</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
                         </div>
                         <div class="form-col">
                             <label>Guests:</label>
@@ -899,10 +964,23 @@
                     <strong>🪸 Glass Boat Tour (25 JD / hour)</strong>
                 </label>
                 <div id="details-glassboat" class="experience-details collapsed">
-                    <div class="form-row">
+                    <div class="form-row booking-details-row">
                         <div class="form-col">
                             <label>Date:</label>
                             <input type="date" name="Glass_Boat_Date" class="date-input" />
+                        </div>
+                        <div class="form-col">
+                            <label for="Glass_Boat_Time">Time (Jordan):</label>
+                            <select id="Glass_Boat_Time" name="Glass_Boat_Time" class="time-input" required>
+                                <option value="">Select time</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
                         </div>
                         <div class="form-col">
                             <label>Hours / Trips:</label>
@@ -919,10 +997,23 @@
                     <strong>🍮 Houh Delivery - Authentic Aqabawi Sweet (10 JD / plate)</strong>
                 </label>
                 <div id="details-houh" class="experience-details collapsed">
-                    <div class="form-row">
+                    <div class="form-row booking-details-row">
                         <div class="form-col">
                             <label>Delivery Date:</label>
                             <input type="date" name="Houh_Delivery_Date" class="date-input" />
+                        </div>
+                        <div class="form-col">
+                            <label for="Houh_Delivery_Time">Time (Jordan):</label>
+                            <select id="Houh_Delivery_Time" name="Houh_Delivery_Time" class="time-input" required>
+                                <option value="">Select time</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
                         </div>
                         <div class="form-col">
                             <label>Number of Plates (min. 3):</label>
@@ -1140,6 +1231,22 @@
                 } else if (experienceError) {
                     experienceError.classList.remove('show');
                 }
+                let detailsValid = true;
+                document.querySelectorAll('.experience-toggle:checked').forEach(function(cb) {
+                    const details = document.getElementById(cb.dataset.target);
+                    [details && details.querySelector('.date-input'), details && details.querySelector('.time-input')].forEach(function(input) {
+                        if (!input) return;
+                        const missing = !input.value;
+                        input.classList.toggle('error', missing);
+                        input.setAttribute('aria-invalid', missing ? 'true' : 'false');
+                        if (missing) detailsValid = false;
+                    });
+                });
+                if (!detailsValid) {
+                    const firstMissing = document.querySelector('.experience-toggle:checked ~ .experience-details .date-input.error, .experience-toggle:checked ~ .experience-details .time-input.error');
+                    if (firstMissing) firstMissing.focus();
+                    return;
+                }
             }
             if (step < 1 || step > totalSteps) return;
             currentStep = step;
@@ -1175,9 +1282,11 @@
                     if (guestInput) {
                         guests = parseInt(guestInput.value) || 1;
                     }
+                    const dateInput = details.querySelector('.date-input');
+                    const timeInput = details.querySelector('.time-input');
                     const subtotal = price * guests;
                     total += subtotal;
-                    items.push({ label: label, guests: guests, price: price, subtotal: subtotal });
+                    items.push({ label: label, guests: guests, price: price, subtotal: subtotal, date: dateInput ? dateInput.value : '', time: timeInput ? timeInput.value : '' });
                 }
             });
             document.getElementById('price-display').textContent = '💰 Estimated Total Price: ' + total.toFixed(2) + ' JD';
@@ -1188,6 +1297,14 @@
             window._bookingItems = items;
             window._bookingTotal = total;
             return { items, total };
+        }
+
+        function formatBookingTime(value) {
+            if (!value) return 'Time not selected';
+            const [hours, minutes] = value.split(':').map(Number);
+            const suffix = hours >= 12 ? 'PM' : 'AM';
+            const hour12 = hours % 12 || 12;
+            return `${hour12}:${String(minutes).padStart(2, '0')} ${suffix} (Jordan time)`;
         }
 
         // ===== UPDATE SUMMARY =====
@@ -1206,7 +1323,7 @@
                 const name = item.label.replace(/\(.*\)/, '').trim();
                 html += `
                     <div class="summary-item">
-                        <span>${name} × ${item.guests}</span>
+                        <span>${name} × ${item.guests}<small style="display:block;color:#5e6f82;margin-top:3px;">${item.date || 'Date not selected'} · ${formatBookingTime(item.time)}</small></span>
                         <span>${item.subtotal.toFixed(2)} JD</span>
                     </div>
                 `;
@@ -1216,7 +1333,7 @@
         }
 
         document.addEventListener('input', function(e) {
-            if (e.target.classList.contains('guest-input') || e.target.classList.contains('date-input')) {
+            if (e.target.classList.contains('guest-input') || e.target.classList.contains('date-input') || e.target.classList.contains('time-input')) {
                 updatePrice();
                 if (currentStep === 3) updateSummary();
             }
@@ -1340,12 +1457,16 @@
                 const details = document.getElementById(targetId);
                 if (details) {
                     const dateInput = details.querySelector('.date-input');
+                    const timeInput = details.querySelector('.time-input');
                     const guestInput = details.querySelector('.guest-input');
 
                     // Construct field names based on experience type
                     const baseFieldName = fieldName.replace('Book_', '').replace('_', ' ');
                     if (dateInput && dateInput.name) {
                         filtered.append(dateInput.name, dateInput.value);
+                    }
+                    if (timeInput && timeInput.name) {
+                        filtered.append(timeInput.name, formatBookingTime(timeInput.value));
                     }
                     if (guestInput && guestInput.name) {
                         filtered.append(guestInput.name, guestInput.value);
@@ -1446,7 +1567,14 @@
             if (e.target === this) closeErrorPopup();
         });
 
-        // Initial price
+        // Availability is every day from 6:00 PM in Jordan time.
+        const today = new Date();
+        const todayISO = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+        document.querySelectorAll('.date-input').forEach(function(input) {
+            input.min = todayISO;
+        });
+
+        // Initial price update
         updatePrice();
 
         // ===== DROPDOWN TOGGLE FOR MOBILE =====

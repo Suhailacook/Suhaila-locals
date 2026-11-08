@@ -1269,3 +1269,8 @@ body.homepage {
   .navbar .logo-text { gap: 7px; font-size: 1.08rem !important; }
   .navbar .logo-text img { max-width: 36px !important; max-height: 36px !important; }
 }
+
+
+/* Availability messaging: keep the booking promise visible without overpowering the hero. */
+.trust-strip .trust-item strong { line-height: 1.25; }
+@media (max-width: 800px) { .trust-strip .trust-item { min-width: 160px; } }
