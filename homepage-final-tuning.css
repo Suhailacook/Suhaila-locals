@@ -461,3 +461,42 @@
 @media (max-width: 600px) {
   .homepage .product-info .experience-detail { display: block; overflow: visible; }
 }
+
+/* Prevent experience blocks from inheriting a narrow content-column width. */
+.homepage main#main-content > .experiences {
+  display: block;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.homepage .experiences > .product-gallery {
+  width: min(100%, 1220px);
+  max-width: 1220px;
+  min-width: 0;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  justify-content: center;
+}
+.homepage .product-item,
+.homepage .product-info { min-width: 0; }
+.homepage .product-info h3 {
+  height: auto;
+  min-height: 2.4em;
+  overflow: visible;
+  display: block;
+  -webkit-line-clamp: unset;
+}
+.homepage .product-info > p:not(.price):not(.experience-detail):not(.experience-actions) {
+  height: 6.4em;
+  min-height: 6.4em;
+  -webkit-line-clamp: 4;
+}
+.homepage .product-info {
+  grid-template-rows: auto 6.4em 2.8em 3.2em 3.8em;
+}
+@media (max-width: 600px) {
+  .homepage .product-info > p:not(.price):not(.experience-detail):not(.experience-actions) {
+    height: auto;
+    min-height: 0;
+  }
+}
