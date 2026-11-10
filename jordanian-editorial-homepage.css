@@ -1274,3 +1274,53 @@ body.homepage {
 /* Availability messaging: keep the booking promise visible without overpowering the hero. */
 .trust-strip .trust-item strong { line-height: 1.25; }
 @media (max-width: 800px) { .trust-strip .trust-item { min-width: 160px; } }
+
+/* Clearer booking path and consistent content alignment. */
+.homepage .trust-strip {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  max-width: none;
+  padding-left: max(18px, calc((100% - 1220px) / 2));
+  padding-right: max(18px, calc((100% - 1220px) / 2));
+}
+.homepage .trust-item span a { color: var(--sl-forest); font-weight: 650; text-underline-offset: 3px; }
+.homepage .section-eyebrow,
+.homepage .section-intro {
+  max-width: 1220px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.homepage .section-eyebrow {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: var(--sl-terracotta-dark);
+  font-size: .72rem;
+  font-weight: 750;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.homepage .section-intro {
+  margin-top: -12px;
+  margin-bottom: 26px;
+  color: var(--sl-muted);
+  line-height: 1.7;
+}
+.homepage .product-item { display: flex; flex-direction: column; height: 100%; }
+.homepage .product-image { aspect-ratio: 1.62 / 1; }
+.homepage .product-info { flex: 1; }
+.homepage .experiences > h2 { margin-bottom: 20px; }
+.homepage .secondary-experiences { background: var(--sl-sand); border-top: 1px solid var(--sl-line); }
+.homepage .review-section-advanced > h2,
+.homepage .review-intro { max-width: 1220px; }
+.homepage .review-intro { color: rgba(255,247,235,.9); margin-top: -12px; margin-bottom: 24px; }
+.homepage .review-section-advanced .review-carousel { align-items: stretch; }
+.homepage .review-section-advanced .review-card { height: 100%; }
+.homepage #blog-section .recent-posts { align-items: stretch; }
+.homepage #blog-section .recent-posts article { display: flex; flex-direction: column; height: 100%; }
+@media (max-width: 900px) {
+  .homepage .trust-strip { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 560px) {
+  .homepage .trust-strip { grid-template-columns: 1fr; }
+  .homepage .section-intro { margin-top: -8px; margin-bottom: 20px; }
+  .homepage .product-image { aspect-ratio: 1.65 / 1; }
+}
