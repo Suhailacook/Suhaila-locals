@@ -52,6 +52,11 @@
     menu.classList.remove('open');
     btn && btn.classList.remove('open');
     btn && btn.setAttribute('aria-expanded', 'false');
+    dropdowns.forEach(dd => {
+      dd.classList.remove('open');
+      const toggle = dd.querySelector('.dropbtn');
+      toggle && toggle.setAttribute('aria-expanded', 'false');
+    });
     overlay && overlay.classList.remove('active');
     document.body.classList.remove('menu-open');
     if (untrap) { 
@@ -101,11 +106,14 @@
         dropdowns.forEach(other => {
           if (other !== dd && other.classList.contains('open')) {
             other.classList.remove('open');
+            const otherToggle = other.querySelector('.dropbtn');
+            otherToggle && otherToggle.setAttribute('aria-expanded', 'false');
           }
         });
         
         // Toggle current dropdown
-        dd.classList.toggle('open');
+        const isOpen = dd.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
       }
     });
   });
@@ -114,7 +122,11 @@
   document.addEventListener('click', (e)=>{
     if (window.innerWidth <= 800) {
       if (!e.target.closest('.navbar')) {
-        dropdowns.forEach(dd => dd.classList.remove('open'));
+        dropdowns.forEach(dd => {
+          dd.classList.remove('open');
+          const toggle = dd.querySelector('.dropbtn');
+          toggle && toggle.setAttribute('aria-expanded', 'false');
+        });
       }
     }
   });
@@ -122,7 +134,11 @@
   // Close dropdowns on window resize from mobile to desktop
   window.addEventListener('resize', () => {
     if (window.innerWidth > 800) {
-      dropdowns.forEach(dd => dd.classList.remove('open'));
+      dropdowns.forEach(dd => {
+        dd.classList.remove('open');
+        const toggle = dd.querySelector('.dropbtn');
+        toggle && toggle.setAttribute('aria-expanded', 'false');
+      });
       // Also close menu if resizing from mobile to desktop
       if (menu && menu.classList.contains('open')) {
         closeMenu();
@@ -225,4 +241,9 @@
     btn.setAttribute('aria-expanded', menu && menu.classList.contains('open') ? 'true' : 'false');
     btn.setAttribute('aria-controls', 'navbarLinks');
   }
+
+  dropdowns.forEach(dd => {
+    const toggle = dd.querySelector('.dropbtn');
+    if (toggle) toggle.setAttribute('aria-expanded', dd.classList.contains('open') ? 'true' : 'false');
+  });
 })();
