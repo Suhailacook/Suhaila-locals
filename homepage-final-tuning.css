@@ -244,3 +244,19 @@
   background: var(--sl-forest) !important;
   color: #fffaf1 !important;
 }
+
+/* Wide-screen balance and readable editorial accents. */
+.homepage .meet-family-section {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+.homepage .meet-family-content h2 .highlight {
+  color: #846319;
+}
+.homepage .review-source-link {
+  color: var(--sl-forest);
+  font-size: .9rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
