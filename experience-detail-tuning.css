@@ -1,0 +1,79 @@
+/* Shared experience detail design: cooking class, Aqaba walking tour, dining. */
+body.experience-detail-page {
+  --experience-forest: #174b48;
+  --experience-cream: #f0eee3;
+  --experience-gold: #d6b85d;
+  --experience-coral: #a94c38;
+}
+body.experience-detail-page .experience-section h2,
+body.experience-detail-page .faq-section h2,
+body.experience-detail-page .booking-module h3 {
+  color: var(--experience-forest);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: -.025em;
+}
+body.experience-detail-page .experience-hero h1 {
+  color: #fffaf1;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .45);
+}
+body.experience-detail-page .booking-module {
+  border-color: rgba(23, 75, 72, .16);
+  border-radius: 6px;
+  background: #faf8f0;
+}
+body.experience-detail-page .booking-module h3 { margin-bottom: 12px; }
+body.experience-detail-page .booking-module .price {
+  color: var(--experience-forest);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 4vw, 2.8rem);
+  font-weight: 700;
+}
+body.experience-detail-page .button-cta {
+  box-sizing: border-box;
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border: 1px solid var(--experience-forest);
+  border-radius: 4px;
+  background: var(--experience-forest);
+  color: #fffaf1;
+  box-shadow: none;
+  font-family: Inter, Arial, sans-serif;
+  font-size: .92rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+}
+body.experience-detail-page .button-cta:hover {
+  border-color: var(--experience-coral);
+  background: var(--experience-coral);
+  color: #fffaf1;
+  box-shadow: none;
+  transform: translateY(-1px);
+}
+body.experience-detail-page .navbar .nav-reserve {
+  border-radius: 4px;
+  background: var(--experience-forest);
+  color: #fffaf1;
+}
+body.experience-detail-page .navbar .nav-reserve:hover {
+  background: var(--experience-coral);
+}
+body.experience-detail-page a:focus-visible,
+body.experience-detail-page button:focus-visible {
+  outline: 3px solid var(--experience-gold);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  body.experience-detail-page .button-cta { transition: none; }
+}
