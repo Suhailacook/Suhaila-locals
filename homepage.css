@@ -3462,3 +3462,90 @@ body:not(.homepage):not(.blog-page) footer .footer-social img {
   .homepage .pin-kitchen { left: 10%; }
   .homepage .pin-sea { right: 7%; }
 }
+
+/* ===== SECTION RHYTHM & ALIGNMENT ===== */
+:root {
+  --sl-content-width: 1220px;
+  --sl-section-gutter: max(18px, calc((100% - var(--sl-content-width)) / 2));
+}
+
+.homepage main > section:not(.meet-family-section):not(.aqaba-map-section):not(.closing-cta) {
+  box-sizing: border-box;
+  width: 100%;
+}
+.homepage .experiences,
+.homepage .gallery-section,
+.homepage #blog-section,
+.homepage .review-section-advanced {
+  padding-left: var(--sl-section-gutter);
+  padding-right: var(--sl-section-gutter);
+}
+.homepage .experiences > .section-eyebrow,
+.homepage .experiences > h2,
+.homepage .experiences > .section-intro,
+.homepage .gallery-section > .section-eyebrow,
+.homepage .gallery-section > .gallery-title,
+.homepage #blog-section > h2,
+.homepage #blog-section > p,
+.homepage .review-section-advanced > h2,
+.homepage .review-section-advanced > .section-intro {
+  width: 100%;
+  max-width: var(--sl-content-width);
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+.homepage .experiences > .section-intro,
+.homepage #blog-section > p,
+.homepage .review-section-advanced > .section-intro {
+  margin-top: 0;
+}
+.homepage .product-gallery,
+.homepage .gallery-grid,
+.homepage .recent-posts,
+.homepage .review-carousel {
+  width: 100%;
+  max-width: var(--sl-content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+.homepage .product-gallery { align-items: stretch; }
+.homepage .product-item { height: 100%; }
+
+/* Calm alternation keeps long pages readable without making every section feel separate. */
+.homepage .trust-strip { background: #e8e3d3; }
+.homepage .experiences:not(.secondary-experiences) { background: var(--sl-paper); }
+.homepage .review-section-advanced {
+  background: var(--sl-sand);
+  border-top: 1px solid var(--sl-line);
+  border-bottom: 1px solid var(--sl-line);
+}
+.homepage .meet-family-section { background: var(--sl-sand); }
+.homepage .aqaba-map-section {
+  border-top: 1px solid rgba(241, 211, 138, .24);
+  border-bottom: 1px solid rgba(241, 211, 138, .24);
+}
+.homepage .secondary-experiences {
+  background: #faf8f0;
+  border-top: 1px solid var(--sl-line);
+  border-bottom: 1px solid var(--sl-line);
+}
+.homepage .gallery-section { background: #e9e1d2; }
+.homepage #blog-section { background: #f5eee3; }
+
+@media (max-width: 900px) {
+  .homepage .experiences,
+  .homepage .gallery-section,
+  .homepage #blog-section,
+  .homepage .review-section-advanced { padding-left: 20px; padding-right: 20px; }
+}
+@media (max-width: 560px) {
+  .homepage .experiences,
+  .homepage .gallery-section,
+  .homepage #blog-section,
+  .homepage .review-section-advanced { padding-left: 18px; padding-right: 18px; }
+  .homepage .experiences > h2,
+  .homepage .gallery-title,
+  .homepage #blog-section > h2,
+  .homepage .review-section-advanced > h2 { margin-bottom: 16px; }
+}
