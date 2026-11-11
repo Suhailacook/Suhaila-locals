@@ -3549,3 +3549,28 @@ body:not(.homepage):not(.blog-page) footer .footer-social img {
   .homepage #blog-section > h2,
   .homepage .review-section-advanced > h2 { margin-bottom: 16px; }
 }
+
+/* ===== DEEP GREEN ANCHOR PALETTE ===== */
+:root {
+  --sl-deep-green: #123f3c;
+  --sl-deep-green-dark: #0d3533;
+}
+.homepage .aqaba-map-section,
+.homepage .closing-cta,
+.homepage footer { background: var(--sl-deep-green); }
+.homepage .aqaba-map-section .section-eyebrow,
+.homepage .closing-cta .section-eyebrow { color: var(--sl-gold); }
+.homepage .aqaba-map-section h2,
+.homepage .closing-cta h2 { color: #fffaf1; }
+.homepage .aqaba-map-section .aqaba-map-art { background: #eee5cf; }
+.homepage .closing-cta .button-primary {
+  background: var(--sl-gold);
+  border-color: var(--sl-gold);
+  color: var(--sl-deep-green-dark);
+}
+.homepage .closing-cta .button-primary:hover {
+  background: #f8e5b6;
+  border-color: #f8e5b6;
+  color: var(--sl-deep-green-dark);
+}
+.homepage footer { border-top-color: var(--sl-gold); }
