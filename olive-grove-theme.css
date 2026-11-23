@@ -1,0 +1,96 @@
+/* Suhaila Locals — Olive Grove & Sun theme
+   Palette: background #F4F1E2, text #203B2E, button #B5A642,
+   secondary accent #D8D0A8, button text #172219.
+   Typography and photography are intentionally preserved. */
+:root {
+  --sl-sand: #F4F1E2;
+  --sl-paper: #FBF9F1;
+  --sl-terracotta: #B5A642;
+  --sl-terracotta-dark: #968A32;
+  --sl-olive: #D8D0A8;
+  --sl-forest: #203B2E;
+  --sl-ink: #203B2E;
+  --sl-muted: #596659;
+  --sl-line: #DED9C6;
+  --color-primary: #B5A642;
+  --color-primary-light: #C9BD61;
+  --color-primary-dark: #968A32;
+  --color-secondary: #D8D0A8;
+  --color-accent: #203B2E;
+  --color-accent-dark: #172219;
+  --color-accent-light: #F4F1E2;
+  --color-light: #FBF9F1;
+  --color-light-gray: #E8E3D2;
+  --color-medium-gray: #858779;
+  --color-dark-gray: #596659;
+  --color-text: #203B2E;
+  --text-primary: #203B2E;
+  --text-muted: #596659;
+  --text-light: #727D70;
+  --bg-surface: #FBF9F1;
+  --bg-light: #F4F1E2;
+  --bg-dark: #203B2E;
+  --border-color: #DED9C6;
+  --border-light: #E8E3D2;
+  accent-color: #B5A642;
+}
+
+html, body {
+  background-color: #F4F1E2;
+  color: #203B2E;
+}
+body {
+  background-color: #F4F1E2 !important;
+  color: #203B2E;
+}
+
+/* Bring primary actions onto the golden-olive palette; preserve outlined/ghost buttons. */
+:is(.button-primary, .btn-primary, .nav-reserve, .experience-reserve, .trust-cta,
+    .reservation-submit, .submit-button, .primary-button, button[type="submit"],
+    input[type="submit"]) {
+  background: #B5A642 !important;
+  border-color: #B5A642 !important;
+  color: #172219 !important;
+}
+:is(.button-primary, .btn-primary, .nav-reserve, .experience-reserve, .trust-cta,
+    .reservation-submit, .submit-button, .primary-button, button[type="submit"],
+    input[type="submit"]):hover {
+  background: #968A32 !important;
+  border-color: #968A32 !important;
+  color: #FFFFFF !important;
+}
+:is(.button-ghost, .btn-outline, .secondary-button) {
+  border-color: #203B2E !important;
+  color: #203B2E !important;
+}
+:is(.button-ghost, .btn-outline, .secondary-button):hover {
+  background: #D8D0A8 !important;
+  color: #172219 !important;
+}
+
+/* Shared interactive and form details. */
+:focus-visible {
+  outline-color: #968A32;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #B5A642;
+  box-shadow: 0 0 0 3px rgba(181, 166, 66, .18);
+}
+::selection {
+  color: #172219;
+  background: #D8D0A8;
+}
+
+/* Explicit navigation action overrides: some older page rules use higher specificity. */
+html body.homepage .navbar .navbar-links a.nav-reserve,
+html body:not(.homepage) .navbar .navbar-links a.nav-reserve {
+  background: #B5A642 !important;
+  border-color: #B5A642 !important;
+  color: #172219 !important;
+}
+html body.homepage .navbar .navbar-links a.nav-reserve:hover,
+html body:not(.homepage) .navbar .navbar-links a.nav-reserve:hover {
+  background: #968A32 !important;
+  border-color: #968A32 !important;
+  color: #FFFFFF !important;
+}
