@@ -94,3 +94,65 @@ html body:not(.homepage) .navbar .navbar-links a.nav-reserve:hover {
   border-color: #968A32 !important;
   color: #FFFFFF !important;
 }
+
+/* Keep the shared site footer consistent on every page while leaving review
+   attribution <footer> elements inside page content untouched. */
+body footer:has(.footer-grid) {
+  background: #E8E3D2 !important;
+  color: #203B2E !important;
+  border-top: 1px solid #D2CCB6 !important;
+}
+body footer:has(.footer-grid) .footer-logo span,
+body footer:has(.footer-grid) .footer-column h3 {
+  color: #203B2E !important;
+}
+body footer:has(.footer-grid) .footer-logo img {
+  filter: brightness(.62) saturate(1.2) contrast(1.05);
+}
+body footer:has(.footer-grid) .footer-tagline,
+body footer:has(.footer-grid) .footer-column .footer-location,
+body footer:has(.footer-grid) .footer-bottom p {
+  color: #596659 !important;
+}
+body footer:has(.footer-grid) .footer-column a {
+  color: #203B2E !important;
+}
+body footer:has(.footer-grid) .footer-column a:hover,
+body footer:has(.footer-grid) .footer-column a:focus-visible {
+  color: #968A32 !important;
+}
+body footer:has(.footer-grid) .footer-column a:not(.nav-reserve)::before {
+  color: #968A32 !important;
+}
+body footer:has(.footer-grid) .footer-column a.nav-reserve {
+  background: #B5A642 !important;
+  border: 1px solid #B5A642 !important;
+  color: #172219 !important;
+}
+body footer:has(.footer-grid) .footer-column a.nav-reserve:hover,
+body footer:has(.footer-grid) .footer-column a.nav-reserve:focus-visible {
+  background: #968A32 !important;
+  border-color: #968A32 !important;
+  color: #FFFFFF !important;
+}
+body footer:has(.footer-grid) .footer-social a {
+  background: #203B2E;
+  border-color: #203B2E;
+}
+body footer:has(.footer-grid) .footer-social a:hover,
+body footer:has(.footer-grid) .footer-social a:focus-visible {
+  background: #B5A642;
+  border-color: #B5A642;
+}
+body footer:has(.footer-grid) .footer-column,
+body footer:has(.footer-grid) .footer-bottom {
+  border-color: #D2CCB6;
+}
+body footer:has(.footer-grid) .footer-column h3::after {
+  background: #B5A642;
+}
+@media (max-width: 760px) {
+  body footer:has(.footer-grid) .footer-column {
+    border-top-color: #D2CCB6;
+  }
+}
