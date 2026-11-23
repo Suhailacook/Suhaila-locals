@@ -49,6 +49,7 @@
         }
     </script>
     <meta property="og:site_name" content="Suhaila Locals">
+    <link rel="stylesheet" href="homepage-gallery-enhancements.css?v=20261123-motion" />
     <link rel="stylesheet" href="olive-grove-theme.css?v=20261123" />
 </head>
 <body class="homepage">
@@ -256,23 +257,29 @@
         </section>
         <!-- ===== AQABA GALLERY ===== -->
         <section class="gallery-section" aria-labelledby="aqaba-gallery-title">
-            <p class="section-eyebrow">A CITY TO DISCOVER</p>
-            <h2 class="gallery-title" id="aqaba-gallery-title">A glimpse of Aqaba</h2>
-            <div class="gallery-grid">
+            <div class="gallery-shell">
+                <div class="gallery-copy">
+                    <p class="section-eyebrow">A CITY TO DISCOVER</p>
+                    <h2 class="gallery-title" id="aqaba-gallery-title">A glimpse of Aqaba</h2>
+                    <p class="gallery-intro">From colorful market stalls to historic streets and Red Sea evenings, discover Aqaba through the places locals love.</p>
+                    <p class="gallery-note">Market · heritage · sea</p>
+                </div>
+                <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="images/aqaba-spice-market-display.webp" alt="Colourful spices at a local Aqaba market" class="gallery-img" loading="lazy" />
-                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling)"><span class="overlay-text">Local market</span></div>
+                    <button type="button" class="gallery-overlay" aria-label="View photo: local market in Aqaba" onclick="openLightbox(this.previousElementSibling)"><span class="overlay-text">Local market</span></button>
                     <p class="gallery-caption">Aqaba's local market</p>
                 </div>
                 <div class="gallery-item">
                     <img src="images/aqaba-fort-mosque.webp" alt="Historic stone architecture in Aqaba" class="gallery-img" loading="lazy" />
-                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling)"><span class="overlay-text">Local heritage</span></div>
+                    <button type="button" class="gallery-overlay" aria-label="View photo: historic Aqaba heritage" onclick="openLightbox(this.previousElementSibling)"><span class="overlay-text">Local heritage</span></button>
                     <p class="gallery-caption">Aqaba's heritage</p>
                 </div>
                 <div class="gallery-item">
                     <img src="images/aqaba-beach-sunset.webp" alt="Sunset over Aqaba's Red Sea waterfront" class="gallery-img" loading="lazy" />
-                    <div class="gallery-overlay" onclick="openLightbox(this.previousElementSibling)"><span class="overlay-text">Red Sea sunset</span></div>
+                    <button type="button" class="gallery-overlay" aria-label="View photo: sunset over the Red Sea in Aqaba" onclick="openLightbox(this.previousElementSibling)"><span class="overlay-text">Red Sea sunset</span></button>
                     <p class="gallery-caption">Evening by the Red Sea</p>
+                </div>
                 </div>
             </div>
             <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true" aria-label="Image viewer">
