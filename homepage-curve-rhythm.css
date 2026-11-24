@@ -1,8 +1,13 @@
 /* A quiet echo of the journal cards: rounded, generous left-hand corners on a few key moments. */
 .homepage .featured-experiences .product-item,
+.homepage .secondary-experiences .product-item,
 .homepage .gallery-grid .gallery-item {
   border-radius: 34px 16px 16px 16px;
   overflow: hidden;
+}
+
+.homepage .review-section-advanced .review-card {
+  border-radius: 34px 16px 16px 16px;
 }
 
 .homepage .meet-family-photo-wrap {
@@ -12,7 +17,9 @@
 
 @media (max-width: 640px) {
   .homepage .featured-experiences .product-item,
-  .homepage .gallery-grid .gallery-item {
+  .homepage .secondary-experiences .product-item,
+  .homepage .gallery-grid .gallery-item,
+  .homepage .review-section-advanced .review-card {
     border-radius: 26px 14px 14px 14px;
   }
 
