@@ -1,0 +1,22 @@
+/* A quiet echo of the journal cards: rounded, generous left-hand corners on a few key moments. */
+.homepage .featured-experiences .product-item,
+.homepage .gallery-grid .gallery-item {
+  border-radius: 34px 16px 16px 16px;
+  overflow: hidden;
+}
+
+.homepage .meet-family-photo-wrap {
+  border-radius: 42px 18px 18px 18px;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .homepage .featured-experiences .product-item,
+  .homepage .gallery-grid .gallery-item {
+    border-radius: 26px 14px 14px 14px;
+  }
+
+  .homepage .meet-family-photo-wrap {
+    border-radius: 32px 16px 16px 16px;
+  }
+}
