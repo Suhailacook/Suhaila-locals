@@ -869,7 +869,7 @@ a:hover {
 }
 
 /* Show dropdown on hover for desktop */
-@media (min-width: 769px) {
+@media (min-width: 901px) {
     .dropdown:hover .dropdown-content {
         display: block;
     }
@@ -4343,4 +4343,28 @@ blockquote footer {
         font-size: 0.8rem;
         gap: 12px;
     }
+}
+/* Shared navigation fallback: keep the JavaScript and hamburger menu breakpoint aligned at 900px. */
+@media (max-width: 900px) {
+  .navbar { gap: 12px; padding: 10px 18px; }
+  .navbar .hamburger { display: inline-flex; align-items: center; justify-content: center; }
+  .navbar .navbar-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 14px 18px 20px;
+    background: #faf8f0;
+    border-bottom: 1px solid #e5dfcf;
+    box-shadow: 0 12px 22px rgba(23, 75, 72, .1);
+  }
+  .navbar .navbar-links.open { display: flex; }
+  .navbar .navbar-links > a,
+  .navbar .navbar-links .dropbtn { min-height: 44px; }
 }

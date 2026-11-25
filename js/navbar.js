@@ -5,6 +5,7 @@
   const overlay = document.querySelector('.menu-overlay');
   const dropdowns = Array.from(document.querySelectorAll('.dropdown'));
   const navbar = document.querySelector('.navbar');
+  const MOBILE_NAV_BREAKPOINT = 900;
   
   // ===== Focus Trapping =====
   function trapFocus(container){
@@ -98,8 +99,8 @@
     if (!toggle) return;
     
     toggle.addEventListener('click', (ev)=>{
-      // Only toggle on mobile (max-width: 800px)
-      if (window.innerWidth <= 800) {
+      // Keep dropdown behavior aligned with the 900px CSS hamburger breakpoint.
+      if (window.innerWidth <= MOBILE_NAV_BREAKPOINT) {
         ev.preventDefault();
         
         // Close other open dropdowns
@@ -120,7 +121,7 @@
   
   // Close dropdowns when clicking outside on mobile
   document.addEventListener('click', (e)=>{
-    if (window.innerWidth <= 800) {
+    if (window.innerWidth <= MOBILE_NAV_BREAKPOINT) {
       if (!e.target.closest('.navbar')) {
         dropdowns.forEach(dd => {
           dd.classList.remove('open');
@@ -133,7 +134,7 @@
   
   // Close dropdowns on window resize from mobile to desktop
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 800) {
+    if (window.innerWidth > MOBILE_NAV_BREAKPOINT) {
       dropdowns.forEach(dd => {
         dd.classList.remove('open');
         const toggle = dd.querySelector('.dropbtn');
