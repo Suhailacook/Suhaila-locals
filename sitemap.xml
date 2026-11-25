@@ -5,7 +5,7 @@
     <!-- ===== MAIN PAGES (Priority: 1.0) ===== -->
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/</loc>
-        <lastmod>2026-10-25</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -13,25 +13,25 @@
     <!-- ===== CORE PAGES (Priority: 0.9) ===== -->
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/Reservation.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/Blog.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/about.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/contact-Us.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -39,67 +39,67 @@
     <!-- ===== EXPERIENCE PAGES (Priority: 0.8) ===== -->
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/cookingclass.html</loc>
-        <lastmod>2026-10-25</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/walkingtour.html</loc>
-        <lastmod>2026-10-25</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/glassboat.html</loc>
-        <lastmod>2026-10-25</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/houh-delivery.html</loc>
-        <lastmod>2026-10-25</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/dinningexperience.html</loc>
-        <lastmod>2026-10-25</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/iftar-experience-aqaba.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/local-experiences.html</loc>
-        <lastmod>2026-10-22</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/treasure-hunt.html</loc>
-        <lastmod>2026-09-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/recommendations.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/online-booking.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/multi-day-aqaba-tour.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,191 +107,185 @@
     <!-- ===== BLOG POSTS (Priority: 0.6) ===== -->
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-1.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-2.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/houh-dessert-blog.html</loc>
-        <lastmod>2026-07-15</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-aqaba-budget-guide.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-aqaba-food-tips.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-aqaba-nightlife.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-aqaba-visa-free.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-best-diving-aqaba.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-best-time-aqaba.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-creamy-hummus.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-is-aqaba-worth-visiting.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-jordan-pass.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-jordan-phrases.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-jordan-safety-april-2026.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-jordan-safety-march-2026.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-jordan-world-cup-2026.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-ramadan-2026.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-shakira-aqaba.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-solo-female-travel-jordan.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-spices.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-olive-harvest-jordan.html</loc>
-        <lastmod>2026-10-18</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-street-food.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-wadi-rum-tours.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/sayadieh-traditional-food-aqaba.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/blog-post-amr-diab-aqaba-2026.html</loc>
-        <lastmod>2026-09-10</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <!-- ===== EXTRA/INFORMATIONAL PAGES (Priority: 0.4) ===== -->
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/food-culture.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.4</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/history-aqaba.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.4</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/ramadan-in-aqaba.html</loc>
-        <lastmod>2026-07-16</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.4</priority>
     </url>
     <url>
         <loc>https://suhailacook.github.io/Suhaila-locals/cookingclass-online.html</loc>
-        <lastmod>2026-09-17</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
-
-    <!-- ===== MACHINE-READABLE BUSINESS INFORMATION ===== -->
-    <url><loc>https://suhailacook.github.io/Suhaila-locals/llms.txt</loc><lastmod>2026-10-22</lastmod></url>
-    <url><loc>https://suhailacook.github.io/Suhaila-locals/llms-full.txt</loc><lastmod>2026-10-22</lastmod></url>
-    <url><loc>https://suhailacook.github.io/Suhaila-locals/experiences.md</loc><lastmod>2026-10-22</lastmod></url>
-    <url><loc>https://suhailacook.github.io/Suhaila-locals/booking.md</loc><lastmod>2026-10-22</lastmod></url>
 
 </urlset>
