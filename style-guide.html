@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Style Guide | Suhaila Locals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/design-system.css?v=20261125">
+<style>
+  .sg { padding: 56px var(--sl-pad-x); }
+  .sg + .sg { border-top: 1px solid var(--sl-line); }
+  .sg h2 { font-size: var(--sl-h2); margin: 6px 0 24px; }
+  .row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+  .sw { width: 170px; border-radius: 12px; overflow: hidden; border: 1px solid var(--sl-line); background: var(--sl-surface); font-size: 13px; }
+  .sw > div { height: 80px; border-bottom: 1px solid var(--sl-line); }
+  .sw p { margin: 0; padding: 10px 12px; line-height: 1.4; }
+  .sw code { color: var(--sl-muted); }
+  .note { color: var(--sl-muted); font-size: 14px; margin-top: 12px; }
+  .card { width: 320px; background: var(--sl-surface); border: 1px solid var(--sl-line); border-radius: var(--sl-radius); box-shadow: var(--sl-shadow); padding: 22px; }
+  .dark { background: var(--sl-green); color: var(--sl-on-dark); }
+  .dark h2 { color: var(--sl-on-dark); }
+</style>
+</head>
+<body>
+  <section class="sg">
+    <p class="section-eyebrow">Suhaila Locals · Design system v1</p>
+    <h1>Style guide</h1>
+    <p>Reference for every page. Use only the colors, fonts and buttons on this page. Tokens live in <code>css/design-system.css</code>.</p>
+  </section>
+
+  <section class="sg">
+    <p class="section-eyebrow">Colors</p>
+    <h2>Palette</h2>
+    <div class="row">
+      <div class="sw"><div style="background:#F6F2E4"></div><p><strong>Cream</strong><br><code>--sl-bg #F6F2E4</code><br>Main background</p></div>
+      <div class="sw"><div style="background:#FFFDF7"></div><p><strong>Surface</strong><br><code>--sl-surface #FFFDF7</code><br>Cards, alternating sections</p></div>
+      <div class="sw"><div style="background:#1F3B33"></div><p><strong>Green</strong><br><code>--sl-green #1F3B33</code><br>Headings, dark sections</p></div>
+      <div class="sw"><div style="background:#514F43"></div><p><strong>Text</strong><br><code>--sl-text #514F43</code><br>Body copy</p></div>
+      <div class="sw"><div style="background:#B5A642"></div><p><strong>Gold</strong><br><code>--sl-gold #B5A642</code><br>Buttons &amp; lines only</p></div>
+      <div class="sw"><div style="background:#7A6E1F"></div><p><strong>Gold text</strong><br><code>--sl-gold-text #7A6E1F</code><br>Eyebrows, gold words</p></div>
+    </div>
+    <p class="note">Sections alternate Cream → Surface. Use Green for at most two highlight sections per page (e.g. reviews, final CTA).</p>
+  </section>
+
+  <section class="sg">
+    <p class="section-eyebrow">Typography</p>
+    <h2>Fraunces + Inter</h2>
+    <h1>H1 · Experience Aqaba <span class="highlight">like a local</span></h1>
+    <h2>H2 · Start with a local favourite</h2>
+    <h3>H3 · Authentic Cooking Class</h3>
+    <p class="section-eyebrow">Eyebrow · Local hosts · Real Aqaba</p>
+    <p>Body · Inter 16px / 1.7. Cook traditional Jordanian dishes with family recipes and enjoy a taste of Aqaba.</p>
+  </section>
+
+  <section class="sg">
+    <p class="section-eyebrow">Buttons</p>
+    <h2>Three types only</h2>
+    <div class="row">
+      <a class="button button-primary" href="#">Reserve an experience <span aria-hidden="true">→</span></a>
+      <a class="button button-secondary" href="#">Reserve <span aria-hidden="true">→</span></a>
+      <span class="experience-actions" style="display:inline-flex"><a href="#">View details</a></span>
+    </div>
+    <p class="note">Primary (gold) = booking actions only · Secondary (green outline) = everything else · Text link = "View details", "Read the story". One arrow style: →</p>
+  </section>
+
+  <section class="sg">
+    <p class="section-eyebrow">Components</p>
+    <h2>Card</h2>
+    <div class="card">
+      <p class="experience-kicker">Cooking · 3 hours</p>
+      <h3 style="margin:6px 0 8px">Authentic Cooking Class</h3>
+      <p style="margin:0">Cook traditional Jordanian dishes with family recipes.</p>
+      <p style="margin:16px 0 0;font-weight:700;color:var(--sl-green)">30 JD <span style="font-weight:400;color:var(--sl-muted)">/ guest</span></p>
+    </div>
+  </section>
+
+  <section class="sg dark">
+    <p class="section-eyebrow" style="color:var(--sl-gold-light)!important">Dark section</p>
+    <h2 style="color:var(--sl-on-dark)!important">Ready to experience Aqaba like a local?</h2>
+    <a class="button button-primary" href="#">Request your experience <span aria-hidden="true">→</span></a>
+  </section>
+</body>
+</html>
