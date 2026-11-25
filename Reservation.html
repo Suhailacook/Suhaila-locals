@@ -694,6 +694,7 @@
       gtag('js', new Date());
       gtag('config', 'G-JZYH4T50VY');
     </script>
+    <script src="js/analytics-events.js?v=20261125" defer></script>
     <link rel="stylesheet" href="jordanian-editorial-pages.css?v=20261029footeraligned">
     <meta property="og:site_name" content="Suhaila Locals">
     <link rel="stylesheet" href="site-interactions.css">
@@ -1523,6 +1524,13 @@
                 .then(response => {
                     spinner.style.display = 'none';
                     if (response.ok) {
+                        if (window.slTrack) {
+                            var picked = Array.prototype.map.call(document.querySelectorAll('.experience-toggle:checked'), function (cb) {
+                                var c = cb.closest('.experience-option-card'); var h = c && c.querySelector('h3, h4, strong');
+                                return (h ? h.textContent : (cb.value || cb.name || '')).trim();
+                            });
+                            window.slTrack('booking_request_sent', { experiences: picked.join(', ').slice(0, 100), experience_count: picked.length });
+                        }
                         // ===== TRIGGER CONFETTI ON SUCCESS =====
                         fireConfetti();
 

@@ -495,6 +495,7 @@
       gtag('js', new Date());
       gtag('config', 'G-JZYH4T50VY');
     </script>
+    <script src="js/analytics-events.js?v=20261125" defer></script>
     <meta property="og:site_name" content="Suhaila Locals">
     <link rel="stylesheet" href="site-interactions.css">
     <link rel="stylesheet" href="olive-grove-theme.css?v=20261123-footer" />
@@ -858,6 +859,7 @@
       })
       .then(response => {
         if (response.ok) {
+          if (window.slTrack) window.slTrack('online_booking_sent', { experience: 'Online Cooking Class', dish: String(data.dish || '').slice(0, 60), participants: String(data.participants || '') });
           document.getElementById('booking-flow').style.display = 'none';
           document.getElementById('confirmed-dish').innerText = data.dish;
           document.getElementById('confirmed-email').textContent = data.email;
