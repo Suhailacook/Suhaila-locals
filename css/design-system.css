@@ -12,8 +12,8 @@
 
 :root {
   /* Colors */
-  --sl-bg: #F6F2E4;          /* main cream background            */
-  --sl-surface: #FFFDF7;     /* cards + alternating sections     */
+  --sl-bg: #FBF8F3;          /* main soft-sand background        */
+  --sl-surface: #FFFFFF;     /* cards + alternating sections     */
   --sl-green: #1F3B33;       /* headings, dark sections          */
   --sl-green-hover: #2B4F45;
   --sl-text: #514F43;        /* body text                        */
@@ -22,8 +22,8 @@
   --sl-gold-hover: #A39538;
   --sl-gold-text: #7A6E1F;   /* gold-coloured TEXT (AA contrast) */
   --sl-gold-light: #E9DC9A;  /* gold text on dark green          */
-  --sl-on-dark: #F6F2E4;
-  --sl-line: #E4DFCB;
+  --sl-on-dark: #FBF8F3;
+  --sl-line: #EEE8DD;
 
   /* Type */
   --sl-font-head: 'Fraunces', Georgia, serif;
@@ -218,7 +218,7 @@ html body:not(#sl) :is(.experience-actions a:not(.experience-reserve), .blog-rea
 
 /* ---------- Navigation ---------------------------------------------- */
 html body:not(#sl) .navbar {
-  background: rgba(246, 242, 228, .92) !important;
+  background: rgba(251, 248, 243, .92) !important;
   backdrop-filter: saturate(1.2) blur(10px);
   -webkit-backdrop-filter: saturate(1.2) blur(10px);
   border-bottom: 1px solid var(--sl-line) !important;
@@ -1077,3 +1077,6 @@ html body:not(#sl) .review-section-advanced .review-card.sl-stagger:not(.active)
   html body:not(#sl) .home-faq > .faq-list { grid-column: 2; grid-row: 1 / span 3; margin-top: 0; max-width: none; }
   html body:not(#sl) .home-faq > .faq-more { align-self: start; }
 }
+
+/* Hero text column: no boxed background */
+html body:not(#sl) .hero-section .hero-content-wrapper { background: none !important; box-shadow: none !important; border: 0 !important; }
