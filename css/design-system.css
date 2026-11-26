@@ -1127,3 +1127,40 @@ html body:not(#sl):not(.homepage) .hero-section .hero-inner,
 html body:not(#sl):not(.homepage) .hero-section .hero-cta { width: auto !important; display: block !important; }
 html body:not(#sl):not(.homepage) .hero-section .hero-cta .button { width: auto !important; writing-mode: horizontal-tb !important; white-space: nowrap; }
 html body:not(#sl):not(.homepage) .hero-section h1 { word-break: normal !important; overflow-wrap: normal !important; hyphens: manual; }
+
+/* =====================================================================
+   RELATED EXPERIENCES — end of every article (internal links for SEO)
+   ===================================================================== */
+.related-experiences {
+  padding: 64px var(--sl-pad-x);
+  background: var(--sl-surface);
+  border-top: 1px solid var(--sl-line);
+}
+html body:not(#sl) .rel-eyebrow { margin: 0; font: 700 .8rem/1 var(--sl-font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--sl-gold-text); }
+html body:not(#sl) .related-experiences h2 {
+  margin: 10px 0 28px !important; font-size: clamp(1.6rem, 3vw, 2.1rem) !important; color: var(--sl-green) !important; text-align: left !important;
+}
+.rel-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+html body:not(#sl) .rel-card {
+  display: flex; flex-direction: column; overflow: hidden;
+  background: var(--sl-bg); border: 1px solid var(--sl-line); border-radius: var(--sl-radius);
+  color: var(--sl-text) !important; text-decoration: none !important;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+html body:not(#sl) .rel-card:hover { transform: translateY(-3px); box-shadow: var(--sl-shadow); }
+html body:not(#sl) .rel-card img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; margin: 0 !important; border-radius: 0 !important; }
+.rel-body { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 18px; }
+.rel-kicker { font: 700 .72rem/1 var(--sl-font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--sl-gold-text); }
+.rel-title { font: 700 1.2rem/1.25 var(--sl-font-head); color: var(--sl-green); }
+.rel-text { font-size: .92rem; line-height: 1.55; }
+html body:not(#sl) .rel-price { margin: 4px 0 0 !important; font: 700 1rem/1.2 var(--sl-font-body); color: var(--sl-green) !important; }
+html body:not(#sl) .rel-all { display: inline-flex; align-items: center; min-height: 44px; margin-top: 18px; color: var(--sl-green) !important; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 900px) {
+  .related-experiences { padding: 48px var(--sl-gutter); }
+  .rel-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin: 0 calc(-1 * var(--sl-gutter)); padding: 0 var(--sl-gutter) 8px; scrollbar-width: none; }
+  html body:not(#sl) .rel-card { flex: 0 0 80%; scroll-snap-align: start; }
+}
+
+/* Footer: Google Business name line */
+html body:not(#sl) footer .footer-gbp { margin: 6px 0 14px !important; font-size: .85rem; color: var(--sl-muted) !important; text-align: left !important; }
+html body:not(#sl) footer .footer-gbp a { color: var(--sl-green) !important; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
