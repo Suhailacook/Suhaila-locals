@@ -1164,3 +1164,26 @@ html body:not(#sl) .rel-all { display: inline-flex; align-items: center; min-hei
 /* Footer: Google Business name line */
 html body:not(#sl) footer .footer-gbp { margin: 6px 0 14px !important; font-size: .85rem; color: var(--sl-muted) !important; text-align: left !important; }
 html body:not(#sl) footer .footer-gbp a { color: var(--sl-green) !important; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+/* =====================================================================
+   BOOKING PAGE — flow v2 (experience first, form near the top)
+   ===================================================================== */
+html body:not(#sl) #reservation-form { scroll-margin-top: 80px; }
+html body:not(#sl) .experience-option-card { scroll-margin-top: 90px; transition: box-shadow .3s ease, border-color .3s ease; }
+html body:not(#sl) .experience-option-card.just-selected { border-color: var(--sl-gold) !important; box-shadow: 0 0 0 4px rgba(181, 166, 66, .25) !important; }
+html body:not(#sl) #reservation-form .hint { margin-top: 6px; font-size: .82rem; color: var(--sl-muted); }
+html body:not(#sl) .reservation-browse-title {
+  max-width: 1100px; margin: 64px auto 8px !important; padding: 0 20px; text-align: center !important;
+  font-size: clamp(1.5rem, 3vw, 2rem) !important; color: var(--sl-green) !important;
+}
+/* Step indicator: one horizontal row, also on phones */
+html body:not(#sl) .step-progress {
+  display: flex !important; flex-direction: row !important; justify-content: space-between !important; align-items: flex-start !important;
+  gap: 8px !important; max-width: 520px; margin: 0 auto 24px !important;
+}
+html body:not(#sl) .step-progress .step { flex: 1 1 0 !important; display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center; min-width: 0; }
+html body:not(#sl) .step-progress .step-label { font-size: .78rem !important; white-space: nowrap; }
+@media (max-width: 900px) {
+  html body:not(#sl) .reservation-hero { padding-top: 32px !important; padding-bottom: 32px !important; min-height: 0 !important; }
+  html body:not(#sl) .reservation-hero .availability-note { padding: 10px 14px !important; font-size: .88rem !important; }
+}
