@@ -1160,3 +1160,7 @@ html body:not(#sl) .rel-all { display: inline-flex; align-items: center; min-hei
   .rel-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin: 0 calc(-1 * var(--sl-gutter)); padding: 0 var(--sl-gutter) 8px; scrollbar-width: none; }
   html body:not(#sl) .rel-card { flex: 0 0 80%; scroll-snap-align: start; }
 }
+
+/* Footer: Google Business name line */
+html body:not(#sl) footer .footer-gbp { margin: 6px 0 14px !important; font-size: .85rem; color: var(--sl-muted) !important; text-align: left !important; }
+html body:not(#sl) footer .footer-gbp a { color: var(--sl-green) !important; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
